@@ -4,7 +4,7 @@ svn add "filename"
 svn commit -m "log messages"
 
 -Update
-svn update https://codex.cs.bham.ac.uk/svn/team-project/D2 
+svn update
 
 -Delete
 svn delete "filename"
