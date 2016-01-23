@@ -1,0 +1,17 @@
+-Commands to checkout and commit
+svn co https://codex.cs.bham.ac.uk/svn/team-project/D2 --username "username"
+svn add "filename"
+svn commit -m "log messages"
+
+-Update
+svn update https://codex.cs.bham.ac.uk/svn/team-project/D2 
+
+-Delete
+svn delete "filename"
+svn commit -m "log messages" "filename"
+
+-View content
+svn list
+
+-Diffrence
+svn diff "filename"
