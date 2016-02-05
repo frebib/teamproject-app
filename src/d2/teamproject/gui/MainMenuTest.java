@@ -24,15 +24,14 @@ public class MainMenuTest extends Application {
         primaryStage.setTitle("PARTH");
 
         String url1 = "http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg";
-        String blocks = "http://i.imgur.com/XfHVULM.jpg";
-        String solar = "http://i.imgur.com/UPLMqlO.jpg";
+        String blocks = "http://i.imgur.com/RHN707M.jpg";
+        String solar = "http://i.imgur.com/6heqnnN.jpg";
         String tube = "http://i.imgur.com/eM2qLSM.jpg";
-        String tubeL = "http://i.imgur.com/eM2qLSM.jpg";
         String text = "This is a test";
 
         //image(blocks),image(solar),
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(image(tube,"One"),image(tube,"Two"),image(tube,"Three"));
+        vbox.getChildren().addAll(image(tube,"London Underground"),image(solar,"Planets"),image(blocks,"Building Blocks"));
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -42,7 +41,7 @@ public class MainMenuTest extends Application {
         //Declarations
 
         Text t = new Text(10, 50, text);
-        t.setFont(new Font(60));
+        t.setFont(new Font(50));
         t.setFill(Color.WHITE);
         t.setVisible(false);
 
