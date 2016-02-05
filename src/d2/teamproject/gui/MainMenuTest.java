@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-public class Main extends Application {
+public class MainMenuTest extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
