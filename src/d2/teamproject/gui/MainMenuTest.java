@@ -2,6 +2,7 @@ package d2.teamproject.gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.BoxBlur;
@@ -18,33 +19,41 @@ import javafx.stage.Stage;
 
 public class MainMenuTest extends Application {
 
+    String blocksImage = "http://i.imgur.com/RHN707M.jpg";
+    String solarImage = "http://i.imgur.com/6heqnnN.jpg";
+    String tubeImage = "http://i.imgur.com/eM2qLSM.jpg";
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("PARTH");
+        primaryStage.setMaximized(true);
+        double X = primaryStage.getWidth();
+        double Y = primaryStage.getHeight();
 
-        String blocks = "http://i.imgur.com/RHN707M.jpg";
-        String solar = "http://i.imgur.com/6heqnnN.jpg";
-        String tube = "http://i.imgur.com/eM2qLSM.jpg";
-        String text = "This is a test";
+        StackPane tube = image(tubeImage,"London Underground",X,Y);
+        StackPane solar = image(solarImage,"Planets",X,Y);
+        StackPane blocks = image(blocksImage,"Building Blocks",X,Y);
 
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(image(tube,"London Underground"),image(solar,"Planets"),image(blocks,"Building Blocks"));
+        VBox vbox = new VBox(15);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.getChildren().addAll(tube,solar,blocks);
+
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public StackPane image(String loc, String text){
+    public StackPane image(String loc, String text, double width, double height){
         //Declarations
-
         Text t = new Text(10, 50, text);
         t.setFont(new Font(50));
         t.setFill(Color.WHITE);
         t.setVisible(false);
 
         StackPane sp = new StackPane();
-        Image img = new Image(loc,545,270,false,false); //Uses a url to as the Image
+        Image img = new Image(loc,1200,250,false,false); //Uses a url to as the Image
         ImageView imgView = new ImageView(img); //Adds the Image to a new ImageView
         sp.getChildren().add(imgView);  // Stack Pane -> ImageView -> Image
         sp.getChildren().add(t);
