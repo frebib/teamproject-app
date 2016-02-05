@@ -23,13 +23,11 @@ public class MainMenuTest extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("PARTH");
 
-        String url1 = "http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg";
         String blocks = "http://i.imgur.com/RHN707M.jpg";
         String solar = "http://i.imgur.com/6heqnnN.jpg";
         String tube = "http://i.imgur.com/eM2qLSM.jpg";
         String text = "This is a test";
 
-        //image(blocks),image(solar),
         VBox vbox = new VBox();
         vbox.getChildren().addAll(image(tube,"London Underground"),image(solar,"Planets"),image(blocks,"Building Blocks"));
         Scene scene = new Scene(vbox);
@@ -59,6 +57,16 @@ public class MainMenuTest extends Application {
         unblur.setInput(none);
         //Events
         imgView.setEffect(unblur);
+
+        t.setOnMouseEntered(e -> {
+            imgView.setEffect(blur);
+            t.setVisible(true);
+        });
+
+        t.setOnMouseExited(e -> {
+            imgView.setEffect(unblur);
+            t.setVisible(false);
+        });
 
         imgView.setOnMouseEntered(e -> {
             imgView.setEffect(blur);
