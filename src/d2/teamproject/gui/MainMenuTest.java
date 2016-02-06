@@ -36,7 +36,7 @@ public class MainMenuTest extends Application {
         StackPane solar = image(solarImage,"Planets",X,Y);
         StackPane blocks = image(blocksImage,"Building Blocks",X,Y);
 
-        VBox vbox = new VBox(15);
+        VBox vbox = new VBox(25);
         vbox.setAlignment(Pos.CENTER);
         vbox.getChildren().addAll(tube,solar,blocks);
 
@@ -64,6 +64,11 @@ public class MainMenuTest extends Application {
         blur.setInput(darken);
         BoxBlur unblur = new BoxBlur(0,0,0);
         unblur.setInput(none);
+
+        //System.out.println(viewpoint.getHeight());
+        //double newWidth = viewpoint.getWidth();
+        //double newHeight = viewpoint.getHeight();
+
         //Events
         imgView.setEffect(unblur);
 
