@@ -19,9 +19,9 @@ import javafx.stage.Stage;
 
 public class MainMenuTest extends Application {
 
-    String blocksImage = "http://i.imgur.com/RHN707M.jpg";
-    String solarImage = "http://i.imgur.com/6heqnnN.jpg";
-    String tubeImage = "http://i.imgur.com/eM2qLSM.jpg";
+    String blocksImage = "d2/teamproject/gui/images/blocks.jpg";
+    String solarImage = "d2/teamproject/gui/images/planets.jpg";
+    String tubeImage = "d2/teamproject/gui/images/tube.png";
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -48,7 +48,7 @@ public class MainMenuTest extends Application {
     public StackPane image(String loc, String text, double width, double height){
         //Declarations
         Text t = new Text(10, 50, text);
-        t.setFont(new Font(50));
+        t.setFont(new Font(75));
         t.setFill(Color.WHITE);
         t.setVisible(false);
 
