@@ -18,40 +18,46 @@ import javafx.stage.Stage;
 
 
 public class MainMenuTest extends Application {
-
-    String blocksImage = "d2/teamproject/gui/images/blocks.jpg";
-    String solarImage = "d2/teamproject/gui/images/planets.jpg";
-    String tubeImage = "d2/teamproject/gui/images/tube.png";
-
+    /**
+     * @param primaryStage The Primary Stage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
-
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("PARTH");
         primaryStage.setMaximized(true);
         double X = primaryStage.getWidth();
         double Y = primaryStage.getHeight();
 
-        StackPane tube = image(tubeImage,"London Underground",X,Y);
-        StackPane solar = image(solarImage,"Planets",X,Y);
-        StackPane blocks = image(blocksImage,"Building Blocks",X,Y);
+        String IMAGE_BLOCKS = "d2/teamproject/gui/images/blocks.jpg";
+        String IMAGE_SOLAR = "d2/teamproject/gui/images/planets.jpg";
+        String IMAGE_TUBE = "d2/teamproject/gui/images/tube.png";
+        StackPane tube = image(IMAGE_TUBE,"London Underground");
+        StackPane solar = image(IMAGE_SOLAR,"Planets");
+        StackPane blocks = image(IMAGE_BLOCKS,"Building Blocks");
 
-        VBox vbox = new VBox(25);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.getChildren().addAll(tube,solar,blocks);
+        VBox mMenu = new VBox(25);
+        mMenu.setAlignment(Pos.CENTER);
+        mMenu.getChildren().addAll(tube,solar,blocks);
 
-        Scene scene = new Scene(vbox);
+        Scene scene = new Scene(mMenu);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public StackPane image(String loc, String text, double width, double height){
+    /**
+     * @param loc This is the location of the image used for the button
+     * @param text This is the text that will appear on hovering over the image
+     * @return a fully set-up StackPane for use in the vertical box
+     */
+    private StackPane image(String loc, String text){
         //Declarations
         Text t = new Text(10, 50, text);
         t.setFont(new Font(75));
         t.setFill(Color.WHITE);
         t.setVisible(false);
-
+        t.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
         StackPane sp = new StackPane();
         Image img = new Image(loc,1200,250,false,false); //Uses a url to as the Image
         ImageView imgView = new ImageView(img); //Adds the Image to a new ImageView
@@ -62,38 +68,30 @@ public class MainMenuTest extends Application {
         ColorAdjust none = new ColorAdjust(0,0,0,0);
         BoxBlur blur = new BoxBlur(4,4,4);
         blur.setInput(darken);
-        BoxBlur unblur = new BoxBlur(0,0,0);
-        unblur.setInput(none);
-
-        //System.out.println(viewpoint.getHeight());
-        //double newWidth = viewpoint.getWidth();
-        //double newHeight = viewpoint.getHeight();
-
+        BoxBlur focus = new BoxBlur(0,0,0);
+        focus.setInput(none);
+        imgView.setEffect(focus);
         //Events
-        imgView.setEffect(unblur);
-
         t.setOnMouseEntered(e -> {
             imgView.setEffect(blur);
             t.setVisible(true);
         });
-
         t.setOnMouseExited(e -> {
-            imgView.setEffect(unblur);
+            imgView.setEffect(focus);
             t.setVisible(false);
         });
-
         imgView.setOnMouseEntered(e -> {
             imgView.setEffect(blur);
             t.setVisible(true);
         });
-
         imgView.setOnMouseExited(e -> {
-            imgView.setEffect(unblur);
+            imgView.setEffect(focus);
             t.setVisible(false);
         });
-        imgView.setOnMouseClicked(e -> System.out.println("Clicked"));
+        imgView.setOnMouseClicked(e -> System.out.println("Clicked "+t.getText()));
         return sp;
     }
+
     public static void main(String[] args) {
         launch(args);
     }
