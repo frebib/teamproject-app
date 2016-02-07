@@ -3,7 +3,6 @@ package d2.teamproject.module.algorithm.search;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 /**
  * Represents a Collection of {@link Node}{@code s} linked to their contents
  *
@@ -21,7 +20,7 @@ public class Graph<A> {
      * Constructs a new empty {@link Graph}
      */
     public Graph() {
-        nodes = new LinkedHashMap<A, Node<A>>();
+        nodes = new LinkedHashMap<>();
     }
 
     /**
@@ -34,10 +33,8 @@ public class Graph<A> {
         Node<A> node; // Deliberately uninitialized.
         if (nodes.containsKey(c))
             node = nodes.get(c);
-        else {
-            node = new Node<A>(c);
-            nodes.put(c, node);
-        }
+        else
+            nodes.put(c, node = new Node<A>(c));
         return node;
     }
 
