@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class ListState<T> extends ArrayList<T> {
 
-	public ListState() {
-		super();
-	}
+    public ListState() {
+        super();
+    }
 
 }
