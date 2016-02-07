@@ -67,6 +67,7 @@ public class Node<A> {
 
     /**
      * Gets the combined value of {@code cost} and {@code heuristic} values
+     * Explanation: https://en.wikipedia.org/wiki/A*_search_algorithm#Description
      *
      * @return {@code cost} + {@code heuristic}
      */
