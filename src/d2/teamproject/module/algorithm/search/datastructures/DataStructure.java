@@ -35,4 +35,11 @@ public interface DataStructure<A> {
      * @return true if in the {@code DataStructure}
      */
     public boolean contains(A a);
+    
+    /**
+     * Returns a copy of the DataStructure
+     * 
+     * @return a copy
+     */
+    public DataStructure<A> copy();
 }

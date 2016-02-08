@@ -23,5 +23,10 @@ public class SearchStack<A> extends ArrayDeque<A> implements DataStructure<A> {
         push(a);
         return true;
     }
+    
+    @Override
+	public DataStructure<A> copy() {
+		return new SearchStack<A>(this);
+	}
 
 }

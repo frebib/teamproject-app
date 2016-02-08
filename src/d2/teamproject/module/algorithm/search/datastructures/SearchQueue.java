@@ -17,4 +17,9 @@ public class SearchQueue<A> extends ArrayDeque<A> implements DataStructure<A> {
     public A getHead() {
         return poll();
     }
+
+	@Override
+	public DataStructure<A> copy() {
+		return new SearchQueue<A>(this);
+	}
 }

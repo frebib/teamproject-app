@@ -23,4 +23,9 @@ public class SearchPriorityQueue<A> extends PriorityQueue<A> implements DataStru
     public A getHead() {
         return poll();
     }
+
+    @Override
+	public DataStructure<A> copy() {
+		return new SearchPriorityQueue<A>(this);
+	}
 }
