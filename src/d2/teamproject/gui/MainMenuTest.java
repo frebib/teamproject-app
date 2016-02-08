@@ -1,9 +1,7 @@
 package d2.teamproject.gui;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
@@ -18,13 +16,15 @@ import javafx.stage.Stage;
 
 
 public class MainMenuTest extends Application {
+    public VBox mMenu = new VBox(25);
+
     /**
      * @param primaryStage The Primary Stage
      * @throws Exception
+     *
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("PARTH");
         primaryStage.setMaximized(true);
         double X = primaryStage.getWidth();
@@ -37,7 +37,6 @@ public class MainMenuTest extends Application {
         StackPane solar = image(IMAGE_SOLAR,"Planets");
         StackPane blocks = image(IMAGE_BLOCKS,"Building Blocks");
 
-        VBox mMenu = new VBox(25);
         mMenu.setAlignment(Pos.CENTER);
         mMenu.getChildren().addAll(tube,solar,blocks);
 
@@ -88,9 +87,13 @@ public class MainMenuTest extends Application {
             imgView.setEffect(focus);
             t.setVisible(false);
         });
-        imgView.setOnMouseClicked(e -> System.out.println("Clicked "+t.getText()));
+        imgView.setOnMouseClicked(e -> {
+            mMenu.setVisible(false);
+            System.out.println("Clicked "+t.getText());
+        });
         return sp;
     }
+
 
     public static void main(String[] args) {
         launch(args);
