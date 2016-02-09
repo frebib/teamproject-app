@@ -5,19 +5,21 @@ import java.util.ArrayList;
 import d2.teamproject.module.algorithm.AlgoStream;
 import d2.teamproject.module.algorithm.search.datastructures.DataStructure;
 
-public class StackQueueStream<T, L extends DataStructure<T>> implements AlgoStream<L> {
-	
+public class StackQueueStream<T, L extends DataStructure<T>> implements
+		AlgoStream<L> {
+
 	private L current;
-	private ArrayList<L> states; 
-	
-	public StackQueueStream(L sq){
+	private ArrayList<L> states;
+
+	public StackQueueStream(L sq) {
 		this.current = sq;
 	}
 
 	@Override
 	public void initialise() {
 		states = new ArrayList<L>();
-		states.add(current);
+		L permCur = (L) current.copy();
+		states.add(permCur);
 	}
 
 	@Override
@@ -34,18 +36,18 @@ public class StackQueueStream<T, L extends DataStructure<T>> implements AlgoStre
 		states.add(permCur);
 		return (L) temp.copy();
 	}
-	
-	public void add(T item)
-	{
+
+	public void add(T item) {
 		current.add(item);
-		states.add(current);
+		L permCur = (L) current.copy();
+		states.add(permCur);
 	}
 
 	@Override
 	public L getPrevious() {
-		if(!hasPrevious())
+		if (!hasPrevious())
 			return null;
-		return states.get(states.size() -2);
+		return states.get(states.size() - 2);
 	}
 
 	@Override
