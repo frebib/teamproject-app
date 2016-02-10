@@ -34,7 +34,7 @@ public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 		current.getHead();
 		L permCur = (L) current.copy();
 		states.add(permCur);
-		return (L) temp.copy();
+		return temp;
 	}
 
 	public void add(T item) {
