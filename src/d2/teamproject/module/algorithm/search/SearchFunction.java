@@ -1,5 +1,5 @@
 package d2.teamproject.module.algorithm.search;
 
-public interface SearchFunction<A> {
-    float apply(Node<A> a, Node<A> b);
+public interface SearchFunction<E> {
+    float apply(Node<E> a, Node<E> b);
 }

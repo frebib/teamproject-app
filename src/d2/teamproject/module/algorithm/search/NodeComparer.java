@@ -5,11 +5,11 @@ import java.util.Comparator;
 /**
  * Compares two {@link Node}{@code s} according to their f() value
  *
- * @param <A> Element represented by the {@link Node}
+ * @param <E> Element represented by the {@link Node}
  */
-public class NodeComparer<A> implements Comparator<Node<A>> {
+public class NodeComparer<E> implements Comparator<Node<E>> {
     @Override
-    public int compare(Node<A> n1, Node<A> n2) {
+    public int compare(Node<E> n1, Node<E> n2) {
         return (int) (n1.getF() - n2.getF());
     }
 }

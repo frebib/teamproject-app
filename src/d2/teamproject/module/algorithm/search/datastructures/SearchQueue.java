@@ -6,20 +6,20 @@ import java.util.Collection;
 /**
  * Stores a {@code Collection} of items in a Queue {@link BaseDataStructure}
  *
- * @param <A> @inheritDoc
+ * @param <E> @inheritDoc
  */
-public class SearchQueue<A> extends ArrayDeque<A> implements BaseDataStructure<A> {
-    public SearchQueue(Collection<? extends A> c) {
+public class SearchQueue<E> extends ArrayDeque<E> implements BaseDataStructure<E> {
+    public SearchQueue(Collection<? extends E> c) {
         super(c);
     }
 
     @Override
-    public A getHead() {
+    public E getHead() {
         return poll();
     }
 
 	@Override
-	public BaseDataStructure<A> copy() {
-		return new SearchQueue<A>(this);
+	public BaseDataStructure<E> copy() {
+		return new SearchQueue<>(this);
 	}
 }

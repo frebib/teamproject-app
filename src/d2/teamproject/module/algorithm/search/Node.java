@@ -6,25 +6,25 @@ import java.util.LinkedHashSet;
 /**
  * Represents a Node that carries a contents and it's successors
  *
- * @param <A> Payload of the {@link Node}
+ * @param <E> Payload of the {@link Node}
  */
-public class Node<A> {
-    private final Collection<Node<A>> successors;
+public class Node<E> {
+    private final Collection<Node<E>> successors;
     private float heuristic, cost;
 
     /**
      * The Object that the {@link Node} represents
      */
-    public final A contents;
+    public final E contents;
 
     /**
      * Creates a new Node with a contents
      *
      * @param contents Object for the Node to represent
      */
-    public Node(A contents) {
+    public Node(E contents) {
         this.contents = contents;
-        this.successors = new LinkedHashSet<Node<A>>();
+        this.successors = new LinkedHashSet<>();
 
         this.cost = Float.POSITIVE_INFINITY;
     }
@@ -34,7 +34,7 @@ public class Node<A> {
      *
      * @param s Successor to the {@link Node}
      */
-    public void addSuccessor(Node<A> s) {
+    public void addSuccessor(Node<E> s) {
         successors.add(s);
     }
 
@@ -43,7 +43,7 @@ public class Node<A> {
      *
      * @return The successors to the {@link Node}
      */
-    public Collection<Node<A>> getSuccessors() {
+    public Collection<Node<E>> getSuccessors() {
         return successors;
     }
 
@@ -99,7 +99,7 @@ public class Node<A> {
      * @param c Element to compare to {@link Node} contents
      * @return true if the contents are .equal()
      */
-    public boolean contentsEquals(A c) {
+    public boolean contentsEquals(E c) {
         return contents.equals(c);
     }
 

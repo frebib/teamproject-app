@@ -9,23 +9,23 @@ import java.util.PriorityQueue;
 /**
  * Stores a {@code Collection} of items in a PriorityQueue {@link BaseDataStructure}
  *
- * @param <A> @inheritDoc
+ * @param <E> @inheritDoc
  */
-    public SearchPriorityQueue(Comparator<A> comparer) {
 public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseDataStructure<E> {
+    public SearchPriorityQueue(Comparator<E> comparer) {
         super(comparer);
     }
-    public SearchPriorityQueue(Collection<? extends A> c) {
+    public SearchPriorityQueue(Collection<? extends E> c) {
         super(c);
     }
 
     @Override
-    public A getHead() {
+    public E getHead() {
         return poll();
     }
 
     @Override
-	public BaseDataStructure<A> copy() {
-		return new SearchPriorityQueue<A>(this);
+	public BaseDataStructure<E> copy() {
+		return new SearchPriorityQueue<E>(this);
 	}
 }

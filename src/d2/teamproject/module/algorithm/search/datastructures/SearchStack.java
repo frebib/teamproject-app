@@ -11,29 +11,29 @@ import java.util.List;
  * The implementation actually uses a {@link java.util.ArrayDeque} in place of a
  * {@link java.util.Stack}
  *
- * @param <A>
+ * @param <E>
  *            @inheritDoc
  */
-public class SearchStack<A> extends ArrayDeque<A> implements BaseDataStructure<A> {
-	public SearchStack(Collection<? extends A> c) {
+public class SearchStack<E> extends ArrayDeque<E> implements BaseDataStructure<E> {
+	public SearchStack(Collection<? extends E> c) {
 		super(c);
 	}
 
 	@Override
-	public A getHead() {
+	public E getHead() {
 		return pop();
 	}
 
 	@Override
-	public boolean add(A a) {
-		push(a);
+	public boolean add(E e) {
+		push(e);
 		return true;
 	}
 
 	@Override
-	public BaseDataStructure<A> copy() {
-		SearchStack<A> temp = new SearchStack<A>(this);
-		SearchStack<A> temp2 = new SearchStack<A>(this);
+	public BaseDataStructure<E> copy() {
+		SearchStack<E> temp = new SearchStack<E>(this);
+		SearchStack<E> temp2 = new SearchStack<E>(this);
 		temp.clear();
 		for (int i = this.size() - 1; i >= 0; i--) {
 			temp.add(temp2.getHead());
