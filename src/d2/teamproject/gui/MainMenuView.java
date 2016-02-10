@@ -33,9 +33,9 @@ public class MainMenuView extends Application {
         String IMAGE_BLOCKS = "d2/teamproject/gui/images/blocks.jpg";
         String IMAGE_SOLAR = "d2/teamproject/gui/images/planets.jpg";
         String IMAGE_TUBE = "d2/teamproject/gui/images/tube.png";
-        StackPane tube = image(IMAGE_TUBE,"London Underground");
-        StackPane solar = image(IMAGE_SOLAR,"Planets");
-        StackPane blocks = image(IMAGE_BLOCKS,"Building Blocks");
+        StackPane tube = image(IMAGE_TUBE,"Searching Algorithms");
+        StackPane solar = image(IMAGE_SOLAR,"Sorting Algorithms");
+        StackPane blocks = image(IMAGE_BLOCKS,"Stack & Queue");
 
         mMenu.setAlignment(Pos.CENTER);
         mMenu.getChildren().addAll(tube,solar,blocks);
