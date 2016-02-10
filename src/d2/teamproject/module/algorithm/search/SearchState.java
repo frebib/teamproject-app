@@ -30,4 +30,8 @@ public class SearchState<E, L extends BaseDataStructure<Node<E>>> {
     public Set<Node<E>> getVisited() {
         return visited;
     }
+
+    public List<Node<E>> getPath() {
+        return path;
+    }
 }
