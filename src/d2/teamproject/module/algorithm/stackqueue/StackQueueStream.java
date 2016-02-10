@@ -3,9 +3,9 @@ package d2.teamproject.module.algorithm.stackqueue;
 import java.util.ArrayList;
 
 import d2.teamproject.module.algorithm.AlgoStream;
-import d2.teamproject.module.algorithm.search.datastructures.DataStructure;
+import d2.teamproject.module.algorithm.search.datastructures.BaseDataStructure;
 
-public class StackQueueStream<T, L extends DataStructure<T>> implements
+public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 		AlgoStream<L> {
 
 	private L current;

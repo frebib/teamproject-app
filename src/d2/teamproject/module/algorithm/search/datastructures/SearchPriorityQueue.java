@@ -7,12 +7,12 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * Stores a {@code Collection} of items in a PriorityQueue {@link d2.teamproject.module.algorithm.search.datastructures.DataStructure}
+ * Stores a {@code Collection} of items in a PriorityQueue {@link BaseDataStructure}
  *
  * @param <A> @inheritDoc
  */
-public class SearchPriorityQueue<A> extends PriorityQueue<A> implements DataStructure<A> {
     public SearchPriorityQueue(Comparator<A> comparer) {
+public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseDataStructure<E> {
         super(comparer);
     }
     public SearchPriorityQueue(Collection<? extends A> c) {
@@ -25,7 +25,7 @@ public class SearchPriorityQueue<A> extends PriorityQueue<A> implements DataStru
     }
 
     @Override
-	public DataStructure<A> copy() {
+	public BaseDataStructure<A> copy() {
 		return new SearchPriorityQueue<A>(this);
 	}
 }

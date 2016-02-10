@@ -7,14 +7,14 @@ import java.util.List;
 
 /**
  * Stores a {@code Collection} of items in a Stack
- * {@link d2.teamproject.module.algorithm.search.datastructures.DataStructure}
+ * {@link BaseDataStructure}
  * The implementation actually uses a {@link java.util.ArrayDeque} in place of a
  * {@link java.util.Stack}
  *
  * @param <A>
  *            @inheritDoc
  */
-public class SearchStack<A> extends ArrayDeque<A> implements DataStructure<A> {
+public class SearchStack<A> extends ArrayDeque<A> implements BaseDataStructure<A> {
 	public SearchStack(Collection<? extends A> c) {
 		super(c);
 	}
@@ -31,7 +31,7 @@ public class SearchStack<A> extends ArrayDeque<A> implements DataStructure<A> {
 	}
 
 	@Override
-	public DataStructure<A> copy() {
+	public BaseDataStructure<A> copy() {
 		SearchStack<A> temp = new SearchStack<A>(this);
 		SearchStack<A> temp2 = new SearchStack<A>(this);
 		temp.clear();
