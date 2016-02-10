@@ -32,6 +32,11 @@ public interface BaseDataStructure<E> {
     boolean contains(E a);
 
     /**
+     * Clears all elements from the {@code DataStructure}
+     */
+    void clear();
+
+    /**
      * Returns a copy of the BaseDataStructure
      * @return a copy
      */
