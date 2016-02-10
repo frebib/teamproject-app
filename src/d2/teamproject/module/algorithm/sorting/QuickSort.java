@@ -1,6 +1,12 @@
 package d2.teamproject.module.algorithm.sorting;
 
 import java.util.List;
+/**
+ * 
+ * @author Otonye
+ *
+ * @param <E>
+ */
 
 public class QuickSort<E extends Comparable<E>> {
     private List<E> list;
@@ -9,12 +15,20 @@ public class QuickSort<E extends Comparable<E>> {
         this.list = list;
     }
 
+    /**
+     * sort: Applies quick sort to a list of Generic objects
+     * @return
+     */
     public List<E> sort() {
         if (list == null || list.size() < 1) return null;
         quickSort(0, list.size() - 1);
         return list;
     }
-
+    /**
+     * @param lowerIndex
+     * @param higherIndex
+     */
+    
     private void quickSort(int lowerIndex, int higherIndex) {
         int i = lowerIndex;
         int j = higherIndex;
@@ -36,7 +50,11 @@ public class QuickSort<E extends Comparable<E>> {
         if (i < higherIndex)
             quickSort(i, higherIndex);
     }
-
+    /**
+     * exchangeNumber: Use to swap numbers at specific positions
+     * @param i
+     * @param j
+     */
     private void exchangeNumbers(int i, int j) {
         E temp = list.get(i);
         list.set(i, list.get(j));
