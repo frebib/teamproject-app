@@ -2,8 +2,6 @@ package d2.teamproject.module.algorithm.search.datastructures;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Stores a {@code Collection} of items in a Stack
