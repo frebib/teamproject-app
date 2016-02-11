@@ -14,21 +14,20 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-
 public class MainMenuView extends Application {
     public VBox mMenu = new VBox(25);
+    public Stage secondaryStage = new Stage();
+    public BasicView basicView = new BasicView();
+    public Scene mMenuScene;
 
     /**
      * @param primaryStage The Primary Stage
      * @throws Exception
-     *
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.setTitle("PARTH");
-        primaryStage.setMaximized(true);
-        double X = primaryStage.getWidth();
-        double Y = primaryStage.getHeight();
+        secondaryStage.setTitle("PARTH");
+        secondaryStage.setMaximized(true);
 
         String IMAGE_BLOCKS = "d2/teamproject/gui/images/blocks.jpg";
         String IMAGE_SOLAR = "d2/teamproject/gui/images/planets.jpg";
@@ -40,8 +39,10 @@ public class MainMenuView extends Application {
         mMenu.setAlignment(Pos.CENTER);
         mMenu.getChildren().addAll(tube,solar,blocks);
 
-        Scene scene = new Scene(mMenu);
-        primaryStage.setScene(scene);
+        mMenuScene = new Scene(mMenu);
+        secondaryStage.setScene(mMenuScene);
+
+        primaryStage = secondaryStage;
         primaryStage.show();
     }
 
@@ -89,6 +90,7 @@ public class MainMenuView extends Application {
         });
         imgView.setOnMouseClicked(e -> {
             mMenu.setVisible(false);
+            secondaryStage.setScene(basicView.BasicScene());
             System.out.println("Clicked "+t.getText());
         });
         return sp;
