@@ -120,6 +120,9 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     }
 
     private SearchState<E, L> genNextState() {
+        if (cost == null || heuristic == null)
+            throw new NullPointerException("Cost and Heuristic functions must be set!");
+
         if (!hasNext()) return null;
 
         Node<E> node = frontier.getHead();
