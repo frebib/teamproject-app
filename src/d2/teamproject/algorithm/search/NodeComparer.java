@@ -1,4 +1,4 @@
-package d2.teamproject.module.algorithm.search;
+package d2.teamproject.algorithm.search;
 
 import java.util.Comparator;
 

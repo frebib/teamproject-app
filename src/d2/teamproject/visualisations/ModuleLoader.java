@@ -1,4 +1,4 @@
-package d2.teamproject.module;
+package d2.teamproject.visualisations;
 
 public class ModuleLoader {
     private static ModuleLoader loaderInst = new ModuleLoader();

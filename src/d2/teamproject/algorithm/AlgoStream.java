@@ -1,4 +1,4 @@
-package d2.teamproject.module.algorithm;
+package d2.teamproject.algorithm;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package d2.teamproject.module.algorithm.search;
+package d2.teamproject.algorithm.search;
 
-import d2.teamproject.module.algorithm.search.datastructures.SearchPriorityQueue;
+import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 
 public class AStarSearchStream<E> extends SearchStream<E, SearchPriorityQueue<Node<E>>> {
     public AStarSearchStream(Node<E> start, Node<E> goal) {

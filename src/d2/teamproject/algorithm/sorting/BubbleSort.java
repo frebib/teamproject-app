@@ -1,4 +1,4 @@
-package d2.teamproject.module.algorithm.sorting;
+package d2.teamproject.algorithm.sorting;
 
 import java.util.List;
 import java.util.Random;

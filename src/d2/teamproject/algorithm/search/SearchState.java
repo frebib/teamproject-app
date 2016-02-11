@@ -1,6 +1,6 @@
-package d2.teamproject.module.algorithm.search;
+package d2.teamproject.algorithm.search;
 
-import d2.teamproject.module.algorithm.search.datastructures.BaseDataStructure;
+import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 
 import java.util.HashSet;
 import java.util.List;

@@ -1,4 +1,4 @@
-package d2.teamproject.module;
+package d2.teamproject.visualisations;
 
 import d2.teamproject.VisApp;
 import javafx.scene.image.Image;

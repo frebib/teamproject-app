@@ -1,4 +1,4 @@
-package d2.teamproject.module.algorithm.search.datastructures;
+package d2.teamproject.algorithm.search.datastructures;
 
 /**
  * Provides accessor methods for a generic {@link BaseDataStructure}

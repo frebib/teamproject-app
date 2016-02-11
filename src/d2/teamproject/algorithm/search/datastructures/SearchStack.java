@@ -1,4 +1,4 @@
-package d2.teamproject.module.algorithm.search.datastructures;
+package d2.teamproject.algorithm.search.datastructures;
 
 import java.util.ArrayDeque;
 import java.util.Collection;

@@ -1,7 +1,7 @@
-package d2.teamproject.module.tubesearch;
+package d2.teamproject.visualisations.tubesearch;
 
 import d2.teamproject.VisApp;
-import d2.teamproject.module.BaseModule;
+import d2.teamproject.visualisations.BaseModule;
 import javafx.scene.image.Image;
 
 public class TubeSearchModule implements BaseModule {

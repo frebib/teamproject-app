@@ -1,10 +1,10 @@
-package d2.teamproject.module.algorithm.stackqueue;
+package d2.teamproject.algorithm.stackqueue;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import d2.teamproject.module.algorithm.AlgoStream;
-import d2.teamproject.module.algorithm.search.datastructures.BaseDataStructure;
+import d2.teamproject.algorithm.AlgoStream;
+import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 
 public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 		AlgoStream<L> {
