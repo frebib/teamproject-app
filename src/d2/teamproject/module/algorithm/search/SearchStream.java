@@ -112,7 +112,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
 
     @Override
     public SearchState<E, L> getNth(int n) {
-        if (n < 0 || n > allStates.size);
+        if (n < 0 || n > allStates.size())
             return null;
         if (n == allStates.size())
             return getNext();
