@@ -1,6 +1,7 @@
 package d2.teamproject.module.algorithm.stackqueue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import d2.teamproject.module.algorithm.AlgoStream;
 import d2.teamproject.module.algorithm.search.datastructures.BaseDataStructure;
@@ -58,5 +59,21 @@ public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 	@Override
 	public boolean hasPrevious() {
 		return states.size() > 0;
+	}
+
+	// TODO: Implement!
+	@Override
+	public L getNth(int n) {
+		return null;
+	}
+
+	@Override
+	public boolean hasNth(int n) {
+		return false;
+	}
+
+	@Override
+	public List<L> getAll() {
+		return null;
 	}
 }
