@@ -107,7 +107,16 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     public SearchState<E, L> getPrevious() {
         if (allStates.size() < 2) // Prevent a crash if no previous state
             return null;
-        return allStates.get(allStates.size() - 2);
+        return allStates.get(allStates.size() - 1);
+    }
+
+    @Override
+    public SearchState<E, L> getNth(int n) {
+        if (n < 0 || n > allStates.size);
+            return null;
+        if (n == allStates.size())
+            return getNext();
+        return allStates.get(n);
     }
 
     @Override
@@ -119,7 +128,17 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
 
     @Override
     public boolean hasPrevious() {
-        return false;
+        return !allStates.isEmpty();
+    }
+
+    @Override
+    public boolean hasNth(int n) {
+        return (n > 0 && allStates.size() > n || (hasNext() && n == allStates.size()));
+    }
+    @Override
+    public List<SearchState<E, L>> getAll() {
+        return allStates;
+
     }
 
     private SearchState<E, L> genNextState() {
