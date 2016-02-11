@@ -27,6 +27,8 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     private final Set<Node<E>> visited;
     private final Map<Node<E>, Node<E>> successors;
 
+    private final List<SearchState<E, L>> allStates;
+
     public SearchStream(L frontier) {
         this(frontier, null, null);
     }
@@ -39,10 +41,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
         this.visited = new HashSet<>();
         this.successors = new LinkedHashMap<>();
 
-        // Cost and Heuristic functions initially start as follows
-        // TODO: Fix cost/heuristic functions
-//        cost = manhattan;
-//        heuristic = euclidean;
+        this.allStates = new ArrayList<>();
     }
 
     /**
@@ -87,6 +86,8 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
         visited.clear();
         successors.clear();
 
+        allStates.clear();
+
         start.setHeuristic(heuristic.apply(start, goal));
         start.setCost(0);
         frontier.add(start);
@@ -94,17 +95,19 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
 
     @Override
     public void reset() {
-
+        initialise();
     }
 
     @Override
     public SearchState<E, L> getNext() {
-        return null;
+        return genNextState();
     }
 
     @Override
     public SearchState<E, L> getPrevious() {
-        return null;
+        if (allStates.size() < 2) // Prevent a crash if no previous state
+            return null;
+        return allStates.get(allStates.size() - 2);
     }
 
     @Override
@@ -152,6 +155,8 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
                 }
             }
         }
-        return new SearchState<>(frontier, visited, null);
+        SearchState<E, L> state = new SearchState<>(frontier, visited, null);
+        allStates.add(state);
+        return state;
     }
 }
