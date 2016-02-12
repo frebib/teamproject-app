@@ -6,7 +6,7 @@ public interface AlgoStream<T> {
     void initialise();
     T getNext();
     T getPrevious();
-    T getNth(int n);
+    T getNth(int n) throws UnsupportedOperationException;
     boolean hasNext();
     boolean hasPrevious();
     boolean hasNth(int n);
