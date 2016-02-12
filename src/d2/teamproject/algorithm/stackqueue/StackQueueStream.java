@@ -31,11 +31,10 @@ public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 
 	@Override
 	public L getNext() {
-		L temp = (L) current.copy();
 		current.getHead();
 		L permCur = (L) current.copy();
 		states.add(permCur);
-		return temp;
+		return (L) current.copy();
 	}
 
 	public void add(T item) {
