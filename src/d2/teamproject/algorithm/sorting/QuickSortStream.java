@@ -69,7 +69,7 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
         list.set(j, temp);
     }
 
-    public List<E> getList() {
+    public List<E> getSortedList() {
         return list;
     }
 
@@ -119,6 +119,6 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
         System.out.println(list.stream().map(Object::toString).collect(Collectors.joining(" ")));
         QuickSortStream<Integer> sort = new QuickSortStream<>(list);
         sort.initialise();
-        System.out.println(sort.getList().stream().map(Object::toString).collect(Collectors.joining(" ")));
+        System.out.println(sort.getSortedList().stream().map(Object::toString).collect(Collectors.joining(" ")));
     }
 }
