@@ -1,11 +1,8 @@
 package d2.teamproject.algorithm.sorting;
 
-import d2.teamproject.algorithm.ListState;
+import java.util.List;
 
-public class SortState<T> extends ListState<T> {
-
-	public SortState() {
-		super();
-	}
-
+public interface SortState<E> {
+    List<E> getList();
+    boolean isComplete();
 }

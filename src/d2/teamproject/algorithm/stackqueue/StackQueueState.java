@@ -1,8 +1,8 @@
 package d2.teamproject.algorithm.stackqueue;
 
-import d2.teamproject.algorithm.ListState;
+import java.util.ArrayList;
 
-public class StackQueueState<T> extends ListState<T> {
+public class StackQueueState<T> extends ArrayList<T> {
 
 	public StackQueueState() {
 		super();
