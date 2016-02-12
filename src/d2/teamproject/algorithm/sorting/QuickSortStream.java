@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * Provides a stream of states representing each stage of sort provided by QuickSort on a given list.
+ * The Stream is pre-generated and cannot be changed once initialised.
+ * Note: Initialisation may take some time dependant on the parameters
+ * @param <E> Type of data stored in the list
+ */
 public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<SortState<E>> {
     private List<E> list;
 
@@ -15,11 +21,19 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
 
     private ListSortState<E> lastListState;
 
+    /**
+     * Creates a new QuickSortStream provided with a list to sort and create states for
+     * @param list a list to sort
+     */
     public QuickSortStream(List<E> list) {
         this.list = list;
         states = new ArrayList<>();
     }
 
+    /**
+     * Sorts the list and generates all states during the list sort process
+     * This process may take a long time depending on the size of the list in question
+     */
     @Override
     public void initialise() {
         if (list == null || list.size() < 1)
@@ -69,6 +83,11 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
         list.set(j, temp);
     }
 
+    /**
+     * Gets the sorted list from the output of the algorithm
+     * Equally, getting the list from the last state would return a copy of the same list
+     * @return the sorted list
+     */
     public List<E> getSortedList() {
         return list;
     }
