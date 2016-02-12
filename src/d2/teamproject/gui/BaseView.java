@@ -8,10 +8,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
-public class BasicView {
-
-    Button backButton;
-    StackPane pane;
+public class BaseView {
+    private Button backButton;
+    private StackPane pane;
 
     public Scene BasicScene() {
         pane = new StackPane();
@@ -28,7 +27,7 @@ public class BasicView {
         /* Center pane implementation - Used to visualise the algorithms */
         StackPane centerPane = new StackPane();
         centerPane.setStyle("-fx-background-color: green");
-        /* CALL SPECIFIC CLASS HERE */
+        /* TODO: CALL SPECIFIC CLASS HERE */
 
         /* Help button implementation - Used to initialise the tutorial mode  */
         Button helpButton = new Button("HELP");
