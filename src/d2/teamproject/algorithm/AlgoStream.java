@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface AlgoStream<T> {
     void initialise();
-    void reset();
     T getNext();
     T getPrevious();
     T getNth(int n);

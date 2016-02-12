@@ -24,12 +24,6 @@ public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 	}
 
 	@Override
-	public void reset() {
-		states.clear();
-		states.add(current);
-	}
-
-	@Override
 	public L getNext() {
 		current.getHead();
 		L permCur = (L) current.copy();

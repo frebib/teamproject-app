@@ -94,11 +94,6 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     }
 
     @Override
-    public void reset() {
-        initialise();
-    }
-
-    @Override
     public SearchState<E, L> getNext() {
         return genNextState();
     }
