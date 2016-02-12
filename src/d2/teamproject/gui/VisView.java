@@ -8,14 +8,15 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
-public class BaseView {
+public class VisView {
     private Button backButton;
-    private StackPane pane;
+    private final StackPane pane;
+    private final Scene scene;
 
-    public Scene BasicScene() {
+    public VisView() {
         pane = new StackPane();
 
-        /* Border pane implementation - Holds all the diffrent sections */
+        /* Border pane implementation - Holds all the different sections */
         BorderPane bp = new BorderPane();
         bp.setPadding(new Insets(10, 20, 10, 20));
 
@@ -33,12 +34,14 @@ public class BaseView {
         Button helpButton = new Button("HELP");
         HBox helpButtonBox = new HBox();
         helpButtonBox.getChildren().addAll(helpButton);
+
         helpButtonBox.alignmentProperty().setValue(Pos.CENTER_LEFT);
 
         /* Tick button implementation - Use to check the users' work */
         Button tickButton = new Button("TICK");
         HBox tickButtonBox = new HBox();
         tickButtonBox.getChildren().addAll(tickButton);
+
         tickButtonBox.alignmentProperty().setValue(Pos.CENTER_RIGHT);
 
         /* Pane to hold the bottom gui elements */
@@ -49,8 +52,11 @@ public class BaseView {
         bp.setCenter(centerPane);
         bp.setBottom(bottomBox);
         pane.getChildren().addAll(bp);
-        Scene scene = new Scene(pane);
 
+        scene = new Scene(pane);
+    }
+
+    public Scene getScene() {
         return scene;
     }
 }

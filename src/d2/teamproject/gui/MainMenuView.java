@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class MainMenuView extends Application {
     public VBox mMenu = new VBox(25);
     public Stage secondaryStage = new Stage();
-    public BaseView basicView = new BaseView();
+    public VisView basicView = new VisView();
     public Scene mMenuScene;
 
     /**
