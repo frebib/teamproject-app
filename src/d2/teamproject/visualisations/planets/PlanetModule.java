@@ -1,10 +1,10 @@
-package d2.teamproject.visualisations.tubesearch;
+package d2.teamproject.visualisations.planets;
 
 import d2.teamproject.visualisations.BaseModule;
 import d2.teamproject.visualisations.BaseView;
 import javafx.scene.image.Image;
 
-public class TubeSearchModule implements BaseModule {
+public class PlanetModule implements BaseModule {
     @Override
     public void init() {
     }
