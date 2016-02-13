@@ -37,5 +37,4 @@ public class BubbleSort<E extends Comparable<E>>{
         		.map(Object::toString)
         		.collect(Collectors.joining(", ")));
     }
-	
 }
