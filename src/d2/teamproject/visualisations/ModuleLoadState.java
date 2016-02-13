@@ -1,0 +1,11 @@
+package d2.teamproject.visualisations;
+
+public interface ModuleLoadState {
+    /**
+     * A callback for module load progress
+     * @param module the current module just loaded
+     * @param current index of current module
+     * @param max maximum number of modules to load
+     */
+    void onLoadProgress(BaseModule module, int current, int max);
+}
