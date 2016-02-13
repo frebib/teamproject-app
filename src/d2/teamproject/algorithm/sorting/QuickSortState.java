@@ -14,7 +14,6 @@ import java.util.List;
  */
 @Deprecated
 public class QuickSortState<E> {
-    // TODO: Split into subclasses to save memory
 	private int pivot, lower, upper;
     private int compareA = -1, compareB = -1;
     boolean isComplete = false, isSwap = false;
