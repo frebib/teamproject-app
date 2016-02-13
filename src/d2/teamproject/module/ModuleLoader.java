@@ -54,7 +54,7 @@ public class ModuleLoader {
                     if (callback != null)
                         callback.onLoadProgress(module, i, files.length);
                 } catch (Exception e) {
-                    System.out.printf("Error loading visualisations %s\n", files[i].getName());
+                    System.out.printf("Error loading visualisation %s\n", files[i].getName());
                     e.printStackTrace();
                     System.out.println();
                     continue;
