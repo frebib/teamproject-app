@@ -1,0 +1,56 @@
+<project basedir=".">
+    <path id="libraries">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="out"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="out/production"/>
+        <javac destdir="out/production"
+               classpath="lib"
+               source="1.8"
+               target="1.8">
+            <src path="src"/>
+            <classpath refid="libraries"/>
+        </javac>
+    </target>
+
+    <target name="planets" depends="compile">
+        <mkdir dir="module-planets/out"/>
+        <javac destdir="module-planets/out"
+               source="1.8"
+               target="1.8"
+               debug="on">
+            <src path="module-planets/src"/>
+            <classpath path="out/production/"/>
+            <!--<include name="src"/>-->
+        </javac>
+        <zip destfile="res/module/planets.vism">
+            <zipfileset dir="module-planets/out"/>
+            <zipfileset dir="module-planets/res"/>
+        </zip>
+        <delete dir="module-planets/out"/>
+    </target>
+
+    <target name="tubesearch" depends="compile">
+        <mkdir dir="module-tubesearch/out"/>
+        <javac destdir="module-tubesearch/out"
+               source="1.8"
+               target="1.8"
+               debug="on">
+            <src path="module-tubesearch/src"/>
+            <classpath path="out/production/"/>
+            <!--<include name="src"/>-->
+        </javac>
+        <zip destfile="res/module/tubesearch.vism">
+            <zipfileset dir="module-tubesearch/out"/>
+            <zipfileset dir="module-tubesearch/res"/>
+        </zip>
+        <delete dir="module-tubesearch/out"/>
+    </target>
+</project>
