@@ -1,7 +1,7 @@
 package d2.teamproject.module.planets;
 
-import d2.teamproject.visualisations.BaseModule;
-import d2.teamproject.visualisations.BaseView;
+import d2.teamproject.module.BaseModule;
+import d2.teamproject.module.BaseView;
 import javafx.scene.layout.StackPane;
 
 public class PlanetView extends BaseView {

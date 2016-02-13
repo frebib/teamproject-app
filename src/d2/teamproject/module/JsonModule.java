@@ -1,4 +1,4 @@
-package d2.teamproject.visualisations;
+package d2.teamproject.module;
 
 import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;

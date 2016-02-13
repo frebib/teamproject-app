@@ -2,7 +2,7 @@ package d2.teamproject;
 
 import d2.teamproject.gui.MainMenuView;
 import d2.teamproject.gui.VisView;
-import d2.teamproject.visualisations.ModuleLoader;
+import d2.teamproject.module.ModuleLoader;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

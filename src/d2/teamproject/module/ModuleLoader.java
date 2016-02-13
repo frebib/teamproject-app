@@ -1,5 +1,6 @@
-package d2.teamproject.visualisations;
+package d2.teamproject.module;
 
+<<<<<<< Updated upstream
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;
@@ -9,6 +10,21 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+=======
+//import module.planets.PlanetModule;
+//import module.tubesearch.TubeSearchModule;
+
+import com.eclipsesource.json.Json;
+import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonValue;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLClassLoader;
+>>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +36,10 @@ public class ModuleLoader {
 
     private List<BaseModule> modules;
     private Thread loaderThread;
+<<<<<<< Updated upstream
     private boolean isLoaded = false;
+=======
+>>>>>>> Stashed changes
 
     public static ModuleLoader getInstance() {
         return instance;
@@ -33,6 +52,7 @@ public class ModuleLoader {
     /**
      * loads all available modules and calls back after each is loaded
      *
+<<<<<<< Updated upstream
      * @param callback callback for loaded visualisations
      */
     public void loadAllModules(ModuleLoadState callback) {
@@ -64,10 +84,45 @@ public class ModuleLoader {
             synchronized (this) {
                 this.notifyAll();
             }
+=======
+     * @param callback callback for loaded module
+     */
+    public void loadAllModules(ModuleLoadState callback) {
+        loaderThread = new Thread(() -> {
+            // TODO: Abstract out module loading through a ClassLoader...
+            // (if we have time..)
+
+            // List all directories which have a 'module.json' file
+            File moduleDir = new File(MODULE_PATH);
+            File[] files = moduleDir.listFiles();
+            List<File> dirs = Arrays.stream(files)
+                    .filter(f -> f.listFiles((d, fn) -> fn.equals("module.json")).length > 0)
+                    .collect(Collectors.toList());
+
+            for (int i = 0; i < dirs.size(); i++) {
+                try {
+                    File dir = dirs.get(i);
+                    BaseModule module = loadModule(dir); // could throw exception if load fails
+                    modules.add(module);
+                    callback.onLoadProgress(module, i, dirs.size());
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+
+//            modules.add(new PlanetModule());
+//            modules.add(new TubeSearchModule());
+            if (callback == null)
+                return;
+
+            for (int i = 0; i < modules.size(); i++)
+                callback.onLoadProgress(modules.get(i), i, modules.size());
+>>>>>>> Stashed changes
         });
         loaderThread.start();
     }
 
+<<<<<<< Updated upstream
     private BaseModule loadModule(File moduleFile) throws Exception {
         JarClassLoader loader = new JarClassLoader();
         loader.add(new FileInputStream(moduleFile));
@@ -86,10 +141,24 @@ public class ModuleLoader {
         module.init(info, banner, view);
 
         return module;
+=======
+    private BaseModule loadModule(File directory) throws Exception {
+        File infoFile = directory.listFiles((dir, fn) -> fn.equals("module.json"))[0];
+        JsonObject info = Json.parse(new FileReader(infoFile)).asObject();
+        JsonObject load = info.get("load").asObject();
+        String packageName = info.get("package").asString() + ".";
+        URLClassLoader loader = new URLClassLoader();
+        Class<?> moduleClass = loader.loadClass(info.get("name").asString());
+        BaseModule module = (BaseModule) moduleClass.newInstance();
+
+
+        return null;
+>>>>>>> Stashed changes
     }
 
     public List<BaseModule> getLoadedModules() {
         return modules;
+<<<<<<< Updated upstream
     }
 
     public synchronized void onLoaded(ModulesLoaded callback) {
@@ -101,5 +170,7 @@ public class ModuleLoader {
             return;
         }
         callback.onLoaded(modules);
+=======
+>>>>>>> Stashed changes
     }
 }

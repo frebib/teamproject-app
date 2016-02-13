@@ -1,6 +1,6 @@
 package d2.teamproject.gui;
 
-import d2.teamproject.visualisations.BaseModule;
+import d2.teamproject.module.BaseModule;
 import javafx.geometry.Pos;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
