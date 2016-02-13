@@ -22,13 +22,13 @@ public class PARTH extends Application {
         // TODO: Show "loading" screen
 
         // Start ModuleLoader loading
-        loader.loadAllModules(((module, current, max) ->
-                System.out.printf("%d/%d: %s\n", current + 1, max, module.getName())));
-
-        menu = new MainMenuView(loader.getLoadedModules(), visView);
-        Scene menuStage = new Scene(menu.getMenu());
-        primaryStage.setScene(menuStage);
-        primaryStage.show();
+        loader.loadAllModules((module, current, max) -> System.out.printf("%d/%d: %s\n", current + 1, max, module.getName()));
+        loader.onLoaded(modules -> {
+            menu = new MainMenuView(modules, visView);
+            Scene menuStage = new Scene(menu.getMenu());
+            primaryStage.setScene(menuStage);
+            primaryStage.show();
+        });
     }
 
     public static void main(String[] args) {

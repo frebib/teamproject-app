@@ -6,7 +6,8 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -20,17 +21,10 @@ public class MainMenuView {
         menuPane = new StackPane();
         VBox menu = new VBox(24);
 
-        // TODO: Load resources from modules not statically
-
-        String IMAGE_BLOCKS = "blocks.jpg";
-        String IMAGE_SOLAR = "planets.jpg";
-        String IMAGE_TUBE = "tube.png";
-        StackPane tube = image(IMAGE_TUBE, "Searching Algorithms");
-        StackPane solar = image(IMAGE_SOLAR, "Sorting Algorithms");
-        StackPane blocks = image(IMAGE_BLOCKS, "Stack & Queue");
-
         menu.setAlignment(Pos.CENTER);
-        menu.getChildren().addAll(tube, solar, blocks);
+        for (BaseModule module : modules)
+            menu.getChildren().add(image(module.getBanner(), module.getName()));
+
         menuPane.getChildren().add(menu);
     }
 
@@ -39,11 +33,11 @@ public class MainMenuView {
     }
 
     /**
-     * @param loc  This is the location of the image used for the button
-     * @param text This is the text that will appear on hovering over the image
+     * @param banner This is the location of the image used for the button
+     * @param text   This is the text that will appear on hovering over the image
      * @return a fully set-up StackPane for use in the vertical box
      */
-    private StackPane image(String loc, String text) {
+    private StackPane image(Image banner, String text) {
         /* Declarations */
         Text t = new Text(10, 50, text);
         t.setFont(new Font(75));
@@ -51,8 +45,7 @@ public class MainMenuView {
         t.setVisible(false);
         t.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
         StackPane sp = new StackPane();
-        Image img = new Image(loc, 1200, 250, false, false); //Uses a url to as the Image
-        ImageView imgView = new ImageView(img); //Adds the Image to a new ImageView
+        ImageView imgView = new ImageView(banner); //Adds the Image to a new ImageView
         sp.getChildren().add(imgView);  // Stack Pane -> ImageView -> Image
         sp.getChildren().add(t);
 
