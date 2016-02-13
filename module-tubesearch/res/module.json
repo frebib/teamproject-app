@@ -1,0 +1,11 @@
+{
+  "name": "London Underground",
+  "desc": "Search with the Tube",
+  "banner": "tube.png",
+  "load": {
+    "package": "d2.teamproject.module.tubesearch",
+    "main":"TubeSearchModule",
+    "view":"TubeSearchView"
+  },
+  "help": []
+}
