@@ -48,9 +48,9 @@ public class MainMenuView extends Application {
     }
 
     public VBox mainMenu(){
-        String IMAGE_BLOCKS = "d2/teamproject/gui/images/blocks.jpg";
-        String IMAGE_SOLAR = "d2/teamproject/gui/images/planets.jpg";
-        String IMAGE_TUBE = "d2/teamproject/gui/images/tube.png";
+        String IMAGE_BLOCKS = "blocks.jpg";
+        String IMAGE_SOLAR = "planets.jpg";
+        String IMAGE_TUBE = "tube.png";
         StackPane tube = image(IMAGE_TUBE,"Searching Algorithms");
         StackPane solar = image(IMAGE_SOLAR,"Sorting Algorithms");
         StackPane blocks = image(IMAGE_BLOCKS,"Stack & Queue");
