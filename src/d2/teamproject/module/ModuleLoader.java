@@ -77,10 +77,10 @@ public class ModuleLoader {
         JsonObject load = info.get("load").asObject();
         String packageName = load.get("package").asString() + ".";
 
-        Class mainCls = loader.loadClass(packageName + load.get("main").asString()).asSubclass(JsonModule.class);
-        Class viewCls = loader.loadClass(packageName + load.get("view").asString()).asSubclass(BaseView.class);
+        Class mainCls = loader.loadClass(packageName + load.get("main").asString());//.asSubclass(JsonModule.class);
+        Class viewCls = loader.loadClass(packageName + load.get("view").asString());//.asSubclass(BaseView.class);
         JsonModule module = (JsonModule) mainCls.newInstance();
-        BaseView view = (BaseView) viewCls.getConstructor(BaseModule.class).newInstance(module);
+        BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
 
         Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
         module.init(info, banner, view);
