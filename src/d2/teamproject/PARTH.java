@@ -18,7 +18,8 @@ public class PARTH extends Application {
         // TODO: Show "loading" screen
 
         // Start ModuleLoader loading
-        loader.loadAllModules((module, current, max) -> System.out.printf("%d/%d: %s\n", current + 1, max, module.getName()));
+        loader.loadAllModules((module, current, max) ->
+                System.out.printf("%d/%d: %s\n", current + 1, max, module.getName()));
         loader.onLoaded(modules -> {
             menu = new MainMenuView(modules, primaryStage);
             primaryStage.setScene(menu.getScene());
