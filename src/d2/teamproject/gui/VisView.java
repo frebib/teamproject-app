@@ -1,19 +1,22 @@
 package d2.teamproject.gui;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class VisView {
     private Button backButton;
     private final StackPane pane;
     private final Scene scene;
 
-    public VisView() {
+    public VisView(StackPane content, EventHandler<MouseEvent> onBackClick) {
         pane = new StackPane();
 
         /* Border pane implementation - Holds all the different sections */
@@ -22,13 +25,13 @@ public class VisView {
 
         /* Back button implementation - Used to go back to the main menu */
         Button backButton = new Button("BACK");
+        backButton.setOnMouseClicked(onBackClick);
         HBox topBox = new HBox();
         topBox.getChildren().addAll(backButton);
 
-        /* Center pane implementation - Used to visualise the algorithms */
-        StackPane centerPane = new StackPane();
-        centerPane.setStyle("-fx-background-color: green");
-        /* TODO: CALL SPECIFIC CLASS HERE */
+//        /* Center pane implementation - Used to visualise the algorithms */
+//        StackPane centerPane = new StackPane();
+//        centerPane.setStyle("-fx-background-color: green");
 
         /* Help button implementation - Used to initialise the tutorial mode  */
         Button helpButton = new Button("HELP");
@@ -49,7 +52,7 @@ public class VisView {
         bottomBox.getChildren().addAll(helpButtonBox, tickButtonBox);
 
         bp.setTop(topBox);
-        bp.setCenter(centerPane);
+        bp.setCenter(content);
         bp.setBottom(bottomBox);
         pane.getChildren().addAll(bp);
 
