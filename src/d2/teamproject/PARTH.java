@@ -11,6 +11,7 @@ public class PARTH extends Application {
 
     public PARTH() {
         loader = ModuleLoader.getInstance();
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
