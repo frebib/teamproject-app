@@ -48,7 +48,7 @@ public class ModuleLoader {
                     BaseController module = loadModule(files.get(i)); // could throw exception if load fails
                     modules.add(module);
                     if (callback != null)
-                        callback.onLoadProgress(module, i, files.length);
+                        callback.onLoadProgress(module, i, files.size());
                 } catch (Exception e) {
                     System.out.printf("Error loading visualisation %s\n", files.get(i).getName());
                     e.printStackTrace();
