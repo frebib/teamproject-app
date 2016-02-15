@@ -134,10 +134,21 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
     }
 
     public static void main(String[] args) {
-        List<Integer> list = new Random().ints(200, 0, 100).boxed().collect(Collectors.toList());
-        System.out.println(list.stream().map(Object::toString).collect(Collectors.joining(" ")));
+      /*  List<Integer> list = new Random().ints(200, 0, 100).boxed().collect(Collectors.toList());
+        System.out.println(list.stream().map(Object::toString).collect(Collectors.joining(" ")));*/
+    	List<Integer> list= new ArrayList<>();
+    	list.add(2);
+    	list.add(6);
+    	list.add(3);
+    	list.add(8);
+    	list.add(9);
+    	list.add(4);
+    	list.add(1);
+    	
         QuickSortStream<Integer> sort = new QuickSortStream<>(list);
         sort.initialise();
-        System.out.println(sort.getSortedList().stream().map(Object::toString).collect(Collectors.joining(" ")));
+        //System.out.println(sort.getSortedList().stream().map(Object::toString).collect(Collectors.joining(" ")));
+        String result = sort.getSortedList().stream().map(Object::toString).collect(Collectors.joining(" "));
+        System.out.println(result);
     }
 }
