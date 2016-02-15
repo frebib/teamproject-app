@@ -28,7 +28,7 @@
                debug="on">
             <src path="module-planets/src"/>
             <classpath path="out/production/"/>
-            <!--<include name="src"/>-->
+            <classpath refid="libraries"/>
         </javac>
         <zip destfile="res/module/planets.vism">
             <zipfileset dir="module-planets/out"/>
@@ -45,7 +45,7 @@
                debug="on">
             <src path="module-tubesearch/src"/>
             <classpath path="out/production/"/>
-            <!--<include name="src"/>-->
+            <classpath refid="libraries"/>
         </javac>
         <zip destfile="res/module/tubesearch.vism">
             <zipfileset dir="module-tubesearch/out"/>
