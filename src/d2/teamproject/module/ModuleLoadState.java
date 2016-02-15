@@ -7,5 +7,5 @@ public interface ModuleLoadState {
      * @param current index of current module
      * @param max maximum number of modules to load
      */
-    void onLoadProgress(BaseModule module, int current, int max);
+    void onLoadProgress(BaseController module, int current, int max);
 }

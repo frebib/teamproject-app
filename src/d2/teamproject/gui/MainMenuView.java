@@ -1,6 +1,6 @@
 package d2.teamproject.gui;
 
-import d2.teamproject.module.BaseModule;
+import d2.teamproject.module.BaseController;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.effect.BoxBlur;
@@ -20,14 +20,14 @@ public class MainMenuView {
     private Scene menu;
     private StackPane menuPane;
 
-    public MainMenuView(List<BaseModule> modules, Stage stage) {
+    public MainMenuView(List<BaseController> modules, Stage stage) {
         this.stage = stage;
         menuPane = new StackPane();
         menu = new Scene(menuPane);
         VBox menu = new VBox(24);
 
         menu.setAlignment(Pos.CENTER);
-        for (BaseModule module : modules)
+        for (BaseController module : modules)
             menu.getChildren().add(makeButton(module, module.getBanner(), module.getName()));
 
         menuPane.getChildren().add(menu);
@@ -42,7 +42,7 @@ public class MainMenuView {
      * @param text   This is the text that will appear on hovering over the image
      * @return a fully set-up StackPane for use in the vertical box
      */
-    private StackPane makeButton(BaseModule vis, Image banner, String text) {
+    private StackPane makeButton(BaseController vis, Image banner, String text) {
         /* Declarations */
         Text t = new Text(10, 50, text);
         t.setFont(new Font(75));

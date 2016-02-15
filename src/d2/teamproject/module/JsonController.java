@@ -3,7 +3,7 @@ package d2.teamproject.module;
 import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;
 
-public abstract class JsonModule implements BaseModule {
+public abstract class JsonController implements BaseController {
     private BaseView view;
     private String name, description;
     private Image banner;

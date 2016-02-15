@@ -1,20 +1,20 @@
 package d2.teamproject.module.tubesearch;
 
-import d2.teamproject.module.BaseModule;
+import d2.teamproject.module.BaseController;
 import d2.teamproject.module.BaseView;
 import javafx.scene.layout.StackPane;
 
 public class TubeSearchView implements BaseView {
-    private TubeSearchModule module;
+    private TubeSearchController module;
     private StackPane stackPane;
 
-    public TubeSearchView(TubeSearchModule module) {
+    public TubeSearchView(TubeSearchController module) {
         this.module = module;
         stackPane = new StackPane();
     }
 
     @Override
-    public BaseModule getModule() {
+    public BaseController getModule() {
         return module;
     }
 

@@ -18,7 +18,7 @@ public class ModuleLoader {
     private static final String MODULE_PATH = "res/module/";
     private static ModuleLoader instance = new ModuleLoader();
 
-    private List<BaseModule> modules;
+    private List<BaseController> modules;
     private Thread loaderThread;
     private boolean isLoaded = false;
 
@@ -49,7 +49,7 @@ public class ModuleLoader {
 
             for (int i = 0; i < files.length; i++) {
                 try {
-                    BaseModule module = loadModule(files[i]); // could throw exception if load fails
+                    BaseController module = loadModule(files[i]); // could throw exception if load fails
                     modules.add(module);
                     if (callback != null)
                         callback.onLoadProgress(module, i, files.length);
@@ -68,7 +68,7 @@ public class ModuleLoader {
         loaderThread.start();
     }
 
-    private BaseModule loadModule(File moduleFile) throws Exception {
+    private BaseController loadModule(File moduleFile) throws Exception {
         JarClassLoader loader = new JarClassLoader();
         loader.add(new FileInputStream(moduleFile));
 
@@ -77,9 +77,9 @@ public class ModuleLoader {
         JsonObject load = info.get("load").asObject();
         String packageName = load.get("package").asString() + ".";
 
-        Class mainCls = loader.loadClass(packageName + load.get("main").asString());//.asSubclass(JsonModule.class);
+        Class mainCls = loader.loadClass(packageName + load.get("main").asString());//.asSubclass(JsonController.class);
         Class viewCls = loader.loadClass(packageName + load.get("view").asString());//.asSubclass(BaseView.class);
-        JsonModule module = (JsonModule) mainCls.newInstance();
+        JsonController module = (JsonController) mainCls.newInstance();
         BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
 
         Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
@@ -88,7 +88,7 @@ public class ModuleLoader {
         return module;
     }
 
-    public List<BaseModule> getLoadedModules() {
+    public List<BaseController> getLoadedModules() {
         return modules;
     }
 

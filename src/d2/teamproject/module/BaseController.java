@@ -2,7 +2,7 @@ package d2.teamproject.module;
 
 import javafx.scene.image.Image;
 
-public interface BaseModule {
+public interface BaseController {
     String getName();
     String getDesc();
     Image getBanner();
