@@ -4,8 +4,8 @@
   "banner": "planets.jpg",
   "load": {
     "package": "d2.teamproject.module.planets",
-    "main":"PlanetModule",
-    "view":"PlanetView"
+    "main": "PlanetController",
+    "view": "PlanetView"
   },
   "help": []
 }
