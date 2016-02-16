@@ -45,6 +45,10 @@ public class PlanetController extends JsonController {
         planets.stream().forEach(System.out::println);
     }
 
+    public QuickSortStream<Planet> getSorter() {
+        return sort;
+    }
+
     public Comparator<Planet> getPlanetCompare(PlanetSort sortBy) {
         // Is ugly. Needs to be cleaned up
         switch (sortBy) {
