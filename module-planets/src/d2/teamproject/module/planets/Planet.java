@@ -9,6 +9,13 @@ public class Planet implements Comparable<Planet> {
     private float mass, diameter, distToSun;
     private Comparator<Planet> cmp;
 
+    private Planet(String name, float mass, float diameter, float distToSun) {
+        this.name = name;
+        this.mass = mass;
+        this.diameter = diameter;
+        this.distToSun = distToSun;
+    }
+
     @Override
     public int compareTo(Planet planet) {
         return cmp.compare(this, planet);
@@ -31,7 +38,12 @@ public class Planet implements Comparable<Planet> {
     }
 
     public static Planet loadFromJson(JsonObject obj) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new Planet(
+                obj.get("name").asString(),
+                obj.get("mass").asFloat(),
+                obj.get("diam").asFloat(),
+                obj.get("dist").asFloat()
+        );
     }
 
     @Override
