@@ -7,4 +7,5 @@ public interface BaseController {
     String getDesc();
     Image getBanner();
     BaseView getView();
+    void setView(BaseView view);
 }

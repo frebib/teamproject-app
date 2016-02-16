@@ -13,6 +13,7 @@ public class PlanetView implements BaseView {
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
+        controller.setView(this);
 
         this.root = new Group();
 

@@ -36,4 +36,9 @@ public abstract class JsonController implements BaseController {
     public BaseView getView() {
         return view;
     }
+
+    @Override
+    public void setView(BaseView view) {
+        this.view = view;
+    }
 }
