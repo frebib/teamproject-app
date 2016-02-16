@@ -1,7 +1,6 @@
 package d2.teamproject.module.planets;
 
 import com.eclipsesource.json.JsonObject;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Comparator;
 
@@ -32,6 +31,6 @@ public class Planet implements Comparable<Planet> {
     }
 
     public Planet loadFromFile(JsonObject obj) {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 }
