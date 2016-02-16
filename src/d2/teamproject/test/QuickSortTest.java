@@ -1,14 +1,11 @@
 package d2.teamproject.test;
 
-import static org.junit.Assert.*;
+import d2.teamproject.algorithm.sorting.QuickSortStream;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import d2.teamproject.algorithm.sorting.QuickSortStream;
 
 public class QuickSortTest {
 

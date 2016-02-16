@@ -5,8 +5,6 @@ import d2.teamproject.algorithm.AlgoStream;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Provides a stream of states representing each stage of sort provided by QuickSort on a given list.

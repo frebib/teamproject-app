@@ -1,10 +1,10 @@
 package d2.teamproject.algorithm.stackqueue;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import d2.teamproject.algorithm.AlgoStream;
 import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Deprecated
 public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
