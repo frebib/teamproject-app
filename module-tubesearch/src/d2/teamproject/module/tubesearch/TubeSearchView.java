@@ -8,9 +8,9 @@ public class TubeSearchView implements BaseView {
     private TubeSearchController controller;
     private Pane pane;
 
-    public TubeSearchView(TubeSearchController module) {
-        this.controller = module;
-        module.setView(this);
+    public TubeSearchView(TubeSearchController controller) {
+        this.controller = controller;
+        controller.setView(this);
         pane = new Pane();
     }
 
