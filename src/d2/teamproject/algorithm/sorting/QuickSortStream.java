@@ -3,6 +3,7 @@ package d2.teamproject.algorithm.sorting;
 import d2.teamproject.algorithm.AlgoStream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -13,8 +14,9 @@ import java.util.stream.Collectors;
  * Note: Initialisation may take some time dependant on the parameters
  * @param <E> Type of data stored in the list
  */
-public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<SortState<E>> {
+public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
     private List<E> list;
+    private Comparator<E> comparator;
 
     private int stateIndex = 0;
     private final List<SortState<E>> states;
@@ -25,8 +27,9 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
      * Creates a new QuickSortStream provided with a list to sort and create states for
      * @param list a list to sort
      */
-    public QuickSortStream(List<E> list) {
+    public QuickSortStream(List<E> list, Comparator<E> comparator) {
         this.list = list;
+        this.comparator = comparator;
         states = new ArrayList<>();
     }
 
@@ -57,9 +60,9 @@ public class QuickSortStream<E extends Comparable<E>> implements AlgoStream<Sort
         // Divide into two arrays
         while (i <= j) {
             // Compare either side of pivot and count towards pivot
-            while (list.get(i).compareTo(pivot) < 0)
+            while (comparator.compare(list.get(i), pivot) < 0)
                 states.add(new CompareSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex, i++, pivotIndex, false));
-            while (list.get(j).compareTo(pivot) > 0)
+            while (comparator.compare(list.get(j), pivot) > 0)
                 states.add(new CompareSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex, j--, pivotIndex, false));
 
             if (i <= j) {

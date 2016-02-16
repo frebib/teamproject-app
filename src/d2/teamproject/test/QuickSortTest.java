@@ -23,7 +23,7 @@ public class QuickSortTest {
     	list.add(4);
     	list.add(1);
     	
-        QuickSortStream<Integer> sort = new QuickSortStream<>(list);
+        QuickSortStream<Integer> sort = new QuickSortStream<>(list, Integer::compare);
         sort.initialise();
         String result = sort.getSortedList().stream().map(Object::toString).collect(Collectors.joining(" "));
         assertArrayEquals("1 2 3 4 6 8 9", result);

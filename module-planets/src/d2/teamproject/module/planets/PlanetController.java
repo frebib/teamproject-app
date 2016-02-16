@@ -22,7 +22,7 @@ public class PlanetController extends JsonController {
     public PlanetController() {
         // TODO: Load planets
         planets = new ArrayList<Planet>(8);
-        sort = new QuickSortStream<>(planets);
+        sort = new QuickSortStream<>(planets, (o1, o2) -> Float.compare(o1.getDistToSun(), o2.getDistToSun()));
 
         // TODO: Implement planet sorting
     }
