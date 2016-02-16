@@ -76,10 +76,6 @@ public class ModuleLoader {
             Class mainCls = loader.loadClass(packageName + load.get("main").asString());
             Class viewCls = loader.loadClass(packageName + load.get("view").asString());
             JsonController module = (JsonController) mainCls.newInstance();
-            BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
-
-            Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
-            module.init(info, banner, view);
 
             try {
                 JsonObject res = info.get("res").asObject();
@@ -88,6 +84,10 @@ public class ModuleLoader {
                 // Nothing to do here...
                 // Probably no resources available
             }
+
+            BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
+            Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
+            module.init(info, banner, view);
 
             infoStream.close();
             isr.close();
