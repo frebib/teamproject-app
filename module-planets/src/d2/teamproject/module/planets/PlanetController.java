@@ -34,7 +34,7 @@ public class PlanetController extends JsonController {
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
-        // TODO: Load resources for Planets
+
         JsonObject planetData = (JsonObject) res.get("planetsinfo");
         JsonArray planetArr = planetData.get("planets").asArray();
         planets = new ArrayList<Planet>(planetArr.size());
