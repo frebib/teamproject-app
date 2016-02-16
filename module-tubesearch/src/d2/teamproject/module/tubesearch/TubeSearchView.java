@@ -2,15 +2,15 @@ package d2.teamproject.module.tubesearch;
 
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.BaseView;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 
 public class TubeSearchView implements BaseView {
     private TubeSearchController controller;
-    private StackPane stackPane;
+    private Pane pane;
 
     public TubeSearchView(TubeSearchController module) {
         this.controller = module;
-        stackPane = new StackPane();
+        pane = new Pane();
     }
 
     public BaseController getController() {
@@ -18,9 +18,7 @@ public class TubeSearchView implements BaseView {
     }
 
     @Override
-    public StackPane getPane() {
-        /* ADD CODE HERE */
-
-        return stackPane;
+    public Pane getPane() {
+        return pane;
     }
 }

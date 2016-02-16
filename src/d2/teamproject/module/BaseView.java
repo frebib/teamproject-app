@@ -1,8 +1,8 @@
 package d2.teamproject.module;
 
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 
 public interface BaseView {
     BaseController getController();
-    StackPane getPane();
+    Pane getPane();
 }

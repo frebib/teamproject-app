@@ -9,15 +9,16 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class VisView {
     private Button backButton;
-    private final StackPane pane;
+    private final Pane pane;
     private final Scene scene;
 
-    public VisView(StackPane content, EventHandler<MouseEvent> onBackClick) {
-        pane = new StackPane();
+    public VisView(Pane content, EventHandler<MouseEvent> onBackClick) {
+        pane = new Pane();
 
         /* Border pane implementation - Holds all the different sections */
         BorderPane bp = new BorderPane();

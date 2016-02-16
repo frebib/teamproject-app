@@ -2,15 +2,21 @@ package d2.teamproject.module.planets;
 
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.BaseView;
-import javafx.scene.layout.StackPane;
+import javafx.scene.Group;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 public class PlanetView implements BaseView {
     private PlanetController controller;
-    private StackPane stackPane;
+    private BorderPane pane;
+    private Group root;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
-        this.stackPane = new StackPane();
+
+        this.root = new Group();
+
+        this.pane = new BorderPane(root);
     }
 
     public BaseController getController() {
@@ -18,9 +24,7 @@ public class PlanetView implements BaseView {
     }
 
     @Override
-    public StackPane getPane() {
-        /* ADD CODE HERE */
-
-        return stackPane;
+    public Pane getPane() {
+        return pane;
     }
 }
