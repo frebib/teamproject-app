@@ -30,7 +30,7 @@ public class Planet implements Comparable<Planet> {
         return distToSun;
     }
 
-    public Planet loadFromFile(JsonObject obj) {
+    public static Planet loadFromJson(JsonObject obj) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
