@@ -1,51 +1,51 @@
 {
-  "_comment": "size=km, mass=kg, dist=km",
+  "_comment": "diam=km, mass=kg, dist=km",
   "planets": [
     {
       "name": "Mercury",
-      "size": 2440,
+      "diam": 2440,
       "mass": 3.285e23,
       "dist": 5.791e7
     },
     {
       "name": "Venus",
-      "size": 6052,
+      "diam": 6052,
       "mass": 4.867e24,
       "dist": 1.082e8
     },
     {
       "name": "Earth",
-      "size": 6371,
+      "diam": 6371,
       "mass": 5.972e24,
       "dist": 1.496e8
     },
     {
       "name": "Mars",
-      "size": 3390,
+      "diam": 3390,
       "mass": 5.972e24,
       "dist": 2.279e8
     },
     {
       "name": "Jupiter",
-      "size": 69911,
+      "diam": 69911,
       "mass": 1.898e27,
       "dist": 7.785e8
     },
     {
       "name": "Saturn",
-      "size": 58232,
+      "diam": 58232,
       "mass": 5.683e26,
       "dist": 1.433e9
     },
     {
       "name": "Uranus",
-      "size": 25362,
+      "diam": 25362,
       "mass": 8.681e25,
       "dist": 2.877e9
     },
     {
       "name": "Neptune",
-      "size": 24622,
+      "diam": 24622,
       "mass": 1.024e26,
       "dist": 4.498e9
     }
