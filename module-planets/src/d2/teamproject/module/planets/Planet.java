@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class Planet implements Comparable<Planet> {
     private String name;
-    private long mass, diameter, distToSun;
+    private float mass, diameter, distToSun;
     private Comparator<Planet> cmp;
 
     @Override
@@ -18,15 +18,15 @@ public class Planet implements Comparable<Planet> {
         return name;
     }
 
-    public long getMass() {
+    public float getMass() {
         return mass;
     }
 
-    public long getDiameter() {
+    public float getDiameter() {
         return diameter;
     }
 
-    public long getDistToSun() {
+    public float getDistToSun() {
         return distToSun;
     }
 
