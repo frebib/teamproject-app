@@ -1,4 +1,6 @@
 <project basedir=".">
+
+    <!-- local libraries -->
     <path id="libraries">
         <fileset dir="lib">
             <include name="*.jar"/>
@@ -53,4 +55,6 @@
         </zip>
         <delete dir="module-tubesearch/out"/>
     </target>
+
+    <target name="all" depends="compile,planets,tubesearch,clean"/>
 </project>
