@@ -1,5 +1,6 @@
 package d2.teamproject.gui;
 
+import d2.teamproject.PARTH;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -55,7 +56,7 @@ public class VisView {
         bp.setBottom(bottomBox);
         pane.getChildren().addAll(bp);
 
-        scene = new Scene(pane);
+        scene = new Scene(pane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
     }
 
     public Scene getScene() {

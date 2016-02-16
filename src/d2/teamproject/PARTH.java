@@ -6,6 +6,9 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class PARTH extends Application {
+    public static final double MIN_WIDTH = 1280;
+    public static final double MIN_HEIGHT = 720;
+
     private ModuleLoader loader;
     private MainMenuView menu;
 
@@ -16,6 +19,9 @@ public class PARTH extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // TODO: Show "loading" screen
+
+        primaryStage.setMinWidth(MIN_WIDTH);
+        primaryStage.setMinHeight(MIN_HEIGHT);
 
         // Start ModuleLoader loading
         loader.loadAllModules((module, current, max) ->

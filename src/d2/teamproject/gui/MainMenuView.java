@@ -1,5 +1,6 @@
 package d2.teamproject.gui;
 
+import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseController;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -24,7 +25,7 @@ public class MainMenuView {
     public MainMenuView(List<BaseController> modules, Stage stage) {
         this.stage = stage;
         menuPane = new StackPane();
-        menu = new Scene(menuPane);
+        menu = new Scene(menuPane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
         VBox menu = new VBox(24);
 
         menu.setAlignment(Pos.CENTER);
