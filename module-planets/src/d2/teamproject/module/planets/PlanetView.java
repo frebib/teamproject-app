@@ -5,17 +5,16 @@ import d2.teamproject.module.BaseView;
 import javafx.scene.layout.StackPane;
 
 public class PlanetView implements BaseView {
-    private PlanetController module;
+    private PlanetController controller;
     private StackPane stackPane;
 
-    public PlanetView(PlanetController module) {
-        this.module = module;
+    public PlanetView(PlanetController controller) {
+        this.controller = controller;
         this.stackPane = new StackPane();
     }
 
-    @Override
-    public BaseController getModule() {
-        return module;
+    public BaseController getController() {
+        return controller;
     }
 
     @Override

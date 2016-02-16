@@ -5,17 +5,16 @@ import d2.teamproject.module.BaseView;
 import javafx.scene.layout.StackPane;
 
 public class TubeSearchView implements BaseView {
-    private TubeSearchController module;
+    private TubeSearchController controller;
     private StackPane stackPane;
 
     public TubeSearchView(TubeSearchController module) {
-        this.module = module;
+        this.controller = module;
         stackPane = new StackPane();
     }
 
-    @Override
-    public BaseController getModule() {
-        return module;
+    public BaseController getController() {
+        return controller;
     }
 
     @Override
