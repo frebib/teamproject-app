@@ -33,4 +33,14 @@ public class Planet implements Comparable<Planet> {
     public static Planet loadFromJson(JsonObject obj) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "name='" + name + '\'' +
+                ", mass=" + mass +
+                ", diameter=" + diameter +
+                ", distToSun=" + distToSun +
+                '}';
+    }
 }
