@@ -3,6 +3,8 @@ package d2.teamproject.module;
 import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;
 
+import java.util.Map;
+
 public abstract class JsonController implements BaseController {
     private BaseView view;
     private String name, description;
@@ -15,6 +17,8 @@ public abstract class JsonController implements BaseController {
         this.description = info.get("desc").asString();
         this.banner = banner;
     }
+
+    public abstract void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException;
 
     public String getName() {
         return name;

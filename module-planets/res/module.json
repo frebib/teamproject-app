@@ -7,5 +7,15 @@
     "main": "PlanetController",
     "view": "PlanetView"
   },
+  "res": {
+    "planetsinfo": {
+      "file": "planets_info.json",
+      "type": "JsonObject"
+    },
+    "_earthtexture": {
+      "file": "texture/earth3d.png",
+      "type": "Image"
+    }
+  },
   "help": []
 }

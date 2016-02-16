@@ -9,9 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ModuleLoader {
@@ -19,7 +17,6 @@ public class ModuleLoader {
     private static ModuleLoader instance = new ModuleLoader();
 
     private List<BaseController> modules;
-    private Thread loaderThread;
     private boolean isLoaded = false;
 
     public static ModuleLoader getInstance() {
@@ -36,7 +33,7 @@ public class ModuleLoader {
      * @param callback callback for loaded visualisations
      */
     public void loadAllModules(ModuleLoadState callback) {
-        loaderThread = new Thread(() -> {
+        new Thread(() -> {
             // List all directories which have a 'visualisations.json' file
             File moduleDir = new File(MODULE_PATH);
             List<File> files = Arrays.stream(moduleDir.listFiles())
@@ -49,38 +46,96 @@ public class ModuleLoader {
                     modules.add(module);
                     if (callback != null)
                         callback.onLoadProgress(module, i, files.size());
-                } catch (Exception e) {
+                } catch (LoadException e) {
                     System.out.printf("Error loading visualisation %s\n", files.get(i).getName());
                     e.printStackTrace();
                     System.out.println();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.exit(1);
                 }
             }
             isLoaded = true;
             synchronized (this) {
                 this.notifyAll();
             }
-        });
-        loaderThread.start();
+        }).start();
     }
 
-    private BaseController loadModule(File moduleFile) throws Exception {
-        JarClassLoader loader = new JarClassLoader();
-        loader.add(new FileInputStream(moduleFile));
+    private BaseController loadModule(File moduleFile) throws LoadException {
+        try {
+            JarClassLoader loader = new JarClassLoader();
+            loader.add(new FileInputStream(moduleFile));
 
-        InputStream infoStream = loader.getResourceAsStream("module.json");
-        JsonObject info = Json.parse(new InputStreamReader(infoStream)).asObject();
-        JsonObject load = info.get("load").asObject();
-        String packageName = load.get("package").asString() + ".";
+            InputStream infoStream = loader.getResourceAsStream("module.json");
+            InputStreamReader isr = new InputStreamReader(infoStream);
+            JsonObject info = Json.parse(isr).asObject();
+            JsonObject load = info.get("load").asObject();
+            String packageName = load.get("package").asString() + ".";
 
-        Class mainCls = loader.loadClass(packageName + load.get("main").asString());//.asSubclass(JsonController.class);
-        Class viewCls = loader.loadClass(packageName + load.get("view").asString());//.asSubclass(BaseView.class);
-        JsonController module = (JsonController) mainCls.newInstance();
-        BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
+            Class mainCls = loader.loadClass(packageName + load.get("main").asString());
+            Class viewCls = loader.loadClass(packageName + load.get("view").asString());
+            JsonController module = (JsonController) mainCls.newInstance();
+            BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
 
-        Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
-        module.init(info, banner, view);
+            Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
+            module.init(info, banner, view);
 
-        return module;
+            try {
+                JsonObject res = info.get("res").asObject();
+                module.loadResources(loadResources(res, loader));
+            } catch (Exception e) {
+                // Nothing to do here...
+                // Probably no resources available
+            }
+
+            infoStream.close();
+            isr.close();
+
+            return module;
+        } catch (Exception e) {
+            throw new LoadException();
+        }
+    }
+    private Map<String, Object> loadResources(JsonObject resJson, JarClassLoader loader) {
+        Map<String, Object> resources = new LinkedHashMap<>(resJson.size());
+
+        String rName = null;
+        for (JsonObject.Member res : resJson) {
+            try {
+                Object obj;
+                rName = res.getName();
+                JsonObject resObj = res.getValue().asObject();
+                String fname = resObj.get("file").asString();
+
+                InputStream is = loader.getResourceAsStream(fname);
+                InputStreamReader isr = new InputStreamReader(is);
+
+                switch (resObj.get("type").asString().toLowerCase()) {
+                    case "jsonobject":
+                        obj = Json.parse(isr).asObject();
+                        break;
+                    case "jsonarray":
+                        obj = Json.parse(isr).asArray();
+                        break;
+                    case "image":
+                        obj = new Image(is);
+                        break;
+                    case "text":
+                    case "string":
+                    case "plain":
+                        obj = new Scanner(is, "UTF-8").useDelimiter("\\A").next();
+                        break;
+                    default:
+                        obj = isr;
+                }
+
+                resources.put(rName, obj);
+            } catch (Exception e) { // Catch then continue loading resources
+                System.out.printf(" > Error loading resource \"%s\"\n", String.valueOf(rName));
+            }
+        }
+        return resources;
     }
 
     public List<BaseController> getLoadedModules() {
@@ -97,4 +152,6 @@ public class ModuleLoader {
         }
         callback.onLoaded(modules);
     }
+
+    public static class LoadException extends Exception { }
 }
