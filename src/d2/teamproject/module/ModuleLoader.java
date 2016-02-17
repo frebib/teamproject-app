@@ -5,12 +5,10 @@ import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;
 import org.xeustechnologies.jcl.JarClassLoader;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.zip.ZipInputStream;
 
 public class ModuleLoader {
     private static final String MODULE_PATH = "res/module/";
@@ -97,45 +95,46 @@ public class ModuleLoader {
             throw new LoadException();
         }
     }
+
     private Map<String, Object> loadResources(JsonObject resJson, JarClassLoader loader) {
         Map<String, Object> resources = new LinkedHashMap<>(resJson.size());
 
         String rName = null;
         for (JsonObject.Member res : resJson) {
             try {
-                Object obj;
                 rName = res.getName();
                 JsonObject resObj = res.getValue().asObject();
                 String fname = resObj.get("file").asString();
 
                 InputStream is = loader.getResourceAsStream(fname);
-                InputStreamReader isr = new InputStreamReader(is);
-
-                switch (resObj.get("type").asString().toLowerCase()) {
-                    case "jsonobject":
-                        obj = Json.parse(isr).asObject();
-                        break;
-                    case "jsonarray":
-                        obj = Json.parse(isr).asArray();
-                        break;
-                    case "image":
-                        obj = new Image(is);
-                        break;
-                    case "text":
-                    case "string":
-                    case "plain":
-                        obj = new Scanner(is, "UTF-8").useDelimiter("\\A").next();
-                        break;
-                    default:
-                        obj = isr;
-                }
-
+                Object obj = loadResourceFromStream(is, resObj.get("type").asString());
                 resources.put(rName, obj);
             } catch (Exception e) { // Catch then continue loading resources
                 System.out.printf(" > Error loading resource \"%s\"\n", String.valueOf(rName));
             }
         }
         return resources;
+    }
+
+    private Object loadResourceFromStream(InputStream is, String type) throws IOException {
+        InputStreamReader isr = new InputStreamReader(is);
+
+        switch (type.toLowerCase()) {
+            case "jsonobject":
+                return Json.parse(isr).asObject();
+            case "jsonarray":
+                return Json.parse(isr).asArray();
+            case "image":
+                return new Image(is);
+            case "zip":
+                return new ZipInputStream(is);
+            case "text":
+            case "string":
+            case "plain":
+                return new Scanner(is, "UTF-8").useDelimiter("\\A").next();
+            default:
+                return isr;
+        }
     }
 
     public List<BaseController> getLoadedModules() {
