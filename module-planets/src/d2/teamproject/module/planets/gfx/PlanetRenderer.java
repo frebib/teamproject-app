@@ -42,14 +42,14 @@ public class PlanetRenderer {
                 System.out.println(img);
                 mat.setDiffuseMap(v);
             }
-            else if (img.contains("-bump.")){
+            else if (img.contains("-normal.")){
                 System.out.println(img);
                 mat.setBumpMap(v);
             }
-            else if (img.contains("-spec.")) {
-                System.out.println(img);
-                mat.setSpecularMap(v);
-            }
+//            else if (img.contains("-spec.")) {
+//                System.out.println(img);
+//                mat.setSpecularMap(v);
+//            }
             // No handling for normal maps here
 //            System.out.println();
         });

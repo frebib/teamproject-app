@@ -28,7 +28,7 @@ public class SolarSystem {
                                  .collect(Collectors.toList());
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
-        scene.setFill(Color.MAGENTA);
+        scene.setFill(Color.BLACK);
 
         camera = new PerspectiveCamera();
         camera.setFieldOfView(70);
