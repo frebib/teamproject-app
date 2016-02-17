@@ -32,17 +32,13 @@ public class PlanetController extends JsonController {
     }
 
     @Override
-    public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
-        res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
+    public void onOpen() {
 
-        JsonObject planetData = (JsonObject) res.get("planetsinfo");
-        JsonArray planetArr = planetData.get("planets").asArray();
-        planets = new ArrayList<Planet>(planetArr.size());
+    }
 
-        for (JsonValue pData : planetArr)
-            planets.add(Planet.loadFromJson(pData.asObject()));
+    @Override
+    public void onClose() {
 
-        planets.stream().forEach(System.out::println);
     }
 
     public QuickSortStream<Planet> getSorter() {
@@ -60,5 +56,19 @@ public class PlanetController extends JsonController {
                 return (p1, p2) -> Float.compare(p1.getMass(), p2.getMass());
         }
         return null; // Java, both you and I know execution will never reach here so shut the F#!$ up
+    }
+
+    @Override
+    public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
+        res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
+
+        JsonObject planetData = (JsonObject) res.get("planetsinfo");
+        JsonArray planetArr = planetData.get("planets").asArray();
+        planets = new ArrayList<Planet>(planetArr.size());
+
+        for (JsonValue pData : planetArr)
+            planets.add(Planet.loadFromJson(pData.asObject()));
+
+        planets.stream().forEach(System.out::println);
     }
 }

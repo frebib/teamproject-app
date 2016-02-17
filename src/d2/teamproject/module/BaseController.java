@@ -8,4 +8,7 @@ public interface BaseController {
     Image getBanner();
     BaseView getView();
     void setView(BaseView view);
+
+    void onOpen();
+    void onClose();
 }

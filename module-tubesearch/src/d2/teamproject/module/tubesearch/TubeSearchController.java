@@ -14,4 +14,12 @@ public class TubeSearchController extends JsonController {
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         // No resources to load yet
     }
+
+    @Override
+    public void onOpen() {
+    }
+
+    @Override
+    public void onClose() {
+    }
 }
