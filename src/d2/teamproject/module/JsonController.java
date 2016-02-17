@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import java.util.Map;
 
 public abstract class JsonController implements BaseController {
-    private BaseView view;
+    protected BaseView view;
     private String name, description;
     private Image banner;
 
