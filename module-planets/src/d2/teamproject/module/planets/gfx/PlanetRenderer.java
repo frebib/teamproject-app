@@ -3,6 +3,8 @@ package d2.teamproject.module.planets.gfx;
 import d2.teamproject.module.planets.Planet;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
+import javafx.geometry.Point3D;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
@@ -11,21 +13,24 @@ import javafx.util.Duration;
 
 public class PlanetRenderer {
     private Planet planet;
-    private Sphere model;
+    private Group model;
+    private Sphere sphere;
     static Integer previousPlanet = 100;
 
     private RotateTransition rot;
 
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
-        this.model = new Sphere(planet.getDiameter());
-//        model.setTranslateX(planet.getDistToSun() / 100000d);
-        model.setTranslateX(previousPlanet);
-        model.setTranslateY(720 / 2d);
-        previousPlanet += (int)(planet.getDiameter() + 60);
+        this.model = new Group();
+//        this.sphere = new Sphere(planet.getDiameter());
+        this.sphere = new Sphere(50);
+//        sphere.setTranslateX(planet.getDistToSun() / 100000d);
+        sphere.setTranslateX(previousPlanet);
+        sphere.setTranslateY(720 / 2d);
+        previousPlanet += 110;
 
-//        this.rot = new RotateTransition(planet.getRotateSpeed() * SECS_PER_HOUR, model);
-        rot = new RotateTransition(Duration.seconds(15), model);
+//        this.rot = new RotateTransition(planet.getRotateSpeed() * SECS_PER_HOUR, sphere);
+        rot = new RotateTransition(Duration.seconds(15), sphere);
         rot.setAxis(Rotate.Y_AXIS);
         rot.setFromAngle(360);
         rot.setToAngle(0);
@@ -53,7 +58,13 @@ public class PlanetRenderer {
             // No handling for normal maps here
 //            System.out.println();
         });
-        model.setMaterial(mat);
+        sphere.setMaterial(mat);
+
+        // TODO: Add moons & rings
+
+        model.getChildren().add(sphere);
+        model.setRotationAxis(new Point3D(0, 0, 1));
+        model.setRotate(planet.getTilt());
     }
 
     public Node getModel() {

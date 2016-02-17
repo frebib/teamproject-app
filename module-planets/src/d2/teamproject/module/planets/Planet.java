@@ -10,16 +10,17 @@ import java.util.stream.Collectors;
 
 public class Planet implements Comparable<Planet> {
     private String name;
-    private float mass, diameter, distToSun;
+    private float mass, diameter, distToSun, tilt;
     private Comparator<Planet> cmp;
     private Map<String, Image> textures;
 
-    private Planet(String name, float mass, float diameter, float distToSun) {
+    private Planet(String name, float mass, float diameter, float distToSun, float tilt) {
         this.name = name;
         this.mass = mass;
-//        this.diameter = diameter;
-        this.diameter = 70;
+        this.diameter = diameter;
+//        this.diameter = 70;
         this.distToSun = distToSun;
+        this.tilt = tilt;
 
         textures = new LinkedHashMap<>();
     }
@@ -45,12 +46,17 @@ public class Planet implements Comparable<Planet> {
         return distToSun;
     }
 
+    public float getTilt() {
+        return tilt;
+    }
+
     public static Planet loadFromJson(JsonObject obj) {
         return new Planet(
                 obj.get("name").asString(),
                 obj.get("mass").asFloat(),
                 obj.get("diam").asFloat(),
-                obj.get("dist").asFloat()
+                obj.get("dist").asFloat(),
+                obj.get("tilt").asFloat()
         );
     }
 
