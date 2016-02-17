@@ -53,6 +53,10 @@ public class Planet implements Comparable<Planet> {
         );
     }
 
+    public Map<String,Image> getTextures() {
+        return textures;
+    }
+
     public void setTextures(Map<String, Image> allTextures) {
         textures = allTextures.keySet()
                 .stream() // Java 8 Streams are supposed to be pretty...
