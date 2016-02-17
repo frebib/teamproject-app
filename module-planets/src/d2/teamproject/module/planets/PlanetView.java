@@ -15,20 +15,13 @@ public class PlanetView implements BaseView {
     private BorderPane pane;
     private Group root;
 
-    private Map<String, Image> textures;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
         controller.setView(this);
 
-        textures = new LinkedHashMap<>();
-
         this.root = new Group();
         this.pane = new BorderPane(root);
-    }
-
-    public Map<String, Image> getTextures() {
-        return textures;
     }
 
     public BaseController getController() {

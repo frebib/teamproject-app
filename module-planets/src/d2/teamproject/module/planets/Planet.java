@@ -1,19 +1,26 @@
 package d2.teamproject.module.planets;
 
 import com.eclipsesource.json.JsonObject;
+import javafx.scene.image.Image;
 
 import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Planet implements Comparable<Planet> {
     private String name;
     private float mass, diameter, distToSun;
     private Comparator<Planet> cmp;
+    private Map<String, Image> textures;
 
     private Planet(String name, float mass, float diameter, float distToSun) {
         this.name = name;
         this.mass = mass;
         this.diameter = diameter;
         this.distToSun = distToSun;
+
+        textures = new LinkedHashMap<>();
     }
 
     @Override
@@ -44,6 +51,13 @@ public class Planet implements Comparable<Planet> {
                 obj.get("diam").asFloat(),
                 obj.get("dist").asFloat()
         );
+    }
+
+    public void setTextures(Map<String, Image> allTextures) {
+        textures = allTextures.keySet()
+                .stream() // Java 8 Streams are supposed to be pretty...
+                .filter(s -> s.matches(String.format("^%s(-[\\w]+)*\\.(\\w+)$", name.toLowerCase())))
+                .collect(Collectors.toMap(s -> s, allTextures::get));
     }
 
     @Override

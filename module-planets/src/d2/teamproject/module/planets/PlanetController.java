@@ -10,10 +10,7 @@ import javafx.scene.image.Image;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -43,7 +40,10 @@ public class PlanetController extends JsonController {
 
     @Override
     public void onClose() {
+    }
 
+    public List<Planet> getPlanets() {
+        return planets;
     }
 
     public QuickSortStream<Planet> getSorter() {
@@ -79,7 +79,7 @@ public class PlanetController extends JsonController {
         ZipInputStream zis = (ZipInputStream) res.get("planettexture");
         ZipEntry entry;
         try {
-            Map<String, Image> textures = ((PlanetView) view).getTextures();
+            Map<String, Image> textures = new LinkedHashMap<>();
             while ((entry = zis.getNextEntry()) != null) {
                 String name = entry.getName();
                 int size = (int) entry.getSize();
@@ -87,10 +87,12 @@ public class PlanetController extends JsonController {
                 textures.put(name, img);
             }
             zis.close();
+
+            // Apply textures to Planet objects
+            planets.stream().forEach(p -> p.setTextures(textures));
+
         } catch (IOException e) {
             throw new ModuleLoader.LoadException(e);
         }
-
-        planets.stream().forEach(System.out::println);
     }
 }
