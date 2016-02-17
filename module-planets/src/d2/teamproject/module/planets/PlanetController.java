@@ -22,6 +22,7 @@ public class PlanetController extends JsonController {
         MASS
     }
 
+    // TODO: Allow for all types of sort, not just QS
     private QuickSortStream<Planet> sort;
     private List<Planet> planets;
 
