@@ -4,6 +4,7 @@ import d2.teamproject.PARTH;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -13,26 +14,24 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class VisualisationView {
-    private Button backButton;
-    private final Pane pane;
     private final Scene scene;
+    private final Pane pane;
+    private final BorderPane borderPane;
+    private final Pane topBox, bottomBox;
+    private final Button backButton;
 
-    public VisualisationView(Pane content, EventHandler<MouseEvent> onBackClick) {
+    public VisualisationView() {
         pane = new StackPane();
 
         /* Border pane implementation - Holds all the different sections */
-        BorderPane bp = new BorderPane();
-        bp.setPadding(new Insets(10, 20, 10, 20));
+        borderPane = new BorderPane();
+        borderPane.setPadding(new Insets(10, 20, 10, 20));
 
         /* Back button implementation - Used to go back to the main menu */
-        Button backButton = new Button("BACK");
-        backButton.setOnMouseClicked(onBackClick);
-        HBox topBox = new HBox();
-        topBox.getChildren().addAll(backButton);
+        backButton = new Button("BACK");
 
-//        /* Center pane implementation - Used to visualise the algorithms */
-//        StackPane centerPane = new StackPane();
-//        centerPane.setStyle("-fx-background-color: green");
+        topBox = new HBox();
+        topBox.getChildren().addAll(backButton);
 
         /* Help button implementation - Used to initialise the tutorial mode  */
         Button helpButton = new Button("HELP");
@@ -49,15 +48,32 @@ public class VisualisationView {
         tickButtonBox.alignmentProperty().setValue(Pos.CENTER_RIGHT);
 
         /* Pane to hold the bottom gui elements */
-        StackPane bottomBox = new StackPane();
-        bottomBox.getChildren().addAll(helpButtonBox, tickButtonBox);
+        bottomBox = new StackPane();
+        bottomBox.getChildren().add(helpButtonBox);
+//        bottomBox.getChildren().addAll(helpButtonBox, tickButtonBox);
 
-        bp.setTop(topBox);
-        bp.setCenter(content);
-        bp.setBottom(bottomBox);
-        pane.getChildren().addAll(bp);
+        borderPane.setTop(topBox);
+        borderPane.setBottom(bottomBox);
+        pane.getChildren().addAll(borderPane);
 
         scene = new Scene(pane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
+    }
+
+    public Pane getTopBox() {
+        return topBox;
+    }
+
+    public Pane getBottomBox() {
+        return bottomBox;
+    }
+
+    public Button getBackButton() {
+        return backButton;
+    }
+
+    public Scene setContent(Pane content) {
+        borderPane.setCenter(content);
+        return scene;
     }
 
     public Scene getScene() {

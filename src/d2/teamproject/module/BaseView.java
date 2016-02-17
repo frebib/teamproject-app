@@ -1,8 +1,9 @@
 package d2.teamproject.module;
 
-import javafx.scene.layout.Pane;
+import d2.teamproject.gui.VisualisationView;
+import javafx.scene.Scene;
 
 public interface BaseView {
     BaseController getController();
-    Pane getPane();
+    Scene getScene(VisualisationView visView);
 }

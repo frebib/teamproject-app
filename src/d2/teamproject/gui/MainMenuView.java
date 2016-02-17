@@ -21,18 +21,21 @@ public class MainMenuView {
     private final Stage stage;
     private Scene menu;
     private StackPane menuPane;
+    private VisualisationView visView;
 
     public MainMenuView(List<BaseController> modules, Stage stage) {
         this.stage = stage;
         menuPane = new StackPane();
         menu = new Scene(menuPane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
-        VBox menu = new VBox(24);
+        visView = new VisualisationView();
+        visView.getBackButton().setOnMouseClicked(e -> stage.setScene(menu));
 
-        menu.setAlignment(Pos.CENTER);
+        VBox menuVbox = new VBox(24);
+        menuVbox.setAlignment(Pos.CENTER);
         for (BaseController module : modules)
-            menu.getChildren().add(makeButton(module, module.getBanner(), module.getName()));
+            menuVbox.getChildren().add(makeButton(module, module.getBanner(), module.getName()));
 
-        menuPane.getChildren().add(menu);
+        menuPane.getChildren().add(menuVbox);
     }
 
     public Scene getScene() {
@@ -44,7 +47,7 @@ public class MainMenuView {
      * @param text   This is the text that will appear on hovering over the image
      * @return a fully set-up StackPane for use in the vertical box
      */
-    private StackPane makeButton(BaseController vis, Image banner, String text) {
+    private StackPane makeButton(BaseController controller, Image banner, String text) {
         /* Declarations */
         Text t = new Text(10, 50, text);
         t.setFont(new Font(75));
@@ -75,10 +78,9 @@ public class MainMenuView {
             imgView.setEffect(focus);
             t.setVisible(false);
         });
-        sp.setOnMouseClicked(e -> {
+        sp.setOnMousePressed(e -> {
             System.out.println("Clicked " + t.getText());
-            VisualisationView view = new VisualisationView(vis.getView().getPane(), e1 -> stage.setScene(menu));
-            stage.setScene(view.getScene());
+            stage.setScene(controller.getView().getScene(visView));
         });
         return sp;
     }
