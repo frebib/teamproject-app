@@ -8,13 +8,13 @@
     "view": "PlanetView"
   },
   "res": {
-    "planetsinfo": {
-      "file": "planets_info.json",
+    "planetinfo": {
+      "file": "planet-info.json",
       "type": "JsonObject"
     },
-    "_earthtexture": {
-      "file": "texture/earth3d.png",
-      "type": "Image"
+    "planettexture": {
+      "file": "planet-textures.zip",
+      "type": "Zip"
     }
   },
   "help": []
