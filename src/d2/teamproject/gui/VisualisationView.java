@@ -12,12 +12,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-public class VisView {
+public class VisualisationView {
     private Button backButton;
     private final Pane pane;
     private final Scene scene;
 
-    public VisView(Pane content, EventHandler<MouseEvent> onBackClick) {
+    public VisualisationView(Pane content, EventHandler<MouseEvent> onBackClick) {
         pane = new Pane();
 
         /* Border pane implementation - Holds all the different sections */
