@@ -2,12 +2,13 @@ package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.module.planets.Planet;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
 import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.SceneAntialiasing;
-import javafx.scene.SubScene;
+import javafx.scene.*;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,10 +31,12 @@ public class SolarSystem {
         scene.setFill(Color.MAGENTA);
 
         camera = new PerspectiveCamera();
-        camera.setFieldOfView(120);
-        camera.setTranslateZ(-1000d);
+        camera.setFieldOfView(70);
+        camera.setTranslateX(-100d);
         camera.setRotationAxis(new Point3D(0, 1, 0));
-        camera.setRotate(50);
+        //camera.setRotate(180);
+        System.out.println(camera.getLayoutX()+" : "+camera.getLayoutY());
+        //rotateAroundAxis(camera).play();
 
         root.getChildren().add(camera);
         root.getChildren().add(planetRenderers.get(0).getModel());
@@ -46,6 +49,16 @@ public class SolarSystem {
         root.getChildren().add(planetRenderers.get(7).getModel());
 
         scene.setCamera(camera);
+    }
+
+    private RotateTransition rotateAroundAxis(Node node) {
+        RotateTransition rotate = new RotateTransition(Duration.seconds(5),node);
+        rotate.setAxis(Rotate.Y_AXIS);
+        rotate.setFromAngle(360);
+        rotate.setToAngle(0);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setCycleCount(RotateTransition.INDEFINITE);
+        return rotate;
     }
 
     public void startAnim() {

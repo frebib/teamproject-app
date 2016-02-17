@@ -17,7 +17,8 @@ public class Planet implements Comparable<Planet> {
     private Planet(String name, float mass, float diameter, float distToSun) {
         this.name = name;
         this.mass = mass;
-        this.diameter = diameter;
+//        this.diameter = diameter;
+        this.diameter = 70;
         this.distToSun = distToSun;
 
         textures = new LinkedHashMap<>();
