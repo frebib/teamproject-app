@@ -56,5 +56,5 @@
         <delete dir="module-tubesearch/out"/>
     </target>
 
-    <target name="all" depends="compile,planets,tubesearch,clean"/>
+    <target name="all" depends="clean,compile,planets,tubesearch"/>
 </project>
