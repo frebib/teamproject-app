@@ -29,8 +29,8 @@ public class PlanetRenderer {
         sphere.setTranslateY(720 / 2d);
         previousPlanet += 110;
 
-//        this.rot = new RotateTransition(planet.getRotateSpeed() * SECS_PER_HOUR, sphere);
-        rot = new RotateTransition(Duration.seconds(15), sphere);
+        float rotTime = 20 * planet.getRotationTime();
+        rot = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
         rot.setAxis(Rotate.Y_AXIS);
         rot.setFromAngle(360);
         rot.setToAngle(0);

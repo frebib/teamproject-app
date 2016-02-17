@@ -10,16 +10,17 @@ import java.util.stream.Collectors;
 
 public class Planet implements Comparable<Planet> {
     private String name;
-    private float mass, diameter, distToSun, tilt;
+    private float mass, diameter, distToSun, time, tilt;
     private Comparator<Planet> cmp;
     private Map<String, Image> textures;
 
-    private Planet(String name, float mass, float diameter, float distToSun, float tilt) {
+    private Planet(String name, float mass, float diameter, float distToSun, float time, float tilt) {
         this.name = name;
         this.mass = mass;
         this.diameter = diameter;
 //        this.diameter = 70;
         this.distToSun = distToSun;
+        this.time = time;
         this.tilt = tilt;
 
         textures = new LinkedHashMap<>();
@@ -46,6 +47,14 @@ public class Planet implements Comparable<Planet> {
         return distToSun;
     }
 
+    /**
+     * Gets the amount of earth days it takes for the planet to complete 1 rotation
+     * @return the rotation time in earth-days
+     */
+    public float getRotationTime() {
+        return time;
+    }
+
     public float getTilt() {
         return tilt;
     }
@@ -56,6 +65,7 @@ public class Planet implements Comparable<Planet> {
                 obj.get("mass").asFloat(),
                 obj.get("diam").asFloat(),
                 obj.get("dist").asFloat(),
+                obj.get("time").asFloat(),
                 obj.get("tilt").asFloat()
         );
     }
