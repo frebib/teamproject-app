@@ -2,6 +2,7 @@ package d2.teamproject.module;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonValue;
 import javafx.scene.image.Image;
 import org.xeustechnologies.jcl.JarClassLoader;
 
@@ -76,11 +77,13 @@ public class ModuleLoader {
             JsonController module = (JsonController) mainCls.newInstance();
 
             try {
-                JsonObject res = info.get("res").asObject();
-                module.loadResources(loadResources(res, loader));
+                JsonValue res = info.get("res");
+                if (res != null && res.asObject().size() > 0)
+                    module.loadResources(loadResources(res.asObject(), loader));
             } catch (Exception e) {
-                // Nothing to do here...
-                // Probably no resources available
+                System.out.println("Error loading resources for " + load.get("main").asString());
+                e.printStackTrace();
+                System.out.println();
             }
 
             BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
