@@ -18,7 +18,6 @@ public class Planet implements Comparable<Planet> {
         this.name = name;
         this.mass = mass;
         this.diameter = diameter;
-//        this.diameter = 70;
         this.distToSun = distToSun;
         this.time = time;
         this.tilt = tilt;
