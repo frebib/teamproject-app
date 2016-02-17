@@ -19,7 +19,8 @@ public class PlanetController extends JsonController {
     public enum PlanetSort {
         DIST_TO_SUN,
         DIAMETER,
-        MASS
+        MASS,
+        ROTATE_TIME
     }
 
     // TODO: Allow for all types of sort, not just QS
@@ -60,6 +61,8 @@ public class PlanetController extends JsonController {
                 return (p1, p2) -> Float.compare(p1.getDiameter(), p2.getDistToSun());
             case MASS:
                 return (p1, p2) -> Float.compare(p1.getMass(), p2.getMass());
+            case ROTATE_TIME:
+                return (p1, p2) -> Float.compare(p1.getRotationTime(), p2.getRotationTime());
         }
         return null; // Java, both you and I know execution will never reach here so shut the F#!$ up
     }
