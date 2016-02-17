@@ -49,7 +49,7 @@
       "content": "This ensures that the largest element in the list has moved into the nth space (largest element is at the end). We are now going to ignore element n (the last element) of the list and assume the whole list is now just from element 1 to element n-1."
     },
     "step7" : {
-      "index": 6
+      "index": 6,
       "title": "Step 6 – Repeat whole cycle from step 2, but the list is now n-1",
       "content": "We now repeat ‘Step 2’ to ‘Step 6’. Up to ‘Step 4’ the cycle is repeated to ensure that the last element in the new list is now at the end of the list, ‘Step 5’ then makes us ignore this largest item, then ‘Step 6’ pushes back to ‘Step 2’ so that we can continuously do this pushing the largest element up to the last space in the list."
     },
