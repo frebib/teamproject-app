@@ -24,8 +24,6 @@ public class PlanetRenderer {
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
 
-        System.out.println(planet.getName() + ": " + cumulativeDist);
-
         double radius = Math.log(planet.getDiameter() / 800) * 15d;
         model = new Group();
         sphere = new Sphere(radius);
@@ -36,8 +34,10 @@ public class PlanetRenderer {
         float rotTime = 20 * planet.getRotationTime();
         rot = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
         rot.setAxis(Rotate.Y_AXIS);
-        rot.setFromAngle(360);
-        rot.setToAngle(0);
+        // TODO: Some planets spin in the wrong direction
+        // https://i.imgur.com/uzjbGST.jpg
+        rot.setFromAngle(0);
+        rot.setToAngle(360 * Math.signum(rotTime));
         rot.setInterpolator(Interpolator.LINEAR);
         rot.setCycleCount(RotateTransition.INDEFINITE);
         rot.playFromStart();
@@ -47,20 +47,15 @@ public class PlanetRenderer {
         planet.getTextures().forEach((k, v) -> {
             String img = k.toLowerCase();
             String name = planet.getName().toLowerCase();
-            if (img.startsWith(name + '.')) {
-                System.out.println(img);
+
+            if (img.startsWith(name + '.'))
                 mat.setDiffuseMap(v);
-            }
-            else if (img.contains("-normal.")){
-                System.out.println(img);
+            else if (img.contains("-normal."))
                 mat.setBumpMap(v);
-            }
-//            else if (img.contains("-spec.")) {
-//                System.out.println(img);
+//            else if (img.contains("-spec."))
 //                mat.setSpecularMap(v);
-//            }
+
             // No handling for normal maps here
-//            System.out.println();
         });
         sphere.setMaterial(mat);
 
