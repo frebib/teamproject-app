@@ -6,11 +6,16 @@ import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
+import javafx.scene.image.Image;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class PlanetController extends JsonController {
 
@@ -62,12 +67,29 @@ public class PlanetController extends JsonController {
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
 
+        // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
         JsonArray planetArr = planetData.get("planets").asArray();
         planets = new ArrayList<Planet>(planetArr.size());
 
         for (JsonValue pData : planetArr)
             planets.add(Planet.loadFromJson(pData.asObject()));
+
+        // Load planet textures
+        ZipInputStream zis = (ZipInputStream) res.get("planettexture");
+        ZipEntry entry;
+        try {
+            Map<String, Image> textures = ((PlanetView) view).getTextures();
+            while ((entry = zis.getNextEntry()) != null) {
+                String name = entry.getName();
+                int size = (int) entry.getSize();
+                Image img = new Image(new BufferedInputStream(zis, size));
+                textures.put(name, img);
+            }
+            zis.close();
+        } catch (IOException e) {
+            throw new ModuleLoader.LoadException(e);
+        }
 
         planets.stream().forEach(System.out::println);
     }
