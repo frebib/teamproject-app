@@ -77,7 +77,7 @@ public class MainMenuView {
         });
         sp.setOnMouseClicked(e -> {
             System.out.println("Clicked " + t.getText());
-            VisView view = new VisView(vis.getView().getPane(), e1 -> stage.setScene(menu));
+            VisualisationView view = new VisualisationView(vis.getView().getPane(), e1 -> stage.setScene(menu));
             stage.setScene(view.getScene());
         });
         return sp;
