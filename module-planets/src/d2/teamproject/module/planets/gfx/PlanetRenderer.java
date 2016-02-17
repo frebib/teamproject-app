@@ -12,22 +12,26 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 public class PlanetRenderer {
+    private static final int gap = 50;
+    private static float cumulativeDist = 0;
+
     private Planet planet;
     private Group model;
     private Sphere sphere;
-    static Integer previousPlanet = 100;
 
     private RotateTransition rot;
 
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
-        this.model = new Group();
-//        this.sphere = new Sphere(planet.getDiameter());
-        this.sphere = new Sphere(50);
-//        sphere.setTranslateX(planet.getDistToSun() / 100000d);
-        sphere.setTranslateX(previousPlanet);
-        sphere.setTranslateY(720 / 2d);
-        previousPlanet += 110;
+
+        System.out.println(planet.getName() + ": " + cumulativeDist);
+
+        double radius = Math.log(planet.getDiameter() / 800) * 15d;
+        model = new Group();
+        sphere = new Sphere(radius);
+        sphere.setTranslateX(cumulativeDist + radius);
+        sphere.setTranslateY(720 / 2f);
+        cumulativeDist += (radius * 2) + gap;
 
         float rotTime = 20 * planet.getRotationTime();
         rot = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
