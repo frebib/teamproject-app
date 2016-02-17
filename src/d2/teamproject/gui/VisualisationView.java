@@ -18,7 +18,7 @@ public class VisualisationView {
     private final Scene scene;
 
     public VisualisationView(Pane content, EventHandler<MouseEvent> onBackClick) {
-        pane = new Pane();
+        pane = new StackPane();
 
         /* Border pane implementation - Holds all the different sections */
         BorderPane bp = new BorderPane();
