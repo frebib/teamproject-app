@@ -1,24 +1,24 @@
 package d2.teamproject.tutorial;
 
-public class Pair<A, B> {
+public class Pair<K, V> {
 
-    private A a;
-    private B b;
+    private K k;
+    private V v;
 
-    public Pair(A a, B b)
+    public Pair(K k, V v)
     {
-        this.a = a;
-        this.b = b;
+        this.k = k;
+        this.v = v;
     }
 
-    public A getFirst()
+    public K getKey()
     {
-        return a;
+        return k;
     }
 
-    public B getSecond()
+    public V getValue()
     {
-        return b;
+        return v;
     }
 
 }
