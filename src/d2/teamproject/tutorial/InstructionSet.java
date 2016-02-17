@@ -1,15 +1,24 @@
 package d2.teamproject.tutorial;
 
+import com.eclipsesource.json.JsonArray;
+import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonValue;
+
 import java.util.ArrayList;
 
 public class InstructionSet {
     private ArrayList<Instruction> set;
     private int tracker;
 
-    public InstructionSet(ArrayList<Instruction> set)
+    public InstructionSet(JsonArray jsonSet)
     {
         tracker = 0;
-        this.set = set;
+        set = new ArrayList<>();
+        for (JsonValue jsonValue : jsonSet) {
+            JsonObject obj = jsonValue.asObject();
+            set.add(new Instruction(obj.get("title").asString(),
+                    obj.get("content").asString(), new ArrayList<>()));
+        }
     }
 
     public Instruction getNext() {
