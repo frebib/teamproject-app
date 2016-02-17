@@ -16,6 +16,10 @@
       "file": "planet-textures.zip",
       "type": "Zip"
     },
+    "skybox": {
+      "file": "skybox.jpg",
+      "type": "Image"
+    },
     "help": {
       "file": "help.json",
       "type": "JsonArray"

@@ -26,6 +26,7 @@ public class PlanetController extends JsonController {
     // TODO: Allow for all types of sort, not just QS
     private QuickSortStream<Planet> sort;
     private List<Planet> planets;
+    private Image skybox;
 
     private Comparator<Planet> planetCompare;
 
@@ -37,7 +38,6 @@ public class PlanetController extends JsonController {
 
     @Override
     public void onOpen() {
-
     }
 
     @Override
@@ -50,6 +50,10 @@ public class PlanetController extends JsonController {
 
     public QuickSortStream<Planet> getSorter() {
         return sort;
+    }
+
+    public Image getSkybox() {
+        return skybox;
     }
 
     public Comparator<Planet> getPlanetCompare(PlanetSort sortBy) {
@@ -78,6 +82,9 @@ public class PlanetController extends JsonController {
 
         for (JsonValue pData : planetArr)
             planets.add(Planet.loadFromJson(pData.asObject()));
+
+        // Load skybox image
+        skybox = (Image) res.get("skybox");
 
         // Load planet textures
         ZipInputStream zis = (ZipInputStream) res.get("planettexture");

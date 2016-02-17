@@ -6,6 +6,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
@@ -21,7 +22,7 @@ public class SolarSystem {
     private List<Planet> planets;
     private List<PlanetRenderer> planetRenderers;
 
-    public SolarSystem(List<Planet> planets) {
+    public SolarSystem(List<Planet> planets, Image skyboxTexture) {
         this.planets = planets;
         planetRenderers = planets.stream()
                                  .map(PlanetRenderer::new)
@@ -29,6 +30,8 @@ public class SolarSystem {
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK);
+
+        // TODO: Add skybox texture
 
         camera = new PerspectiveCamera();
         camera.setFieldOfView(40);
@@ -40,7 +43,6 @@ public class SolarSystem {
         root.getChildren().addAll(planetRenderers.stream()
                                      .map(PlanetRenderer::getModel)
                                      .collect(Collectors.toList()));
-
 
         scene.setCamera(camera);
     }

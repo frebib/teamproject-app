@@ -16,11 +16,12 @@ public class PlanetView implements BaseView {
     private Group root;
 
     private SolarSystem sSystem;
+
     public PlanetView(PlanetController controller) {
         this.controller = controller;
         controller.setView(this);
 
-        this.sSystem = new SolarSystem(controller.getPlanets());
+        this.sSystem = new SolarSystem(controller.getPlanets(), controller.getSkybox());
         this.root = new Group();
         this.root.getChildren().add(sSystem.getScene());
         this.pane = new BorderPane(root);
