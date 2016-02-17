@@ -6,6 +6,12 @@ public class InstructionSet {
     private ArrayList<Instruction> set;
     private int tracker;
 
+    public InstructionSet(ArrayList<Instruction> set)
+    {
+        tracker = 0;
+        this.set = set;
+    }
+
     public Instruction getNext() {
         //get the nexdt element in the array
         tracker++;
@@ -20,7 +26,7 @@ public class InstructionSet {
 
     public int count() {
         //the array element we're on
-        return set.get();
+        return set.size();
     }
 
     public boolean hasNext() {
