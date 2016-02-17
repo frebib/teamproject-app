@@ -92,7 +92,7 @@ public class ModuleLoader {
 
             return module;
         } catch (Exception e) {
-            throw new LoadException();
+            throw new LoadException(e);
         }
     }
 
@@ -152,5 +152,9 @@ public class ModuleLoader {
         callback.onLoaded(modules);
     }
 
-    public static class LoadException extends Exception { }
+    public static class LoadException extends Exception {
+        public LoadException(Throwable cause) {
+            super(cause);
+        }
+    }
 }
