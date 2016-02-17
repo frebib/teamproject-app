@@ -28,7 +28,6 @@ public class PlanetRenderer {
         model = new Group();
         sphere = new Sphere(radius);
         sphere.setTranslateX(cumulativeDist + radius);
-        sphere.setTranslateY(720 / 2f);
         cumulativeDist += (radius * 2) + gap;
 
         float rotTime = 20 * planet.getRotationTime();

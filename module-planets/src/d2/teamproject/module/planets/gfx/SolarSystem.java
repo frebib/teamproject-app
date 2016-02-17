@@ -31,22 +31,16 @@ public class SolarSystem {
         scene.setFill(Color.BLACK);
 
         camera = new PerspectiveCamera();
-        camera.setFieldOfView(70);
-        camera.setTranslateX(-100d);
+        camera.setFieldOfView(40);
+        camera.setTranslateX(-140); // Offset right slightly for Sun
+        camera.setTranslateY(scene.getHeight() / -2);
         camera.setRotationAxis(new Point3D(0, 1, 0));
-        //camera.setRotate(180);
-        System.out.println(camera.getLayoutX()+" : "+camera.getLayoutY());
-        //rotateAroundAxis(camera).play();
 
         root.getChildren().add(camera);
-        root.getChildren().add(planetRenderers.get(0).getModel());
-        root.getChildren().add(planetRenderers.get(1).getModel());
-        root.getChildren().add(planetRenderers.get(2).getModel());
-        root.getChildren().add(planetRenderers.get(3).getModel());
-        root.getChildren().add(planetRenderers.get(4).getModel());
-        root.getChildren().add(planetRenderers.get(5).getModel());
-        root.getChildren().add(planetRenderers.get(6).getModel());
-        root.getChildren().add(planetRenderers.get(7).getModel());
+        root.getChildren().addAll(planetRenderers.stream()
+                                     .map(PlanetRenderer::getModel)
+                                     .collect(Collectors.toList()));
+
 
         scene.setCamera(camera);
     }
