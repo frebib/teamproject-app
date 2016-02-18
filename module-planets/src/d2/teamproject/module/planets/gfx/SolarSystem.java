@@ -2,11 +2,13 @@ package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.module.planets.Planet;
-import javafx.animation.TranslateTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 import java.util.List;
@@ -42,20 +44,17 @@ public class SolarSystem {
                                      .map(PlanetRenderer::getModel)
                                      .collect(Collectors.toList()));
 
-        movement(planetRenderers.get(4).getModel(), 180).play();
-        movement(planetRenderers.get(5).getModel(), -180).play();
-
-
         scene.setCamera(camera);
     }
 
-    public TranslateTransition movement(Node planet, double end) {
-        System.out.println("end = " + end);
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(15), planet);
-        translateTransition.setByX(25);
-        translateTransition.setFromX(planet.getTranslateX());
-        translateTransition.setToX(end);
-        return translateTransition;
+    private RotateTransition rotateAroundAxis(Node node) {
+        RotateTransition rotate = new RotateTransition(Duration.seconds(5),node);
+        rotate.setAxis(Rotate.Y_AXIS);
+        rotate.setFromAngle(360);
+        rotate.setToAngle(0);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setCycleCount(RotateTransition.INDEFINITE);
+        return rotate;
     }
 
     public void startAnim() {
