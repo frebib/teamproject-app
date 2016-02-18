@@ -35,18 +35,16 @@ public class ModuleLoader {
         new Thread(() -> {
             // List all directories which have a 'visualisations.json' file
             File moduleDir = new File(MODULE_PATH);
-            List<File> files = Arrays.stream(moduleDir.listFiles())
-                    .filter(f -> f.getName().endsWith(".vism"))
-                    .collect(Collectors.toList());
+            File[] files = moduleDir.listFiles((f, n) -> n.endsWith(".vism"));
 
-            for (int i = 0; i < files.size(); i++) {
+            for (int i = 0; i < files.length; i++) {
                 try {
-                    BaseController module = loadModule(files.get(i)); // could throw exception if load fails
+                    BaseController module = loadModule(files[i]); // could throw exception if load fails
                     modules.add(module);
                     if (callback != null)
-                        callback.onLoadProgress(module, i, files.size());
+                        callback.onLoadProgress(module, i, files.length);
                 } catch (LoadException e) {
-                    System.out.printf("Error loading visualisation %s\n", files.get(i).getName());
+                    System.out.printf("Error loading visualisation %s\n", files[i].getName());
                     e.printStackTrace();
                     System.out.println();
                 } catch (Exception e) {
