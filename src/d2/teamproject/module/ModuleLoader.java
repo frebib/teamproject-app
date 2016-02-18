@@ -71,7 +71,6 @@ public class ModuleLoader {
             String packageName = load.get("package").asString() + ".";
 
             Class mainCls = loader.loadClass(packageName + load.get("main").asString());
-            Class viewCls = loader.loadClass(packageName + load.get("view").asString());
             JsonController module = (JsonController) mainCls.newInstance();
 
             try {
@@ -84,9 +83,8 @@ public class ModuleLoader {
                 System.out.println();
             }
 
-            BaseView view = (BaseView) viewCls.getConstructor(mainCls).newInstance(module);
             Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
-            module.init(info, banner, view);
+            module.init(info, banner);
 
             infoStream.close();
             isr.close();

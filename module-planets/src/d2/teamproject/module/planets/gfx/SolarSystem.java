@@ -21,6 +21,7 @@ public class SolarSystem {
 
     private List<Planet> planets;
     private List<PlanetRenderer> planetRenderers;
+    private Image skybox;
 
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
         this.planets = planets;
@@ -30,8 +31,6 @@ public class SolarSystem {
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK);
-
-        // TODO: Add skybox texture
 
         camera = new PerspectiveCamera();
         camera.setFieldOfView(40);

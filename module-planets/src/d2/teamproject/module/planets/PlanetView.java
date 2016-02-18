@@ -6,8 +6,11 @@ import d2.teamproject.module.BaseView;
 import d2.teamproject.module.planets.gfx.SolarSystem;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+
+import java.util.Map;
 
 public class PlanetView implements BaseView {
     private PlanetController controller;
@@ -19,12 +22,9 @@ public class PlanetView implements BaseView {
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
-        controller.setView(this);
 
-        this.sSystem = new SolarSystem(controller.getPlanets(), controller.getSkybox());
-        this.root = new Group();
-        this.root.getChildren().add(sSystem.getScene());
-        this.pane = new BorderPane(root);
+        root = new Group();
+        pane = new BorderPane(root);
     }
 
     public BaseController getController() {
@@ -35,5 +35,13 @@ public class PlanetView implements BaseView {
     public Scene getScene(VisualisationView visView) {
         visView.setContent(pane);
         return visView.getScene();
+    }
+
+    @Override
+    public void loadResources(Map<String, Object> res) {
+        // Load skybox image
+        Image skybox = (Image) res.get("skybox");
+        sSystem = new SolarSystem(controller.getPlanets(), skybox);
+        root.getChildren().add(sSystem.getScene());
     }
 }

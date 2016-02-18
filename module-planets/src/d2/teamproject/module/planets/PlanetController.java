@@ -4,6 +4,7 @@ import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
+import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
 import javafx.scene.image.Image;
@@ -23,17 +24,21 @@ public class PlanetController extends JsonController {
         ROTATE_TIME
     }
 
+    private PlanetView view;
+
     // TODO: Allow for all types of sort, not just QS
     private QuickSortStream<Planet> sort;
     private List<Planet> planets;
-    private Image skybox;
 
     private Comparator<Planet> planetCompare;
 
     public PlanetController() {
+        view = new PlanetView(this);
+
         sort = new QuickSortStream<>(planets, getPlanetCompare(PlanetSort.DIST_TO_SUN));
 
         // TODO: Implement planet sorting
+
     }
 
     @Override
@@ -52,8 +57,9 @@ public class PlanetController extends JsonController {
         return sort;
     }
 
-    public Image getSkybox() {
-        return skybox;
+    @Override
+    public BaseView getView() {
+        return view;
     }
 
     public Comparator<Planet> getPlanetCompare(PlanetSort sortBy) {
@@ -83,9 +89,6 @@ public class PlanetController extends JsonController {
         for (JsonValue pData : planetArr)
             planets.add(Planet.loadFromJson(pData.asObject()));
 
-        // Load skybox image
-        skybox = (Image) res.get("skybox");
-
         // Load planet textures
         ZipInputStream zis = (ZipInputStream) res.get("planettexture");
         ZipEntry entry;
@@ -105,5 +108,8 @@ public class PlanetController extends JsonController {
         } catch (IOException e) {
             throw new ModuleLoader.LoadException(e);
         }
+
+        // Load GUI resources
+        view.loadResources(res);
     }
 }

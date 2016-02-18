@@ -4,8 +4,7 @@
   "banner": "tube.png",
   "load": {
     "package": "d2.teamproject.module.tubesearch",
-    "main": "TubeSearchController",
-    "view": "TubeSearchView"
+    "main": "TubeSearchController"
   },
   "help": []
 }

@@ -6,13 +6,10 @@ import javafx.scene.image.Image;
 import java.util.Map;
 
 public abstract class JsonController implements BaseController {
-    protected BaseView view;
     private String name, description;
     private Image banner;
 
-    public void init(JsonObject info, Image banner, BaseView view) {
-        this.view = view;
-
+    public void init(JsonObject info, Image banner) {
         this.name = info.get("name").asString();
         this.description = info.get("desc").asString();
         this.banner = banner;
@@ -30,15 +27,5 @@ public abstract class JsonController implements BaseController {
 
     public Image getBanner() {
         return banner;
-    }
-
-    @Override
-    public BaseView getView() {
-        return view;
-    }
-
-    @Override
-    public void setView(BaseView view) {
-        this.view = view;
     }
 }
