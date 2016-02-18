@@ -24,6 +24,7 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
     /**
      * Creates a new QuickSortStream provided with a list to sort and create states for
      * @param list a list to sort
+     * @param comparator comparison object used to sort list
      */
     public QuickSortStream(List<E> list, Comparator<E> comparator) {
         this.list = list;
