@@ -46,11 +46,12 @@ public class PlanetController extends JsonController {
 
     public PlanetController() {
         view = new PlanetView(this);
+    }
 
-        sort = new QuickSortStream<>(planets, getPlanetCompare(PlanetSort.DIST_TO_SUN));
-
+    @Override
+    public void onOpen() {
         // TODO: Implement planet sorting
-
+        sort = new QuickSortStream<>(planets, PlanetSort.DIST_TO_SUN);
     }
 
     public List<Planet> getPlanets() {
