@@ -12,7 +12,7 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 public class PlanetRenderer {
-    private static final int gap = 50;
+    private static final int gap = 40;
     private static float cumulativeDist = 0;
 
     private Planet planet;
@@ -24,7 +24,7 @@ public class PlanetRenderer {
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
 
-        double radius = Math.log(planet.getDiameter() / 800) * 15d;
+        double radius = Math.log(planet.getDiameter() / 800) * 16d;
         model = new Group();
         sphere = new Sphere(radius);
         sphere.setTranslateX(cumulativeDist + radius);
