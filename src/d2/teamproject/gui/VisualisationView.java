@@ -13,7 +13,7 @@ import javafx.scene.layout.StackPane;
 
 public abstract class VisualisationView implements BaseView {
     private final Scene scene;
-    private final BorderPane frontPane;
+    protected final BorderPane frontPane;
     protected final HBox topBox, bottomBox;
     protected final StackPane contentBox, backPane;
     protected final Button backButton, helpButton;

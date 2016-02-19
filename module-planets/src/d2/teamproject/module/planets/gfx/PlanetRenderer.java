@@ -18,6 +18,7 @@ public class PlanetRenderer {
     private Planet planet;
     private Group model;
     private Sphere sphere;
+    private Boolean clicked = false;
 
     private RotateTransition axisRotation;
 
@@ -68,4 +69,6 @@ public class PlanetRenderer {
     public Node getModel() {
         return model;
     }
+    public Boolean getClicked() { return  clicked; }
+    public void setClicked(Boolean bool) { clicked = bool; }
 }
