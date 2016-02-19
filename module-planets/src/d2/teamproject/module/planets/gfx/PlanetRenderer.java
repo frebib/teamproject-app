@@ -19,7 +19,7 @@ public class PlanetRenderer {
     private Group model;
     private Sphere sphere;
 
-    private RotateTransition rot;
+    private RotateTransition axisRotation;
 
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
@@ -31,15 +31,15 @@ public class PlanetRenderer {
         cumulativeDist += (radius * 2) + gap;
 
         float rotTime = 20 * planet.getRotationTime();
-        rot = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
-        rot.setAxis(Rotate.Y_AXIS);
+        axisRotation = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
+        axisRotation.setAxis(Rotate.Y_AXIS);
         // TODO: Some planets spin in the wrong direction
         // https://i.imgur.com/uzjbGST.jpg
-        rot.setFromAngle(0);
-        rot.setToAngle(360 * Math.signum(rotTime));
-        rot.setInterpolator(Interpolator.LINEAR);
-        rot.setCycleCount(RotateTransition.INDEFINITE);
-        rot.playFromStart();
+        axisRotation.setFromAngle(0);
+        axisRotation.setToAngle(360 * Math.signum(rotTime));
+        axisRotation.setInterpolator(Interpolator.LINEAR);
+        axisRotation.setCycleCount(RotateTransition.INDEFINITE);
+        axisRotation.playFromStart();
 
         PhongMaterial mat = new PhongMaterial();
 
