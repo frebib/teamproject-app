@@ -12,16 +12,28 @@ import javafx.scene.image.Image;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class PlanetController extends JsonController {
 
-    public enum PlanetSort {
-        DIST_TO_SUN,
-        DIAMETER,
-        MASS,
-        ROTATE_TIME
+    public static class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
+        public static final PlanetSort
+        DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun),
+        ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime),
+        DIAMETER = new PlanetSort<>(Planet::getDiameter),
+        MASS = new PlanetSort<>(Planet::getMass);
+
+        private Function<Planet, T> fn;
+        private PlanetSort(Function<Planet, T> fn) {
+            this.fn = fn;
+        }
+
+        @Override
+        public int compare(Planet p1, Planet p2) {
+            return fn.apply(p1).compareTo(fn.apply(p2));
+        }
     }
 
     private PlanetView view;
@@ -52,21 +64,6 @@ public class PlanetController extends JsonController {
     @Override
     public BaseView getView() {
         return view;
-    }
-
-    public Comparator<Planet> getPlanetCompare(PlanetSort sortBy) {
-        // Is ugly. Needs to be cleaned up
-        switch (sortBy) {
-            case DIST_TO_SUN:
-                return (p1, p2) -> Float.compare(p1.getDistToSun(), p2.getDistToSun());
-            case DIAMETER:
-                return (p1, p2) -> Float.compare(p1.getDiameter(), p2.getDistToSun());
-            case MASS:
-                return (p1, p2) -> Float.compare(p1.getMass(), p2.getMass());
-            case ROTATE_TIME:
-                return (p1, p2) -> Float.compare(p1.getRotationTime(), p2.getRotationTime());
-        }
-        return null; // Java, both you and I know execution will never reach here so shut the F#!$ up
     }
 
     @Override
