@@ -1,0 +1,11 @@
+.gitusers
+
+out/
+bin/
+res/module/
+.idea/
+
+*.class
+*.iml
+.classpath
+.project
