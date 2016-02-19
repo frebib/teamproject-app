@@ -41,14 +41,6 @@ public class PlanetController extends JsonController {
 
     }
 
-    @Override
-    public void onOpen() {
-    }
-
-    @Override
-    public void onClose() {
-    }
-
     public List<Planet> getPlanets() {
         return planets;
     }

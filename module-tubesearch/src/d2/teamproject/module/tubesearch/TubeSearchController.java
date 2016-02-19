@@ -20,14 +20,6 @@ public class TubeSearchController extends JsonController {
     }
 
     @Override
-    public void onOpen() {
-    }
-
-    @Override
-    public void onClose() {
-    }
-
-    @Override
     public BaseView getView() {
         return view;
     }
