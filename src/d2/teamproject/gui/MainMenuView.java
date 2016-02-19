@@ -21,14 +21,11 @@ public class MainMenuView {
     private final Stage stage;
     private Scene menu;
     private StackPane menuPane;
-    private VisualisationView visView;
 
     public MainMenuView(List<BaseController> modules, Stage stage) {
         this.stage = stage;
         menuPane = new StackPane();
         menu = new Scene(menuPane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
-        visView = new VisualisationView();
-        visView.getBackButton().setOnMouseClicked(e -> stage.setScene(menu));
 
         VBox menuVbox = new VBox(24);
         menuVbox.setAlignment(Pos.CENTER);
@@ -79,10 +76,13 @@ public class MainMenuView {
             t.setVisible(false);
         });
         sp.setOnMousePressed(e -> {
-            System.out.println("Clicked " + t.getText());
-            stage.setScene(controller.getView().getScene(visView));
+            stage.setScene(controller.getView().getScene());
+            controller.onOpen();
         });
         return sp;
     }
 
+    public void setVisible() {
+        stage.setScene(menu);
+    }
 }

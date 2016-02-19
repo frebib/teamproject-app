@@ -8,25 +8,15 @@ import javafx.scene.layout.Pane;
 
 import java.util.Map;
 
-public class TubeSearchView implements BaseView {
+public class TubeSearchView extends VisualisationView {
     private TubeSearchController controller;
-    private Pane pane;
 
     public TubeSearchView(TubeSearchController controller) {
         this.controller = controller;
-
-        pane = new Pane();
     }
 
     public BaseController getController() {
         return controller;
-    }
-
-
-    @Override
-    public Scene getScene(VisualisationView visView) {
-        visView.setContent(pane);
-        return visView.getScene();
     }
 
     @Override
