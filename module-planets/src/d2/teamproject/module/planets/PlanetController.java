@@ -19,7 +19,7 @@ import java.util.zip.ZipInputStream;
 public class PlanetController extends JsonController {
 
     public static class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
-        public static final PlanetSort
+        public static final PlanetSort<Float>
         DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun),
         ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime),
         DIAMETER = new PlanetSort<>(Planet::getDiameter),
