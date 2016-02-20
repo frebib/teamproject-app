@@ -18,7 +18,7 @@ public class PlanetRenderer {
     private Planet planet;
     private Group model;
     private Sphere sphere;
-    private Boolean clicked = false;
+    private boolean clicked = false;
 
     private RotateTransition axisRotation;
 
