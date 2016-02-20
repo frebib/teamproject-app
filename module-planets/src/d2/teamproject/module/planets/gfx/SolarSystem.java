@@ -130,13 +130,6 @@ public class SolarSystem {
         return sq;
     }
 
-    public void startAnim() {
-//        planetRenderers.stream().forEach(PlanetRenderer.getAnimation::start);
-    }
-
-    public void stopAnim() {
-//        planetRenderers.stream().forEach(PlanetRenderer.getAnimation::stop);
-    }
 
     public SubScene getScene() {
         return scene;
