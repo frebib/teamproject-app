@@ -2,12 +2,11 @@ package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.module.planets.Planet;
+import javafx.animation.ParallelTransition;
+import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.SceneAntialiasing;
-import javafx.scene.SubScene;
+import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
@@ -59,6 +58,9 @@ public class SolarSystem {
                 }
             });
         }
+
+
+        root.setOnDragDetected(e ->swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel()).play());
         scene.setCamera(camera);
     }
 
@@ -74,6 +76,33 @@ public class SolarSystem {
         tt.setToZ(0);
         tt.setToX(intialCameraXPosition);
         return tt;
+    }
+
+    public TranslateTransition move(Node n, double x, double y){
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(2),n);
+        tt.setToX(x);
+        tt.setToY(y);
+        return tt;
+    }
+
+    public SequentialTransition swap(Node planet1, Node planet2){
+        double halfway = (planet2.getTranslateX()-planet1.getTranslateX())/2;
+        // TODO: Calculate height based on which planets are swapping
+        double height = 150;
+
+        TranslateTransition planet2arcStart = move(planet2,halfway,height);
+        TranslateTransition planet2arcFinish = move(planet2,planet1.getTranslateX(),0);
+        TranslateTransition planet1arcStart = move(planet1,halfway,-height);
+        TranslateTransition planet1arcFinish = move(planet1,planet2.getTranslateX(),0);
+
+        ParallelTransition arcStart= new ParallelTransition();
+        arcStart.getChildren().addAll(planet2arcStart,planet1arcStart);
+        ParallelTransition arcFinish= new ParallelTransition();
+        arcFinish.getChildren().addAll(planet2arcFinish,planet1arcFinish);
+
+        SequentialTransition sq = new SequentialTransition();
+        sq.getChildren().addAll(arcStart,arcFinish);
+        return sq;
     }
 
     public void startAnim() {
