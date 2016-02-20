@@ -69,6 +69,7 @@ public class PlanetRenderer {
     public Node getModel() {
         return model;
     }
+    public Planet getPlanet() { return planet; }
     public Boolean getClicked() { return  clicked; }
     public void setClicked(Boolean bool) { clicked = bool; }
 }

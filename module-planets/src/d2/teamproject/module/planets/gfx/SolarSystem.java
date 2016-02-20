@@ -8,7 +8,11 @@ import javafx.animation.TranslateTransition;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontSmoothingType;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.List;
@@ -44,16 +48,37 @@ public class SolarSystem {
         root.getChildren().addAll(planetRenderers.stream()
                                      .map(PlanetRenderer::getModel)
                                      .collect(Collectors.toList()));
+        // TODO: Fix antialiasing issues
+        Text planetName = new Text();
+        planetName.setFont(new Font(81));
+        planetName.setFill(Color.WHITE);
+        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+        planetName.setVisible(false);
+        planetName.setFontSmoothingType(FontSmoothingType.GRAY);
+        Pane planetNameHolder = new Pane();
+        planetNameHolder.setMouseTransparent(true);
+        planetNameHolder.getChildren().add(planetName);
+        planetNameHolder.setTranslateZ(-80);
+        planetNameHolder.setTranslateY(0);
+        planetNameHolder.setCache(true);
+        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
+
+        root.getChildren().add(planetNameHolder);
 
         for (PlanetRenderer p:planetRenderers) {
             p.getModel().setOnMouseClicked(e ->{
                 // TODO: Better click checking needs to be added
                 if(p.getClicked()){
+                    planetName.setVisible(false);
                     zoomOut(camera).play();
                     p.setClicked(false);
                 }
                 else {
+                    planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);
+                    planetName.setText(p.getPlanet().getName());
                     zoomIn(camera, p.getModel().getLocalToSceneTransform().getTx()).play();
+                    planetName.setVisible(true);
+
                     p.setClicked(true);
                 }
             });
