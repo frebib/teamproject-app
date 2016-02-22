@@ -89,8 +89,7 @@ public class SolarSystem {
                     planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);
                     planetName.setText(p.getPlanet().getName());
                     zoomIn(camera, p.getModel().getLocalToSceneTransform().getTx()).play();
-                    planetName.setVisible(true);
-
+                    //planetName.setVisible(true);
                     p.setClicked(true);
                 }
             });
