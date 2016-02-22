@@ -22,42 +22,42 @@ import java.util.stream.Collectors;
 public class SolarSystem {
     private final SubScene scene;
     private final Group root;
-    private PerspectiveCamera camera;
+    private final PerspectiveCamera camera;
+    private final List<PlanetRenderer> planetRenderers;
+    private final Double initialCameraXPosition;
 
-    private List<Planet> planets;
-    private List<PlanetRenderer> planetRenderers;
-    private Image skybox;
-    private Double intialCameraXPosition;
-    public Boolean debugSkybox = false;
-
+    /**
+     * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
+     * Creates multiple rectangles used to simulate the stars in the background
+     * Adds event handlers to each planet to zoom on click and show information
+     *
+     * @param planets  A list of Planet used to create Planet Renderers used in the scene
+     * @param skyboxTexture A image used for the background
+     */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
-        this.planets = planets;
-        intialCameraXPosition = -140.0; // Offset right slightly for Sun
-        planetRenderers = planets.stream()
-                                 .map(PlanetRenderer::new)
-                                 .collect(Collectors.toList());
+        initialCameraXPosition = -140.0;                                            /* Offset right slightly for Sun */
+        planetRenderers = planets.stream().map(PlanetRenderer::new).collect(Collectors.toList());
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
-        scene.setFill(Color.BLACK);
+        scene.setFill(Color.BLACK);                                                 /* Black background */
 
         camera = new PerspectiveCamera();
         camera.setFieldOfView(40);
-        camera.setTranslateX(intialCameraXPosition);
-        camera.setTranslateY(scene.getHeight() / -2);
+        camera.setTranslateX(initialCameraXPosition);
+        camera.setTranslateY(scene.getHeight() / -2);                               /* Sets the camera in the middle of the window */
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         root.getChildren().add(camera);
-        root.getChildren().addAll(planetRenderers.stream()
-                                     .map(PlanetRenderer::getModel)
-                                     .collect(Collectors.toList()));
-        // TODO: Fix antialiasing issues
-        Text planetName = new Text();
+        root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList()));
+
+        Text planetName = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
         planetName.setFont(new Font(81));
         planetName.setFill(Color.WHITE);
         planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-        planetName.setVisible(false);
-        planetName.setFontSmoothingType(FontSmoothingType.GRAY);
-        Pane planetNameHolder = new Pane();
+        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
+        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
+
+        Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
         planetNameHolder.setMouseTransparent(true);
         planetNameHolder.getChildren().add(planetName);
         planetNameHolder.setTranslateZ(-80);
@@ -67,86 +67,125 @@ public class SolarSystem {
 
         root.getChildren().add(planetNameHolder);
 
-        createSkyboxSection(-250,-750,200,skyboxTexture,randomNumber());             /* Left hand side */
-        createSkyboxSection(-250,-250,200,skyboxTexture,randomNumber());
-        createSkyboxSection(-250,250,200,skyboxTexture,randomNumber());
-        createSkyboxSection(250,-750,200,skyboxTexture,randomNumber());              /* Center */
-        createSkyboxSection(250,-250,200,skyboxTexture,randomNumber());
-        createSkyboxSection(250,250,200,skyboxTexture,randomNumber());
-        createSkyboxSection(750,-750,200,skyboxTexture,randomNumber());              /* Right hand side */
-        createSkyboxSection(750,-250,200,skyboxTexture,randomNumber());
-        createSkyboxSection(750,250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(-250,-750,skyboxTexture,randomNumber());             /* Skybox for the left hand side of the screen */
+        createSkyboxSection(-250,-250,skyboxTexture,randomNumber());
+        createSkyboxSection(-250,250,skyboxTexture,randomNumber());
+        createSkyboxSection(250,-750,skyboxTexture,randomNumber());              /* Skybox for the center of the screen */
+        createSkyboxSection(250,-250,skyboxTexture,randomNumber());
+        createSkyboxSection(250,250,skyboxTexture,randomNumber());
+        createSkyboxSection(750,-750,skyboxTexture,randomNumber());              /* Skybox for the right hand side of the screen*/
+        createSkyboxSection(750,-250,skyboxTexture,randomNumber());
+        createSkyboxSection(750,250,skyboxTexture,randomNumber());
 
         for (PlanetRenderer p:planetRenderers) {
             p.getModel().setOnMouseClicked(e ->{
-                // TODO: Better click checking needs to be added
-                if(p.getClicked()){
-                    planetName.setVisible(false);
-                    zoomOut(camera).play();
-                    p.setClicked(false);
+                if(p.getClicked()){                                                  // TODO: Better click checking needs to be added
+                    planetName.setVisible(false);                                    /* Hide the planets name*/
+                    zoomOut(camera).play();                                          /* Zoom out the camera*/
+                    p.setClicked(false);                                             /* Reset the planet clicked variable */
                 }
                 else {
-                    planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);
-                    planetName.setText(p.getPlanet().getName());
-                    zoomIn(camera, p.getModel().getLocalToSceneTransform().getTx()).play();
-                    //planetName.setVisible(true);
-                    p.setClicked(true);
+                    planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
+                    planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
+                    zoomIn(camera, p.getModel().getLocalToSceneTransform().getTx()).play();             /* Zoom in the camera */
+                    //planetName.setVisible(true);                                                      /* Show the planet information */
+                    p.setClicked(true);                                                                 /* Set the planet as 'clicked' */
                 }
             });
         }
 
 
-        root.setOnDragDetected(e ->swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel()).play());
+        root.setOnDragDetected(e ->swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel()).play()); /* Swap animation testing */
         scene.setCamera(camera);
     }
 
-    public TranslateTransition zoomIn(PerspectiveCamera camera, double planetPosition){
+    /**
+     * Moves a camera close to a planet position, giving a zoom in effect
+     *
+     * @param camera The camera that is to be move
+     * @param planetPosition The x position of the planet
+     * @return  A transition to be played
+     */
+    private TranslateTransition zoomIn(PerspectiveCamera camera, double planetPosition){
         TranslateTransition tt = new TranslateTransition(Duration.seconds(2.5),camera);
         tt.setToZ(600);
         tt.setToX(-625+planetPosition);
         return tt;
     }
 
-    public TranslateTransition zoomOut(PerspectiveCamera camera){
+    /**
+     * Returns a camera to its original position
+     *
+     * @param camera The camera that is to be moved
+     * @return A transition to be played
+     */
+    private TranslateTransition zoomOut(PerspectiveCamera camera){
         TranslateTransition tt = new TranslateTransition(Duration.seconds(2),camera);
         tt.setToZ(0);
-        tt.setToX(intialCameraXPosition);
+        tt.setToX(initialCameraXPosition);
         return tt;
     }
 
-    public TranslateTransition move(Node n, double x, double y){
+    /**
+     * Moves a node (usually a planet model) to a position (x,y) for 2 seconds
+     *
+     * @param n A Node to translate
+     * @param x The x coordinate to move the node to
+     * @param y The x coordinate to move the node to
+     * @return  A transition to be played
+     */
+    private TranslateTransition move(Node n, double x, double y){
         TranslateTransition tt = new TranslateTransition(Duration.seconds(2),n);
         tt.setToX(x);
         tt.setToY(y);
         return tt;
     }
 
-
-    public double randomNumber(){
+    /**
+     * @return either 2000,3000,4000 randomly as a double
+     */
+    private double randomNumber(){
         Random x = new Random();
         int y = x.nextInt(2)+2;
         return (double)y*1000;
     }
 
-    public void createSkyboxSection (double xPos, double yPos, double zPos, Image sb, double time){
+    /**
+     * Creates a rectangle in the given position with a image as the background,
+     * then fades the shape in and out for a certain amount of time
+     *
+     * @param xPos The x position where the rectangle should go
+     * @param yPos The y position where the rectangle should go
+     * @param sb   The background image of rectangle
+     * @param time The duration of the fade transition
+     */
+    private void createSkyboxSection(double xPos, double yPos, Image sb, double time){
         Rectangle rect = new Rectangle(500,500);
         rect.setTranslateX(xPos);
         rect.setTranslateY(yPos);
-        rect.setTranslateZ(zPos);
+        rect.setTranslateZ(200);
         rect.setFill(new ImagePattern(sb));
-        if (debugSkybox) rect.setFill(Color.GRAY);  /* set true to check random fade out */
+        Boolean debugSkybox = false;
+        if (debugSkybox) rect.setFill(Color.GRAY);                                   /* set true to check random fade out */
 
         FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
         ft.setFromValue(1.0);
         ft.setToValue(0.6);
         ft.setCycleCount(Animation.INDEFINITE);
         ft.setAutoReverse(true);
-
         ft.play();
         root.getChildren().add(rect);
     }
 
-    public SequentialTransition swap(Node planet1, Node planet2){
+    /**
+     * Takes two planets and swaps them in arc movement
+     * The transitions is split into for four arcs, some are played in parallel and others sequentially
+     *
+     * @param planet1 Planet A in the swap
+     * @param planet2 Planet B in the swap
+     * @return the whole transition
+     */
+    private SequentialTransition swap(Node planet1, Node planet2){
         double halfway = (planet2.getTranslateX()-planet1.getTranslateX())/2;
         // TODO: Calculate height based on which planets are swapping
         double height = 150;
@@ -166,11 +205,10 @@ public class SolarSystem {
         return sq;
     }
 
+    /**
+     * @return the SubScene
+     */
     public SubScene getScene() {
         return scene;
-    }
-
-    public void setPlanets(List<Planet> planets) {
-        this.planets = planets;
     }
 }
