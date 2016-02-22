@@ -2,20 +2,21 @@ package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.module.planets.Planet;
-import javafx.animation.ParallelTransition;
-import javafx.animation.SequentialTransition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class SolarSystem {
@@ -27,6 +28,7 @@ public class SolarSystem {
     private List<PlanetRenderer> planetRenderers;
     private Image skybox;
     private Double intialCameraXPosition;
+    public Boolean debugSkybox = false;
 
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
         this.planets = planets;
@@ -64,6 +66,16 @@ public class SolarSystem {
         planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
 
         root.getChildren().add(planetNameHolder);
+
+        createSkyboxSection(-250,-750,200,skyboxTexture,randomNumber());             /* Left hand side */
+        createSkyboxSection(-250,-250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(-250,250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(250,-750,200,skyboxTexture,randomNumber());              /* Center */
+        createSkyboxSection(250,-250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(250,250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(750,-750,200,skyboxTexture,randomNumber());              /* Right hand side */
+        createSkyboxSection(750,-250,200,skyboxTexture,randomNumber());
+        createSkyboxSection(750,250,200,skyboxTexture,randomNumber());
 
         for (PlanetRenderer p:planetRenderers) {
             p.getModel().setOnMouseClicked(e ->{
@@ -110,6 +122,31 @@ public class SolarSystem {
         return tt;
     }
 
+
+    public double randomNumber(){
+        Random x = new Random();
+        int y = x.nextInt(2)+2;
+        return (double)y*1000;
+    }
+
+    public void createSkyboxSection (double xPos, double yPos, double zPos, Image sb, double time){
+        Rectangle rect = new Rectangle(500,500);
+        rect.setTranslateX(xPos);
+        rect.setTranslateY(yPos);
+        rect.setTranslateZ(zPos);
+        rect.setFill(new ImagePattern(sb));
+        if (debugSkybox) rect.setFill(Color.GRAY);  /* set true to check random fade out */
+
+        FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
+        ft.setFromValue(1.0);
+        ft.setToValue(0.6);
+        ft.setCycleCount(Animation.INDEFINITE);
+        ft.setAutoReverse(true);
+
+        ft.play();
+        root.getChildren().add(rect);
+    }
+
     public SequentialTransition swap(Node planet1, Node planet2){
         double halfway = (planet2.getTranslateX()-planet1.getTranslateX())/2;
         // TODO: Calculate height based on which planets are swapping
@@ -129,7 +166,6 @@ public class SolarSystem {
         sq.getChildren().addAll(arcStart,arcFinish);
         return sq;
     }
-
 
     public SubScene getScene() {
         return scene;
