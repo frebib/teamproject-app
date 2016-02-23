@@ -74,7 +74,7 @@ public class PlanetController extends JsonController {
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
         JsonArray planetArr = planetData.get("planets").asArray();
-        planets = new ArrayList<Planet>(planetArr.size());
+        planets = new ArrayList<>(planetArr.size());
 
         for (JsonValue pData : planetArr)
             planets.add(Planet.loadFromJson(pData.asObject()));
