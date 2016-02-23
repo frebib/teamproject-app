@@ -165,8 +165,7 @@ public class SolarSystem {
         rect.setTranslateY(yPos);
         rect.setTranslateZ(200);
         rect.setFill(new ImagePattern(sb));
-        Boolean debugSkybox = false;
-        if (debugSkybox) rect.setFill(Color.GRAY);                                   /* set true to check random fade out */
+//        rect.setFill(Color.GRAY);                                   /* comment in to check random fade out */
 
         FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
         ft.setFromValue(1.0);
