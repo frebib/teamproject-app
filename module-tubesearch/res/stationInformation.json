@@ -1,0 +1,86 @@
+{
+  "lines": [
+    {
+      "id": "bakerloo",
+      "name": "Bakerloo Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "central",
+      "name": "Central Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "circle",
+      "name": "Circle Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "district",
+      "name": "District Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "hammersmith",
+      "name": "Hammersmith & City Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "jubilee",
+      "name": "Jubilee Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "metropolitan",
+      "name": "Metropolitan Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "northern",
+      "name": "Northern Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "piccadilly",
+      "name": "Piccadilly",
+      "colour": "store in hex"
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "waterloo",
+      "name": "Waterloo & City Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "docklands",
+      "name": "Docklands Light Railway",
+      "colour": "store in hex"
+    },
+    {
+      "id": "overground",
+      "name": "Overground Line",
+      "colour": "store in hex"
+    },
+    {
+      "id": "tfl",
+      "name": "TFL Rail",
+      "colour": "store in hex"
+    }
+  ]
+  "stations": [
+    {
+      "id":,
+      "name":,
+      "connected": [
+        {
+          "id":,
+          "lineId":
+        }
+      ]
+    }
+  ]
+}
