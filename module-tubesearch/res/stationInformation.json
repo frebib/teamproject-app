@@ -713,8 +713,8 @@
       ]
     },
     {
-      "id": "waterlooEast",
-      "name": "Waterloo East",
+      "id": "waterloo",
+      "name": "Waterloo",
       "connected": [
         {
           "id": "",
