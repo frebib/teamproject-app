@@ -143,8 +143,8 @@
       ]
     },
     {
-      "id": "blackfrairs",
-      "name": "Blackfrairs",
+      "id": "blackfriars",
+      "name": "Blackfriars",
       "connected": [
         {
           "id": "",
@@ -203,16 +203,6 @@
       ]
     },
     {
-      "id": "cityThameslink",
-      "name": "City Thameslink",
-      "connected": [
-        {
-          "id": "",
-          "lineId": ""
-        }
-      ]
-    },
-    {
       "id": "coventGardens",
       "name": "Covent Gardens",
       "connected": [
@@ -263,8 +253,8 @@
       ]
     },
     {
-      "id": "enbankment",
-      "name": "Enbankment",
+      "id": "embankment",
+      "name": "Embankment",
       "connected": [
         {
           "id": "",
@@ -295,16 +285,6 @@
     {
       "id": "farringdon",
       "name": "Farringdon",
-      "connected": [
-        {
-          "id": "",
-          "lineId": ""
-        }
-      ]
-    },
-    {
-      "id": "frenchurchStreet",
-      "name": "Frenchurch Street",
       "connected": [
         {
           "id": "",
