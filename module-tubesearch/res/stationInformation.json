@@ -3,72 +3,72 @@
     {
       "id": "bakerloo",
       "name": "Bakerloo Line",
-      "colour": "store in hex"
+      "colour": "#b35900"
     },
     {
       "id": "central",
       "name": "Central Line",
-      "colour": "store in hex"
+      "colour": "#ff0000"
     },
     {
       "id": "circle",
       "name": "Circle Line",
-      "colour": "store in hex"
+      "colour": "#ffd633"
     },
     {
       "id": "district",
       "name": "District Line",
-      "colour": "store in hex"
+      "colour": "#29a329"
     },
     {
       "id": "hammersmith",
       "name": "Hammersmith & City Line",
-      "colour": "store in hex"
+      "colour": "#ff99cc"
     },
     {
       "id": "jubilee",
       "name": "Jubilee Line",
-      "colour": "store in hex"
+      "colour": "#a6a6a6"
     },
     {
       "id": "metropolitan",
       "name": "Metropolitan Line",
-      "colour": "store in hex"
+      "colour": "#b82e8a"
     },
     {
       "id": "northern",
       "name": "Northern Line",
-      "colour": "store in hex"
+      "colour": "#000000"
     },
     {
       "id": "piccadilly",
       "name": "Piccadilly",
-      "colour": "store in hex"
+      "colour": "#002699"
     },
     {
       "id": "victoria",
       "name": "Victoria Line",
-      "colour": "store in hex"
+      "colour": "#33adff"
     },
     {
       "id": "waterloo",
       "name": "Waterloo & City Line",
-      "colour": "store in hex"
+      "colour": "#00e6b8"
     },
     {
       "id": "docklands",
       "name": "Docklands Light Railway",
-      "colour": "store in hex"
+      "colour": "#00b3b3"
     },
     {
       "id": "overground",
       "name": "Overground Line",
-      "colour": "store in hex"
+      "colour": "#ff8000"
     },
     {
       "id": "tfl",
       "name": "TFL Rail",
-      "colour": "store in hex"
+      "colour": "#0000e6"
     }
   ],
   "stations": [
