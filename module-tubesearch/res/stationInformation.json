@@ -73,8 +73,688 @@
   ],
   "stations": [
     {
-      "id": "",
-      "name": "",
+      "id": "aldgate",
+      "name": "Aldgate",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "aldgateEast",
+      "name": "Aldgate East",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "angel",
+      "name": "Angel",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "bakerStreet",
+      "name": "Baker Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "bank",
+      "name": "Bank",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "barbican",
+      "name": "Barbican",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "bayswater",
+      "name": "Bayswater",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "blackfrairs",
+      "name": "Blackfrairs",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "bondStreet",
+      "name": "Bond Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "borough",
+      "name": "Borough",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "cannonStreet",
+      "name": "Cannon Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "chanceryLane",
+      "name": "Chancery Lane",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "charingCross",
+      "name": "Charing Cross",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "cityThameslink",
+      "name": "City Thameslink",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "coventGardens",
+      "name": "Covent Gardens",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "earlsCourt",
+      "name": "Earls Court",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "edgwareBakerloo",
+      "name": "Edgware Road - Bakerloo",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "edgwareCircle",
+      "name": "Edgware Road - Circle",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "elephant",
+      "name": "Elephant & Castle",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "enbankment",
+      "name": "Enbankment",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "euston",
+      "name": "Euston",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "eustonSquare",
+      "name": "Euston Square",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "farringdon",
+      "name": "Farringdon",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "frenchurchStreet",
+      "name": "Frenchurch Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "gloucesterRoad",
+      "name": "Gloucester Road",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "goodgeStreet",
+      "name": "Goodge Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "greatPortland",
+      "name": "Great Portland Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "greenPark",
+      "name": "Green Park",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "highStreetKensington",
+      "name": "High Street Kensington",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "holborn",
+      "name": "Holborn",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "hoxton",
+      "name": "Hoxton",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "hydeParkCorner",
+      "name": "Hyde Park Corner",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "kingsCross",
+      "name": "Kings Cross",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "knightsbridge",
+      "name": "Knightsbridge",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "lambethNorth",
+      "name": "Lambeth North",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "lancasterGate",
+      "name": "Lancaster Gate",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "leicesterSquare",
+      "name": "Leicester Square",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "liverpoolStreet",
+      "name": "Liverpool Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "londonBridge",
+      "name": "London Bridge",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "mansionHouse",
+      "name": "Mansion House",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "marbleArch",
+      "name": "Marble Arch",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "marylebone",
+      "name": "Marylebone",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "monument",
+      "name": "Monument",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "moorgate",
+      "name": "Moorgate",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "nottingHillGate",
+      "name": "Notting Hill Gate",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "oldStreet",
+      "name": "Old Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "oxfordCircus",
+      "name": "Oxford Circus",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "paddington",
+      "name": "Paddington",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "piccadillyCircus",
+      "name": "Piccadilly Circus",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "pimlico",
+      "name": "Pimlico",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "queensway",
+      "name": "Queensway",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "regentsPark",
+      "name": "Regents Park",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "russelSquare",
+      "name": "Russel Square",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "shoreditchHighStreet",
+      "name": "Shoreditch High Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "sloaneSquare",
+      "name": "Sloane Square",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "southKensington",
+      "name": "South Kensington",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "southwater",
+      "name": "Southwater",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "stJamesPark",
+      "name": "St James's Park",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "stPauls",
+      "name": "St Paul's",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "temple",
+      "name": "Temple",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "tottenham",
+      "name": "Tottenham Court Road",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "towerGateway",
+      "name": "Tower Gateway",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "towerHill",
+      "name": "Tower Hill",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "vauxhall",
+      "name": "Vauxhall",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "warrenStreet",
+      "name": "Warren Street",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "waterlooEast",
+      "name": "Waterloo East",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "waterloo",
+      "name": "Waterloo",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "westminster",
+      "name": "Westminster",
       "connected": [
         {
           "id": "",
