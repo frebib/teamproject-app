@@ -70,15 +70,15 @@
       "name": "TFL Rail",
       "colour": "store in hex"
     }
-  ]
+  ],
   "stations": [
     {
-      "id":,
-      "name":,
+      "id": "",
+      "name": "",
       "connected": [
         {
-          "id":,
-          "lineId":
+          "id": "",
+          "lineId": ""
         }
       ]
     }
