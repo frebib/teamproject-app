@@ -21,7 +21,7 @@
       "colour": "#29a329"
     },
     {
-      "id": "hammersmith",
+      "id": "hammersmithCity",
       "name": "Hammersmith & City Line",
       "colour": "#ff99cc"
     },
@@ -51,7 +51,7 @@
       "colour": "#33adff"
     },
     {
-      "id": "waterloo",
+      "id": "waterlooCity",
       "name": "Waterloo & City Line",
       "colour": "#00e6b8"
     },
@@ -77,8 +77,16 @@
       "name": "Aldgate",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "liverpoolStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "towerHill",
+          "lineId": "circle"
         }
       ]
     },
@@ -87,8 +95,20 @@
       "name": "Aldgate East",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "liverpoolStreet",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "whiteChapel",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "towerHill",
+          "lineId": "district"
+        },
+        {
+          "id": "whiteChapel",
+          "lineId": "district"
         }
       ]
     },
@@ -107,8 +127,44 @@
       "name": "Baker Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stJohnsWood",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "bondStreet",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "marylebone",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "regentsPark",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "finchleyRoad",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "edgwareCH",
+          "lineId": "circle"
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "edgwareCH",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "hammersmithCity"
         }
       ]
     },
@@ -117,8 +173,24 @@
       "name": "Bank",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stPauls",
+          "lineId": "central"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "central"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "northern"
+        },
+        {
+          "id": "londonBridge",
+          "lineId": "northern"
+        },
+        {
+          "id": "waterloo",
+          "lineId": "waterlooCity"
         }
       ]
     },
@@ -233,8 +305,8 @@
       ]
     },
     {
-      "id": "edgwareCircle",
-      "name": "Edgware Road - Circle",
+      "id": "edgwareCH",
+      "name": "Edgware Road - Circle & Hammersmith",
       "connected": [
         {
           "id": "",
