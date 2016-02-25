@@ -64,11 +64,6 @@
       "id": "overground",
       "name": "Overground Line",
       "colour": "#ff8000"
-    },
-    {
-      "id": "tfl",
-      "name": "TFL Rail",
-      "colour": "#0000e6"
     }
   ],
   "stations": [
@@ -299,8 +294,12 @@
       "name": "Borough",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "londonBridge",
+          "lineId": "northern"
+        },
+        {
+          "id": "elephantAndCastle",
+          "lineId": "northern"
         }
       ]
     },
@@ -309,8 +308,20 @@
       "name": "Cannon Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "mansionHouse",
+          "lineId": "circle"
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "district"
+        },
+        {
+          "id": "monument",
+          "lineId": "circle"
+        },
+        {
+          "id": "monument",
+          "lineId": "district"
         }
       ]
     },
@@ -319,8 +330,12 @@
       "name": "Chancery Lane",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "holborn",
+          "lineId": "central"
+        },
+        {
+          "id": "stPauls",
+          "lineId": "central"
         }
       ]
     },
@@ -329,8 +344,20 @@
       "name": "Charing Cross",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "leicesterSquare",
+          "lineId": "northern"
+        },
+        {
+          "id": "embankment",
+          "lineId": "northern"
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "embankment",
+          "lineId": "bakerloo"
         }
       ]
     },
