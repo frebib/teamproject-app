@@ -191,6 +191,10 @@
         {
           "id": "waterloo",
           "lineId": "waterlooCity"
+        },
+        {
+          "id": "shadwell",
+          "lineId": "docklands"
         }
       ]
     },
@@ -199,8 +203,28 @@
       "name": "Barbican",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "farringdon",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "farringdon",
+          "lineId": "circle"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "circle"
+        },
+        {
+          "id": "farringdon",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "hammersmithCity"
         }
       ]
     },
@@ -209,8 +233,20 @@
       "name": "Bayswater",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "paddington",
+          "lineId": "circle"
+        },
+        {
+          "id": "paddington",
+          "lineId": "district"
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "circle"
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "district"
         }
       ]
     },
@@ -219,8 +255,20 @@
       "name": "Blackfriars",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "temple",
+          "lineId": "circle"
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "circle"
+        },
+        {
+          "id": "temple",
+          "lineId": "district"
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "district"
         }
       ]
     },
@@ -229,8 +277,20 @@
       "name": "Bond Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "marbleArch",
+          "lineId": "central"
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "central"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "greenPark",
+          "lineId": "jubilee"
         }
       ]
     },
