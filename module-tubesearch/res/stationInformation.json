@@ -1137,8 +1137,12 @@
       "name": "East Acton",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "northActon",
+          "lineId": "central"
+        },
+        {
+          "id": "whiteCity",
+          "lineId": "central"
         }
       ]
     },
@@ -1177,8 +1181,16 @@
       "name": "Finchley Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bakerStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "swissCottage",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "westHampstead",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1347,8 +1359,12 @@
       "name": "Holland Park - closed till August",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "shepherdsBush",
+          "lineId": "central"
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "central"
         }
       ]
     },
@@ -1457,8 +1473,12 @@
       "name": "Kilburn",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "willesdenGreen",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "westHampstead",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1597,8 +1617,8 @@
       "name": "North Acton",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "eastActon",
+          "lineId": "central"
         }
       ]
     },
@@ -1757,8 +1777,12 @@
       "name": "Shepherd's Bush",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "whiteCity",
+          "lineId": "central"
+        },
+        {
+          "id": "hollandPark",
+          "lineId": "central"
         }
       ]
     },
@@ -1795,6 +1819,16 @@
     {
       "id": "stJohnsWood",
       "name": "St John Wood",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "stamfordBrook",
+      "name": "Stamford Brook",
       "connected": [
         {
           "id": "",
@@ -1887,8 +1921,12 @@
       "name": "Swiss Cottage",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "finchleyRoad",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "stJohnsWood",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1977,8 +2015,12 @@
       "name": "West Hampstead",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "kilburn",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "finchleyRoad",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -2037,8 +2079,12 @@
       "name": "White City",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "eastActon",
+          "lineId": "central"
+        },
+        {
+          "id": "shepherdsBush",
+          "lineId": "central"
         }
       ]
     },
@@ -2047,8 +2093,8 @@
       "name": "Willesden Green",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "kilburn",
+          "lineId": "jubilee"
         }
       ]
     },
