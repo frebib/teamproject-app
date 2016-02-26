@@ -716,8 +716,24 @@
       "name": "High Street Kensington",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "nottingHillGate",
+          "lineId": "district"
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "circle"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "district"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "circle"
+        },
+        {
+          "id": "earlsCourt",
+          "lineId": "district"
         }
       ]
     },
@@ -726,8 +742,20 @@
       "name": "Holborn",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "tottenhamCourtRoad",
+          "lineId": "central"
+        },
+        {
+          "id": "chanceryLane",
+          "lineId": "central"
+        },
+        {
+          "id": "russellSquare",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -736,8 +764,12 @@
       "name": "Hoxton",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "haggerston",
+          "lineId": "overground"
+        },
+        {
+          "id": "shoreditchHighStreet",
+          "lineId": "overground"
         }
       ]
     },
@@ -746,8 +778,12 @@
       "name": "Hyde Park Corner",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "knightsbridge",
+          "lineId": "piccadily"
+        },
+        {
+          "id": "greenPark",
+          "lineId": "piccadily"
         }
       ]
     },
@@ -756,8 +792,52 @@
       "name": "King's Cross St Pancras",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "euston",
+          "lineId": "victoria"
+        },
+        {
+          "id": "highburyIslington",
+          "lineId": "victoria"
+        },
+        {
+          "id": "russellSquare",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "caledonianRoad",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "euston",
+          "lineId": "northern"
+        },
+        {
+          "id": "angel",
+          "lineId": "northern"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "circle"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "farringdon",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "farringdon",
+          "lineId": "circle"
+        },
+        {
+          "id": "farringdon",
+          "lineId": "metropolitan"
         }
       ]
     },
@@ -766,8 +846,12 @@
       "name": "Knightsbridge",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "southKensington",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "hydeParkCorner",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -776,8 +860,12 @@
       "name": "Lambeth North",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "waterloo",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "elephantAndCastle",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -786,8 +874,12 @@
       "name": "Lancaster Gate",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "queensway",
+          "lineId": "central"
+        },
+        {
+          "id": "marbleArch",
+          "lineId": "central"
         }
       ]
     },
@@ -796,8 +888,20 @@
       "name": "Leicester Square",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "northern"
+        },
+        {
+          "id": "charingCross",
+          "lineId": "northern"
         }
       ]
     },
