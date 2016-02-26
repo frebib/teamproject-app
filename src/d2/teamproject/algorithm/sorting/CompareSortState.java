@@ -33,4 +33,13 @@ public class CompareSortState<E> extends BoundSortState<E> {
     public boolean isSwap() {
         return isSwap;
     }
+
+    @Override
+    public String toString() {
+        return "CompareSortState{" +
+                "compareA=" + compareA +
+                ", compareB=" + compareB +
+                ", isSwap=" + isSwap +
+                '}';
+    }
 }

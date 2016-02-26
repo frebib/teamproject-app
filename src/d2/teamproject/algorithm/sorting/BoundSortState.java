@@ -50,4 +50,14 @@ public class BoundSortState<E> implements SortState<E> {
     public boolean isComplete() {
         return listState.isComplete();
     }
+
+    @Override
+    public String toString() {
+        return "BoundSortState{" +
+                "pivot=" + pivot +
+                ", lower=" + lower +
+                ", upper=" + upper +
+                ", listState=" + listState +
+                '}';
+    }
 }

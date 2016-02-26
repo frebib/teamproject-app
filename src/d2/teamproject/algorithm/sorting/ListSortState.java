@@ -39,4 +39,12 @@ public class ListSortState<E> implements SortState<E> {
     public boolean isComplete() {
         return isComplete;
     }
+
+    @Override
+    public String toString() {
+        return "ListSortState{" +
+                "list=" + list +
+                ", isComplete=" + isComplete +
+                '}';
+    }
 }
