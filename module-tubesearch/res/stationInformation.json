@@ -112,8 +112,12 @@
       "name": "Angel",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "oldStreet",
+          "lineId": "northern"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "northern"
         }
       ]
     },
@@ -362,12 +366,16 @@
       ]
     },
     {
-      "id": "coventGardens",
-      "name": "Covent Gardens",
+      "id": "coventGarden",
+      "name": "Covent Garden",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "leicesterSquare",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "holborn",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -376,8 +384,32 @@
       "name": "Earl's Court",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "westKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "kensingtonOlympia",
+          "lineId": "district"
+        },
+        {
+          "id": "westBrompton",
+          "lineId": "district"
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "district"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "baronsCourt",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -386,8 +418,12 @@
       "name": "Edgware Road - Bakerloo",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "paddington",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "marylebone",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -396,8 +432,28 @@
       "name": "Edgware Road - Circle & Hammersmith",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "paddington",
+          "lineId": "district"
+        },
+        {
+          "id": "paddinton",
+          "lineId": "circle"
+        },
+        {
+          "id": "paddington",
+          "lineId": "circle"
+        },
+        {
+          "id": "paddington",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "hammersmithCity"
         }
       ]
     },
@@ -406,8 +462,16 @@
       "name": "Elephant & Castle",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "lambethNorh",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "kennington",
+          "lineId": "northern"
+        },
+        {
+          "id": "borough",
+          "lineId": "northern"
         }
       ]
     },
@@ -416,8 +480,36 @@
       "name": "Embankment",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "charingCross",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "waterloo",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "charingCross",
+          "lineId": "northern"
+        },
+        {
+          "id": "waterloo",
+          "lineId": "northern"
+        },
+        {
+          "id": "westminster",
+          "lineId": "circle"
+        },
+        {
+          "id": "temple",
+          "lineId": "circle"
+        },
+        {
+          "id": "westminster",
+          "lineId": "district"
+        },
+        {
+          "id": "temple",
+          "lineId": "district"
         }
       ]
     },
@@ -426,8 +518,32 @@
       "name": "Euston",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "morningtonCrescent",
+          "lineId": "northern"
+        },
+        {
+          "id": "camdenTown",
+          "lineId": "northern"
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "northern"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "northern"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "victoria"
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "victoria"
+        },
+        {
+          "id": "southHampstead",
+          "lineId": "overground"
         }
       ]
     },
@@ -436,8 +552,28 @@
       "name": "Euston Square",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "greatPortlandStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "circle"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "metropolitan"
         }
       ]
     },
@@ -446,8 +582,28 @@
       "name": "Farringdon",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "kingsCross",
+          "lineId": "circle"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "barbican",
+          "lineId": "circle"
+        },
+        {
+          "id": "barbican",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "barbican",
+          "lineId": "metropolitan"
         }
       ]
     },
@@ -456,8 +612,28 @@
       "name": "Gloucester Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "earlsCourt",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "southKensington",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "earlsCourt",
+          "lineId": "district"
+        },
+        {
+          "id": "southKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "southKensington",
+          "lineId": "circle"
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "circle"
         }
       ]
     },
@@ -466,18 +642,42 @@
       "name": "Goodge Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "tottenhamCourtRoad",
+          "lineId": "northern"
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "northern"
         }
       ]
     },
     {
-      "id": "greatPortland",
+      "id": "greatPortlandStreet",
       "name": "Great Portland Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bakerStreet",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "circle"
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "metropolitan"
         }
       ]
     },
@@ -486,8 +686,28 @@
       "name": "Green Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bondStreet",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "westminster",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "victoria"
+        },
+        {
+          "id": "victoria",
+          "lineId": "victoria"
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "hydeParkCorner",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -812,7 +1032,7 @@
       ]
     },
     {
-      "id": "tottenham",
+      "id": "tottenhamCourtRoad",
       "name": "Tottenham Court Road",
       "connected": [
         {
@@ -1599,7 +1819,7 @@
     },
     {
       "id": "kensingtonOlympia",
-      "name": "Kensington Olympia",
+      "name": "Kensington (Olympia)",
       "connected": [
         {
           "id": "",
