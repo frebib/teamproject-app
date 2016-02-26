@@ -52,10 +52,6 @@ public class PlanetRenderer {
                 mat.setDiffuseMap(v);
             else if (img.contains("-normal."))
                 mat.setBumpMap(v);
-//            else if (img.contains("-spec."))
-//                mat.setSpecularMap(v);
-
-            // No handling for normal maps here
         });
         sphere.setMaterial(mat);
 
