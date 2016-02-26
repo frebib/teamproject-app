@@ -25,7 +25,6 @@ public class PlanetView extends VisualisationView {
         // Load skybox image
         Image skybox = (Image) res.get("skybox");
         sSystem = new SolarSystem(controller.getPlanets(), skybox);
-        frontPane.setMouseTransparent(true);
-        backPane.getChildren().add(sSystem.getScene());
+        contentBox.getChildren().add(sSystem.getScene());
     }
 }

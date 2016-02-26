@@ -20,20 +20,20 @@ public class PlanetRenderer {
     private Planet planet;
     private Group model;
     private Sphere sphere;
-    private boolean clicked = false;
+    private final double radius;
 
     private RotateTransition axisRotation;
 
     public PlanetRenderer(Planet planet) {
         this.planet = planet;
 
-        double radius = Math.log(planet.getDiameter() / 800) * 16d;
+        radius = Math.log(planet.getDiameter() / 800) * 16d;
         model = new Group();
         model.setTranslateX(cumulativeDist + radius);
         sphere = new Sphere(radius);
         cumulativeDist += (radius * 2) + gap;
 
-        float rotTime = 20 * planet.getRotationTime();
+        float rotTime = 32 * planet.getRotationTime();
         axisRotation = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
         axisRotation.setAxis(Rotate.Y_AXIS);
         // TODO: Some planets spin in the wrong direction
@@ -79,10 +79,11 @@ public class PlanetRenderer {
         return this;
     }
 
+    public double getRadius() {
+        return radius;
+    }
     public Node getModel() {
         return model;
     }
     public Planet getPlanet() { return planet; }
-    public Boolean getClicked() { return  clicked; }
-    public void setClicked(Boolean bool) { clicked = bool; }
 }

@@ -26,6 +26,8 @@ public class SolarSystem {
     private final List<PlanetRenderer> planetRenderers;
     private final Double initialCameraXPosition;
 
+    private Planet zoomed;
+
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
      * Creates multiple rectangles used to simulate the stars in the background
@@ -42,6 +44,7 @@ public class SolarSystem {
         scene.setFill(Color.BLACK);                                                 /* Black background */
 
         camera = new PerspectiveCamera();
+        camera.setNearClip(0.001);
         camera.setFieldOfView(40);
         camera.setTranslateX(initialCameraXPosition);
         camera.setTranslateY(scene.getHeight() / -2);                               /* Sets the camera in the middle of the window */
@@ -50,6 +53,7 @@ public class SolarSystem {
         root.getChildren().add(camera);
         root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList()));
 
+        // TODO: Cleanup
         Text planetName = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
         planetName.setFont(new Font(81));
         planetName.setFill(Color.WHITE);
@@ -67,6 +71,7 @@ public class SolarSystem {
 
         root.getChildren().add(planetNameHolder);
 
+        // TODO: Cleanup
         createSkyboxSection(-250,-750,skyboxTexture,randomNumber());             /* Skybox for the left hand side of the screen */
         createSkyboxSection(-250,-250,skyboxTexture,randomNumber());
         createSkyboxSection(-250,250,skyboxTexture,randomNumber());
@@ -77,19 +82,18 @@ public class SolarSystem {
         createSkyboxSection(750,-250,skyboxTexture,randomNumber());
         createSkyboxSection(750,250,skyboxTexture,randomNumber());
 
-        for (PlanetRenderer p:planetRenderers) {
-            p.getModel().setOnMouseClicked(e ->{
-                if(p.getClicked()){                                                  // TODO: Better click checking needs to be added
+        for (PlanetRenderer p : planetRenderers) {
+            p.onClick(e -> {
+                if(p.getPlanet() == zoomed) {                                        // TODO: Better click checking needs to be added
+                    zoomed = null;
                     planetName.setVisible(false);                                    /* Hide the planets name*/
                     zoomOut(camera).play();                                          /* Zoom out the camera*/
-                    p.setClicked(false);                                             /* Reset the planet clicked variable */
-                }
-                else {
+                } else {
+                    zoomed = p.getPlanet();
                     planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
                     planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
-                    zoomIn(camera, p.getModel().getLocalToSceneTransform().getTx()).play();             /* Zoom in the camera */
-                    //planetName.setVisible(true);                                                      /* Show the planet information */
-                    p.setClicked(true);                                                                 /* Set the planet as 'clicked' */
+                    zoomIn(camera, p).play();             /* Zoom in the camera */
+//                    planetName.setVisible(true);                                                      /* Show the planet information */
                 }
             });
         }
@@ -105,10 +109,11 @@ public class SolarSystem {
      * @param planetPosition The x position of the planet
      * @return  A transition to be played
      */
-    private TranslateTransition zoomIn(PerspectiveCamera camera, double planetPosition){
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(2.5),camera);
-        tt.setToZ(600);
-        tt.setToX(-625+planetPosition);
+    private TranslateTransition zoomIn(PerspectiveCamera camera, PlanetRenderer renderer){
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.5), camera);
+        double onX = renderer.getModel().getLocalToSceneTransform().getTx();
+        tt.setToZ(1000 - (renderer.getRadius() * 6));
+        tt.setToX(-625 + onX);
         return tt;
     }
 
@@ -119,7 +124,7 @@ public class SolarSystem {
      * @return A transition to be played
      */
     private TranslateTransition zoomOut(PerspectiveCamera camera){
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(2),camera);
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(1), camera);
         tt.setToZ(0);
         tt.setToX(initialCameraXPosition);
         return tt;
