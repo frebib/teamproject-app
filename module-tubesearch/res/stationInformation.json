@@ -910,8 +910,40 @@
       "name": "Liverpool Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bank",
+          "lineId": "central"
+        },
+        {
+          "id": "bethnalGreenCental",
+          "lineId": "central"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "circle"
+        },
+        {
+          "id": "aldgate",
+          "lineId": "circle"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "aldgateEast",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "aldgate",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "bethnalGreenOverground",
+          "lineId": "overground"
         }
       ]
     },
@@ -920,8 +952,20 @@
       "name": "London Bridge",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "southwark",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "bermondsey",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "borough",
+          "lineId": "northern"
+        },
+        {
+          "id": "monument",
+          "lineId": "northern"
         }
       ]
     },
@@ -930,8 +974,20 @@
       "name": "Mansion House",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "blackfriars",
+          "lineId": "circle"
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "district"
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "district"
         }
       ]
     },
@@ -940,8 +996,12 @@
       "name": "Marble Arch",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "lancasterGate",
+          "lineId": "central"
+        },
+        {
+          "id": "bondStreet",
+          "lineId": "central"
         }
       ]
     },
@@ -950,8 +1010,12 @@
       "name": "Marylebone",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "edgwareRoadBakerloo",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -960,8 +1024,20 @@
       "name": "Monument",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "cannonStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "district"
+        },
+        {
+          "id": "towerHill",
+          "lineId": "circle"
+        },
+        {
+          "id": "towerHill",
+          "lineId": "district"
         }
       ]
     },
@@ -970,8 +1046,36 @@
       "name": "Moorgate",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "liverpoolStreet",
+          "lineId": "circle"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "barbican",
+          "lineId": "circle"
+        },
+        {
+          "id": "barbican",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "barbican",
+          "lineId": "metropolitan"
+        },
+        {
+          "id": "oldStreet",
+          "lineId": "northern"
+        },
+        {
+          "id": "bank",
+          "lineId": "northern"
         }
       ]
     },
@@ -980,8 +1084,28 @@
       "name": "Notting Hill Gate",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bayswater",
+          "lineId": "circle"
+        },
+        {
+          "id": "bayswater",
+          "lineId": "district"
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "circle"
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "queensway",
+          "lineId": "central"
+        },
+        {
+          "id": "hollandPark",
+          "lineId": "central"
         }
       ]
     },
@@ -990,8 +1114,12 @@
       "name": "Old Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "angel",
+          "lineId": "northern"
+        },
+        {
+          "id": "moorgate",
+          "lineId": "northern"
         }
       ]
     },
@@ -1000,8 +1128,28 @@
       "name": "Oxford Circus",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bondStreet",
+          "lineId": "central"
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "central"
+        },
+        {
+          "id": "regentsPark",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "victoria"
+        },
+        {
+          "id": "greenPark",
+          "lineId": "victoria"
         }
       ]
     },
