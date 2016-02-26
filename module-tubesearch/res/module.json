@@ -6,5 +6,11 @@
     "package": "d2.teamproject.module.tubesearch",
     "main": "TubeSearchController"
   },
+  "res": {
+    "stationinfo": {
+      "file": "stationInformation.json",
+      "type": "JsonObject"
+    }
+  },
   "help": []
 }

@@ -2,6 +2,8 @@ package d2.teamproject.algorithm.search;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Represents a Node that carries a contents and it's successors
@@ -9,13 +11,13 @@ import java.util.LinkedHashSet;
  * @param <E> Payload of the {@link Node}
  */
 public class Node<E> {
-    private final Collection<Node<E>> successors;
+    private final List<Node<E>> successors;
     private float heuristic, cost;
 
     /**
      * The Object that the {@link Node} represents
      */
-    public final E contents;
+    protected E contents;
 
     /**
      * Creates a new Node with a contents
@@ -24,7 +26,7 @@ public class Node<E> {
      */
     public Node(E contents) {
         this.contents = contents;
-        this.successors = new LinkedHashSet<>();
+        this.successors = new LinkedList<>();
 
         this.cost = Float.POSITIVE_INFINITY;
     }
@@ -43,7 +45,7 @@ public class Node<E> {
      *
      * @return The successors to the {@link Node}
      */
-    public Collection<Node<E>> getSuccessors() {
+    public List<Node<E>> getSuccessors() {
         return successors;
     }
 
