@@ -94,7 +94,6 @@ public class SolarSystem {
             });
         }
 
-
         root.setOnDragDetected(e ->swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel()).play()); /* Swap animation testing */
         scene.setCamera(camera);
     }

@@ -2,9 +2,6 @@ package d2.teamproject.module.tubesearch;
 
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
-import d2.teamproject.module.BaseView;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 
 import java.util.Map;
 

@@ -8,7 +8,6 @@ import org.xeustechnologies.jcl.JarClassLoader;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.zip.ZipInputStream;
 
 public class ModuleLoader {

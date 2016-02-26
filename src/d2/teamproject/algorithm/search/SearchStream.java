@@ -133,7 +133,6 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     @Override
     public List<SearchState<E, L>> getAll() {
         return allStates;
-
     }
 
     private SearchState<E, L> genNextState() {
