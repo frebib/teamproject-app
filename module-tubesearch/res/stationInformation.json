@@ -1826,7 +1826,7 @@
       ]
     },
     {
-      "id": "finchleyRoadFrognal",
+      "id": "finchleyRoadAndFrognal",
       "name": "Finchley Road & Frognal",
       "connected": [
         {
@@ -2012,16 +2012,6 @@
     {
       "id": "homerton",
       "name": "Homerton",
-      "connected": [
-        {
-          "id": "",
-          "lineId": ""
-        }
-      ]
-    },
-    {
-      "id": "hoxton",
-      "name": "Hoxton",
       "connected": [
         {
           "id": "",
@@ -2264,16 +2254,6 @@
       ]
     },
     {
-      "id": "nottingHillGate",
-      "name": "Notting Hill Gate",
-      "connected": [
-        {
-          "id": "",
-          "lineId": ""
-        }
-      ]
-    },
-    {
       "id": "oval",
       "name": "Oval",
       "connected": [
@@ -2414,6 +2394,14 @@
         {
           "id": "hollandPark",
           "lineId": "central"
+        },
+        {
+          "id": "willesdenJunction",
+          "lineId": "overground"
+        },
+        {
+          "id": "kensingtonOlympia",
+          "lineId": "overground"
         }
       ]
     },
@@ -2652,6 +2640,14 @@
         {
           "id": "finchleyRoad",
           "lineId": "jubilee"
+        },
+        {
+          "id": "brondesbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "finchleyRoadAndFrognal",
+          "lineId": "overground"
         }
       ]
     },
