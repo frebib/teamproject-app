@@ -94,7 +94,7 @@
           "lineId": "hammersmithCity"
         },
         {
-          "id": "whiteChapel",
+          "id": "whitechapel",
           "lineId": "hammersmithCity"
         },
         {
@@ -102,7 +102,7 @@
           "lineId": "district"
         },
         {
-          "id": "whiteChapel",
+          "id": "whitechapel",
           "lineId": "district"
         }
       ]
@@ -429,7 +429,7 @@
     },
     {
       "id": "edgwareCH",
-      "name": "Edgware Road - Circle & Hammersmith",
+      "name": "Edgware Road - Circle, District & Hammersmith",
       "connected": [
         {
           "id": "paddington",
@@ -1158,8 +1158,40 @@
       "name": "Paddington",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "warwickAvenue",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "edgwareRoadBakerloo",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "royalOak",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "district"
+        },
+        {
+          "id": "bayswater",
+          "lineId": "district"
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "circle"
+        },
+        {
+          "id": "royalOak",
+          "lineId": "circle"
+        },
+        {
+          "id": "bayswater",
+          "lineId": "circle"
         }
       ]
     },
@@ -1168,8 +1200,20 @@
       "name": "Piccadilly Circus",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "greenPark",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "charingCross",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -1178,8 +1222,12 @@
       "name": "Pimlico",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "victoria",
+          "lineId": "victoria"
+        },
+        {
+          "id": "vauxhaull",
+          "lineId": "victoria"
         }
       ]
     },
@@ -1188,8 +1236,12 @@
       "name": "Queensway",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "nottingHillGate",
+          "lineId": "central"
+        },
+        {
+          "id": "lancasterGate",
+          "lineId": "central"
         }
       ]
     },
@@ -1198,8 +1250,12 @@
       "name": "Regent's Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bakerStreet",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -1208,8 +1264,12 @@
       "name": "Russell Square",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "holborn",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -1218,8 +1278,12 @@
       "name": "Shoreditch High Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hoxton",
+          "lineId": "overground"
+        },
+        {
+          "id": "whitechapel",
+          "lineId": "overground"
         }
       ]
     },
@@ -1228,8 +1292,20 @@
       "name": "Sloane Square",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "southKensington",
+          "lineId": "circle"
+        },
+        {
+          "id": "southKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "victoria",
+          "lineId": "circle"
+        },
+        {
+          "id": "victoria",
+          "lineId": "district"
         }
       ]
     },
@@ -1238,8 +1314,28 @@
       "name": "South Kensington",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "sloaneSquare",
+          "lineId": "circle"
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "district"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "district"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "circle"
+        },
+        {
+          "id": "gloucesterRoad",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "knightsbridge",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -1248,8 +1344,12 @@
       "name": "Southwark",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "londonBridge",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "waterloo",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1258,8 +1358,20 @@
       "name": "St James's Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "victoria",
+          "lineId": "circle"
+        },
+        {
+          "id": "victoria",
+          "lineId": "district"
+        },
+        {
+          "id": "westminster",
+          "lineId": "circle"
+        },
+        {
+          "id": "westminster",
+          "lineId": "district"
         }
       ]
     },
@@ -1268,8 +1380,12 @@
       "name": "St Paul's",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "chanceryLane",
+          "lineId": "central"
+        },
+        {
+          "id": "bank",
+          "lineId": "central"
         }
       ]
     },
@@ -1278,8 +1394,20 @@
       "name": "Temple",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "embankment",
+          "lineId": "circle"
+        },
+        {
+          "id": "embankment",
+          "lineId": "district"
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "circle"
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "district"
         }
       ]
     },
@@ -1288,8 +1416,20 @@
       "name": "Tottenham Court Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "oxfordCircus",
+          "lineId": "central"
+        },
+        {
+          "id": "holborn",
+          "lineId": "central"
+        },
+        {
+          "id": "goodgeStreet",
+          "lineId": "northern"
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "northern"
         }
       ]
     },
@@ -1298,8 +1438,8 @@
       "name": "Tower Gateway",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "shadwell",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1308,8 +1448,20 @@
       "name": "Tower Hill",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "monument",
+          "lineId": "circle"
+        },
+        {
+          "id": "aldgate",
+          "lineId": "circle"
+        },
+        {
+          "id": "monument",
+          "lineId": "district"
+        },
+        {
+          "id": "aldgateEast",
+          "lineId": "district"
         }
       ]
     },
@@ -1318,8 +1470,12 @@
       "name": "Vauxhall",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "pimlico",
+          "lineId": "victoria"
+        },
+        {
+          "id": "stockwell",
+          "lineId": "victoria"
         }
       ]
     },
@@ -1328,8 +1484,28 @@
       "name": "Victoria",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "pimlico",
+          "lineId": "victoria"
+        },
+        {
+          "id": "greenPark",
+          "lineId": "victoria"
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "circle"
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "circle"
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "district"
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "district"
         }
       ]
     },
@@ -1338,8 +1514,20 @@
       "name": "Warren Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "euston",
+          "lineId": "northern"
+        },
+        {
+          "id": "euston",
+          "lineId": "victoria"
+        },
+        {
+          "id": "goodgeStreet",
+          "lineId": "northern"
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "victoria"
         }
       ]
     },
@@ -1348,8 +1536,32 @@
       "name": "Waterloo",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "westminster",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "southwark",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "embankment",
+          "lineId": "northern"
+        },
+        {
+          "id": "kennington",
+          "lineId": "northern"
+        },
+        {
+          "id": "embankment",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "lambethNorth",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "bank",
+          "lineId": "waterlooCity"
         }
       ]
     },
@@ -1358,8 +1570,28 @@
       "name": "Westminster",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stJamesPark",
+          "lineId": "circle"
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "district"
+        },
+        {
+          "id": "embankment",
+          "lineId": "circle"
+        },
+        {
+          "id": "embankment",
+          "lineId": "district"
+        },
+        {
+          "id": "greenPark",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "waterloo",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1368,8 +1600,12 @@
       "name": "Abbey Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stratfordHighStreet",
+          "lineId": "docklands"
+        },
+        {
+          "id": "westHam",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1378,8 +1614,12 @@
       "name": "All Saints",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "poplar",
+          "lineId": "docklands"
+        },
+        {
+          "id": "langdonPark",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1388,8 +1628,8 @@
       "name": "Archway",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "tufnell",
+          "lineId": "northern"
         }
       ]
     },
@@ -1398,8 +1638,12 @@
       "name": "Arsenal",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "finsburyPark",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "hollowayRoad",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -1408,8 +1652,20 @@
       "name": "Barons Court",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hammersmithDP",
+          "lineId": "district"
+        },
+        {
+          "id": "westKensington",
+          "lineId": "district"
+        },
+        {
+          "id": "hammersmithDP",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "earlsCourt",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -1418,8 +1674,12 @@
       "name": "Belsize Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hampstead",
+          "lineId": "northern"
+        },
+        {
+          "id": "chalkFarm",
+          "lineId": "northern"
         }
       ]
     },
@@ -1428,8 +1688,12 @@
       "name": "Bermondsey",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "londonBridge",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "canadaWater",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -1438,8 +1702,12 @@
       "name": "Bethanl Green - Overground",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "cambridgeHeath",
+          "lineId": "overground"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "overground"
         }
       ]
     },
@@ -1448,8 +1716,12 @@
       "name": "Bethnal Green - Central",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "mileEnd",
+          "lineId": "central"
+        },
+        {
+          "id": "liverpoolStreet",
+          "lineId": "central"
         }
       ]
     },
@@ -1458,8 +1730,12 @@
       "name": "Blackwall",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "poplar",
+          "lineId": "docklands"
+        },
+        {
+          "id": "eastIndia",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1468,8 +1744,12 @@
       "name": "Bow Church",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "devonsRoad",
+          "lineId": "docklands"
+        },
+        {
+          "id": "puddingMillLane",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1478,8 +1758,20 @@
       "name": "Bow Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "mileEnd",
+          "lineId": "HammersmithCity"
+        },
+        {
+          "id": "bromleyByBow",
+          "lineId": "HammersmithCity"
+        },
+        {
+          "id": "mileEnd",
+          "lineId": "district"
+        },
+        {
+          "id": "bromleyByBow",
+          "lineId": "district"
         }
       ]
     },
@@ -1488,8 +1780,8 @@
       "name": "Brixton",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stockwell",
+          "lineId": "victoria"
         }
       ]
     },
@@ -1498,8 +1790,8 @@
       "name": "Brockley",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "newCrossGate",
+          "lineId": "overground"
         }
       ]
     },
@@ -1508,8 +1800,20 @@
       "name": "Bromley-By-Bow",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bowRoad",
+          "lineId": "HammersmithCity"
+        },
+        {
+          "id": "westHam",
+          "lineId": "HammersmithCity"
+        },
+        {
+          "id": "bowRoad",
+          "lineId": "district"
+        },
+        {
+          "id": "westHam",
+          "lineId": "district"
         }
       ]
     },
