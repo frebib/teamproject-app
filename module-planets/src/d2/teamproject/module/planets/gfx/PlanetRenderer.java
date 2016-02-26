@@ -3,9 +3,11 @@ package d2.teamproject.module.planets.gfx;
 import d2.teamproject.module.planets.Planet;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
+import javafx.event.EventHandler;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
@@ -60,6 +62,21 @@ public class PlanetRenderer {
         model.getChildren().add(sphere);
         model.setRotationAxis(new Point3D(0, 0, 1));
         model.setRotate(planet.getTilt());
+    }
+
+    public PlanetRenderer onClick(EventHandler<MouseEvent> handler) {
+        model.addEventHandler(MouseEvent.MOUSE_CLICKED, handler);
+        return this;
+    }
+
+    public PlanetRenderer onMouseIn(EventHandler<MouseEvent> handler) {
+        model.addEventHandler(MouseEvent.MOUSE_ENTERED, handler);
+        return this;
+    }
+
+    public PlanetRenderer onMouseOut(EventHandler<MouseEvent> handler) {
+        model.addEventHandler(MouseEvent.MOUSE_EXITED, handler);
+        return this;
     }
 
     public Node getModel() {
