@@ -72,13 +72,13 @@ public class SolarSystem {
         root.getChildren().add(planetNameHolder);
 
         // TODO: Cleanup
-        createSkyboxSection(-250,-750,skyboxTexture,randomNumber());             /* Skybox for the left hand side of the screen */
+        createSkyboxSection(-250,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
         createSkyboxSection(-250,-250,skyboxTexture,randomNumber());
         createSkyboxSection(-250,250,skyboxTexture,randomNumber());
-        createSkyboxSection(250,-750,skyboxTexture,randomNumber());              /* Skybox for the center of the screen */
+        createSkyboxSection(250,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
         createSkyboxSection(250,-250,skyboxTexture,randomNumber());
         createSkyboxSection(250,250,skyboxTexture,randomNumber());
-        createSkyboxSection(750,-750,skyboxTexture,randomNumber());              /* Skybox for the right hand side of the screen*/
+        createSkyboxSection(750,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
         createSkyboxSection(750,-250,skyboxTexture,randomNumber());
         createSkyboxSection(750,250,skyboxTexture,randomNumber());
 
@@ -92,13 +92,13 @@ public class SolarSystem {
                     zoomed = p.getPlanet();
                     planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
                     planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
-                    zoomIn(camera, p).play();             /* Zoom in the camera */
+                    zoomIn(camera, p).play();                                                           /* Zoom in the camera */
 //                    planetName.setVisible(true);                                                      /* Show the planet information */
                 }
             });
         }
 
-        root.setOnDragDetected(e ->swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel()).play()); /* Swap animation testing */
+        root.setOnDragDetected(e -> swapBack().play());
         scene.setCamera(camera);
     }
 
@@ -106,7 +106,6 @@ public class SolarSystem {
      * Moves a camera close to a planet position, giving a zoom in effect
      *
      * @param camera The camera that is to be move
-     * @param planetPosition The x position of the planet
      * @return  A transition to be played
      */
     private TranslateTransition zoomIn(PerspectiveCamera camera, PlanetRenderer renderer){
@@ -189,7 +188,7 @@ public class SolarSystem {
      * @return the whole transition
      */
     private SequentialTransition swap(Node planet1, Node planet2){
-        double halfway = (planet2.getTranslateX()-planet1.getTranslateX())/2;
+        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
         // TODO: Calculate height based on which planets are swapping
         double height = 150;
 
@@ -206,6 +205,16 @@ public class SolarSystem {
         SequentialTransition sq = new SequentialTransition();
         sq.getChildren().addAll(arcStart,arcFinish);
         return sq;
+    }
+
+    public SequentialTransition swapBack(){
+        SequentialTransition sq = new SequentialTransition();
+        // TODO: Animate a sorted array
+        SequentialTransition one = swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel());
+        SequentialTransition two = swap(planetRenderers.get(3).getModel(),planetRenderers.get(5).getModel());
+        SequentialTransition three = swap(planetRenderers.get(4).getModel(),planetRenderers.get(6).getModel());
+        sq.getChildren().addAll(one,two,three);
+        return  sq;
     }
 
     /**

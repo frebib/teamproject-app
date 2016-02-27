@@ -14,7 +14,8 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 public class PlanetRenderer {
-    private static final int gap = 40;
+    // TODO: Figure out the best gap for all planets
+    private static final int gap = 60;
     private static float cumulativeDist = 0;
 
     private Planet planet;
