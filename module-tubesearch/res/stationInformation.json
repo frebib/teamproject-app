@@ -2558,8 +2558,12 @@
       "name": "Island Gardens",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "mudchute",
+          "lineId": "docklands"
+        },
+        {
+          "id": "cuttySark",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2568,8 +2572,16 @@
       "name": "Kennington",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "waterloo",
+          "lineId": "northern"
+        },
+        {
+          "id": "oval",
+          "lineId": "northern"
+        },
+        {
+          "id": "elephantAndCastle",
+          "lineId": "northern"
         }
       ]
     },
@@ -2578,8 +2590,20 @@
       "name": "Kensal Green",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "willesdenJunction",
+          "lineId": "overground"
+        },
+        {
+          "id": "queensPark",
+          "lineId": "overground"
+        },
+        {
+          "id": "willesdenJunction",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "queensPark",
+          "lineId": "bakerloo"
         }
       ]
     },
@@ -2588,8 +2612,12 @@
       "name": "Kensal Rise",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "willesdenJunction",
+          "lineId": "overground"
+        },
+        {
+          "id": "brondesbury",
+          "lineId": "overground"
         }
       ]
     },
@@ -2598,8 +2626,16 @@
       "name": "Kensington (Olympia)",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "earlsCourt",
+          "lineId": "district"
+        },
+        {
+          "id": "shepherdsBush",
+          "lineId": "overground"
+        },
+        {
+          "id": "westBrompton",
+          "lineId": "overground"
         }
       ]
     },
@@ -2608,8 +2644,12 @@
       "name": "Kentish Town",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "tufnellPrk",
+          "lineId": "northern"
+        },
+        {
+          "id": "camdenTown",
+          "lineId": "northern"
         }
       ]
     },
@@ -2618,8 +2658,12 @@
       "name": "Kentish Town West",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "gospelOak",
+          "lineId": "overground"
+        },
+        {
+          "id": "camdenRoad",
+          "lineId": "overground"
         }
       ]
     },
