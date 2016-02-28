@@ -2682,12 +2682,52 @@
       ]
     },
     {
+      "id": "kilburnPark",
+      "name": "Kilburn",
+      "connected": [
+        {
+          "id": "queensPark",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "maidaVale",
+          "lineId": "bakerloo"
+        }
+      ]
+    },
+    {
+      "id": "kilburnHighRoad",
+      "name": "Kilburn",
+      "connected": [
+        {
+          "id": "queensPark",
+          "lineId": "overground"
+        },
+        {
+          "id": "southHampstead",
+          "lineId": "overground"
+        }
+      ]
+    },
+    {
       "id": "ladbrokeGrove",
       "name": "Ladbroke Grove",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "westbournePark",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "westbournePark",
+          "lineId": "circle"
+        },
+        {
+          "id": "latimerRoad",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "latimerRoad",
+          "lineId": "circle"
         }
       ]
     },
@@ -2696,8 +2736,12 @@
       "name": "Langdon Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "devonsRoad",
+          "lineId": "docklands"
+        },
+        {
+          "id": "allSaints",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2706,8 +2750,20 @@
       "name": "Latimer Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "ladbrokeGrove",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "ladbrokeGrove",
+          "lineId": "circle"
+        },
+        {
+          "id": "woodLane",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "woodLane",
+          "lineId": "circle"
         }
       ]
     },
@@ -2716,8 +2772,8 @@
       "name": "Lewisham",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "elversonRoad",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2726,8 +2782,12 @@
       "name": "Limehouse",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "shadwell",
+          "lineId": "docklands"
+        },
+        {
+          "id": "westferry",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2736,8 +2796,12 @@
       "name": "London Fields",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hackneyDowns",
+          "lineId": "overground"
+        },
+        {
+          "id": "cambridgeHeath",
+          "lineId": "overground"
         }
       ]
     },
@@ -2746,8 +2810,12 @@
       "name": "Maida Vale",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "kilburnPark",
+          "lineId": "bakerloo"
+        },
+        {
+          "id": "warwickAvenue",
+          "lineId": "bakerloo"
         }
       ]
     },
