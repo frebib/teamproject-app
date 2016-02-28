@@ -1934,8 +1934,8 @@
       ]
     },
     {
-      "id": "canaryWarf",
-      "name": "Canary Warf",
+      "id": "canaryWharf",
+      "name": "Canary Wharf",
       "connected": [
         {
           "id": "canadaWater",
@@ -1950,7 +1950,7 @@
           "lineId": "docklands"
         },
         {
-          "id": "heronQuay",
+          "id": "heronQuays",
           "lineId": "docklands"
         }
       ]
@@ -2260,8 +2260,16 @@
       "name": "Finsbury Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "highburyIslington",
+          "lineId": "victoria"
+        },
+        {
+          "id": "arsenal",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "manorHouse",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -2270,8 +2278,12 @@
       "name": "Fulham Broadway",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "parsonsGreen",
+          "lineId": "district"
+        },
+        {
+          "id": "westBrompton",
+          "lineId": "district"
         }
       ]
     },
@@ -2280,8 +2292,20 @@
       "name": "Goldhawk Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hammersmithCH",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "hammersmithCH",
+          "lineId": "circle"
+        },
+        {
+          "id": "shepherdsBushMarket",
+          "lineId": "hammersmithCity"
+        },
+        {
+          "id": "shepherdsBushMarket",
+          "lineId": "circle"
         }
       ]
     },
@@ -2290,8 +2314,16 @@
       "name": "Gospel Oak",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hampsteadHeath",
+          "lineId": "overground"
+        },
+        {
+          "id": "kentishTownWest",
+          "lineId": "overground"
+        },
+        {
+          "id": "upperHolloway",
+          "lineId": "overground"
         }
       ]
     },
@@ -2300,8 +2332,12 @@
       "name": "Greenwich",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "cuttySark",
+          "lineId": "docklands"
+        },
+        {
+          "id": "deptfordBridge",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2310,8 +2346,12 @@
       "name": "Hackney Central",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "homerton",
+          "lineId": "overground"
+        },
+        {
+          "id": "dalstonKingsland",
+          "lineId": "overground"
         }
       ]
     },
@@ -2320,8 +2360,16 @@
       "name": "Hackney Downs",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "rectoryRoad",
+          "lineId": "overground"
+        },
+        {
+          "id": "clapton",
+          "lineId": "overground"
+        },
+        {
+          "id": "londonFields",
+          "lineId": "overground"
         }
       ]
     },
@@ -2330,8 +2378,12 @@
       "name": "Hackney Wick",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "homerton",
+          "lineId": "overground"
+        },
+        {
+          "id": "stratford",
+          "lineId": "overground"
         }
       ]
     },
@@ -2340,8 +2392,12 @@
       "name": "Haggerston",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hoxton",
+          "lineId": "overground"
+        },
+        {
+          "id": "dalstonJunction",
+          "lineId": "overground"
         }
       ]
     },
@@ -2350,8 +2406,20 @@
       "name": "Hammersmith - District and Piccadilly",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "ravenscourtPark",
+          "lineId": "district"
+        },
+        {
+          "id": "baronsCourt",
+          "lineId": "district"
+        },
+        {
+          "id": "baronsCourt",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "turnhamGreen",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -2360,8 +2428,12 @@
       "name": "Hammersmith - Circle and Hammersmith & City",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "goldhawkRoad",
+          "lineId": "circle"
+        },
+        {
+          "id": "goldhawkRoad",
+          "lineId": "hammersmithCity"
         }
       ]
     },
@@ -2370,8 +2442,8 @@
       "name": "Hampstead",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "belsizePark",
+          "lineId": "northern"
         }
       ]
     },
@@ -2380,8 +2452,12 @@
       "name": "Hampstead Heath",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "gospelOak",
+          "lineId": "overground"
+        },
+        {
+          "id": "finchleyRoadAndFrognal",
+          "lineId": "overground"
         }
       ]
     },
@@ -2390,8 +2466,12 @@
       "name": "Heron Quays",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "canaryWharf",
+          "lineId": "docklands"
+        },
+        {
+          "id": "southQuay",
+          "lineId": "docklands"
         }
       ]
     },
