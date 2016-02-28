@@ -98,7 +98,11 @@ public class SolarSystem {
             });
         }
 
-        root.setOnDragDetected(e -> swapBack().play());
+        root.setOnDragDetected(e -> {
+            SequentialTransition test = new SequentialTransition();
+            test.getChildren().addAll(messUp(),swapBack());
+            test.play();
+        });
         scene.setCamera(camera);
     }
 
@@ -207,13 +211,28 @@ public class SolarSystem {
         return sq;
     }
 
+
+    public SequentialTransition messUp(){
+        SequentialTransition sq = new SequentialTransition();
+        SequentialTransition one = swap(planetRenderers.get(3).getModel(),planetRenderers.get(5).getModel());
+        SequentialTransition two = swap(planetRenderers.get(4).getModel(),planetRenderers.get(6).getModel());
+        SequentialTransition three = swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel());
+        sq.getChildren().addAll(one,two,three);
+        // 0 1 2 3 4 5 6
+        // 2 1 0 5 6 3 4
+        return  sq;
+    }
+
     public SequentialTransition swapBack(){
         SequentialTransition sq = new SequentialTransition();
-        // TODO: Animate a sorted array
-        SequentialTransition one = swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel());
-        SequentialTransition two = swap(planetRenderers.get(3).getModel(),planetRenderers.get(5).getModel());
-        SequentialTransition three = swap(planetRenderers.get(4).getModel(),planetRenderers.get(6).getModel());
-        sq.getChildren().addAll(one,two,three);
+
+        int[] incorrectOrder = {2,1,0,5,6,3,4}; /* This should be created  when the planets are rendered in the wrong order*/
+        int[] correctOrder   = {0,1,2,3,4,5,6}; /* This should be taken in from the sorting*/
+
+        for (int k = 0;k<incorrectOrder.length+1;k++)
+        {
+           sq.getChildren().add(swap(planetRenderers.get(incorrectOrder[k]).getModel(),planetRenderers.get(correctOrder[k]).getModel()));
+        }
         return  sq;
     }
 
