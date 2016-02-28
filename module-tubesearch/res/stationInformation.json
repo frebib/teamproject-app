@@ -1822,8 +1822,12 @@
       "name": "Brondesbury",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "brondesburyPark",
+          "lineId": "overground"
+        },
+        {
+          "id": "westHampstead",
+          "lineId": "overground"
         }
       ]
     },
@@ -1832,8 +1836,12 @@
       "name": "Brondesbury Park",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "brondesbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "kensalRise",
+          "lineId": "overground"
         }
       ]
     },
@@ -1842,8 +1850,12 @@
       "name": "Caledonian Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hollowayRoad",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -1852,8 +1864,12 @@
       "name": "Caledonian Road & Barnsbury",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "camdenRoad",
+          "lineId": "overground"
+        },
+        {
+          "id": "HighburyIslington",
+          "lineId": "overground"
         }
       ]
     },
@@ -1862,8 +1878,12 @@
       "name": "Cambridge Heath",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "londonFields",
+          "lineId": "overground"
+        },
+        {
+          "id": "bethnalGreenOverground",
+          "lineId": "overground"
         }
       ]
     },
@@ -1872,8 +1892,12 @@
       "name": "Camden Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "kentishTownWest",
+          "lineId": "overground"
+        },
+        {
+          "id": "caledonianRoadAndBarnsbury",
+          "lineId": "overground"
         }
       ]
     },
@@ -1892,8 +1916,20 @@
       "name": "Canada Water",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bermondsey",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "canaryWharf",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "surreyQuays",
+          "lineId": "overground"
+        },
+        {
+          "id": "rotherhithe",
+          "lineId": "overground"
         }
       ]
     },
@@ -1902,8 +1938,20 @@
       "name": "Canary Warf",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "canadaWater",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "northGreenwich",
+          "lineId": "jubilee"
+        },
+        {
+          "id": "westIndiaQuay",
+          "lineId": "docklands"
+        },
+        {
+          "id": "heronQuay",
+          "lineId": "docklands"
         }
       ]
     },
@@ -1922,8 +1970,16 @@
       "name": "Canonbury",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "highburyIslington",
+          "lineId": "overground"
+        },
+        {
+          "id": "dalstonJunction",
+          "lineId": "overground"
+        },
+        {
+          "id": "dalstonKingsland",
+          "lineId": "overground"
         }
       ]
     },
@@ -1932,8 +1988,12 @@
       "name": "Chalk Farm",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "belsizePark",
+          "lineId": "northern"
+        },
+        {
+          "id": "camdenTown",
+          "lineId": "northern"
         }
       ]
     },
@@ -1942,8 +2002,12 @@
       "name": "Clapham Common",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "claphamSouth",
+          "lineId": "northern"
+        },
+        {
+          "id": "claphamNorth",
+          "lineId": "northern"
         }
       ]
     },
@@ -1952,8 +2016,12 @@
       "name": "Clapham High Street",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "wandsworthRoad",
+          "lineId": "overground"
+        },
+        {
+          "id": "denmarkHill",
+          "lineId": "overground"
         }
       ]
     },
@@ -1962,8 +2030,12 @@
       "name": "Clapham Junction",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "imperialWharf",
+          "lineId": "overground"
+        },
+        {
+          "id": "wandsworthRoad",
+          "lineId": "overground"
         }
       ]
     },
@@ -1972,8 +2044,12 @@
       "name": "Clapham North",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "stockwell",
+          "lineId": "northern"
+        },
+        {
+          "id": "claphamCommon",
+          "lineId": "northern"
         }
       ]
     },
@@ -1982,8 +2058,8 @@
       "name": "Clapham South",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "claphamCommon",
+          "lineId": "northern"
         }
       ]
     },
@@ -1992,7 +2068,7 @@
       "name": "Clapton",
       "connected": [
         {
-          "id": "",
+          "id": "hackneyDowns",
           "lineId": ""
         }
       ]
@@ -2002,8 +2078,12 @@
       "name": "Crossharbour",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "southQuay",
+          "lineId": "docklands"
+        },
+        {
+          "id": "mudchute",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2012,8 +2092,12 @@
       "name": "Cutty Sark",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "islandGardens",
+          "lineId": "docklands"
+        },
+        {
+          "id": "greenwich",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2022,8 +2106,12 @@
       "name": "Dalston Junction",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "canonbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "haggerston",
+          "lineId": "overground"
         }
       ]
     },
@@ -2032,8 +2120,12 @@
       "name": "Dalston Kingsland",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "canonbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "hackneyCentral",
+          "lineId": "overground"
         }
       ]
     },
@@ -2042,8 +2134,12 @@
       "name": "Denmark Hill",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "peckhamRye",
+          "lineId": "overground"
+        },
+        {
+          "id": "claphamHighStreet",
+          "lineId": "overground"
         }
       ]
     },
@@ -2052,8 +2148,12 @@
       "name": "Deptford Bridge",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "greenwich",
+          "lineId": "docklands"
+        },
+        {
+          "id": "elversonRoad",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2062,8 +2162,12 @@
       "name": "Devons Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "bowChurch",
+          "lineId": "docklands"
+        },
+        {
+          "id": "langdonPark",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2086,8 +2190,12 @@
       "name": "East India",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "blackwall",
+          "lineId": "docklands"
+        },
+        {
+          "id": "canningTown",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2096,8 +2204,8 @@
       "name": "East Putney",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "putneyBridge",
+          "lineId": "district"
         }
       ]
     },
@@ -2106,8 +2214,12 @@
       "name": "Elverson Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "deptfordBridge",
+          "lineId": "docklands"
+        },
+        {
+          "id": "lewisham",
+          "lineId": "docklands"
         }
       ]
     },
@@ -2134,8 +2246,12 @@
       "name": "Finchley Road & Frognal",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "westHampstead",
+          "lineId": "overground"
+        },
+        {
+          "id": "hampsteadHeath",
+          "lineId": "overground"
         }
       ]
     },
@@ -2355,7 +2471,17 @@
     },
     {
       "id": "kensalGreen",
-      "name": "Kensal green",
+      "name": "Kensal Green",
+      "connected": [
+        {
+          "id": "",
+          "lineId": ""
+        }
+      ]
+    },
+    {
+      "id": "kensalRise",
+      "name": "Kensal Rise",
       "connected": [
         {
           "id": "",
@@ -2831,7 +2957,7 @@
     },
     {
       "id": "surreyQuays",
-      "name": "Surry Quays",
+      "name": "Surrey Quays",
       "connected": [
         {
           "id": "",
