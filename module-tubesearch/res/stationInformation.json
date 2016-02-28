@@ -2480,8 +2480,20 @@
       "name": "Highbury & Islington",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "canonbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "caledonianRoadAndBarnsbury",
+          "lineId": "overground"
+        },
+        {
+          "id": "finsburyPark",
+          "lineId": "victoria"
+        },
+        {
+          "id": "kingsCross",
+          "lineId": "victoria"
         }
       ]
     },
@@ -2504,8 +2516,12 @@
       "name": "Holloway Road",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "arsenal",
+          "lineId": "piccadilly"
+        },
+        {
+          "id": "caledonianRoad",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -2514,8 +2530,12 @@
       "name": "Homerton",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "hackneyCentral",
+          "lineId": "overground"
+        },
+        {
+          "id": "hackneyWick",
+          "lineId": "overground"
         }
       ]
     },
@@ -2524,8 +2544,12 @@
       "name": "Imperial Wharf",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "westBrompton",
+          "lineId": "overground"
+        },
+        {
+          "id": "claphamJunction",
+          "lineId": "overground"
         }
       ]
     },
