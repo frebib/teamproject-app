@@ -150,7 +150,7 @@
           "lineId": "metropolitan"
         },
         {
-          "id": "edgwareCH",
+          "id": "edgwareRoadCH",
           "lineId": "circle"
         },
         {
@@ -158,7 +158,7 @@
           "lineId": "circle"
         },
         {
-          "id": "edgwareCH",
+          "id": "edgwareRoadCH",
           "lineId": "hammersmithCity"
         },
         {
@@ -414,7 +414,7 @@
       ]
     },
     {
-      "id": "edgwareBakerloo",
+      "id": "edgwareRoadBakerloo",
       "name": "Edgware Road - Bakerloo",
       "connected": [
         {
@@ -428,7 +428,7 @@
       ]
     },
     {
-      "id": "edgwareCH",
+      "id": "edgwareRoadCH",
       "name": "Edgware Road - Circle, District & Hammersmith",
       "connected": [
         {
@@ -914,7 +914,7 @@
           "lineId": "central"
         },
         {
-          "id": "bethnalGreen",
+          "id": "bethnalGreenCentral",
           "lineId": "central"
         },
         {
@@ -1652,7 +1652,7 @@
       "name": "Barons Court",
       "connected": [
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "district"
         },
         {
@@ -1660,7 +1660,7 @@
           "lineId": "district"
         },
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "piccadilly"
         },
         {
@@ -1712,8 +1712,8 @@
       ]
     },
     {
-      "id": "bethnalGreen",
-      "name": "Bethnal Green",
+      "id": "bethnalGreenCentral",
+      "name": "Bethnal Green - Central",
       "connected": [
         {
           "id": "mileEnd",
@@ -1908,6 +1908,14 @@
         {
           "id": "chalkFarm",
           "lineId": "northern"
+        },
+        {
+          "id": "kentishTown",
+          "lineId": "northern"
+        },
+        {
+          "id": "morningtonCrescent",
+          "lineId": "northern"
         }
       ]
     },
@@ -1960,8 +1968,12 @@
       "name": "Canning Town",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "starLane",
+          "lineId": "dlr"
+        },
+        {
+          "id": "eastIndia",
+          "lineId": "dlr"
         }
       ]
     },
@@ -2069,7 +2081,7 @@
       "connected": [
         {
           "id": "hackneyDowns",
-          "lineId": ""
+          "lineId": "overground"
         }
       ]
     },
@@ -2292,11 +2304,11 @@
       "name": "Goldhawk Road",
       "connected": [
         {
-          "id": "hammersmith",
+          "id": "hammersmithCH",
           "lineId": "circle"
         },
         {
-          "id": "hammersmith",
+          "id": "hammersmithCH",
           "lineId": "hammersmithCity"
         },
         {
@@ -2402,7 +2414,7 @@
       ]
     },
     {
-      "id": "hammersmith",
+      "id": "hammersmithDP",
       "name": "Hammersmith - District and Piccadilly",
       "connected": [
         {
@@ -2441,10 +2453,6 @@
       "id": "hampstead",
       "name": "Hampstead",
       "connected": [
-        {
-          "id": "goldersGreen",
-          "lineId": "northern"
-        },
         {
           "id": "belsizePark",
           "lineId": "northern"
@@ -2538,7 +2546,7 @@
           "lineId": "overground"
         },
         {
-          "id": "hackneyWest",
+          "id": "hackneyWick",
           "lineId": "overground"
         }
       ]
@@ -2648,7 +2656,7 @@
       "name": "Kentish Town",
       "connected": [
         {
-          "id": "archway",
+          "id": "tufnellPark",
           "lineId": "northern"
         },
         {
@@ -2740,7 +2748,7 @@
       "name": "Langdon Park",
       "connected": [
         {
-          "id": "devondsRoad",
+          "id": "devonsRoad",
           "lineId": "dlr"
         },
         {
@@ -2830,10 +2838,6 @@
         {
           "id": "finsburyPark",
           "lineId": "piccadilly"
-        },
-        {
-          "id": "turnpikeLane",
-          "lineId": "piccadilly"
         }
       ]
     },
@@ -2858,7 +2862,7 @@
           "lineId": "district"
         },
         {
-          "id": "bethnalGreen",
+          "id": "bethnalGreenCentral",
           "lineId": "central"
         },
         {
@@ -2900,8 +2904,8 @@
       "name": "New Cross",
       "connected": [
         {
-          "id": "overground",
-          "lineId": "surreyQuays"
+          "id": "surreyQuays",
+          "lineId": "overground"
         }
       ]
     },
@@ -3080,7 +3084,7 @@
           "lineId": "district"
         },
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "district"
         }
       ]
@@ -3408,8 +3412,12 @@
       "name": "Tufnell Park - closed till March",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "archway",
+          "lineId": "northern"
+        },
+        {
+          "id": "kentishTown",
+          "lineId": "northern"
         }
       ]
     },
@@ -3668,15 +3676,19 @@
       "name": "Willesden Junction",
       "connected": [
         {
-          "id": "kensallGreen",
+          "id": "kensalGreen",
           "lineId": "bakerloo"
         },
         {
-          "id": "kensallGreen",
+          "id": "kensalGreen",
           "lineId": "overground"
         },
         {
           "id": "kensalRise",
+          "lineId": "overground"
+        },
+        {
+          "id": "shepherdsBush",
           "lineId": "overground"
         }
       ]
@@ -3694,11 +3706,11 @@
           "lineId": "hammersmithCity"
         },
         {
-          "id": "latimerGrove",
+          "id": "latimerRoad",
           "lineId": "circle"
         },
         {
-          "id": "latimerGrove",
+          "id": "latimerRoad",
           "lineId": "hammersmithCity"
         }
       ]
