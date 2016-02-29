@@ -56,7 +56,7 @@
       "colour": "#00e6b8"
     },
     {
-      "id": "docklands",
+      "id": "dlr",
       "name": "Docklands Light Railway",
       "colour": "#00b3b3"
     },
@@ -193,7 +193,7 @@
         },
         {
           "id": "shadwell",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1439,7 +1439,7 @@
       "connected": [
         {
           "id": "shadwell",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1601,11 +1601,11 @@
       "connected": [
         {
           "id": "stratfordHighStreet",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "westHam",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1615,11 +1615,11 @@
       "connected": [
         {
           "id": "poplar",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "langdonPark",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1652,7 +1652,7 @@
       "name": "Barons Court",
       "connected": [
         {
-          "id": "hammersmithDP",
+          "id": "hammersmith",
           "lineId": "district"
         },
         {
@@ -1660,7 +1660,7 @@
           "lineId": "district"
         },
         {
-          "id": "hammersmithDP",
+          "id": "hammersmith",
           "lineId": "piccadilly"
         },
         {
@@ -1731,11 +1731,11 @@
       "connected": [
         {
           "id": "poplar",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "eastIndia",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1745,11 +1745,11 @@
       "connected": [
         {
           "id": "devonsRoad",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "puddingMillLane",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -1947,11 +1947,11 @@
         },
         {
           "id": "westIndiaQuay",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "heronQuays",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2079,11 +2079,11 @@
       "connected": [
         {
           "id": "southQuay",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "mudchute",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2093,11 +2093,11 @@
       "connected": [
         {
           "id": "islandGardens",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "greenwich",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2149,11 +2149,11 @@
       "connected": [
         {
           "id": "greenwich",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "elversonRoad",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2163,11 +2163,11 @@
       "connected": [
         {
           "id": "bowChurch",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "langdonPark",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2191,11 +2191,11 @@
       "connected": [
         {
           "id": "blackwall",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "canningTown",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2215,11 +2215,11 @@
       "connected": [
         {
           "id": "deptfordBridge",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "lewisham",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2292,11 +2292,11 @@
       "name": "Goldhawk Road",
       "connected": [
         {
-          "id": "hammersmithDP",
+          "id": "hammersmith",
           "lineId": "circle"
         },
         {
-          "id": "hammersmithDP",
+          "id": "hammersmith",
           "lineId": "hammersmithCity"
         },
         {
@@ -2333,11 +2333,11 @@
       "connected": [
         {
           "id": "deptfordBridge",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "cuttySark",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2402,7 +2402,7 @@
       ]
     },
     {
-      "id": "hammersmithDP",
+      "id": "hammersmith",
       "name": "Hammersmith - District and Piccadilly",
       "connected": [
         {
@@ -2471,11 +2471,11 @@
       "connected": [
         {
           "id": "southQuay",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "canaryWharf",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2563,11 +2563,11 @@
       "connected": [
         {
           "id": "mudchute",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "cuttySark",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2741,11 +2741,11 @@
       "connected": [
         {
           "id": "devondsRoad",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "allSaints",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2777,7 +2777,7 @@
       "connected": [
         {
           "id": "elversonRoad",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2787,11 +2787,11 @@
       "connected": [
         {
           "id": "shadwell",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "westferry",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2887,11 +2887,11 @@
       "connected": [
         {
           "id": "crossharbour",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "islandGardens",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -2991,19 +2991,19 @@
       "connected": [
         {
           "id": "westferry",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "allSaints",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "blackwall",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "westIndiaQuay",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3013,11 +3013,11 @@
       "connected": [
         {
           "id": "bowChurch",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "stratford",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3080,7 +3080,7 @@
           "lineId": "district"
         },
         {
-          "id": "hammersmithDP",
+          "id": "hammersmith",
           "lineId": "district"
         }
       ]
@@ -3149,15 +3149,15 @@
         },
         {
           "id": "limehouse",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "towerGateway",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "bank",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3225,11 +3225,11 @@
       "connected": [
         {
           "id": "heronQuays",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "crossharbour",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3267,11 +3267,11 @@
       "connected": [
         {
           "id": "westHam",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "canningTown",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3335,11 +3335,11 @@
       "connected": [
         {
           "id": "stratfordInternational",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "stratfordHighStreet",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3349,11 +3349,11 @@
       "connected": [
         {
           "id": "stratford",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "abbeyRoad",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3363,7 +3363,7 @@
       "connected": [
         {
           "id": "stratford",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3609,15 +3609,15 @@
       "connected": [
         {
           "id": "limehouse",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "poplar",
-          "lineId": "docklands"
+          "lineId": "dlr"
         },
         {
           "id": "westIndiaQuay",
-          "lineId": "docklands"
+          "lineId": "dlr"
         }
       ]
     },
