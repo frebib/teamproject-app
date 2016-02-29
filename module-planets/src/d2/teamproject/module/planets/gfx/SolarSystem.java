@@ -2,7 +2,6 @@ package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
-import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.module.planets.Planet;
 import javafx.animation.*;
 import javafx.geometry.Point3D;
@@ -40,17 +39,17 @@ public class SolarSystem {
      */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
 
-        initialCameraXPosition = -140.0;                                            /* Offset right slightly for Sun */
+        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
         planetRenderers = planets.stream().map(PlanetRenderer::new).collect(Collectors.toList());
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
-        scene.setFill(Color.BLACK);                                                 /* Black background */
+        scene.setFill(Color.BLACK); /* Black background */
 
         camera = new PerspectiveCamera();
         camera.setNearClip(0.001);
         camera.setFieldOfView(40);
         camera.setTranslateX(initialCameraXPosition);
-        camera.setTranslateY(scene.getHeight() / -2);                               /* Sets the camera in the middle of the window */
+        camera.setTranslateY(scene.getHeight() / -2); /* Sets the camera in the middle of the window */
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         root.getChildren().add(camera);
@@ -233,7 +232,7 @@ public class SolarSystem {
         return sq;
     }
 
-    public SequentialTransition messUp(){
+    private SequentialTransition messUp(){
         SequentialTransition sq = new SequentialTransition();
         SequentialTransition one = swap(planetRenderers.get(3).getModel(),planetRenderers.get(5).getModel());
         SequentialTransition two = swap(planetRenderers.get(4).getModel(),planetRenderers.get(6).getModel());
@@ -244,7 +243,7 @@ public class SolarSystem {
         return  sq;
     }
 
-    public SequentialTransition swapBack(){
+    private SequentialTransition swapBack(){
         SequentialTransition sq = new SequentialTransition();
 
         int[] incorrectOrder = {2,1,0,5,6,3,4}; /* This should be created  when the planets are rendered in the wrong order*/
