@@ -41,10 +41,10 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         if (list == null || list.size() < 1)
             return;
 
-        lastListState = new ListSortState<E>(list);
+        lastListState = new ListSortState<>(list);
         states.add(lastListState);
         quickSort(0, list.size() - 1);
-        states.add(new ListSortState<E>(list, true));
+        states.add(new ListSortState<>(list, true));
     }
 
     private void quickSort(int lowerIndex, int upperIndex) {
@@ -54,19 +54,19 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         // Use middle value as the pivot point
         int pivotIndex = lowerIndex + (upperIndex - lowerIndex) / 2;
         E pivot = list.get(pivotIndex);
-        states.add(new BoundSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex));
+        states.add(new BoundSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex));
 
         // Divide into two arrays
         while (i <= j) {
             // Compare either side of pivot and count towards pivot
             while (comparator.compare(list.get(i), pivot) < 0)
-                states.add(new CompareSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex, i++, pivotIndex, false));
+                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, i++, pivotIndex, false));
             while (comparator.compare(list.get(j), pivot) > 0)
-                states.add(new CompareSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex, j--, pivotIndex, false));
+                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, j--, pivotIndex, false));
 
             if (i <= j) {
-                states.add(new CompareSortState<E>(lastListState, pivotIndex, lowerIndex, upperIndex, i, j, true));
-                lastListState = new ListSortState<E>(list);
+                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, i, j, true));
+                lastListState = new ListSortState<>(list);
                 // Swap values then move index
                 // to next position on both sides
                 exchangeNumbers(i++, j--);
