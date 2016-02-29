@@ -49,7 +49,8 @@ public class PlanetController extends JsonController {
         view = new PlanetView(this);
         view.getWindow().setOnKeyPressed(e -> {
             System.out.println(e.getCode());
-            System.out.println(sort.getNext());
+//            System.out.println(sort.getNext());
+            view.updateState(sort.getNext());
         });
     }
 

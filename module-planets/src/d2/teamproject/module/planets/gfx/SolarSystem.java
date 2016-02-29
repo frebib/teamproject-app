@@ -1,6 +1,8 @@
 package d2.teamproject.module.planets.gfx;
 
 import d2.teamproject.PARTH;
+import d2.teamproject.algorithm.sorting.CompareSortState;
+import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.module.planets.Planet;
 import javafx.animation.*;
 import javafx.geometry.Point3D;
@@ -10,11 +12,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.*;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontSmoothingType;
-import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -37,6 +39,7 @@ public class SolarSystem {
      * @param skyboxTexture A image used for the background
      */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
+
         initialCameraXPosition = -140.0;                                            /* Offset right slightly for Sun */
         planetRenderers = planets.stream().map(PlanetRenderer::new).collect(Collectors.toList());
         root = new Group();
@@ -51,21 +54,32 @@ public class SolarSystem {
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         root.getChildren().add(camera);
-        root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList()));
+        root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList())); // TODO: Get rid of this planetRenderers
 
         // TODO: Cleanup
         Text planetName = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
-        planetName.setFont(new Font(81));
+        planetName.setFont(new Font(40));
         planetName.setFill(Color.WHITE);
         planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
+//        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
         planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
+
+        Text planetSize = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
+        planetSize.setFont(new Font(20));
+        planetSize.setFill(Color.WHITE);
+        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+
+        TextFlow planetFlow = new TextFlow();
+        planetFlow.setTextAlignment(TextAlignment.CENTER);
+        planetFlow.setMaxWidth(500);
+        planetFlow.getChildren().addAll(planetName,planetSize);
 
         Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
         planetNameHolder.setMouseTransparent(true);
-        planetNameHolder.getChildren().add(planetName);
-        planetNameHolder.setTranslateZ(-80);
-        planetNameHolder.setTranslateY(0);
+        planetNameHolder.getChildren().add(planetFlow);
+//        planetNameHolder.setTranslateZ(-80);
+        planetNameHolder.setVisible(false);
+
         planetNameHolder.setCache(true);
         planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
 
@@ -86,14 +100,21 @@ public class SolarSystem {
             p.onClick(e -> {
                 if(p.getPlanet() == zoomed) {                                        // TODO: Better click checking needs to be added
                     zoomed = null;
-                    planetName.setVisible(false);                                    /* Hide the planets name*/
+//                    planetName.setVisible(false);                                    /* Hide the planets name*/
+                    planetNameHolder.setVisible(false);
                     zoomOut(camera).play();                                          /* Zoom out the camera*/
-                } else {
-                    zoomed = p.getPlanet();
-                    planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
-                    planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
-                    zoomIn(camera, p).play();                                                           /* Zoom in the camera */
-//                    planetName.setVisible(true);                                                      /* Show the planet information */
+                }
+                else {
+                zoomed = p.getPlanet();
+                planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
+                planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
+                planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
+                zoomIn(camera, p).play();                                                           /* Zoom in the camera */
+
+                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
+                planetNameHolder.setTranslateX(p.getModel().getLocalToParentTransform().getTx());
+                System.out.println("Text x: "+planetNameHolder.getLocalToParentTransform().getTx());
+                planetNameHolder.setVisible(true);                                                      /* Show the planet information */
                 }
             });
         }
@@ -191,26 +212,26 @@ public class SolarSystem {
      * @param planet2 Planet B in the swap
      * @return the whole transition
      */
+    @Deprecated
     private SequentialTransition swap(Node planet1, Node planet2){
         double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
         // TODO: Calculate height based on which planets are swapping
-        double height = 150;
+        double height = 200;
 
         TranslateTransition planet2arcStart = move(planet2,halfway,height);
         TranslateTransition planet2arcFinish = move(planet2,planet1.getTranslateX(),0);
         TranslateTransition planet1arcStart = move(planet1,halfway,-height);
         TranslateTransition planet1arcFinish = move(planet1,planet2.getTranslateX(),0);
 
-        ParallelTransition arcStart= new ParallelTransition();
-        arcStart.getChildren().addAll(planet2arcStart,planet1arcStart);
-        ParallelTransition arcFinish= new ParallelTransition();
-        arcFinish.getChildren().addAll(planet2arcFinish,planet1arcFinish);
+        ParallelTransition arcS= new ParallelTransition();
+        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
+        ParallelTransition arcF= new ParallelTransition();
+        arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
 
         SequentialTransition sq = new SequentialTransition();
-        sq.getChildren().addAll(arcStart,arcFinish);
+        sq.getChildren().addAll(arcS,arcF);
         return sq;
     }
-
 
     public SequentialTransition messUp(){
         SequentialTransition sq = new SequentialTransition();
@@ -235,6 +256,43 @@ public class SolarSystem {
                     planetRenderers.get(correctOrder[k]).getModel()
             ));
         return sq;
+    }
+
+    public void sortSwap(CompareSortState<Planet> state){
+        SequentialTransition sq = new SequentialTransition();
+        Point p = state.getCompares();
+        TranslateTransition planet2arcFinish;
+        TranslateTransition planet1arcFinish;
+        Node planet1 = planetRenderers.get(p.x).getModel();
+        Node planet2 = planetRenderers.get(p.y).getModel();
+        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
+        double height = 200; // TODO: Calculate height based on which planets are swapping
+
+        TranslateTransition planet2arcStart = move(planet2,halfway,height);
+        TranslateTransition planet1arcStart = move(planet1,halfway,-height);
+        ParallelTransition arcS= new ParallelTransition();
+        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
+        sq.getChildren().add(arcS);
+
+        PauseTransition pt =new PauseTransition(Duration.seconds(0.5));
+        sq.getChildren().add(pt);
+
+        // TODO: Make the other planets fade here and add that to sq
+
+        if(state.isSwap()) { /* Swap the planets  */
+            planet2arcFinish = move(planet2,planet1.getTranslateX(),0);
+            planet1arcFinish = move(planet1,planet2.getTranslateX(),0);
+
+        }
+        else { /* Return the planets */
+            planet2arcFinish = move(planet2,planet2.getTranslateX(),0);
+            planet1arcFinish= move(planet1,planet1.getTranslateX(),0);
+
+        }
+        ParallelTransition arcF= new ParallelTransition();
+        arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
+        sq.getChildren().add(arcF);
+        sq.play();
     }
 
     /**
