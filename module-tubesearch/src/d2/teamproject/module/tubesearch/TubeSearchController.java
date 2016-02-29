@@ -41,6 +41,7 @@ public class TubeSearchController extends JsonController {
             String id = obj.get("id").asString();
             stationMap.put(id, new TubeStation(id, obj.get("name").asString()));
         });
+        final Integer[] errors = {0};
         stationinfo.forEach(s -> {
             JsonObject obj = s.asObject();
             String fromStation = obj.get("id").asString();
@@ -53,17 +54,21 @@ public class TubeSearchController extends JsonController {
                 TubeStation from = stationMap.get(fromStation);
                 TubeStation to   = stationMap.get(toStation);
                 TubeLine    line = lineMap.get(lineId);
-                if (from == null || to == null || line == null)
+                if (from == null || to == null || line == null) {
+                    errors[0]++;
                     System.out.printf("Tube connection created with invalid args:" +
-                            " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s\n\n",
+                                    " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s\n\n",
                             fromStation, from,
                             toStation, to,
                             lineId, line
                     );
+                }
 
                 links.add(new TubeConnection(from, to, line));
             });
         });
+        if (errors[0] > 0)
+            System.out.printf("There were %d errors loading in the tube map\n\n", errors[0]);
 
         // No resources to load yet
     }
