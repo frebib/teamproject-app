@@ -26,6 +26,7 @@ public class PlanetController extends JsonController {
         MASS = new PlanetSort<>(Planet::getMass);
 
         private Function<Planet, T> fn;
+
         private PlanetSort(Function<Planet, T> fn) {
             this.fn = fn;
         }
@@ -46,12 +47,18 @@ public class PlanetController extends JsonController {
 
     public PlanetController() {
         view = new PlanetView(this);
+        view.getWindow().setOnKeyPressed(e -> {
+            System.out.println(e.getCode());
+            System.out.println(sort.getNext());
+        });
     }
 
     @Override
     public void onOpen() {
         // TODO: Implement planet sorting
-        sort = new QuickSortStream<>(planets, PlanetSort.DIST_TO_SUN);
+        sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
+        sort.initialise();
+        System.out.println(sort.getNext());
     }
 
     public List<Planet> getPlanets() {

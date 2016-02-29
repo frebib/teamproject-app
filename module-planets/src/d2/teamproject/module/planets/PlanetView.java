@@ -3,7 +3,9 @@ package d2.teamproject.module.planets;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.planets.gfx.SolarSystem;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 
 import java.util.Map;
 
@@ -18,6 +20,13 @@ public class PlanetView extends VisualisationView {
 
     public BaseController getController() {
         return controller;
+    }
+
+    public Pane getPane() {
+        return contentBox;
+    }
+    public Parent getWindow() {
+        return contentBox.getParent().getParent();
     }
 
     @Override
