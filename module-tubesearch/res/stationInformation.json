@@ -3344,6 +3344,22 @@
         {
           "id": "stratfordHighStreet",
           "lineId": "dlr"
+        },
+        {
+          "id": "puddingMillLane",
+          "lineId": "dlr"
+        },
+        {
+          "id": "hackneyWick",
+          "lineId": "overground"
+        },
+        {
+          "id": "mileEnd",
+          "lineId": "central"
+        },
+        {
+          "id": "westHam",
+          "lineId": "jubilee"
         }
       ]
     },
@@ -3428,6 +3444,10 @@
         {
           "id": "stamfordBrook",
           "lineId": "district"
+        },
+        {
+          "id": "hammersmithDP",
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -3492,7 +3512,7 @@
           "lineId": "district"
         },
         {
-          "id": "fulhamBroadway",
+          "id": "imperialWharf",
           "lineId": "overground"
         },
         {
@@ -3563,15 +3583,15 @@
       "connected": [
         {
           "id": "westferry",
-          "lineId": "overground"
+          "lineId": "dlr"
         },
         {
           "id": "poplar",
-          "lineId": "overground"
+          "lineId": "dlr"
         },
         {
           "id": "canaryWharf",
-          "lineId": "overground"
+          "lineId": "dlr"
         }
       ]
     },
@@ -3642,7 +3662,19 @@
           "lineId": "hammersmithCity"
         },
         {
+          "id": "stepneyGreen",
+          "lineId": "district"
+        },
+        {
+          "id": "stepneyGreen",
+          "lineId": "hammersmithCity"
+        },
+        {
           "id": "shoreditchHighStreet",
+          "lineId": "overground"
+        },
+        {
+          "id": "shadwell",
           "lineId": "overground"
         }
       ]
