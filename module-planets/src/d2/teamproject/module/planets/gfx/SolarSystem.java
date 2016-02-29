@@ -229,11 +229,12 @@ public class SolarSystem {
         int[] incorrectOrder = {2,1,0,5,6,3,4}; /* This should be created  when the planets are rendered in the wrong order*/
         int[] correctOrder   = {0,1,2,3,4,5,6}; /* This should be taken in from the sorting*/
 
-        for (int k = 0;k<incorrectOrder.length+1;k++)
-        {
-           sq.getChildren().add(swap(planetRenderers.get(incorrectOrder[k]).getModel(),planetRenderers.get(correctOrder[k]).getModel()));
-        }
-        return  sq;
+        for (int k = 0; k < incorrectOrder.length - 1; k++)
+            sq.getChildren().add(swap(
+                    planetRenderers.get(incorrectOrder[k]).getModel(),
+                    planetRenderers.get(correctOrder[k]).getModel()
+            ));
+        return sq;
     }
 
     /**
