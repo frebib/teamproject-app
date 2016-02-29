@@ -109,6 +109,7 @@ public class ModuleLoader {
                 resources.put(rName, obj);
             } catch (Exception e) { // Catch then continue loading resources
                 System.out.printf(" > Error loading resource \"%s\"\n", String.valueOf(rName));
+                e.printStackTrace();
             }
         }
         return resources;
