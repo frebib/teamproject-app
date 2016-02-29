@@ -1,9 +1,12 @@
 package d2.teamproject.test;
 
+import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
+import d2.teamproject.algorithm.sorting.SortState;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,6 +24,29 @@ public class QuickSortTest {
         QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffledList, Integer::compare);
         sorter.initialise();
         Assert.assertTrue(listEqual(sortedList, sorter.getSortedList()));
+    }
+
+    /**
+     * Ensures no comparisons are made on the same element
+     */
+    @Test
+    public void sameComparisonTest() {
+        List<Integer> shuffled = IntStream.range(0, 20).boxed().collect(Collectors.toList());
+        Collections.shuffle(shuffled);
+
+        QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffled, Integer::compare);
+        sorter.initialise();
+
+        boolean noSameCompare = true;
+        SortState<Integer> state;
+        while ((state = sorter.getNext()) != null) {
+            if (state instanceof CompareSortState) {
+                Point compares = ((CompareSortState) state).getCompares();
+                noSameCompare &= compares.getX() != compares.getY();
+            }
+        }
+
+        Assert.assertTrue(noSameCompare);
     }
 
     private <E extends Comparable<E>> boolean listEqual(List<E> a, List<E> b) {
