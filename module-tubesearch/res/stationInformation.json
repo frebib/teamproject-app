@@ -436,7 +436,7 @@
           "lineId": "district"
         },
         {
-          "id": "paddinton",
+          "id": "paddington",
           "lineId": "circle"
         },
         {
@@ -462,7 +462,7 @@
       "name": "Elephant & Castle",
       "connected": [
         {
-          "id": "lambethNorh",
+          "id": "lambethNorth",
           "lineId": "bakerloo"
         },
         {
@@ -779,11 +779,11 @@
       "connected": [
         {
           "id": "knightsbridge",
-          "lineId": "piccadily"
+          "lineId": "piccadilly"
         },
         {
           "id": "greenPark",
-          "lineId": "piccadily"
+          "lineId": "piccadilly"
         }
       ]
     },
@@ -914,7 +914,7 @@
           "lineId": "central"
         },
         {
-          "id": "bethnalGreenCental",
+          "id": "bethnalGreen",
           "lineId": "central"
         },
         {
@@ -1226,7 +1226,7 @@
           "lineId": "victoria"
         },
         {
-          "id": "vauxhaull",
+          "id": "vauxhall",
           "lineId": "victoria"
         }
       ]
@@ -1628,7 +1628,7 @@
       "name": "Archway",
       "connected": [
         {
-          "id": "tufnell",
+          "id": "tufnellPark",
           "lineId": "northern"
         }
       ]
@@ -1712,8 +1712,8 @@
       ]
     },
     {
-      "id": "bethnalGreenCentral",
-      "name": "Bethnal Green - Central",
+      "id": "bethnalGreen",
+      "name": "Bethnal Green",
       "connected": [
         {
           "id": "mileEnd",
@@ -1759,11 +1759,11 @@
       "connected": [
         {
           "id": "mileEnd",
-          "lineId": "HammersmithCity"
+          "lineId": "hammersmithCity"
         },
         {
           "id": "bromleyByBow",
-          "lineId": "HammersmithCity"
+          "lineId": "hammersmithCity"
         },
         {
           "id": "mileEnd",
@@ -1801,11 +1801,11 @@
       "connected": [
         {
           "id": "bowRoad",
-          "lineId": "HammersmithCity"
+          "lineId": "hammersmithCity"
         },
         {
           "id": "westHam",
-          "lineId": "HammersmithCity"
+          "lineId": "hammersmithCity"
         },
         {
           "id": "bowRoad",
@@ -1868,7 +1868,7 @@
           "lineId": "overground"
         },
         {
-          "id": "HighburyIslington",
+          "id": "highburyIslington",
           "lineId": "overground"
         }
       ]
@@ -1906,8 +1906,8 @@
       "name": "Camden Town",
       "connected": [
         {
-          "id": "",
-          "lineId": ""
+          "id": "chalkFarm",
+          "lineId": "northern"
         }
       ]
     },
@@ -2260,11 +2260,7 @@
       "name": "Finsbury Park",
       "connected": [
         {
-          "id": "sevenSisters",
-          "lineId": "victoria"
-        },
-        {
-          "id": "highburyAndIslington",
+          "id": "highburyIslington",
           "lineId": "victoria"
         },
         {
@@ -2296,11 +2292,11 @@
       "name": "Goldhawk Road",
       "connected": [
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "circle"
         },
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "hammersmithCity"
         },
         {
@@ -2340,7 +2336,7 @@
           "lineId": "docklands"
         },
         {
-          "id": "cuttySarkForMaritimeGreenWich",
+          "id": "cuttySark",
           "lineId": "docklands"
         }
       ]
@@ -2500,7 +2496,7 @@
           "lineId": "victoria"
         },
         {
-          "id": "kingsCrossStPancras",
+          "id": "kingsCross",
           "lineId": "victoria"
         }
       ]
@@ -2528,7 +2524,7 @@
           "lineId": "piccadilly"
         },
         {
-          "id": "caldeonianRoad",
+          "id": "caledonianRoad",
           "lineId": "piccadilly"
         }
       ]
@@ -2656,7 +2652,7 @@
           "lineId": "northern"
         },
         {
-          "id": "camdemTown",
+          "id": "camdenTown",
           "lineId": "northern"
         }
       ]
@@ -2795,7 +2791,7 @@
         },
         {
           "id": "westferry",
-          "lineId": "westferry"
+          "lineId": "docklands"
         }
       ]
     },
@@ -3012,11 +3008,11 @@
       ]
     },
     {
-      "id": "puddingMillLand",
+      "id": "puddingMillLane",
       "name": "Pudding Mill Lane",
       "connected": [
         {
-          "id": "bowCurch",
+          "id": "bowChurch",
           "lineId": "docklands"
         },
         {
@@ -3084,7 +3080,7 @@
           "lineId": "district"
         },
         {
-          "id": "hammersmith",
+          "id": "hammersmithDP",
           "lineId": "district"
         }
       ]
@@ -3214,7 +3210,7 @@
       "name": "South Hampstead",
       "connected": [
         {
-          "id": "killburnHighRoad",
+          "id": "kilburnHighRoad",
           "lineId": "overground"
         },
         {
@@ -3228,7 +3224,7 @@
       "name": "South Quay",
       "connected": [
         {
-          "id": "heronQuay",
+          "id": "heronQuays",
           "lineId": "docklands"
         },
         {
@@ -3260,7 +3256,7 @@
           "lineId": "district"
         },
         {
-          "id": "revenscourtPark",
+          "id": "ravenscourtPark",
           "lineId": "district"
         }
       ]
@@ -3471,7 +3467,7 @@
       "connected": [
         {
           "id": "maidaVale",
-          "lineId": "barkerloo"
+          "lineId": "bakerloo"
         },
         {
           "id": "paddington",
@@ -3580,7 +3576,7 @@
           "lineId": "district"
         },
         {
-          "id": "baronsCout",
+          "id": "baronsCourt",
           "lineId": "district"
         }
       ]
@@ -3699,7 +3695,7 @@
         },
         {
           "id": "latimerGrove",
-          "lineId": "cirle"
+          "lineId": "circle"
         },
         {
           "id": "latimerGrove",
