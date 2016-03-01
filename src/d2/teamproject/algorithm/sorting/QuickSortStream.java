@@ -47,42 +47,49 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         states.add(new ListSortState<>(list, true));
     }
 
-    private void quickSort(int lowerIndex, int upperIndex) {
-        int i = lowerIndex;
-        int j = upperIndex;
+    private void quickSort(int min, int max) {
+        int i = min;
+        int j = max;
 
-        // Use middle value as the pivot point
-        int pivotIndex = lowerIndex + (upperIndex - lowerIndex) / 2;
-        E pivot = list.get(pivotIndex);
-        states.add(new BoundSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex));
+        // Use middle value as the pivot
+        int pivot = min + (max - min) / 2;
+        E pivotElem = list.get(pivot);
+        states.add(new BoundSortState<>(lastListState, pivot, min, max));
 
-        // Divide into two arrays
-        while (i <= j) {
+        while (i < j) {
             // Compare either side of pivot and count towards pivot
-            while (comparator.compare(list.get(i), pivot) < 0)
-                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, i++, pivotIndex, false));
-            while (comparator.compare(list.get(j), pivot) > 0)
-                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, j--, pivotIndex, false));
+            while (comparator.compare(list.get(i), pivotElem) < 0)
+                if (++i != pivot)
+                    states.add(new CompareSortState<>(lastListState, pivot, min, max, i, pivot, false));
+            while (comparator.compare(list.get(j), pivotElem) > 0)
+                if (--j != pivot)
+                    states.add(new CompareSortState<>(lastListState, pivot, min, max, j, pivot, false));
 
-            if (i <= j) {
-                states.add(new CompareSortState<>(lastListState, pivotIndex, lowerIndex, upperIndex, i, j, true));
-                lastListState = new ListSortState<>(list);
-                // Swap values then move index
-                // to next position on both sides
-                exchangeNumbers(i++, j--);
+            // If the counters have passed each
+            // other, we can't swap any more
+            if (i >= j) {
+                if (i == j) {
+                    i++;
+                    j--;
+                }
+                continue;
             }
-        }
-        // call quickSort() method recursively
-        if (lowerIndex < j)
-            quickSort(lowerIndex, j);
-        if (i < upperIndex)
-            quickSort(i, upperIndex);
-    }
 
-    private void exchangeNumbers(int i, int j) {
-        E temp = list.get(i);
-        list.set(i, list.get(j));
-        list.set(j, temp);
+            states.add(new CompareSortState<>(lastListState, pivot, min, max, i, j, true));
+            lastListState = new ListSortState<>(list);
+            states.add(lastListState);
+
+            // Swap values that are on the wrong
+            // side of the pivot then skip over
+            // them with i++ and j--
+            E temp = list.get(i);
+            list.set(i++, list.get(j));
+            list.set(j--, temp);
+        }
+
+        // Recurse into either side of the pivot
+        if (min < j) quickSort(min, j);
+        if (i < max) quickSort(i, max);
     }
 
     /**
