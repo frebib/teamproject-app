@@ -152,7 +152,7 @@ public class SolarSystem {
      * @param sb   The background image of rectangle
      * @param time The duration of the fade transition
      */
-    private void SkyboxSection(double xPos, double yPos, Image sb, double time){
+    private void skyboxSection(double xPos, double yPos, Image sb, double time){
         Rectangle rect = new Rectangle(500,500);
         rect.setTranslateX(xPos);
         rect.setTranslateY(yPos);
@@ -263,15 +263,15 @@ public class SolarSystem {
 
     public void createSkyboxSections(Image skyboxTexture){
         // TODO: Cleanup
-        SkyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
-        SkyboxSection(-170,-250,skyboxTexture,randomNumber());
-        SkyboxSection(-170,250,skyboxTexture,randomNumber());
-        SkyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
-        SkyboxSection(330,-250,skyboxTexture,randomNumber());
-        SkyboxSection(330,250,skyboxTexture,randomNumber());
-        SkyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
-        SkyboxSection(830,-250,skyboxTexture,randomNumber());
-        SkyboxSection(830,250,skyboxTexture,randomNumber());
+        skyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
+        skyboxSection(-170,-250,skyboxTexture,randomNumber());
+        skyboxSection(-170,250,skyboxTexture,randomNumber());
+        skyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
+        skyboxSection(330,-250,skyboxTexture,randomNumber());
+        skyboxSection(330,250,skyboxTexture,randomNumber());
+        skyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
+        skyboxSection(830,-250,skyboxTexture,randomNumber());
+        skyboxSection(830,250,skyboxTexture,randomNumber());
     }
 
     public Pane planetInformation(){
