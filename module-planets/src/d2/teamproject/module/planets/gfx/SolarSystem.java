@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
 import javafx.scene.text.Font;
@@ -134,6 +135,31 @@ public class SolarSystem {
         return tt;
     }
 
+    private PathTransition moveCurve(Node n, double x1, double y1, double x2, double y2){
+        PathTransition pt= new PathTransition();
+        pt.setDuration(Duration.seconds(1.5));
+        Path path = new Path();
+        path.getElements().add(new MoveTo(x1,y1));
+        path.getElements().add(new QuadCurveTo(x1,y2,x2,y2));
+
+        pt.setNode(n);
+        pt.setPath(path);
+        return pt;
+    }
+
+    private PathTransition moveBackFinish(Node n, double x1, double y1, double x2, double y2){
+        PathTransition pt= new PathTransition();
+        pt.setDuration(Duration.seconds(1.5));
+        Path path = new Path();
+        path.getElements().add(new MoveTo(x1,y1));
+        path.getElements().add(new QuadCurveTo(x2,y1,x2,y2));
+
+        pt.setNode(n);
+        pt.setPath(path);
+        return pt;
+    }
+
+
     /**
      * @return either 2000,3000,4000 randomly as a double
      */
@@ -158,7 +184,7 @@ public class SolarSystem {
         rect.setTranslateY(yPos);
         rect.setTranslateZ(200);
         rect.setFill(new ImagePattern(sb));
-        rect.setFill(Color.GRAY); /* comment in to check random fade out */
+//        rect.setFill(Color.GRAY); /* comment in to check random fade out */
 
         FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
         ft.setFromValue(1.0);
@@ -227,15 +253,15 @@ public class SolarSystem {
     public void sortSwap(CompareSortState<Planet> state){
         SequentialTransition sq = new SequentialTransition();
         Point p = state.getCompares();
-        TranslateTransition planet2arcFinish;
-        TranslateTransition planet1arcFinish;
+        PathTransition planet2arcFinish;
+        PathTransition planet1arcFinish;
         Node planet1 = planetRenderers.get(p.x).getModel();
         Node planet2 = planetRenderers.get(p.y).getModel();
         double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
-        double height = 200; // TODO: Calculate height based on which planets are swapping
+        double height = 150; // TODO: Calculate height based on which planets are swapping
 
-        TranslateTransition planet2arcStart = move(planet2,halfway,height);
-        TranslateTransition planet1arcStart = move(planet1,halfway,-height);
+        PathTransition planet2arcStart = moveCurve(planet2,planet2.getTranslateX(),planet2.getTranslateY(),halfway,height);
+        PathTransition planet1arcStart = moveCurve(planet1,planet1.getTranslateX(),planet1.getTranslateY(),halfway,-height);
         ParallelTransition arcS= new ParallelTransition();
         arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
         sq.getChildren().add(arcS);
@@ -246,14 +272,12 @@ public class SolarSystem {
         // TODO: Make the other planets fade here and add that to sq
 
         if(state.isSwap()) { /* Swap the planets  */
-            planet2arcFinish = move(planet2,planet1.getTranslateX(),0);
-            planet1arcFinish = move(planet1,planet2.getTranslateX(),0);
-
+            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet1.getTranslateX(),planet1.getTranslateY());
+            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet2.getTranslateX(),planet2.getTranslateY());
         }
         else { /* Return the planets */
-            planet2arcFinish = move(planet2,planet2.getTranslateX(),0);
-            planet1arcFinish= move(planet1,planet1.getTranslateX(),0);
-
+            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet2.getTranslateX(),planet2.getTranslateY());
+            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet1.getTranslateX(),planet1.getTranslateY());
         }
         ParallelTransition arcF= new ParallelTransition();
         arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
