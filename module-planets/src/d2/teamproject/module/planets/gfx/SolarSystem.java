@@ -68,15 +68,15 @@ public class SolarSystem {
                     zoomed = null;
 //                    planetName.setVisible(false);     /* Hide the planets name*/
                     planetNameHolder.setVisible(false);
-                    zoomOut(camera).play(); /* Zoom out the camera*/
+                    zoomOut().play(); /* Zoom out the camera*/
                 }
                 else {
                 zoomed = p.getPlanet();
                 planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
                 planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
                 planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
-                zoomIn(camera, p).play();   /* Zoom in the camera */
                 planetNameHolder.setVisible(true);  /* Show the planet information */
+                zoomIn(p).play();   /* Zoom in the camera */
                 }
             });
         }
@@ -86,25 +86,21 @@ public class SolarSystem {
 
     /**
      * Moves a camera close to a planet position, giving a zoom in effect
-     *
-     * @param camera The camera that is to be move
      * @return  A transition to be played
      */
-    private TranslateTransition zoomIn(PerspectiveCamera camera, PlanetRenderer renderer){
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.5), camera);
+    private TranslateTransition zoomIn(PlanetRenderer renderer){
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
         double onX = renderer.getModel().getLocalToSceneTransform().getTx();
         tt.setToZ(1000 - (renderer.getRadius() * 6));
-        tt.setToX(-625 + onX);
+        tt.setToX(-635 + onX);
         return tt;
     }
 
     /**
      * Returns a camera to its original position
-     *
-     * @param camera The camera that is to be moved
      * @return A transition to be played
      */
-    private TranslateTransition zoomOut(PerspectiveCamera camera){
+    private TranslateTransition zoomOut(){
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1), camera);
         tt.setToZ(0);
         tt.setToX(initialCameraXPosition);
