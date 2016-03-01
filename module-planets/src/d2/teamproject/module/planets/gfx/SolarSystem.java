@@ -25,7 +25,7 @@ public class SolarSystem {
     private final Group root;
     private final PerspectiveCamera camera;
     private final List<PlanetRenderer> planetRenderers;
-    private final Double initialCameraXPosition;
+    private final double initialCameraXPosition;
 
     private Planet zoomed;
 
