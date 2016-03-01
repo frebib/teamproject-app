@@ -21,8 +21,10 @@ public class QuickSortTest {
         List<Integer> shuffledList = new ArrayList<>(sortedList);
         Collections.shuffle(shuffledList);
 
+//        System.out.printf("Before: [%s]\n", listToString(shuffledList));
         QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffledList, Integer::compare);
         sorter.initialise();
+//        System.out.printf("After:  [%s]\n", listToString(shuffledList));
         Assert.assertTrue(listEqual(sortedList, sorter.getSortedList()));
     }
 
@@ -48,6 +50,10 @@ public class QuickSortTest {
 
         Assert.assertTrue(noSameCompare);
     }
+//
+//    private <T> String listToString(List<T> list) {
+//        return list.stream().map(T::toString).collect(Collectors.joining(", "));
+//    }
 
     private <E extends Comparable<E>> boolean listEqual(List<E> a, List<E> b) {
         if (a.size() != b.size())
