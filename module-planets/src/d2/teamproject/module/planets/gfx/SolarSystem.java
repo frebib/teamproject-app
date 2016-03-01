@@ -28,6 +28,8 @@ public class SolarSystem {
     private final double initialCameraXPosition;
 
     private Planet zoomed;
+    public Text planetName = new Text();
+    public Text planetSize = new Text();
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -39,11 +41,12 @@ public class SolarSystem {
      */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
 
-        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
+        initialCameraXPosition = -60.0;    /* Offset right slightly for Sun - Changed from -140 for gap increase */
         planetRenderers = planets.stream().map(PlanetRenderer::new).collect(Collectors.toList());
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK); /* Black background */
+        createSkyboxSections(skyboxTexture);
 
         camera = new PerspectiveCamera();
         camera.setNearClip(0.001);
@@ -55,65 +58,28 @@ public class SolarSystem {
         root.getChildren().add(camera);
         root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList())); // TODO: Get rid of this planetRenderers
 
-        // TODO: Cleanup
-        Text planetName = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
-        planetName.setFont(new Font(40));
-        planetName.setFill(Color.WHITE);
-        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-//        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
-        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
-
-        Text planetSize = new Text();                                               // TODO: Fix antialiasing issues (Possibly only on my machine?)
-        planetSize.setFont(new Font(20));
-        planetSize.setFill(Color.WHITE);
-        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-
-        TextFlow planetFlow = new TextFlow();
-        planetFlow.setTextAlignment(TextAlignment.CENTER);
-        planetFlow.setMaxWidth(500);
-        planetFlow.getChildren().addAll(planetName,planetSize);
-
-        Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
-        planetNameHolder.setMouseTransparent(true);
-        planetNameHolder.getChildren().add(planetFlow);
-//        planetNameHolder.setTranslateZ(-80);
-        planetNameHolder.setVisible(false);
-
-        planetNameHolder.setCache(true);
-        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
-
+        Pane planetNameHolder = planetInformation();
         root.getChildren().add(planetNameHolder);
-
-        // TODO: Cleanup
-        createSkyboxSection(-250,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
-        createSkyboxSection(-250,-250,skyboxTexture,randomNumber());
-        createSkyboxSection(-250,250,skyboxTexture,randomNumber());
-        createSkyboxSection(250,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
-        createSkyboxSection(250,-250,skyboxTexture,randomNumber());
-        createSkyboxSection(250,250,skyboxTexture,randomNumber());
-        createSkyboxSection(750,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
-        createSkyboxSection(750,-250,skyboxTexture,randomNumber());
-        createSkyboxSection(750,250,skyboxTexture,randomNumber());
 
         for (PlanetRenderer p : planetRenderers) {
             p.onClick(e -> {
-                if(p.getPlanet() == zoomed) {                                        // TODO: Better click checking needs to be added
+                if(p.getPlanet() == zoomed) {   // TODO: Better click checking needs to be added
                     zoomed = null;
-//                    planetName.setVisible(false);                                    /* Hide the planets name*/
+//                    planetName.setVisible(false);     /* Hide the planets name*/
                     planetNameHolder.setVisible(false);
-                    zoomOut(camera).play();                                          /* Zoom out the camera*/
+                    zoomOut(camera).play(); /* Zoom out the camera*/
                 }
                 else {
                 zoomed = p.getPlanet();
                 planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
-                planetName.setText(p.getPlanet().getName());                                        /* Set the text to the current planets name */
+                planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
                 planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
-                zoomIn(camera, p).play();                                                           /* Zoom in the camera */
+                zoomIn(camera, p).play();   /* Zoom in the camera */
 
-                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
-                planetNameHolder.setTranslateX(p.getModel().getLocalToParentTransform().getTx());
-                System.out.println("Text x: "+planetNameHolder.getLocalToParentTransform().getTx());
-                planetNameHolder.setVisible(true);                                                      /* Show the planet information */
+//                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
+//                System.out.println("PLanet x: "+p.getModel().getTranslateX());
+
+                planetNameHolder.setVisible(true);  /* Show the planet information */
                 }
             });
         }
@@ -162,7 +128,7 @@ public class SolarSystem {
      * @return  A transition to be played
      */
     private TranslateTransition move(Node n, double x, double y){
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(2),n);
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.5),n);
         tt.setToX(x);
         tt.setToY(y);
         return tt;
@@ -186,13 +152,13 @@ public class SolarSystem {
      * @param sb   The background image of rectangle
      * @param time The duration of the fade transition
      */
-    private void createSkyboxSection(double xPos, double yPos, Image sb, double time){
+    private void SkyboxSection(double xPos, double yPos, Image sb, double time){
         Rectangle rect = new Rectangle(500,500);
         rect.setTranslateX(xPos);
         rect.setTranslateY(yPos);
         rect.setTranslateZ(200);
         rect.setFill(new ImagePattern(sb));
-//        rect.setFill(Color.GRAY);                                   /* comment in to check random fade out */
+        rect.setFill(Color.GRAY); /* comment in to check random fade out */
 
         FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
         ft.setFromValue(1.0);
@@ -243,6 +209,7 @@ public class SolarSystem {
         return  sq;
     }
 
+    @Deprecated
     private SequentialTransition swapBack(){
         SequentialTransition sq = new SequentialTransition();
 
@@ -292,6 +259,48 @@ public class SolarSystem {
         arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
         sq.getChildren().add(arcF);
         sq.play();
+    }
+
+    public void createSkyboxSections(Image skyboxTexture){
+        // TODO: Cleanup
+        SkyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
+        SkyboxSection(-170,-250,skyboxTexture,randomNumber());
+        SkyboxSection(-170,250,skyboxTexture,randomNumber());
+        SkyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
+        SkyboxSection(330,-250,skyboxTexture,randomNumber());
+        SkyboxSection(330,250,skyboxTexture,randomNumber());
+        SkyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
+        SkyboxSection(830,-250,skyboxTexture,randomNumber());
+        SkyboxSection(830,250,skyboxTexture,randomNumber());
+    }
+
+    public Pane planetInformation(){
+        // TODO: Cleanup
+        // TODO: Fix antialiasing issues (Possibly only on my machine?)
+        planetName.setFont(new Font(40));
+        planetName.setFill(Color.WHITE);
+        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+//        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
+        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
+
+        planetSize.setFont(new Font(20));
+        planetSize.setFill(Color.WHITE);
+        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+
+        TextFlow planetFlow = new TextFlow();
+        planetFlow.setTextAlignment(TextAlignment.CENTER);
+        planetFlow.setMaxWidth(500);
+        planetFlow.getChildren().addAll(planetName,planetSize);
+
+        Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
+        planetNameHolder.setMouseTransparent(true);
+        planetNameHolder.getChildren().add(planetFlow);
+//        planetNameHolder.setTranslateZ(-80);
+        planetNameHolder.setVisible(false);
+        planetNameHolder.setCache(true);
+        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
+
+        return  planetNameHolder;
     }
 
     /**
