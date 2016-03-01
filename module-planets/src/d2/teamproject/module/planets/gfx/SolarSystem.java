@@ -29,8 +29,8 @@ public class SolarSystem {
     private final double initialCameraXPosition;
 
     private Planet zoomed;
-    public Text planetName = new Text();
-    public Text planetSize = new Text();
+    private final Text planetName = new Text();
+    private final Text planetSize = new Text();
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -76,20 +76,11 @@ public class SolarSystem {
                 planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
                 planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
                 zoomIn(camera, p).play();   /* Zoom in the camera */
-
-//                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
-//                System.out.println("PLanet x: "+p.getModel().getTranslateX());
-
                 planetNameHolder.setVisible(true);  /* Show the planet information */
                 }
             });
         }
 
-        root.setOnDragDetected(e -> {
-            SequentialTransition test = new SequentialTransition();
-            test.getChildren().addAll(messUp(),swapBack());
-            test.play();
-        });
         scene.setCamera(camera);
     }
 
@@ -121,52 +112,98 @@ public class SolarSystem {
     }
 
     /**
-     * Moves a node (usually a planet model) to a position (x,y) for 2 seconds
+     * Moves a node from starting point to the end point along a curve
      *
-     * @param n A Node to translate
-     * @param x The x coordinate to move the node to
-     * @param y The x coordinate to move the node to
-     * @return  A transition to be played
+     * @param n The node to apply the transition on
+     * @param x1 The starting x position
+     * @param y1 The starting y position
+     * @param x2 The end x position
+     * @param y2 The end y position
+     * @return A curve transition for a node
      */
-    private TranslateTransition move(Node n, double x, double y){
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.5),n);
-        tt.setToX(x);
-        tt.setToY(y);
-        return tt;
-    }
-
-    private PathTransition moveCurve(Node n, double x1, double y1, double x2, double y2){
-        PathTransition pt= new PathTransition();
-        pt.setDuration(Duration.seconds(1.5));
+    private PathTransition moveAlongCurve(Node n, double x1, double y1, double x2, double y2){
+        PathTransition transition= new PathTransition();
+        transition.setDuration(Duration.seconds(1.5));
         Path path = new Path();
         path.getElements().add(new MoveTo(x1,y1));
         path.getElements().add(new QuadCurveTo(x1,y2,x2,y2));
 
-        pt.setNode(n);
-        pt.setPath(path);
-        return pt;
+        transition.setNode(n);
+        transition.setPath(path);
+        return transition;
     }
 
+    /**
+     * Returns a node from starting point to the end point along a curve
+     *
+     * @param n The node to apply the transition on
+     * @param x1 The starting x position
+     * @param y1 The starting y position
+     * @param x2 The end x position
+     * @param y2 The end y position
+     * @return A curve transition for a node
+     */
     private PathTransition moveBackFinish(Node n, double x1, double y1, double x2, double y2){
-        PathTransition pt= new PathTransition();
-        pt.setDuration(Duration.seconds(1.5));
+        PathTransition transition= new PathTransition();
+        transition.setDuration(Duration.seconds(1.5));
         Path path = new Path();
         path.getElements().add(new MoveTo(x1,y1));
         path.getElements().add(new QuadCurveTo(x2,y1,x2,y2));
 
-        pt.setNode(n);
-        pt.setPath(path);
-        return pt;
+        transition.setNode(n);
+        transition.setPath(path);
+        return transition;
     }
 
-
     /**
-     * @return either 2000,3000,4000 randomly as a double
+     * Takes in a swap step and then animates the swap or the lack thereof
+     *
+     * @param state A List of Planet sorting steps
      */
-    private double randomNumber(){
-        Random x = new Random();
-        int y = x.nextInt(2)+2;
-        return (double)y*1000;
+    public void sortSwap(CompareSortState<Planet> state){
+        SequentialTransition transition = new SequentialTransition();
+        Point p = state.getCompares();
+        PathTransition planet2arcFinish;
+        PathTransition planet1arcFinish;
+        Node planet1 = planetRenderers.get(p.x).getModel();
+        Node planet2 = planetRenderers.get(p.y).getModel();
+        double height;
+        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
+
+        if((p.y == p.x+1)|(p.y == p.x-1)){ // TODO: This is not a working implementation
+            //noinspection UnusedAssignment
+            height = 72.5;
+        }
+        else{
+            //noinspection UnusedAssignment
+            height = 145;   /* Minimum height */
+        }
+        height = 145;
+
+        PathTransition planet2arcStart = moveAlongCurve(planet2,planet2.getTranslateX(),planet2.getTranslateY(),halfway,height);
+        PathTransition planet1arcStart = moveAlongCurve(planet1,planet1.getTranslateX(),planet1.getTranslateY(),halfway,-height);
+        ParallelTransition arcS= new ParallelTransition();
+        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
+        transition.getChildren().add(arcS);
+
+        PauseTransition pt =new PauseTransition(Duration.seconds(0.5));
+        transition.getChildren().add(pt);
+
+        // TODO: Make the other planets fade here and add that to transition
+
+        if(state.isSwap()) { /* Swap the planets */
+            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet1.getTranslateX(),planet1.getTranslateY());
+            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet2.getTranslateX(),planet2.getTranslateY());
+        }
+        else { /* Return the planets to their original positions */
+            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet2.getTranslateX(),planet2.getTranslateY());
+            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet1.getTranslateX(),planet1.getTranslateY());
+        }
+
+        ParallelTransition arcFinish = new ParallelTransition();
+        arcFinish.getChildren().addAll(planet2arcFinish,planet1arcFinish);
+        transition.getChildren().add(arcFinish);
+        transition.play();
     }
 
     /**
@@ -186,119 +223,22 @@ public class SolarSystem {
         rect.setFill(new ImagePattern(sb));
 //        rect.setFill(Color.GRAY); /* comment in to check random fade out */
 
-        FadeTransition ft = new FadeTransition(Duration.millis(time), rect);
-        ft.setFromValue(1.0);
-        ft.setToValue(0.6);
-        ft.setCycleCount(Animation.INDEFINITE);
-        ft.setAutoReverse(true);
-        ft.play();
+        FadeTransition transition = new FadeTransition(Duration.millis(time), rect);
+        transition.setFromValue(1.0);
+        transition.setToValue(0.6);
+        transition.setCycleCount(Animation.INDEFINITE);
+        transition.setAutoReverse(true);
+        transition.play();
         root.getChildren().add(rect);
     }
 
     /**
-     * Takes two planets and swaps them in arc movement
-     * The transitions is split into for four arcs, some are played in parallel and others sequentially
      *
-     * @param planet1 Planet A in the swap
-     * @param planet2 Planet B in the swap
-     * @return the whole transition
+     * A pane contain information about a planet
+     *
+     * @return A pane with a TextFlow object
      */
-    @Deprecated
-    private SequentialTransition swap(Node planet1, Node planet2){
-        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
-        // TODO: Calculate height based on which planets are swapping
-        double height = 200;
-
-        TranslateTransition planet2arcStart = move(planet2,halfway,height);
-        TranslateTransition planet2arcFinish = move(planet2,planet1.getTranslateX(),0);
-        TranslateTransition planet1arcStart = move(planet1,halfway,-height);
-        TranslateTransition planet1arcFinish = move(planet1,planet2.getTranslateX(),0);
-
-        ParallelTransition arcS= new ParallelTransition();
-        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
-        ParallelTransition arcF= new ParallelTransition();
-        arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
-
-        SequentialTransition sq = new SequentialTransition();
-        sq.getChildren().addAll(arcS,arcF);
-        return sq;
-    }
-
-    private SequentialTransition messUp(){
-        SequentialTransition sq = new SequentialTransition();
-        SequentialTransition one = swap(planetRenderers.get(3).getModel(),planetRenderers.get(5).getModel());
-        SequentialTransition two = swap(planetRenderers.get(4).getModel(),planetRenderers.get(6).getModel());
-        SequentialTransition three = swap(planetRenderers.get(0).getModel(),planetRenderers.get(2).getModel());
-        sq.getChildren().addAll(one,two,three);
-        // 0 1 2 3 4 5 6
-        // 2 1 0 5 6 3 4
-        return  sq;
-    }
-
-    @Deprecated
-    private SequentialTransition swapBack(){
-        SequentialTransition sq = new SequentialTransition();
-
-        int[] incorrectOrder = {2,1,0,5,6,3,4}; /* This should be created  when the planets are rendered in the wrong order*/
-        int[] correctOrder   = {0,1,2,3,4,5,6}; /* This should be taken in from the sorting*/
-
-        for (int k = 0; k < incorrectOrder.length - 1; k++)
-            sq.getChildren().add(swap(
-                    planetRenderers.get(incorrectOrder[k]).getModel(),
-                    planetRenderers.get(correctOrder[k]).getModel()
-            ));
-        return sq;
-    }
-
-    public void sortSwap(CompareSortState<Planet> state){
-        SequentialTransition sq = new SequentialTransition();
-        Point p = state.getCompares();
-        PathTransition planet2arcFinish;
-        PathTransition planet1arcFinish;
-        Node planet1 = planetRenderers.get(p.x).getModel();
-        Node planet2 = planetRenderers.get(p.y).getModel();
-        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
-        double height = 150; // TODO: Calculate height based on which planets are swapping
-
-        PathTransition planet2arcStart = moveCurve(planet2,planet2.getTranslateX(),planet2.getTranslateY(),halfway,height);
-        PathTransition planet1arcStart = moveCurve(planet1,planet1.getTranslateX(),planet1.getTranslateY(),halfway,-height);
-        ParallelTransition arcS= new ParallelTransition();
-        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
-        sq.getChildren().add(arcS);
-
-        PauseTransition pt =new PauseTransition(Duration.seconds(0.5));
-        sq.getChildren().add(pt);
-
-        // TODO: Make the other planets fade here and add that to sq
-
-        if(state.isSwap()) { /* Swap the planets  */
-            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet1.getTranslateX(),planet1.getTranslateY());
-            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet2.getTranslateX(),planet2.getTranslateY());
-        }
-        else { /* Return the planets */
-            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet2.getTranslateX(),planet2.getTranslateY());
-            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet1.getTranslateX(),planet1.getTranslateY());
-        }
-        ParallelTransition arcF= new ParallelTransition();
-        arcF.getChildren().addAll(planet2arcFinish,planet1arcFinish);
-        sq.getChildren().add(arcF);
-        sq.play();
-    }
-
-    public void createSkyboxSections(Image skyboxTexture){
-        // TODO: Cleanup
-        skyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
-        skyboxSection(-170,-250,skyboxTexture,randomNumber());
-        skyboxSection(-170,250,skyboxTexture,randomNumber());
-        skyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
-        skyboxSection(330,-250,skyboxTexture,randomNumber());
-        skyboxSection(330,250,skyboxTexture,randomNumber());
-        skyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
-        skyboxSection(830,-250,skyboxTexture,randomNumber());
-        skyboxSection(830,250,skyboxTexture,randomNumber());
-    }
-
-    public Pane planetInformation(){
+    private Pane planetInformation(){
         // TODO: Cleanup
         // TODO: Fix antialiasing issues (Possibly only on my machine?)
         planetName.setFont(new Font(40));
@@ -325,6 +265,27 @@ public class SolarSystem {
         planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
 
         return  planetNameHolder;
+    }
+
+    /**
+     * @return either 2000,3000,4000 randomly as a double
+     */
+    private double randomNumber(){
+        Random x = new Random();
+        int y = x.nextInt(2)+2;
+        return (double)y*1000;
+    }
+
+    private void createSkyboxSections(Image skyboxTexture){
+        skyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
+        skyboxSection(-170,-250,skyboxTexture,randomNumber());
+        skyboxSection(-170,250,skyboxTexture,randomNumber());
+        skyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
+        skyboxSection(330,-250,skyboxTexture,randomNumber());
+        skyboxSection(330,250,skyboxTexture,randomNumber());
+        skyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
+        skyboxSection(830,-250,skyboxTexture,randomNumber());
+        skyboxSection(830,250,skyboxTexture,randomNumber());
     }
 
     /**
