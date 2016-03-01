@@ -49,8 +49,7 @@ public class PlanetController extends JsonController {
         view = new PlanetView(this);
         view.getWindow().setOnKeyPressed(e -> {
             System.out.println(e.getCode());
-//            System.out.println(sort.getNext());
-            view.updateState(sort.getNext());
+            requestNextState();
         });
     }
 
@@ -60,6 +59,10 @@ public class PlanetController extends JsonController {
         sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
         sort.initialise();
         System.out.println(sort.getNext());
+    }
+
+    public void requestNextState() {
+        view.updateState(sort.getNext());
     }
 
     public List<Planet> getPlanets() {
