@@ -45,7 +45,15 @@ public class Planet {
      * @return the rotation time in earth-days
      */
     public float getRotationTime() {
-        return time;
+        return Math.abs(time);
+    }
+
+    /**
+     * Gets the direction that the planet rotates
+     * @return the rotation direction of the planet
+     */
+    public int getRotationDirection() {
+        return (int) Math.signum(time);
     }
 
     public float getTilt() {
