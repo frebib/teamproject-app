@@ -129,7 +129,7 @@ public class SolarSystem {
     public Transition makeSwapTransition(CompareSortState<Planet> state) {
         Point p = state.getCompares();
         int lo = Math.min(p.x, p.y),
-                hi = Math.max(p.x, p.y);
+            hi = Math.max(p.x, p.y);
         PlanetRenderer pr1 = planetRenderers.get(hi);
         PlanetRenderer pr2 = planetRenderers.get(lo);
         Node pm1 = pr1.getModel();
