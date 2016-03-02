@@ -8,10 +8,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Planet implements Comparable<Planet> {
+public class Planet {
     private String name;
     private float mass, diameter, distToSun, time, tilt;
-    private Comparator<Planet> cmp;
     private Map<String, Image> textures;
 
     private Planet(String name, float mass, float diameter, float distToSun, float time, float tilt) {
@@ -23,11 +22,6 @@ public class Planet implements Comparable<Planet> {
         this.tilt = tilt;
 
         textures = new LinkedHashMap<>();
-    }
-
-    @Override
-    public int compareTo(Planet planet) {
-        return cmp.compare(this, planet);
     }
 
     public String getName() {
