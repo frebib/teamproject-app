@@ -76,8 +76,6 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
             }
 
             states.add(new CompareSortState<>(lastListState, pivot, min, max, i, j, true));
-            lastListState = new ListSortState<>(list);
-            states.add(lastListState);
 
             // Swap values that are on the wrong
             // side of the pivot then skip over
@@ -85,6 +83,9 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
             E temp = list.get(i);
             list.set(i++, list.get(j));
             list.set(j--, temp);
+
+            lastListState = new ListSortState<>(list);
+            states.add(lastListState);
         }
 
         // Recurse into either side of the pivot
