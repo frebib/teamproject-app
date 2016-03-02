@@ -24,7 +24,7 @@ public class TubeSearchController extends JsonController {
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
 
-        // TODO: Implement planet sorting
+        // TODO: Implement graph search
     }
 
     @Override
