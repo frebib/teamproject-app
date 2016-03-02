@@ -88,6 +88,7 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
             states.add(lastListState);
         }
 
+        // TODO: Represent the return from the recursive call on BoundSortState<>
         // Recurse into either side of the pivot
         if (min < j) quickSort(min, j);
         if (i < max) quickSort(i, max);
