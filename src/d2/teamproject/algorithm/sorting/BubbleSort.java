@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
  */
 
 public class BubbleSort<E extends Comparable<E>>{
+	// TODO: Convert to SortStream for use with PlanetSorting
 	 /**
 	  * sort 
 	  * @param items

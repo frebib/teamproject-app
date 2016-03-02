@@ -9,6 +9,7 @@ import java.util.List;
 @Deprecated
 public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 		AlgoStream<L> {
+	// TODO: Remove unused & deprecated classes
 
 	private L current;
 	private ArrayList<L> states;

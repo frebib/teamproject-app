@@ -20,6 +20,7 @@ public class PARTH extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // TODO: Show "loading" screen
+        // TODO: Add logging
 
         primaryStage.setResizable(false);
         primaryStage.setMinWidth(MIN_WIDTH);

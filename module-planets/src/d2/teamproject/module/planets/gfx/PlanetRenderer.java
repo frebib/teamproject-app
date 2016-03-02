@@ -26,6 +26,7 @@ public class PlanetRenderer {
     private RotateTransition axisRotation;
 
     public PlanetRenderer(Planet planet) {
+        // TODO: Add informative planet text
         this.planet = planet;
 
         radius = Math.log(planet.getDiameter() / 800) * 16d;
