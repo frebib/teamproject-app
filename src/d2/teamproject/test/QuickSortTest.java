@@ -1,6 +1,7 @@
 package d2.teamproject.test;
 
 import d2.teamproject.algorithm.sorting.CompareSortState;
+import d2.teamproject.algorithm.sorting.ListSortState;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
 import d2.teamproject.algorithm.sorting.SortState;
 import org.junit.Assert;
@@ -49,6 +50,40 @@ public class QuickSortTest {
         }
 
         Assert.assertTrue(noSameCompare);
+    }
+
+    @Test
+    public void listStateCorrectness() {
+        List<Integer> shuffled = IntStream.range(0, 20).boxed().collect(Collectors.toList());
+        Collections.shuffle(shuffled);
+
+        QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffled, Integer::compare);
+        sorter.initialise();
+
+        while(sorter.hasNext()) {
+            SortState<Integer> state = sorter.getNext();
+            if (state instanceof CompareSortState) {
+                CompareSortState<Integer> csstate = (CompareSortState<Integer>) state;
+                if (!csstate.isSwap()) continue;
+
+                SortState<Integer> newState = sorter.getNext();
+                Assert.assertTrue(newState instanceof ListSortState);
+
+                List<Integer> newList = newState.getList();
+                List<Integer> oldList = state.getList();
+
+                // Swap elements in old list- they should then be equal
+                Point p = csstate.getCompares();
+                int temp = oldList.get(p.x);
+                oldList.set(p.x, oldList.get(p.y));
+                oldList.set(p.y, temp);
+
+//                System.out.println("Old: " + listToString(oldList));
+//                System.out.println("New: " + listToString(newList));
+
+                Assert.assertTrue(listEqual(oldList, newList));
+            }
+        }
     }
 //
 //    private <T> String listToString(List<T> list) {
