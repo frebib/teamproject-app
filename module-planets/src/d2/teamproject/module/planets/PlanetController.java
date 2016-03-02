@@ -86,7 +86,6 @@ public class PlanetController extends JsonController {
 
     @Override
     public void onOpen() {
-        // TODO: Implement planet sorting
         sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
         sort.initialise();
         System.out.println(sort.getNext());
