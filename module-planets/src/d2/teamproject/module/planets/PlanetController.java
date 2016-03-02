@@ -4,6 +4,7 @@ import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
+import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
@@ -12,6 +13,7 @@ import javafx.scene.image.Image;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -59,6 +61,10 @@ public class PlanetController extends JsonController {
         sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
         sort.initialise();
         System.out.println(sort.getNext());
+    }
+
+    public void handleNextState(Consumer<SortState<Planet>> fn) {
+        fn.accept(sort.getNext());
     }
 
     public void requestNextState() {

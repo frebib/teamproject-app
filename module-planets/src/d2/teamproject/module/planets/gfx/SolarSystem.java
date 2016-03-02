@@ -4,6 +4,7 @@ import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.module.planets.Planet;
 import javafx.animation.*;
+import javafx.geometry.Bounds;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
 import javafx.scene.image.Image;
@@ -12,20 +13,25 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.*;
-import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class SolarSystem {
+    private static final Duration COMPARE_ANIM_TIME = new Duration(300);
+    private static final Duration SWAP_ANIM_TIME = new Duration(500);
+
     private final SubScene scene;
     private final Group root;
     private final PerspectiveCamera camera;
-    private final List<PlanetRenderer> planetRenderers;
+    private final Map<Planet, PlanetRenderer> rendererMap;
+    private List<PlanetRenderer> planetRenderers;
     private final double initialCameraXPosition;
 
     private Planet zoomed;
@@ -37,13 +43,14 @@ public class SolarSystem {
      * Creates multiple rectangles used to simulate the stars in the background
      * Adds event handlers to each planet to zoom on click and show information
      *
-     * @param planets  A list of Planet used to create Planet Renderers used in the scene
+     * @param planets       A list of Planet used to create Planet Renderers used in the scene
      * @param skyboxTexture A image used for the background
      */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
+        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
+        rendererMap = planets.stream().collect(Collectors.toMap(Function.identity(), PlanetRenderer::new));
+        setPlanetOrder(planets);
 
-        initialCameraXPosition = -60.0;    /* Offset right slightly for Sun - Changed from -140 for gap increase */
-        planetRenderers = planets.stream().map(PlanetRenderer::new).collect(Collectors.toList());
         root = new Group();
         scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK); /* Black background */
@@ -57,26 +64,27 @@ public class SolarSystem {
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         root.getChildren().add(camera);
-        root.getChildren().addAll(planetRenderers.stream().map(PlanetRenderer::getModel).collect(Collectors.toList())); // TODO: Get rid of this planetRenderers
-
-        Pane planetNameHolder = planetInformation();
-        root.getChildren().add(planetNameHolder);
+        root.getChildren().addAll(planetRenderers.stream()
+                .map(PlanetRenderer::getModel)
+                .collect(Collectors.toList()));    // TODO: Get rid of this planetRenderers
 
         for (PlanetRenderer p : planetRenderers) {
             p.onClick(e -> {
-                if(p.getPlanet() == zoomed) {   // TODO: Better click checking needs to be added
+                if (p.getPlanet() == zoomed) {   // TODO: Better click checking needs to be added
                     zoomed = null;
 //                    planetName.setVisible(false);     /* Hide the planets name*/
-                    planetNameHolder.setVisible(false);
+//                    planetNameHolder.setVisible(false);
                     zoomOut().play(); /* Zoom out the camera*/
-                }
-                else {
-                zoomed = p.getPlanet();
-                planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
-                planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
-                planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
-                planetNameHolder.setVisible(true);  /* Show the planet information */
-                zoomIn(p).play();   /* Zoom in the camera */
+                } else {
+                    zoomed = p.getPlanet();
+//                planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
+//                planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
+//                planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
+                    zoomIn(p).play();   /* Zoom in the camera */
+//                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
+//                System.out.println("PLanet x: "+p.getModel().getTranslateX());
+
+//                planetNameHolder.setVisible(true);  /* Show the planet information */
                 }
             });
         }
@@ -86,9 +94,10 @@ public class SolarSystem {
 
     /**
      * Moves a camera close to a planet position, giving a zoom in effect
-     * @return  A transition to be played
+     *
+     * @return A transition to be played
      */
-    private TranslateTransition zoomIn(PlanetRenderer renderer){
+    private TranslateTransition zoomIn(PlanetRenderer renderer) {
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
         double onX = renderer.getModel().getLocalToSceneTransform().getTx();
         tt.setToZ(1000 - (renderer.getRadius() * 6));
@@ -98,9 +107,10 @@ public class SolarSystem {
 
     /**
      * Returns a camera to its original position
+     *
      * @return A transition to be played
      */
-    private TranslateTransition zoomOut(){
+    private TranslateTransition zoomOut() {
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1), camera);
         tt.setToZ(0);
         tt.setToX(initialCameraXPosition);
@@ -108,98 +118,105 @@ public class SolarSystem {
     }
 
     /**
-     * Moves a node from starting point to the end point along a curve
+     * Creates a comparison transition of 2 planets specified by the {@link CompareSortState}
      *
-     * @param n The node to apply the transition on
-     * @param x1 The starting x position
-     * @param y1 The starting y position
-     * @param x2 The end x position
-     * @param y2 The end y position
-     * @return A curve transition for a node
+     * @param state     indicies for choosing the planets to compare
+     * @param isReverse
+     * @return the started transition object
      */
-    private PathTransition moveAlongCurve(Node n, double x1, double y1, double x2, double y2){
-        PathTransition transition= new PathTransition();
-        transition.setDuration(Duration.seconds(1.5));
-        Path path = new Path();
-        path.getElements().add(new MoveTo(x1,y1));
-        path.getElements().add(new QuadCurveTo(x1,y2,x2,y2));
-
-        transition.setNode(n);
-        transition.setPath(path);
-        return transition;
-    }
-
-    /**
-     * Returns a node from starting point to the end point along a curve
-     *
-     * @param n The node to apply the transition on
-     * @param x1 The starting x position
-     * @param y1 The starting y position
-     * @param x2 The end x position
-     * @param y2 The end y position
-     * @return A curve transition for a node
-     */
-    private PathTransition moveBackFinish(Node n, double x1, double y1, double x2, double y2){
-        PathTransition transition= new PathTransition();
-        transition.setDuration(Duration.seconds(1.5));
-        Path path = new Path();
-        path.getElements().add(new MoveTo(x1,y1));
-        path.getElements().add(new QuadCurveTo(x2,y1,x2,y2));
-
-        transition.setNode(n);
-        transition.setPath(path);
-        return transition;
-    }
-
-    /**
-     * Takes in a swap step and then animates the swap or the lack thereof
-     *
-     * @param state A List of Planet sorting steps
-     */
-    public void sortSwap(CompareSortState<Planet> state){
-        SequentialTransition transition = new SequentialTransition();
+    public Transition transitionCompare(CompareSortState<Planet> state, boolean isReverse) {
         Point p = state.getCompares();
-        PathTransition planet2arcFinish;
-        PathTransition planet1arcFinish;
-        Node planet1 = planetRenderers.get(p.x).getModel();
-        Node planet2 = planetRenderers.get(p.y).getModel();
-        double height;
-        double halfway = ((planet2.getTranslateX()-planet1.getTranslateX())/2)+planet1.getTranslateX();
+        Node pr1 = planetRenderers.get(Math.max(p.x, p.y)).getModel();
+        Node pr2 = planetRenderers.get(Math.min(p.x, p.y)).getModel();
+        return getCompareTransition(pr1, pr2, isReverse);
+    }
 
-        if((p.y == p.x+1)|(p.y == p.x-1)){ // TODO: This is not a working implementation
-            //noinspection UnusedAssignment
-            height = 72.5;
+    /**
+     * Makes a transition to swap two nodes in an arc, shifting all
+     * planets in between equally to maintain the constant spacing
+     *
+     * @param state indicies for choosing the planets to compare
+     * @return a transition to move the planets
+     */
+    public ParallelTransition makeSwapTransition(CompareSortState<Planet> state) {
+        Point p = state.getCompares();
+        int lo = Math.min(p.x, p.y),
+                hi = Math.max(p.x, p.y);
+        PlanetRenderer pr1 = planetRenderers.get(hi);
+        PlanetRenderer pr2 = planetRenderers.get(lo);
+        Node pm1 = pr1.getModel();
+        Node pm2 = pr2.getModel();
+
+        List<PlanetRenderer> toMove = planetRenderers.subList(lo, hi + 1);
+        System.out.println(toMove.stream().map(PlanetRenderer::getPlanet)
+                .map(Planet::getName).map(Object::toString).collect(Collectors.joining(", ")));
+
+        double diff = pr1.getRadius() - pr2.getRadius();
+        System.out.println("diff = " + diff);
+        double height = toMove.stream()
+                .map(PlanetRenderer::getModel)
+                .map(Node::getBoundsInParent)
+                .map(Bounds::getHeight)
+                .reduce(0d, Math::max);
+
+        Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2);
+        Transition lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1);
+        ParallelTransition trans = new ParallelTransition(upper, lower);
+
+        // Move all planets in between
+        if (toMove.size() > 2)
+            trans.getChildren().addAll(
+                    toMove.subList(1, toMove.size() - 1).stream()
+                            .map(PlanetRenderer::getModel)
+                            .map(m -> {
+                                TranslateTransition tr = new TranslateTransition(SWAP_ANIM_TIME, m);
+                                tr.setByX(diff * 2);
+                                return tr;
+                            }).collect(Collectors.toList()));
+        return trans;
+    }
+
+    private Transition getCompareTransition(Node planet1, Node planet2, boolean isReverse) {
+        TranslateTransition p1comp = new TranslateTransition(COMPARE_ANIM_TIME, planet1),
+                p2comp = new TranslateTransition(COMPARE_ANIM_TIME, planet2);
+        double toY = isReverse ? 0 : -50;
+        p1comp.setToY(toY);
+        p2comp.setToY(toY);
+        return new ParallelTransition(p1comp, p2comp);
+    }
+
+    /**
+     * Creates a path that swaps two planets in a loop animation
+     *
+     * @param from   the first node to swap with the second
+     * @param to     the second node to swap with the first
+     * @param height the height both planets must reach to clear surrounding obstacles
+     * @param offset the offset to move both planets for aligning to surrounding obstacles
+     * @param flip   set true if the path should be on the top side
+     * @return a path for the planets to follow
+     */
+    private Path getSwapPath(Node from, Node to, double height, double offset, boolean flip) {
+        double fromX = from.getTranslateX(),
+                fromY = from.getTranslateY(),
+                toX = to.getTranslateX() + offset,
+                half = Math.abs(toX - fromX) / 2,
+                arc = Math.min(height, half);
+
+        PathElement move, line1, line2, line3, curve1, curve2;
+        move = new MoveTo(fromX, fromY);
+        line3 = new LineTo(toX, 0);
+        if (flip) {
+            line1 = new LineTo(fromX, height - arc);
+            curve1 = new QuadCurveTo(fromX, height, fromX - arc, height);
+            line2 = new LineTo(toX + arc, height);
+            curve2 = new QuadCurveTo(toX, height, toX, height - arc);
+        } else {
+            line1 = new LineTo(fromX, -height + arc);
+            curve1 = new QuadCurveTo(fromX, -height, fromX + arc, -height);
+            line2 = new LineTo(toX - arc, -height);
+            curve2 = new QuadCurveTo(toX, -height, toX, -height + arc);
         }
-        else{
-            //noinspection UnusedAssignment
-            height = 145;   /* Minimum height */
-        }
-        height = 145;
-
-        PathTransition planet2arcStart = moveAlongCurve(planet2,planet2.getTranslateX(),planet2.getTranslateY(),halfway,height);
-        PathTransition planet1arcStart = moveAlongCurve(planet1,planet1.getTranslateX(),planet1.getTranslateY(),halfway,-height);
-        ParallelTransition arcS= new ParallelTransition();
-        arcS.getChildren().addAll(planet2arcStart,planet1arcStart);
-        transition.getChildren().add(arcS);
-
-        PauseTransition pt =new PauseTransition(Duration.seconds(0.5));
-        transition.getChildren().add(pt);
-
-        // TODO: Make the other planets fade here and add that to transition
-
-        if(state.isSwap()) { /* Swap the planets */
-            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet1.getTranslateX(),planet1.getTranslateY());
-            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet2.getTranslateX(),planet2.getTranslateY());
-        }
-        else { /* Return the planets to their original positions */
-            planet2arcFinish = moveBackFinish(planet2,halfway,height,planet2.getTranslateX(),planet2.getTranslateY());
-            planet1arcFinish = moveBackFinish(planet1,halfway,-height,planet1.getTranslateX(),planet1.getTranslateY());
-        }
-
-        ParallelTransition arcFinish = new ParallelTransition();
-        arcFinish.getChildren().addAll(planet2arcFinish,planet1arcFinish);
-        transition.getChildren().add(arcFinish);
-        transition.play();
+        return new Path(move, line1, curve1, line2, curve2, line3);
     }
 
     /**
@@ -211,8 +228,8 @@ public class SolarSystem {
      * @param sb   The background image of rectangle
      * @param time The duration of the fade transition
      */
-    private void skyboxSection(double xPos, double yPos, Image sb, double time){
-        Rectangle rect = new Rectangle(500,500);
+    private void skyboxSection(double xPos, double yPos, Image sb, double time) {
+        Rectangle rect = new Rectangle(500, 500);
         rect.setTranslateX(xPos);
         rect.setTranslateY(yPos);
         rect.setTranslateZ(200);
@@ -229,59 +246,58 @@ public class SolarSystem {
     }
 
     /**
-     *
      * A pane contain information about a planet
      *
      * @return A pane with a TextFlow object
      */
-    private Pane planetInformation(){
+    private Pane planetInformation() {
         // TODO: Cleanup
         // TODO: Fix antialiasing issues (Possibly only on my machine?)
-        planetName.setFont(new Font(40));
-        planetName.setFill(Color.WHITE);
-        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+//        planetName.setFont(new Font(40));
+//        planetName.setFill(Color.WHITE);
+//        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
 //        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
-        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
-
-        planetSize.setFont(new Font(20));
-        planetSize.setFill(Color.WHITE);
-        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-
-        TextFlow planetFlow = new TextFlow();
-        planetFlow.setTextAlignment(TextAlignment.CENTER);
-        planetFlow.setMaxWidth(500);
-        planetFlow.getChildren().addAll(planetName,planetSize);
-
+//        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
+//
+//        planetSize.setFont(new Font(20));
+//        planetSize.setFill(Color.WHITE);
+//        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+//
+//        TextFlow planetFlow = new TextFlow();
+//        planetFlow.setTextAlignment(TextAlignment.CENTER);
+//        planetFlow.setMaxWidth(500);
+//        planetFlow.getChildren().addAll(planetName,planetSize);
+//
         Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
-        planetNameHolder.setMouseTransparent(true);
-        planetNameHolder.getChildren().add(planetFlow);
+//        planetNameHolder.setMouseTransparent(true);
+//        planetNameHolder.getChildren().add(planetFlow);
 //        planetNameHolder.setTranslateZ(-80);
-        planetNameHolder.setVisible(false);
-        planetNameHolder.setCache(true);
-        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
-
-        return  planetNameHolder;
+//        planetNameHolder.setVisible(false);
+//        planetNameHolder.setCache(true);
+//        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
+//
+        return planetNameHolder;
     }
 
     /**
      * @return either 2000,3000,4000 randomly as a double
      */
-    private double randomNumber(){
+    private double randomNumber() {
         Random x = new Random();
-        int y = x.nextInt(2)+2;
-        return (double)y*1000;
+        int y = x.nextInt(2) + 2;
+        return (double) y * 1000;
     }
 
-    private void createSkyboxSections(Image skyboxTexture){
-        skyboxSection(-170,-750,skyboxTexture,randomNumber());               /* Skybox for the left hand side of the screen */
-        skyboxSection(-170,-250,skyboxTexture,randomNumber());
-        skyboxSection(-170,250,skyboxTexture,randomNumber());
-        skyboxSection(330,-750,skyboxTexture,randomNumber());                /* Skybox for the center of the screen */
-        skyboxSection(330,-250,skyboxTexture,randomNumber());
-        skyboxSection(330,250,skyboxTexture,randomNumber());
-        skyboxSection(830,-750,skyboxTexture,randomNumber());                /* Skybox for the right hand side of the screen*/
-        skyboxSection(830,-250,skyboxTexture,randomNumber());
-        skyboxSection(830,250,skyboxTexture,randomNumber());
+    private void createSkyboxSections(Image skyboxTexture) {
+        skyboxSection(-170, -750, skyboxTexture, randomNumber());               /* Skybox for the left hand side of the screen */
+        skyboxSection(-170, -250, skyboxTexture, randomNumber());
+        skyboxSection(-170, 250, skyboxTexture, randomNumber());
+        skyboxSection(330, -750, skyboxTexture, randomNumber());                /* Skybox for the center of the screen */
+        skyboxSection(330, -250, skyboxTexture, randomNumber());
+        skyboxSection(330, 250, skyboxTexture, randomNumber());
+        skyboxSection(830, -750, skyboxTexture, randomNumber());                /* Skybox for the right hand side of the screen*/
+        skyboxSection(830, -250, skyboxTexture, randomNumber());
+        skyboxSection(830, 250, skyboxTexture, randomNumber());
     }
 
     /**
@@ -289,5 +305,9 @@ public class SolarSystem {
      */
     public SubScene getScene() {
         return scene;
+    }
+
+    public void setPlanetOrder(List<Planet> list) {
+        planetRenderers = list.stream().map(rendererMap::get).collect(Collectors.toList());
     }
 }

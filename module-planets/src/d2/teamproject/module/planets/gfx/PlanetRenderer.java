@@ -15,7 +15,7 @@ import javafx.util.Duration;
 
 public class PlanetRenderer {
     // TODO: Figure out the best gap for all planets
-    private static final int gap = 60;
+    private static final int gap = 40;
     private static float cumulativeDist = 0;
 
     private Planet planet;
@@ -83,8 +83,12 @@ public class PlanetRenderer {
     public double getRadius() {
         return radius;
     }
+
     public Node getModel() {
         return model;
     }
-    public Planet getPlanet() { return planet; }
+
+    public Planet getPlanet() {
+        return planet;
+    }
 }
