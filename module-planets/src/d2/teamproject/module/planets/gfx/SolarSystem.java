@@ -35,8 +35,6 @@ public class SolarSystem {
     private final double initialCameraXPosition;
 
     private Planet zoomed;
-    private final Text planetName = new Text();
-    private final Text planetSize = new Text();
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -72,19 +70,10 @@ public class SolarSystem {
             p.onClick(e -> {
                 if (p.getPlanet() == zoomed) {   // TODO: Better click checking needs to be added
                     zoomed = null;
-//                    planetName.setVisible(false);     /* Hide the planets name*/
-//                    planetNameHolder.setVisible(false);
                     zoomOut().play(); /* Zoom out the camera*/
                 } else {
                     zoomed = p.getPlanet();
-//                planetNameHolder.setLayoutX(p.getModel().getLocalToSceneTransform().getTx()-130);   /* Move the planet information in front the planet*/
-//                planetName.setText(p.getPlanet().getName());    /* Set the text to the current planets name */
-//                planetSize.setText(("\n"+Float.toString(p.getPlanet().getMass())));
                     zoomIn(p).play();   /* Zoom in the camera */
-//                System.out.println("Planet Local x: "+p.getModel().getLocalToParentTransform().getTx());
-//                System.out.println("PLanet x: "+p.getModel().getTranslateX());
-
-//                planetNameHolder.setVisible(true);  /* Show the planet information */
                 }
             });
         }
@@ -107,7 +96,6 @@ public class SolarSystem {
 
     /**
      * Returns a camera to its original position
-     *
      * @return A transition to be played
      */
     private TranslateTransition zoomOut() {
@@ -255,40 +243,6 @@ public class SolarSystem {
         transition.setAutoReverse(true);
         transition.play();
         root.getChildren().add(rect);
-    }
-
-    /**
-     * A pane contain information about a planet
-     *
-     * @return A pane with a TextFlow object
-     */
-    private Pane planetInformation() {
-        // TODO: Cleanup
-        // TODO: Fix antialiasing issues (Possibly only on my machine?)
-//        planetName.setFont(new Font(40));
-//        planetName.setFill(Color.WHITE);
-//        planetName.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-//        planetName.setVisible(false);                                               /* Hidden to be set visible on click */
-//        planetName.setFontSmoothingType(FontSmoothingType.GRAY);                    /* Might help with font smoothing */
-//
-//        planetSize.setFont(new Font(20));
-//        planetSize.setFill(Color.WHITE);
-//        planetSize.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
-//
-//        TextFlow planetFlow = new TextFlow();
-//        planetFlow.setTextAlignment(TextAlignment.CENTER);
-//        planetFlow.setMaxWidth(500);
-//        planetFlow.getChildren().addAll(planetName,planetSize);
-//
-        Pane planetNameHolder = new Pane();                                         /* Wrapper for the text */
-//        planetNameHolder.setMouseTransparent(true);
-//        planetNameHolder.getChildren().add(planetFlow);
-//        planetNameHolder.setTranslateZ(-80);
-//        planetNameHolder.setVisible(false);
-//        planetNameHolder.setCache(true);
-//        planetNameHolder.setCacheHint(CacheHint.SCALE_AND_ROTATE);
-//
-        return planetNameHolder;
     }
 
     /**
