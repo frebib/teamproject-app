@@ -50,8 +50,8 @@ public class PlanetController extends JsonController {
     public PlanetController() {
         view = new PlanetView(this);
         view.getWindow().setOnKeyPressed(e -> {
-            System.out.println(e.getCode());
-            requestNextState();
+            if (view.getAnimationState() == PlanetView.AnimState.NOTHING)
+                requestNextState();
         });
     }
 

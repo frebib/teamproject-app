@@ -26,7 +26,7 @@ public class PlanetView extends VisualisationView {
 
     private SolarSystem sSystem;
     protected Transition current;
-    private AnimState animState;
+    private AnimState animState = AnimState.NOTHING;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
@@ -88,5 +88,9 @@ public class PlanetView extends VisualisationView {
             });
             current.playFromStart();
         }
+    }
+
+    public AnimState getAnimationState() {
+        return animState;
     }
 }
