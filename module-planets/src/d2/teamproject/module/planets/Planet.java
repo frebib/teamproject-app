@@ -81,6 +81,9 @@ public class Planet {
                 ", mass=" + mass +
                 ", diameter=" + diameter +
                 ", distToSun=" + distToSun +
+                ", time=" + time +
+                ", tilt=" + tilt +
+                ", textures=" + textures +
                 '}';
     }
 }
