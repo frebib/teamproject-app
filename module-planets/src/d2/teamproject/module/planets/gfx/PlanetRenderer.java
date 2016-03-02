@@ -14,8 +14,8 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 public class PlanetRenderer {
-    // TODO: Figure out the best gap for all planets
-    private static final int gap = 40;
+    // TODO: Figure out the best GAP for all planets
+    public static final int GAP = 40;
     private static float cumulativeDist = 0;
 
     private Planet planet;
@@ -32,7 +32,7 @@ public class PlanetRenderer {
         model = new Group();
         model.setTranslateX(cumulativeDist + radius);
         sphere = new Sphere(radius);
-        cumulativeDist += (radius * 2) + gap;
+        cumulativeDist += (radius * 2) + GAP;
 
         float rotTime = 32 * planet.getRotationTime();
         axisRotation = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);

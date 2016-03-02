@@ -138,7 +138,7 @@ public class SolarSystem {
      * @param state indicies for choosing the planets to compare
      * @return a transition to move the planets
      */
-    public ParallelTransition makeSwapTransition(CompareSortState<Planet> state) {
+    public Transition makeSwapTransition(CompareSortState<Planet> state) {
         Point p = state.getCompares();
         int lo = Math.min(p.x, p.y),
                 hi = Math.max(p.x, p.y);
@@ -152,36 +152,48 @@ public class SolarSystem {
                 .map(Planet::getName).map(Object::toString).collect(Collectors.joining(", ")));
 
         double diff = pr1.getRadius() - pr2.getRadius();
-        System.out.println("diff = " + diff);
-        double height = toMove.stream()
-                .map(PlanetRenderer::getModel)
-                .map(Node::getBoundsInParent)
-                .map(Bounds::getHeight)
-                .reduce(0d, Math::max);
-
-        Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2);
-        Transition lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1);
-        ParallelTransition trans = new ParallelTransition(upper, lower);
+        double height = 0;
 
         // Move all planets in between
-        if (toMove.size() > 2)
-            trans.getChildren().addAll(
-                    toMove.subList(1, toMove.size() - 1).stream()
-                            .map(PlanetRenderer::getModel)
-                            .map(m -> {
-                                TranslateTransition tr = new TranslateTransition(SWAP_ANIM_TIME, m);
-                                tr.setByX(diff * 2);
-                                return tr;
-                            }).collect(Collectors.toList()));
-        return trans;
+        List<Transition> planetShifts = null;
+        if (toMove.size() > 2) {
+            planetShifts = toMove
+                    .subList(1, toMove.size() - 1)
+                    .stream()
+                    .map(PlanetRenderer::getModel)
+                    .map(m -> {
+                        TranslateTransition tr = new TranslateTransition(SWAP_ANIM_TIME, m);
+                        tr.setByX(diff * 2);
+                        return tr;
+                    }).collect(Collectors.toList());
+
+            height = toMove.stream()
+                    .map(PlanetRenderer::getModel)
+                    .map(Node::getBoundsInParent)
+                    .map(Bounds::getHeight)
+                    .reduce(0d, Math::max);
+        } else {
+            height = Math.max(pr1.getRadius(), pr2.getRadius()) + PlanetRenderer.GAP;
+        }
+
+        Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2),
+                   lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1),
+                   upRet = getCompareTransition(pm1, pm2, true),
+                   loRet = getCompareTransition(pm1, pm2, true),
+                   first = new ParallelTransition(upRet, loRet);
+
+        ParallelTransition secnd = new ParallelTransition(upper, lower);
+        if (planetShifts != null) secnd.getChildren().addAll(planetShifts);
+
+        return new SequentialTransition(first, secnd);
     }
 
     private Transition getCompareTransition(Node planet1, Node planet2, boolean isReverse) {
         TranslateTransition p1comp = new TranslateTransition(COMPARE_ANIM_TIME, planet1),
                 p2comp = new TranslateTransition(COMPARE_ANIM_TIME, planet2);
-        double toY = isReverse ? 0 : -50;
-        p1comp.setToY(toY);
-        p2comp.setToY(toY);
+        double toZ = isReverse ? 0 : -100;
+        p1comp.setToZ(toZ);
+        p2comp.setToZ(toZ);
         return new ParallelTransition(p1comp, p2comp);
     }
 
