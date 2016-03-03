@@ -1,5 +1,6 @@
 package d2.teamproject.module.planets;
 
+import d2.teamproject.algorithm.sorting.PartitionSortState;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.ListSortState;
 import d2.teamproject.algorithm.sorting.SortState;
@@ -54,7 +55,7 @@ public class PlanetView extends VisualisationView {
 
     public void updateState(SortState<Planet> state) {
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
-        // TODO: Implement animations for BoundSortState
+        // TODO: Implement animations for PartitionSortState
 
         if (state instanceof CompareSortState) {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;

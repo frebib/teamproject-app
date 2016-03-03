@@ -54,7 +54,7 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         // Use middle value as the pivot
         int pivot = min + (max - min) / 2;
         E pivotElem = list.get(pivot);
-        states.add(new BoundSortState<>(lastListState, pivot, min, max));
+        states.add(new PartitionSortState<>(lastListState, pivot, min, max));
 
         while (i < j) {
             // Compare either side of pivot and count towards pivot
@@ -88,7 +88,7 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
             states.add(lastListState);
         }
 
-        // TODO: Represent the return from the recursive call on BoundSortState<>
+        // TODO: Represent the return from the recursive call on PartitionSortState<>
         // Recurse into either side of the pivot
         if (min < j) quickSort(min, j);
         if (i < max) quickSort(i, max);

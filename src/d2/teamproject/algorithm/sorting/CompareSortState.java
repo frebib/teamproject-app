@@ -7,7 +7,7 @@ import java.awt.*;
  * If the values are swapped then list representation is from before the swap
  * @param <E> Type of data stored in the list
  */
-public class CompareSortState<E> extends BoundSortState<E> {
+public class CompareSortState<E> extends PartitionSortState<E> {
     private int compareA, compareB;
     private boolean isSwap;
 

@@ -6,11 +6,11 @@ import java.util.List;
  * Represents the state of a list sort and a bounded region within the list
  * @param <E> Type of data stored in the list
  */
-public class BoundSortState<E> implements SortState<E> {
+public class PartitionSortState<E> implements SortState<E> {
     private int pivot, lower, upper;
     private ListSortState<E> listState;
 
-    public BoundSortState(ListSortState<E> listState, int pivot, int lower, int upper) {
+    public PartitionSortState(ListSortState<E> listState, int pivot, int lower, int upper) {
         this.pivot = pivot;
         this.lower = lower;
         this.upper = upper;
@@ -53,7 +53,7 @@ public class BoundSortState<E> implements SortState<E> {
 
     @Override
     public String toString() {
-        return "BoundSortState{" +
+        return "PartitionSortState{" +
                 "pivot=" + pivot +
                 ", lower=" + lower +
                 ", upper=" + upper +
