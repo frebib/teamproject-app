@@ -80,7 +80,7 @@ public class PlanetController extends JsonController {
         view = new PlanetView(this);
         view.getWindow().setOnKeyPressed(e -> {
             if (view.getAnimationState() == PlanetView.AnimState.NOTHING)
-                requestNextState();
+                view.updateState(sort.getNext());
         });
     }
 
@@ -92,10 +92,6 @@ public class PlanetController extends JsonController {
 
     public void handleNextState(Consumer<SortState<Planet>> fn) {
         fn.accept(sort.getNext());
-    }
-
-    public void requestNextState() {
-        view.updateState(sort.getNext());
     }
 
     public List<Planet> getPlanets() {
