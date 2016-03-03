@@ -85,10 +85,6 @@ public class QuickSortTest {
             }
         }
     }
-//
-//    private <T> String listToString(List<T> list) {
-//        return list.stream().map(T::toString).collect(Collectors.joining(", "));
-//    }
 
     private <E extends Comparable<E>> boolean listEqual(List<E> a, List<E> b) {
         if (a.size() != b.size())
