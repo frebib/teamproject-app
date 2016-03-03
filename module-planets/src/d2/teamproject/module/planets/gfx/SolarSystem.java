@@ -236,7 +236,7 @@ public class SolarSystem {
 
         FadeTransition transition = new FadeTransition(Duration.millis(time), rect);
         transition.setFromValue(1.0);
-        transition.setToValue(0.6);
+        transition.setToValue(0.70);
         transition.setCycleCount(Animation.INDEFINITE);
         transition.setAutoReverse(true);
         transition.play();

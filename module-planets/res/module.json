@@ -12,7 +12,7 @@
       "type": "JsonObject"
     },
     "planettexture": {
-      "file": "planet-textures.zip",
+      "file": "planet-textures-hd.zip",
       "type": "Zip"
     },
     "skybox": {
