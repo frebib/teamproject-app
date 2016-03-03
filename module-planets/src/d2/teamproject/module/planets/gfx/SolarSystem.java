@@ -89,7 +89,7 @@ public class SolarSystem {
     private TranslateTransition zoomIn(PlanetRenderer renderer) {
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
         double onX = renderer.getModel().getLocalToSceneTransform().getTx();
-        tt.setToZ(1000 - (renderer.getRadius() * 6));
+        tt.setToZ(1000 - (renderer.getRadius() * 4.5));
         tt.setToX(-635 + onX);
         return tt;
     }
