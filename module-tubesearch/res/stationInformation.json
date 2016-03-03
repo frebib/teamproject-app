@@ -1540,8 +1540,8 @@
     {
       "id": "pimlico",
       "name": "Pimlico",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.382,
+      "ypos": 0.717293233,
       "connected": [
         {
           "id": "victoria",
@@ -1558,8 +1558,8 @@
     {
       "id": "queensway",
       "name": "Queensway",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.295,
+      "ypos": 0.463157895,
       "connected": [
         {
           "id": "nottingHillGate",
@@ -1576,8 +1576,8 @@
     {
       "id": "regentsPark",
       "name": "Regent's Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.394,
+      "ypos": 0.359398496,
       "connected": [
         {
           "id": "bakerStreet",
@@ -1594,8 +1594,8 @@
     {
       "id": "russellSquare",
       "name": "Russell Square",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.526,
+      "ypos": 0.360902256,
       "connected": [
         {
           "id": "holborn",
@@ -1612,8 +1612,8 @@
     {
       "id": "shoreditchHighStreet",
       "name": "Shoreditch High Street",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.756,
+      "ypos": 0.345864662,
       "connected": [
         {
           "id": "hoxton",
@@ -1630,8 +1630,8 @@
     {
       "id": "sloaneSquare",
       "name": "Sloane Square",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.344,
+      "ypos": 0.598496241,
       "connected": [
         {
           "id": "southKensington",
@@ -1658,8 +1658,8 @@
     {
       "id": "southKensington",
       "name": "South Kensington",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.303,
+      "ypos": 0.6,
       "connected": [
         {
           "id": "sloaneSquare",
@@ -1696,8 +1696,8 @@
     {
       "id": "southwark",
       "name": "Southwark",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.518,
+      "ypos": 0.678195489,
       "connected": [
         {
           "id": "londonBridge",
@@ -1714,8 +1714,8 @@
     {
       "id": "stJamesPark",
       "name": "St James's Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.406,
+      "ypos": 0.593984962,
       "connected": [
         {
           "id": "victoria",
@@ -1742,8 +1742,8 @@
     {
       "id": "stPauls",
       "name": "St Paul's",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.583,
+      "ypos": 0.461654135,
       "connected": [
         {
           "id": "chanceryLane",
@@ -1760,8 +1760,8 @@
     {
       "id": "temple",
       "name": "Temple",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.528,
+      "ypos": 0.595488722,
       "connected": [
         {
           "id": "embankment",
@@ -1788,8 +1788,8 @@
     {
       "id": "tottenhamCourtRoad",
       "name": "Tottenham Court Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.475,
+      "ypos": 0.418045113,
       "connected": [
         {
           "id": "oxfordCircus",
@@ -1816,8 +1816,8 @@
     {
       "id": "towerGateway",
       "name": "Tower Gateway",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.707,
+      "ypos": 0.520300752,
       "connected": [
         {
           "id": "shadwell",
@@ -1829,8 +1829,8 @@
     {
       "id": "towerHill",
       "name": "Tower Hill",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.693,
+      "ypos": 0.49924812,
       "connected": [
         {
           "id": "monument",
@@ -1857,8 +1857,8 @@
     {
       "id": "vauxhall",
       "name": "Vauxhall",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.392,
+      "ypos": 0.819548872,
       "connected": [
         {
           "id": "pimlico",
@@ -1875,8 +1875,8 @@
     {
       "id": "victoria",
       "name": "Victoria",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.384,
+      "ypos": 0.596992481,
       "connected": [
         {
           "id": "pimlico",
@@ -1913,8 +1913,8 @@
     {
       "id": "warrenStreet",
       "name": "Warren Street",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.474,
+      "ypos": 0.326315789,
       "connected": [
         {
           "id": "euston",
@@ -1941,8 +1941,8 @@
     {
       "id": "waterloo",
       "name": "Waterloo",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.475,
+      "ypos": 0.64962406,
       "connected": [
         {
           "id": "westminster",
@@ -1984,8 +1984,8 @@
     {
       "id": "westminster",
       "name": "Westminster",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0.444,
+      "ypos": 0.595488722,
       "connected": [
         {
           "id": "stJamesPark",
@@ -2022,8 +2022,8 @@
     {
       "id": "abbeyRoad",
       "name": "Abbey Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stratfordHighStreet",
@@ -2040,8 +2040,8 @@
     {
       "id": "allSaints",
       "name": "All Saints",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "poplar",
@@ -2058,8 +2058,8 @@
     {
       "id": "archway",
       "name": "Archway",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "tufnellPark",
@@ -2071,8 +2071,8 @@
     {
       "id": "arsenal",
       "name": "Arsenal",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "finsburyPark",
@@ -2089,8 +2089,8 @@
     {
       "id": "baronsCourt",
       "name": "Barons Court",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hammersmithDP",
@@ -2117,8 +2117,8 @@
     {
       "id": "belsizePark",
       "name": "Belsize Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hampstead",
@@ -2135,8 +2135,8 @@
     {
       "id": "bermondsey",
       "name": "Bermondsey",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "londonBridge",
@@ -2153,8 +2153,8 @@
     {
       "id": "bethnalGreenOverground",
       "name": "Bethanl Green - Overground",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "cambridgeHeath",
@@ -2171,8 +2171,8 @@
     {
       "id": "bethnalGreenCentral",
       "name": "Bethnal Green - Central",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "mileEnd",
@@ -2189,8 +2189,8 @@
     {
       "id": "blackwall",
       "name": "Blackwall",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "poplar",
@@ -2207,8 +2207,8 @@
     {
       "id": "bowChurch",
       "name": "Bow Church",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "devonsRoad",
@@ -2225,8 +2225,8 @@
     {
       "id": "bowRoad",
       "name": "Bow Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "mileEnd",
@@ -2253,8 +2253,8 @@
     {
       "id": "brixton",
       "name": "Brixton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stockwell",
@@ -2266,8 +2266,8 @@
     {
       "id": "brockley",
       "name": "Brockley",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "newCrossGate",
@@ -2279,8 +2279,8 @@
     {
       "id": "bromleyByBow",
       "name": "Bromley-By-Bow",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "bowRoad",
@@ -2307,8 +2307,8 @@
     {
       "id": "brondesbury",
       "name": "Brondesbury",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "brondesburyPark",
@@ -2325,8 +2325,8 @@
     {
       "id": "brondesburyPark",
       "name": "Brondesbury Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "brondesbury",
@@ -2343,8 +2343,8 @@
     {
       "id": "caledonianRoad",
       "name": "Caledonian Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hollowayRoad",
@@ -2361,8 +2361,8 @@
     {
       "id": "caledonianRoadAndBarnsbury",
       "name": "Caledonian Road & Barnsbury",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "camdenRoad",
@@ -2379,8 +2379,8 @@
     {
       "id": "cambridgeHeath",
       "name": "Cambridge Heath",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "londonFields",
@@ -2397,8 +2397,8 @@
     {
       "id": "camdenRoad",
       "name": "Camden Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kentishTownWest",
@@ -2415,8 +2415,8 @@
     {
       "id": "camdenTown",
       "name": "Camden Town",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "chalkFarm",
@@ -2438,8 +2438,8 @@
     {
       "id": "canadaWater",
       "name": "Canada Water",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "bermondsey",
@@ -2466,8 +2466,8 @@
     {
       "id": "canaryWharf",
       "name": "Canary Wharf",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "canadaWater",
@@ -2494,8 +2494,8 @@
     {
       "id": "canningTown",
       "name": "Canning Town",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "starLane",
@@ -2512,8 +2512,8 @@
     {
       "id": "canonbury",
       "name": "Canonbury",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "highburyIslington",
@@ -2535,8 +2535,8 @@
     {
       "id": "chalkFarm",
       "name": "Chalk Farm",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "belsizePark",
@@ -2553,8 +2553,8 @@
     {
       "id": "claphamCommon",
       "name": "Clapham Common",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "claphamSouth",
@@ -2571,8 +2571,8 @@
     {
       "id": "claphamHighStreet",
       "name": "Clapham High Street",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "wandsworthRoad",
@@ -2589,8 +2589,8 @@
     {
       "id": "claphamJunction",
       "name": "Clapham Junction",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "imperialWharf",
@@ -2607,8 +2607,8 @@
     {
       "id": "claphamNorth",
       "name": "Clapham North",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stockwell",
@@ -2625,8 +2625,8 @@
     {
       "id": "claphamSouth",
       "name": "Clapham South",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "claphamCommon",
@@ -2638,8 +2638,8 @@
     {
       "id": "clapton",
       "name": "Clapton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hackneyDowns",
@@ -2651,8 +2651,8 @@
     {
       "id": "crossharbour",
       "name": "Crossharbour",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "southQuay",
@@ -2669,8 +2669,8 @@
     {
       "id": "cuttySark",
       "name": "Cutty Sark",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "islandGardens",
@@ -2687,8 +2687,8 @@
     {
       "id": "dalstonJunction",
       "name": "Dalston Junction",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "canonbury",
@@ -2705,8 +2705,8 @@
     {
       "id": "dalstonKingsland",
       "name": "Dalston Kingsland",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "canonbury",
@@ -2723,8 +2723,8 @@
     {
       "id": "denmarkHill",
       "name": "Denmark Hill",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "peckhamRye",
@@ -2741,8 +2741,8 @@
     {
       "id": "deptfordBridge",
       "name": "Deptford Bridge",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "greenwich",
@@ -2759,8 +2759,8 @@
     {
       "id": "devonsRoad",
       "name": "Devons Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "bowChurch",
@@ -2777,8 +2777,8 @@
     {
       "id": "eastActon",
       "name": "East Acton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "northActon",
@@ -2795,8 +2795,8 @@
     {
       "id": "eastIndia",
       "name": "East India",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "blackwall",
@@ -2813,8 +2813,8 @@
     {
       "id": "eastPutney",
       "name": "East Putney",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "putneyBridge",
@@ -2826,8 +2826,8 @@
     {
       "id": "elversonRoad",
       "name": "Elverson Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "deptfordBridge",
@@ -2844,8 +2844,8 @@
     {
       "id": "finchleyRoad",
       "name": "Finchley Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "bakerStreet",
@@ -2867,8 +2867,8 @@
     {
       "id": "finchleyRoadAndFrognal",
       "name": "Finchley Road & Frognal",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westHampstead",
@@ -2885,8 +2885,8 @@
     {
       "id": "finsburyPark",
       "name": "Finsbury Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "highburyIslington",
@@ -2908,8 +2908,8 @@
     {
       "id": "fulhamBroadway",
       "name": "Fulham Broadway",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "parsonsGreen",
@@ -2926,8 +2926,8 @@
     {
       "id": "goldhawkRoad",
       "name": "Goldhawk Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hammersmithCH",
@@ -2954,8 +2954,8 @@
     {
       "id": "gospelOak",
       "name": "Gospel Oak",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hampsteadHeath",
@@ -2977,8 +2977,8 @@
     {
       "id": "greenwich",
       "name": "Greenwich",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "deptfordBridge",
@@ -2995,8 +2995,8 @@
     {
       "id": "hackneyCentral",
       "name": "Hackney Central",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "homerton",
@@ -3013,8 +3013,8 @@
     {
       "id": "hackneyDowns",
       "name": "Hackney Downs",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "rectoryRoad",
@@ -3036,8 +3036,8 @@
     {
       "id": "hackneyWick",
       "name": "Hackney Wick",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "homerton",
@@ -3054,8 +3054,8 @@
     {
       "id": "haggerston",
       "name": "Haggerston",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "dalstonJunction",
@@ -3072,8 +3072,8 @@
     {
       "id": "hammersmithDP",
       "name": "Hammersmith - District and Piccadilly",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "turnhamGreen",
@@ -3100,8 +3100,8 @@
     {
       "id": "hammersmithCH",
       "name": "Hammersmith - Circle and Hammersmith & City",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "goldhawkRoad",
@@ -3118,8 +3118,8 @@
     {
       "id": "hampstead",
       "name": "Hampstead",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "belsizePark",
@@ -3131,8 +3131,8 @@
     {
       "id": "hampsteadHeath",
       "name": "Hampstead Heath",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "gospelOak",
@@ -3149,8 +3149,8 @@
     {
       "id": "heronQuays",
       "name": "Heron Quays",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "southQuay",
@@ -3167,8 +3167,8 @@
     {
       "id": "highburyIslington",
       "name": "Highbury & Islington",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "canonbury",
@@ -3195,8 +3195,8 @@
     {
       "id": "hollandPark",
       "name": "Holland Park - closed till August",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "shepherdsBush",
@@ -3213,8 +3213,8 @@
     {
       "id": "hollowayRoad",
       "name": "Holloway Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "arsenal",
@@ -3231,8 +3231,8 @@
     {
       "id": "homerton",
       "name": "Homerton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hackneyCentral",
@@ -3249,8 +3249,8 @@
     {
       "id": "imperialWharf",
       "name": "Imperial Wharf",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "claphamJunction",
@@ -3267,8 +3267,8 @@
     {
       "id": "islandGardens",
       "name": "Island Gardens",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "mudchute",
@@ -3285,8 +3285,8 @@
     {
       "id": "kennington",
       "name": "Kennington",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "waterloo",
@@ -3308,8 +3308,8 @@
     {
       "id": "kensalGreen",
       "name": "Kensal Green",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "queensPark",
@@ -3336,8 +3336,8 @@
     {
       "id": "kensalRise",
       "name": "Kensal Rise",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "willesdenJunction",
@@ -3354,8 +3354,8 @@
     {
       "id": "kensingtonOlympia",
       "name": "Kensington (Olympia)",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "earlsCourt",
@@ -3377,8 +3377,8 @@
     {
       "id": "kentishTown",
       "name": "Kentish Town",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "tufnellPark",
@@ -3395,8 +3395,8 @@
     {
       "id": "kentishTownWest",
       "name": "Kentish Town West",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "gospelOak",
@@ -3413,8 +3413,8 @@
     {
       "id": "kilburn",
       "name": "Kilburn",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "willesdenGreen",
@@ -3431,8 +3431,8 @@
     {
       "id": "kilburnPark",
       "name": "Kilburn",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "queensPark",
@@ -3449,8 +3449,8 @@
     {
       "id": "kilburnHighRoad",
       "name": "Kilburn",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "queensPark",
@@ -3467,8 +3467,8 @@
     {
       "id": "ladbrokeGrove",
       "name": "Ladbroke Grove",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westbournePark",
@@ -3495,8 +3495,8 @@
     {
       "id": "langdonPark",
       "name": "Langdon Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "devonsRoad",
@@ -3513,8 +3513,8 @@
     {
       "id": "latimerRoad",
       "name": "Latimer Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "ladbrokeGrove",
@@ -3541,8 +3541,8 @@
     {
       "id": "lewisham",
       "name": "Lewisham",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "elversonRoad",
@@ -3554,8 +3554,8 @@
     {
       "id": "limehouse",
       "name": "Limehouse",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "shadwell",
@@ -3572,8 +3572,8 @@
     {
       "id": "londonFields",
       "name": "London Fields",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "hackneyDowns",
@@ -3590,8 +3590,8 @@
     {
       "id": "maidaVale",
       "name": "Maida Vale",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kilburnPark",
@@ -3608,8 +3608,8 @@
     {
       "id": "manorHouse",
       "name": "Manor House",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "finsburyPark",
@@ -3621,8 +3621,8 @@
     {
       "id": "mileEnd",
       "name": "Mile End",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stepneyGreen",
@@ -3659,8 +3659,8 @@
     {
       "id": "morningtonCrescent",
       "name": "Mornington Crescent",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "camdenTown",
@@ -3677,8 +3677,8 @@
     {
       "id": "mudchute",
       "name": "Mudchute",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "crossharbour",
@@ -3695,8 +3695,8 @@
     {
       "id": "newCross",
       "name": "New Cross",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "surreyQuays",
@@ -3708,8 +3708,8 @@
     {
       "id": "newCrossGate",
       "name": "New Cross Gate",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "surreyQuays",
@@ -3726,8 +3726,8 @@
     {
       "id": "northActon",
       "name": "North Acton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "eastActon",
@@ -3739,8 +3739,8 @@
     {
       "id": "northGreenwich",
       "name": "North Greenwich",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "canaryWharf",
@@ -3757,8 +3757,8 @@
     {
       "id": "oval",
       "name": "Oval",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stockwell",
@@ -3775,8 +3775,8 @@
     {
       "id": "parsonsGreen",
       "name": "Parsons Green",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "putneyBridge",
@@ -3793,8 +3793,8 @@
     {
       "id": "peckhamRye",
       "name": "Peckham Rye",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "denmarkHill",
@@ -3811,8 +3811,8 @@
     {
       "id": "poplar",
       "name": "Poplar",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westferry",
@@ -3839,8 +3839,8 @@
     {
       "id": "puddingMillLane",
       "name": "Pudding Mill Lane",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "bowChurch",
@@ -3857,8 +3857,8 @@
     {
       "id": "putneyBridge",
       "name": "Putney Bridge",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "eastPutney",
@@ -3875,8 +3875,8 @@
     {
       "id": "queensPark",
       "name": "Queen's Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kensalGreen",
@@ -3903,8 +3903,8 @@
     {
       "id": "queensRoadPeckham",
       "name": "Queens Road Peckham",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "peckhamRye",
@@ -3921,8 +3921,8 @@
     {
       "id": "ravenscourtPark",
       "name": "Ravenscourt Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -3939,8 +3939,8 @@
     {
       "id": "rectoryRoad",
       "name": "Rectory Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stokeNewington",
@@ -3957,8 +3957,8 @@
     {
       "id": "rotherhithe",
       "name": "Rotherhithe",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "wapping",
@@ -3975,8 +3975,8 @@
     {
       "id": "royalOak",
       "name": "Royal Oak",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westbournePark",
@@ -4003,8 +4003,8 @@
     {
       "id": "shadwell",
       "name": "Shawell",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "wapping",
@@ -4036,8 +4036,8 @@
     {
       "id": "shepherdsBush",
       "name": "Shepherd's Bush",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "whiteCity",
@@ -4064,8 +4064,8 @@
     {
       "id": "shepherdsBushMarket",
       "name": "Shepherd's Bush Market",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "woodlane",
@@ -4092,8 +4092,8 @@
     {
       "id": "southHampstead",
       "name": "South Hampstead",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kilburnHighRoad",
@@ -4110,8 +4110,8 @@
     {
       "id": "southQuay",
       "name": "South Quay",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "heronQuays",
@@ -4128,8 +4128,8 @@
     {
       "id": "stJohnsWood",
       "name": "St John Wood",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "swissCottage",
@@ -4146,8 +4146,8 @@
     {
       "id": "stamfordBrook",
       "name": "Stamford Brook",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "turnhamGreen",
@@ -4164,8 +4164,8 @@
     {
       "id": "starLane",
       "name": "Star Lane",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westHam",
@@ -4182,8 +4182,8 @@
     {
       "id": "stepneyGreen",
       "name": "Stepney Green",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "mileEnd",
@@ -4210,8 +4210,8 @@
     {
       "id": "stockwell",
       "name": "Stockwell",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "brixton",
@@ -4238,8 +4238,8 @@
     {
       "id": "stokeNewington",
       "name": "Stoke Newington",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "rectoryRoad",
@@ -4251,8 +4251,8 @@
     {
       "id": "stratford",
       "name": "Stratford",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stratfordInternational",
@@ -4289,8 +4289,8 @@
     {
       "id": "stratfordHighStreet",
       "name": "Stratford High Street",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stratford",
@@ -4307,8 +4307,8 @@
     {
       "id": "stratfordInternational",
       "name": "Stratford International",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stratford",
@@ -4320,8 +4320,8 @@
     {
       "id": "surreyQuays",
       "name": "Surrey Quays",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "newCross",
@@ -4348,8 +4348,8 @@
     {
       "id": "swissCottage",
       "name": "Swiss Cottage",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "finchleyRoad",
@@ -4366,8 +4366,8 @@
     {
       "id": "tufnellPark",
       "name": "Tufnell Park - closed till March",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "archway",
@@ -4384,8 +4384,8 @@
     {
       "id": "turnhamGreen",
       "name": "Turnham Green",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -4402,8 +4402,8 @@
     {
       "id": "upperHolloway",
       "name": "Upper Holloway",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "gospelOak",
@@ -4415,8 +4415,8 @@
     {
       "id": "wandsworthRoad",
       "name": "Wansworth Road",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "claphamJunction",
@@ -4433,8 +4433,8 @@
     {
       "id": "wapping",
       "name": "Wapping",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "shadwell",
@@ -4451,8 +4451,8 @@
     {
       "id": "warwickAvenue",
       "name": "Warwick Avenue",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "maidaVale",
@@ -4469,8 +4469,8 @@
     {
       "id": "westBrompton",
       "name": "West Brompton",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "fulhamBroadway",
@@ -4497,8 +4497,8 @@
     {
       "id": "westHam",
       "name": "West Ham",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "abbeyRoad",
@@ -4535,8 +4535,8 @@
     {
       "id": "westHampstead",
       "name": "West Hampstead",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kilburn",
@@ -4563,8 +4563,8 @@
     {
       "id": "westIndiaQuay",
       "name": "West India Quay",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "westferry",
@@ -4586,8 +4586,8 @@
     {
       "id": "westKensington",
       "name": "West Kensington",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "earlsCourt",
@@ -4604,8 +4604,8 @@
     {
       "id": "westbournePark",
       "name": "Westbourne Park",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "royalOak",
@@ -4632,8 +4632,8 @@
     {
       "id": "westferry",
       "name": "Westferry",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "limehouse",
@@ -4655,8 +4655,8 @@
     {
       "id": "whitechapel",
       "name": "Whitechapel",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "aldgateEast",
@@ -4693,8 +4693,8 @@
     {
       "id": "whiteCity",
       "name": "White City",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "eastActon",
@@ -4711,8 +4711,8 @@
     {
       "id": "willesdenGreen",
       "name": "Willesden Green",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kilburn",
@@ -4724,8 +4724,8 @@
     {
       "id": "willesdenJunction",
       "name": "Willesden Junction",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "kensalGreen",
@@ -4752,8 +4752,8 @@
     {
       "id": "woodlane",
       "name": "Wood Lane",
-      "xpos": 0.0,
-      "ypos": 0.0,
+      "xpos": 0,
+      "ypos": 0,
       "connected": [
         {
           "id": "shepherdsBushMarket",
