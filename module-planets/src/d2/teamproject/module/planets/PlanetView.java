@@ -56,7 +56,6 @@ public class PlanetView extends VisualisationView {
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
         // TODO: Implement animations for BoundSortState
 
-        System.out.println("state = " + state);
         if (state instanceof CompareSortState) {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;

@@ -136,8 +136,6 @@ public class SolarSystem {
         Node pm2 = pr2.getModel();
 
         List<PlanetRenderer> toMove = planetRenderers.subList(lo, hi + 1);
-        System.out.println(toMove.stream().map(PlanetRenderer::getPlanet)
-                .map(Planet::getName).map(Object::toString).collect(Collectors.joining(", ")));
 
         double diff = pr1.getRadius() - pr2.getRadius();
         double height = 0;
