@@ -20,7 +20,6 @@ public class PlanetRenderer {
 
     private Planet planet;
     private Group model;
-    private Sphere sphere;
     private final double radius;
 
     private RotateTransition axisRotation;
@@ -32,7 +31,7 @@ public class PlanetRenderer {
         radius = Math.log(planet.getDiameter() / 800) * 16d;
         model = new Group();
         model.setTranslateX(cumulativeDist + radius);
-        sphere = new Sphere(radius);
+        Sphere sphere = new Sphere(radius);
         cumulativeDist += (radius * 2) + GAP;
 
         float rotTime = 32 * planet.getRotationTime();
