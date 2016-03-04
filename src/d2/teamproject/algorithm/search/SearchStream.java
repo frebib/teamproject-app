@@ -106,7 +106,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
     public boolean hasNext() {
         // Has a next value unless the path has reached the
         // goal or there are no more nodes to explore
-        return !((start != null && goal != null && start.contentsEquals(goal.contents)) || frontier.isEmpty());
+        return hasPrevious() ? !getPrevious().isComplete() : start != null && goal != null && !frontier.isEmpty();
     }
 
     @Override
