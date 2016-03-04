@@ -24,6 +24,6 @@ public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseData
 
     @Override
 	public BaseDataStructure<E> copy() {
-		return new SearchPriorityQueue<E>(this);
+		return new SearchPriorityQueue<>(this);
 	}
 }
