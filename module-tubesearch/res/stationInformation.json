@@ -3767,8 +3767,8 @@
     {
       "id": "oval",
       "name": "Oval",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.46,
+      "ypos": 0.871,
       "connected": [
         {
           "id": "stockwell",
@@ -3785,8 +3785,8 @@
     {
       "id": "parsonsGreen",
       "name": "Parsons Green",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.235,
+      "ypos": 0.747,
       "connected": [
         {
           "id": "putneyBridge",
@@ -3803,8 +3803,8 @@
     {
       "id": "peckhamRye",
       "name": "Peckham Rye",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.638,
+      "ypos": 0.859,
       "connected": [
         {
           "id": "denmarkHill",
@@ -3821,8 +3821,8 @@
     {
       "id": "poplar",
       "name": "Poplar",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.496,
       "connected": [
         {
           "id": "westferry",
@@ -3849,8 +3849,8 @@
     {
       "id": "puddingMillLane",
       "name": "Pudding Mill Lane",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.906,
+      "ypos": 0.272,
       "connected": [
         {
           "id": "bowChurch",
@@ -3867,8 +3867,8 @@
     {
       "id": "putneyBridge",
       "name": "Putney Bridge",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.235,
+      "ypos": 0.770,
       "connected": [
         {
           "id": "eastPutney",
@@ -3885,8 +3885,8 @@
     {
       "id": "queensPark",
       "name": "Queen's Park",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.152,
+      "ypos": 0.229,
       "connected": [
         {
           "id": "kensalGreen",
@@ -3913,8 +3913,8 @@
     {
       "id": "queensRoadPeckham",
       "name": "Queens Road Peckham",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.67,
+      "ypos": 0.809,
       "connected": [
         {
           "id": "peckhamRye",
@@ -3931,8 +3931,8 @@
     {
       "id": "ravenscourtPark",
       "name": "Ravenscourt Park",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.142,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -3949,8 +3949,8 @@
     {
       "id": "rectoryRoad",
       "name": "Rectory Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.77,
+      "ypos": 0.149,
       "connected": [
         {
           "id": "stokeNewington",
@@ -3967,8 +3967,8 @@
     {
       "id": "rotherhithe",
       "name": "Rotherhithe",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.576,
       "connected": [
         {
           "id": "wapping",
@@ -3985,8 +3985,8 @@
     {
       "id": "royalOak",
       "name": "Royal Oak",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.19,
+      "ypos": 0.332,
       "connected": [
         {
           "id": "westbournePark",
@@ -4013,8 +4013,8 @@
     {
       "id": "shadwell",
       "name": "Shawell",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.496,
       "connected": [
         {
           "id": "wapping",
@@ -4046,8 +4046,8 @@
     {
       "id": "shepherdsBush",
       "name": "Shepherd's Bush",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.203,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "whiteCity",
@@ -4074,8 +4074,8 @@
     {
       "id": "shepherdsBushMarket",
       "name": "Shepherd's Bush Market",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.17,
+      "ypos": 0.517,
       "connected": [
         {
           "id": "woodlane",
@@ -4102,8 +4102,8 @@
     {
       "id": "southHampstead",
       "name": "South Hampstead",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.285,
+      "ypos": 0.250,
       "connected": [
         {
           "id": "kilburnHighRoad",
@@ -4120,8 +4120,8 @@
     {
       "id": "southQuay",
       "name": "South Quay",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.651,
       "connected": [
         {
           "id": "heronQuays",
@@ -4138,8 +4138,8 @@
     {
       "id": "stJohnsWood",
       "name": "St John Wood",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.356,
+      "ypos": 0.244,
       "connected": [
         {
           "id": "swissCottage",
@@ -4156,8 +4156,8 @@
     {
       "id": "stamfordBrook",
       "name": "Stamford Brook",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.105,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "turnhamGreen",
@@ -4174,8 +4174,8 @@
     {
       "id": "starLane",
       "name": "Star Lane",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.95,
+      "ypos": 0.415,
       "connected": [
         {
           "id": "westHam",
@@ -4192,8 +4192,8 @@
     {
       "id": "stepneyGreen",
       "name": "Stepney Green",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.782,
+      "ypos": 0.347,
       "connected": [
         {
           "id": "mileEnd",
@@ -4220,8 +4220,8 @@
     {
       "id": "stockwell",
       "name": "Stockwell",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.441,
+      "ypos": 0.895,
       "connected": [
         {
           "id": "brixton",
@@ -4248,8 +4248,8 @@
     {
       "id": "stokeNewington",
       "name": "Stoke Newington",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.75,
+      "ypos": 0.119,
       "connected": [
         {
           "id": "rectoryRoad",
@@ -4261,8 +4261,8 @@
     {
       "id": "stratford",
       "name": "Stratford",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.95,
+      "ypos": 0.209,
       "connected": [
         {
           "id": "stratfordInternational",
@@ -4299,8 +4299,8 @@
     {
       "id": "stratfordHighStreet",
       "name": "Stratford High Street",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.95,
+      "ypos": 0.254,
       "connected": [
         {
           "id": "stratford",
@@ -4317,8 +4317,8 @@
     {
       "id": "stratfordInternational",
       "name": "Stratford International",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.896,
+      "ypos": 0.155,
       "connected": [
         {
           "id": "stratford",
@@ -4330,8 +4330,8 @@
     {
       "id": "surreyQuays",
       "name": "Surrey Quays",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.698,
       "connected": [
         {
           "id": "newCross",
@@ -4358,8 +4358,8 @@
     {
       "id": "swissCottage",
       "name": "Swiss Cottage",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.343,
+      "ypos": 0.224,
       "connected": [
         {
           "id": "finchleyRoad",
