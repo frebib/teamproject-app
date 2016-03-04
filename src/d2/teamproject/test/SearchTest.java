@@ -3,32 +3,55 @@ package d2.teamproject.test;
 import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
+import d2.teamproject.algorithm.search.SearchStream;
+import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.*;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
+import java.util.function.BiFunction;
 
 public class SearchTest {
+    /**
+     * A {@link BiFunction} that calculates a Euclidean distance between two {@link Node}{@code s}
+     */
+    public static final BiFunction<Point, Point, Double> euclidean = (a, b) -> Math.sqrt(
+            Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+
+    /**
+     * A {@link BiFunction} that calculates a Manhattan distance between two {@link Node}{@code s}
+     */
+    public static final BiFunction<Point, Point, Double> manhattan = (a, b) ->
+            Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
 
     @Test
     public void hasPathAStar() {
         Graph<Point> graph = sampleGraph();
         Random r = new Random();
-        Object[]     arr   = graph.nodes.values().toArray();
-        Node<Point>  start = (Node<Point>) arr[r.nextInt(arr.length)],
-                     end   = (Node<Point>) arr[r.nextInt(arr.length)];
 
-//        AStarSearchStream<Point> stream = new AStarSearchStream<>(start, start.getSuccessors().get(0));
-//        stream.initialise();
-//
-//        SearchState state = null;
-//        while(stream.hasNext())
-//            state = stream.getNext();
-//
-//        Assert.assertNotNull(state.getPath());
+        // Pick 2 random points in the graph.
+        // Every node has at least 1 path to any other
+        List<Node<Point>> val = new ArrayList<>(graph.nodes.values());
+        Node<Point> start = val.get(r.nextInt(val.size())),
+                    end   = val.get(r.nextInt(val.size()));
+
+        SearchStream<Point, SearchPriorityQueue<Node<Point>>> stream =
+                new AStarSearchStream<>(start, end)
+                .setCostFn(manhattan)
+                .setHeuristicFn(euclidean)
+                .initialise();
+
+        SearchState state = null;
+        while (stream.hasNext())
+            state = stream.getNext();
+
+        // last state should have a path provided the graph does
+        Assert.assertNotNull(state.getPath());
+
+        // Should have no more states
+        Assert.assertNull(stream.getNext());
     }
 
     private static class Graph<A> {
