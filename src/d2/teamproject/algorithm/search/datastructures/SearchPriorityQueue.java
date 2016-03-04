@@ -10,8 +10,8 @@ import java.util.PriorityQueue;
  * @param <E> @inheritDoc
  */
 public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseDataStructure<E> {
-    public SearchPriorityQueue(Comparator<E> comparer) {
-        super(comparer);
+    public SearchPriorityQueue(Comparator<E> comparator) {
+        super(comparator);
     }
     public SearchPriorityQueue(Collection<? extends E> c) {
         super(c);
