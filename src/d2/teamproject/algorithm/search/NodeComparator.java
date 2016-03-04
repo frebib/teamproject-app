@@ -7,7 +7,7 @@ import java.util.Comparator;
  *
  * @param <E> Element represented by the {@link Node}
  */
-public class NodeComparer<E> implements Comparator<Node<E>> {
+public class NodeComparator<E> implements Comparator<Node<E>> {
     @Override
     public int compare(Node<E> n1, Node<E> n2) {
         return (int) (n1.getF() - n2.getF());
