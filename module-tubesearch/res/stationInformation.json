@@ -2253,8 +2253,8 @@
     {
       "id": "brixton",
       "name": "Brixton",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.477,
+      "ypos": 0.949,
       "connected": [
         {
           "id": "stockwell",
@@ -2266,8 +2266,8 @@
     {
       "id": "brockley",
       "name": "Brockley",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.842,
       "connected": [
         {
           "id": "newCrossGate",
@@ -2279,8 +2279,8 @@
     {
       "id": "bromleyByBow",
       "name": "Bromley-By-Bow",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.917,
+      "ypos": 0.340,
       "connected": [
         {
           "id": "bowRoad",
@@ -2307,8 +2307,8 @@
     {
       "id": "brondesbury",
       "name": "Brondesbury",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.269,
+      "ypos": 0.185,
       "connected": [
         {
           "id": "brondesburyPark",
@@ -2325,8 +2325,8 @@
     {
       "id": "brondesburyPark",
       "name": "Brondesbury Park",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.229,
+      "ypos": 0.185,
       "connected": [
         {
           "id": "brondesbury",
@@ -2343,8 +2343,8 @@
     {
       "id": "caledonianRoad",
       "name": "Caledonian Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.633,
+      "ypos": 0.158,
       "connected": [
         {
           "id": "hollowayRoad",
@@ -2361,8 +2361,8 @@
     {
       "id": "caledonianRoadAndBarnsbury",
       "name": "Caledonian Road & Barnsbury",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.641,
+      "ypos": 0.173,
       "connected": [
         {
           "id": "camdenRoad",
@@ -2379,8 +2379,8 @@
     {
       "id": "cambridgeHeath",
       "name": "Cambridge Heath",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.785,
+      "ypos": 0.260,
       "connected": [
         {
           "id": "londonFields",
@@ -2397,8 +2397,8 @@
     {
       "id": "camdenRoad",
       "name": "Camden Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.55,
+      "ypos": 0.156,
       "connected": [
         {
           "id": "kentishTownWest",
@@ -2415,8 +2415,8 @@
     {
       "id": "camdenTown",
       "name": "Camden Town",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.499,
+      "ypos": 0.189,
       "connected": [
         {
           "id": "chalkFarm",
@@ -2438,8 +2438,8 @@
     {
       "id": "canadaWater",
       "name": "Canada Water",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.6,
       "connected": [
         {
           "id": "bermondsey",
@@ -2466,8 +2466,8 @@
     {
       "id": "canaryWharf",
       "name": "Canary Wharf",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.6,
       "connected": [
         {
           "id": "canadaWater",
@@ -2494,8 +2494,8 @@
     {
       "id": "canningTown",
       "name": "Canning Town",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.936,
+      "ypos": 0.495,
       "connected": [
         {
           "id": "starLane",
@@ -2522,8 +2522,8 @@
     {
       "id": "canonbury",
       "name": "Canonbury",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.706,
+      "ypos": 0.189,
       "connected": [
         {
           "id": "highburyIslington",
@@ -2545,8 +2545,8 @@
     {
       "id": "chalkFarm",
       "name": "Chalk Farm",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.484,
+      "ypos": 0.155,
       "connected": [
         {
           "id": "belsizePark",
@@ -2563,8 +2563,8 @@
     {
       "id": "claphamCommon",
       "name": "Clapham Common",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.402,
+      "ypos": 0.952,
       "connected": [
         {
           "id": "claphamSouth",
@@ -2581,8 +2581,8 @@
     {
       "id": "claphamHighStreet",
       "name": "Clapham High Street",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.421,
+      "ypos": 0.902,
       "connected": [
         {
           "id": "wandsworthRoad",
@@ -2599,8 +2599,8 @@
     {
       "id": "claphamJunction",
       "name": "Clapham Junction",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.298,
+      "ypos": 0.859,
       "connected": [
         {
           "id": "imperialWharf",
@@ -2617,8 +2617,8 @@
     {
       "id": "claphamNorth",
       "name": "Clapham North",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.421,
+      "ypos": 0.926,
       "connected": [
         {
           "id": "stockwell",
@@ -2635,8 +2635,8 @@
     {
       "id": "claphamSouth",
       "name": "Clapham South",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.392,
+      "ypos": 0.968,
       "connected": [
         {
           "id": "claphamCommon",
@@ -2648,8 +2648,8 @@
     {
       "id": "clapton",
       "name": "Clapton",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.808,
+      "ypos": 0.138,
       "connected": [
         {
           "id": "hackneyDowns",
@@ -2661,8 +2661,8 @@
     {
       "id": "crossharbour",
       "name": "Crossharbour",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.677,
       "connected": [
         {
           "id": "southQuay",
@@ -2679,8 +2679,8 @@
     {
       "id": "cuttySark",
       "name": "Cutty Sark",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.773,
       "connected": [
         {
           "id": "islandGardens",
@@ -2697,8 +2697,8 @@
     {
       "id": "dalstonJunction",
       "name": "Dalston Junction",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.746,
+      "ypos": 0.215,
       "connected": [
         {
           "id": "canonbury",
@@ -2715,8 +2715,8 @@
     {
       "id": "dalstonKingsland",
       "name": "Dalston Kingsland",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.729,
+      "ypos": 0.173,
       "connected": [
         {
           "id": "canonbury",
@@ -2733,8 +2733,8 @@
     {
       "id": "denmarkHill",
       "name": "Denmark Hill",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.539,
+      "ypos": 0.919,
       "connected": [
         {
           "id": "peckhamRye",
@@ -2751,8 +2751,8 @@
     {
       "id": "deptfordBridge",
       "name": "Deptford Bridge",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.827,
       "connected": [
         {
           "id": "greenwich",
@@ -2769,8 +2769,8 @@
     {
       "id": "devonsRoad",
       "name": "Devons Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.405,
       "connected": [
         {
           "id": "bowChurch",
@@ -2787,8 +2787,8 @@
     {
       "id": "eastActon",
       "name": "East Acton",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.124,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "northActon",
@@ -2805,8 +2805,8 @@
     {
       "id": "eastIndia",
       "name": "East India",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.914,
+      "ypos": 0.496,
       "connected": [
         {
           "id": "blackwall",
