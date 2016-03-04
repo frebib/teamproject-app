@@ -15,7 +15,8 @@ import javafx.util.Duration;
 
 public class PlanetRenderer {
     // TODO: Figure out the best GAP for all planets
-    public static final int GAP = 40;
+    public  static final int GAP = 40;
+    // TODO: Streamline planet positioning
     private static float cumulativeDist = 0;
 
     private final Planet planet;
