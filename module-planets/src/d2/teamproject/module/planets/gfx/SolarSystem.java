@@ -159,7 +159,7 @@ public class SolarSystem {
                     .map(Bounds::getHeight)
                     .reduce(0d, Math::max);
         } else {
-            height = Math.max(pr1.getRadius(), pr2.getRadius()) + PlanetRenderer.GAP;
+            height = Math.max(pr1.getRadius(), pr2.getRadius()) + PlanetRenderer.GAP / 2;
         }
 
         Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2),
