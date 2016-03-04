@@ -4,24 +4,12 @@ import d2.teamproject.algorithm.AlgoStream;
 import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 
 import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> implements AlgoStream<SearchState<E, L>> {
-
-//    /**
-//     * A {@link SearchFunction} that calculates a Euclidean distance between two {@link Node}{@code s}
-//     */
-//    public static final SearchFunction<E> euclidean = (a, b) -> (float) Math.sqrt(
-//            Math.pow(a.contents.getX() - b.contents.getX(), 2) +
-//            Math.pow(a.contents.getY() - b.contents.getY(), 2));
-//    /**
-//     * A {@link SearchFunction} that calculates a Manhattan distance between two {@link Node}{@code s}
-//     */
-//    public static final SearchFunction<E> manhattan = (a, b) -> (float)
-//           (Math.abs(a.contents.getX() - b.contents.getX()) +
-//            Math.abs(a.contents.getY() - b.contents.getY()));
-
     private Node<E> start, goal;
-    private SearchFunction<E> cost, heuristic;
+    private BiFunction<E, E, Double> cost, heuristic;
 
     private final L frontier;
     private final Set<Node<E>> visited;
@@ -64,7 +52,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
      * Sets the cost function for the search, changing the behaviour of the search algorithm
      * @return the SearchStream object
      */
-    public SearchStream<E, L> setCostFn(SearchFunction<E> cost) {
+    public SearchStream<E, L> setCostFn(BiFunction<E, E, Double> cost) {
         this.cost = cost;
         return this;
     }
@@ -72,7 +60,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
      * Sets the heuristic function for the search, changing the behaviour of the search algorithm
      * @return the SearchStream object
      */
-    public SearchStream<E, L> setHeuristicFn(SearchFunction<E> heuristic) {
+    public SearchStream<E, L> setHeuristicFn(BiFunction<E, E, Double> heuristic) {
         this.heuristic = heuristic;
         return this;
     }
@@ -87,7 +75,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
         successors.clear();
         allStates.clear();
 
-        start.setHeuristic(heuristic.apply(start, goal));
+        start.setHeuristic(heuristic.apply(start.getContents(), goal.getContents()));
         start.setCost(0);
         frontier.add(start);
         return this;
@@ -158,9 +146,9 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
             for (Node<E> suc : node.getSuccessors()) {
                 if (visited.contains(suc))
                     continue;
-                float costVal = node.getCost() + cost.apply(node, suc);
+                double costVal = node.getCost() + cost.apply(node.getContents(), suc.getContents());
                 if (!frontier.contains(suc) || costVal < suc.getCost()) {
-                    suc.setHeuristic(heuristic.apply(suc, goal));
+                    suc.setHeuristic(heuristic.apply(suc.getContents(), goal.getContents()));
                     suc.setCost(costVal);
 
                     successors.put(suc, node);    // Set the node as visited

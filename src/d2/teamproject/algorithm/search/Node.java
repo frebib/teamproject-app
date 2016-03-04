@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Node<E> {
     private final List<Node<E>> successors;
-    private float heuristic, cost;
+    private double heuristic, cost;
 
     /**
      * The Object that the {@link Node} represents
@@ -62,7 +62,7 @@ public class Node<E> {
      *
      * @return The {@code Cost} value
      */
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
@@ -71,7 +71,7 @@ public class Node<E> {
      *
      * @return The {@code Heuristic} value
      */
-    public float getHeuristic() {
+    public double getHeuristic() {
         return heuristic;
     }
 
@@ -81,7 +81,7 @@ public class Node<E> {
      *
      * @return {@code cost} + {@code heuristic}
      */
-    public float getF() {
+    public double getF() {
         return cost + heuristic;
     }
 
@@ -90,7 +90,7 @@ public class Node<E> {
      *
      * @param cost {@code Cost} value
      */
-    public void setCost(float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -99,7 +99,7 @@ public class Node<E> {
      *
      * @param heuristic {@code Heuristic} value
      */
-    public void setHeuristic(float heuristic) {
+    public void setHeuristic(double heuristic) {
         this.heuristic = heuristic;
     }
 
