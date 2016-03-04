@@ -39,7 +39,7 @@ public class TubeSearchController extends JsonController {
         stationinfo.forEach(s -> {
             JsonObject obj = s.asObject();
             String id = obj.get("id").asString();
-            stationMap.put(id, new TubeStation(id, obj.get("name").asString()));
+            stationMap.put(id, new TubeStation(id, obj.get("name").asString(), obj.getDouble("x", 0), obj.getDouble("y", 0)));
         });
         final Integer[] errors = {0};
         stationinfo.forEach(s -> {
