@@ -71,7 +71,7 @@
       "id": "aldgate",
       "name": "Aldgate",
       "xpos": 0.707,
-      "ypos": 0.442105263,
+      "ypos": 0.442,
       "connected": [
         {
           "id": "liverpoolStreet",
@@ -94,7 +94,7 @@
       "id": "aldgateEast",
       "name": "Aldgate East",
       "xpos":0.739,
-      "ypos": 0.342857143,
+      "ypos": 0.343,
       "connected": [
         {
           "id": "liverpoolStreet",
@@ -122,7 +122,7 @@
       "id": "angel",
       "name": "Angel",
       "xpos": 0.586,
-      "ypos": 0.288721805,
+      "ypos": 0.289,
       "connected": [
         {
           "id": "oldStreet",
@@ -140,7 +140,7 @@
       "id": "bakerStreet",
       "name": "Baker Street",
       "xpos": 0.377,
-      "ypos": 0.30075188,
+      "ypos": 0.301,
       "connected": [
         {
           "id": "stJohnsWood",
@@ -198,7 +198,7 @@
       "id": "bank",
       "name": "Bank",
       "xpos": 0.609,
-      "ypos": 0.460150376,
+      "ypos": 0.460,
       "connected": [
         {
           "id": "stPauls",
@@ -236,7 +236,7 @@
       "id": "barbican",
       "name": "Barbican",
       "xpos": 0.593,
-      "ypos": 0.365413534,
+      "ypos": 0.365,
       "connected": [
         {
           "id": "farringdon",
@@ -273,8 +273,8 @@
     {
       "id": "bayswater",
       "name": "Bayswater",
-      "xpos": 0.257,
-      "ypos": 0.386466165,
+      "xpos": 0.255,
+      "ypos": 0.386,
       "connected": [
         {
           "id": "paddington",
@@ -302,7 +302,7 @@
       "id": "blackfriars",
       "name": "Blackfriars",
       "xpos": 0.563,
-      "ypos": 0.566917293,
+      "ypos": 0.567,
       "connected": [
         {
           "id": "temple",
@@ -330,7 +330,7 @@
       "id": "bondStreet",
       "name": "Bond Street",
       "xpos": 0.365,
-      "ypos": 0.418045113,
+      "ypos": 0.418,
       "connected": [
         {
           "id": "marbleArch",
@@ -358,7 +358,7 @@
       "id": "borough",
       "name": "Borough",
       "xpos": 0.566,
-      "ypos": 0.709774436,
+      "ypos": 0.710,
       "connected": [
         {
           "id": "londonBridge",
@@ -376,7 +376,7 @@
       "id": "cannonStreet",
       "name": "Cannon Street",
       "xpos": 0.594,
-      "ypos": 0.520300752,
+      "ypos": 0.520,
       "connected": [
         {
           "id": "mansionHouse",
@@ -404,7 +404,7 @@
       "id": "chanceryLane",
       "name": "Chancery Lane",
       "xpos": 0.552,
-      "ypos": 0.434586466,
+      "ypos": 0.435,
       "connected": [
         {
           "id": "holborn",
@@ -422,7 +422,7 @@
       "id": "charingCross",
       "name": "Charing Cross",
       "xpos": 0.475,
-      "ypos": 0.538345865,
+      "ypos": 0.538,
       "connected": [
         {
           "id": "leicesterSquare",
@@ -450,7 +450,7 @@
       "id": "coventGarden",
       "name": "Covent Garden",
       "xpos": 0.492,
-      "ypos": 0.44962406,
+      "ypos": 0.450,
       "connected": [
         {
           "id": "leicesterSquare",
@@ -468,7 +468,7 @@
       "id": "earlsCourt",
       "name": "Earl's Court",
       "xpos": 0.245,
-      "ypos": 0.6,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "westKensington",
@@ -511,7 +511,7 @@
       "id": "edgwareRoadBakerloo",
       "name": "Edgware Road - Bakerloo",
       "xpos": 0.274,
-      "ypos": 0.281203008,
+      "ypos": 0.286,
       "connected": [
         {
           "id": "paddington",
@@ -529,7 +529,7 @@
       "id": "edgwareRoadCH",
       "name": "Edgware Road - Circle, District & Hammersmith",
       "xpos": 0.295,
-      "ypos": 0.314285714,
+      "ypos": 0.314,
       "connected": [
         {
           "id": "paddington",
@@ -567,7 +567,7 @@
       "id": "elephantAndCastle",
       "name": "Elephant & Castle",
       "xpos": 0.493,
-      "ypos": 0.818045113,
+      "ypos": 0.818,
       "connected": [
         {
           "id": "lambethNorth",
@@ -590,7 +590,7 @@
       "id": "embankment",
       "name": "Embankment",
       "xpos": 0.485,
-      "ypos": 0.596992481,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "charingCross",
@@ -638,7 +638,7 @@
       "id": "euston",
       "name": "Euston",
       "xpos": 0.499,
-      "ypos": 0.273684211,
+      "ypos": 0.274,
       "connected": [
         {
           "id": "morningtonCrescent",
@@ -681,7 +681,7 @@
       "id": "eustonSquare",
       "name": "Euston Square",
       "xpos": 0.507,
-      "ypos": 0.302255639,
+      "ypos": 0.301,
       "connected": [
         {
           "id": "greatPortlandStreet",
@@ -719,7 +719,7 @@
       "id": "farringdon",
       "name": "Farringdon",
       "xpos": 0.573,
-      "ypos": 0.333834586,
+      "ypos": 0.334,
       "connected": [
         {
           "id": "kingsCross",
@@ -766,7 +766,7 @@
       "id": "gloucesterRoad",
       "name": "Gloucester Road",
       "xpos": 0.281,
-      "ypos": 0.593984962,
+      "ypos": 0.594,
       "connected": [
         {
           "id": "earlsCourt",
@@ -804,7 +804,7 @@
       "id": "goodgeStreet",
       "name": "Goodge Street",
       "xpos": 0.476,
-      "ypos": 0.386466165,
+      "ypos": 0.386,
       "connected": [
         {
           "id": "tottenhamCourtRoad",
@@ -822,7 +822,7 @@
       "id": "greatPortlandStreet",
       "name": "Great Portland Street",
       "xpos": 0.42,
-      "ypos": 0.30075188,
+      "ypos": 0.301,
       "connected": [
         {
           "id": "bakerStreet",
@@ -860,7 +860,7 @@
       "id": "greenPark",
       "name": "Green Park",
       "xpos": 0.385,
-      "ypos": 0.490225564,
+      "ypos": 0.490,
       "connected": [
         {
           "id": "bondStreet",
@@ -898,7 +898,7 @@
       "id": "highStreetKensington",
       "name": "High Street Kensington",
       "xpos": 0.255,
-      "ypos": 0.652631579,
+      "ypos": 0.653,
       "connected": [
         {
           "id": "nottingHillGate",
@@ -931,7 +931,7 @@
       "id": "holborn",
       "name": "Holborn",
       "xpos": 0.511,
-      "ypos": 0.418045113,
+      "ypos": 0.418,
       "connected": [
         {
           "id": "tottenhamCourtRoad",
@@ -959,7 +959,7 @@
       "id": "hoxton",
       "name": "Hoxton",
       "xpos": 0.757,
-      "ypos": 0.288721805,
+      "ypos": 0.289,
       "connected": [
         {
           "id": "haggerston",
@@ -977,7 +977,7 @@
       "id": "hydeParkCorner",
       "name": "Hyde Park Corner",
       "xpos": 0.365,
-      "ypos": 0.50075188,
+      "ypos": 0.501,
       "connected": [
         {
           "id": "knightsbridge",
@@ -995,7 +995,7 @@
       "id": "kingsCross",
       "name": "King's Cross St Pancras",
       "xpos": 0.536,
-      "ypos": 0.303759398,
+      "ypos": 0.301,
       "connected": [
         {
           "id": "euston",
@@ -1063,7 +1063,7 @@
       "id": "knightsbridge",
       "name": "Knightsbridge",
       "xpos": 0.335,
-      "ypos": 0.547368421,
+      "ypos": 0.547,
       "connected": [
         {
           "id": "southKensington",
@@ -1081,7 +1081,7 @@
       "id": "lambethNorth",
       "name": "Lambeth North",
       "xpos": 0.487,
-      "ypos": 0.729323308,
+      "ypos": 0.729,
       "connected": [
         {
           "id": "waterloo",
@@ -1099,7 +1099,7 @@
       "id": "lancasterGate",
       "name": "Lancaster Gate",
       "xpos": 0.325,
-      "ypos": 0.454135338,
+      "ypos": 0.454,
       "connected": [
         {
           "id": "queensway",
@@ -1117,7 +1117,7 @@
       "id": "leicesterSquare",
       "name": "Leicester Square",
       "xpos": 0.475,
-      "ypos": 0.473684211,
+      "ypos": 0.474,
       "connected": [
         {
           "id": "piccadillyCircus",
@@ -1145,7 +1145,7 @@
       "id": "liverpoolStreet",
       "name": "Liverpool Street",
       "xpos": 0.661,
-      "ypos": 0.395488722,
+      "ypos": 0.395,
       "connected": [
         {
           "id": "bank",
@@ -1226,7 +1226,7 @@
       "id": "mansionHouse",
       "name": "Mansion House",
       "xpos": 0.578,
-      "ypos": 0.542857143,
+      "ypos": 0.543,
       "connected": [
         {
           "id": "blackfriars",
@@ -1254,7 +1254,7 @@
       "id": "marbleArch",
       "name": "Marble Arch",
       "xpos": 0.338,
-      "ypos": 0.433082707,
+      "ypos": 0.433,
       "connected": [
         {
           "id": "lancasterGate",
@@ -1272,7 +1272,7 @@
       "id": "marylebone",
       "name": "Marylebone",
       "xpos": 0.321,
-      "ypos": 0.285714286,
+      "ypos": 0.286,
       "connected": [
         {
           "id": "edgwareRoadBakerloo",
@@ -1290,7 +1290,7 @@
       "id": "monument",
       "name": "Monument",
       "xpos": 0.636,
-      "ypos": 0.50075188,
+      "ypos": 0.501,
       "connected": [
         {
           "id": "cannonStreet",
@@ -1318,7 +1318,7 @@
       "id": "moorgate",
       "name": "Moorgate",
       "xpos": 0.624,
-      "ypos": 0.396992481,
+      "ypos": 0.397,
       "connected": [
         {
           "id": "liverpoolStreet",
@@ -1366,7 +1366,7 @@
       "id": "nottingHillGate",
       "name": "Notting Hill Gate",
       "xpos": 0.255,
-      "ypos": 0.461654135,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "bayswater",
@@ -1404,7 +1404,7 @@
       "id": "oldStreet",
       "name": "Old Street",
       "xpos": 0.624,
-      "ypos": 0.314285714,
+      "ypos": 0.314,
       "connected": [
         {
           "id": "angel",
@@ -1422,7 +1422,7 @@
       "id": "oxfordCircus",
       "name": "Oxford Circus",
       "xpos": 0.414,
-      "ypos": 0.418045113,
+      "ypos": 0.418,
       "connected": [
         {
           "id": "bondStreet",
@@ -1460,7 +1460,7 @@
       "id": "paddington",
       "name": "Paddington",
       "xpos": 0.246,
-      "ypos": 0.29924812,
+      "ypos": 0.299,
       "connected": [
         {
           "id": "warwickAvenue",
@@ -1513,7 +1513,7 @@
       "id": "piccadillyCircus",
       "name": "Piccadilly Circus",
       "xpos": 0.444,
-      "ypos": 0.490225564,
+      "ypos": 0.490,
       "connected": [
         {
           "id": "greenPark",
@@ -1541,7 +1541,7 @@
       "id": "pimlico",
       "name": "Pimlico",
       "xpos": 0.382,
-      "ypos": 0.717293233,
+      "ypos": 0.717,
       "connected": [
         {
           "id": "victoria",
@@ -1559,7 +1559,7 @@
       "id": "queensway",
       "name": "Queensway",
       "xpos": 0.295,
-      "ypos": 0.463157895,
+      "ypos": 0.463,
       "connected": [
         {
           "id": "nottingHillGate",
@@ -1577,7 +1577,7 @@
       "id": "regentsPark",
       "name": "Regent's Park",
       "xpos": 0.394,
-      "ypos": 0.359398496,
+      "ypos": 0.359,
       "connected": [
         {
           "id": "bakerStreet",
@@ -1595,7 +1595,7 @@
       "id": "russellSquare",
       "name": "Russell Square",
       "xpos": 0.526,
-      "ypos": 0.360902256,
+      "ypos": 0.361,
       "connected": [
         {
           "id": "holborn",
@@ -1612,8 +1612,8 @@
     {
       "id": "shoreditchHighStreet",
       "name": "Shoreditch High Street",
-      "xpos": 0.756,
-      "ypos": 0.345864662,
+      "xpos": 0.757,
+      "ypos": 0.346,
       "connected": [
         {
           "id": "hoxton",
@@ -1631,7 +1631,7 @@
       "id": "sloaneSquare",
       "name": "Sloane Square",
       "xpos": 0.344,
-      "ypos": 0.598496241,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "southKensington",
@@ -1659,7 +1659,7 @@
       "id": "southKensington",
       "name": "South Kensington",
       "xpos": 0.303,
-      "ypos": 0.6,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "sloaneSquare",
@@ -1697,7 +1697,7 @@
       "id": "southwark",
       "name": "Southwark",
       "xpos": 0.518,
-      "ypos": 0.678195489,
+      "ypos": 0.678,
       "connected": [
         {
           "id": "londonBridge",
@@ -1715,7 +1715,7 @@
       "id": "stJamesPark",
       "name": "St James's Park",
       "xpos": 0.406,
-      "ypos": 0.593984962,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "victoria",
@@ -1743,7 +1743,7 @@
       "id": "stPauls",
       "name": "St Paul's",
       "xpos": 0.583,
-      "ypos": 0.461654135,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "chanceryLane",
@@ -1761,7 +1761,7 @@
       "id": "temple",
       "name": "Temple",
       "xpos": 0.528,
-      "ypos": 0.595488722,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "embankment",
@@ -1789,7 +1789,7 @@
       "id": "tottenhamCourtRoad",
       "name": "Tottenham Court Road",
       "xpos": 0.475,
-      "ypos": 0.418045113,
+      "ypos": 0.418,
       "connected": [
         {
           "id": "oxfordCircus",
@@ -1817,7 +1817,7 @@
       "id": "towerGateway",
       "name": "Tower Gateway",
       "xpos": 0.707,
-      "ypos": 0.520300752,
+      "ypos": 0.520,
       "connected": [
         {
           "id": "shadwell",
@@ -1830,7 +1830,7 @@
       "id": "towerHill",
       "name": "Tower Hill",
       "xpos": 0.693,
-      "ypos": 0.49924812,
+      "ypos": 0.499,
       "connected": [
         {
           "id": "monument",
@@ -1858,7 +1858,7 @@
       "id": "vauxhall",
       "name": "Vauxhall",
       "xpos": 0.392,
-      "ypos": 0.819548872,
+      "ypos": 0.820,
       "connected": [
         {
           "id": "pimlico",
@@ -1876,7 +1876,7 @@
       "id": "victoria",
       "name": "Victoria",
       "xpos": 0.384,
-      "ypos": 0.596992481,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "pimlico",
@@ -1914,7 +1914,7 @@
       "id": "warrenStreet",
       "name": "Warren Street",
       "xpos": 0.474,
-      "ypos": 0.326315789,
+      "ypos": 0.326,
       "connected": [
         {
           "id": "euston",
@@ -1942,7 +1942,7 @@
       "id": "waterloo",
       "name": "Waterloo",
       "xpos": 0.475,
-      "ypos": 0.64962406,
+      "ypos": 0.650,
       "connected": [
         {
           "id": "westminster",
@@ -1985,7 +1985,7 @@
       "id": "westminster",
       "name": "Westminster",
       "xpos": 0.444,
-      "ypos": 0.595488722,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "stJamesPark",
@@ -2022,8 +2022,8 @@
     {
       "id": "abbeyRoad",
       "name": "Abbey Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.95,
+      "ypos": 0.295,
       "connected": [
         {
           "id": "stratfordHighStreet",
@@ -2040,8 +2040,8 @@
     {
       "id": "allSaints",
       "name": "All Saints",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.457,
       "connected": [
         {
           "id": "poplar",
@@ -2058,8 +2058,8 @@
     {
       "id": "archway",
       "name": "Archway",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.548,
+      "ypos": 0.035,
       "connected": [
         {
           "id": "tufnellPark",
@@ -2071,8 +2071,8 @@
     {
       "id": "arsenal",
       "name": "Arsenal",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.668,
+      "ypos": 0.102,
       "connected": [
         {
           "id": "finsburyPark",
@@ -2089,8 +2089,8 @@
     {
       "id": "baronsCourt",
       "name": "Barons Court",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.192,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "hammersmithDP",
@@ -2117,8 +2117,8 @@
     {
       "id": "belsizePark",
       "name": "Belsize Park",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.464,
+      "ypos": 0.126,
       "connected": [
         {
           "id": "hampstead",
@@ -2135,8 +2135,8 @@
     {
       "id": "bermondsey",
       "name": "Bermondsey",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.695,
+      "ypos": 0.600,
       "connected": [
         {
           "id": "londonBridge",
@@ -2153,8 +2153,8 @@
     {
       "id": "bethnalGreenOverground",
       "name": "Bethanl Green - Overground",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.785,
+      "ypos": 0.283,
       "connected": [
         {
           "id": "cambridgeHeath",
@@ -2171,8 +2171,8 @@
     {
       "id": "bethnalGreenCentral",
       "name": "Bethnal Green - Central",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.797,
+      "ypos": 0.322,
       "connected": [
         {
           "id": "mileEnd",
@@ -2189,8 +2189,8 @@
     {
       "id": "blackwall",
       "name": "Blackwall",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.884,
+      "ypos": 0.496,
       "connected": [
         {
           "id": "poplar",
@@ -2207,8 +2207,8 @@
     {
       "id": "bowChurch",
       "name": "Bow Church",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.361,
       "connected": [
         {
           "id": "devonsRoad",
@@ -2225,8 +2225,8 @@
     {
       "id": "bowRoad",
       "name": "Bow Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.876,
+      "ypos": 0.340,
       "connected": [
         {
           "id": "mileEnd",
@@ -2505,6 +2505,16 @@
         {
           "id": "eastIndia",
           "lineId": "dlr",
+          "sublines": []
+        },
+        {
+          "id": "northGreenwich",
+          "lineId": "jubilee",
+          "sublines": []
+        },
+        {
+          "id": "westHam",
+          "lineId": "jubilee",
           "sublines": []
         }
       ]
@@ -4502,12 +4512,12 @@
       "connected": [
         {
           "id": "abbeyRoad",
-          "lineId": "overground",
+          "lineId": "dlr",
           "sublines": []
         },
         {
           "id": "starLane",
-          "lineId": "overground",
+          "lineId": "dlr",
           "sublines": []
         },
         {
