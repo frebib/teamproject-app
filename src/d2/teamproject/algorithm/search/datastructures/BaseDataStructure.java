@@ -12,6 +12,12 @@ public interface BaseDataStructure<E> {
     E getHead();
 
     /**
+     * Gets the first item in the {@code BaseDataStructure} without removing it
+     * @return The first item
+     */
+    E peek();
+
+    /**
      * Adds a new item into the {@code BaseDataStructure}
      * @param a Item to add
      * @return true if successful
