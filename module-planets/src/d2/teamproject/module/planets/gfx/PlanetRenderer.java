@@ -18,8 +18,8 @@ public class PlanetRenderer {
     public static final int GAP = 40;
     private static float cumulativeDist = 0;
 
-    private Planet planet;
-    private Group model;
+    private final Planet planet;
+    private final Group model;
     private final double radius;
 
     private RotateTransition axisRotation;
