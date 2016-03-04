@@ -5,7 +5,6 @@ import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 
 import java.util.*;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> implements AlgoStream<SearchState<E, L>> {
     private Node<E> start, goal;
@@ -140,7 +139,11 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
                 path.add(node);                       // Add the current node to the resulting path
                 node = successors.get(node);          // Get the parent of the node from the Key-Value
             }                                         // pair in the Map using the node as the key
-            return new SearchState<>(frontier, visited, path);
+
+            // Return the final state with a path
+            SearchState<E, L> state = new SearchState<>(frontier, visited, path);
+            allStates.add(state);
+            return state;
         }
         else {
             for (Node<E> suc : node.getSuccessors()) {
