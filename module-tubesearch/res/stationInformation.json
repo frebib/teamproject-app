@@ -4376,8 +4376,8 @@
     {
       "id": "tufnellPark",
       "name": "Tufnell Park - closed till March",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.548,
+      "ypos": 0.090,
       "connected": [
         {
           "id": "archway",
@@ -4394,8 +4394,8 @@
     {
       "id": "turnhamGreen",
       "name": "Turnham Green",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.072,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -4412,8 +4412,8 @@
     {
       "id": "upperHolloway",
       "name": "Upper Holloway",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.604,
+      "ypos": 0.048,
       "connected": [
         {
           "id": "gospelOak",
@@ -4425,8 +4425,8 @@
     {
       "id": "wandsworthRoad",
       "name": "Wansworth Road",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.364,
+      "ypos": 0.859,
       "connected": [
         {
           "id": "claphamJunction",
@@ -4443,8 +4443,8 @@
     {
       "id": "wapping",
       "name": "Wapping",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.535,
       "connected": [
         {
           "id": "shadwell",
@@ -4461,8 +4461,8 @@
     {
       "id": "warwickAvenue",
       "name": "Warwick Avenue",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.183,
+      "ypos": 0.286,
       "connected": [
         {
           "id": "maidaVale",
@@ -4479,8 +4479,8 @@
     {
       "id": "westBrompton",
       "name": "West Brompton",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.235,
+      "ypos": 0.665,
       "connected": [
         {
           "id": "fulhamBroadway",
@@ -4507,8 +4507,8 @@
     {
       "id": "westHam",
       "name": "West Ham",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.95,
+      "ypos": 0.338,
       "connected": [
         {
           "id": "abbeyRoad",
@@ -4545,8 +4545,8 @@
     {
       "id": "westHampstead",
       "name": "West Hampstead",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.315,
+      "ypos": 0.185,
       "connected": [
         {
           "id": "kilburn",
@@ -4573,8 +4573,8 @@
     {
       "id": "westIndiaQuay",
       "name": "West India Quay",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.862,
+      "ypos": 0.546,
       "connected": [
         {
           "id": "westferry",
@@ -4596,8 +4596,8 @@
     {
       "id": "westKensington",
       "name": "West Kensington",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.216,
+      "ypos": 0.598,
       "connected": [
         {
           "id": "earlsCourt",
@@ -4614,8 +4614,8 @@
     {
       "id": "westbournePark",
       "name": "Westbourne Park",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.177,
+      "ypos": 0.353,
       "connected": [
         {
           "id": "royalOak",
@@ -4642,8 +4642,8 @@
     {
       "id": "westferry",
       "name": "Westferry",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.827,
+      "ypos": 0.496,
       "connected": [
         {
           "id": "limehouse",
@@ -4665,8 +4665,8 @@
     {
       "id": "whitechapel",
       "name": "Whitechapel",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.757,
+      "ypos": 0.385,
       "connected": [
         {
           "id": "aldgateEast",
@@ -4703,8 +4703,8 @@
     {
       "id": "whiteCity",
       "name": "White City",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.157,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "eastActon",
@@ -4721,8 +4721,8 @@
     {
       "id": "willesdenGreen",
       "name": "Willesden Green",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.281,
+      "ypos": 0.132,
       "connected": [
         {
           "id": "kilburn",
@@ -4734,8 +4734,8 @@
     {
       "id": "willesdenJunction",
       "name": "Willesden Junction",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.152,
+      "ypos": 0.185,
       "connected": [
         {
           "id": "kensalGreen",
@@ -4762,8 +4762,8 @@
     {
       "id": "woodlane",
       "name": "Wood Lane",
-      "xpos": 0,
-      "ypos": 0,
+      "xpos": 0.17,
+      "ypos": 0.481,
       "connected": [
         {
           "id": "shepherdsBushMarket",
