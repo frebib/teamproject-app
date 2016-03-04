@@ -50,6 +50,14 @@ public class Node<E> {
     }
 
     /**
+     * Gets the contents that the {@code Node} represents
+     * @return the contents
+     */
+    public E getContents() {
+        return contents;
+    }
+
+    /**
      * Gets the stored {@code Cost} for searching
      *
      * @return The {@code Cost} value
