@@ -14,8 +14,9 @@ public interface AlgoStream<T> {
      * Prepares the algorithm for generation of states
      * Optionally can pre-generate the whole stream; is
      * dependant on the implementation of the algorithm
+     * @return the {@code AlgoStream} object
      */
-    void initialise();
+    AlgoStream<T> initialise();
 
     /**
      * Gets the next state in the stream sequence

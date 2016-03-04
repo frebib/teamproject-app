@@ -37,14 +37,15 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
      * This process may take a long time depending on the size of the list in question
      */
     @Override
-    public void initialise() {
+    public QuickSortStream<E> initialise() {
         if (list == null || list.size() < 1)
-            return;
+            return this;
 
         lastListState = new ListSortState<>(list);
         states.add(lastListState);
         quickSort(0, list.size() - 1);
         states.add(new ListSortState<>(list, true));
+        return this;
     }
 
     private void quickSort(int min, int max) {

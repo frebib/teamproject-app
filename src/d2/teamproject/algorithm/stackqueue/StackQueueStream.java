@@ -19,10 +19,11 @@ public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
 	}
 
 	@Override
-	public void initialise() {
+	public StackQueueStream<T, L> initialise() {
 		states = new ArrayList<L>();
 		L permCur = (L) current.copy();
 		states.add(permCur);
+        return this;
 	}
 
 	@Override

@@ -81,16 +81,16 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
      * Runs the graph search and generates the entire search tree.
      */
     @Override
-    public void initialise() {
+    public SearchStream<E, L> initialise() {
         frontier.clear();
         visited.clear();
         successors.clear();
-
         allStates.clear();
 
         start.setHeuristic(heuristic.apply(start, goal));
         start.setCost(0);
         frontier.add(start);
+        return this;
     }
 
     @Override
