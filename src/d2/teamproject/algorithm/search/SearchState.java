@@ -53,4 +53,14 @@ public class SearchState<E, L extends BaseDataStructure<Node<E>>> {
     public List<Node<E>> getPath() {
         return path;
     }
+
+    @Override
+    public String toString() {
+        return "SearchState{" +
+                "isComplete=" + isComplete +
+                ", frontier=" + frontier +
+                ", visited=" + visited +
+                ", path=" + path +
+                '}';
+    }
 }
