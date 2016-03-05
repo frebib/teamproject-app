@@ -1,5 +1,7 @@
 package d2.teamproject.module.tubesearch;
 
+import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.search.Node;
 
 import java.util.ArrayList;
@@ -63,5 +65,15 @@ public class TubeStation extends Node<TubeStation> {
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 '}';
+    }
+
+    public static TubeStation fromJson(JsonValue val) {
+        JsonObject obj = val.asObject();
+        return  new TubeStation(
+                obj.get("id").asString(),
+                obj.get("name").asString(),
+                obj.getDouble("x", 0),
+                obj.getDouble("y", 0)
+        );
     }
 }
