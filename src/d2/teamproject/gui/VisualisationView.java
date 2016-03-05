@@ -19,9 +19,9 @@ public abstract class VisualisationView implements BaseView {
     protected final Button backButton, helpButton;
 
     public VisualisationView() {
+        backPane  = new StackPane();
         frontPane = new BorderPane();
         frontPane.setPadding(new Insets(10, 20, 10, 20));
-        backPane = new StackPane();
 
         topBox     = new HBox();
         bottomBox  = new HBox();
