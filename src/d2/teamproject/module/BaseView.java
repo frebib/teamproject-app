@@ -8,5 +8,5 @@ public interface BaseView {
     BaseController getController();
     Scene getScene();
 
-    void loadResources(Map<String, Object> res);
+    default void loadResources(Map<String, Object> res) {}
 }

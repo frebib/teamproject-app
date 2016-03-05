@@ -15,9 +15,4 @@ public class TubeSearchView extends VisualisationView {
     public BaseController getController() {
         return controller;
     }
-
-    @Override
-    public void loadResources(Map<String, Object> res) {
-        // No resources to load yet
-    }
 }
