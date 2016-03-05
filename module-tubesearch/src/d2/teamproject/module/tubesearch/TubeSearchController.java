@@ -35,22 +35,28 @@ public class TubeSearchController extends JsonController {
         JsonArray stationinfo = tubemapinfo.get("stations").asArray();
         JsonArray lineinfo = tubemapinfo.get("lines").asArray();
 
+        // Create all lines
         lineinfo.forEach(l -> lineMap.put(l.asObject().get("id").asString(), TubeLine.fromJson(l)));
+        // Create all station objects
         stationinfo.forEach(s -> {
             JsonObject obj = s.asObject();
             String id = obj.get("id").asString();
             stationMap.put(id, TubeStation.fromJson(obj));
         });
+
+        // Use array to get around 'should be final or effectively final' issue
         final Integer[] errors = {0};
         stationinfo.forEach(s -> {
             JsonObject obj = s.asObject();
             String fromStation = obj.get("id").asString();
             JsonArray connections = obj.get("connected").asArray();
+            // Create each connection object, linking everything together
             connections.forEach(conn -> {
                 JsonObject obj1 = conn.asObject();
                 String toStation = obj1.get("id").asString();
                 String lineId    = obj1.get("lineId").asString();
 
+                // Check that all stations and the line exists, complain otherwise
                 TubeStation from = stationMap.get(fromStation);
                 TubeStation to   = stationMap.get(toStation);
                 TubeLine    line = lineMap.get(lineId);
@@ -63,14 +69,11 @@ public class TubeSearchController extends JsonController {
                             lineId, line
                     );
                 }
-
                 links.add(new TubeConnection(from, to, line));
             });
         });
         if (errors[0] > 0)
             System.out.printf("There were %d errors loading in the tube map\n\n", errors[0]);
-
-        // No resources to load yet
     }
 
     @Override
