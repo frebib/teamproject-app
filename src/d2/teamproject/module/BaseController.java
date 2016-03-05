@@ -8,6 +8,6 @@ public interface BaseController {
     Image getBanner();
     BaseView getView();
 
-    void onOpen();
-    void onClose();
+    default void onOpen() {}
+    default void onClose() {}
 }

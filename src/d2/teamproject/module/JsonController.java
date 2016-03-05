@@ -28,11 +28,4 @@ public abstract class JsonController implements BaseController {
     public Image getBanner() {
         return banner;
     }
-
-    // By default do nothing
-    @Override
-    public void onOpen() { }
-
-    @Override
-    public void onClose() { }
 }
