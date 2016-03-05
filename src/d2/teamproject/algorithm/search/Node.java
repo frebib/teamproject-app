@@ -37,7 +37,8 @@ public class Node<E> {
      * @param s Successor to the {@link Node}
      */
     public void addSuccessor(Node<E> s) {
-        successors.add(s);
+        if (!successors.contains(s))
+            successors.add(s);
     }
 
     /**
