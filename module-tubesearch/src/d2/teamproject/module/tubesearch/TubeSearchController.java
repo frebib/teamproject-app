@@ -69,6 +69,8 @@ public class TubeSearchController extends JsonController {
                             lineId, line
                     );
                 }
+                // TODO: Load sublines here
+
                 links.add(new TubeConnection(from, to, line));
             });
         });
