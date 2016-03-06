@@ -76,8 +76,8 @@ public class MainMenuView {
             t.setVisible(false);
         });
         sp.setOnMousePressed(e -> {
-            stage.setScene(controller.getView().getScene());
             controller.onOpen();
+            stage.setScene(controller.getView().getScene());
         });
         return sp;
     }
