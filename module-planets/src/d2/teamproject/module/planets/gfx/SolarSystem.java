@@ -42,7 +42,7 @@ public class SolarSystem {
      * Adds event handlers to each planet to zoom on click and show information
      *
      * @param planets       A list of Planet used to create Planet Renderers used in the scene
-     * @param skyboxTexture A image used for the background
+     * @param skyboxTexture An image used for the background
      */
     public SolarSystem(List<Planet> planets, Image skyboxTexture) {
         initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
