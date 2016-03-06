@@ -64,6 +64,8 @@ public class TubeStation extends Node<TubeStation> {
         return "TubeStation{" +
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
+                ", x=" + x +
+                ", y=" + y +
                 '}';
     }
 
@@ -72,8 +74,8 @@ public class TubeStation extends Node<TubeStation> {
         return  new TubeStation(
                 obj.get("id").asString(),
                 obj.get("name").asString(),
-                obj.getDouble("x", 0),
-                obj.getDouble("y", 0)
+                obj.getDouble("xpos", 0),
+                obj.getDouble("ypos", 0)
         );
     }
 }
