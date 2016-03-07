@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * Represents a Node that carries a contents and it's successors
- *
  * @param <E> Payload of the {@link Node}
  */
 public class Node<E> {
@@ -21,7 +20,6 @@ public class Node<E> {
 
     /**
      * Creates a new Node with a contents
-     *
      * @param contents Object for the Node to represent
      */
     public Node(E contents) {
@@ -33,7 +31,6 @@ public class Node<E> {
 
     /**
      * Adds a successor
-     *
      * @param s Successor to the {@link Node}
      */
     public void addSuccessor(Node<E> s) {
@@ -43,7 +40,6 @@ public class Node<E> {
 
     /**
      * Gets a {@link Collection} of all successors
-     *
      * @return The successors to the {@link Node}
      */
     public List<Node<E>> getSuccessors() {
@@ -60,7 +56,6 @@ public class Node<E> {
 
     /**
      * Gets the stored {@code Cost} for searching
-     *
      * @return The {@code Cost} value
      */
     public double getCost() {
@@ -69,7 +64,6 @@ public class Node<E> {
 
     /**
      * Gets the {@code Heuristic} value for searching
-     *
      * @return The {@code Heuristic} value
      */
     public double getHeuristic() {
@@ -79,7 +73,6 @@ public class Node<E> {
     /**
      * Gets the combined value of {@code cost} and {@code heuristic} values
      * Explanation: https://en.wikipedia.org/wiki/A*_search_algorithm#Description
-     *
      * @return {@code cost} + {@code heuristic}
      */
     public double getF() {
@@ -88,7 +81,6 @@ public class Node<E> {
 
     /**
      * Sets the {@code cost} value
-     *
      * @param cost {@code Cost} value
      */
     public void setCost(double cost) {
@@ -97,7 +89,6 @@ public class Node<E> {
 
     /**
      * Sets the {@code Heuristic} value
-     *
      * @param heuristic {@code Heuristic} value
      */
     public void setHeuristic(double heuristic) {
@@ -106,7 +97,6 @@ public class Node<E> {
 
     /**
      * Compares the contents to Element {@code c}
-     *
      * @param c Element to compare to {@link Node} contents
      * @return true if the contents are .equal()
      */

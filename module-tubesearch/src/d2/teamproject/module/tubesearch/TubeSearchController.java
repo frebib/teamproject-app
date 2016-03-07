@@ -54,12 +54,12 @@ public class TubeSearchController extends JsonController {
             connections.forEach(conn -> {
                 JsonObject obj1 = conn.asObject();
                 String toStation = obj1.get("id").asString();
-                String lineId    = obj1.get("lineId").asString();
+                String lineId = obj1.get("lineId").asString();
 
                 // Check that all stations and the line exists, complain otherwise
                 TubeStation from = stationMap.get(fromStation);
-                TubeStation to   = stationMap.get(toStation);
-                TubeLine    line = lineMap.get(lineId);
+                TubeStation to = stationMap.get(toStation);
+                TubeLine line = lineMap.get(lineId);
                 if (from == null || to == null || line == null) {
                     errors[0]++;
                     System.out.printf("Tube connection created with invalid args:" +

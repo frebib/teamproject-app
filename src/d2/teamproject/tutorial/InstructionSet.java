@@ -10,8 +10,7 @@ public class InstructionSet {
     private ArrayList<Instruction> set;
     private int tracker;
 
-    public InstructionSet(JsonArray jsonSet)
-    {
+    public InstructionSet(JsonArray jsonSet) {
         tracker = 0;
         set = new ArrayList<>();
         for (JsonValue jsonValue : jsonSet) {
@@ -24,13 +23,13 @@ public class InstructionSet {
     public Instruction getNext() {
         //get the nexdt element in the array
         tracker++;
-        return set.get(tracker+1);
+        return set.get(tracker + 1);
     }
 
     public Instruction getPrev() {
         //get the previous element in the array
         tracker--;
-        return set.get(tracker-1);
+        return set.get(tracker - 1);
     }
 
     public int count() {

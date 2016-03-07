@@ -5,7 +5,6 @@ import java.util.Collection;
 
 /**
  * Stores a {@code Collection} of items in a Queue {@link BaseDataStructure}
- *
  * @param <E> @inheritDoc
  */
 public class SearchQueue<E> extends ArrayDeque<E> implements BaseDataStructure<E> {
@@ -18,8 +17,8 @@ public class SearchQueue<E> extends ArrayDeque<E> implements BaseDataStructure<E
         return poll();
     }
 
-	@Override
-	public BaseDataStructure<E> copy() {
-		return new SearchQueue<>(this);
-	}
+    @Override
+    public BaseDataStructure<E> copy() {
+        return new SearchQueue<>(this);
+    }
 }

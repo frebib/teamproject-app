@@ -6,8 +6,12 @@ import java.util.Map;
 
 public interface BaseView {
     BaseController getController();
+
     Scene getScene();
 
-    default void loadResources(Map<String, Object> res) {}
-    default void onOpen() {}
+    default void loadResources(Map<String, Object> res) {
+    }
+
+    default void onOpen() {
+    }
 }

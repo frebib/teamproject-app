@@ -84,7 +84,6 @@ public class SolarSystem {
 
     /**
      * Moves a camera close to a planet position, giving a zoom in effect
-     *
      * @return A transition to be played
      */
     private TranslateTransition zoomIn(PlanetRenderer renderer) {
@@ -108,7 +107,6 @@ public class SolarSystem {
 
     /**
      * Creates a comparison transition of 2 planets specified by the {@link CompareSortState}
-     *
      * @param state     indicies for choosing the planets to compare
      * @param isReverse
      * @return the started transition object
@@ -123,14 +121,13 @@ public class SolarSystem {
     /**
      * Makes a transition to swap two nodes in an arc, shifting all
      * planets in between equally to maintain the constant spacing
-     *
      * @param state indicies for choosing the planets to compare
      * @return a transition to move the planets
      */
     public Transition makeSwapTransition(CompareSortState<Planet> state) {
         Point p = state.getCompares();
         int lo = Math.min(p.x, p.y),
-            hi = Math.max(p.x, p.y);
+                hi = Math.max(p.x, p.y);
         PlanetRenderer pr1 = planetRenderers.get(hi);
         PlanetRenderer pr2 = planetRenderers.get(lo);
         Node pm1 = pr1.getModel();
@@ -164,10 +161,10 @@ public class SolarSystem {
         }
 
         Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2),
-                   lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1),
-                   upRet = getCompareTransition(pm1, pm2, true),
-                   loRet = getCompareTransition(pm1, pm2, true),
-                   first = new ParallelTransition(upRet, loRet);
+                lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1),
+                upRet = getCompareTransition(pm1, pm2, true),
+                loRet = getCompareTransition(pm1, pm2, true),
+                first = new ParallelTransition(upRet, loRet);
 
         ParallelTransition secnd = new ParallelTransition(upper, lower);
         if (planetShifts != null) secnd.getChildren().addAll(planetShifts);
@@ -186,7 +183,6 @@ public class SolarSystem {
 
     /**
      * Creates a path that swaps two planets in a loop animation
-     *
      * @param from   the first node to swap with the second
      * @param to     the second node to swap with the first
      * @param height the height both planets must reach to clear surrounding obstacles
@@ -221,7 +217,6 @@ public class SolarSystem {
     /**
      * Creates a rectangle in the given position with a image as the background,
      * then fades the shape in and out for a certain amount of time
-     *
      * @param xPos The x position where the rectangle should go
      * @param yPos The y position where the rectangle should go
      * @param sb   The background image of rectangle

@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 /**
  * Compares two {@link Node}{@code s} according to their f() value
- *
  * @param <E> Element represented by the {@link Node}
  */
 public class NodeComparator<E> implements Comparator<Node<E>> {

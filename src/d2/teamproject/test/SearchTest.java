@@ -35,13 +35,13 @@ public class SearchTest {
         // Every node has at least 1 path to any other
         List<Node<Point>> val = new ArrayList<>(graph.nodes.values());
         Node<Point> start = val.get(r.nextInt(val.size())),
-                    end   = val.get(r.nextInt(val.size()));
+                end = val.get(r.nextInt(val.size()));
 
         SearchStream<Point, SearchPriorityQueue<Node<Point>>> stream =
                 new AStarSearchStream<>(start, end)
-                .setCostFn(manhattan)
-                .setHeuristicFn(euclidean)
-                .initialise();
+                        .setCostFn(manhattan)
+                        .setHeuristicFn(euclidean)
+                        .initialise();
 
         SearchState state = null;
         while (stream.hasNext())

@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 
 /**
  * Stores a {@code Collection} of items in a PriorityQueue {@link BaseDataStructure}
- *
  * @param <E> @inheritDoc
  */
 public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseDataStructure<E> {
@@ -23,7 +22,7 @@ public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseData
     }
 
     @Override
-	public BaseDataStructure<E> copy() {
-		return new SearchPriorityQueue<>(this);
-	}
+    public BaseDataStructure<E> copy() {
+        return new SearchPriorityQueue<>(this);
+    }
 }

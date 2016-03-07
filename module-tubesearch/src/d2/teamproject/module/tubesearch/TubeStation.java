@@ -71,7 +71,7 @@ public class TubeStation extends Node<TubeStation> {
 
     public static TubeStation fromJson(JsonValue val) {
         JsonObject obj = val.asObject();
-        return  new TubeStation(
+        return new TubeStation(
                 obj.get("id").asString(),
                 obj.get("name").asString(),
                 obj.getDouble("xpos", 0),

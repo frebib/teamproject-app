@@ -60,7 +60,7 @@ public class QuickSortTest {
         QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffled, Integer::compare);
         sorter.initialise();
 
-        while(sorter.hasNext()) {
+        while (sorter.hasNext()) {
             SortState<Integer> state = sorter.getNext();
             if (state instanceof CompareSortState) {
                 CompareSortState<Integer> csstate = (CompareSortState<Integer>) state;

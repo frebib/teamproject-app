@@ -27,7 +27,6 @@ public class ModuleLoader {
 
     /**
      * loads all available modules and calls back after each is loaded
-     *
      * @param callback callback for loaded visualisations
      */
     public void loadAllModules(ModuleLoadState callback) {

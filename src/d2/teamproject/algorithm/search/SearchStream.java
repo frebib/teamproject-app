@@ -144,8 +144,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
             SearchState<E, L> state = new SearchState<>(frontier, visited, path);
             allStates.add(state);
             return state;
-        }
-        else {
+        } else {
             for (Node<E> suc : node.getSuccessors()) {
                 if (visited.contains(suc))
                     continue;

@@ -22,7 +22,7 @@ public class ListSortState<E> implements SortState<E> {
 
     /**
      * Copies the represented list
-     * @param list list to represent
+     * @param list       list to represent
      * @param isComplete whether the list sort has been completed
      */
     public ListSortState(List<E> list, boolean isComplete) {

@@ -36,11 +36,12 @@ public class PlanetController extends JsonController {
                         this.name().substring(1).toLowerCase();
             }
         }
+
         public static final PlanetSort<Float>
-        DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun),
-        ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime),
-        DIAMETER = new PlanetSort<>(Planet::getDiameter),
-        MASS = new PlanetSort<>(Planet::getMass);
+                DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun),
+                ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime),
+                DIAMETER = new PlanetSort<>(Planet::getDiameter),
+                MASS = new PlanetSort<>(Planet::getMass);
 
         private Function<Planet, T> fn;
         private Dir dir;

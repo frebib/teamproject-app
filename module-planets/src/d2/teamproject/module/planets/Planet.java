@@ -71,7 +71,7 @@ public class Planet {
         );
     }
 
-    public Map<String,Image> getTextures() {
+    public Map<String, Image> getTextures() {
         return textures;
     }
 
