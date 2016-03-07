@@ -1,6 +1,6 @@
 package d2.teamproject.test;
 
-import d2.teamproject.algorithm.sorting.BubbleSort;
+import d2.teamproject.algorithm.sorting.BubbleSortStream;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class BubbleSortTest {
         list.add(1);
 
         list.stream().map(Object::toString).collect(Collectors.joining(", "));
-        String result = new BubbleSort<Integer>()
+        String result = new BubbleSortStream<Integer>()
                 .sort(list)
                 .stream()
                 .map(Object::toString)
