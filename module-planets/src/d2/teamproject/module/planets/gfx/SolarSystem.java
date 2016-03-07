@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.awt.*;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -27,11 +28,14 @@ public class SolarSystem {
     private static final Duration COMPARE_ANIM_TIME = new Duration(300);
     private static final Duration SWAP_ANIM_TIME = new Duration(500);
 
+    public static final int GAP = 40;
+
     private final SubScene scene;
     private final Group root;
     private final PerspectiveCamera camera;
     private final Map<Planet, PlanetRenderer> rendererMap;
     private List<PlanetRenderer> planetRenderers;
+    private float cumulativeDist = 0;
     private final double initialCameraXPosition;
 
     private Planet zoomed;
@@ -46,9 +50,14 @@ public class SolarSystem {
      * @param skyboxTexture An image used for the background
      */
     public SolarSystem(List<Planet> planets, int width, int height, Image skyboxTexture) {
-        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
-        rendererMap = planets.stream().collect(Collectors.toMap(Function.identity(), PlanetRenderer::new));
+        rendererMap = new LinkedHashMap<>(planets.size());
+        for (Planet planet : planets) {
+            PlanetRenderer r = new PlanetRenderer(planet, cumulativeDist);
+            cumulativeDist += (r.getRadius() * 2) + GAP;
+            rendererMap.put(planet, r);
+        }
         setPlanetOrder(planets);
+        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
 
         root = new Group();
         scene = new SubScene(root, width, height, true, SceneAntialiasing.BALANCED);
@@ -157,7 +166,7 @@ public class SolarSystem {
                     .map(Bounds::getHeight)
                     .reduce(0d, Math::max);
         } else {
-            height = Math.max(pr1.getRadius(), pr2.getRadius()) + PlanetRenderer.GAP / 2;
+            height = Math.max(pr1.getRadius(), pr2.getRadius()) + GAP / 2;
         }
 
         Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2),
