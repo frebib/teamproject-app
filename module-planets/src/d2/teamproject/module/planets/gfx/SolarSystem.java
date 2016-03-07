@@ -40,17 +40,18 @@ public class SolarSystem {
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
      * Creates multiple rectangles used to simulate the stars in the background
      * Adds event handlers to each planet to zoom on click and show information
-     *
      * @param planets       A list of Planet used to create Planet Renderers used in the scene
+     * @param width         the width of the scene
+     * @param height        the height of the scene
      * @param skyboxTexture An image used for the background
      */
-    public SolarSystem(List<Planet> planets, Image skyboxTexture) {
+    public SolarSystem(List<Planet> planets, int width, int height, Image skyboxTexture) {
         initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
         rendererMap = planets.stream().collect(Collectors.toMap(Function.identity(), PlanetRenderer::new));
         setPlanetOrder(planets);
 
         root = new Group();
-        scene = new SubScene(root, PARTH.WIDTH, PARTH.HEIGHT, true, SceneAntialiasing.BALANCED);
+        scene = new SubScene(root, width, height, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK); /* Black background */
         createSkyboxSections(skyboxTexture);
 

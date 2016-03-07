@@ -88,6 +88,8 @@ public class PlanetController extends JsonController {
     public void onOpen() {
         sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
         sort.initialise();
+
+        view.onOpen();
     }
 
     public void handleNextState(Consumer<SortState<Planet>> fn) {

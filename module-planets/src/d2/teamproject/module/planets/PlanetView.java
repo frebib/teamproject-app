@@ -1,6 +1,7 @@
 package d2.teamproject.module.planets;
 
 import d2.teamproject.algorithm.sorting.PartitionSortState;
+import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.ListSortState;
 import d2.teamproject.algorithm.sorting.SortState;
@@ -25,12 +26,16 @@ public class PlanetView extends VisualisationView {
 
     private PlanetController controller;
 
+    private Image skybox;
     private SolarSystem sSystem;
     protected Transition current;
     private AnimState animState = AnimState.NOTHING;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
+
+        topBox.setPrefHeight(PARTH.HEIGHT * 0.1);
+        bottomBox.setPrefHeight(PARTH.HEIGHT * 0.15);
     }
 
     public BaseController getController() {
@@ -42,15 +47,20 @@ public class PlanetView extends VisualisationView {
     }
 
     public Parent getWindow() {
-        return contentBox.getParent().getParent();
+        return frontPane.getParent();
+    }
+
+    @Override
+    public void onOpen() {
+        sSystem = new SolarSystem(controller.getPlanets(), (int) PARTH.WIDTH, (int) (PARTH.HEIGHT * 0.75), skybox);
+        contentBox.getChildren().add(sSystem.getScene());
     }
 
     @Override
     public void loadResources(Map<String, Object> res) {
         // Load skybox image
-        Image skybox = (Image) res.get("skybox");
-        sSystem = new SolarSystem(controller.getPlanets(), skybox);
-        contentBox.getChildren().add(sSystem.getScene());
+        skybox = (Image) res.get("skybox");
+        System.out.println("skybox loaded");
     }
 
     public void updateState(SortState<Planet> state) {

@@ -9,4 +9,5 @@ public interface BaseView {
     Scene getScene();
 
     default void loadResources(Map<String, Object> res) {}
+    default void onOpen() {}
 }
