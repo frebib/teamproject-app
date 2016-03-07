@@ -126,8 +126,7 @@ public class PlanetController extends JsonController {
             Map<String, Image> textures = new LinkedHashMap<>();
             while ((entry = zis.getNextEntry()) != null) {
                 String name = entry.getName();
-                int size = (int) entry.getSize();
-                Image img = new Image(new BufferedInputStream(zis, size));
+                Image img = new Image(new BufferedInputStream(zis, (int) entry.getSize()));
                 textures.put(name, img);
             }
             zis.close();
