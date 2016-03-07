@@ -4,8 +4,10 @@ out/
 bin/
 res/module/
 .idea/
+log/
 
 *.class
 *.iml
+*.log
 .classpath
 .project

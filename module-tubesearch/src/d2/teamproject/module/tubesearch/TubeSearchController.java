@@ -2,6 +2,7 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
+import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
@@ -10,6 +11,9 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+
+import static d2.teamproject.PARTH.LOG;
 
 public class TubeSearchController extends JsonController {
     private TubeSearchView view;
@@ -29,7 +33,7 @@ public class TubeSearchController extends JsonController {
 
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
-        res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
+        res.forEach((k, v) -> LOG.format(Level.FINE, " > Loaded resource \"%s\" = %s", k, v.toString()));
 
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
         JsonArray stationinfo = tubemapinfo.get("stations").asArray();
@@ -62,8 +66,8 @@ public class TubeSearchController extends JsonController {
                 TubeLine line = lineMap.get(lineId);
                 if (from == null || to == null || line == null) {
                     errors[0]++;
-                    System.out.printf("Tube connection created with invalid args:" +
-                                    " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s\n\n",
+                    PARTH.LOG.format(Level.WARNING, "Tube connection created with invalid args:" +
+                            " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s",
                             fromStation, from,
                             toStation, to,
                             lineId, line
@@ -75,7 +79,7 @@ public class TubeSearchController extends JsonController {
             });
         });
         if (errors[0] > 0)
-            System.out.printf("There were %d errors loading in the tube map\n\n", errors[0]);
+            PARTH.LOG.format(Level.WARNING, "There were %d errors loading in the tube map", errors[0]);
     }
 
     @Override

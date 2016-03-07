@@ -15,8 +15,11 @@ import java.io.IOException;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import static d2.teamproject.PARTH.LOG;
 
 public class PlanetController extends JsonController {
 
@@ -112,7 +115,7 @@ public class PlanetController extends JsonController {
 
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
-        res.forEach((k, v) -> System.out.printf(" > Loaded resource \"%s\" = %s\n", k, v.toString()));
+        res.forEach((k, v) -> LOG.format(Level.FINE, " > Loaded resource \"%s\" = %s", k, v.toString()));
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
