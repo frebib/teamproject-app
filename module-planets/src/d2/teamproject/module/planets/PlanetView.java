@@ -72,9 +72,6 @@ public class PlanetView extends VisualisationView {
             animState = AnimState.COMPARING;
             current = sSystem.transitionCompare(csstate, false);
             current.setOnFinished(e -> {
-                // Prevent this from looping
-                current.setOnFinished(null);
-
                 if (csstate.isSwap()) {
                     animState = AnimState.SWAPPING;
                     current = sSystem.makeSwapTransition(csstate);
