@@ -76,17 +76,17 @@
         {
           "id": "liverpoolStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "towerHill",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -99,22 +99,22 @@
         {
           "id": "liverpoolStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "towerHill",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -127,12 +127,12 @@
         {
           "id": "oldStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -145,52 +145,52 @@
         {
           "id": "stJohnsWood",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bondStreet",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "marylebone",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "regentsPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "finchleyRoad",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greatPortlandStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadCH",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greatPortlandStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadCH",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greatPortlandStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -203,32 +203,32 @@
         {
           "id": "stPauls",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "londonBridge",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "waterloo",
           "lineId": "waterlooCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shadwell",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -241,32 +241,32 @@
         {
           "id": "farringdon",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "farringdon",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "farringdon",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -279,22 +279,22 @@
         {
           "id": "paddington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "nottingHillGate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "nottingHillGate",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -307,22 +307,22 @@
         {
           "id": "temple",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mansionHouse",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "temple",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mansionHouse",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -335,22 +335,22 @@
         {
           "id": "marbleArch",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oxfordCircus",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenPark",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -363,12 +363,12 @@
         {
           "id": "londonBridge",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "elephantAndCastle",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -381,22 +381,22 @@
         {
           "id": "mansionHouse",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mansionHouse",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "monument",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "monument",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -409,12 +409,12 @@
         {
           "id": "holborn",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stPauls",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -427,22 +427,22 @@
         {
           "id": "leicesterSquare",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "piccadillyCircus",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -455,12 +455,12 @@
         {
           "id": "leicesterSquare",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "holborn",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -473,37 +473,37 @@
         {
           "id": "westKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensingtonOlympia",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westBrompton",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highStreetKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "baronsCourt",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -516,12 +516,12 @@
         {
           "id": "paddington",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "marylebone",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -534,32 +534,32 @@
         {
           "id": "paddington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -572,17 +572,17 @@
         {
           "id": "lambethNorth",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kennington",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "borough",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -595,42 +595,42 @@
         {
           "id": "charingCross",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "waterloo",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "charingCross",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "waterloo",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westminster",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "temple",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westminster",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "temple",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -643,37 +643,37 @@
         {
           "id": "morningtonCrescent",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "warrenStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "warrenStreet",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southHampstead",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -686,32 +686,32 @@
         {
           "id": "greatPortlandStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greatPortlandStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greatPortlandStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -724,41 +724,44 @@
         {
           "id": "kingsCross",
           "lineId": "circle",
-          "sublines": [
-            {
-              "s1": [
+          "curves": [
                 {
                   "xpos": 0.2,
                   "ypos": 0.2
                 }
-              ]
+          ],
+          "parallels": [
+            {
+              "xpos": 0.2,
+              "ypos": 0.2
             }
           ]
+
         },
         {
           "id": "kingsCross",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -771,32 +774,32 @@
         {
           "id": "earlsCourt",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southKensington",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "earlsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southKensington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highStreetKensington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -809,12 +812,12 @@
         {
           "id": "tottenhamCourtRoad",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "warrenStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -827,32 +830,32 @@
         {
           "id": "bakerStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -865,32 +868,32 @@
         {
           "id": "bondStreet",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westminster",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oxfordCircus",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "victoria",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "piccadillyCircus",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hydeParkCorner",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -903,27 +906,27 @@
         {
           "id": "nottingHillGate",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "nottingHillGate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "earlsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -936,22 +939,22 @@
         {
           "id": "tottenhamCourtRoad",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "chanceryLane",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "russellSquare",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "coventGarden",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -964,12 +967,12 @@
         {
           "id": "haggerston",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shoreditchHighStreet",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -982,12 +985,12 @@
         {
           "id": "knightsbridge",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenPark",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1000,62 +1003,62 @@
         {
           "id": "euston",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highburyIslington",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "russellSquare",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "caledonianRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "euston",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "angel",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eustonSquare",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "farringdon",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "farringdon",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "farringdon",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1068,12 +1071,12 @@
         {
           "id": "southKensington",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hydeParkCorner",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1086,12 +1089,12 @@
         {
           "id": "waterloo",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "elephantAndCastle",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1104,12 +1107,12 @@
         {
           "id": "queensway",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "marbleArch",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1122,22 +1125,22 @@
         {
           "id": "piccadillyCircus",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "coventGarden",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "tottenhamCourtRoad",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "charingCross",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1150,47 +1153,47 @@
         {
           "id": "bank",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bethnalGreenCentral",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgateEast",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgate",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bethnalGreenOverground",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1203,22 +1206,22 @@
         {
           "id": "southwark",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bermondsey",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "borough",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "monument",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1231,22 +1234,22 @@
         {
           "id": "blackfriars",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "blackfriars",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cannonStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cannonStreet",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1259,12 +1262,12 @@
         {
           "id": "lancasterGate",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bondStreet",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1277,12 +1280,12 @@
         {
           "id": "edgwareRoadBakerloo",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1295,22 +1298,22 @@
         {
           "id": "cannonStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cannonStreet",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "towerHill",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "towerHill",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1323,42 +1326,42 @@
         {
           "id": "liverpoolStreet",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "barbican",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oldStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bank",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1371,32 +1374,32 @@
         {
           "id": "bayswater",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bayswater",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highStreetKensington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highStreetKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "queensway",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hollandPark",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1409,12 +1412,12 @@
         {
           "id": "angel",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "moorgate",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1427,32 +1430,32 @@
         {
           "id": "bondStreet",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "tottenhamCourtRoad",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "regentsPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "piccadillyCircus",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "warrenStreet",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenPark",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1465,47 +1468,47 @@
         {
           "id": "warwickAvenue",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadBakerloo",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "royalOak",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadCH",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadCH",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bayswater",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "edgwareRoadCH",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "royalOak",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bayswater",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1518,22 +1521,22 @@
         {
           "id": "greenPark",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "leicesterSquare",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oxfordCircus",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "charingCross",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1546,12 +1549,12 @@
         {
           "id": "victoria",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "vauxhall",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1564,12 +1567,12 @@
         {
           "id": "nottingHillGate",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "lancasterGate",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1582,12 +1585,12 @@
         {
           "id": "bakerStreet",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oxfordCircus",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1600,12 +1603,12 @@
         {
           "id": "holborn",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1618,12 +1621,12 @@
         {
           "id": "hoxton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1636,22 +1639,22 @@
         {
           "id": "southKensington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "victoria",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "victoria",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1664,32 +1667,32 @@
         {
           "id": "sloaneSquare",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "sloaneSquare",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "gloucesterRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "knightsbridge",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1702,12 +1705,12 @@
         {
           "id": "londonBridge",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "waterloo",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1720,22 +1723,22 @@
         {
           "id": "victoria",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "victoria",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westminster",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westminster",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1748,12 +1751,12 @@
         {
           "id": "chanceryLane",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bank",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1766,22 +1769,22 @@
         {
           "id": "embankment",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "blackfriars",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "blackfriars",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1794,22 +1797,22 @@
         {
           "id": "oxfordCircus",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "holborn",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "goodgeStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "leicesterSquare",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1822,7 +1825,7 @@
         {
           "id": "shadwell",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1835,22 +1838,22 @@
         {
           "id": "monument",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgate",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "monument",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgateEast",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1863,12 +1866,12 @@
         {
           "id": "pimlico",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stockwell",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1881,32 +1884,32 @@
         {
           "id": "pimlico",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenPark",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "sloaneSquare",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stJamesPark",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "sloaneSquare",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stJamesPark",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1919,22 +1922,22 @@
         {
           "id": "euston",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "euston",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "goodgeStreet",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oxfordCircus",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1947,37 +1950,37 @@
         {
           "id": "westminster",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southwark",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kennington",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "lambethNorth",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bank",
           "lineId": "waterlooCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -1990,32 +1993,32 @@
         {
           "id": "stJamesPark",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stJamesPark",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "embankment",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenPark",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "waterloo",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2028,12 +2031,12 @@
         {
           "id": "stratfordHighStreet",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHam",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2046,12 +2049,12 @@
         {
           "id": "poplar",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "langdonPark",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2064,7 +2067,7 @@
         {
           "id": "tufnellPark",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2077,12 +2080,12 @@
         {
           "id": "finsburyPark",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hollowayRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2095,22 +2098,22 @@
         {
           "id": "hammersmithDP",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westKensington",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hammersmithDP",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "earlsCourt",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2123,12 +2126,12 @@
         {
           "id": "hampstead",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "chalkFarm",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2141,12 +2144,12 @@
         {
           "id": "londonBridge",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canadaWater",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2159,12 +2162,12 @@
         {
           "id": "cambridgeHeath",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2177,12 +2180,12 @@
         {
           "id": "mileEnd",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "liverpoolStreet",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2195,12 +2198,12 @@
         {
           "id": "poplar",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eastIndia",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2213,12 +2216,12 @@
         {
           "id": "devonsRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "puddingMillLane",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2231,22 +2234,22 @@
         {
           "id": "mileEnd",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bromleyByBow",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mileEnd",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bromleyByBow",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2259,7 +2262,7 @@
         {
           "id": "stockwell",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2272,7 +2275,7 @@
         {
           "id": "newCrossGate",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2285,22 +2288,22 @@
         {
           "id": "bowRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHam",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bowRoad",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHam",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2313,12 +2316,12 @@
         {
           "id": "brondesburyPark",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHampstead",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2331,12 +2334,12 @@
         {
           "id": "brondesbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensalRise",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2349,12 +2352,12 @@
         {
           "id": "hollowayRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2367,12 +2370,12 @@
         {
           "id": "camdenRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "highburyIslington",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2385,12 +2388,12 @@
         {
           "id": "londonFields",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bethnalGreenOverground",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2403,12 +2406,12 @@
         {
           "id": "kentishTownWest",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "caledonianRoadAndBarnsbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2421,17 +2424,17 @@
         {
           "id": "chalkFarm",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kentishTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "morningtonCrescent",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2444,22 +2447,22 @@
         {
           "id": "bermondsey",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canaryWharf",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "surreyQuays",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "rotherhithe",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2472,22 +2475,22 @@
         {
           "id": "canadaWater",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "northGreenwich",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westIndiaQuay",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "heronQuays",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2500,22 +2503,22 @@
         {
           "id": "starLane",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "eastIndia",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "northGreenwich",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHam",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2528,17 +2531,17 @@
         {
           "id": "highburyIslington",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "dalstonJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "dalstonKingsland",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2551,12 +2554,12 @@
         {
           "id": "belsizePark",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2569,12 +2572,12 @@
         {
           "id": "claphamSouth",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "claphamNorth",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2587,12 +2590,12 @@
         {
           "id": "wandsworthRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "denmarkHill",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2605,12 +2608,12 @@
         {
           "id": "imperialWharf",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "wandsworthRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2623,12 +2626,12 @@
         {
           "id": "stockwell",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "claphamCommon",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2641,7 +2644,7 @@
         {
           "id": "claphamCommon",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2654,7 +2657,7 @@
         {
           "id": "hackneyDowns",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2667,12 +2670,12 @@
         {
           "id": "southQuay",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mudchute",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2685,12 +2688,12 @@
         {
           "id": "islandGardens",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "greenwich",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2703,12 +2706,12 @@
         {
           "id": "canonbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "haggerston",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2721,12 +2724,12 @@
         {
           "id": "canonbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hackneyCentral",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2739,12 +2742,12 @@
         {
           "id": "peckhamRye",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "claphamHighStreet",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2757,12 +2760,12 @@
         {
           "id": "greenwich",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "elversonRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2775,12 +2778,12 @@
         {
           "id": "bowChurch",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "langdonPark",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2793,12 +2796,12 @@
         {
           "id": "northActon",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whiteCity",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2811,12 +2814,12 @@
         {
           "id": "blackwall",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canningTown",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2829,7 +2832,7 @@
         {
           "id": "putneyBridge",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2842,12 +2845,12 @@
         {
           "id": "deptfordBridge",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "lewisham",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2860,17 +2863,17 @@
         {
           "id": "bakerStreet",
           "lineId": "metropolitan",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "swissCottage",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHampstead",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2883,12 +2886,12 @@
         {
           "id": "westHampstead",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hampsteadHeath",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2901,17 +2904,17 @@
         {
           "id": "highburyIslington",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "manorHouse",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "arsenal",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2924,12 +2927,12 @@
         {
           "id": "parsonsGreen",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westBrompton",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2942,22 +2945,22 @@
         {
           "id": "hammersmithCH",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hammersmithCH",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBushMarket",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBushMarket",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2970,17 +2973,17 @@
         {
           "id": "hampsteadHeath",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kentishTownWest",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "upperHolloway",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -2993,12 +2996,12 @@
         {
           "id": "deptfordBridge",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cuttySark",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3011,12 +3014,12 @@
         {
           "id": "homerton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "dalstonKingsland",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3029,17 +3032,17 @@
         {
           "id": "rectoryRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "clapton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "londonFields",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3052,12 +3055,12 @@
         {
           "id": "homerton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stratford",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3070,12 +3073,12 @@
         {
           "id": "dalstonJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hoxton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3088,22 +3091,22 @@
         {
           "id": "turnhamGreen",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "baronsCourt",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "ravenscourtPark",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "baronsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3116,12 +3119,12 @@
         {
           "id": "goldhawkRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "goldhawkRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3134,7 +3137,7 @@
         {
           "id": "belsizePark",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3147,12 +3150,12 @@
         {
           "id": "gospelOak",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "finchleyRoadAndFrognal",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3165,12 +3168,12 @@
         {
           "id": "southQuay",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canaryWharf",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3183,22 +3186,22 @@
         {
           "id": "canonbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "caledonianRoadAndBarnsbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "finsburyPark",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kingsCross",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3211,12 +3214,12 @@
         {
           "id": "shepherdsBush",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "nottingHillGate",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3229,12 +3232,12 @@
         {
           "id": "arsenal",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "caledonianRoad",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3247,12 +3250,12 @@
         {
           "id": "hackneyCentral",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hackneyWick",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3265,12 +3268,12 @@
         {
           "id": "claphamJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westBrompton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3283,12 +3286,12 @@
         {
           "id": "mudchute",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cuttySark",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3301,17 +3304,17 @@
         {
           "id": "waterloo",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oval",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "elephantAndCastle",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3324,22 +3327,22 @@
         {
           "id": "queensPark",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "queensPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "willesdenJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "willesdenJunction",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3352,12 +3355,12 @@
         {
           "id": "willesdenJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "brondesburyPark",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3370,17 +3373,17 @@
         {
           "id": "earlsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBush",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westBrompton",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3393,12 +3396,12 @@
         {
           "id": "tufnellPark",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3411,12 +3414,12 @@
         {
           "id": "gospelOak",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "camdenRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3429,12 +3432,12 @@
         {
           "id": "willesdenGreen",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHampstead",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3447,12 +3450,12 @@
         {
           "id": "queensPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "maidaVale",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3465,12 +3468,12 @@
         {
           "id": "queensPark",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "southHampstead",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3483,22 +3486,22 @@
         {
           "id": "westbournePark",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westbournePark",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "latimerRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "latimerRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3511,12 +3514,12 @@
         {
           "id": "devonsRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "allSaints",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3529,22 +3532,22 @@
         {
           "id": "ladbrokeGrove",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "ladbrokeGrove",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whiteCity",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whiteCity",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3557,7 +3560,7 @@
         {
           "id": "elversonRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3570,12 +3573,12 @@
         {
           "id": "shadwell",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westferry",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3588,12 +3591,12 @@
         {
           "id": "hackneyDowns",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "cambridgeHeath",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3606,12 +3609,12 @@
         {
           "id": "kilburnPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "warwickAvenue",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3624,7 +3627,7 @@
         {
           "id": "finsburyPark",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3637,32 +3640,32 @@
         {
           "id": "stepneyGreen",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stepneyGreen",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bowRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bowRoad",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bethnalGreenCentral",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stratford",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3675,12 +3678,12 @@
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "euston",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3693,12 +3696,12 @@
         {
           "id": "crossharbour",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "islandGardens",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3711,7 +3714,7 @@
         {
           "id": "surreyQuays",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3724,12 +3727,12 @@
         {
           "id": "surreyQuays",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "brockley",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3742,7 +3745,7 @@
         {
           "id": "eastActon",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3755,12 +3758,12 @@
         {
           "id": "canaryWharf",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canningTown",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3773,12 +3776,12 @@
         {
           "id": "stockwell",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kennington",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3791,12 +3794,12 @@
         {
           "id": "putneyBridge",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "fulhamBroadway",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3809,12 +3812,12 @@
         {
           "id": "denmarkHill",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "queensRoadPeckham",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3827,22 +3830,22 @@
         {
           "id": "westferry",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "allSaints",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "blackwall",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westIndiaQuay",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3855,12 +3858,12 @@
         {
           "id": "bowChurch",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stratford",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3873,12 +3876,12 @@
         {
           "id": "eastPutney",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "parsonsGreen",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3891,22 +3894,22 @@
         {
           "id": "kensalGreen",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensalGreen",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kilburnPark",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kilburnHighRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3919,12 +3922,12 @@
         {
           "id": "peckhamRye",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "surreyQuays",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3937,12 +3940,12 @@
         {
           "id": "stamfordBrook",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hammersmithDP",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3955,12 +3958,12 @@
         {
           "id": "stokeNewington",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hackneyDowns",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3973,12 +3976,12 @@
         {
           "id": "wapping",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canadaWater",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -3991,22 +3994,22 @@
         {
           "id": "westbournePark",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westbournePark",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4019,27 +4022,27 @@
         {
           "id": "wapping",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "limehouse",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "towerGateway",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bank",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4052,22 +4055,22 @@
         {
           "id": "whiteCity",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hollandPark",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "willesdenJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensingtonOlympia",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4080,22 +4083,22 @@
         {
           "id": "woodlane",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "woodlane",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "goldhawkRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "goldhawkRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4108,12 +4111,12 @@
         {
           "id": "kilburnHighRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "euston",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4126,12 +4129,12 @@
         {
           "id": "heronQuays",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "crossharbour",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4144,12 +4147,12 @@
         {
           "id": "swissCottage",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bakerStreet",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4162,12 +4165,12 @@
         {
           "id": "turnhamGreen",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "ravenscourtPark",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4180,12 +4183,12 @@
         {
           "id": "westHam",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canningTown",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4198,22 +4201,22 @@
         {
           "id": "mileEnd",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mileEnd",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "whitechapel",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4226,22 +4229,22 @@
         {
           "id": "brixton",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "vauxhall",
           "lineId": "victoria",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "oval",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "claphamNorth",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4254,7 +4257,7 @@
         {
           "id": "rectoryRoad",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4267,32 +4270,32 @@
         {
           "id": "stratfordInternational",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stratfordHighStreet",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "puddingMillLane",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hackneyWick",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "mileEnd",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westHam",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4305,12 +4308,12 @@
         {
           "id": "stratford",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "abbeyRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4323,7 +4326,7 @@
         {
           "id": "stratford",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4336,22 +4339,22 @@
         {
           "id": "newCross",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canadaWater",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "newCrossGate",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "queensRoadPeckham",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4364,12 +4367,12 @@
         {
           "id": "finchleyRoad",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stJohnsWood",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4382,12 +4385,12 @@
         {
           "id": "archway",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kentishTown",
           "lineId": "northern",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4400,12 +4403,12 @@
         {
           "id": "stamfordBrook",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "hammersmithDP",
           "lineId": "piccadilly",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4418,7 +4421,7 @@
         {
           "id": "gospelOak",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4431,12 +4434,12 @@
         {
           "id": "claphamJunction",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "claphamHighStreet",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4449,12 +4452,12 @@
         {
           "id": "shadwell",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "rotherhithe",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4467,12 +4470,12 @@
         {
           "id": "maidaVale",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "paddington",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4485,22 +4488,22 @@
         {
           "id": "fulhamBroadway",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "imperialWharf",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensingtonOlympia",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "earlsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4513,32 +4516,32 @@
         {
           "id": "abbeyRoad",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "starLane",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bromleyByBow",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "bromleyByBow",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stratford",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canningTown",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4551,22 +4554,22 @@
         {
           "id": "kilburn",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "finchleyRoad",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "brondesbury",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "finchleyRoadAndFrognal",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4579,17 +4582,17 @@
         {
           "id": "westferry",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "poplar",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "canaryWharf",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4602,12 +4605,12 @@
         {
           "id": "earlsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "baronsCourt",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4620,22 +4623,22 @@
         {
           "id": "royalOak",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "royalOak",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "ladbrokeGrove",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "ladbrokeGrove",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4648,17 +4651,17 @@
         {
           "id": "limehouse",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "poplar",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "westIndiaQuay",
           "lineId": "dlr",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4671,32 +4674,32 @@
         {
           "id": "aldgateEast",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "aldgateEast",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stepneyGreen",
           "lineId": "district",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "stepneyGreen",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shoreditchHighStreet",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shadwell",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4709,12 +4712,12 @@
         {
           "id": "eastActon",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBush",
           "lineId": "central",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4727,7 +4730,7 @@
         {
           "id": "kilburn",
           "lineId": "jubilee",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4740,22 +4743,22 @@
         {
           "id": "kensalGreen",
           "lineId": "bakerloo",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensalGreen",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "kensalRise",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBush",
           "lineId": "overground",
-          "sublines": []
+          "curves": []
         }
       ]
     },
@@ -4768,22 +4771,22 @@
         {
           "id": "shepherdsBushMarket",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "shepherdsBushMarket",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "latimerRoad",
           "lineId": "circle",
-          "sublines": []
+          "curves": []
         },
         {
           "id": "latimerRoad",
           "lineId": "hammersmithCity",
-          "sublines": []
+          "curves": []
         }
       ]
     }
