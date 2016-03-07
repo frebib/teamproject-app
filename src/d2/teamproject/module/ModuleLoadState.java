@@ -1,5 +1,6 @@
 package d2.teamproject.module;
 
+@FunctionalInterface
 public interface ModuleLoadState {
     /**
      * A callback for module load progress
