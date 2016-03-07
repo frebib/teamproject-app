@@ -25,7 +25,7 @@ public class MainMenuView {
     public MainMenuView(List<BaseController> modules, Stage stage) {
         this.stage = stage;
         menuPane = new StackPane();
-        menu = new Scene(menuPane, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
+        menu = new Scene(menuPane, PARTH.WIDTH, PARTH.HEIGHT);
 
         VBox menuVbox = new VBox(24);
         menuVbox.setAlignment(Pos.CENTER);

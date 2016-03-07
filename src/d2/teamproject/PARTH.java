@@ -6,8 +6,8 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class PARTH extends Application {
-    public static final double MIN_WIDTH = 1280;
-    public static final double MIN_HEIGHT = 720;
+    public static final double WIDTH = 1280;
+    public static final double HEIGHT = 720;
 
     private static PARTH instance;
 
@@ -23,8 +23,8 @@ public class PARTH extends Application {
         // TODO: Add logging
 
         primaryStage.setResizable(false);
-        primaryStage.setMinWidth(MIN_WIDTH);
-        primaryStage.setMinHeight(MIN_HEIGHT);
+        primaryStage.setMinWidth(WIDTH);
+        primaryStage.setMinHeight(HEIGHT);
 
         // Start ModuleLoader loading
         ModuleLoader loader = ModuleLoader.getInstance();

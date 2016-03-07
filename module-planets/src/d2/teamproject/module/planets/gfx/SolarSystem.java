@@ -50,7 +50,7 @@ public class SolarSystem {
         setPlanetOrder(planets);
 
         root = new Group();
-        scene = new SubScene(root, PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT, true, SceneAntialiasing.BALANCED);
+        scene = new SubScene(root, PARTH.WIDTH, PARTH.HEIGHT, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK); /* Black background */
         createSkyboxSections(skyboxTexture);
 

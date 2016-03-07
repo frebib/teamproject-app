@@ -45,7 +45,7 @@ public abstract class VisualisationView implements BaseView {
         frontPane.setCenter(contentBox);
         frontPane.setBottom(bottomBox);
 
-        scene = new Scene(new StackPane(backPane, frontPane), PARTH.MIN_WIDTH, PARTH.MIN_HEIGHT);
+        scene = new Scene(new StackPane(backPane, frontPane), PARTH.WIDTH, PARTH.HEIGHT);
     }
 
     @Override
