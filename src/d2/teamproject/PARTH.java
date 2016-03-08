@@ -40,7 +40,6 @@ public class PARTH extends Application {
                 menu = new MainMenuView(modules, primaryStage);
                 primaryStage.setScene(menu.getScene());
                 primaryStage.show();
-                throw new IllegalArgumentException("ya biatch");
             });
         } catch (Exception e) {
             LOG.exception(e);
