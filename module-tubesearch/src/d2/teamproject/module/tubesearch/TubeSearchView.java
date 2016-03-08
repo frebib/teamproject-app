@@ -2,6 +2,7 @@ package d2.teamproject.module.tubesearch;
 
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
+import javafx.animation.FillTransition;
 import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Point3D;
@@ -27,6 +28,8 @@ public class TubeSearchView extends VisualisationView {
     private PerspectiveCamera camera;
     private Double initialCameraXPosition;
     private ArrayList<SequentialTransition> transitions;
+    private ArrayList<FillTransition> currentTransitions;
+    private ArrayList<FillTransition> frontierTransitions;
 
     public TubeSearchView(TubeSearchController controller) {
         this.controller = controller;
@@ -41,8 +44,6 @@ public class TubeSearchView extends VisualisationView {
         scene = new Scene(root, pageWidth, pageHeight);
         Group lines = new Group();
         Group nodes = new Group();
-//        root.setTranslateX(-375);
-//        root.setTranslateY(-375);
         Set<TubeConnection> connections = controller.getLinks();
         transitions = new ArrayList<>();
         Circle dot = new Circle(6, Color.BLACK);
@@ -54,20 +55,20 @@ public class TubeSearchView extends VisualisationView {
                 line.setStrokeWidth(5);
                 line.setStroke(conn.getLine().getColour());
                 lines.getChildren().add(line);
-//
-//                SequentialTransition transition = new SequentialTransition();
-//                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-//                        conn.getTo().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 0.2);
-//                PathTransition d2 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-//                        conn.getKey().getPosX() * coordOffsetX, conn.getKey().getPosY() * coordOffsetY, 0.4);
-//                PathTransition d3 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-//                        conn.getKey().getPosX() * coordOffsetX, conn.getKey().getPosY() * coordOffsetY, 0.6);
-//                PathTransition d4 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-//                        conn.getKey().getPosX() * coordOffsetX, conn.getKey().getPosY() * coordOffsetY, 0.8);
 
-//                transition.getChildren().addAll(d1, d2, d3, d4);
-//                transitions.add(transition);
-                System.out.println(conn.getFrom());
+                SequentialTransition transition = new SequentialTransition();
+                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
+                        conn.getTo().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 0.2);
+                PathTransition d2 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
+                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.4);
+                PathTransition d3 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
+                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.6);
+                PathTransition d4 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
+                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.8);
+
+                transition.getChildren().addAll(d1, d2, d3, d4);
+                transitions.add(transition);
+//                System.out.println(conn.getFrom());
             } else {
 //                List<Point2D> points = conn.getSublines();
 //
@@ -169,13 +170,27 @@ public class TubeSearchView extends VisualisationView {
 
         root.getChildren().add(lines);
         root.getChildren().add(dot);
+        currentTransitions = new ArrayList<>();
+        frontierTransitions = new ArrayList<>();
         for (TubeConnection conn : connections) {
             Circle c = new Circle(conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 7);
             c.setStrokeWidth(5);
             c.setStroke(Color.BLACK);
             c.setFill(Color.WHITE);
+
+            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.YELLOW);
+            ft.setCycleCount(4);
+            ft.setAutoReverse(true);
+
+            FillTransition ft2 = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.AQUAMARINE);
+            ft2.setCycleCount(4);
+            ft2.setAutoReverse(true);
+
+            currentTransitions.add(ft);
+            frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
         }
+
 //        Circle c = new Circle(0, 0, 7);
 //        c.setStrokeWidth(5);
 //        c.setStroke(Color.BLACK);
