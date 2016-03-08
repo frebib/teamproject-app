@@ -1,5 +1,8 @@
 package d2.teamproject.module.tubesearch;
 
+import d2.teamproject.algorithm.search.AStarSearchStream;
+import d2.teamproject.algorithm.search.SearchStream;
+import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import javafx.animation.FillTransition;
@@ -17,8 +20,10 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.function.BiFunction;
 
 public class TubeSearchView extends VisualisationView {
     private TubeSearchController controller;
@@ -172,6 +177,9 @@ public class TubeSearchView extends VisualisationView {
         root.getChildren().add(dot);
         currentTransitions = new ArrayList<>();
         frontierTransitions = new ArrayList<>();
+        int i = 0;
+        TubeConnection start = null;
+        TubeConnection goal = null;
         for (TubeConnection conn : connections) {
             Circle c = new Circle(conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 7);
             c.setStrokeWidth(5);
@@ -189,10 +197,35 @@ public class TubeSearchView extends VisualisationView {
             currentTransitions.add(ft);
             frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
+            if(i == 15)
+            {
+                goal = conn;
+            }
+            else if(i == 0)
+            {
+                start = conn;
+            }
+            i++;
         }
 
 //        transitions.get(10).play();
         root.getChildren().add(nodes);
+
+
+        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
+                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+
+
+        BiFunction<TubeStation, TubeStation, Double> manhattan = (a, b) ->
+                Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
+
+//        SearchStream<TubeStation, SearchPriorityQueue<TubeStation>> stream =
+//                new AStarSearchStream<>(start.getFrom(), goal.getFrom())
+//                        .setCostFn(manhattan)
+//                        .setHeuristicFn(euclidean)
+//                        .initialise();
+
+
 
         initialCameraXPosition = -375.0;
         camera = new PerspectiveCamera();
