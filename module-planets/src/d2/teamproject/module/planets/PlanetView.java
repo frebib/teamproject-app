@@ -68,6 +68,7 @@ public class PlanetView extends VisualisationView {
     public void updateState(SortState<Planet> state) {
         if (state == null) return;
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
+        // TODO: Fix planet zooming
 
         if (state.isComplete())
             sSystem.setFinished();
@@ -103,6 +104,7 @@ public class PlanetView extends VisualisationView {
             });
             current.playFromStart();
         } else if (state instanceof PartitionSortState) {
+            // TODO: Animate setting pivot planet
             sSystem.setPartition((PartitionSortState<Planet>) state);
         }
     }
