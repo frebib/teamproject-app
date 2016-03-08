@@ -13,8 +13,6 @@ public class PARTH extends Application {
     public static final double HEIGHT = 720;
 
     public static final Log LOG = new Log("Parth", Level.FINEST);
-    public static final double MIN_WIDTH = 1280;
-    public static final double MIN_HEIGHT = 720;
 
     private static PARTH instance;
 
