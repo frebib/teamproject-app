@@ -191,11 +191,6 @@ public class TubeSearchView extends VisualisationView {
             nodes.getChildren().add(c);
         }
 
-//        Circle c = new Circle(0, 0, 7);
-//        c.setStrokeWidth(5);
-//        c.setStroke(Color.BLACK);
-//        c.setFill(Color.WHITE);
-//        nodes.getChildren().add(c);
 //        transitions.get(10).play();
         root.getChildren().add(nodes);
 
