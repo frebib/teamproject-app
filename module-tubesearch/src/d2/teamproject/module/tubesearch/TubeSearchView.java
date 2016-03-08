@@ -33,7 +33,6 @@ public class TubeSearchView extends VisualisationView {
     }
 
     public void initialise() {
-//        primaryStage.setTitle("Tubicaaaaal Br0");
         double pageWidth = 1000;
         double pageHeight = 750;
         double coordOffsetX = pageWidth;
@@ -208,12 +207,6 @@ public class TubeSearchView extends VisualisationView {
 
     private double calcOffset(double point1, double point2) {
         return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
-//        if (point1 < point2)
-//            return 5;
-//        else if (point1 > point2)
-//            return -5;
-//        else
-//            return 0;
     }
 
     @Override
