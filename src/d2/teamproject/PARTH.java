@@ -14,7 +14,7 @@ public class PARTH extends Application {
     public static final double WIDTH = 1280;
     public static final double HEIGHT = 720;
 
-    public static final Log LOG = new Log("parth", Level.FINEST);
+    public static final Log LOG = new Log("Parth", Level.FINEST);
 
     private static PARTH instance;
 

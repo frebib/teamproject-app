@@ -13,9 +13,11 @@ public class Log implements Thread.UncaughtExceptionHandler {
     private static Level EXCEPTION_LEVEL = Level.SEVERE;
 
     private static Logger logger;
+    private final String name;
     private FileHandler fh;
 
     public Log(String name, Level logLevel) {
+        this.name = name;
         logger = Logger.getLogger(name);
         logger.setLevel(logLevel);
         setLogOutput(new SimpleDateFormat("'log/" + name +
@@ -44,7 +46,7 @@ public class Log implements Thread.UncaughtExceptionHandler {
     }
 
     public void exit(int exitcode, boolean exit) {
-        format(Level.INFO, "MailClient exiting with %d", exitcode);
+        format(Level.INFO, "%s exiting with %d", name, exitcode);
         close();
         if (exit) System.exit(exitcode);
     }
