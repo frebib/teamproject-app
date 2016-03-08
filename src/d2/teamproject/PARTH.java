@@ -35,7 +35,7 @@ public class PARTH extends Application {
         // Start ModuleLoader loading
         ModuleLoader loader = ModuleLoader.getInstance();
         loader.loadAllModules((module, current, max) ->
-                LOG.format(Level.INFO, "%d/%d: %s\n", current + 1, max, module.getName()));
+                LOG.info("%d/%d: %s\n", current + 1, max, module.getName()));
         loader.onLoaded(modules -> {
             menu = new MainMenuView(modules, primaryStage);
             primaryStage.setScene(menu.getScene());

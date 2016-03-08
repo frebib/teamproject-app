@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.*;
 
@@ -58,21 +59,27 @@ public class Log implements Thread.UncaughtExceptionHandler {
     }
 
     private String addThreadName(String msg) {
-        StackTraceElement el = Thread.currentThread().getStackTrace()[3];
-        String classn = el.getClassName();
-        String caller = classn.substring(classn.lastIndexOf('.')) + " @ " + el.getLineNumber();
+        StackTraceElement el = Arrays
+                .stream(Thread.currentThread().getStackTrace())
+                .filter(e -> !Thread.class.getName().equals(e.getClassName()))
+                .filter(e -> !getClass().getName().equals(e.getClassName()))
+                .findFirst()
+                .orElse(null);
+
+        String cn = el.getClassName();
+        String caller = cn.substring(cn.lastIndexOf('.')) + " @ " + el.getLineNumber();
         return "[" + Thread.currentThread().getName() + "]\t[" + caller + "]\t> " + msg;
     }
 
-    public void format(Level level, String format, Object... args) {
+    private void format(Level level, String format, Object... args) {
         logger.log(level, addThreadName(String.format(format, args)));
     }
-    public void finest(String msg) { logger.finest(addThreadName(msg)); }
-    public void finer(String msg) { logger.finer(addThreadName(msg)); }
-    public void fine(String msg) { logger.fine(addThreadName(msg)); }
-    public void info(String msg) { logger.info(addThreadName(msg)); }
-    public void warning(String msg) { logger.log(Level.WARNING, addThreadName(msg)); }
-    public void severe(String msg) { logger.log(Level.SEVERE, addThreadName(msg)); }
+    public void finest(String msg, Object... args) { format(Level.FINEST, msg, args); }
+    public void finer(String msg, Object... args)  { format(Level.FINER, msg, args); }
+    public void fine(String msg, Object... args)   { format(Level.FINE, msg, args); }
+    public void info(String msg, Object... args)   { format(Level.INFO, msg, args); }
+    public void warning(String msg, Object... args){ format(Level.WARNING, msg, args); }
+    public void severe(String msg, Object... args) { format(Level.SEVERE, msg, args); }
     public void exception(Exception e) {
         StringWriter sw = new StringWriter();
         e.printStackTrace(new PrintWriter(sw));

@@ -33,7 +33,7 @@ public class TubeSearchController extends JsonController {
 
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
-        res.forEach((k, v) -> LOG.format(Level.FINE, " > Loaded resource \"%s\" = %s", k, v.toString()));
+        res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
 
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
         JsonArray stationinfo = tubemapinfo.get("stations").asArray();
@@ -66,7 +66,7 @@ public class TubeSearchController extends JsonController {
                 TubeLine line = lineMap.get(lineId);
                 if (from == null || to == null || line == null) {
                     errors[0]++;
-                    PARTH.LOG.format(Level.WARNING, "Tube connection created with invalid args:" +
+                    LOG.warning("Tube connection created with invalid args:" +
                             " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s",
                             fromStation, from,
                             toStation, to,
@@ -79,7 +79,7 @@ public class TubeSearchController extends JsonController {
             });
         });
         if (errors[0] > 0)
-            PARTH.LOG.format(Level.WARNING, "There were %d errors loading in the tube map", errors[0]);
+            LOG.warning("There were %d errors loading in the tube map", errors[0]);
     }
 
     @Override

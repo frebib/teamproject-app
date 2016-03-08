@@ -15,6 +15,8 @@ import javafx.scene.layout.Pane;
 
 import java.util.Map;
 
+import static d2.teamproject.PARTH.LOG;
+
 public class PlanetView extends VisualisationView {
     public enum AnimState {
         NOTHING,
@@ -67,6 +69,7 @@ public class PlanetView extends VisualisationView {
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
         // TODO: Implement animations for PartitionSortState
 
+        LOG.finer("SortState=%s", state);
         if (state instanceof CompareSortState) {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;

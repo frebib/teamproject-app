@@ -115,7 +115,7 @@ public class PlanetController extends JsonController {
 
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
-        res.forEach((k, v) -> LOG.format(Level.FINE, " > Loaded resource \"%s\" = %s", k, v.toString()));
+        res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
