@@ -32,6 +32,11 @@ public class TubeSearchController extends JsonController {
     }
 
     @Override
+    public void onOpen() {
+        view.initialise();
+    }
+
+    @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
 
@@ -80,6 +85,18 @@ public class TubeSearchController extends JsonController {
         });
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
+    }
+
+    public Map<String, TubeStation> getStationMap() {
+        return stationMap;
+    }
+
+    public Map<String, TubeLine> getLineMap() {
+        return lineMap;
+    }
+
+    public Set<TubeConnection> getLinks() {
+        return links;
     }
 
     @Override
