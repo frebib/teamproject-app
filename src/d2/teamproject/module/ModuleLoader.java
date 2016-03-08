@@ -10,6 +10,8 @@ import java.io.*;
 import java.util.*;
 import java.util.zip.ZipInputStream;
 
+import static d2.teamproject.PARTH.LOG;
+
 public class ModuleLoader {
     private static final String MODULE_PATH = "res/module/";
     private static ModuleLoader instance = new ModuleLoader();
@@ -42,12 +44,11 @@ public class ModuleLoader {
                     if (callback != null)
                         callback.onLoadProgress(module, i, files.length);
                 } catch (LoadException e) {
-                    System.out.printf("Error loading visualisation %s\n", files[i].getName());
-                    e.printStackTrace();
-                    System.out.println();
+                    LOG.severe("Error loading visualisation %s", files[i].getName());
+                    LOG.exception(e);
                 } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(1);
+                    LOG.exception(e);
+                    LOG.exit(1, true);
                 }
             }
             isLoaded = true;
@@ -76,9 +77,8 @@ public class ModuleLoader {
                 if (res != null && res.asObject().size() > 0)
                     module.loadResources(loadResources(res.asObject(), loader));
             } catch (Exception e) {
-                System.out.println("Error loading resources for " + load.get("main").asString());
-                e.printStackTrace();
-                System.out.println();
+                LOG.warning("Error loading resources for %s", load.get("main").asString());
+                LOG.exception(e);
             }
 
             Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
@@ -107,8 +107,8 @@ public class ModuleLoader {
                 Object obj = loadResourceFromStream(is, resObj.get("type").asString());
                 resources.put(rName, obj);
             } catch (Exception e) { // Catch then continue loading resources
-                System.out.printf(" > Error loading resource \"%s\"\n", String.valueOf(rName));
-                e.printStackTrace();
+                LOG.warning(" > Error loading resource \"%s\"", String.valueOf(rName));
+                LOG.exception(e);
             }
         }
         return resources;
@@ -144,7 +144,7 @@ public class ModuleLoader {
             while (!isLoaded)
                 this.wait();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOG.exception(e);
             return;
         }
         callback.onLoaded(modules);

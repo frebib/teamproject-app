@@ -43,9 +43,10 @@ public class Log implements Thread.UncaughtExceptionHandler {
         return this;
     }
 
-    public void exit(int exitcode) {
+    public void exit(int exitcode, boolean exit) {
         format(Level.INFO, "MailClient exiting with %d", exitcode);
         close();
+        if (exit) System.exit(exitcode);
     }
     public void close() {
         if (fh != null)
