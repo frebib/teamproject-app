@@ -87,7 +87,8 @@ public class PlanetView extends VisualisationView {
                         // Request the liststate and update the SolarSystem list
                         controller.handleNextState(nState -> {
                             if (!(nState instanceof ListSortState))
-                                System.out.println("Something is probably wrong here");
+                                LOG.warning("Something is probably wrong here");
+
                             sSystem.setPlanetOrder(nState.getList());
                         });
                     });
