@@ -63,8 +63,7 @@ public class Log implements Thread.UncaughtExceptionHandler {
 
     @Override
     public void uncaughtException(Thread thread, Throwable t) {
-        String exceptionPadding = "~~~~~~~~~~~~~~~~~~~~~~~~~~";
-        logger.log(EXCEPTION_LEVEL, addThreadName(exceptionPadding + t.getStackTrace() + exceptionPadding), t);
+        exception(t);
     }
 
     private String addThreadName(String msg) {
@@ -89,9 +88,9 @@ public class Log implements Thread.UncaughtExceptionHandler {
     public void info(String msg, Object... args)   { format(Level.INFO, msg, args); }
     public void warning(String msg, Object... args){ format(Level.WARNING, msg, args); }
     public void severe(String msg, Object... args) { format(Level.SEVERE, msg, args); }
-    public void exception(Exception e) {
+    public void exception(Throwable t) {
         StringWriter sw = new StringWriter();
-        e.printStackTrace(new PrintWriter(sw));
+        t.printStackTrace(new PrintWriter(sw));
         logger.log(EXCEPTION_LEVEL, addThreadName(sw.toString()));
     }
 }
