@@ -20,8 +20,12 @@ public class InstructionSet {
         }
     }
 
+    public Instruction getCurrent(){
+        return set.get(tracker);
+    }
+
     public Instruction getNext() {
-        //get the nexdt element in the array
+        //get the next element in the array
         tracker++;
         return set.get(tracker + 1);
     }
