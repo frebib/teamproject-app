@@ -323,4 +323,16 @@ public class SolarSystem {
         // Perform the transition
         pt.playFromStart();
     }
+
+    public void setFinished() {
+        ParallelTransition pt = new ParallelTransition();
+        unFocused.stream()
+                .map(PlanetRenderer::getModel)
+                .map(m -> {
+                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                    tt.setToZ(0);
+                    return tt;
+                }).forEach(t -> pt.getChildren().add(t));
+        pt.playFromStart();
+    }
 }
