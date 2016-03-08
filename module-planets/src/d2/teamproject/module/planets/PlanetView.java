@@ -1,9 +1,9 @@
 package d2.teamproject.module.planets;
 
-import d2.teamproject.algorithm.sorting.PartitionSortState;
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.ListSortState;
+import d2.teamproject.algorithm.sorting.PartitionSortState;
 import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
@@ -67,7 +67,6 @@ public class PlanetView extends VisualisationView {
 
     public void updateState(SortState<Planet> state) {
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
-        // TODO: Implement animations for PartitionSortState
 
         LOG.finer("SortState=%s", state);
         if (state instanceof CompareSortState) {
@@ -98,6 +97,8 @@ public class PlanetView extends VisualisationView {
                 }
             });
             current.playFromStart();
+        } else if (state instanceof PartitionSortState) {
+            sSystem.setPartition((PartitionSortState<Planet>) state);
         }
     }
 

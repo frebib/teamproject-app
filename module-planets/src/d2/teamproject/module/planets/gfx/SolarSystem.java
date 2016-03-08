@@ -1,19 +1,18 @@
 package d2.teamproject.module.planets.gfx;
 
-import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
+import d2.teamproject.algorithm.sorting.PartitionSortState;
 import d2.teamproject.module.planets.Planet;
+import d2.teamproject.util.ListUtil;
 import javafx.animation.*;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point3D;
 import javafx.scene.*;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.*;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.awt.*;
@@ -21,14 +20,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class SolarSystem {
     private static final Duration COMPARE_ANIM_TIME = new Duration(300);
     private static final Duration SWAP_ANIM_TIME = new Duration(500);
+    private static final Duration FADE_ANIM_TIME = new Duration(500);
 
-    public static final int GAP = 40;
+    public static final int GAP = 60;
 
     private final SubScene scene;
     private final Group root;
@@ -36,9 +36,9 @@ public class SolarSystem {
     private final Map<Planet, PlanetRenderer> rendererMap;
     private List<PlanetRenderer> planetRenderers;
     private float cumulativeDist = 0;
-    private final double initialCameraXPosition;
 
     private Planet zoomed;
+    private List<PlanetRenderer> unFocused;
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -57,7 +57,6 @@ public class SolarSystem {
             rendererMap.put(planet, r);
         }
         setPlanetOrder(planets);
-        initialCameraXPosition = -140.0;    /* Offset right slightly for Sun */
 
         root = new Group();
         scene = new SubScene(root, width, height, true, SceneAntialiasing.BALANCED);
@@ -66,10 +65,12 @@ public class SolarSystem {
 
         camera = new PerspectiveCamera();
         camera.setNearClip(0.001);
-        camera.setFieldOfView(40);
-        camera.setTranslateX(initialCameraXPosition);
+        camera.setFieldOfView(25);
+        camera.setTranslateX(100);
         camera.setTranslateY(scene.getHeight() / -2); /* Sets the camera in the middle of the window */
-        camera.setRotationAxis(new Point3D(0, 1, 0));
+        camera.setTranslateZ(-150);
+        camera.setRotationAxis(new Point3D(-0.28, -0.32, 0.00));
+        camera.setRotate(42);
 
         root.getChildren().add(camera);
         root.getChildren().addAll(planetRenderers.stream()
@@ -110,7 +111,7 @@ public class SolarSystem {
     private TranslateTransition zoomOut() {
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1), camera);
         tt.setToZ(0);
-        tt.setToX(initialCameraXPosition);
+        tt.setToX(0);
         return tt;
     }
 
@@ -278,5 +279,48 @@ public class SolarSystem {
 
     public void setPlanetOrder(List<Planet> list) {
         planetRenderers = list.stream().map(rendererMap::get).collect(Collectors.toList());
+    }
+
+    // Providing what this horrible language couldn't... in 3 lines...
+    public static <T> Predicate<T> not(Predicate<T> t) {
+        return t.negate();
+    }
+    public void setPartition(PartitionSortState<Planet> partition) {
+        List<PlanetRenderer> prevUnFocused = unFocused;
+        unFocused = planetRenderers.stream()
+                .filter(p -> {
+                    int i = planetRenderers.indexOf(p);
+                    return i < partition.getLower() || i > partition.getUpper();
+                }).collect(Collectors.toList());
+
+        System.out.printf("Pivot:   %d\nOutside: ", partition.getPivot());
+        ListUtil.printList(unFocused.stream()
+                .map(PlanetRenderer::getPlanet)
+                .map(Planet::getName)
+                .collect(Collectors.toList()));
+
+        ParallelTransition pt = new ParallelTransition();
+        // Move previously unfocused elements forward
+        if (prevUnFocused != null)
+            prevUnFocused.stream()
+                    .filter(not(unFocused::contains))
+                    .map(PlanetRenderer::getModel)
+                    .map(m -> {
+                        TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                        tt.setToZ(0);
+                        return tt;
+                    }).forEach(t -> pt.getChildren().add(t));
+
+        // Move newly unfocused elements backwards
+        unFocused.stream()
+                .map(PlanetRenderer::getModel)
+                .map(m -> {
+                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                    tt.setToZ(100);
+                    return tt;
+                }).forEach(t -> pt.getChildren().add(t));
+
+        // Perform the transition
+        pt.playFromStart();
     }
 }
