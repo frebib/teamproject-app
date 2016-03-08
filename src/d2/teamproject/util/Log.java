@@ -68,7 +68,7 @@ public class Log implements Thread.UncaughtExceptionHandler {
                 .orElse(null);
 
         String cn = el.getClassName();
-        String caller = cn.substring(cn.lastIndexOf('.')) + " @ " + el.getLineNumber();
+        String caller = cn.substring(cn.lastIndexOf('.') + 1) + " @ " + el.getLineNumber();
         return "[" + Thread.currentThread().getName() + "]\t[" + caller + "]\t> " + msg;
     }
 
