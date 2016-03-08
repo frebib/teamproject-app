@@ -258,6 +258,7 @@ public class SolarSystem {
         return (double) y * 1000;
     }
 
+    // TODO: Clean up skyboxes, make smaller and more random
     private void createSkyboxSections(Image skyboxTexture) {
         skyboxSection(-170, -750, skyboxTexture, randomNumber());               /* Skybox for the left hand side of the screen */
         skyboxSection(-170, -250, skyboxTexture, randomNumber());
