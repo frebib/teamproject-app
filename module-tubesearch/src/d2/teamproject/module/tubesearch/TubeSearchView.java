@@ -1,6 +1,8 @@
 package d2.teamproject.module.tubesearch;
 
 import d2.teamproject.algorithm.search.AStarSearchStream;
+import d2.teamproject.algorithm.search.Node;
+import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
 import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import d2.teamproject.gui.VisualisationView;
@@ -10,7 +12,6 @@ import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -177,7 +178,7 @@ public class TubeSearchView extends VisualisationView {
         root.getChildren().add(dot);
         currentTransitions = new ArrayList<>();
         frontierTransitions = new ArrayList<>();
-        int i = 0;
+        int x = 0;
         TubeConnection start = null;
         TubeConnection goal = null;
         for (TubeConnection conn : connections) {
@@ -197,15 +198,15 @@ public class TubeSearchView extends VisualisationView {
             currentTransitions.add(ft);
             frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
-            if(i == 15)
+            if(x == 15)
             {
                 goal = conn;
             }
-            else if(i == 0)
+            else if(x == 0)
             {
                 start = conn;
             }
-            i++;
+            x++;
         }
 
 //        transitions.get(10).play();
@@ -219,13 +220,21 @@ public class TubeSearchView extends VisualisationView {
         BiFunction<TubeStation, TubeStation, Double> manhattan = (a, b) ->
                 Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
 
-//        SearchStream<TubeStation, SearchPriorityQueue<TubeStation>> stream =
-//                new AStarSearchStream<>(start.getFrom(), goal.getFrom())
-//                        .setCostFn(manhattan)
-//                        .setHeuristicFn(euclidean)
-//                        .initialise();
+        SearchStream<TubeStation, SearchPriorityQueue<Node<TubeStation>>> stream =
+                new AStarSearchStream<>(start.getFrom(), goal.getFrom())
+                        .setCostFn(manhattan)
+                        .setHeuristicFn(euclidean)
+                        .initialise();
+
+        ArrayList<SearchState<TubeStation, SearchPriorityQueue<Node<TubeStation>>>> search = new ArrayList<>(stream.getAll());
 
 
+        for(int i = 0; i < search.size(); i++)
+        {
+            SearchState<TubeStation, SearchPriorityQueue<Node<TubeStation>>> state = search.get(i);
+            animateFrontier(state.getFrontier());
+            animatePath(state.getVisited());
+        }
 
         initialCameraXPosition = -375.0;
         camera = new PerspectiveCamera();
@@ -235,7 +244,7 @@ public class TubeSearchView extends VisualisationView {
         camera.setRotationAxis(new Point3D(0, 1, 0));
     }
 
-    public PathTransition dotTransition(Node n, double x1, double y1, double x2, double y2, double time) {
+    public PathTransition dotTransition(Circle n, double x1, double y1, double x2, double y2, double time) {
         PathTransition transition = new PathTransition();
         transition.setDuration(Duration.seconds(time));
         transition.setNode(n);
@@ -250,6 +259,20 @@ public class TubeSearchView extends VisualisationView {
 
     private double calcOffset(double point1, double point2) {
         return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
+    }
+
+    private void animateFrontier(SearchPriorityQueue<Node<TubeStation>> fStations) {
+        for(Node<TubeStation> s : fStations)
+        {
+            frontierTransitions.get(s.getContents().getIndex()).play();
+        }
+    }
+
+    private void animatePath(Set<Node<TubeStation>> pStations) {
+        for(Node<TubeStation> p : pStations)
+        {
+            currentTransitions.get(p.getContents().getIndex()).play();
+        }
     }
 
     @Override
