@@ -40,7 +40,13 @@ public class Log implements Thread.UncaughtExceptionHandler {
             ch.setLevel(logger.getLevel());
             logger.addHandler(ch);
         } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                exception(e);
+                exit(1, true);
+            } catch (Exception e1) {
+                e.printStackTrace();
+                e1.printStackTrace();
+            }
         }
         return this;
     }
