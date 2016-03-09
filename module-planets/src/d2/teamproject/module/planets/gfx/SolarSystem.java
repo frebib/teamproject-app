@@ -63,12 +63,14 @@ public class SolarSystem {
         scene.setFill(Color.BLACK); /* Black background */
         createSkyboxSections(skyboxTexture);
 
-        camera = new PerspectiveCamera();
+        camera = new PerspectiveCamera(true);
         camera.setNearClip(0.001);
-        camera.setFieldOfView(25);
-        camera.setTranslateX(100);
-        camera.setTranslateY(scene.getHeight() / -2); /* Sets the camera in the middle of the window */
-        camera.setTranslateZ(-150);
+        camera.setFarClip(100000);
+        camera.setFieldOfView(30);
+
+        camera.setTranslateX(1150);
+        camera.setTranslateY(-350);
+        camera.setTranslateZ(-600);
         camera.setRotationAxis(new Point3D(-0.28, -0.32, 0.00));
         camera.setRotate(42);
 
