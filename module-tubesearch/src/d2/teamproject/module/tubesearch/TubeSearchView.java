@@ -4,6 +4,7 @@ import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
+import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
@@ -22,8 +23,8 @@ import javafx.scene.shape.MoveTo;
 import javafx.util.Duration;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.*;
+import java.util.List;
 import java.util.function.BiFunction;
 
 public class TubeSearchView extends VisualisationView {
@@ -220,18 +221,15 @@ public class TubeSearchView extends VisualisationView {
         BiFunction<TubeStation, TubeStation, Double> manhattan = (a, b) ->
                 Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
 
-        SearchStream<TubeStation, SearchPriorityQueue<Node<TubeStation>>> stream =
+        SearchStream<TubeStation> stream =
                 new AStarSearchStream<>(start.getFrom(), goal.getFrom())
                         .setCostFn(manhattan)
                         .setHeuristicFn(euclidean)
                         .initialise();
 
-        ArrayList<SearchState<TubeStation, SearchPriorityQueue<Node<TubeStation>>>> search = new ArrayList<>(stream.getAll());
+        List<SearchState<Node<TubeStation>>> search = stream.getAll();
 
-
-        for(int i = 0; i < search.size(); i++)
-        {
-            SearchState<TubeStation, SearchPriorityQueue<Node<TubeStation>>> state = search.get(i);
+        for (SearchState<Node<TubeStation>> state : search) {
             animateFrontier(state.getFrontier());
             animatePath(state.getVisited());
         }
@@ -261,18 +259,14 @@ public class TubeSearchView extends VisualisationView {
         return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
     }
 
-    private void animateFrontier(SearchPriorityQueue<Node<TubeStation>> fStations) {
+    private void animateFrontier(BaseDataStructure<Node<TubeStation>> fStations) {
         for(Node<TubeStation> s : fStations)
-        {
             frontierTransitions.get(s.getContents().getIndex()).play();
-        }
     }
 
     private void animatePath(Set<Node<TubeStation>> pStations) {
         for(Node<TubeStation> p : pStations)
-        {
             currentTransitions.get(p.getContents().getIndex()).play();
-        }
     }
 
     @Override

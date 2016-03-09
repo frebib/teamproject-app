@@ -10,16 +10,15 @@ import java.util.Set;
  * A state to represent the state of search from {@link SearchStream}
  * at any given point in time. Provides a look into all data that represents the state
  * @param <E> Element that nodes in search represent
- * @param <L> A frontier set that changes how the search is performed
  */
-public class SearchState<E, L extends BaseDataStructure<Node<E>>> {
+public class SearchState<E> {
     private boolean isComplete = false;
-    private final L frontier;
-    private final Set<Node<E>> visited;
-    private final List<Node<E>> path;
+    private final BaseDataStructure<E> frontier;
+    private final Set<E> visited;
+    private final List<E> path;
 
-    public SearchState(L frontier, Set<Node<E>> visited, List<Node<E>> path) {
-        this.frontier = (L) frontier.copy();
+    public SearchState(BaseDataStructure<E> frontier, Set<E> visited, List<E> path) {
+        this.frontier = frontier.copy();
         this.visited = new HashSet<>(visited);
         this.path = path;
         this.isComplete = (path != null);
@@ -35,14 +34,14 @@ public class SearchState<E, L extends BaseDataStructure<Node<E>>> {
     /**
      * Gets the frontier {@link BaseDataStructure} from the search
      */
-    public L getFrontier() {
+    public BaseDataStructure<E> getFrontier() {
         return frontier;
     }
 
     /**
      * Gets the visited set from the search
      */
-    public Set<Node<E>> getVisited() {
+    public Set<E> getVisited() {
         return visited;
     }
 
@@ -50,7 +49,7 @@ public class SearchState<E, L extends BaseDataStructure<Node<E>>> {
      * Gets the path found by the search.
      * @return a path or null if {@code isComplete()} returns false
      */
-    public List<Node<E>> getPath() {
+    public List<E> getPath() {
         return path;
     }
 

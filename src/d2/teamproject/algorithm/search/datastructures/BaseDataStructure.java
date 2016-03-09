@@ -1,10 +1,12 @@
 package d2.teamproject.algorithm.search.datastructures;
 
+import java.util.Collection;
+
 /**
  * Provides accessor methods for a generic {@link BaseDataStructure}
  * @param <E> Object type to be stored in the {@code BaseDataStructure}
  */
-public interface BaseDataStructure<E> {
+public interface BaseDataStructure<E> extends Collection<E> {
     /**
      * Gets the first item in the {@code BaseDataStructure}
      * @return The first item
@@ -35,7 +37,7 @@ public interface BaseDataStructure<E> {
      * @param a Item to compare
      * @return true if in the {@code BaseDataStructure}
      */
-    boolean contains(E a);
+    boolean contains(Object a);
 
     /**
      * Clears all elements from the {@code DataStructure}

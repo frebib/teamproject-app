@@ -6,36 +6,40 @@ import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
 import java.util.*;
 import java.util.function.BiFunction;
 
-public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> implements AlgoStream<SearchState<E, L>> {
+public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
     private Node<E> start, goal;
-    private BiFunction<E, E, Double> cost, heuristic;
+    private BiFunction<E, E, Double> costFn, heuristicFn;
 
-    private final L frontier;
+    private BaseDataStructure<Node<E>> frontier;
     private final Set<Node<E>> visited;
     private final Map<Node<E>, Node<E>> successors;
+    private final Map<Node<E>, Double> costMap, heuristicMap;
 
-    private final List<SearchState<E, L>> allStates;
+    private final List<SearchState<Node<E>>> allStates;
 
-    public SearchStream(L frontier) {
-        this(frontier, null, null);
-    }
-
-    public SearchStream(L frontier, Node<E> start, Node<E> goal) {
+    public SearchStream(BaseDataStructure<Node<E>> frontier, Node<E> start, Node<E> goal) {
         this.start = start;
         this.goal = goal;
 
         this.frontier = frontier;
         this.visited = new HashSet<>();
         this.successors = new LinkedHashMap<>();
+        this.costMap = new LinkedHashMap<>();
+        this.heuristicMap = new LinkedHashMap<>();
 
         this.allStates = new ArrayList<>();
+    }
+
+    protected SearchStream<E> setFrontier(BaseDataStructure<Node<E>> frontier) {
+        this.frontier = frontier;
+        return this;
     }
 
     /**
      * Sets the start location for search
      * @param start the start location
      */
-    public SearchStream<E, L> setStart(Node<E> start) {
+    public SearchStream<E> setStart(Node<E> start) {
         this.start = start;
         return this;
     }
@@ -43,24 +47,25 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
      * Sets the start location for search
      * @param goal the goal location
      */
-    public SearchStream<E, L> setGoal(Node<E> goal) {
+    public SearchStream<E> setGoal(Node<E> goal) {
         this.goal = goal;
         return this;
     }
     /**
      * Sets the cost function for the search, changing the behaviour of the search algorithm
      * @return the SearchStream object
+     * @param costFn
      */
-    public SearchStream<E, L> setCostFn(BiFunction<E, E, Double> cost) {
-        this.cost = cost;
+    public SearchStream<E> setCostFn(BiFunction<E, E, Double> costFn) {
+        this.costFn = costFn;
         return this;
     }
     /**
      * Sets the heuristic function for the search, changing the behaviour of the search algorithm
      * @return the SearchStream object
      */
-    public SearchStream<E, L> setHeuristicFn(BiFunction<E, E, Double> heuristic) {
-        this.heuristic = heuristic;
+    public SearchStream<E> setHeuristicFn(BiFunction<E, E, Double> heuristicFn) {
+        this.heuristicFn = heuristicFn;
         return this;
     }
 
@@ -68,32 +73,32 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
      * Runs the graph search and generates the entire search tree.
      */
     @Override
-    public SearchStream<E, L> initialise() {
+    public SearchStream<E> initialise() {
         frontier.clear();
         visited.clear();
         successors.clear();
         allStates.clear();
 
-        start.setHeuristic(heuristic.apply(start.getContents(), goal.getContents()));
-        start.setCost(0);
+        setHeuristic(start, heuristicFn.apply(start.getContents(), goal.getContents()));
+        setCost(start, 0);
         frontier.add(start);
         return this;
     }
 
     @Override
-    public SearchState<E, L> getNext() {
+    public SearchState<Node<E>> getNext() {
         return genNextState();
     }
 
     @Override
-    public SearchState<E, L> getPrevious() {
+    public SearchState<Node<E>> getPrevious() {
         if (!hasPrevious()) // Prevent a crash if no previous state
             return null;
         return allStates.get(allStates.size() - 1);
     }
 
     @Override
-    public SearchState<E, L> getNth(int n) {
+    public SearchState<Node<E>> getNth(int n) {
         if (n < 0 || n > allStates.size())
             return null;
         if (n == allStates.size())
@@ -118,12 +123,32 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
         return (n > 0 && allStates.size() > n || (hasNext() && n == allStates.size()));
     }
     @Override
-    public List<SearchState<E, L>> getAll() {
+    public List<SearchState<Node<E>>> getAll() {
         return allStates;
     }
 
-    private SearchState<E, L> genNextState() {
-        if (cost == null || heuristic == null)
+    public double getCost(Node<E> node) {
+        return (costMap.containsKey(node)) ? costMap.get(node) : 0;
+    }
+
+    public double getHeuristic(Node<E> node) {
+        return (heuristicMap.containsKey(node)) ? heuristicMap.get(node) : 0;
+    }
+
+    public double getF(Node<E> node) {
+        return getCost(node) + getHeuristic(node);
+    }
+
+    private void setHeuristic(Node<E> node, double heuristic) {
+        heuristicMap.put(node, heuristic);
+    }
+
+    private void setCost(Node<E> node, double cost) {
+        costMap.put(node, cost);
+    }
+
+    private SearchState<Node<E>> genNextState() {
+        if (costFn == null || heuristicFn == null)
             throw new NullPointerException("Cost and Heuristic functions must be set!");
 
         if (!hasNext()) return null;
@@ -131,7 +156,7 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
         Node<E> node = frontier.getHead();
         visited.add(node);
 
-        if (node.contentsEquals(goal.contents)) {     // At this point we reconstruct the path followed from the visited Map
+        if (node.contentsEquals(goal)) {     // At this point we reconstruct the path followed from the visited Map
             successors.put(start, null);              // Add start Node as it will be first element in list (last one to be added)
 
             List<Node<E>> path = new ArrayList<>();
@@ -141,24 +166,24 @@ public abstract class SearchStream<E, L extends BaseDataStructure<Node<E>>> impl
             }                                         // pair in the Map using the node as the key
 
             // Return the final state with a path
-            SearchState<E, L> state = new SearchState<>(frontier, visited, path);
+            SearchState<Node<E>> state = new SearchState<>(frontier, visited, path);
             allStates.add(state);
             return state;
         } else {
             for (Node<E> suc : node.getSuccessors()) {
                 if (visited.contains(suc))
                     continue;
-                double costVal = node.getCost() + cost.apply(node.getContents(), suc.getContents());
-                if (!frontier.contains(suc) || costVal < suc.getCost()) {
-                    suc.setHeuristic(heuristic.apply(suc.getContents(), goal.getContents()));
-                    suc.setCost(costVal);
+                double costVal = getCost(node) + costFn.apply(node.getContents(), suc.getContents());
+                if (!frontier.contains(suc) || costVal < getCost(suc)) {
+                    setHeuristic(suc, heuristicFn.apply(suc.getContents(), goal.getContents()));
+                    setCost(suc, costVal);
 
                     successors.put(suc, node);    // Set the node as visited
                     frontier.add(suc);            // Add successor to frontier to allow it to be searched from
                 }
             }
         }
-        SearchState<E, L> state = new SearchState<>(frontier, visited, null);
+        SearchState<Node<E>> state = new SearchState<>(frontier, visited, null);
         allStates.add(state);
         return state;
     }

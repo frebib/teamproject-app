@@ -37,7 +37,7 @@ public class SearchTest {
         Node<Point> start = val.get(r.nextInt(val.size())),
                 end = val.get(r.nextInt(val.size()));
 
-        SearchStream<Point, SearchPriorityQueue<Node<Point>>> stream =
+        SearchStream<Point> stream =
                 new AStarSearchStream<>(start, end)
                         .setCostFn(manhattan)
                         .setHeuristicFn(euclidean)
