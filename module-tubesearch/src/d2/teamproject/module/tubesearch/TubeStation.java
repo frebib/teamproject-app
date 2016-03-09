@@ -14,7 +14,6 @@ public class TubeStation extends Node<TubeStation> {
     private int index;
 
     public TubeStation(String name, String id, double x, double y, int index) {
-        super(null);
         contents = this;
 
         this.name = name;

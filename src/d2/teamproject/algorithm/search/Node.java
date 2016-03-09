@@ -17,12 +17,14 @@ public class Node<E> {
      */
     protected E contents;
 
-    /**
-     * Creates a new Node with a contents
-     * @param contents Object for the Node to represent
-     */
     public Node(E contents) {
         this.contents = contents;
+        this.successors = new LinkedList<>();
+    }
+    /**
+     * Creates a new Node with a contents
+     */
+    protected Node() {
         this.successors = new LinkedList<>();
     }
 
