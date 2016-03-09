@@ -26,14 +26,12 @@ public class InstructionSet {
 
     public Instruction getNext() {
         //get the next element in the array
-        tracker++;
-        return set.get(tracker + 1);
+        return set.get(tracker++);
     }
 
     public Instruction getPrev() {
         //get the previous element in the array
-        tracker--;
-        return set.get(tracker - 1);
+        return set.get(tracker--);
     }
 
     public int count() {
