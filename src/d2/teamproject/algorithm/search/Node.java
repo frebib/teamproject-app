@@ -39,7 +39,7 @@ public class Node<E> {
     }
 
     /**
-     * Gets a {@link Collection} of all successors
+     * Gets a {@link List} of all successors
      * @return The successors to the {@link Node}
      */
     public List<Node<E>> getSuccessors() {
