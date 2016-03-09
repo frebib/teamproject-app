@@ -29,7 +29,7 @@ public class PlanetRenderer {
         model.setTranslateX(leftOffset + radius);
         Sphere sphere = new Sphere(radius);
 
-        float rotTime = 32 * planet.getRotationTime();
+        float rotTime = 10 * planet.getRotationTime();
         axisRotation = new RotateTransition(Duration.seconds(Math.abs(rotTime)), sphere);
         axisRotation.setAxis(Rotate.Y_AXIS);
         // TODO: Some planets spin in the wrong direction
