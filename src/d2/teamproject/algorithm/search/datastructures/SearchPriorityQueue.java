@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * Stores a {@code Collection} of items in a PriorityQueue {@link BaseDataStructure}
+ * Stores a {@code Collection} of items in a PriorityQueue {@link SearchCollection}
  * @param <E> @inheritDoc
  */
-public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseDataStructure<E> {
+public class SearchPriorityQueue<E> extends PriorityQueue<E> implements SearchCollection<E> {
     public SearchPriorityQueue(Comparator<E> comparator) {
         super(comparator);
     }
@@ -22,7 +22,7 @@ public class SearchPriorityQueue<E> extends PriorityQueue<E> implements BaseData
     }
 
     @Override
-    public BaseDataStructure<E> copy() {
+    public SearchCollection<E> copy() {
         return new SearchPriorityQueue<>(this);
     }
 }

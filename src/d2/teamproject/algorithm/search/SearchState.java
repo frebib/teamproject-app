@@ -1,6 +1,6 @@
 package d2.teamproject.algorithm.search;
 
-import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
+import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 
 import java.util.HashSet;
 import java.util.List;
@@ -13,11 +13,11 @@ import java.util.Set;
  */
 public class SearchState<E> {
     private boolean isComplete = false;
-    private final BaseDataStructure<E> frontier;
+    private final SearchCollection<E> frontier;
     private final Set<E> visited;
     private final List<E> path;
 
-    public SearchState(BaseDataStructure<E> frontier, Set<E> visited, List<E> path) {
+    public SearchState(SearchCollection<E> frontier, Set<E> visited, List<E> path) {
         this.frontier = frontier.copy();
         this.visited = new HashSet<>(visited);
         this.path = path;
@@ -32,9 +32,9 @@ public class SearchState<E> {
     }
 
     /**
-     * Gets the frontier {@link BaseDataStructure} from the search
+     * Gets the frontier {@link SearchCollection} from the search
      */
-    public BaseDataStructure<E> getFrontier() {
+    public SearchCollection<E> getFrontier() {
         return frontier;
     }
 

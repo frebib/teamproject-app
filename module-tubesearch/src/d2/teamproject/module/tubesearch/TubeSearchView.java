@@ -4,8 +4,7 @@ import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
-import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
-import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
+import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import javafx.animation.FillTransition;
@@ -22,7 +21,6 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -259,7 +257,7 @@ public class TubeSearchView extends VisualisationView {
         return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
     }
 
-    private void animateFrontier(BaseDataStructure<Node<TubeStation>> fStations) {
+    private void animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
         for(Node<TubeStation> s : fStations)
             frontierTransitions.get(s.getContents().getIndex()).play();
     }

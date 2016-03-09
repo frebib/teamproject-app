@@ -1,7 +1,7 @@
 package d2.teamproject.algorithm.search;
 
 import d2.teamproject.algorithm.AlgoStream;
-import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
+import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -10,14 +10,14 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     private Node<E> start, goal;
     private BiFunction<E, E, Double> costFn, heuristicFn;
 
-    private BaseDataStructure<Node<E>> frontier;
+    private SearchCollection<Node<E>> frontier;
     private final Set<Node<E>> visited;
     private final Map<Node<E>, Node<E>> successors;
     private final Map<Node<E>, Double> costMap, heuristicMap;
 
     private final List<SearchState<Node<E>>> allStates;
 
-    public SearchStream(BaseDataStructure<Node<E>> frontier, Node<E> start, Node<E> goal) {
+    public SearchStream(SearchCollection<Node<E>> frontier, Node<E> start, Node<E> goal) {
         this.start = start;
         this.goal = goal;
 
@@ -30,7 +30,7 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
         this.allStates = new ArrayList<>();
     }
 
-    protected SearchStream<E> setFrontier(BaseDataStructure<Node<E>> frontier) {
+    protected SearchStream<E> setFrontier(SearchCollection<Node<E>> frontier) {
         this.frontier = frontier;
         return this;
     }

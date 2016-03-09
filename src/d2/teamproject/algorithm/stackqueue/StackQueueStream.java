@@ -1,13 +1,13 @@
 package d2.teamproject.algorithm.stackqueue;
 
 import d2.teamproject.algorithm.AlgoStream;
-import d2.teamproject.algorithm.search.datastructures.BaseDataStructure;
+import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Deprecated
-public class StackQueueStream<T, L extends BaseDataStructure<T>> implements
+public class StackQueueStream<T, L extends SearchCollection<T>> implements
         AlgoStream<L> {
     // TODO: Remove unused & deprecated classes
 

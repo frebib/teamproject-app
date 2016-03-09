@@ -5,13 +5,13 @@ import java.util.Collection;
 
 /**
  * Stores a {@code Collection} of items in a Stack
- * {@link BaseDataStructure}
+ * {@link SearchCollection}
  * The implementation actually uses a {@link java.util.ArrayDeque} in place of a
  * {@link java.util.Stack}
  * @param <E>
  * @inheritDoc
  */
-public class SearchStack<E> extends ArrayDeque<E> implements BaseDataStructure<E> {
+public class SearchStack<E> extends ArrayDeque<E> implements SearchCollection<E> {
     public SearchStack(Collection<? extends E> c) {
         super(c);
     }
@@ -28,7 +28,7 @@ public class SearchStack<E> extends ArrayDeque<E> implements BaseDataStructure<E
     }
 
     @Override
-    public BaseDataStructure<E> copy() {
+    public SearchCollection<E> copy() {
         SearchStack<E> temp = new SearchStack<E>(this);
         SearchStack<E> temp2 = new SearchStack<E>(this);
         temp.clear();
