@@ -37,7 +37,7 @@ public class BubbleSortStream<E extends Comparable<E>> implements AlgoStream<Sor
 		states = new ArrayList<>();
 	}
 
-	public List<E> sort(List<E> items) {
+	private List<E> sort(List<E> items) {
 		for (int i = 0; i < items.size() - 1; i++) {
 			for (int k = items.size() - 1; k > i; k--) {
 				swap = items.get(i).compareTo(items.get(k)) > 0;
