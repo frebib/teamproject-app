@@ -9,14 +9,13 @@ import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.module.planets.gfx.PlanetSort;
+import d2.teamproject.tutorial.Tutorial;
 import javafx.scene.image.Image;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -30,6 +29,7 @@ public class PlanetController extends JsonController {
     // TODO: Allow for all types of sort, not just QS
     private QuickSortStream<Planet> sort;
     private List<Planet> planets;
+    private Tutorial tutorial;
 
     private Comparator<Planet> planetCompare;
 
@@ -57,6 +57,10 @@ public class PlanetController extends JsonController {
         return planets;
     }
 
+    public Tutorial getTutorial() {
+        return tutorial;
+    }
+
     public QuickSortStream<Planet> getSorter() {
         return sort;
     }
@@ -69,6 +73,9 @@ public class PlanetController extends JsonController {
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
+
+        // Load help JSON
+        tutorial = new Tutorial((JsonArray) res.get("help"));
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
