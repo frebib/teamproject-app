@@ -1,5 +1,6 @@
 package d2.teamproject.module.planets;
 
+import com.eclipsesource.json.JsonArray;
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.ListSortState;
@@ -9,9 +10,13 @@ import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.planets.gfx.SolarSystem;
 import javafx.animation.Transition;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 import java.util.Map;
 
@@ -32,12 +37,26 @@ public class PlanetView extends VisualisationView {
     private SolarSystem sSystem;
     protected Transition current;
     private AnimState animState = AnimState.NOTHING;
+    public JsonArray helpArray;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
 
-        topBox.setPrefHeight(PARTH.HEIGHT * 0.1);
-        bottomBox.setPrefHeight(PARTH.HEIGHT * 0.15);
+        topBox.setPrefHeight(PARTH.HEIGHT * 0.08);
+        bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2);
+
+        addTutorial(controller,bottomBox);
+    }
+
+    public void addTutorial(PlanetController controller,HBox bottomBox){
+//        bottomBox.setStyle("-fx-background-color: red");
+        bottomBox.setSpacing(200.0);
+        bottomBox.setAlignment(Pos.CENTER);
+
+//        Text text = new Text(controller.getTutorial().getCurrent().getTitle());
+        Text text = new Text("Test");
+        text.setFont(new Font(30));
+        bottomBox.getChildren().add(text);
     }
 
     public BaseController getController() {
@@ -47,6 +66,8 @@ public class PlanetView extends VisualisationView {
     public Pane getPane() {
         return contentBox;
     }
+
+    public JsonArray getHelp() { return  helpArray;}
 
     public Parent getWindow() {
         return frontPane.getParent();
