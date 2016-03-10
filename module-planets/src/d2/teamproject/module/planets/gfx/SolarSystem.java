@@ -36,6 +36,8 @@ public class SolarSystem {
     private final Map<Planet, PlanetRenderer> rendererMap;
     private List<PlanetRenderer> planetRenderers;
     private float cumulativeDist = 0;
+    private final Point3D initCameraAxis, initCameraTrans;
+    private final double initCameraRot = 42;
 
     private Planet zoomed;
     private List<PlanetRenderer> unFocused;
@@ -68,11 +70,13 @@ public class SolarSystem {
         camera.setFarClip(100000);
         camera.setFieldOfView(30);
 
-        camera.setTranslateX(1150);
-        camera.setTranslateY(-350);
-        camera.setTranslateZ(-600);
-        camera.setRotationAxis(new Point3D(-0.28, -0.32, 0.00));
-        camera.setRotate(42);
+        initCameraAxis = new Point3D(-0.28, -0.32, 0.00);
+        initCameraTrans = new Point3D(1150, -350, -600);
+        camera.setTranslateX(initCameraTrans.getX());
+        camera.setTranslateY(initCameraTrans.getY());
+        camera.setTranslateZ(initCameraTrans.getZ());
+        camera.setRotationAxis(initCameraAxis);
+        camera.setRotate(initCameraRot);
 
         root.getChildren().add(camera);
         root.getChildren().addAll(planetRenderers.stream()
@@ -98,23 +102,33 @@ public class SolarSystem {
      * Moves a camera close to a planet position, giving a zoom in effect
      * @return A transition to be played
      */
-    private TranslateTransition zoomIn(PlanetRenderer renderer) {
+    private Transition zoomIn(PlanetRenderer renderer) {
         TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
         double onX = renderer.getModel().getLocalToSceneTransform().getTx();
-        tt.setToZ(1000 - (renderer.getRadius() * 4.5));
-        tt.setToX(-635 + onX);
-        return tt;
+        tt.setToX(onX);
+        tt.setToY(0);
+        tt.setToZ(-(renderer.getRadius() * 4.5));
+
+        RotateTransition rt = new RotateTransition(Duration.seconds(1.2), camera);
+        rt.setAxis(camera.getRotationAxis());
+        rt.setToAngle(0);
+        return new ParallelTransition(tt, rt);
     }
 
     /**
      * Returns a camera to its original position
      * @return A transition to be played
      */
-    private TranslateTransition zoomOut() {
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(1), camera);
-        tt.setToZ(0);
-        tt.setToX(0);
-        return tt;
+    private Transition zoomOut() {
+        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
+        tt.setToX(initCameraTrans.getX());
+        tt.setToY(initCameraTrans.getY());
+        tt.setToZ(initCameraTrans.getZ());
+
+        RotateTransition rt = new RotateTransition(Duration.seconds(1.2), camera);
+        rt.setAxis(initCameraAxis);
+        rt.setToAngle(initCameraRot);
+        return new ParallelTransition(tt, rt);
     }
 
     /**
