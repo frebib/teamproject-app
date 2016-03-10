@@ -9,6 +9,8 @@ import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.planets.gfx.SolarSystem;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
 import javafx.animation.Transition;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -17,6 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.util.Map;
 
@@ -101,6 +104,7 @@ public class PlanetView extends VisualisationView {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;
             current = sSystem.transitionCompare(csstate, false);
+            current = new SequentialTransition(current, new PauseTransition(new Duration(150)));
             current.setOnFinished(e -> {
                 if (csstate.isSwap()) {
                     animState = AnimState.SWAPPING;
