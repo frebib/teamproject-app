@@ -60,11 +60,9 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         while (i < j) {
             // Compare either side of pivot and count towards pivot
             while (comparator.compare(list.get(i), pivotElem) < 0)
-                if (++i != pivot)
-                    states.add(new CompareSortState<>(lastListState, pivot, min, max, i, pivot, false));
+                    states.add(new CompareSortState<>(lastListState, pivot, min, max, i++, pivot, false));
             while (comparator.compare(list.get(j), pivotElem) > 0)
-                if (--j != pivot)
-                    states.add(new CompareSortState<>(lastListState, pivot, min, max, j, pivot, false));
+                    states.add(new CompareSortState<>(lastListState, pivot, min, max, j--, pivot, false));
 
             // If the counters have passed each
             // other, we can't swap any more
