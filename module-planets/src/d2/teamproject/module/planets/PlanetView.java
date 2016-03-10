@@ -47,19 +47,10 @@ public class PlanetView extends VisualisationView {
 
         topBox.setPrefHeight(PARTH.HEIGHT * 0.08);
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2);
-
-        addTutorial(controller,bottomBox);
     }
 
     public void addTutorial(PlanetController controller,HBox bottomBox){
-//        bottomBox.setStyle("-fx-background-color: red");
-        bottomBox.setSpacing(200.0);
-        bottomBox.setAlignment(Pos.CENTER);
 
-//        Text text = new Text(controller.getTutorial().getCurrent().getTitle());
-        Text text = new Text("Test");
-        text.setFont(new Font(30));
-        bottomBox.getChildren().add(text);
     }
 
     public BaseController getController() {
@@ -87,6 +78,16 @@ public class PlanetView extends VisualisationView {
         // Load skybox image
         skybox = (Image) res.get("skybox");
         System.out.println("skybox loaded");
+
+        bottomBox.setStyle("-fx-background-color: red");
+        bottomBox.setSpacing(200.0);
+        bottomBox.setAlignment(Pos.CENTER);
+
+        Text text = new Text(controller.getTutorial().getInstruction("check").getTitle());
+        text.setFont(new Font(30));
+
+        bottomBox.getChildren().addAll(text);
+
     }
 
     public void updateState(SortState<Planet> state) {
