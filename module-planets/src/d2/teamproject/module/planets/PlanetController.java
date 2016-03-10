@@ -24,12 +24,12 @@ import static d2.teamproject.PARTH.LOG;
 public class PlanetController extends JsonController {
 
 
-    private PlanetView view;
+    private final PlanetView view;
 
     // TODO: Allow for all types of sort, not just QS
     private QuickSortStream<Planet> sort;
     private List<Planet> planets;
-    private Tutorial tutorial;
+    private Map<String, Tutorial> tutorials;
 
     private Comparator<Planet> planetCompare;
 
@@ -57,8 +57,8 @@ public class PlanetController extends JsonController {
         return planets;
     }
 
-    public Tutorial getTutorial() {
-        return tutorial;
+    public Tutorial getTutorial(String key) {
+        return tutorials.get(key);
     }
 
     public QuickSortStream<Planet> getSorter() {
@@ -74,8 +74,11 @@ public class PlanetController extends JsonController {
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
 
-        // Load help JSON
-        tutorial = new Tutorial((JsonArray) res.get("help"));
+        // Load Tutorial JSONs
+        tutorials = new LinkedHashMap<>();
+
+        Tutorial bubbleSortT = new Tutorial((JsonArray) res.get("help"));
+        tutorials.put("bubblesort", bubbleSortT);
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
