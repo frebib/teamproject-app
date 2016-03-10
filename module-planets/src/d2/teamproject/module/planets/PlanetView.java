@@ -1,6 +1,5 @@
 package d2.teamproject.module.planets;
 
-import com.eclipsesource.json.JsonArray;
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.ListSortState;
@@ -9,16 +8,17 @@ import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.module.planets.gfx.SolarSystem;
+import d2.teamproject.tutorial.Tutorial;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Transition;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 
 import java.util.Map;
@@ -34,23 +34,26 @@ public class PlanetView extends VisualisationView {
         ZOOMED
     }
 
-    private PlanetController controller;
+    private final PlanetController controller;
 
     private Image skybox;
     private SolarSystem sSystem;
-    protected Transition current;
+    private Transition current;
     private AnimState animState = AnimState.NOTHING;
-    public JsonArray helpArray;
+    private final TextFlow tutorialText;
+    private final Text tutorialTitle;
+    private final Text tutorialDesc;
+    private final String tutorialType = "bubblesort"; // Take this in when switching sorts
+    private Tutorial tutorial;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
+        tutorialText = new TextFlow();
+        tutorialTitle = new Text();
+        tutorialDesc = new Text();
 
         topBox.setPrefHeight(PARTH.HEIGHT * 0.08);
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2);
-    }
-
-    public void addTutorial(PlanetController controller,HBox bottomBox){
-
     }
 
     public BaseController getController() {
@@ -60,8 +63,6 @@ public class PlanetView extends VisualisationView {
     public Pane getPane() {
         return contentBox;
     }
-
-    public JsonArray getHelp() { return  helpArray;}
 
     public Parent getWindow() {
         return frontPane.getParent();
@@ -78,16 +79,26 @@ public class PlanetView extends VisualisationView {
         // Load skybox image
         skybox = (Image) res.get("skybox");
         System.out.println("skybox loaded");
-
-        bottomBox.setStyle("-fx-background-color: red");
+        // Load tutorial
+        tutorial = controller.getTutorial(tutorialType);
+        // Set spacing and alignment
         bottomBox.setSpacing(200.0);
         bottomBox.setAlignment(Pos.CENTER);
+        // Set the font size
+        tutorialTitle.setFont(new Font(25));
+        tutorialDesc.setFont(new Font(15));
+        // Set the text to initial step
+        updateText("check");
+        // Set  test wrapping width
+        tutorialText.setMaxWidth(500);
 
-        Text text = new Text(controller.getTutorial().getInstruction("check").getTitle());
-        text.setFont(new Font(30));
+        tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
+        bottomBox.getChildren().addAll(tutorialText);
+    }
 
-        bottomBox.getChildren().addAll(text);
-
+    private void updateText(String key){
+        tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
+        tutorialDesc.setText("\n"+tutorial.getInstruction(key).getDesc());
     }
 
     public void updateState(SortState<Planet> state) {
@@ -102,12 +113,14 @@ public class PlanetView extends VisualisationView {
 
         LOG.finer("SortState=%s", state);
         if (state instanceof CompareSortState) {
+            updateText("compare");
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;
             current = sSystem.transitionCompare(csstate, false);
             current = new SequentialTransition(current, new PauseTransition(new Duration(150)));
             current.setOnFinished(e -> {
                 if (csstate.isSwap()) {
+                    updateText("swap");
                     animState = AnimState.SWAPPING;
                     current = sSystem.makeSwapTransition(csstate);
                     current.setOnFinished(ev -> {
@@ -125,6 +138,7 @@ public class PlanetView extends VisualisationView {
                 } else {
                     // Reversing the animation doesn't work
                     // properly, it's likely a bug in the JDK
+                    updateText("notSwap");
                     current = sSystem.transitionCompare(csstate, true);
                     current.setOnFinished(ev -> animState = AnimState.NOTHING);
                     current.playFromStart();
