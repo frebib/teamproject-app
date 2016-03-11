@@ -82,7 +82,7 @@ public class MainMenuView {
             // Use default stylesheets if none are specified
             if (controller instanceof JsonController && !((JsonController) controller).hasStyles()) {
                 scene.getStylesheets().clear();
-                scene.getStylesheets().add(PARTH.getInstance().getStyles());
+//                scene.getStylesheets().addAll(PARTH.getInstance().getStyles());
             }
             stage.setScene(scene);
         });

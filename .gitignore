@@ -1,6 +1,7 @@
 .gitusers
 
 out/
+dist/
 bin/
 res/module/
 .idea/

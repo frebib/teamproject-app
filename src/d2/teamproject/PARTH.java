@@ -6,12 +6,13 @@ import d2.teamproject.util.Log;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 
 public class PARTH extends Application {
     public static final double WIDTH = 1280;
     public static final double HEIGHT = 720;
-    public static final String CSSFILE = "../../material-fx-v0_3.css";
+    public static final String CSSFILE = "../../style/material-fx-v0_3.css";
 
     public static final Log LOG = new Log("Parth", Level.FINEST);
 
@@ -22,7 +23,10 @@ public class PARTH extends Application {
 
     public PARTH() {
         instance = this;
-        styles = getClass().getResource(PARTH.CSSFILE).toExternalForm();
+        styles = CSSFILE;
+//        styles = new Scanner(PARTH.class.getResourceAsStream(PARTH.CSSFILE), "UTF-8")
+//                .useDelimiter("\\A")
+//                .next();
     }
 
     @Override

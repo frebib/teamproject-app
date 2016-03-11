@@ -7,7 +7,10 @@ import javafx.scene.image.Image;
 import org.xeustechnologies.jcl.JarClassLoader;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.zip.ZipInputStream;
 
 import static d2.teamproject.PARTH.LOG;
@@ -35,6 +38,38 @@ public class ModuleLoader {
         new Thread(() -> {
             // List all directories which have a 'visualisations.json' file
             File moduleDir = new File(MODULE_PATH);
+
+            // TODO: Change to extract all resources from JAR
+            // If no modules, extract the default ones from the JAR
+            if (!moduleDir.exists() || moduleDir.list() == null) {
+                try {
+                    moduleDir.mkdirs();
+
+                    File jarFile = new File(getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
+                    if (!jarFile.isFile())
+                        return;
+
+                    JarFile jar = new JarFile(jarFile);
+                    Enumeration<JarEntry> modules = jar.entries();
+
+                    while (modules.hasMoreElements()) {
+                        JarEntry entry = modules.nextElement();
+                        String name = entry.getName();
+
+                        // Ensure the file is a module
+                        if (!name.matches(MODULE_PATH + "(.*)\\.vism"))
+                            continue;
+
+                        // Write the resource to file
+                        File f = new File(entry.getName());
+                        InputStream is = getClass().getClassLoader().getResourceAsStream(name);
+                        Files.copy(is, f.toPath());
+                    }
+                    jar.close();
+                } catch (Exception e) {
+                    LOG.exception(e);
+                }
+            }
             File[] files = moduleDir.listFiles((f, n) -> n.endsWith(".vism"));
 
             for (int i = 0; i < files.length; i++) {
