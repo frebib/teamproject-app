@@ -20,6 +20,9 @@
             <src path="src"/>
             <classpath refid="libraries"/>
         </javac>
+        <copy todir="out/production">
+            <fileset dir="res" excludes="module/**"/>
+        </copy>
     </target>
 
     <target name="planets" depends="compile">
@@ -56,5 +59,7 @@
         <delete dir="module-tubesearch/out"/>
     </target>
 
-    <target name="all" depends="clean,compile,planets,tubesearch"/>
+    <target name="allmodules" depends="compile,planets,tubesearch"/>
+
+    <target name="all" depends="clean,compile,allmodules"/>
 </project>

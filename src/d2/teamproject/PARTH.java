@@ -11,15 +11,18 @@ import java.util.logging.Level;
 public class PARTH extends Application {
     public static final double WIDTH = 1280;
     public static final double HEIGHT = 720;
+    public static final String CSSFILE = "../../material-fx-v0_3.css";
 
     public static final Log LOG = new Log("Parth", Level.FINEST);
 
     private static PARTH instance;
 
     private MainMenuView menu;
+    private String styles;
 
     public PARTH() {
         instance = this;
+        styles = getClass().getResource(PARTH.CSSFILE).toExternalForm();
     }
 
     @Override
@@ -49,6 +52,10 @@ public class PARTH extends Application {
 
     public MainMenuView getMenu() {
         return menu;
+    }
+
+    public String getStyles() {
+        return styles;
     }
 
     public static PARTH getInstance() {

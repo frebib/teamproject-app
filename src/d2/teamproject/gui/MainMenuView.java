@@ -2,6 +2,7 @@ package d2.teamproject.gui;
 
 import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseController;
+import d2.teamproject.module.JsonController;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.effect.BoxBlur;
@@ -77,7 +78,13 @@ public class MainMenuView {
         });
         sp.setOnMousePressed(e -> {
             controller.onOpen();
-            stage.setScene(controller.getView().getScene());
+            Scene scene = controller.getView().getScene();
+            // Use default stylesheets if none are specified
+            if (controller instanceof JsonController && !((JsonController) controller).hasStyles()) {
+                scene.getStylesheets().clear();
+                scene.getStylesheets().add(PARTH.getInstance().getStyles());
+            }
+            stage.setScene(scene);
         });
         return sp;
     }
