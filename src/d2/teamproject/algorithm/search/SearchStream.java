@@ -124,6 +124,7 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     }
     @Override
     public List<SearchState<Node<E>>> getAll() {
+        while(hasNext()) genNextState();
         return allStates;
     }
 
