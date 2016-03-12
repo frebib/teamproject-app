@@ -26,17 +26,19 @@ import java.util.Map;
 import static d2.teamproject.PARTH.LOG;
 
 public class PlanetView extends VisualisationView {
+
+
     public enum AnimState {
         NOTHING,
         COMPARING,
         SWAPPING,
         ZOOMING,
-        ZOOMED
+        ZOOMED;
     }
-
     private final PlanetController controller;
 
     private Image skybox;
+
     private SolarSystem sSystem;
     private Transition current;
     private AnimState animState = AnimState.NOTHING;
@@ -45,12 +47,14 @@ public class PlanetView extends VisualisationView {
     private final Text tutorialDesc;
     private final String tutorialType = "bubblesort"; // Take this in when switching sorts
     private Tutorial tutorial;
+    private boolean tutorialMode;
 
     public PlanetView(PlanetController controller) {
         this.controller = controller;
         tutorialText = new TextFlow();
         tutorialTitle = new Text();
         tutorialDesc = new Text();
+        tutorialMode = false;
 
         topBox.setPrefHeight(PARTH.HEIGHT * 0.08);
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2);
@@ -93,6 +97,7 @@ public class PlanetView extends VisualisationView {
         tutorialText.setMaxWidth(500);
 
         tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
+        tutorialText.setVisible(tutorialMode);
         bottomBox.getChildren().addAll(tutorialText);
     }
 
@@ -102,6 +107,7 @@ public class PlanetView extends VisualisationView {
     }
 
     public void updateState(SortState<Planet> state) {
+        double duration = 150.0;
         if (state == null) return;
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
         // TODO: Fix planet zooming
@@ -117,7 +123,8 @@ public class PlanetView extends VisualisationView {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;
             current = sSystem.transitionCompare(csstate, false);
-            current = new SequentialTransition(current, new PauseTransition(new Duration(150)));
+            if(tutorialMode) duration = 3000;
+            current = new SequentialTransition(current, new PauseTransition(new Duration(duration)));
             current.setOnFinished(e -> {
                 if (csstate.isSwap()) {
                     updateText("swap");
@@ -134,6 +141,7 @@ public class PlanetView extends VisualisationView {
                             sSystem.setPlanetOrder(nState.getList());
                         });
                     });
+
                     current.playFromStart();
                 } else {
                     // Reversing the animation doesn't work
