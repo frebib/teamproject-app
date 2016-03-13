@@ -9,7 +9,9 @@ import javafx.scene.text.TextFlow;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
+/**
+ * @author Parth Chandratreya
+ */
 public class Tutorial extends InstructionSet {
 
     public StackPane TutorialPane = new StackPane();

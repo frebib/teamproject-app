@@ -25,6 +25,9 @@ import java.util.*;
 import java.util.List;
 import java.util.function.BiFunction;
 
+/**
+ * @author Parth Chandratreya
+ */
 public class TubeSearchView extends VisualisationView {
     private TubeSearchController controller;
 

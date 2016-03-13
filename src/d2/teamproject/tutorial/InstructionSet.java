@@ -6,6 +6,9 @@ import com.eclipsesource.json.JsonValue;
 
 import java.util.ArrayList;
 
+/**
+ * @author Parth Chandratreya
+ */
 public class InstructionSet {
     private ArrayList<Instruction> set;
     private int tracker;

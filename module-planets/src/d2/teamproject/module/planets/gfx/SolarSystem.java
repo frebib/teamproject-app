@@ -23,6 +23,9 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+/**
+ * @author Parth Chandratreya
+ */
 public class SolarSystem {
     private static final Duration COMPARE_ANIM_TIME = new Duration(300);
     private static final Duration SWAP_ANIM_TIME = new Duration(500);

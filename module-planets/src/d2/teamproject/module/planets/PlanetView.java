@@ -25,6 +25,9 @@ import java.util.Map;
 
 import static d2.teamproject.PARTH.LOG;
 
+/**
+ * @author Parth Chandratreya
+ */
 public class PlanetView extends VisualisationView {
 
 

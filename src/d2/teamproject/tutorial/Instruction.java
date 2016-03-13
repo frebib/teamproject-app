@@ -2,6 +2,9 @@ package d2.teamproject.tutorial;
 
 import java.util.ArrayList;
 
+/**
+ * @author Parth Chandratreya
+ */
 public class Instruction {
     private String key;
     private String title;
