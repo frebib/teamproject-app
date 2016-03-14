@@ -19,8 +19,12 @@
       "file": "skybox.jpg",
       "type": "Image"
     },
-    "help": {
-      "file": "help.json",
+    "bubblesortT": {
+      "file": "bubblesortTutorial.json",
+      "type": "JsonArray"
+    },
+    "quicksortT": {
+      "file": "quicksortTutorial.json",
       "type": "JsonArray"
     }
   }
