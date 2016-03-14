@@ -25,8 +25,6 @@ import static d2.teamproject.PARTH.LOG;
  * @author Parth Chandratreya
  */
 public class PlanetController extends JsonController {
-
-
     private final PlanetView view;
 
     // TODO: Allow for all types of sort, not just QS
@@ -52,22 +50,6 @@ public class PlanetController extends JsonController {
         view.onOpen();
     }
 
-    public void handleNextState(Consumer<SortState<Planet>> fn) {
-        fn.accept(sort.getNext());
-    }
-
-    public List<Planet> getPlanets() {
-        return planets;
-    }
-
-    public Tutorial getTutorial(String key) {
-        return tutorials.get(key);
-    }
-
-    public QuickSortStream<Planet> getSorter() {
-        return sort;
-    }
-
     @Override
     public BaseView getView() {
         return view;
@@ -79,9 +61,10 @@ public class PlanetController extends JsonController {
 
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
-
-        Tutorial bubbleSortT = new Tutorial((JsonArray) res.get("help"));
+        Tutorial bubbleSortT = new Tutorial((JsonArray) res.get("bubblesortT"));
         tutorials.put("bubblesort", bubbleSortT);
+        Tutorial quicksortT = new Tutorial((JsonArray) res.get("quicksortT"));
+        tutorials.put("quicksort", quicksortT);
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
@@ -112,5 +95,21 @@ public class PlanetController extends JsonController {
 
         // Load GUI resources
         view.loadResources(res);
+    }
+
+    public void handleNextState(Consumer<SortState<Planet>> fn) {
+        fn.accept(sort.getNext());
+    }
+
+    public List<Planet> getPlanets() {
+        return planets;
+    }
+
+    public Tutorial getTutorial(String key) {
+        return tutorials.get(key);
+    }
+
+    public QuickSortStream<Planet> getSorter() {
+        return sort;
     }
 }
