@@ -6,6 +6,7 @@ import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
+import d2.teamproject.tutorial.Tutorial;
 
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -15,6 +16,10 @@ import java.util.logging.Level;
 
 import static d2.teamproject.PARTH.LOG;
 
+/**
+ * @author Parth Chandratreya
+ */
+
 public class TubeSearchController extends JsonController {
 //    private TubeSearchView view;
     private TubeMapView view;
@@ -22,6 +27,7 @@ public class TubeSearchController extends JsonController {
     private Map<String, TubeStation> stationMap;
     private Map<String, TubeLine> lineMap;
     private Set<TubeConnection> links;
+    private Map<String, Tutorial> tutorials;
 
     public TubeSearchController() {
         view = new TubeMapView(this);
@@ -38,9 +44,21 @@ public class TubeSearchController extends JsonController {
     }
 
     @Override
+    public BaseView getView() {
+        return view;
+    }
+
+    @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
 
+        // Load Tutorial JSONs
+        tutorials = new LinkedHashMap<>();
+        //TODO: Rename file or have multiple arrays
+        Tutorial searchT = new Tutorial((JsonArray) res.get("help"));
+        tutorials.put("search", searchT);
+
+        // Load tube map JSONs
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
         JsonArray stationinfo = tubemapinfo.get("stations").asArray();
         JsonArray lineinfo = tubemapinfo.get("lines").asArray();
@@ -84,8 +102,14 @@ public class TubeSearchController extends JsonController {
                 links.add(new TubeConnection(from, to, line));
             });
         });
+
+        view.loadResources(res);
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
+    }
+
+    public Tutorial getTutorial(String key) {
+        return tutorials.get(key);
     }
 
     public Map<String, TubeStation> getStationMap() {
@@ -98,10 +122,5 @@ public class TubeSearchController extends JsonController {
 
     public Set<TubeConnection> getLinks() {
         return links;
-    }
-
-    @Override
-    public BaseView getView() {
-        return view;
     }
 }
