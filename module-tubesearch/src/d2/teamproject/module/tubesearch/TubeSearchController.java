@@ -16,14 +16,15 @@ import java.util.logging.Level;
 import static d2.teamproject.PARTH.LOG;
 
 public class TubeSearchController extends JsonController {
-    private TubeSearchView view;
+//    private TubeSearchView view;
+    private TubeMapView view;
 
     private Map<String, TubeStation> stationMap;
     private Map<String, TubeLine> lineMap;
     private Set<TubeConnection> links;
 
     public TubeSearchController() {
-        view = new TubeSearchView(this);
+        view = new TubeMapView(this);
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
@@ -33,7 +34,7 @@ public class TubeSearchController extends JsonController {
 
     @Override
     public void onOpen() {
-        view.initialise();
+        view.onOpen();
     }
 
     @Override
