@@ -12,8 +12,7 @@ import java.util.stream.Collectors;
  * @author Otonye
  * @class BubbleSortStream
  */
-
-public class BubbleSortStream<E extends Comparable<E>> implements AlgoStream<SortState<E>> {
+public class BubbleSortStream<E> implements AlgoStream<SortState<E>> {
 	private List<E> list;
 	private Comparator<E> comparator;
 
@@ -40,7 +39,7 @@ public class BubbleSortStream<E extends Comparable<E>> implements AlgoStream<Sor
 	private List<E> sort(List<E> items) {
 		for (int i = 0; i < items.size() - 1; i++) {
 			for (int k = items.size() - 1; k > i; k--) {
-				swap = items.get(i).compareTo(items.get(k)) > 0;
+				swap = comparator.compare(items.get(i), items.get(k)) > 0;
 				if (swap) {
 					E store = items.get(i);
 					items.set(i, items.get(k));
