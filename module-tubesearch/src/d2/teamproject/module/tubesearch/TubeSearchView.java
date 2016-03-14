@@ -13,7 +13,7 @@ import javafx.animation.SequentialTransition;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
-import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -21,35 +21,38 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.util.Duration;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.function.BiFunction;
 
 /**
  * @author Parth Chandratreya
  */
 public class TubeSearchView extends VisualisationView {
-    private TubeSearchController controller;
 
-    private Scene scene;
+    private TubeSearchController controller;
+    private SubScene scene;
     private Group root;
     private PerspectiveCamera camera;
     private Double initialCameraXPosition;
     private ArrayList<SequentialTransition> transitions;
     private ArrayList<FillTransition> currentTransitions;
     private ArrayList<FillTransition> frontierTransitions;
+    private double pageWidth;
+    private double pageHeight;
 
-    public TubeSearchView(TubeSearchController controller) {
+    public TubeSearchView(TubeSearchController controller, int width, int height) {
         this.controller = controller;
+        pageWidth = width;
+        pageHeight = height;
     }
 
     public void initialise() {
-        double pageWidth = 1000;
-        double pageHeight = 750;
         double coordOffsetX = pageWidth;
         double coordOffsetY = pageHeight;
         root = new Group();
-        scene = new Scene(root, pageWidth, pageHeight);
+        scene = new SubScene(root, pageWidth, pageHeight);
         Group lines = new Group();
         Group nodes = new Group();
         Set<TubeConnection> connections = controller.getLinks();
@@ -200,12 +203,9 @@ public class TubeSearchView extends VisualisationView {
             currentTransitions.add(ft);
             frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
-            if(x == 15)
-            {
+            if (x == 15) {
                 goal = conn;
-            }
-            else if(x == 0)
-            {
+            } else if (x == 0) {
                 start = conn;
             }
             x++;
@@ -235,12 +235,15 @@ public class TubeSearchView extends VisualisationView {
             animatePath(state.getVisited());
         }
 
-        initialCameraXPosition = -375.0;
+        initialCameraXPosition = 0.0;
         camera = new PerspectiveCamera();
         camera.setFieldOfView(40);
         camera.setTranslateX(initialCameraXPosition);
-        camera.setTranslateY(scene.getHeight() / -2);
+        camera.setTranslateY(0);
         camera.setRotationAxis(new Point3D(0, 1, 0));
+
+        scene.setCamera(camera);
+
     }
 
     public PathTransition dotTransition(Circle n, double x1, double y1, double x2, double y2, double time) {
@@ -275,8 +278,7 @@ public class TubeSearchView extends VisualisationView {
         return controller;
     }
 
-    @Override
-    public Scene getScene() {
+    public SubScene getSubScene() {
         return scene;
     }
 }
