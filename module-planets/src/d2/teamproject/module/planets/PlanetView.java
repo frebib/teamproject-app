@@ -52,6 +52,9 @@ public class PlanetView extends VisualisationView {
     private Tutorial tutorial;
     private boolean tutorialMode;
 
+    /**
+     * @param controller
+     */
     public PlanetView(PlanetController controller) {
         this.controller = controller;
         tutorialText = new TextFlow();
@@ -61,6 +64,35 @@ public class PlanetView extends VisualisationView {
 
         topBox.setPrefHeight(PARTH.HEIGHT * 0.08);
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2);
+    }
+
+    @Override
+    public void onOpen() {
+        sSystem = new SolarSystem(controller.getPlanets(), (int) PARTH.WIDTH, (int) (PARTH.HEIGHT * 0.75), skybox);
+        contentBox.getChildren().add(sSystem.getScene());
+    }
+
+    @Override
+    public void loadResources(Map<String, Object> res) {
+        // Load skybox image
+        skybox = (Image) res.get("skybox");
+        LOG.info("skybox loaded");
+        // Load tutorial
+        tutorial = controller.getTutorial(tutorialType);
+        // Set spacing and alignment
+        bottomBox.setSpacing(200.0);
+        bottomBox.setAlignment(Pos.CENTER);
+        // Set the font size
+        tutorialTitle.setFont(new Font(25));
+        tutorialDesc.setFont(new Font(15));
+        // Set the text to initial step
+        updateText("check");
+        // Set test wrapping width
+        tutorialText.setMaxWidth(500);
+
+        tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
+        tutorialText.setVisible(tutorialMode);
+        bottomBox.getChildren().addAll(tutorialText);
     }
 
     public BaseController getController() {
@@ -75,40 +107,17 @@ public class PlanetView extends VisualisationView {
         return frontPane.getParent();
     }
 
-    @Override
-    public void onOpen() {
-        sSystem = new SolarSystem(controller.getPlanets(), (int) PARTH.WIDTH, (int) (PARTH.HEIGHT * 0.75), skybox);
-        contentBox.getChildren().add(sSystem.getScene());
-    }
-
-    @Override
-    public void loadResources(Map<String, Object> res) {
-        // Load skybox image
-        skybox = (Image) res.get("skybox");
-        System.out.println("skybox loaded");
-        // Load tutorial
-        tutorial = controller.getTutorial(tutorialType);
-        // Set spacing and alignment
-        bottomBox.setSpacing(200.0);
-        bottomBox.setAlignment(Pos.CENTER);
-        // Set the font size
-        tutorialTitle.setFont(new Font(25));
-        tutorialDesc.setFont(new Font(15));
-        // Set the text to initial step
-        updateText("check");
-        // Set  test wrapping width
-        tutorialText.setMaxWidth(500);
-
-        tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
-        tutorialText.setVisible(tutorialMode);
-        bottomBox.getChildren().addAll(tutorialText);
-    }
-
+    /**
+     * @param key
+     */
     private void updateText(String key){
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
         tutorialDesc.setText("\n"+tutorial.getInstruction(key).getDesc());
     }
 
+    /**
+     * @param state
+     */
     public void updateState(SortState<Planet> state) {
         double duration = 150.0;
         if (state == null) return;
