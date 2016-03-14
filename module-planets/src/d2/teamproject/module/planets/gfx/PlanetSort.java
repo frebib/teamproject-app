@@ -23,19 +23,21 @@ public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
     }
 
     public static final PlanetSort<Float>
-            DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun),
-            ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime),
-            DIAMETER = new PlanetSort<>(Planet::getDiameter),
-            MASS = new PlanetSort<>(Planet::getMass);
+            DIST_TO_SUN = new PlanetSort<>(Planet::getDistToSun, "Distance to Sun"),
+            ROTATE_TIME = new PlanetSort<>(Planet::getRotationTime, "Rotation Time"),
+            DIAMETER = new PlanetSort<>(Planet::getDiameter, "Diameter"),
+            MASS = new PlanetSort<>(Planet::getMass, "Mass");
 
     private Function<Planet, T> fn;
+    private String description;
     private Dir dir;
 
-    private PlanetSort(Function<Planet, T> fn) {
-        this(fn, Dir.ASCENDING);
+    private PlanetSort(Function<Planet, T> fn, String description) {
+        this(fn, description, Dir.ASCENDING);
     }
-    private PlanetSort(Function<Planet, T> fn, Dir dir) {
+    private PlanetSort(Function<Planet, T> fn, String description, Dir dir) {
         this.fn = fn;
+        this.description = description;
         this.dir = dir;
     }
 
@@ -47,10 +49,12 @@ public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
         return dir.toString();
     }
     public PlanetSort<T> setAscending() {
-        return new PlanetSort<>(this.fn, Dir.ASCENDING);
+        return new PlanetSort<>(this.fn, this.description, Dir.ASCENDING);
     }
     public PlanetSort<T> setDescending() {
-        return new PlanetSort<>(this.fn, Dir.DESCENDING);
+        return new PlanetSort<>(this.fn, this.description, Dir.DESCENDING);
+    }
+    public String getDescription() {
+        return description;
     }
 }
-
