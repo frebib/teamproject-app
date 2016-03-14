@@ -10,7 +10,14 @@
     "stationinfo": {
       "file": "stationInformation.json",
       "type": "JsonObject"
+    },
+    "skybox": {
+      "file": "skybox.png",
+      "type": "Image"
+    },
+    "help": {
+      "file": "help.json",
+      "type": "JsonArray"
     }
-  },
-  "help": []
+  }
 }

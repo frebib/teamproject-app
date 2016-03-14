@@ -1,0 +1,20 @@
+[
+  {
+    "index": 0,
+    "title": "Tutorial Step Title",
+    "content": "This is an example for the tutorial text",
+    "key" : "step"
+  },
+  {
+    "index": 1,
+    "title": "Step 2",
+    "content": "Tube 3",
+    "key" : "steptwo"
+  },
+  {
+    "index": 2,
+    "title": "Step 3",
+    "content": "Tube 3",
+    "key" : "stepthree"
+  }
+]
