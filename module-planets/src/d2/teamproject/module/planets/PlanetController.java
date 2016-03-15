@@ -109,4 +109,7 @@ public class PlanetController extends JsonController {
     public SortStream<Planet> getSorter() {
         return sort;
     }
+    public void setSorter(SortStream<Planet> sort) {
+        this.sort = sort;
+    }
 }

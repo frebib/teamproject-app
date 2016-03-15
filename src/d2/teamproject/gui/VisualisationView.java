@@ -16,30 +16,24 @@ public abstract class VisualisationView implements BaseView {
     protected final BorderPane frontPane;
     protected final HBox topBox, bottomBox;
     protected final StackPane contentBox, backPane;
-    protected final Button backButton, helpButton;
+    protected final Button backButton;
 
     public VisualisationView() {
         backPane = new StackPane();
         frontPane = new BorderPane();
-        frontPane.setPadding(new Insets(10, 20, 10, 20));
 
         topBox = new HBox();
         bottomBox = new HBox();
         contentBox = new StackPane();
 
         /* Back button implementation - Used to go back to the main menu */
-        backButton = new Button("BACK");
+        backButton = new Button("↩ Back to Menu");
         backButton.setAlignment(Pos.CENTER_LEFT);
         backButton.addEventHandler(ActionEvent.ACTION, e -> {
             getController().onClose();
             PARTH.getInstance().getMenu().setVisible();
         });
         topBox.getChildren().add(backButton);
-
-        /* Help button implementation - Used to initialise the tutorial mode  */
-        helpButton = new Button("HELP");
-        helpButton.setAlignment(Pos.CENTER_LEFT);
-        bottomBox.getChildren().add(helpButton);
 
         frontPane.setTop(topBox);
         frontPane.setCenter(contentBox);

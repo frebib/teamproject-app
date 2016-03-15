@@ -44,6 +44,7 @@ public class SolarSystem {
 
     private Planet zoomed;
     private List<PlanetRenderer> unFocused;
+    private Number planetRotationSpeed;
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -354,5 +355,10 @@ public class SolarSystem {
                     return tt;
                 }).forEach(t -> pt.getChildren().add(t));
         pt.playFromStart();
+    }
+    public void setPlanetRotationSpeed(double speed) {
+        for (PlanetRenderer renderer : planetRenderers) {
+            renderer.setRotationSpeed(speed);
+        }
     }
 }

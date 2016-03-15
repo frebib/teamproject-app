@@ -86,4 +86,7 @@ public class PlanetRenderer {
     public Planet getPlanet() {
         return planet;
     }
+    public void setRotationSpeed(double speed) {
+        axisRotation.setRate(speed);
+    }
 }
