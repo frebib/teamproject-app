@@ -214,10 +214,8 @@ public class TubeSearchView extends VisualisationView {
 //        transitions.get(10).play();
         root.getChildren().add(nodes);
 
-
         BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
                 Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
-
 
         BiFunction<TubeStation, TubeStation, Double> manhattan = (a, b) ->
                 Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
@@ -264,12 +262,12 @@ public class TubeSearchView extends VisualisationView {
     }
 
     private void animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
-        for(Node<TubeStation> s : fStations)
+        for (Node<TubeStation> s : fStations)
             frontierTransitions.get(s.getContents().getIndex()).play();
     }
 
     private void animatePath(Set<Node<TubeStation>> pStations) {
-        for(Node<TubeStation> p : pStations)
+        for (Node<TubeStation> p : pStations)
             currentTransitions.get(p.getContents().getIndex()).play();
     }
 

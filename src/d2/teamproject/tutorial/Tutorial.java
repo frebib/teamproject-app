@@ -12,7 +12,7 @@ import java.util.Map;
 public class Tutorial extends InstructionSet {
 
     public StackPane TutorialPane = new StackPane();
-    public Map<String,Instruction> tutorialMap;
+    public Map<String, Instruction> tutorialMap;
 
     public Tutorial(JsonArray jsonSet) {
         super(jsonSet);
@@ -20,14 +20,14 @@ public class Tutorial extends InstructionSet {
         initialise();
     }
 
-    public void initialise(){
-        while (hasNext()){
+    public void initialise() {
+        while (hasNext()) {
             Instruction instruction = getNext();
-            tutorialMap.put(instruction.getKey(),instruction);
+            tutorialMap.put(instruction.getKey(), instruction);
         }
     }
 
-    public Instruction getInstruction(String key){
+    public Instruction getInstruction(String key) {
         return tutorialMap.get(key);
     }
 }

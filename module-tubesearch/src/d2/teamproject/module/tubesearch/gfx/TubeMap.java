@@ -14,7 +14,7 @@ public class TubeMap {
     private final PerspectiveCamera camera;
     private final Double initialCameraXPosition;
 
-    public TubeMap(){
+    public TubeMap() {
         initialCameraXPosition = -140.0;
         root = new Group();
         scene = new SubScene(root, PARTH.WIDTH, PARTH.HEIGHT, true, SceneAntialiasing.BALANCED);

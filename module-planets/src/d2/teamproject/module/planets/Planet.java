@@ -3,7 +3,6 @@ package d2.teamproject.module.planets;
 import com.eclipsesource.json.JsonObject;
 import javafx.scene.image.Image;
 
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;

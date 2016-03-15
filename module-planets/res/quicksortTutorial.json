@@ -3,48 +3,48 @@
     "index": 0,
     "title": "Swap",
     "content": "The compared element is larger than the pivot, so we swap the place of these items",
-    "key" : "swapSmaller"
+    "key": "swapSmaller"
   },
   {
     "index": 1,
     "title": "Don't Swap",
     "content": "The compared element is smaller than the pivot, the items remain in their place",
-    "key" : "noSwapSmaller"
+    "key": "noSwapSmaller"
   },
   {
     "index": 2,
     "title": "Swap",
     "content": "The compared element is smaller than the pivot, so we swap the place of these items",
-    "key" : "swapBigger"
+    "key": "swapBigger"
   },
   {
     "index": 3,
     "title": "Don't Swap",
     "content": "The compared element is larger than the pivot, the items remain in their place",
-    "key" : "noSwapBigger"
+    "key": "noSwapBigger"
   },
   {
     "index": 4,
     "title": "Choose the pivot",
     "content": "First of all, we select a pivot. This is an element that we will use to make future comparisons",
-    "key" : "pickPivot"
-},
+    "key": "pickPivot"
+  },
   {
     "index": 5,
     "title": "Compare against first element",
     "content": "Now that we have the comparison item, we then compare this item to see if the first element is larger or smaller than the item",
-    "key" : "compareFirst"
+    "key": "compareFirst"
   },
   {
     "index": 6,
     "title": "Compare larger elements",
     "content": "We then compare the pivot with the right most, non-checked element to see if it's bigger or not. We recursively do this until all elements are checked",
-    "key" : "compareRightMost"
+    "key": "compareRightMost"
   },
   {
     "index": 7,
     "title": "First run done",
     "content": "We've now made effectively three 'sub' lists. All the elements left of the pivot (the smaller elements), the pivot (a single element that is actually in the correct place in the list) and all the elements right of thhe pivot (the larger items). We then start again with step 1 with the smaller list",
-    "key" : "explainList"
+    "key": "explainList"
   }
 ]

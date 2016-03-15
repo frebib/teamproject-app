@@ -3,48 +3,48 @@
     "index": 0,
     "title": "Step 1 – Starting at the beginning of the list",
     "content": "Our first priority is to ensure that the largest element of the list is moved to the end. Seeing as we don’t know what the largest element is, we start at the first – just in case.",
-    "key" : "check"
+    "key": "check"
   },
   {
     "index": 1,
     "title": "Step 2 – Comparing the first two elements",
     "content": "Bubble sort works by propagating up the largest element of two elements. We compare the first two elements to know which of the two follow steps to take",
-    "key" : "compare"
+    "key": "compare"
   },
   {
     "index": 2,
     "title": "Step 3a – Swapping",
     "content": "If the first element is larger than the second, we swap the two elements. This means that the sub list of the first two elements is now ordered. (e.g. [4,3] -> [3,4])",
-    "key" : "swap"
+    "key": "swap"
   },
   {
     "index": 3,
     "title": "Step 3b – Not swapping",
     "content": "If the first element is smaller than the second, we are not required to swap either of the elements as the sub list of the first two elements is already ordered (e.g. [3,4] -> [3,4])",
-    "key" : "notSwap"
+    "key": "notSwap"
   },
   {
     "index": 4,
     "title": "Step 4 – Repeat from step 2 (highest will be n-1)",
     "content": "We move back to ‘Step 2’, but instead of starting from the first element, we start from the element that was the largest out of the two elements previous sorted. We do this as our first priority is to ensure we get the largest element to the end of the list after we do one whole pass through the list. \n‘Step 2’ to ‘Step 4’ is repeated until we compare the penultimate and last element in the list (element n-1 and element n).",
-    "key" : "explanation"
+    "key": "explanation"
   },
   {
     "index": 5,
     "title": "Step 5 – When we get to element (n-1)",
     "content": "This ensures that the largest element in the list has moved into the nth space (largest element is at the end). We are now going to ignore element n (the last element) of the list and assume the whole list is now just from element 1 to element n-1.",
-    "key" : "explanation"
+    "key": "explanation"
   },
   {
     "index": 6,
     "title": "Step 6 – Repeat whole cycle from step 2, but the list is now n-1",
     "content": "We now repeat ‘Step 2’ to ‘Step 6’. Up to ‘Step 4’ the cycle is repeated to ensure that the last element in the new list is now at the end of the list, ‘Step 5’ then makes us ignore this largest item, then ‘Step 6’ pushes back to ‘Step 2’ so that we can continuously do this pushing the largest element up to the last space in the list.",
-    "key" : "explanation"
+    "key": "explanation"
   },
   {
     "index": 7,
     "title": "Step7 – Repeat from step 2 until only two elements in the list",
     "content": "This is the final step, and this ensures that the list is fully sorted. Once you get to this step is means that ‘Step 2’ to ‘Step 6’ has been repeated continuously until there has been only two elements in the list. Once this is done, that sub list is sorted and we push up to ‘Step 7’ having a completely sorted list.",
-    "key" : "explanation"
+    "key": "explanation"
   }
 ]

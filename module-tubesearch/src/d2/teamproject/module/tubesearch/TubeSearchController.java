@@ -2,7 +2,6 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
-import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
@@ -12,7 +11,6 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
 
 import static d2.teamproject.PARTH.LOG;
 
@@ -21,7 +19,7 @@ import static d2.teamproject.PARTH.LOG;
  */
 
 public class TubeSearchController extends JsonController {
-//    private TubeSearchView view;
+    //    private TubeSearchView view;
     private TubeMapView view;
 
     private Map<String, TubeStation> stationMap;
@@ -66,7 +64,7 @@ public class TubeSearchController extends JsonController {
         // Create all lines
         lineinfo.forEach(l -> lineMap.put(l.asObject().get("id").asString(), TubeLine.fromJson(l)));
         // Create all station objects
-        for(int i = 0; i < stationinfo.size(); i++){
+        for (int i = 0; i < stationinfo.size(); i++) {
             JsonObject obj = stationinfo.get(i).asObject();
             String id = obj.get("id").asString();
             stationMap.put(id, TubeStation.fromJson(obj, i));
@@ -91,7 +89,7 @@ public class TubeSearchController extends JsonController {
                 if (from == null || to == null || line == null) {
                     errors[0]++;
                     LOG.warning("Tube connection created with invalid args:" +
-                            " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s",
+                                    " \n\tfrom: \"%s\", %s\n\tto: \"%s\", %s\n\tline: \"%s\", %s",
                             fromStation, from,
                             toStation, to,
                             lineId, line

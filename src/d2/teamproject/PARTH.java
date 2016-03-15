@@ -6,7 +6,6 @@ import d2.teamproject.util.Log;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import java.util.Scanner;
 import java.util.logging.Level;
 
 public class PARTH extends Application {

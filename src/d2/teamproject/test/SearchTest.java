@@ -4,7 +4,6 @@ import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
-import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import org.junit.Assert;
 import org.junit.Test;
 

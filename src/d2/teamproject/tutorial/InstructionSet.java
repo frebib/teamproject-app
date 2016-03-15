@@ -19,11 +19,11 @@ public class InstructionSet {
         for (JsonValue jsonValue : jsonSet) {
             JsonObject obj = jsonValue.asObject();
             set.add(new Instruction(obj.get("title").asString(),
-                    obj.get("content").asString(),obj.get("key").asString(), new ArrayList<>()));
+                    obj.get("content").asString(), obj.get("key").asString(), new ArrayList<>()));
         }
     }
 
-    public Instruction getCurrent(){
+    public Instruction getCurrent() {
         return set.get(tracker);
     }
 

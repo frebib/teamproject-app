@@ -1,6 +1,5 @@
 package d2.teamproject.module.tubesearch;
 
-import d2.teamproject.PARTH;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.tutorial.Tutorial;
@@ -39,7 +38,7 @@ public class TubeMapView extends VisualisationView {
 
 //        bottomBox.setStyle("-fx-background-color: #64BEF6");
 
-        topBox.setPrefHeight(1000* 0.05);
+        topBox.setPrefHeight(1000 * 0.05);
         bottomBox.setPrefHeight(1000 * 0.1);
    }
 
@@ -73,7 +72,7 @@ public class TubeMapView extends VisualisationView {
 
     @Override
     public void onOpen() {
-        TubeSearchView tubeSearchView = new TubeSearchView(controller, (int) (1000 * 1.1), (int) (750 * 1.1),skybox);
+        TubeSearchView tubeSearchView = new TubeSearchView(controller, (int) (1000 * 1.1), (int) (750 * 1.1));
         tubeSearchView.initialise();
         double width = contentBox.getWidth();
         double height = contentBox.getHeight();

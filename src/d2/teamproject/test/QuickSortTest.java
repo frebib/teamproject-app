@@ -7,7 +7,7 @@ import d2.teamproject.algorithm.sorting.SortState;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.awt.Point;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

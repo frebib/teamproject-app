@@ -53,8 +53,8 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     }
     /**
      * Sets the cost function for the search, changing the behaviour of the search algorithm
-     * @return the SearchStream object
      * @param costFn
+     * @return the SearchStream object
      */
     public SearchStream<E> setCostFn(BiFunction<E, E, Double> costFn) {
         this.costFn = costFn;
@@ -124,7 +124,7 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     }
     @Override
     public List<SearchState<Node<E>>> getAll() {
-        while(hasNext()) genNextState();
+        while (hasNext()) genNextState();
         return allStates;
     }
 

@@ -81,7 +81,7 @@ public class TubeStation extends Node<TubeStation> {
         );
     }
 
-    public int getIndex(){
+    public int getIndex() {
         return index;
     }
 }

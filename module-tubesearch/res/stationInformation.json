@@ -725,10 +725,10 @@
           "id": "kingsCross",
           "lineId": "circle",
           "curves": [
-                {
-                  "xpos": 0.2,
-                  "ypos": 0.2
-                }
+            {
+              "xpos": 0.2,
+              "ypos": 0.2
+            }
           ],
           "parallels": [
             {
@@ -736,7 +736,6 @@
               "ypos": 0.2
             }
           ]
-
         },
         {
           "id": "kingsCross",

@@ -30,7 +30,6 @@ import static d2.teamproject.PARTH.LOG;
  */
 public class PlanetView extends VisualisationView {
 
-
     public enum AnimState {
         NOTHING,
         COMPARING,
@@ -38,6 +37,7 @@ public class PlanetView extends VisualisationView {
         ZOOMING,
         ZOOMED;
     }
+
     private final PlanetController controller;
 
     private Image skybox;
@@ -45,6 +45,7 @@ public class PlanetView extends VisualisationView {
     private SolarSystem sSystem;
     private Transition current;
     private AnimState animState = AnimState.NOTHING;
+
     private final TextFlow tutorialText;
     private final Text tutorialTitle;
     private final Text tutorialDesc;
@@ -90,7 +91,7 @@ public class PlanetView extends VisualisationView {
         // Set test wrapping width
         tutorialText.setMaxWidth(500);
 
-        tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
+        tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
         tutorialText.setVisible(tutorialMode);
         bottomBox.getChildren().addAll(tutorialText);
     }
@@ -110,9 +111,9 @@ public class PlanetView extends VisualisationView {
     /**
      * @param key
      */
-    private void updateText(String key){
+    private void updateText(String key) {
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
-        tutorialDesc.setText("\n"+tutorial.getInstruction(key).getDesc());
+        tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
 
     /**
@@ -135,7 +136,7 @@ public class PlanetView extends VisualisationView {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;
             current = sSystem.transitionCompare(csstate, false);
-            if(tutorialMode) duration = 3000;
+            if (tutorialMode) duration = 3000;
             current = new SequentialTransition(current, new PauseTransition(new Duration(duration)));
             current.setOnFinished(e -> {
                 if (csstate.isSwap()) {
