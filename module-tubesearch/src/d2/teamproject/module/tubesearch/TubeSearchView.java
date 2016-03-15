@@ -236,6 +236,8 @@ public class TubeSearchView extends VisualisationView {
 
         List<SearchState<Node<TubeStation>>> search = stream.getAll();
 
+
+
         //create animations for search
 
         for (SearchState<Node<TubeStation>> state : search) {
@@ -284,7 +286,7 @@ public class TubeSearchView extends VisualisationView {
         for (Node<TubeStation> s : fStations)
         {
             Circle c = circleMap.get(s.getContents());
-            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.YELLOW);
+            FillTransition ft = new FillTransition(Duration.millis(1000), c, (Color) c.getFill(), Color.YELLOW);
             ft.setCycleCount(4);
             ft.setAutoReverse(true);
             pt.getChildren().add(ft);
@@ -297,7 +299,7 @@ public class TubeSearchView extends VisualisationView {
         for (Node<TubeStation> p : pStations)
         {
             Circle c = circleMap.get(p.getContents());
-            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.AQUAMARINE);
+            FillTransition ft = new FillTransition(Duration.millis(1000), c, (Color) c.getFill(), Color.AQUAMARINE);
             ft.setCycleCount(4);
             ft.setAutoReverse(true);
             pt.getChildren().add(ft);
