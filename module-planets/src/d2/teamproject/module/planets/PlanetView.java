@@ -26,6 +26,7 @@ import javafx.util.Duration;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 import static d2.teamproject.PARTH.LOG;
 import static d2.teamproject.module.planets.gfx.PlanetSort.*;
@@ -105,24 +106,28 @@ public class PlanetView extends VisualisationView {
         ascDesToggle = new ToggleButton("Tutorial Mode");
 
         sortByCbx = new ComboBox<>(new ImmutableObservableList<>(DIAMETER, DIST_TO_SUN, MASS, ROTATE_TIME));
-        sortByCbx.setValue(sortByCbx.getItems().get(0));
-
         sorterCbx = new ComboBox<>(new ObservableListWrapper<>(Arrays.asList(
                 new SortStream.Sorter<>(QuickSortStream::new, "Quick Sort"),
                 new SortStream.Sorter<>(BubbleSortStream::new, "Bubble Sort")
         )));
-        sorterCbx.valueProperty().addListener((obs, oldVal, newVal) -> {
-            SortStream<Planet> sorter = newVal.get(controller.getPlanets(), sortByCbx.getValue());
-            controller.setSorter(sorter);
-        });
-        sorterCbx.setValue(sorterCbx.getItems().get(0));
 
+        BiConsumer<SortStream.Sorter<Planet>, PlanetSort<?>> onChange = (sorter, sortBy) -> {
+            if (sorter == null || sortBy == null || controller.getPlanets() == null)
+                return;
+
+            LOG.finer("Sorting by %s using %s", sortBy, sorter);
+            SortStream<Planet> stream = sorter.get(controller.getPlanets(), sortBy);
+            controller.setSorter(stream);
+        };
+        sorterCbx.valueProperty().addListener((obs, oVal, nVal) -> onChange.accept(nVal, sortByCbx.getValue()));
+        sortByCbx.valueProperty().addListener((obs, oVal, nVal) -> onChange.accept(sorterCbx.getValue(), nVal));
+
+        double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         prevBtn = new Button("Step\nBack");
         nextBtn = new Button("Step\nNext");
-        double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
-//        prevBtn.setPrefWidth(height * (2/3));
+        prevBtn.setPrefWidth(height * 4 / 3);
+        nextBtn.setPrefWidth(height * 4 / 3);
         prevBtn.setPrefHeight(height);
-//        nextBtn.setPrefWidth(height * (2/3));
         nextBtn.setPrefHeight(height);
 
         topBox.getChildren().addAll(animSlidePane, rotSlidePane, sortByCbx, sorterCbx, ascDesToggle);
@@ -156,6 +161,9 @@ public class PlanetView extends VisualisationView {
         tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
         tutorialText.setVisible(tutorialMode);
 //        bottomBox.getChildren().addAll(tutorialText);
+
+        sorterCbx.setValue(sorterCbx.getItems().get(0));
+        sortByCbx.setValue(sortByCbx.getItems().get(0));
     }
 
     public BaseController getController() {

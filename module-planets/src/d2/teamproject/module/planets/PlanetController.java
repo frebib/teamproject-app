@@ -26,7 +26,6 @@ import static d2.teamproject.PARTH.LOG;
 public class PlanetController extends JsonController {
     private final PlanetView view;
 
-    // TODO: Allow for all types of sort, not just QS
     private SortStream<Planet> sort;
     private List<Planet> planets;
     private Map<String, Tutorial> tutorials;
@@ -43,9 +42,6 @@ public class PlanetController extends JsonController {
 
     @Override
     public void onOpen() {
-//        sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
-//        sort.initialise();
-
         view.onOpen();
     }
 
