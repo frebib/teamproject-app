@@ -20,7 +20,7 @@ public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
             this.name = name;
         }
 
-        public SortStream get(List<E> list, Comparator<E> comparator) {
+        public SortStream<E> get(List<E> list, Comparator<E> comparator) {
             return constructor.apply(list, comparator);
         }
 
