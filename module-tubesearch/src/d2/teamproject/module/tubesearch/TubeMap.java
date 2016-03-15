@@ -240,12 +240,6 @@ public class TubeMap extends VisualisationView {
 
         //create animations for search
 
-        SearchState<Node<TubeStation>> state = stream.getNext();
-        animateFrontier(state.getFrontier());
-        animatePath(state.getVisited());
-        ParallelTransition searchTransition = new ParallelTransition();
-        searchTransition.getChildren().addAll(frontierSequence, currentSequence);
-        searchTransition.play();
 
 //        for (SearchState<Node<TubeStation>> state : search) {
 //            animateFrontier(state.getFrontier());
@@ -286,7 +280,7 @@ public class TubeMap extends VisualisationView {
         return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
     }
 
-    private void animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
+    public ParallelTransition animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
         ParallelTransition pt = new ParallelTransition();
         for (Node<TubeStation> s : fStations)
         {
@@ -296,11 +290,10 @@ public class TubeMap extends VisualisationView {
             ft.setAutoReverse(true);
             pt.getChildren().add(ft);
         }
-        currentSequence.getChildren().removeAll();
-        frontierSequence.getChildren().add(pt);
+        return pt;
     }
 
-    private void animatePath(Set<Node<TubeStation>> pStations) {
+    public ParallelTransition animateVisited(Set<Node<TubeStation>> pStations) {
         ParallelTransition pt = new ParallelTransition();
         for (Node<TubeStation> p : pStations)
         {
@@ -310,8 +303,7 @@ public class TubeMap extends VisualisationView {
             ft.setAutoReverse(true);
             pt.getChildren().add(ft);
         }
-        currentSequence.getChildren().removeAll();
-        currentSequence.getChildren().add(pt);
+        return pt;
     }
 
     @Override

@@ -5,6 +5,8 @@ import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.tutorial.Tutorial;
+import javafx.animation.ParallelTransition;
+import javafx.animation.Transition;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
@@ -91,8 +93,11 @@ public class TubeSearchView extends VisualisationView {
     }
 
     public void animateState(SearchState<Node<TubeStation>> state) {
-        tubeMap.animateFrontier(state.getFrontier());
-        tubeMap.animateVisited(state.getVisited());
+        Transition frontierTrans = tubeMap.animateFrontier(state.getFrontier());
+        Transition visitedTrans = tubeMap.animateVisited(state.getVisited());
+        ParallelTransition searchTransition = new ParallelTransition();
+        searchTransition.getChildren().addAll(frontierTrans, visitedTrans);
+        searchTransition.play();
     }
 
     /**

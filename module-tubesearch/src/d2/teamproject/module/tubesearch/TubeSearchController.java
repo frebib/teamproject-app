@@ -2,11 +2,16 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
+import d2.teamproject.algorithm.search.Node;
+import d2.teamproject.algorithm.search.SearchState;
+import d2.teamproject.algorithm.search.SearchStream;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.tutorial.Tutorial;
 
+import javax.swing.event.DocumentEvent;
+import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -21,6 +26,8 @@ import static d2.teamproject.PARTH.LOG;
 public class TubeSearchController extends JsonController {
     private TubeSearchView view;
 
+    private SearchStream<TubeStation> stream;
+
     private Map<String, TubeStation> stationMap;
     private Map<String, TubeLine> lineMap;
     private Set<TubeConnection> links;
@@ -33,6 +40,7 @@ public class TubeSearchController extends JsonController {
         links = new HashSet<>();
 
         // TODO: Implement graph search
+        view.getWindow().setOnKeyPressed(e -> view.animateState(stream.getNext()));
     }
 
     @Override
