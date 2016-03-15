@@ -1,9 +1,6 @@
 package d2.teamproject.module.tubesearch;
 
-import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
-import d2.teamproject.algorithm.search.SearchState;
-import d2.teamproject.algorithm.search.SearchStream;
 import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
@@ -19,7 +16,6 @@ import javafx.scene.shape.*;
 import javafx.util.Duration;
 
 import java.util.*;
-import java.util.function.BiFunction;
 
 /**
  * @author Parth Chandratreya
@@ -266,5 +262,18 @@ public class TubeMap extends VisualisationView {
 
     public SubScene getSubScene() {
         return scene;
+    }
+
+    public SequentialTransition animateFinalPath(List<Node<TubeStation>> path) {
+        SequentialTransition sqt = new SequentialTransition();
+        for(Node<TubeStation> s : path) {
+            Circle c = circleMap.get(s.getContents());
+            ParallelTransition pt = new ParallelTransition();
+            FillTransition ft = new FillTransition(Duration.millis(200), c, (Color) c.getFill(), Color.RED);
+            StrokeTransition st = new StrokeTransition(Duration.millis(200), c, (Color) c.getStroke(), Color.GREEN);
+            pt.getChildren().addAll(ft, st);
+            sqt.getChildren().add(pt);
+        }
+        return sqt;
     }
 }

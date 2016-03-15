@@ -14,6 +14,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static d2.teamproject.PARTH.LOG;
@@ -93,11 +95,17 @@ public class TubeSearchView extends VisualisationView {
     }
 
     public void animateState(SearchState<Node<TubeStation>> state) {
-        Transition frontierTrans = tubeMap.animateFrontier(state.getFrontier());
-        Transition visitedTrans = tubeMap.animateVisited(state.getVisited());
-        ParallelTransition searchTransition = new ParallelTransition();
-        searchTransition.getChildren().addAll(frontierTrans, visitedTrans);
-        searchTransition.play();
+        if (state.isComplete())
+            tubeMap.animateFinalPath(state.getPath()).play();
+        else
+        {
+            Transition frontierTrans = tubeMap.animateFrontier(state.getFrontier());
+            Transition visitedTrans = tubeMap.animateVisited(state.getVisited());
+            ParallelTransition searchTransition = new ParallelTransition();
+            searchTransition.getChildren().addAll(frontierTrans, visitedTrans);
+            searchTransition.play();
+        }
+
     }
 
     /**

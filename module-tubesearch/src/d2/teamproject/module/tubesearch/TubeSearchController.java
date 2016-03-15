@@ -44,7 +44,10 @@ public class TubeSearchController extends JsonController {
 
 
         // TODO: Implement graph search
-        view.getWindow().setOnKeyPressed(e -> view.animateState(stream.getNext()));
+        view.getWindow().setOnKeyPressed(e -> {
+            if(stream.hasNext())
+                view.animateState(stream.getNext());
+        });
     }
 
     @Override
