@@ -1,8 +1,5 @@
 package d2.teamproject.algorithm.sorting;
 
-import d2.teamproject.algorithm.AlgoStream;
-
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,15 +7,9 @@ import java.util.List;
  * Provides a stream of states representing each stage of sort provided by QuickSort on a given list.
  * The Stream is pre-generated and cannot be changed once initialised.
  * Note: Initialisation may take some time dependant on the parameters
- * @param <E> Type of data stored in the list
+ * @param <E> @inheritdoc
  */
-public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
-    private List<E> list;
-    private Comparator<E> comparator;
-
-    private int stateIndex = 0;
-    private final List<SortState<E>> states;
-
+public class QuickSortStream<E> extends SortStream<E> {
     private ListSortState<E> lastListState;
 
     /**
@@ -27,9 +18,7 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
      * @param comparator comparison object used to sort list
      */
     public QuickSortStream(List<E> list, Comparator<E> comparator) {
-        this.list = new ArrayList<>(list);
-        this.comparator = comparator;
-        states = new ArrayList<>();
+        super(list, comparator);
     }
 
     /**
@@ -60,9 +49,9 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         while (i < j) {
             // Compare either side of pivot and count towards pivot
             while (comparator.compare(list.get(i), pivotElem) < 0)
-                    states.add(new CompareSortState<>(lastListState, pivot, min, max, i++, pivot, false));
+                states.add(new CompareSortState<>(lastListState, pivot, min, max, i++, pivot, false));
             while (comparator.compare(list.get(j), pivotElem) > 0)
-                    states.add(new CompareSortState<>(lastListState, pivot, min, max, j--, pivot, false));
+                states.add(new CompareSortState<>(lastListState, pivot, min, max, j--, pivot, false));
 
             // If the counters have passed each
             // other, we can't swap any more
@@ -91,55 +80,5 @@ public class QuickSortStream<E> implements AlgoStream<SortState<E>> {
         // Recurse into either side of the pivot
         if (min < j) quickSort(min, j);
         if (i < max) quickSort(i, max);
-    }
-
-    /**
-     * Gets the sorted list from the output of the algorithm
-     * Equally, getting the list from the last state would return a copy of the same list
-     * @return the sorted list
-     */
-    public List<E> getSortedList() {
-        return list;
-    }
-
-    @Override
-    public SortState<E> getNext() {
-        if (hasNext())
-            return states.get(++stateIndex);
-        return null;
-    }
-
-    @Override
-    public SortState<E> getPrevious() {
-        if (hasPrevious())
-            return states.get(--stateIndex);
-        return null;
-    }
-
-    @Override
-    public SortState<E> getNth(int n) {
-        if (hasNth(n))
-            return states.get(n);
-        return null;
-    }
-
-    @Override
-    public boolean hasNext() {
-        return stateIndex + 1 < states.size();
-    }
-
-    @Override
-    public boolean hasPrevious() {
-        return stateIndex > 0;
-    }
-
-    @Override
-    public boolean hasNth(int n) {
-        return n >= 0 && n < states.size();
-    }
-
-    @Override
-    public List<SortState<E>> getAll() {
-        return states;
     }
 }

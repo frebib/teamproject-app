@@ -5,10 +5,10 @@ import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
 import d2.teamproject.algorithm.sorting.SortState;
+import d2.teamproject.algorithm.sorting.SortStream;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
-import d2.teamproject.module.planets.gfx.PlanetSort;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.scene.image.Image;
 
@@ -28,7 +28,7 @@ public class PlanetController extends JsonController {
     private final PlanetView view;
 
     // TODO: Allow for all types of sort, not just QS
-    private QuickSortStream<Planet> sort;
+    private SortStream<Planet> sort;
     private List<Planet> planets;
     private Map<String, Tutorial> tutorials;
 
@@ -44,8 +44,8 @@ public class PlanetController extends JsonController {
 
     @Override
     public void onOpen() {
-        sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
-        sort.initialise();
+//        sort = new QuickSortStream<>(planets, PlanetSort.DIAMETER);
+//        sort.initialise();
 
         view.onOpen();
     }
@@ -107,7 +107,7 @@ public class PlanetController extends JsonController {
         return tutorials.get(key);
     }
 
-    public QuickSortStream<Planet> getSorter() {
+    public SortStream<Planet> getSorter() {
         return sort;
     }
 }
