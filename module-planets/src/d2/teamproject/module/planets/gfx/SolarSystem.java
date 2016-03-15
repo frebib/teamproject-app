@@ -141,11 +141,11 @@ public class SolarSystem {
      * @param isReverse
      * @return the started transition object
      */
-    public Transition transitionCompare(CompareSortState<Planet> state, boolean isReverse) {
+    public Transition compareTransition(CompareSortState<Planet> state, boolean isReverse) {
         Point p = state.getCompares();
         Node pr1 = planetRenderers.get(Math.max(p.x, p.y)).getModel();
         Node pr2 = planetRenderers.get(Math.min(p.x, p.y)).getModel();
-        return getCompareTransition(pr1, pr2, isReverse);
+        return compareTransition(pr1, pr2, isReverse);
     }
 
     /**
@@ -154,7 +154,7 @@ public class SolarSystem {
      * @param state indicies for choosing the planets to compare
      * @return a transition to move the planets
      */
-    public Transition makeSwapTransition(CompareSortState<Planet> state) {
+    public Transition swapTransition(CompareSortState<Planet> state) {
         Point p = state.getCompares();
         int lo = Math.min(p.x, p.y),
                 hi = Math.max(p.x, p.y);
@@ -192,8 +192,8 @@ public class SolarSystem {
 
         Transition upper = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm2, pm1, height, diff, false), pm2),
                 lower = new PathTransition(SWAP_ANIM_TIME, getSwapPath(pm1, pm2, height, diff, true), pm1),
-                upRet = getCompareTransition(pm1, pm2, true),
-                loRet = getCompareTransition(pm1, pm2, true),
+                upRet = compareTransition(pm1, pm2, true),
+                loRet = compareTransition(pm1, pm2, true),
                 first = new ParallelTransition(upRet, loRet);
 
         ParallelTransition secnd = new ParallelTransition(upper, lower);
@@ -202,7 +202,7 @@ public class SolarSystem {
         return new SequentialTransition(first, secnd);
     }
 
-    private Transition getCompareTransition(Node planet1, Node planet2, boolean isReverse) {
+    private Transition compareTransition(Node planet1, Node planet2, boolean isReverse) {
         TranslateTransition p1comp = new TranslateTransition(COMPARE_ANIM_TIME, planet1),
                 p2comp = new TranslateTransition(COMPARE_ANIM_TIME, planet2);
         double toZ = isReverse ? 0 : -100;
@@ -306,7 +306,7 @@ public class SolarSystem {
     public static <T> Predicate<T> not(Predicate<T> t) {
         return t.negate();
     }
-    public void setPartition(PartitionSortState<Planet> partition) {
+    public Transition partitionTransition(PartitionSortState<Planet> partition) {
         List<PlanetRenderer> prevUnFocused = unFocused;
         unFocused = planetRenderers.stream()
                 .filter(p -> {
@@ -340,14 +340,12 @@ public class SolarSystem {
                     tt.setToZ(100);
                     return tt;
                 }).forEach(t -> pt.getChildren().add(t));
-
-        // Perform the transition
-        pt.playFromStart();
+        return pt;
     }
 
-    public void setFinished() {
+    public Transition finishTransition() {
         if (unFocused == null)
-            return;
+            return null;
 
         ParallelTransition pt = new ParallelTransition();
         unFocused.stream()
@@ -357,7 +355,7 @@ public class SolarSystem {
                     tt.setToZ(0);
                     return tt;
                 }).forEach(t -> pt.getChildren().add(t));
-        pt.playFromStart();
+        return pt;
     }
     public void setPlanetRotationSpeed(double speed) {
         for (PlanetRenderer renderer : planetRenderers) {

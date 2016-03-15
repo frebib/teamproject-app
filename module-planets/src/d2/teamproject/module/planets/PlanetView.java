@@ -42,6 +42,7 @@ public class PlanetView extends VisualisationView {
         NOTHING,
         COMPARING,
         SWAPPING,
+        PARTITIONING,
         ZOOMING,
         ZOOMED;
     }
@@ -200,21 +201,30 @@ public class PlanetView extends VisualisationView {
      */
     public void updateState(SortState<Planet> state) {
         double duration = 150.0;
-        if (state == null) return;
+        if (state == null) {
+            LOG.finer("State is null, doing nothing");
+            return;
+        }
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
         // TODO: Fix planet zooming
         // TODO: Show comparison/sorting information
         // TODO: [Stretch] Show planet names & info on hover
 
-        if (state.isComplete())
-            sSystem.setFinished();
+        if (state.isComplete()) {
+            animState = AnimState.PARTITIONING;
+            current = sSystem.finishTransition();
+            if (current == null) return;
+            current.setOnFinished(e -> animState = AnimState.NOTHING);
+            current.setRate(globalAnimSpeed);
+            current.playFromStart();
+        }
 
         LOG.finer("SortState=%s", state);
         if (state instanceof CompareSortState) {
             updateText("compare");
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
             animState = AnimState.COMPARING;
-            current = sSystem.transitionCompare(csstate, false);
+            current = sSystem.compareTransition(csstate, false);
             if (tutorialMode) duration = 3000;
             current = new SequentialTransition(current, new PauseTransition(new Duration(duration)));
             current.setRate(globalAnimSpeed);
@@ -222,7 +232,7 @@ public class PlanetView extends VisualisationView {
                 if (csstate.isSwap()) {
                     updateText("swap");
                     animState = AnimState.SWAPPING;
-                    current = sSystem.makeSwapTransition(csstate);
+                    current = sSystem.swapTransition(csstate);
                     current.setRate(globalAnimSpeed);
                     current.setOnFinished(ev -> {
                         animState = AnimState.NOTHING;
@@ -241,16 +251,20 @@ public class PlanetView extends VisualisationView {
                     // Reversing the animation doesn't work
                     // properly, it's likely a bug in the JDK
                     updateText("notSwap");
-                    current = sSystem.transitionCompare(csstate, true);
-                    current.setRate(globalAnimSpeed);
+                    current = sSystem.compareTransition(csstate, true);
                     current.setOnFinished(ev -> animState = AnimState.NOTHING);
+                    current.setRate(globalAnimSpeed);
                     current.playFromStart();
                 }
             });
             current.playFromStart();
         } else if (state instanceof PartitionSortState) {
             // TODO: Animate setting pivot planet
-            sSystem.setPartition((PartitionSortState<Planet>) state);
+            animState = AnimState.PARTITIONING;
+            current = sSystem.partitionTransition((PartitionSortState<Planet>) state);
+            current.setOnFinished(e -> animState = AnimState.NOTHING);
+            current.setRate(globalAnimSpeed);
+            current.playFromStart();
         }
     }
 
