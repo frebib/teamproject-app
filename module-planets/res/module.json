@@ -1,7 +1,7 @@
 {
   "name": "Planets",
   "desc": "Sort with planets",
-  "banner": "planets.jpg",
+  "banner": "planets-new.png",
   "load": {
     "package": "d2.teamproject.module.planets",
     "main": "PlanetController"

@@ -52,10 +52,10 @@ public class MainMenuView {
     private StackPane makeButton(BaseController controller, Image banner, String text) {
         /* Declarations */
         Text t = new Text(10, 50, text);
-        t.setFont(new Font(75));
+        t.setFont(new Font(110));
         t.setFill(Color.WHITE);
         t.setVisible(false);
-        t.setStyle("-fx-stroke: black;-fx-stroke-width: 1;");
+        t.setStyle("-fx-stroke: black;-fx-stroke-width: 2;");
 
         StackPane sp = new StackPane();
         ImageView imgView = new ImageView(banner); //Adds the Image to a new ImageView
