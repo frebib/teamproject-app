@@ -34,6 +34,9 @@ public class TubeSearchController extends JsonController {
     private Map<String, TubeLine> lineMap;
     private Set<TubeConnection> links;
     private Map<String, Tutorial> tutorials;
+    private TubeStation start;
+    private TubeStation goal;
+    private Boolean startNodeNext;
 
     public TubeSearchController() {
         view = new TubeSearchView(this);
@@ -119,7 +122,9 @@ public class TubeSearchController extends JsonController {
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
 
-        stream = new AStarSearchStream<>(stationMap.get("bayswater"), stationMap.get("temple"));
+        start = stationMap.get("bayswater");
+        goal =  stationMap.get("temple");
+        stream = new AStarSearchStream<>(start,goal);
 
         // Euclidean distance between 2 nodes
         BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
@@ -148,5 +153,13 @@ public class TubeSearchController extends JsonController {
 
     public Set<TubeConnection> getLinks() {
         return links;
+    }
+
+    public void setNodes(TubeStation node)
+    {
+        if(startNodeNext)
+            start = node;
+        else
+            goal = node;
     }
 }

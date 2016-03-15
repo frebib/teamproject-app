@@ -192,6 +192,7 @@ public class TubeMap extends VisualisationView {
         circleMap = new HashMap<>();
         for (TubeStation stn : stationMap.values()) {
             Circle c = new Circle(stn.getX() * coordOffsetX, stn.getY() * coordOffsetY, 7);
+            c.setOnMouseClicked(e -> controller.setNodes(stn));
             c.setStrokeWidth(5);
             c.setStroke(Color.BLACK);
             c.setFill(Color.WHITE);
