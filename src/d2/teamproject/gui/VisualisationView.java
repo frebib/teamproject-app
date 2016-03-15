@@ -22,7 +22,6 @@ public abstract class VisualisationView implements BaseView {
         backPane = new StackPane();
         frontPane = new BorderPane();
 
-        topBox = new HBox();
         bottomBox = new HBox();
         contentBox = new StackPane();
 
@@ -33,7 +32,7 @@ public abstract class VisualisationView implements BaseView {
             getController().onClose();
             PARTH.getInstance().getMenu().setVisible();
         });
-        topBox.getChildren().add(backButton);
+        topBox = new HBox(backButton);
 
         frontPane.setTop(topBox);
         frontPane.setCenter(contentBox);

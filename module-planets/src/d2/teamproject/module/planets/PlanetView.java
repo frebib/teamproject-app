@@ -17,7 +17,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -80,7 +82,7 @@ public class PlanetView extends VisualisationView {
         Insets panePad = new Insets(16, 20, 16, 20);
         topBox.setPrefHeight(PARTH.HEIGHT * 0.05 - panePad.getTop() - panePad.getBottom());
         topBox.setPadding(panePad);
-        topBox.setAlignment(Pos.CENTER_RIGHT);
+        topBox.setAlignment(Pos.CENTER_LEFT);
         topBox.setSpacing(16);
 
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2 - panePad.getTop() - panePad.getBottom());
@@ -125,13 +127,19 @@ public class PlanetView extends VisualisationView {
         double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         prevBtn = new Button("Step\nBack");
         nextBtn = new Button("Step\nNext");
-        prevBtn.setPrefWidth(height * 4 / 3);
-        nextBtn.setPrefWidth(height * 4 / 3);
+        prevBtn.setPrefWidth(height * 2.5 / 3);
+        nextBtn.setPrefWidth(height * 2.5 / 3);
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
 
-        topBox.getChildren().addAll(animSlidePane, rotSlidePane, sortByCbx, sorterCbx, ascDesToggle);
-        bottomBox.getChildren().addAll(prevBtn, nextBtn);
+        HBox bottomCentre = new HBox();
+        HBox.setHgrow(bottomCentre, Priority.ALWAYS);
+
+        HBox spacer = new HBox();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+
+        topBox.getChildren().addAll(spacer, animSlidePane, rotSlidePane, sortByCbx, sorterCbx, ascDesToggle);
+        bottomBox.getChildren().addAll(prevBtn, bottomCentre, nextBtn);
     }
 
     @Override
