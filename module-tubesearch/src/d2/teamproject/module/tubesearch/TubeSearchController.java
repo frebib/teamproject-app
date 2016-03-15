@@ -19,8 +19,8 @@ import static d2.teamproject.PARTH.LOG;
  */
 
 public class TubeSearchController extends JsonController {
-    //    private TubeSearchView view;
-    private TubeMapView view;
+    //    private TubeMapView view;
+    private TubeSearchView view;
 
     private Map<String, TubeStation> stationMap;
     private Map<String, TubeLine> lineMap;
@@ -28,7 +28,7 @@ public class TubeSearchController extends JsonController {
     private Map<String, Tutorial> tutorials;
 
     public TubeSearchController() {
-        view = new TubeMapView(this);
+        view = new TubeSearchView(this);
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
