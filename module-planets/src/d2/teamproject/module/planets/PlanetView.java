@@ -65,6 +65,7 @@ public class PlanetView extends VisualisationView {
     private AnimState animState = NOTHING;
     private double globalAnimSpeed = 1;
 
+    private HBox bottomCentre;
     private final TextFlow tutorialText;
     private final Text tutorialTitle;
     private final Text tutorialDesc;
@@ -136,8 +137,10 @@ public class PlanetView extends VisualisationView {
         nextBtn.setPrefWidth(height * 2.5 / 3);
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
+        prevBtn.setOnAction(e -> controller.prevState());
+        nextBtn.setOnAction(e -> controller.nextState());
 
-        HBox bottomCentre = new HBox();
+        bottomCentre = new HBox();
         HBox.setHgrow(bottomCentre, Priority.ALWAYS);
 
         HBox spacer = new HBox();
@@ -199,6 +202,11 @@ public class PlanetView extends VisualisationView {
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
 
+    public void setNavDisabled(boolean disabled) {
+        prevBtn.setDisable(disabled);
+        nextBtn.setDisable(disabled);
+    }
+
     /**
      * @param state
      */
@@ -258,12 +266,15 @@ public class PlanetView extends VisualisationView {
     private void setTransition(Transition t, AnimState type) {
         if (t == null)
             return;
+
         animState = type;
         current = t;
         // Handle any handlers already attached
         EventHandler<ActionEvent> onFinished = current.getOnFinished();
         current.onFinishedProperty().set(e -> {
             animState = NOTHING;
+            setNavDisabled(false);
+
             if (onFinished != null)
                 onFinished.handle(e);
         });

@@ -34,23 +34,27 @@ public class PlanetController extends JsonController {
 
     public PlanetController() {
         view = new PlanetView(this);
-        view.getWindow().setOnKeyPressed(e -> {
-            if (view.getAnimationState() == PlanetView.AnimState.NOTHING) {
-                if (!sort.hasNext()) {
-                    LOG.info("All sort states exhausted");
-                    // TODO: Add reset button
-                } else {
-                    view.updateState(sort.getNext());
-                }
-            } else {
-                LOG.warning("Still animating!?");
-            }
-        });
     }
 
     @Override
     public void onOpen() {
         view.onOpen();
+    }
+    public void prevState() {
+        view.setNavDisabled(true);
+        // TODO: Handle backward navigation
+    }
+    public void nextState() {
+        view.setNavDisabled(true);
+        if (view.getAnimationState() != PlanetView.AnimState.NOTHING) {
+            LOG.finer("Already animating...");
+            return;
+        }
+        if (!sort.hasNext()) {
+            LOG.info("All sort states exhausted");
+            // TODO: Add reset button
+        } else
+            view.updateState(sort.getNext());
     }
 
     @Override
