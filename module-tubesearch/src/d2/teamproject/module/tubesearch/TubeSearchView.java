@@ -1,11 +1,12 @@
 package d2.teamproject.module.tubesearch;
 
+import d2.teamproject.algorithm.search.Node;
+import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.SubScene;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -20,6 +21,8 @@ import static d2.teamproject.PARTH.LOG;
  */
 public class TubeSearchView extends VisualisationView {
     private final TubeSearchController controller;
+    private TubeMap tubeMap;
+
     private final boolean tutorialMode;
     private final Text tutorialDesc;
     private final Text tutorialTitle;
@@ -45,8 +48,23 @@ public class TubeSearchView extends VisualisationView {
     }
 
     @Override
-    public BaseController getController() {
-        return controller;
+    public void onOpen() {
+        tubeMap = new TubeMap(controller, (int) (1000 * 1.1), (int) (750 * 1.1), skybox);
+        tubeMap.initialise();
+
+        double width = contentBox.getWidth();
+        double height = contentBox.getHeight();
+
+        contentBox.getChildren().add(tubeMap.getSubScene());
+
+        contentBox.setMinHeight(height);
+        contentBox.setMinWidth(width);
+
+        contentBox.setPrefHeight(height);
+        contentBox.setPrefWidth(width);
+
+        contentBox.setMaxHeight(height);
+        contentBox.setMaxWidth(width);
     }
 
     @Override
@@ -72,23 +90,9 @@ public class TubeSearchView extends VisualisationView {
         bottomBox.getChildren().addAll(tutorialText);
     }
 
-    @Override
-    public void onOpen() {
-        TubeMap tubeMap = new TubeMap(controller, (int) (1000 * 1.1), (int) (750 * 1.1), skybox);
-        tubeMap.initialise();
-        double width = contentBox.getWidth();
-        double height = contentBox.getHeight();
-
-        contentBox.getChildren().add(tubeMap.getSubScene());
-
-        contentBox.setMinHeight(height);
-        contentBox.setMinWidth(width);
-
-        contentBox.setPrefHeight(height);
-        contentBox.setPrefWidth(width);
-
-        contentBox.setMaxHeight(height);
-        contentBox.setMaxWidth(width);
+    public void animateState(SearchState<Node<TubeStation>> state) {
+        tubeMap.animateFrontier(state.getFrontier());
+        tubeMap.animateVisited(state.getVisited());
     }
 
     /**
@@ -97,6 +101,11 @@ public class TubeSearchView extends VisualisationView {
     private void updateText(String key) {
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
+    }
+
+    @Override
+    public BaseController getController() {
+        return controller;
     }
 
     public Parent getWindow() {
