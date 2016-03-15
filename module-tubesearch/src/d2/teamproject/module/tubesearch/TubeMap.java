@@ -180,12 +180,12 @@ public class TubeMap extends VisualisationView {
             }
         }
 
-        Rectangle map = new Rectangle(2048.0*0.535,1333.0*0.6,Color.AQUA);
+        Rectangle map = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
         map.setTranslateX(20);
         map.setTranslateY(30);
         map.setFill(new ImagePattern(skybox));
 
-        root.getChildren().addAll(map,lines,dot);
+        root.getChildren().addAll(map, lines, dot);
 
 
         // loop stations, create node graphics and add to hashmap
@@ -233,8 +233,7 @@ public class TubeMap extends VisualisationView {
 
     public ParallelTransition animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
         ParallelTransition pt = new ParallelTransition();
-        for (Node<TubeStation> s : fStations)
-        {
+        for (Node<TubeStation> s : fStations) {
             Circle c = circleMap.get(s.getContents());
             FillTransition ft = new FillTransition(Duration.millis(400), c, Color.BLACK, Color.YELLOWGREEN);
             ft.setCycleCount(3);
@@ -246,8 +245,7 @@ public class TubeMap extends VisualisationView {
 
     public ParallelTransition animateVisited(Set<Node<TubeStation>> pStations) {
         ParallelTransition pt = new ParallelTransition();
-        for (Node<TubeStation> p : pStations)
-        {
+        for (Node<TubeStation> p : pStations) {
             Circle c = circleMap.get(p.getContents());
             FillTransition ft = new FillTransition(Duration.millis(200), c, (Color) c.getFill(), Color.LIGHTGRAY);
             StrokeTransition st = new StrokeTransition(Duration.millis(200), c, (Color) c.getStroke(), Color.DARKGREY);
