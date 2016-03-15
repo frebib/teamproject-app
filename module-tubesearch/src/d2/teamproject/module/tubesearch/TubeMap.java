@@ -7,10 +7,7 @@ import d2.teamproject.algorithm.search.SearchStream;
 import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
-import javafx.animation.FillTransition;
-import javafx.animation.ParallelTransition;
-import javafx.animation.PathTransition;
-import javafx.animation.SequentialTransition;
+import javafx.animation.*;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
@@ -196,9 +193,6 @@ public class TubeMap extends VisualisationView {
 
 
         // loop stations, create node graphics and add to hashmap
-        int x = 0;
-        TubeStation start = null;
-        TubeStation goal = null;
         circleMap = new HashMap<>();
         for (TubeStation stn : stationMap.values()) {
             Circle c = new Circle(stn.getX() * coordOffsetX, stn.getY() * coordOffsetY, 7);
@@ -208,49 +202,9 @@ public class TubeMap extends VisualisationView {
             circleMap.put(stn, c);
 
             nodes.getChildren().add(c);
-            if (x == 15) {
-                goal = stn;
-            } else if (x == 0) {
-                start = stn;
-            }
-            x++;
         }
 
         root.getChildren().add(nodes);
-
-        //create search
-
-        SearchStream<TubeStation> stream = new AStarSearchStream<>(start, goal);
-
-        // Euclidean distance between 2 nodes
-        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
-                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
-
-        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
-        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
-                stream.getCost(a) + euclidean.apply(a, b);
-
-        stream.setCostFn(costFn)
-              .setHeuristicFn(euclidean)
-              .initialise();
-
-        List<SearchState<Node<TubeStation>>> search = stream.getAll();
-
-
-
-        //create animations for search
-
-
-//        for (SearchState<Node<TubeStation>> state : search) {
-//            animateFrontier(state.getFrontier());
-//            animatePath(state.getVisited());
-//        }
-
-
-
-
-
-
 
         initialCameraXPosition = 0.0;
         camera = new PerspectiveCamera();
@@ -285,10 +239,10 @@ public class TubeMap extends VisualisationView {
         for (Node<TubeStation> s : fStations)
         {
             Circle c = circleMap.get(s.getContents());
-            FillTransition ft = new FillTransition(Duration.millis(1000), c, (Color) c.getFill(), Color.YELLOW);
-            ft.setCycleCount(4);
-            ft.setAutoReverse(true);
-            pt.getChildren().add(ft);
+            FillTransition ft = new FillTransition(Duration.millis(400), c, Color.BLACK, Color.YELLOWGREEN);
+            ft.setCycleCount(3);
+            StrokeTransition st = new StrokeTransition(Duration.millis(400), c, (Color) c.getStroke(), Color.SLATEBLUE);
+            pt.getChildren().addAll(ft, st);
         }
         return pt;
     }
@@ -298,10 +252,9 @@ public class TubeMap extends VisualisationView {
         for (Node<TubeStation> p : pStations)
         {
             Circle c = circleMap.get(p.getContents());
-            FillTransition ft = new FillTransition(Duration.millis(1000), c, (Color) c.getFill(), Color.AQUAMARINE);
-            ft.setCycleCount(4);
-            ft.setAutoReverse(true);
-            pt.getChildren().add(ft);
+            FillTransition ft = new FillTransition(Duration.millis(200), c, (Color) c.getFill(), Color.LIGHTGRAY);
+            StrokeTransition st = new StrokeTransition(Duration.millis(200), c, (Color) c.getStroke(), Color.DARKGREY);
+            pt.getChildren().addAll(ft, st);
         }
         return pt;
     }
