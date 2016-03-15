@@ -188,9 +188,9 @@ public class TubeSearchView extends VisualisationView {
 
         root.getChildren().add(lines);
         root.getChildren().add(dot);
-//        currentTransitions = new ArrayList<>();
-//        frontierTransitions = new ArrayList<>();
 
+
+        // loop stations, create node graphics and add to hashmap
         int x = 0;
         TubeStation start = null;
         TubeStation goal = null;
@@ -202,14 +202,6 @@ public class TubeSearchView extends VisualisationView {
             c.setFill(Color.WHITE);
             circleMap.put(stn, c);
 
-
-
-
-
-
-
-//            currentTransitions.add(ft);
-//            frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
             if (x == 15) {
                 goal = stn;
@@ -219,8 +211,9 @@ public class TubeSearchView extends VisualisationView {
             x++;
         }
 
-//        transitions.get(10).play();
         root.getChildren().add(nodes);
+
+        //create search
 
         BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
                 Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
@@ -236,13 +229,20 @@ public class TubeSearchView extends VisualisationView {
 
         List<SearchState<Node<TubeStation>>> search = stream.getAll();
 
+        //create animations for search
+
         for (SearchState<Node<TubeStation>> state : search) {
             animateFrontier(state.getFrontier());
             animatePath(state.getVisited());
         }
+
         ParallelTransition searchTransition = new ParallelTransition();
         searchTransition.getChildren().addAll(frontierSequence, currentSequence);
         searchTransition.play();
+
+
+
+
 
         initialCameraXPosition = 0.0;
         camera = new PerspectiveCamera();
