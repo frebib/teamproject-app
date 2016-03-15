@@ -8,6 +8,7 @@ import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import javafx.animation.FillTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
 import javafx.geometry.Point3D;
@@ -21,10 +22,7 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.BiFunction;
 
 /**
@@ -39,10 +37,13 @@ public class TubeSearchView extends VisualisationView {
     private Double initialCameraXPosition;
     private ArrayList<SequentialTransition> transitions;
     private Map<String, TubeStation> stationMap;
-    private ArrayList<FillTransition> currentTransitions;
-    private ArrayList<FillTransition> frontierTransitions;
+//    private ArrayList<FillTransition> currentTransitions;
+//    private ArrayList<FillTransition> frontierTransitions;
+    private SequentialTransition frontierSequence;
+    private SequentialTransition currentSequence;
     private double pageWidth;
     private double pageHeight;
+    private HashMap<TubeStation, Circle> circleMap;
 
     public TubeSearchView(TubeSearchController controller, int width, int height) {
         this.controller = controller;
@@ -60,6 +61,9 @@ public class TubeSearchView extends VisualisationView {
         Set<TubeConnection> connections = controller.getLinks();
         stationMap = controller.getStationMap();
         transitions = new ArrayList<>();
+        frontierSequence = new SequentialTransition();
+        currentSequence = new SequentialTransition();
+
         Circle dot = new Circle(6, Color.BLACK);
         for (TubeConnection conn : connections) {
             if (true) {
@@ -184,27 +188,28 @@ public class TubeSearchView extends VisualisationView {
 
         root.getChildren().add(lines);
         root.getChildren().add(dot);
-        currentTransitions = new ArrayList<>();
-        frontierTransitions = new ArrayList<>();
+//        currentTransitions = new ArrayList<>();
+//        frontierTransitions = new ArrayList<>();
+
         int x = 0;
         TubeStation start = null;
         TubeStation goal = null;
+        circleMap = new HashMap<>();
         for (TubeStation stn : stationMap.values()) {
             Circle c = new Circle(stn.getX() * coordOffsetX, stn.getY() * coordOffsetY, 7);
             c.setStrokeWidth(5);
             c.setStroke(Color.BLACK);
             c.setFill(Color.WHITE);
+            circleMap.put(stn, c);
 
-            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.YELLOW);
-            ft.setCycleCount(4);
-            ft.setAutoReverse(true);
 
-            FillTransition ft2 = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.AQUAMARINE);
-            ft2.setCycleCount(4);
-            ft2.setAutoReverse(true);
 
-            currentTransitions.add(ft);
-            frontierTransitions.add(ft2);
+
+
+
+
+//            currentTransitions.add(ft);
+//            frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
             if (x == 15) {
                 goal = stn;
@@ -235,6 +240,9 @@ public class TubeSearchView extends VisualisationView {
             animateFrontier(state.getFrontier());
             animatePath(state.getVisited());
         }
+        ParallelTransition searchTransition = new ParallelTransition();
+        searchTransition.getChildren().addAll(frontierSequence, currentSequence);
+        searchTransition.play();
 
         initialCameraXPosition = 0.0;
         camera = new PerspectiveCamera();
@@ -265,13 +273,29 @@ public class TubeSearchView extends VisualisationView {
     }
 
     private void animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
+        ParallelTransition pt = new ParallelTransition();
         for (Node<TubeStation> s : fStations)
-            frontierTransitions.get(s.getContents().getIndex()).play();
+        {
+            Circle c = circleMap.get(s.getContents());
+            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.YELLOW);
+            ft.setCycleCount(4);
+            ft.setAutoReverse(true);
+            pt.getChildren().add(ft);
+        }
+        frontierSequence.getChildren().add(pt);
     }
 
     private void animatePath(Set<Node<TubeStation>> pStations) {
+        ParallelTransition pt = new ParallelTransition();
         for (Node<TubeStation> p : pStations)
-            currentTransitions.get(p.getContents().getIndex()).play();
+        {
+            Circle c = circleMap.get(p.getContents());
+            FillTransition ft = new FillTransition(Duration.millis(1000), c, Color.WHITE, Color.AQUAMARINE);
+            ft.setCycleCount(4);
+            ft.setAutoReverse(true);
+            pt.getChildren().add(ft);
+        }
+        currentSequence.getChildren().add(pt);
     }
 
     @Override
