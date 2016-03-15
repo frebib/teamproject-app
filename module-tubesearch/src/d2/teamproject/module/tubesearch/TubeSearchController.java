@@ -19,7 +19,6 @@ import static d2.teamproject.PARTH.LOG;
  */
 
 public class TubeSearchController extends JsonController {
-    //    private TubeMapView view;
     private TubeSearchView view;
 
     private Map<String, TubeStation> stationMap;

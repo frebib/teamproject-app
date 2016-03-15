@@ -27,7 +27,7 @@ import java.util.function.BiFunction;
 /**
  * @author Parth Chandratreya
  */
-public class TubeMapView extends VisualisationView {
+public class TubeMap extends VisualisationView {
 
     private TubeSearchController controller;
     private SubScene scene;
@@ -45,7 +45,7 @@ public class TubeMapView extends VisualisationView {
     private HashMap<TubeStation, Circle> circleMap;
     private javafx.scene.image.Image skybox;
 
-    public TubeMapView(TubeSearchController controller, int width, int height, Image skybox) {
+    public TubeMap(TubeSearchController controller, int width, int height, Image skybox) {
         this.controller = controller;
         this.skybox = skybox;
         pageWidth = width;

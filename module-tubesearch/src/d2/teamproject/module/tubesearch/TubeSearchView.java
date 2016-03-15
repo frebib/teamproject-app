@@ -4,6 +4,8 @@ import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.SubScene;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -29,7 +31,7 @@ public class TubeSearchView extends VisualisationView {
     /**
      * @param controller
      */
-    public TubeSearchView(TubeSearchController controller){
+    public TubeSearchView(TubeSearchController controller) {
         this.controller = controller;
         tutorialText = new TextFlow();
         tutorialTitle = new Text();
@@ -40,7 +42,7 @@ public class TubeSearchView extends VisualisationView {
 
         topBox.setPrefHeight(1000 * 0.05);
         bottomBox.setPrefHeight(1000 * 0.1);
-   }
+    }
 
     @Override
     public BaseController getController() {
@@ -65,19 +67,19 @@ public class TubeSearchView extends VisualisationView {
         // Set test wrapping width
         tutorialText.setMaxWidth(500);
 
-        tutorialText.getChildren().addAll(tutorialTitle,tutorialDesc);
+        tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
         tutorialText.setVisible(tutorialMode);
         bottomBox.getChildren().addAll(tutorialText);
     }
 
     @Override
     public void onOpen() {
-        TubeMapView tubeSearchView = new TubeMapView(controller, (int) (1000 * 1.1), (int) (750 * 1.1),skybox);
-        tubeSearchView.initialise();
+        TubeMap tubeMap = new TubeMap(controller, (int) (1000 * 1.1), (int) (750 * 1.1), skybox);
+        tubeMap.initialise();
         double width = contentBox.getWidth();
         double height = contentBox.getHeight();
 
-        contentBox.getChildren().add(tubeSearchView.getSubScene());
+        contentBox.getChildren().add(tubeMap.getSubScene());
 
         contentBox.setMinHeight(height);
         contentBox.setMinWidth(width);
@@ -92,8 +94,12 @@ public class TubeSearchView extends VisualisationView {
     /**
      * @param key
      */
-    private void updateText(String key){
+    private void updateText(String key) {
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
-        tutorialDesc.setText("\n"+tutorial.getInstruction(key).getDesc());
+        tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
+    }
+
+    public Parent getWindow() {
+        return frontPane.getParent();
     }
 }
