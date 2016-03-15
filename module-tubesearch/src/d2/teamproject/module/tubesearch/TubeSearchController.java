@@ -161,5 +161,6 @@ public class TubeSearchController extends JsonController {
             start = node;
         else
             goal = node;
+        startNodeNext = !startNodeNext;
     }
 }
