@@ -119,6 +119,7 @@ public class PlanetView extends VisualisationView {
 
             LOG.finer("Sorting by %s using %s", sortBy, sorter);
             SortStream<Planet> stream = sorter.get(controller.getPlanets(), sortBy);
+            stream.initialise();
             controller.setSorter(stream);
         };
         sorterCbx.valueProperty().addListener((obs, oVal, nVal) -> onChange.accept(nVal, sortByCbx.getValue()));
