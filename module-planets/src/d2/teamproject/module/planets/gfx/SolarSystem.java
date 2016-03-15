@@ -54,7 +54,7 @@ public class SolarSystem {
      * @param height        the height of the scene
      * @param skyboxTexture An image used for the background
      */
-    public SolarSystem(List<Planet> planets, int width, int height, Image skyboxTexture) {
+    public SolarSystem(List<Planet> planets, double width, double height, Image skyboxTexture) {
         rendererMap = new LinkedHashMap<>(planets.size());
         for (Planet planet : planets) {
             PlanetRenderer r = new PlanetRenderer(planet, cumulativeDist);

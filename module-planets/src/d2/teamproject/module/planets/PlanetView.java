@@ -69,7 +69,7 @@ public class PlanetView extends VisualisationView {
 
     @Override
     public void onOpen() {
-        sSystem = new SolarSystem(controller.getPlanets(), (int) PARTH.WIDTH, (int) (PARTH.HEIGHT * 0.75), skybox);
+        sSystem = new SolarSystem(controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
         contentBox.getChildren().add(sSystem.getScene());
     }
 
