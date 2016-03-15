@@ -2,6 +2,7 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
+import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
@@ -16,6 +17,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiFunction;
 
 import static d2.teamproject.PARTH.LOG;
 
@@ -38,6 +40,8 @@ public class TubeSearchController extends JsonController {
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
+
+
 
         // TODO: Implement graph search
         view.getWindow().setOnKeyPressed(e -> view.animateState(stream.getNext()));
@@ -111,6 +115,20 @@ public class TubeSearchController extends JsonController {
         view.loadResources(res);
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
+
+        stream = new AStarSearchStream<>(stationMap.get("bayswater"), stationMap.get("temple"));
+
+        // Euclidean distance between 2 nodes
+        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
+                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+
+        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
+        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
+                stream.getCost(a) + euclidean.apply(a, b);
+
+        stream.setCostFn(costFn)
+                .setHeuristicFn(euclidean)
+                .initialise();
     }
 
     public Tutorial getTutorial(String key) {
