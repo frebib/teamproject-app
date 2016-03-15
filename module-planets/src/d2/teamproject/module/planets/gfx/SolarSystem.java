@@ -346,6 +346,9 @@ public class SolarSystem {
     }
 
     public void setFinished() {
+        if (unFocused == null)
+            return;
+
         ParallelTransition pt = new ParallelTransition();
         unFocused.stream()
                 .map(PlanetRenderer::getModel)
