@@ -72,7 +72,7 @@ public class TubeMapView extends VisualisationView {
 
     @Override
     public void onOpen() {
-        TubeSearchView tubeSearchView = new TubeSearchView(controller, (int) (1000 * 1.1), (int) (750 * 1.1));
+        TubeSearchView tubeSearchView = new TubeSearchView(controller, (int) (1000 * 1.1), (int) (750 * 1.1),skybox);
         tubeSearchView.initialise();
         double width = contentBox.getWidth();
         double height = contentBox.getHeight();

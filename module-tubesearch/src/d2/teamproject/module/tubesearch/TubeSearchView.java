@@ -15,11 +15,10 @@ import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.SubScene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.*;
 import javafx.util.Duration;
 
 import java.util.*;
@@ -44,9 +43,11 @@ public class TubeSearchView extends VisualisationView {
     private double pageWidth;
     private double pageHeight;
     private HashMap<TubeStation, Circle> circleMap;
+    private javafx.scene.image.Image skybox;
 
-    public TubeSearchView(TubeSearchController controller, int width, int height) {
+    public TubeSearchView(TubeSearchController controller, int width, int height, Image skybox) {
         this.controller = controller;
+        this.skybox = skybox;
         pageWidth = width;
         pageHeight = height;
     }
@@ -186,8 +187,12 @@ public class TubeSearchView extends VisualisationView {
             }
         }
 
-        root.getChildren().add(lines);
-        root.getChildren().add(dot);
+        Rectangle map = new Rectangle(2048.0*0.535,1333.0*0.6,Color.AQUA);
+        map.setTranslateX(20);
+        map.setTranslateY(30);
+        map.setFill(new ImagePattern(skybox));
+
+        root.getChildren().addAll(map,lines,dot);
 
 
         // loop stations, create node graphics and add to hashmap
