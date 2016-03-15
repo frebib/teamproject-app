@@ -1,7 +1,7 @@
 {
   "name": "London Underground",
   "desc": "Search with the Tube",
-  "banner": "tube-new.jpeg",
+  "banner": "tube-new.png",
   "load": {
     "package": "d2.teamproject.module.tubesearch",
     "main": "TubeSearchController"
