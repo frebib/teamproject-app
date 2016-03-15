@@ -57,4 +57,8 @@ public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
     public String getDescription() {
         return description;
     }
+    @Override
+    public String toString() {
+        return description;
+    }
 }
