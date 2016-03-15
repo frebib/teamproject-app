@@ -206,7 +206,6 @@ public class PlanetView extends VisualisationView {
             return;
         }
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
-        // TODO: Fix planet zooming
         // TODO: Show comparison/sorting information
         // TODO: [Stretch] Show planet names & info on hover
 
