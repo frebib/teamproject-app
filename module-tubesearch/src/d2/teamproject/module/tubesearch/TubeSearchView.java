@@ -23,6 +23,7 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
 
@@ -37,6 +38,7 @@ public class TubeSearchView extends VisualisationView {
     private PerspectiveCamera camera;
     private Double initialCameraXPosition;
     private ArrayList<SequentialTransition> transitions;
+    private Map<String, TubeStation> stationMap;
     private ArrayList<FillTransition> currentTransitions;
     private ArrayList<FillTransition> frontierTransitions;
     private double pageWidth;
@@ -56,6 +58,7 @@ public class TubeSearchView extends VisualisationView {
         Group lines = new Group();
         Group nodes = new Group();
         Set<TubeConnection> connections = controller.getLinks();
+        stationMap = controller.getStationMap();
         transitions = new ArrayList<>();
         Circle dot = new Circle(6, Color.BLACK);
         for (TubeConnection conn : connections) {
@@ -184,10 +187,10 @@ public class TubeSearchView extends VisualisationView {
         currentTransitions = new ArrayList<>();
         frontierTransitions = new ArrayList<>();
         int x = 0;
-        TubeConnection start = null;
-        TubeConnection goal = null;
-        for (TubeConnection conn : connections) {
-            Circle c = new Circle(conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 7);
+        TubeStation start = null;
+        TubeStation goal = null;
+        for (TubeStation stn : stationMap.values()) {
+            Circle c = new Circle(stn.getX() * coordOffsetX, stn.getY() * coordOffsetY, 7);
             c.setStrokeWidth(5);
             c.setStroke(Color.BLACK);
             c.setFill(Color.WHITE);
@@ -204,9 +207,9 @@ public class TubeSearchView extends VisualisationView {
             frontierTransitions.add(ft2);
             nodes.getChildren().add(c);
             if (x == 15) {
-                goal = conn;
+                goal = stn;
             } else if (x == 0) {
-                start = conn;
+                start = stn;
             }
             x++;
         }
@@ -221,7 +224,7 @@ public class TubeSearchView extends VisualisationView {
                 Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
 
         SearchStream<TubeStation> stream =
-                new AStarSearchStream<>(start.getFrom(), goal.getFrom())
+                new AStarSearchStream<>(start, goal)
                         .setCostFn(manhattan)
                         .setHeuristicFn(euclidean)
                         .initialise();
