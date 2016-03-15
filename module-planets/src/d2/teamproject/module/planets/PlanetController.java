@@ -36,7 +36,11 @@ public class PlanetController extends JsonController {
         view = new PlanetView(this);
         view.getWindow().setOnKeyPressed(e -> {
             if (view.getAnimationState() == PlanetView.AnimState.NOTHING)
-                view.updateState(sort.getNext());
+                if (!sort.hasNext()) {
+                    LOG.info("All sort states exhausted");
+                    // TODO: Add reset button
+                } else
+                    view.updateState(sort.getNext());
         });
     }
 
