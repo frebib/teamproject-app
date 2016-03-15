@@ -165,6 +165,7 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
                 path.add(node);                       // Add the current node to the resulting path
                 node = successors.get(node);          // Get the parent of the node from the Key-Value
             }                                         // pair in the Map using the node as the key
+            Collections.reverse(path);
 
             // Return the final state with a path
             SearchState<Node<E>> state = new SearchState<>(frontier, visited, path);
