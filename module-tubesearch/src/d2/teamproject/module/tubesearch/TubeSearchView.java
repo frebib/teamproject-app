@@ -215,17 +215,19 @@ public class TubeSearchView extends VisualisationView {
 
         //create search
 
+        SearchStream<TubeStation> stream = new AStarSearchStream<>(start, goal);
+
+        // Euclidean distance between 2 nodes
         BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
                 Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
 
-        BiFunction<TubeStation, TubeStation, Double> manhattan = (a, b) ->
-                Math.abs(a.getX() - b.getX()) + Math.abs(a.getY() - b.getY());
+        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
+        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
+                stream.getCost(a) + euclidean.apply(a, b);
 
-        SearchStream<TubeStation> stream =
-                new AStarSearchStream<>(start, goal)
-                        .setCostFn(manhattan)
-                        .setHeuristicFn(euclidean)
-                        .initialise();
+        stream.setCostFn(costFn)
+              .setHeuristicFn(euclidean)
+              .initialise();
 
         List<SearchState<Node<TubeStation>>> search = stream.getAll();
 
