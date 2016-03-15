@@ -61,10 +61,8 @@ public class PlanetController extends JsonController {
 
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
-        Tutorial bubbleSortT = new Tutorial((JsonArray) res.get("bubblesortT"));
-        tutorials.put("bubblesort", bubbleSortT);
-        Tutorial quicksortT = new Tutorial((JsonArray) res.get("quicksortT"));
-        tutorials.put("quicksort", quicksortT);
+        tutorials.put("bubblesort", new Tutorial((JsonArray) res.get("bubblesortT")));
+        tutorials.put("quicksort", new Tutorial((JsonArray) res.get("quicksortT")));
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");
