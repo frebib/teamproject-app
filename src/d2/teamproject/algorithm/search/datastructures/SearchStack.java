@@ -31,12 +31,6 @@ public class SearchStack<E> extends ArrayDeque<E> implements SearchCollection<E>
 
     @Override
     public SearchCollection<E> copy() {
-        SearchStack<E> temp = new SearchStack<E>(this);
-        SearchStack<E> temp2 = new SearchStack<E>(this);
-        temp.clear();
-        for (int i = this.size() - 1; i >= 0; i--) {
-            temp.add(temp2.getHead());
-        }
-        return temp;
+        return new SearchStack<>(new SearchStack<>(this));
     }
 }
