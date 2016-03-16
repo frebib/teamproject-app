@@ -150,6 +150,9 @@ public class PlanetView extends VisualisationView {
 
     @Override
     public void onOpen() {
+        animState = NOTHING;
+        setNavDisabled(false);
+
         sSystem = new SolarSystem(controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
         contentBox.getChildren().add(sSystem.getScene());
     }
