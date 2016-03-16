@@ -68,7 +68,6 @@ public class PlanetView extends VisualisationView {
     private final Text tutorialTitle;
     private final Text tutorialDesc;
 
-    private final String tutorialType = "bubblesort"; // Take this in when switching sorts
     private Tutorial tutorial;
     private boolean tutorialMode;
 
@@ -179,7 +178,7 @@ public class PlanetView extends VisualisationView {
         skybox = (Image) res.get("skybox");
         LOG.info("skybox loaded");
         // Load tutorial
-        tutorial = controller.getTutorial(tutorialType);
+//        tutorial = controller.getTutorial(tutorialType);
         // Set spacing and alignment
 //        bottomBox.setSpacing(200.0);
 //        bottomBox.setAlignment(Pos.CENTER);
