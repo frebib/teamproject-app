@@ -38,13 +38,11 @@ public class SolarSystem {
     private final PerspectiveCamera camera;
     private final Map<Planet, PlanetRenderer> rendererMap;
     private List<PlanetRenderer> planetRenderers;
-    private float cumulativeDist = 0;
     private final Point3D initCameraAxis, initCameraTrans;
     private final double initCameraRot = 42;
 
     private Planet zoomed;
     private List<PlanetRenderer> unFocused;
-    private Number planetRotationSpeed;
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -57,6 +55,7 @@ public class SolarSystem {
      */
     public SolarSystem(List<Planet> planets, double width, double height, Image skyboxTexture) {
         rendererMap = new LinkedHashMap<>(planets.size());
+        float cumulativeDist = 0;
         for (Planet planet : planets) {
             PlanetRenderer r = new PlanetRenderer(planet, cumulativeDist);
             cumulativeDist += (r.getRadius() * 2) + GAP;

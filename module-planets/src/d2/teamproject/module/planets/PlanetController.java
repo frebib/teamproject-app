@@ -30,8 +30,6 @@ public class PlanetController extends JsonController {
     private List<Planet> planets;
     private Map<String, Tutorial> tutorials;
 
-    private Comparator<Planet> planetCompare;
-
     public PlanetController() {
         view = new PlanetView(this);
     }

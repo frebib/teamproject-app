@@ -53,8 +53,6 @@ public class PlanetView extends VisualisationView {
     private final PlanetController controller;
 
     private Button prevBtn, nextBtn;
-    private Slider animSlide, rotSlide;
-    private ToggleButton ascDesToggle;
     private ComboBox<PlanetSort> sortByCbx;
     private ComboBox<SortStream.Sorter<Planet>> sorterCbx;
 
@@ -94,7 +92,7 @@ public class PlanetView extends VisualisationView {
         bottomBox.setPadding(panePad);
         topBox.setSpacing(16);
 
-        animSlide = new Slider(0.2, 5, 1);
+        Slider animSlide = new Slider(0.2, 5, 1);
         animSlide.valueProperty().addListener((obs, oldVal, newVal) -> {
             globalAnimSpeed = newVal.doubleValue();
             if (current != null)
@@ -103,14 +101,14 @@ public class PlanetView extends VisualisationView {
         VBox animSlidePane = new VBox(animSlide, new Label("Animation Speed"));
         animSlidePane.setAlignment(Pos.CENTER);
 
-        rotSlide = new Slider(1, 100, 20);
+        Slider rotSlide = new Slider(1, 100, 20);
         rotSlide.valueProperty().addListener((obs, oldVal, newVal) -> {
             sSystem.setPlanetRotationSpeed(newVal.doubleValue() / 20);
         });
         VBox rotSlidePane = new VBox(rotSlide, new Label("Planet Rotation Speed"));
         rotSlidePane.setAlignment(Pos.CENTER);
 
-        ascDesToggle = new ToggleButton("Tutorial Mode");
+        ToggleButton ascDesToggle = new ToggleButton("Tutorial Mode");
 
         sortByCbx = new ComboBox<>(new ImmutableObservableList<>(DIAMETER, DIST_TO_SUN, MASS, ROTATE_TIME));
         sorterCbx = new ComboBox<>(new ObservableListWrapper<>(Arrays.asList(
