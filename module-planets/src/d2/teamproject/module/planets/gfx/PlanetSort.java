@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.function.Function;
 
 public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
-    private enum Dir {
+    public enum Dir {
         ASCENDING(1),
         DESCENDING(-1);
 
@@ -47,6 +47,9 @@ public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
     }
     public String getDirection() {
         return dir.toString();
+    }
+    public PlanetSort<T> setDirection(Dir dir) {
+        return (dir == this.dir) ? this : new PlanetSort<>(this.fn, this.description, dir);
     }
     public PlanetSort<T> setAscending() {
         return new PlanetSort<>(this.fn, this.description, Dir.ASCENDING);

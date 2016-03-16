@@ -55,6 +55,7 @@ public class PlanetView extends VisualisationView {
     private Button prevBtn, nextBtn;
     private ComboBox<PlanetSort> sortByCbx;
     private ComboBox<SortStream.Sorter<Planet>> sorterCbx;
+    private ComboBox<PlanetSort.Dir> dirCbx;
 
     private Image skybox;
 
@@ -110,6 +111,9 @@ public class PlanetView extends VisualisationView {
 
         ToggleButton ascDesToggle = new ToggleButton("Tutorial Mode");
 
+        dirCbx = new ComboBox<>(new ImmutableObservableList<>(Dir.ASCENDING, Dir.DESCENDING));
+        dirCbx.setValue(Dir.ASCENDING);
+
         sortByCbx = new ComboBox<>(new ImmutableObservableList<>(DIAMETER, DIST_TO_SUN, MASS, ROTATE_TIME));
         sorterCbx = new ComboBox<>(new ObservableListWrapper<>(Arrays.asList(
                 new SortStream.Sorter<>(QuickSortStream::new, "Quick Sort"),
@@ -120,13 +124,17 @@ public class PlanetView extends VisualisationView {
             if (sorter == null || sortBy == null || controller.getPlanets() == null)
                 return;
 
-            LOG.finer("Sorting by %s using %s", sortBy, sorter);
-            SortStream<Planet> stream = sorter.get(controller.getPlanets(), sortBy);
+            Dir dir = dirCbx.getValue();
+            PlanetSort<?> sortByDir = (dir != null) ? sortBy.setDirection(dir) : sortBy;
+
+            LOG.finer("Sorting by %s using %s", sortByDir, sorter);
+            SortStream<Planet> stream = sorter.get(controller.getPlanets(), sortByDir);
             stream.initialise();
             controller.setSorter(stream);
         };
-        sorterCbx.valueProperty().addListener((obs, oVal, nVal) -> onChange.accept(nVal, sortByCbx.getValue()));
-        sortByCbx.valueProperty().addListener((obs, oVal, nVal) -> onChange.accept(sorterCbx.getValue(), nVal));
+        sorterCbx.valueProperty().addListener((a, b, newVal) -> onChange.accept(newVal, sortByCbx.getValue()));
+        sortByCbx.valueProperty().addListener((a, b, newVal) -> onChange.accept(sorterCbx.getValue(), newVal));
+        dirCbx.valueProperty().addListener((a, b, c) -> onChange.accept(sorterCbx.getValue(), sortByCbx.getValue()));
 
         double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         prevBtn = new Button("Step\nBack");
@@ -144,7 +152,7 @@ public class PlanetView extends VisualisationView {
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        topBox.getChildren().addAll(spacer, animSlidePane, rotSlidePane, sortByCbx, sorterCbx, ascDesToggle);
+        topBox.getChildren().addAll(spacer, animSlidePane, rotSlidePane, sortByCbx, dirCbx, sorterCbx, ascDesToggle);
         bottomBox.getChildren().addAll(prevBtn, bottomCentre, nextBtn);
     }
 
