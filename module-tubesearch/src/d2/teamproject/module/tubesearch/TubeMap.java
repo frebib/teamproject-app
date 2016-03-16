@@ -1,85 +1,100 @@
 package d2.teamproject.module.tubesearch;
 
+import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.datastructures.SearchCollection;
-import d2.teamproject.gui.VisualisationView;
-import d2.teamproject.module.BaseController;
 import javafx.animation.*;
+import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.SubScene;
-import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.*;
 import javafx.util.Duration;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 /**
- * @author Parth Chandratreya
+ * @author Luke Taher
  */
-public class TubeMap extends VisualisationView {
+public class TubeMap extends Pane {
+    private static final double PANSPEED = 0.6;
+    private static final double ZOOMSPEED = 0.0025;
+    private static final double ZOOMMIN = 0.5;
+    private static final double ZOOMMAX = 6;
 
     private TubeSearchController controller;
-    private SubScene scene;
-    private Group root;
-    private PerspectiveCamera camera;
-    private Double initialCameraXPosition;
-    private ArrayList<SequentialTransition> transitions;
-    private Map<String, TubeStation> stationMap;
-//    private ArrayList<FillTransition> currentTransitions;
-//    private ArrayList<FillTransition> frontierTransitions;
-    private SequentialTransition frontierSequence;
-    private SequentialTransition currentSequence;
-    private double pageWidth;
-    private double pageHeight;
-    private HashMap<TubeStation, Circle> circleMap;
-    private javafx.scene.image.Image skybox;
+    private Group map;
 
-    public TubeMap(TubeSearchController controller, int width, int height, Image skybox) {
+    private HashMap<TubeStation, Circle> circleMap;
+
+    private double scaleX = PARTH.WIDTH, scaleY;
+    private double width, height;
+
+    private boolean isDrag;
+    private Point2D mouseDown, translateStart;
+    private double zoomFactor = 1;
+
+    public TubeMap(TubeSearchController controller, double aspectRatio, double width, double height) {
         this.controller = controller;
-        this.skybox = skybox;
-        pageWidth = width;
-        pageHeight = height;
+        this.scaleY = scaleX / aspectRatio;
+        this.width = width;
+        this.height = height;
     }
 
     public void initialise() {
-        double coordOffsetX = pageWidth;
-        double coordOffsetY = pageHeight;
-        root = new Group();
-        scene = new SubScene(root, pageWidth, pageHeight);
+        SubScene scene = new SubScene(this, width, height);
+        scene.setFill(Color.WHITE);
+
+        this.setOnMousePressed(e -> {
+            isDrag = e.isPrimaryButtonDown() && !(e.getTarget() instanceof Circle);
+            mouseDown = new Point2D(e.getX(), e.getY());
+            translateStart = new Point2D(map.getTranslateX(), map.getTranslateY());
+        });
+        this.setOnMouseReleased(e -> isDrag = false);
+        this.setOnMouseDragged(e -> {
+            if (!isDrag) return;
+            map.setTranslateX(translateStart.getX() - (mouseDown.getX() - e.getX()) * PANSPEED);
+            map.setTranslateY(translateStart.getY() - (mouseDown.getY() - e.getY()) * PANSPEED);
+        });
+        this.setOnScroll(e -> {
+            zoomFactor += e.getDeltaY() * ZOOMSPEED;
+            zoomFactor = Math.min(Math.max(zoomFactor, ZOOMMIN), ZOOMMAX);
+            map.setScaleX(zoomFactor);
+            map.setScaleY(zoomFactor);
+        });
+
         Group lines = new Group();
         Group nodes = new Group();
+        map = new Group(lines, nodes);
         Set<TubeConnection> connections = controller.getLinks();
-        stationMap = controller.getStationMap();
-        transitions = new ArrayList<>();
-        frontierSequence = new SequentialTransition();
-        currentSequence = new SequentialTransition();
 
-        Circle dot = new Circle(6, Color.BLACK);
         for (TubeConnection conn : connections) {
             if (true) {
 //            if (!conn.hasSublines()) {
-                Line line = new Line(conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY);
-                line.setStrokeWidth(5);
+                // TODO: Draw composite colour lines
+                Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                line.setStrokeWidth(0.005 * scaleX);
                 line.setStroke(conn.getLine().getColour());
                 lines.getChildren().add(line);
 
-                SequentialTransition transition = new SequentialTransition();
-                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-                        conn.getTo().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY, 0.2);
-                PathTransition d2 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.4);
-                PathTransition d3 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.6);
-                PathTransition d4 = dotTransition(dot, conn.getFrom().getX() * coordOffsetX, conn.getFrom().getY() * coordOffsetY,
-                        conn.getTo().getX() * coordOffsetX, conn.getTo().getY() * coordOffsetY, 0.8);
-
-                transition.getChildren().addAll(d1, d2, d3, d4);
-                transitions.add(transition);
+//                SequentialTransition transition = new SequentialTransition();
+//                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+//                        conn.getTo().getX() * scaleX, conn.getFrom().getY() * scaleY, 0.2);
+//                PathTransition d2 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.4);
+//                PathTransition d3 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.6);
+//                PathTransition d4 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.8);
+//
+//                transition.getChildren().addAll(d1, d2, d3, d4);
 //                System.out.println(conn.getFrom());
             } else {
 //                List<Point2D> points = conn.getSublines();
@@ -89,10 +104,10 @@ public class TubeMap extends VisualisationView {
 //                double point1X, point1Y, point2X, point2Y;
 //                double lineOffset1X, lineOffset1Y, lineOffset2X, lineOffset2Y;
 //
-//                point1X = conn.getFrom().getX() * coordOffsetX;
-//                point1Y = conn.getFrom().getY() * coordOffsetY;
-//                point2X = points.get(0).getX() * coordOffsetX;
-//                point2Y = points.get(0).getY() * coordOffsetY;
+//                point1X = conn.getFrom().getX() * scaleX;
+//                point1Y = conn.getFrom().getY() * scaleY;
+//                point2X = points.get(0).getX() * scaleX;
+//                point2Y = points.get(0).getY() * scaleY;
 //                lineOffset1X = 0;
 //                lineOffset1Y = 0;
 //                lineOffset2X = calcOffset(point2X, point1X);
@@ -118,10 +133,10 @@ public class TubeMap extends VisualisationView {
 //                System.out.println(points.size());
 //                for (int i = 0; i < points.size() - 1; i++) {
 //
-//                    point1X = points.get(i).getX() * coordOffsetX;
-//                    point1Y = points.get(i).getY() * coordOffsetY;
-//                    point2X = points.get(i + 1).getX() * coordOffsetX;
-//                    point2Y = points.get(i + 1).getY() * coordOffsetY;
+//                    point1X = points.get(i).getX() * scaleX;
+//                    point1Y = points.get(i).getY() * scaleY;
+//                    point2X = points.get(i + 1).getX() * scaleX;
+//                    point2Y = points.get(i + 1).getY() * scaleY;
 //                     offset for a point on its second line is itself and next
 //                     offset for a point on its first line is itself with prev point
 //                    lineOffset1X = calcOffset(point1X, prevX);
@@ -155,10 +170,10 @@ public class TubeMap extends VisualisationView {
 //                    transition.getChildren().addAll(d5, d6, d7, d8);
 
 //                }
-//                point1X = points.get(points.size() - 1).getX() * coordOffsetX;
-//                point1Y = points.get(points.size() - 1).getY() * coordOffsetY;
-//                point2X = conn.getKey().getPosX() * coordOffsetX;
-//                point2Y = conn.getKey().getPosY() * coordOffsetY;
+//                point1X = points.get(points.size() - 1).getX() * scaleX;
+//                point1Y = points.get(points.size() - 1).getY() * scaleY;
+//                point2X = conn.getKey().getPosX() * scaleX;
+//                point2Y = conn.getKey().getPosY() * scaleY;
 //                lineOffset1X = calcOffset(point1X, prevX);
 //                lineOffset1Y = calcOffset(point1Y, prevY);
 //                lineOffset2X = 0;
@@ -180,19 +195,16 @@ public class TubeMap extends VisualisationView {
             }
         }
 
-        Rectangle map = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
-        map.setTranslateX(20);
-        map.setTranslateY(30);
-        map.setFill(new ImagePattern(skybox));
-
-        root.getChildren().addAll(map, lines, dot);
-
+//        Rectangle map = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
+//        map.setTranslateX(20);
+//        map.setTranslateY(30);
+//        map.setFill(new ImagePattern(skybox));
 
         // loop stations, create node graphics and add to hashmap
         circleMap = new HashMap<>();
-        for (TubeStation stn : stationMap.values()) {
-            Circle c = new Circle(stn.getX() * coordOffsetX, stn.getY() * coordOffsetY, 7);
-            c.setOnMouseClicked(e -> controller.setNodes(stn));
+        for (TubeStation stn : controller.getStationMap().values()) {
+            Circle c = new Circle(stn.getX() * scaleX, stn.getY() * scaleY, 7);
+            c.setOnMouseClicked(e -> controller.onStationClick(stn));
             c.setStrokeWidth(5);
             c.setStroke(Color.BLACK);
             c.setFill(Color.WHITE);
@@ -201,17 +213,19 @@ public class TubeMap extends VisualisationView {
             nodes.getChildren().add(c);
         }
 
-        root.getChildren().add(nodes);
+        this.getChildren().add(map);
 
-        initialCameraXPosition = 0.0;
-        camera = new PerspectiveCamera();
+        Bounds size = map.getBoundsInLocal();
+        map.setTranslateX(-(width - size.getWidth()) / 2);
+        map.setTranslateY((height - size.getHeight()) / 2);
+
+        PerspectiveCamera camera = new PerspectiveCamera();
         camera.setFieldOfView(40);
-        camera.setTranslateX(initialCameraXPosition);
+        camera.setTranslateX(0);
         camera.setTranslateY(0);
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         scene.setCamera(camera);
-
     }
 
     public PathTransition dotTransition(Circle n, double x1, double y1, double x2, double y2, double time) {
@@ -219,16 +233,10 @@ public class TubeMap extends VisualisationView {
         transition.setDuration(Duration.seconds(time));
         transition.setNode(n);
 
-        javafx.scene.shape.Path p = new javafx.scene.shape.Path();
-        p.getElements().add(new MoveTo(x1, y1));
-        p.getElements().add(new LineTo(x2, y2));
+        Path p = new Path(new MoveTo(x1, y1), new LineTo(x2, y2));
 
         transition.setPath(p);
         return transition;
-    }
-
-    private double calcOffset(double point1, double point2) {
-        return Math.signum(-Double.compare(point1, point2)) * 5; //<- will do the same thing..
     }
 
     public ParallelTransition animateFrontier(SearchCollection<Node<TubeStation>> fStations) {
@@ -243,9 +251,9 @@ public class TubeMap extends VisualisationView {
         return pt;
     }
 
-    public ParallelTransition animateVisited(Set<Node<TubeStation>> pStations) {
+    public ParallelTransition animateVisited(Set<Node<TubeStation>> vStations) {
         ParallelTransition pt = new ParallelTransition();
-        for (Node<TubeStation> p : pStations) {
+        for (Node<TubeStation> p : vStations) {
             Circle c = circleMap.get(p.getContents());
             FillTransition ft = new FillTransition(Duration.millis(200), c, (Color) c.getFill(), Color.LIGHTGRAY);
             StrokeTransition st = new StrokeTransition(Duration.millis(200), c, (Color) c.getStroke(), Color.DARKGREY);
@@ -254,18 +262,9 @@ public class TubeMap extends VisualisationView {
         return pt;
     }
 
-    @Override
-    public BaseController getController() {
-        return controller;
-    }
-
-    public SubScene getSubScene() {
-        return scene;
-    }
-
     public SequentialTransition animateFinalPath(List<Node<TubeStation>> path) {
         SequentialTransition sqt = new SequentialTransition();
-        for(Node<TubeStation> s : path) {
+        for (Node<TubeStation> s : path) {
             Circle c = circleMap.get(s.getContents());
             ParallelTransition pt = new ParallelTransition();
             FillTransition ft = new FillTransition(Duration.millis(200), c, (Color) c.getFill(), Color.RED);

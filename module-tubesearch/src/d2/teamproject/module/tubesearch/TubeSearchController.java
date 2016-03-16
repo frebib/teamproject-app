@@ -21,6 +21,13 @@ import static d2.teamproject.PARTH.LOG;
  * @author Parth Chandratreya
  */
 public class TubeSearchController extends JsonController {
+    private enum StationSelect {
+        NONE,
+        START,
+        GOAL,
+        INFO
+    }
+
     private TubeSearchView view;
 
     private SearchStream<TubeStation> stream;
@@ -29,15 +36,27 @@ public class TubeSearchController extends JsonController {
     private Map<String, TubeLine> lineMap;
     private Set<TubeConnection> links;
     private Map<String, Tutorial> tutorials;
-    private TubeStation start;
-    private TubeStation goal;
-    private Boolean startNodeNext;
+
+    private StationSelect selection;
 
     public TubeSearchController() {
         view = new TubeSearchView(this);
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
+
+        selection = StationSelect.START;
+        stream = new AStarSearchStream<>(null, null);
+
+        // Euclidean distance between 2 nodes
+        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
+                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+
+        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
+        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
+                stream.getCost(a) + euclidean.apply(a, b);
+
+        stream.setCostFn(costFn).setHeuristicFn(euclidean);
 
         // TODO: Implement graph search
         view.getWindow().setOnKeyPressed(e -> {
@@ -49,11 +68,6 @@ public class TubeSearchController extends JsonController {
     @Override
     public void onOpen() {
         view.onOpen();
-    }
-
-    @Override
-    public BaseView getView() {
-        return view;
     }
 
     @Override
@@ -114,22 +128,33 @@ public class TubeSearchController extends JsonController {
         view.loadResources(res);
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
+    }
 
-        start = stationMap.get("bayswater");
-        goal =  stationMap.get("temple");
-        stream = new AStarSearchStream<>(start,goal);
+    public void onStationClick(TubeStation station) {
+        // TODO: Add checks to prevent choosing the same start/goal node etc.
+        switch (selection) {
+            case NONE:
+                break;
+            case START:
+                LOG.info("Selected start station %s", station);
+                selection = StationSelect.GOAL;
+                stream.setStart(station);
+                break;
+            case GOAL:
+                LOG.info("Selected goal station %s", station);
+                selection = StationSelect.NONE;
+                stream.setGoal(station);
+                stream.initialise();
+                LOG.fine("Search stream initialised");
+                break;
+            case INFO:
+                break;
+        }
+    }
 
-        // Euclidean distance between 2 nodes
-        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
-                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
-
-        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
-        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
-                stream.getCost(a) + euclidean.apply(a, b);
-
-        stream.setCostFn(costFn)
-                .setHeuristicFn(euclidean)
-                .initialise();
+    @Override
+    public BaseView getView() {
+        return view;
     }
 
     public Tutorial getTutorial(String key) {
@@ -146,14 +171,5 @@ public class TubeSearchController extends JsonController {
 
     public Set<TubeConnection> getLinks() {
         return links;
-    }
-
-    public void setNodes(TubeStation node)
-    {
-        if(startNodeNext)
-            start = node;
-        else
-            goal = node;
-        startNodeNext = !startNodeNext;
     }
 }

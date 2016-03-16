@@ -1,4 +1,7 @@
 {
+  "metadata": {
+    "aspectratio": 1.49672591207
+  },
   "lines": [
     {
       "id": "bakerloo",
@@ -58,12 +61,14 @@
     {
       "id": "dlr",
       "name": "Docklands Light Railway",
-      "colour": "#00b3b3"
+      "colour": "#ffffff",
+      "stroke": "#00b3b3"
     },
     {
       "id": "overground",
       "name": "Overground Line",
-      "colour": "#ff8000"
+      "colour": "#ffffff",
+      "stroke": "#ff8000"
     }
   ],
   "stations": [
