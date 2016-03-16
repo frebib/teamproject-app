@@ -10,6 +10,7 @@ public class DijkstraSearchStream<E> extends SearchStream<E> {
     public DijkstraSearchStream(Node<E> start, Node<E> goal) {
         super(null, start, goal);
         setFrontier(new SearchPriorityQueue<>((a, b) -> (int) (getF(a) - getF(b))));
+        this.setHeuristicFn(null);
     }
 
     /**
