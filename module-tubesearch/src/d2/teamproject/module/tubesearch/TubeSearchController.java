@@ -74,11 +74,11 @@ public class TubeSearchController extends JsonController {
         // Create all lines
         lineinfo.forEach(l -> lineMap.put(l.asObject().get("id").asString(), TubeLine.fromJson(l)));
         // Create all station objects
-        for (int i = 0; i < stationinfo.size(); i++) {
-            JsonObject obj = stationinfo.get(i).asObject();
+        stationinfo.forEach(s -> {
+            JsonObject obj = s.asObject();
             String id = obj.get("id").asString();
-            stationMap.put(id, TubeStation.fromJson(obj, i));
-        }
+            stationMap.put(id, TubeStation.fromJson(obj));
+        });
 
         // Use array to get around 'should be final or effectively final' issue
         final Integer[] errors = {0};

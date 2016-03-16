@@ -11,16 +11,15 @@ public class TubeStation extends Node<TubeStation> {
     private ArrayList<TubeConnection> from, to;
     private String name, id;
     private double x, y;
-    private int index;
 
-    public TubeStation(String name, String id, double x, double y, int index) {
+    public TubeStation(String name, String id, double x, double y) {
+        super(null);
         contents = this;
 
         this.name = name;
         this.id = id;
         this.x = x;
         this.y = y;
-        this.index = index;
 
         from = new ArrayList<>();
         to = new ArrayList<>();
@@ -70,18 +69,13 @@ public class TubeStation extends Node<TubeStation> {
                 '}';
     }
 
-    public static TubeStation fromJson(JsonValue val, int index) {
+    public static TubeStation fromJson(JsonValue val) {
         JsonObject obj = val.asObject();
         return new TubeStation(
                 obj.get("id").asString(),
                 obj.get("name").asString(),
                 obj.getDouble("xpos", 0),
-                obj.getDouble("ypos", 0),
-                index
+                obj.getDouble("ypos", 0)
         );
-    }
-
-    public int getIndex() {
-        return index;
     }
 }
