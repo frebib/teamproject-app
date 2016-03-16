@@ -210,6 +210,62 @@ public class SolarSystem {
         return new ParallelTransition(p1comp, p2comp);
     }
 
+    // Providing what this horrible language couldn't... in 3 lines...
+    public static <T> Predicate<T> not(Predicate<T> t) {
+        return t.negate();
+    }
+    public Transition partitionTransition(PartitionSortState<Planet> partition) {
+        List<PlanetRenderer> prevUnFocused = unFocused;
+        unFocused = planetRenderers.stream()
+                .filter(p -> {
+                    int i = planetRenderers.indexOf(p);
+                    return i < partition.getLower() || i > partition.getUpper();
+                }).collect(Collectors.toList());
+
+        System.out.printf("Pivot:   %d\nOutside: ", partition.getPivot());
+        ListUtil.printList(unFocused.stream()
+                .map(PlanetRenderer::getPlanet)
+                .map(Planet::getName)
+                .collect(Collectors.toList()));
+
+        ParallelTransition pt = new ParallelTransition();
+        // Move previously unfocused elements forward
+        if (prevUnFocused != null)
+            prevUnFocused.stream()
+                    .filter(not(unFocused::contains))
+                    .map(PlanetRenderer::getModel)
+                    .map(m -> {
+                        TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                        tt.setToZ(0);
+                        return tt;
+                    }).forEach(t -> pt.getChildren().add(t));
+
+        // Move newly unfocused elements backwards
+        unFocused.stream()
+                .map(PlanetRenderer::getModel)
+                .map(m -> {
+                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                    tt.setToZ(100);
+                    return tt;
+                }).forEach(t -> pt.getChildren().add(t));
+        return pt;
+    }
+
+    public Transition finishTransition() {
+        if (unFocused == null)
+            return null;
+
+        ParallelTransition pt = new ParallelTransition();
+        unFocused.stream()
+                .map(PlanetRenderer::getModel)
+                .map(m -> {
+                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
+                    tt.setToZ(0);
+                    return tt;
+                }).forEach(t -> pt.getChildren().add(t));
+        return pt;
+    }
+
     /**
      * Creates a path that swaps two planets in a loop animation
      * @param from   the first node to swap with the second
@@ -297,64 +353,17 @@ public class SolarSystem {
         return scene;
     }
 
+    public List<Planet> getPlanetOrder() {
+        return planetRenderers.stream()
+                .sorted((p1, p2) -> Double.compare(
+                        p1.getModel().getTranslateX(),
+                        p2.getModel().getTranslateX()))
+                .map(PlanetRenderer::getPlanet)
+                .collect(Collectors.toList());
+    }
+
     public void setPlanetOrder(List<Planet> list) {
         planetRenderers = list.stream().map(rendererMap::get).collect(Collectors.toList());
-    }
-
-    // Providing what this horrible language couldn't... in 3 lines...
-    public static <T> Predicate<T> not(Predicate<T> t) {
-        return t.negate();
-    }
-    public Transition partitionTransition(PartitionSortState<Planet> partition) {
-        List<PlanetRenderer> prevUnFocused = unFocused;
-        unFocused = planetRenderers.stream()
-                .filter(p -> {
-                    int i = planetRenderers.indexOf(p);
-                    return i < partition.getLower() || i > partition.getUpper();
-                }).collect(Collectors.toList());
-
-        System.out.printf("Pivot:   %d\nOutside: ", partition.getPivot());
-        ListUtil.printList(unFocused.stream()
-                .map(PlanetRenderer::getPlanet)
-                .map(Planet::getName)
-                .collect(Collectors.toList()));
-
-        ParallelTransition pt = new ParallelTransition();
-        // Move previously unfocused elements forward
-        if (prevUnFocused != null)
-            prevUnFocused.stream()
-                    .filter(not(unFocused::contains))
-                    .map(PlanetRenderer::getModel)
-                    .map(m -> {
-                        TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
-                        tt.setToZ(0);
-                        return tt;
-                    }).forEach(t -> pt.getChildren().add(t));
-
-        // Move newly unfocused elements backwards
-        unFocused.stream()
-                .map(PlanetRenderer::getModel)
-                .map(m -> {
-                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
-                    tt.setToZ(100);
-                    return tt;
-                }).forEach(t -> pt.getChildren().add(t));
-        return pt;
-    }
-
-    public Transition finishTransition() {
-        if (unFocused == null)
-            return null;
-
-        ParallelTransition pt = new ParallelTransition();
-        unFocused.stream()
-                .map(PlanetRenderer::getModel)
-                .map(m -> {
-                    TranslateTransition tt = new TranslateTransition(FADE_ANIM_TIME, m);
-                    tt.setToZ(0);
-                    return tt;
-                }).forEach(t -> pt.getChildren().add(t));
-        return pt;
     }
     public void setPlanetRotationSpeed(double speed) {
         for (PlanetRenderer renderer : planetRenderers) {
