@@ -45,7 +45,6 @@ public class PlanetController extends JsonController {
         // TODO: Handle backward navigation
     }
     public void nextState() {
-        view.setNavDisabled(true);
         if (view.getAnimationState() != PlanetView.AnimState.NOTHING) {
             LOG.finer("Already animating...");
             return;
@@ -53,8 +52,10 @@ public class PlanetController extends JsonController {
         if (!sort.hasNext()) {
             LOG.info("All sort states exhausted");
             // TODO: Add reset button
-        } else
+        } else {
+            view.setNavDisabled(true);
             view.updateState(sort.getNext());
+        }
     }
 
     @Override
