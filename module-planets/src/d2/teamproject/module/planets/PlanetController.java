@@ -3,6 +3,8 @@ package d2.teamproject.module.planets;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
+import d2.teamproject.algorithm.sorting.BubbleSortStream;
+import d2.teamproject.algorithm.sorting.QuickSortStream;
 import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.algorithm.sorting.SortStream;
 import d2.teamproject.module.BaseView;
@@ -67,8 +69,8 @@ public class PlanetController extends JsonController {
 
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
-        tutorials.put("bubblesort", new Tutorial((JsonArray) res.get("bubblesortT")));
-        tutorials.put("quicksort", new Tutorial((JsonArray) res.get("quicksortT")));
+        tutorials.put(BubbleSortStream.class.getName(), new Tutorial((JsonArray) res.get("bubblesortT")));
+        tutorials.put(QuickSortStream.class.getName(), new Tutorial((JsonArray) res.get("quicksortT")));
 
         // Load planet JSON
         JsonObject planetData = (JsonObject) res.get("planetinfo");

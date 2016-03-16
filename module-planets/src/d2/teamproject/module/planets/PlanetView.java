@@ -132,6 +132,10 @@ public class PlanetView extends VisualisationView {
             stream.initialise();
             controller.setSorter(stream);
 
+            tutorial = controller.getTutorial(stream.getClass().getName());
+            // TODO: Provide a more coherent tutorial structure
+            //updateText("check");
+
             if (controller.getPlanets() != null && sSystem != null)
                 sSystem.resetTransition(controller.getPlanets()).playFromStart();
         };
@@ -150,13 +154,15 @@ public class PlanetView extends VisualisationView {
         nextBtn.setOnAction(e -> controller.nextState());
 
         bottomCentre = new HBox();
-        HBox.setHgrow(bottomCentre, Priority.ALWAYS);
+        HBox bottomLPad = new HBox(), bottomRPad = new HBox();
+        HBox.setHgrow(bottomLPad, Priority.ALWAYS);
+        HBox.setHgrow(bottomRPad, Priority.ALWAYS);
 
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
         topBox.getChildren().addAll(spacer, animSlidePane, rotSlidePane, sortByCbx, dirCbx, sorterCbx, ascDesToggle);
-        bottomBox.getChildren().addAll(prevBtn, bottomCentre, nextBtn);
+        bottomBox.getChildren().addAll(prevBtn, bottomLPad, bottomCentre, bottomRPad, nextBtn);
     }
 
     @Override
@@ -179,16 +185,15 @@ public class PlanetView extends VisualisationView {
 //        bottomBox.setSpacing(200.0);
 //        bottomBox.setAlignment(Pos.CENTER);
         // Set the font size
-        tutorialTitle.setFont(new Font(25));
-        tutorialDesc.setFont(new Font(15));
+//        tutorialTitle.setFont(new Font(25));
+//        tutorialDesc.setFont(new Font(15));
         // Set the text to initial step
-        updateText("check");
         // Set test wrapping width
         tutorialText.setMaxWidth(500);
 
         tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
         tutorialText.setVisible(tutorialMode);
-//        bottomBox.getChildren().addAll(tutorialText);
+        bottomCentre.getChildren().addAll(tutorialText);
 
         sorterCbx.setValue(sorterCbx.getItems().get(0));
         sortByCbx.setValue(sortByCbx.getItems().get(0));
@@ -210,6 +215,8 @@ public class PlanetView extends VisualisationView {
      * @param key
      */
     private void updateText(String key) {
+        // TODO: Fix tutorial crashing!
+        if (true) return;
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
