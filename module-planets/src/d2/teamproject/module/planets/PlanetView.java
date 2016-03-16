@@ -115,10 +115,10 @@ public class PlanetView extends VisualisationView {
         dirCbx.setValue(Dir.ASCENDING);
 
         sortByCbx = new ComboBox<>(new ImmutableObservableList<>(DIAMETER, DIST_TO_SUN, MASS, ROTATE_TIME));
-        sorterCbx = new ComboBox<>(new ObservableListWrapper<>(Arrays.asList(
+        sorterCbx = new ComboBox<>(new ImmutableObservableList<>(
                 new SortStream.Sorter<>(QuickSortStream::new, "Quick Sort"),
                 new SortStream.Sorter<>(BubbleSortStream::new, "Bubble Sort")
-        )));
+        ));
 
         BiConsumer<SortStream.Sorter<Planet>, PlanetSort<?>> onChange = (sorter, sortBy) -> {
             if (sorter == null || sortBy == null || controller.getPlanets() == null)
