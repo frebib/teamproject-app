@@ -8,6 +8,8 @@ import java.util.Collection;
  * @param <E> @inheritDoc
  */
 public class SearchQueue<E> extends ArrayDeque<E> implements SearchCollection<E> {
+    public SearchQueue() {
+    }
     public SearchQueue(Collection<? extends E> c) {
         super(c);
     }

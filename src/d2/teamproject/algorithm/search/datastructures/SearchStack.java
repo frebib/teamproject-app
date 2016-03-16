@@ -12,6 +12,8 @@ import java.util.Collection;
  * @inheritDoc
  */
 public class SearchStack<E> extends ArrayDeque<E> implements SearchCollection<E> {
+    public SearchStack() {
+    }
     public SearchStack(Collection<? extends E> c) {
         super(c);
     }
