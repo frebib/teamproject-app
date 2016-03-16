@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
  */
 public class SolarSystem {
     private static final Duration COMPARE_ANIM_TIME = new Duration(300);
+    private static final Duration RESET_ANIM_TIME = new Duration(700);
     private static final Duration SWAP_ANIM_TIME = new Duration(500);
     private static final Duration FADE_ANIM_TIME = new Duration(500);
 
@@ -264,6 +265,41 @@ public class SolarSystem {
                     return tt;
                 }).forEach(t -> pt.getChildren().add(t));
         return pt;
+    }
+
+    public Transition resetTransition(List<Planet> planetOrder) {
+        TranslateTransition tt;
+        ParallelTransition slideUpA = new ParallelTransition(),
+                           slideUpB = new ParallelTransition(),
+                           moveDown = new ParallelTransition();
+
+        for (PlanetRenderer renderer : rendererMap.values()) {
+            tt = new TranslateTransition(RESET_ANIM_TIME.divide(2), renderer.getModel());
+            tt.setToY(-1000);
+            slideUpA.getChildren().add(tt);
+
+            tt = new TranslateTransition(RESET_ANIM_TIME.divide(2), renderer.getModel());
+            tt.setToY(0);
+            tt.setToZ(0);
+            slideUpB.getChildren().add(tt);
+
+            tt = new TranslateTransition(Duration.ONE, renderer.getModel());
+            tt.setToY(1000);
+            moveDown.getChildren().add(tt);
+        }
+
+        slideUpA.setOnFinished(e -> {
+            setPlanetOrder(planetOrder);
+
+            // Reposition planets
+            float cumulativeDist = 0;
+            for (PlanetRenderer r : rendererMap.values()) {
+                r.getModel().setTranslateX(cumulativeDist + r.getRadius());
+                cumulativeDist += (r.getRadius() * 2) + GAP;
+            }
+        });
+
+        return new SequentialTransition(slideUpA, moveDown, slideUpB);
     }
 
     /**

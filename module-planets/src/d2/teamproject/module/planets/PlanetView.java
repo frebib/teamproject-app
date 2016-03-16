@@ -131,6 +131,9 @@ public class PlanetView extends VisualisationView {
             SortStream<Planet> stream = sorter.get(controller.getPlanets(), sortByDir);
             stream.initialise();
             controller.setSorter(stream);
+
+            if (controller.getPlanets() != null && sSystem != null)
+                sSystem.resetTransition(controller.getPlanets()).playFromStart();
         };
         sorterCbx.valueProperty().addListener((a, b, newVal) -> onChange.accept(newVal, sortByCbx.getValue()));
         sortByCbx.valueProperty().addListener((a, b, newVal) -> onChange.accept(sorterCbx.getValue(), newVal));
