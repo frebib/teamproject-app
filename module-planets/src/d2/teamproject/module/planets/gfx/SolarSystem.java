@@ -3,6 +3,7 @@ package d2.teamproject.module.planets.gfx;
 import d2.teamproject.algorithm.sorting.CompareSortState;
 import d2.teamproject.algorithm.sorting.PartitionSortState;
 import d2.teamproject.module.planets.Planet;
+import d2.teamproject.module.planets.PlanetView;
 import d2.teamproject.util.ListUtil;
 import javafx.animation.*;
 import javafx.geometry.Bounds;
@@ -23,6 +24,8 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static d2.teamproject.module.planets.PlanetView.AnimState;
+
 /**
  * @author Parth Chandratreya
  */
@@ -31,6 +34,7 @@ public class SolarSystem {
     private static final Duration RESET_ANIM_TIME = new Duration(700);
     private static final Duration SWAP_ANIM_TIME = new Duration(500);
     private static final Duration FADE_ANIM_TIME = new Duration(500);
+    private static final Duration ZOOM_ANIM_TIME = new Duration(900);
 
     public static final int GAP = 60;
 
@@ -44,6 +48,7 @@ public class SolarSystem {
 
     private Planet zoomed;
     private List<PlanetRenderer> unFocused;
+    private PlanetView view;
 
     /**
      * Uses a list of planets to create the models for the scene, adds information of the planet to the scene
@@ -54,7 +59,7 @@ public class SolarSystem {
      * @param height        the height of the scene
      * @param skyboxTexture An image used for the background
      */
-    public SolarSystem(List<Planet> planets, double width, double height, Image skyboxTexture) {
+    public SolarSystem(PlanetView view, List<Planet> planets, double width, double height, Image skyboxTexture) {
         rendererMap = new LinkedHashMap<>(planets.size());
         float cumulativeDist = 0;
         for (Planet planet : planets) {
@@ -64,6 +69,7 @@ public class SolarSystem {
         }
         setPlanetOrder(planets);
 
+        this.view = view;
         root = new Group();
         scene = new SubScene(root, width, height, true, SceneAntialiasing.BALANCED);
         scene.setFill(Color.BLACK); /* Black background */
@@ -91,10 +97,14 @@ public class SolarSystem {
             p.onClick(e -> {
                 if (p.getPlanet() == zoomed) {   // TODO: Better click checking needs to be added
                     zoomed = null;
-                    zoomOut().play(); /* Zoom out the camera*/
+                    Transition zoom = zoomOut();
+                    if (zoom != null)
+                        zoom.play(); /* Zoom out the camera*/
                 } else {
                     zoomed = p.getPlanet();
-                    zoomIn(p).play();   /* Zoom in the camera */
+                    Transition zoom = zoomIn(p);
+                    if (zoom != null)
+                        zoom.play();   /* Zoom in the camera */
                 }
             });
         }
@@ -107,32 +117,48 @@ public class SolarSystem {
      * @return A transition to be played
      */
     private Transition zoomIn(PlanetRenderer renderer) {
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
+        if (view.getAnimationState() != AnimState.NOTHING &&
+                view.getAnimationState() != AnimState.ZOOMED)
+            return null;
+
+        view.setAnimationState(AnimState.ZOOMING);
+        TranslateTransition tt = new TranslateTransition(ZOOM_ANIM_TIME, camera);
         double onX = renderer.getModel().getLocalToSceneTransform().getTx();
         tt.setToX(onX);
         tt.setToY(0);
         tt.setToZ(-(renderer.getRadius() * 4.5));
 
-        RotateTransition rt = new RotateTransition(Duration.seconds(1.2), camera);
+        RotateTransition rt = new RotateTransition(ZOOM_ANIM_TIME, camera);
         rt.setAxis(camera.getRotationAxis());
         rt.setToAngle(0);
-        return new ParallelTransition(tt, rt);
+
+        ParallelTransition transition = new ParallelTransition(tt, rt);
+        transition.setOnFinished(e -> view.setAnimationState(AnimState.ZOOMED));
+        return transition;
     }
 
     /**
      * Returns a camera to its original position
      * @return A transition to be played
      */
-    private Transition zoomOut() {
-        TranslateTransition tt = new TranslateTransition(Duration.seconds(1.2), camera);
+    public Transition zoomOut() {
+        if (view.getAnimationState() != AnimState.ZOOMED &&
+                view.getAnimationState() != AnimState.ZOOMING)
+            return null;
+
+        view.setAnimationState(AnimState.ZOOMING);
+        TranslateTransition tt = new TranslateTransition(ZOOM_ANIM_TIME, camera);
         tt.setToX(initCameraTrans.getX());
         tt.setToY(initCameraTrans.getY());
         tt.setToZ(initCameraTrans.getZ());
 
-        RotateTransition rt = new RotateTransition(Duration.seconds(1.2), camera);
+        RotateTransition rt = new RotateTransition(ZOOM_ANIM_TIME, camera);
         rt.setAxis(initCameraAxis);
         rt.setToAngle(initCameraRot);
-        return new ParallelTransition(tt, rt);
+
+        ParallelTransition transition = new ParallelTransition(tt, rt);
+        transition.setOnFinished(e -> view.setAnimationState(AnimState.NOTHING));
+        return transition;
     }
 
     /**
@@ -270,8 +296,8 @@ public class SolarSystem {
     public Transition resetTransition(List<Planet> planetOrder) {
         TranslateTransition tt;
         ParallelTransition slideUpA = new ParallelTransition(),
-                           slideUpB = new ParallelTransition(),
-                           moveDown = new ParallelTransition();
+                slideUpB = new ParallelTransition(),
+                moveDown = new ParallelTransition();
 
         for (PlanetRenderer renderer : rendererMap.values()) {
             tt = new TranslateTransition(RESET_ANIM_TIME.divide(2), renderer.getModel());

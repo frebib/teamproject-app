@@ -10,12 +10,16 @@ import d2.teamproject.algorithm.sorting.SortStream;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
+import d2.teamproject.module.planets.PlanetView.AnimState;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.scene.image.Image;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -45,7 +49,9 @@ public class PlanetController extends JsonController {
         // TODO: Handle backward navigation
     }
     public void nextState() {
-        if (view.getAnimationState() != PlanetView.AnimState.NOTHING) {
+        if (view.getAnimationState() != AnimState.NOTHING &&
+                view.getAnimationState() != AnimState.ZOOMED &&
+                view.getAnimationState() != AnimState.ZOOMING) {
             LOG.finer("Already animating...");
             return;
         }

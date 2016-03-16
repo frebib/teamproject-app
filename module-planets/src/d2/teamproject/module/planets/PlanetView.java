@@ -40,7 +40,6 @@ import static d2.teamproject.module.planets.gfx.PlanetSort.*;
  * @author Parth Chandratreya
  */
 public class PlanetView extends VisualisationView {
-
     public enum AnimState {
         NOTHING,
         COMPARING,
@@ -170,7 +169,7 @@ public class PlanetView extends VisualisationView {
         animState = NOTHING;
         setNavDisabled(false);
 
-        sSystem = new SolarSystem(controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
+        sSystem = new SolarSystem(this, controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
         contentBox.getChildren().add(sSystem.getScene());
     }
 
@@ -235,6 +234,17 @@ public class PlanetView extends VisualisationView {
             LOG.finer("State is null, doing nothing");
             return;
         }
+
+        if (animState == ZOOMED || animState == ZOOMING) {
+            Transition zoom = sSystem.zoomOut();
+            EventHandler<ActionEvent> handler = zoom.getOnFinished();
+            zoom.setOnFinished(e -> {
+                updateState(state);
+                handler.handle(e);
+            });
+            zoom.playFromStart();
+            return;
+        }
         // TODO: Handle user input from buttons & tutorial mode and interject animations etc
         // TODO: Show comparison/sorting information
         // TODO: [Stretch] Show planet names & info on hover
@@ -243,7 +253,7 @@ public class PlanetView extends VisualisationView {
         if (state.isComplete())
             setTransition(sSystem.finishTransition(), PARTITIONING);
 
-        LOG.finer("SortState=%s", state);
+        LOG.finer("SortState=%s", state.getClass().getName());
         if (state instanceof CompareSortState) {
             updateText("compare");
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
@@ -303,5 +313,9 @@ public class PlanetView extends VisualisationView {
 
     public AnimState getAnimationState() {
         return animState;
+    }
+
+    public void setAnimationState(AnimState animState) {
+        this.animState = animState;
     }
 }
