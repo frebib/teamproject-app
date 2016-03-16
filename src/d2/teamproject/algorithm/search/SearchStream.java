@@ -7,6 +7,25 @@ import java.util.*;
 import java.util.function.BiFunction;
 
 public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
+        public static class Searcher<E> {
+        private BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor;
+        private String name;
+
+        public Searcher(BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor, String name) {
+            this.constructor = constructor;
+            this.name = name;
+        }
+
+        public SearchStream<E> get(Node<E> start, Node<E> goal) {
+            return constructor.apply(start, goal);
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
     private Node<E> start, goal;
     private BiFunction<E, E, Double> costFn, heuristicFn;
 
@@ -28,6 +47,14 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
         this.heuristicMap = new LinkedHashMap<>();
 
         this.allStates = new ArrayList<>();
+    }
+
+    public Node<E> getStart() {
+        return start;
+    }
+
+    public Node<E> getGoal() {
+        return goal;
     }
 
     protected SearchStream<E> setFrontier(SearchCollection<Node<E>> frontier) {

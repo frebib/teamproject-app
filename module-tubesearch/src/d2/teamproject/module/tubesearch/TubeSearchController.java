@@ -4,6 +4,7 @@ import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.SearchStream;
+import d2.teamproject.algorithm.search.SearchStream.Searcher;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
@@ -38,6 +39,8 @@ public class TubeSearchController extends JsonController {
     private Map<String, Tutorial> tutorials;
 
     private StationSelect selection;
+    private Searcher<TubeStation> searcher;
+    private TubeStation start, goal;
 
     public TubeSearchController() {
         view = new TubeSearchView(this);
@@ -48,19 +51,9 @@ public class TubeSearchController extends JsonController {
         selection = StationSelect.START;
         stream = new AStarSearchStream<>(null, null);
 
-        // Euclidean distance between 2 nodes
-        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
-                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
-
-        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
-        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
-                stream.getCost(a) + euclidean.apply(a, b);
-
-        stream.setCostFn(costFn).setHeuristicFn(euclidean);
-
         // TODO: Implement graph search
         view.getWindow().setOnKeyPressed(e -> {
-            if(stream.hasNext())
+            if (stream.hasNext())
                 view.animateState(stream.getNext());
         });
     }
@@ -138,13 +131,13 @@ public class TubeSearchController extends JsonController {
             case START:
                 LOG.info("Selected start station %s", station);
                 selection = StationSelect.GOAL;
-                stream.setStart(station);
+                start = station;
                 break;
             case GOAL:
                 LOG.info("Selected goal station %s", station);
                 selection = StationSelect.NONE;
-                stream.setGoal(station);
-                stream.initialise();
+                goal = station;
+                initSearch(searcher, start, goal);
                 LOG.fine("Search stream initialised");
                 break;
             case INFO:
@@ -171,5 +164,25 @@ public class TubeSearchController extends JsonController {
 
     public Set<TubeConnection> getLinks() {
         return links;
+    }
+
+    private void initSearch(Searcher<TubeStation> searcher, TubeStation start, TubeStation goal) {
+        stream = searcher.get(start, goal);
+
+        // Euclidean distance between 2 nodes
+        BiFunction<TubeStation, TubeStation, Double> euclidean = (a, b) -> Math.sqrt(
+                Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
+
+        // Euclidean distance between 2 adjacent nodes, plus total cost of previous node
+        BiFunction<TubeStation, TubeStation, Double> costFn = (a, b) ->
+                stream.getCost(a) + euclidean.apply(a, b);
+
+        stream.setCostFn(costFn)
+                .setHeuristicFn(euclidean)
+                .initialise();
+    }
+    public void setSearcher(Searcher<TubeStation> searcher) {
+        LOG.info("Searching with %s", searcher);
+        this.searcher = searcher;
     }
 }

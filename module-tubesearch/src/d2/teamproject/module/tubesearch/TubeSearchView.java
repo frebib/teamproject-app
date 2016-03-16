@@ -1,9 +1,9 @@
 package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonObject;
+import com.sun.javafx.collections.ImmutableObservableList;
 import d2.teamproject.PARTH;
-import d2.teamproject.algorithm.search.Node;
-import d2.teamproject.algorithm.search.SearchState;
+import d2.teamproject.algorithm.search.*;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
 import d2.teamproject.tutorial.Tutorial;
@@ -12,7 +12,10 @@ import javafx.animation.Transition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -27,6 +30,8 @@ import static d2.teamproject.PARTH.LOG;
 public class TubeSearchView extends VisualisationView {
     private final TubeSearchController controller;
     private TubeMap tubeMap;
+
+    private ComboBox<SearchStream.Searcher<TubeStation>> searcherCbx;
 
     private final boolean tutorialMode;
     private final Text tutorialDesc;
@@ -57,6 +62,21 @@ public class TubeSearchView extends VisualisationView {
         topBox.setAlignment(Pos.CENTER_LEFT);
         topBox.setSpacing(16);
 
+        searcherCbx = new ComboBox<>(new ImmutableObservableList<>(
+                new SearchStream.Searcher<>(AStarSearchStream::new, "A-Star Search"),
+                new SearchStream.Searcher<>(DijkstraSearchStream::new, "Dijkstra's Algorithm"),
+                new SearchStream.Searcher<>(BreadthFirstSearchStream::new, "Breadth-First Search"),
+                new SearchStream.Searcher<>(DepthFirstSearchStream::new, "Depth-First Search")
+        ));
+        searcherCbx.valueProperty().addListener((a, b, newVal) -> {
+            controller.setSearcher(newVal);
+        });
+
+        HBox spacer = new HBox();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+
+        topBox.getChildren().addAll(spacer, searcherCbx);
+
         bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2 - panePad.getTop() - panePad.getBottom());
         bottomBox.setPadding(panePad);
         bottomBox.setSpacing(16);
@@ -73,6 +93,8 @@ public class TubeSearchView extends VisualisationView {
 
         tubeMap.setClip(new Rectangle(contentBox.getPrefWidth(), contentBox.getPrefHeight()));
         contentBox.getChildren().add(tubeMap);
+
+        searcherCbx.setValue(searcherCbx.getItems().get(0));
     }
 
     @Override
