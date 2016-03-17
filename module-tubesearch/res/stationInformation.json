@@ -69,6 +69,12 @@
       "name": "Overground Line",
       "colour": "#ffffff",
       "stroke": "#ff8000"
+    },
+    {
+      "id": "walk",
+      "name": "Walk",
+      "colour": "#000000",
+      "stroke": "#000000"
     }
   ],
   "stations": [
@@ -99,7 +105,7 @@
       "id": "aldgateEast",
       "name": "Aldgate East",
       "xpos": 0.739,
-      "ypos": 0.343,
+      "ypos": 0.411,
       "connected": [
         {
           "id": "liverpoolStreet",
@@ -905,7 +911,7 @@
       "id": "highStreetKensington",
       "name": "High Street Kensington",
       "xpos": 0.255,
-      "ypos": 0.653,
+      "ypos": 0.516,
       "connected": [
         {
           "id": "nottingHillGate",
@@ -1223,7 +1229,7 @@
           "curves": []
         },
         {
-          "id": "monument",
+          "id": "bank",
           "lineId": "northern",
           "curves": []
         }
@@ -1324,7 +1330,7 @@
     {
       "id": "moorgate",
       "name": "Moorgate",
-      "xpos": 0.624,
+      "xpos": 0.625,
       "ypos": 0.397,
       "connected": [
         {
@@ -1410,7 +1416,7 @@
     {
       "id": "oldStreet",
       "name": "Old Street",
-      "xpos": 0.624,
+      "xpos": 0.625,
       "ypos": 0.314,
       "connected": [
         {
@@ -1830,6 +1836,11 @@
           "id": "shadwell",
           "lineId": "dlr",
           "curves": []
+        },
+        {
+          "id": "towerHill",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
@@ -1857,6 +1868,11 @@
         {
           "id": "aldgateEast",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "towerGateway",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -2226,6 +2242,11 @@
           "id": "puddingMillLane",
           "lineId": "dlr",
           "curves": []
+        },
+        {
+          "id": "bowRoad",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
@@ -2253,6 +2274,11 @@
         {
           "id": "bromleyByBow",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "bowChurch",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -2600,6 +2626,11 @@
           "id": "denmarkHill",
           "lineId": "overground",
           "curves": []
+        },
+        {
+          "id": "claphamNorth",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
@@ -2635,6 +2666,11 @@
         {
           "id": "claphamCommon",
           "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "claphamHighStreet",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3024,6 +3060,11 @@
           "id": "dalstonKingsland",
           "lineId": "overground",
           "curves": []
+        },
+        {
+          "id": "hackneyDowns",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
@@ -3046,6 +3087,11 @@
         {
           "id": "londonFields",
           "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "hackneyCentral",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4085,12 +4131,12 @@
       "ypos": 0.517,
       "connected": [
         {
-          "id": "woodlane",
+          "id": "woodLane",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "woodlane",
+          "id": "woodLane",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -4722,6 +4768,11 @@
           "id": "shepherdsBush",
           "lineId": "central",
           "curves": []
+        },
+        {
+          "id": "woodLane",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
@@ -4767,7 +4818,7 @@
       ]
     },
     {
-      "id": "woodlane",
+      "id": "woodLane",
       "name": "Wood Lane",
       "xpos": 0.17,
       "ypos": 0.481,
@@ -4790,6 +4841,11 @@
         {
           "id": "latimerRoad",
           "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "whiteCity",
+          "lineId": "walk",
           "curves": []
         }
       ]
