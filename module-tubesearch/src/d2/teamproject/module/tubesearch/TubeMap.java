@@ -45,6 +45,8 @@ public class TubeMap extends Pane {
         this.scaleY = scaleX / aspectRatio;
         this.width = width;
         this.height = height;
+        this.scaleX *= 1.4;
+        this.scaleY *= 1.4;
     }
 
     public void initialise() {

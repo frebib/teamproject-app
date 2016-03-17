@@ -73,7 +73,7 @@
     {
       "id": "walk",
       "name": "Walk",
-      "colour": "#000000",
+      "colour": "#ffffff",
       "stroke": "#000000"
     }
   ],
@@ -174,7 +174,7 @@
           "curves": []
         },
         {
-          "id": "finchleyRoad",
+          "id": "finchleyRoadMetropolitan",
           "lineId": "metropolitan",
           "curves": []
         },
@@ -2895,16 +2895,11 @@
       ]
     },
     {
-      "id": "finchleyRoad",
+      "id": "finchleyRoadJubilee",
       "name": "Finchley Road",
       "xpos": 0.33,
       "ypos": 0.208,
       "connected": [
-        {
-          "id": "bakerStreet",
-          "lineId": "metropolitan",
-          "curves": []
-        },
         {
           "id": "swissCottage",
           "lineId": "jubilee",
@@ -2913,6 +2908,29 @@
         {
           "id": "westHampstead",
           "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "finchleyRoadMetropolitan",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "finchleyRoadMetropolitan",
+      "name": "Finchley Road",
+      "xpos": 0.310,
+      "ypos": 0.218,
+      "connected": [
+        {
+          "id": "bakerStreet",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "finchleyRoadJubilee",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4415,7 +4433,7 @@
       "ypos": 0.224,
       "connected": [
         {
-          "id": "finchleyRoad",
+          "id": "finchleyRoadJubilee",
           "lineId": "jubilee",
           "curves": []
         },
@@ -4607,7 +4625,7 @@
           "curves": []
         },
         {
-          "id": "finchleyRoad",
+          "id": "finchleyRoadJubilee",
           "lineId": "jubilee",
           "curves": []
         },
