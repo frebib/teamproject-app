@@ -80,11 +80,29 @@ public class TubeMap extends Pane {
             if (true) {
 //            if (!conn.hasSublines()) {
                 // TODO: Draw composite colour lines
-                Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
-                line.setStrokeWidth(0.005 * scaleX);
-                line.setStroke(conn.getLine().getColour());
-                lines.getChildren().add(line);
+                if(conn.getLine().getStroke() != null){
+                    Line border = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    border.setStrokeWidth(0.007 * scaleX);
+                    border.setStroke(conn.getLine().getStroke());
+                    lines.getChildren().add(border);
+                    Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    line.setStrokeWidth(0.002 * scaleX);
+                    line.setStroke(conn.getLine().getColour());
+                    lines.getChildren().add(line);
+                }
+                else
+                {
+                    Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    line.setStrokeWidth(0.005 * scaleX);
+                    line.setStroke(conn.getLine().getColour());
+                    lines.getChildren().add(line);
+                }
+
+
+
 
 //                SequentialTransition transition = new SequentialTransition();
 //                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
