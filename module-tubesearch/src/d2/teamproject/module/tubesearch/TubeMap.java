@@ -79,8 +79,7 @@ public class TubeMap extends Pane {
         for (TubeConnection conn : connections) {
             if (true) {
 //            if (!conn.hasSublines()) {
-                // TODO: Draw composite colour lines
-                if(conn.getLine().getStroke() != null){
+                if(conn.getLine().getStroke() != null) {
                     Line border = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
                             conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
                     border.setStrokeWidth(0.007 * scaleX);
@@ -92,8 +91,7 @@ public class TubeMap extends Pane {
                     line.setStroke(conn.getLine().getColour());
                     lines.getChildren().add(line);
                 }
-                else
-                {
+                else {
                     Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
                             conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
                     line.setStrokeWidth(0.005 * scaleX);
