@@ -115,7 +115,12 @@ public class TubeSearchController extends JsonController {
                 // TODO: Load sublines here
 
                 try {
-                    links.add(new TubeConnection(from, to, line));
+                    TubeConnection connection = new TubeConnection(from, to, line);
+
+                    if (links.stream().filter(connection::equals).count() == 0)
+                        links.add(connection);
+                    else
+                        LOG.info("Connection %s already exists", connection);
                 } catch (IllegalArgumentException e) {
                     LOG.warning("%s == %s", to, from);
                     LOG.exception(e);
