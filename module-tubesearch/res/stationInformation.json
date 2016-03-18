@@ -512,7 +512,7 @@
           "curves": []
         },
         {
-          "id": "baronsCourt",
+          "id": "baronsCourtPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         }
@@ -834,7 +834,7 @@
     {
       "id": "goodgeStreet",
       "name": "Goodge Street",
-      "xpos": 0.476,
+      "xpos": 0.475,
       "ypos": 0.386,
       "connected": [
         {
@@ -1590,7 +1590,7 @@
           "curves": []
         },
         {
-          "id": "paddingtonDC",
+          "id": "paddingtonHC",
           "lineId": "walk",
           "curves": []
         }
@@ -2010,7 +2010,7 @@
     {
       "id": "warrenStreet",
       "name": "Warren Street",
-      "xpos": 0.474,
+      "xpos": 0.475,
       "ypos": 0.326,
       "connected": [
         {
@@ -2184,10 +2184,10 @@
       ]
     },
     {
-      "id": "baronsCourt",
+      "id": "baronsCourtDistrict",
       "name": "Barons Court",
       "xpos": 0.192,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "hammersmithDP",
@@ -2198,7 +2198,15 @@
           "id": "westKensington",
           "lineId": "district",
           "curves": []
-        },
+        }
+      ]
+    },
+    {
+      "id": "baronsCourtPiccadilly",
+      "name": "Barons Court",
+      "xpos": 0.192,
+      "ypos": 0.582,
+      "connected": [
         {
           "id": "hammersmithDP",
           "lineId": "piccadilly",
@@ -3236,7 +3244,7 @@
           "curves": []
         },
         {
-          "id": "baronsCourt",
+          "id": "baronsCourtPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -3246,7 +3254,7 @@
           "curves": []
         },
         {
-          "id": "baronsCourt",
+          "id": "baronsCourtDistrict",
           "lineId": "district",
           "curves": []
         }
@@ -4077,7 +4085,7 @@
       "id": "ravenscourtPark",
       "name": "Ravenscourt Park",
       "xpos": 0.142,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -4302,7 +4310,7 @@
       "id": "stamfordBrook",
       "name": "Stamford Brook",
       "xpos": 0.105,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "turnhamGreen",
@@ -4742,7 +4750,7 @@
       "id": "westKensington",
       "name": "West Kensington",
       "xpos": 0.216,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "earlsCourt",
@@ -4750,7 +4758,7 @@
           "curves": []
         },
         {
-          "id": "baronsCourt",
+          "id": "baronsCourtDistrict",
           "lineId": "district",
           "curves": []
         }
