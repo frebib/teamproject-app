@@ -114,7 +114,12 @@ public class TubeSearchController extends JsonController {
                 }
                 // TODO: Load sublines here
 
-                links.add(new TubeConnection(from, to, line));
+                try {
+                    links.add(new TubeConnection(from, to, line));
+                } catch (IllegalArgumentException e) {
+                    LOG.warning("%s == %s", to, from);
+                    LOG.exception(e);
+                }
             });
         });
 
