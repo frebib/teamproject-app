@@ -33,7 +33,7 @@ public class TubeMap extends Pane {
 
     private HashMap<TubeStation, Circle> circleMap;
 
-    private double scaleX = PARTH.WIDTH, scaleY;
+    private double scaleX = PARTH.WIDTH * 1.4, scaleY;
     private double width, height;
 
     private boolean isDrag;
@@ -45,8 +45,6 @@ public class TubeMap extends Pane {
         this.scaleY = scaleX / aspectRatio;
         this.width = width;
         this.height = height;
-        this.scaleX *= 1.4;
-        this.scaleY *= 1.4;
     }
 
     public void initialise() {
