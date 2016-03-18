@@ -288,12 +288,12 @@
       "ypos": 0.386,
       "connected": [
         {
-          "id": "paddington",
+          "id": "paddingtonDC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "paddington",
+          "id": "paddingtonDC",
           "lineId": "district",
           "curves": []
         },
@@ -525,7 +525,7 @@
       "ypos": 0.286,
       "connected": [
         {
-          "id": "paddington",
+          "id": "paddingtonBakerloo",
           "lineId": "bakerloo",
           "curves": []
         },
@@ -539,37 +539,55 @@
     {
       "id": "edgwareRoadCH",
       "name": "Edgware Road - Circle, District & Hammersmith",
-      "xpos": 0.295,
-      "ypos": 0.314,
+      "xpos": 0.296,
+      "ypos": 0.299,
       "connected": [
         {
-          "id": "paddington",
+          "id": "paddingtonHC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonHC",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "bakerStreet",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "edgwareRoadDC",
+      "name": "Edgware Road - Circle, District & Hammersmith",
+      "xpos": 0.296,
+      "ypos": 0.319,
+      "connected": [
+        {
+          "id": "paddingtonDC",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "paddington",
+          "id": "paddingtonDC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "paddington",
-          "lineId": "circle",
-          "curves": []
-        },
-        {
-          "id": "paddington",
-          "lineId": "hammersmithCity",
-          "curves": []
-        },
-        {
-          "id": "bakerStreet",
-          "lineId": "circle",
-          "curves": []
-        },
-        {
-          "id": "bakerStreet",
-          "lineId": "hammersmithCity",
+          "id": "edgwareRoadCH",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -1422,7 +1440,12 @@
         {
           "id": "angel",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.625,
+              "ypos": 0.289
+            }
+          ]
         },
         {
           "id": "moorgate",
@@ -1470,10 +1493,10 @@
       ]
     },
     {
-      "id": "paddington",
+      "id": "paddingtonBakerloo",
       "name": "Paddington",
-      "xpos": 0.246,
-      "ypos": 0.299,
+      "xpos": 0.237,
+      "ypos": 0.286,
       "connected": [
         {
           "id": "warwickAvenue",
@@ -1486,6 +1509,24 @@
           "curves": []
         },
         {
+          "id": "paddingtonHC",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "paddingtonHC",
+      "name": "Paddington",
+      "xpos": 0.246,
+      "ypos": 0.299,
+      "connected": [
+        {
           "id": "royalOak",
           "lineId": "hammersmithCity",
           "curves": []
@@ -1497,16 +1538,6 @@
         },
         {
           "id": "edgwareRoadCH",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "bayswater",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "edgwareRoadCH",
           "lineId": "circle",
           "curves": []
         },
@@ -1516,8 +1547,51 @@
           "curves": []
         },
         {
+          "id": "paddingtonBakerloo",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "paddingtonDC",
+      "name": "Paddington",
+      "xpos": 0.259,
+      "ypos": 0.319,
+      "connected": [
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "bayswater",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
           "id": "bayswater",
           "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonBakerloo",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4070,12 +4144,12 @@
           "curves": []
         },
         {
-          "id": "paddington",
+          "id": "paddingtonHC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "paddington",
+          "id": "paddingtonHC",
           "lineId": "hammersmithCity",
           "curves": []
         }
@@ -4541,7 +4615,7 @@
           "curves": []
         },
         {
-          "id": "paddington",
+          "id": "paddingtonBakerloo",
           "lineId": "bakerloo",
           "curves": []
         }
