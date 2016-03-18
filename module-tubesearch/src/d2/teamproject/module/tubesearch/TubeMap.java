@@ -99,9 +99,6 @@ public class TubeMap extends Pane {
                     lines.getChildren().add(line);
                 }
 
-
-
-
 //                SequentialTransition transition = new SequentialTransition();
 //                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
 //                        conn.getTo().getX() * scaleX, conn.getFrom().getY() * scaleY, 0.2);
