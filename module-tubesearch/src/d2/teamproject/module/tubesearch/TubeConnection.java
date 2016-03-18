@@ -3,6 +3,7 @@ package d2.teamproject.module.tubesearch;
 public class TubeConnection {
     private TubeStation from, to;
     private TubeLine line;
+    private boolean bidir;
 
     public TubeConnection(TubeStation from, TubeStation to, TubeLine line) {
         if (from.equals(to))
@@ -10,6 +11,7 @@ public class TubeConnection {
         this.from = from;
         this.to = to;
         this.line = line;
+        this.bidir = false;
 
         from.addSuccessor(to);
 
@@ -28,6 +30,15 @@ public class TubeConnection {
 
     public TubeLine getLine() {
         return line;
+    }
+
+    public boolean isBidirectional() {
+        return bidir;
+    }
+
+    public TubeConnection setBidirectional() {
+        this.bidir = true;
+        return this;
     }
 
     @Override

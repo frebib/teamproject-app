@@ -10,10 +10,7 @@ import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.tutorial.Tutorial;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.BiFunction;
 
 import static d2.teamproject.PARTH.LOG;
@@ -116,11 +113,18 @@ public class TubeSearchController extends JsonController {
 
                 try {
                     TubeConnection connection = new TubeConnection(from, to, line);
+                    Optional<TubeConnection> equals = links.stream().filter(connection::equals).findFirst();
 
-                    if (links.stream().filter(connection::equals).count() == 0)
+                    if (!equals.isPresent())
                         links.add(connection);
-                    else
+                    else {
                         LOG.info("Connection %s already exists", connection);
+
+                        TubeConnection otherConn = equals.get();
+                        if (connection.getTo() == otherConn.getFrom() &&
+                                connection.getFrom() == otherConn.getTo())
+                            otherConn.setBidirectional();
+                    }
                 } catch (IllegalArgumentException e) {
                     LOG.warning("%s == %s", to, from);
                     LOG.exception(e);
