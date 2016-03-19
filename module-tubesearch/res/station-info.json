@@ -232,7 +232,7 @@
           "curves": []
         },
         {
-          "id": "waterloo",
+          "id": "waterlooBakerlooWC",
           "lineId": "waterlooCity",
           "curves": []
         },
@@ -441,7 +441,7 @@
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "embankmentNorthern",
           "lineId": "northern",
           "curves": []
         },
@@ -451,7 +451,7 @@
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "embankmentDCB",
           "lineId": "bakerloo",
           "curves": []
         }
@@ -492,7 +492,7 @@
           "curves": []
         },
         {
-          "id": "westBrompton",
+          "id": "westBromptonDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -616,7 +616,30 @@
       ]
     },
     {
-      "id": "embankment",
+      "id": "embankmentNorthern",
+      "name": "Embankment",
+      "xpos": 0.475,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "charingCross",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "waterlooNorthern",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "embankmentDCB",
       "name": "Embankment",
       "xpos": 0.485,
       "ypos": 0.597,
@@ -627,22 +650,12 @@
           "curves": []
         },
         {
-          "id": "waterloo",
+          "id": "waterlooBakerlooWC",
           "lineId": "bakerloo",
           "curves": []
         },
         {
-          "id": "charingCross",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
-          "id": "waterloo",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
-          "id": "westminster",
+          "id": "westminsterDC",
           "lineId": "circle",
           "curves": []
         },
@@ -652,26 +665,87 @@
           "curves": []
         },
         {
-          "id": "westminster",
+          "id": "westminsterDC",
           "lineId": "district",
           "curves": []
         },
         {
           "id": "temple",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "embankmentNorthern",
+          "lineId": "walk",
           "curves": []
         }
       ]
     },
     {
-      "id": "euston",
+      "id": "eustonOverground",
       "name": "Euston",
-      "xpos": 0.499,
-      "ypos": 0.274,
+      "xpos": 0.479,
+      "ypos": 0.275,
+      "connected": [
+        {
+          "id": "southHampstead",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "eustonNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eustonVictoria",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonNorthern",
+      "name": "Euston",
+      "xpos": 0.493,
+      "ypos": 0.275,
       "connected": [
         {
           "id": "morningtonCrescent",
           "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "eustonOverground",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eustonVictoria",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonVictoria",
+      "name": "Euston",
+      "xpos": 0.507,
+      "ypos": 0.275,
+      "connected": [
+        {
+          "id": "kingsCross",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "victoria",
           "curves": []
         },
         {
@@ -680,28 +754,18 @@
           "curves": []
         },
         {
-          "id": "warrenStreet",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
           "id": "kingsCross",
           "lineId": "northern",
           "curves": []
         },
         {
-          "id": "kingsCross",
-          "lineId": "victoria",
+          "id": "eustonOverground",
+          "lineId": "walk",
           "curves": []
         },
         {
-          "id": "warrenStreet",
-          "lineId": "victoria",
-          "curves": []
-        },
-        {
-          "id": "southHampstead",
-          "lineId": "overground",
+          "id": "eustonNorthern",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -753,18 +817,7 @@
         {
           "id": "kingsCross",
           "lineId": "circle",
-          "curves": [
-            {
-              "xpos": 0.2,
-              "ypos": 0.2
-            }
-          ],
-          "parallels": [
-            {
-              "xpos": 0.2,
-              "ypos": 0.2
-            }
-          ]
+          "curves": []
         },
         {
           "id": "kingsCross",
@@ -805,12 +858,12 @@
           "curves": []
         },
         {
-          "id": "southKensington",
+          "id": "southKensingtonDC",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "southKensington",
+          "id": "southKensingtonDC",
           "lineId": "circle",
           "curves": []
         },
@@ -838,7 +891,7 @@
           "curves": []
         },
         {
-          "id": "southKensington",
+          "id": "southKensingtonPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -908,7 +961,7 @@
     {
       "id": "greenPark",
       "name": "Green Park",
-      "xpos": 0.385,
+      "xpos": 0.384,
       "ypos": 0.490,
       "connected": [
         {
@@ -917,7 +970,7 @@
           "curves": []
         },
         {
-          "id": "westminster",
+          "id": "westminsterJubilee",
           "lineId": "jubilee",
           "curves": []
         },
@@ -1052,7 +1105,7 @@
       "ypos": 0.301,
       "connected": [
         {
-          "id": "euston",
+          "id": "eustonVictoria",
           "lineId": "victoria",
           "curves": []
         },
@@ -1072,7 +1125,7 @@
           "curves": []
         },
         {
-          "id": "euston",
+          "id": "eustonVictoria",
           "lineId": "northern",
           "curves": []
         },
@@ -1120,7 +1173,7 @@
       "ypos": 0.547,
       "connected": [
         {
-          "id": "southKensington",
+          "id": "southKensingtonPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -1134,11 +1187,11 @@
     {
       "id": "lambethNorth",
       "name": "Lambeth North",
-      "xpos": 0.487,
+      "xpos": 0.485,
       "ypos": 0.729,
       "connected": [
         {
-          "id": "waterloo",
+          "id": "waterlooBakerlooWC",
           "lineId": "bakerloo",
           "curves": []
         },
@@ -1650,7 +1703,7 @@
     {
       "id": "pimlico",
       "name": "Pimlico",
-      "xpos": 0.382,
+      "xpos": 0.384,
       "ypos": 0.717,
       "connected": [
         {
@@ -1744,12 +1797,12 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "southKensington",
+          "id": "southKensingtonDC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "southKensington",
+          "id": "southKensingtonDC",
           "lineId": "district",
           "curves": []
         },
@@ -1766,7 +1819,7 @@
       ]
     },
     {
-      "id": "southKensington",
+      "id": "southKensingtonDC",
       "name": "South Kensington",
       "xpos": 0.303,
       "ypos": 0.597,
@@ -1792,6 +1845,19 @@
           "curves": []
         },
         {
+          "id": "southKensingtonPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "southKensingtonPiccadilly",
+      "name": "South Kensington",
+      "xpos": 0.303,
+      "ypos": 0.582,
+      "connected": [
+        {
           "id": "gloucesterRoadPiccadilly",
           "lineId": "piccadilly",
           "curves": []
@@ -1799,6 +1865,11 @@
         {
           "id": "knightsbridge",
           "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonDC",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -1815,7 +1886,7 @@
           "curves": []
         },
         {
-          "id": "waterloo",
+          "id": "waterlooJubilee",
           "lineId": "jubilee",
           "curves": []
         }
@@ -1838,12 +1909,12 @@
           "curves": []
         },
         {
-          "id": "westminster",
+          "id": "westminsterDC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "westminster",
+          "id": "westminsterDC",
           "lineId": "district",
           "curves": []
         }
@@ -1874,12 +1945,12 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "embankment",
+          "id": "embankmentDCB",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "embankmentDCB",
           "lineId": "district",
           "curves": []
         },
@@ -2037,12 +2108,12 @@
       "ypos": 0.326,
       "connected": [
         {
-          "id": "euston",
+          "id": "eustonNorthern",
           "lineId": "northern",
           "curves": []
         },
         {
-          "id": "euston",
+          "id": "eustonVictoria",
           "lineId": "victoria",
           "curves": []
         },
@@ -2059,13 +2130,13 @@
       ]
     },
     {
-      "id": "waterloo",
+      "id": "waterlooJubilee",
       "name": "Waterloo",
-      "xpos": 0.475,
+      "xpos": 0.465,
       "ypos": 0.650,
       "connected": [
         {
-          "id": "westminster",
+          "id": "westminsterJubilee",
           "lineId": "jubilee",
           "curves": []
         },
@@ -2075,7 +2146,25 @@
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "waterlooNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "waterlooNorthern",
+      "name": "Waterloo",
+      "xpos": 0.475,
+      "ypos": 0.650,
+      "connected": [
+        {
+          "id": "embankmentNorthern",
           "lineId": "northern",
           "curves": []
         },
@@ -2085,7 +2174,25 @@
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "waterlooBakerlooWC",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "waterlooBakerlooWC",
+      "name": "Waterloo",
+      "xpos": 0.485,
+      "ypos": 0.650,
+      "connected": [
+        {
+          "id": "embankmentDCB",
           "lineId": "bakerloo",
           "curves": []
         },
@@ -2098,11 +2205,21 @@
           "id": "bank",
           "lineId": "waterlooCity",
           "curves": []
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooNorthern",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
     {
-      "id": "westminster",
+      "id": "westminsterDC",
       "name": "Westminster",
       "xpos": 0.444,
       "ypos": 0.597,
@@ -2118,23 +2235,41 @@
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "embankmentDCB",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "embankment",
+          "id": "embankmentDCB",
           "lineId": "district",
           "curves": []
         },
+        {
+          "id": "westminsterJubilee",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "westminsterJubilee",
+      "name": "Westminster",
+      "xpos": 0.444,
+      "ypos": 0.580,
+      "connected": [
         {
           "id": "greenPark",
           "lineId": "jubilee",
           "curves": []
         },
         {
-          "id": "waterloo",
+          "id": "waterlooJubilee",
           "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -2583,6 +2718,11 @@
         },
         {
           "id": "morningtonCrescent",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "eustonVictoria",
           "lineId": "northern",
           "curves": []
         }
@@ -3108,7 +3248,7 @@
           "curves": []
         },
         {
-          "id": "westBrompton",
+          "id": "westBromptonDistrict",
           "lineId": "district",
           "curves": []
         }
@@ -3497,7 +3637,7 @@
           "curves": []
         },
         {
-          "id": "westBrompton",
+          "id": "westBromptonOverground",
           "lineId": "overground",
           "curves": []
         }
@@ -3528,7 +3668,7 @@
       "ypos": 0.853,
       "connected": [
         {
-          "id": "waterloo",
+          "id": "waterlooNorthern",
           "lineId": "northern",
           "curves": []
         },
@@ -3607,7 +3747,7 @@
           "curves": []
         },
         {
-          "id": "westBrompton",
+          "id": "westBromptonOverground",
           "lineId": "overground",
           "curves": []
         }
@@ -3898,7 +4038,7 @@
     {
       "id": "morningtonCrescent",
       "name": "Mornington Crescent",
-      "xpos": 0.499,
+      "xpos": 0.493,
       "ypos": 0.227,
       "connected": [
         {
@@ -3907,7 +4047,7 @@
           "curves": []
         },
         {
-          "id": "euston",
+          "id": "eustonNorthern",
           "lineId": "northern",
           "curves": []
         }
@@ -4358,7 +4498,7 @@
           "curves": []
         },
         {
-          "id": "euston",
+          "id": "eustonOverground",
           "lineId": "overground",
           "curves": []
         }
@@ -4742,7 +4882,7 @@
       ]
     },
     {
-      "id": "westBrompton",
+      "id": "westBromptonDistrict",
       "name": "West Brompton",
       "xpos": 0.235,
       "ypos": 0.665,
@@ -4752,6 +4892,24 @@
           "lineId": "district",
           "curves": []
         },
+        {
+          "id": "earlsCourt",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "westBromptonOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "westBromptonOverground",
+      "name": "West Brompton",
+      "xpos": 0.224,
+      "ypos": 0.665,
+      "connected": [
         {
           "id": "imperialWharf",
           "lineId": "overground",
@@ -4763,8 +4921,8 @@
           "curves": []
         },
         {
-          "id": "earlsCourt",
-          "lineId": "district",
+          "id": "westBromptonDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
