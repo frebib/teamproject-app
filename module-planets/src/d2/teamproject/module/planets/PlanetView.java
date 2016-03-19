@@ -76,7 +76,6 @@ public class PlanetView extends VisualisationView {
      * @param controller
      */
     public PlanetView(PlanetController controller) {
-        LOG.info("plloaded");
         this.controller = controller;
         tutorialText = new TextFlow();
         tutorialTitle = new Text();
@@ -193,6 +192,18 @@ public class PlanetView extends VisualisationView {
 
     public void loadTutorial(String tutorialType) {
         tutorial = controller.getTutorial(tutorialType);
+        tutorialText = new TextFlow(); // Needs to be cleared
+        // Set the font size
+        tutorialTitle.setFont(new Font(25));
+        tutorialDesc.setFont(new Font(15));
+        // Set the text to initial step
+        updateText("information","");
+        // Set text wrapping width
+        tutorialText.setMaxWidth(600);
+
+        tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
+        tutorialText.setVisible(tutorialMode);
+        bottomCentre.getChildren().addAll(tutorialText);
     }
 
     public BaseController getController() {
@@ -210,9 +221,8 @@ public class PlanetView extends VisualisationView {
     /**
      * @param key
      */
-    private void updateText(String key) {
-        // TODO: Fix tutorial crashing!
-        tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
+    private void updateText(String key, String extra) {
+        tutorialTitle.setText(extra+tutorial.getInstruction(key).getTitle());
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
 
@@ -232,9 +242,11 @@ public class PlanetView extends VisualisationView {
         /* If in a partial compare state */
         if (animState == COMPARED) {
             CompareSortState<Planet> state = (CompareSortState<Planet>) controller.getSorter().getCurrent();
+            String planets = "Comparing "+controller.getPlanets().get((int)((CompareSortState) state).getCompares().getX()).getName()+" and "+controller.getPlanets().get((int)((CompareSortState) state).getCompares().getY()).getName()+" - ";
             if (state.isSwap()) {
-                updateText("swap");
-
+                LOG.info(planets);
+                updateText("swap",planets);
+//                tutorialTitle.setText(planets+tutorialTitle.getText());
                 t = sSystem.swapTransition(state);
                 t.setOnFinished(ev -> {
                     // Request the liststate and update the SolarSystem list
@@ -248,7 +260,7 @@ public class PlanetView extends VisualisationView {
             } else {
                 // Reversing the animation doesn't work
                 // properly, it's likely a bug in the JDK
-                updateText("notSwap");
+                updateText("notSwap",planets);
                 doTransition(sSystem.compareTransition(state, true), SWAPPING);
             }
             return;
@@ -280,7 +292,8 @@ public class PlanetView extends VisualisationView {
         } else if (state.isComplete()) {
             doTransition(sSystem.finishTransition(), PARTITIONING);
         } else if (state instanceof CompareSortState) {
-            updateText("compare");
+            String planets = "Comparing "+controller.getPlanets().get((int)((CompareSortState) state).getCompares().getX()).getName()+" and "+controller.getPlanets().get((int)((CompareSortState) state).getCompares().getY()).getName()+" - ";
+            updateText("compare",planets);
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
 
             t = new SequentialTransition(
