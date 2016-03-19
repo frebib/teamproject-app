@@ -15,9 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.function.BiFunction;
 
 /**
  * @author Luke Taher
@@ -27,6 +29,10 @@ public class TubeMap extends Pane {
     private static final double ZOOMSPEED = 0.0025;
     private static final double ZOOMMIN = 0.5;
     private static final double ZOOMMAX = 6;
+
+    private static final double CURVE_RADIUS = 0.012;
+    private static final double LINE_WIDTH = 0.005;
+    private static final double INNER_LINE_WIDTH = 0.0015;
 
     private TubeSearchController controller;
     private Group map;
@@ -75,136 +81,66 @@ public class TubeMap extends Pane {
         Set<TubeConnection> connections = controller.getLinks();
 
         for (TubeConnection conn : connections) {
-            if (true) {
-//            if (!conn.hasSublines()) {
-                if(conn.getLine().getInnerColour() != null) {
-                    Line border = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
-                    border.setStrokeWidth(0.007 * scaleX);
-                    border.setStroke(conn.getLine().getInnerColour());
-                    lines.getChildren().add(border);
-                    Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
-                    line.setStrokeWidth(0.002 * scaleX);
-                    line.setStroke(conn.getLine().getColour());
-                    lines.getChildren().add(line);
-                }
-                else {
-                    Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
-                    line.setStrokeWidth(0.005 * scaleX);
-                    line.setStroke(conn.getLine().getColour());
-                    lines.getChildren().add(line);
-                }
+            if (conn.getCurvePoints().isEmpty()) {
+                // Draw line
+                Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                line.setStrokeWidth(LINE_WIDTH * scaleX);
+                line.setStroke(conn.getLine().getColour());
+                lines.getChildren().add(line);
 
-//                SequentialTransition transition = new SequentialTransition();
-//                PathTransition d1 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-//                        conn.getTo().getX() * scaleX, conn.getFrom().getY() * scaleY, 0.2);
-//                PathTransition d2 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.4);
-//                PathTransition d3 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.6);
-//                PathTransition d4 = dotTransition(dot, conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
-//                        conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY, 0.8);
-//
-//                transition.getChildren().addAll(d1, d2, d3, d4);
-//                System.out.println(conn.getFrom());
+                // Draw line inner (if it has one)
+                if (conn.getLine().getInnerColour() != null) {
+                    Line inner = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    inner.setStrokeWidth(INNER_LINE_WIDTH * scaleX);
+                    inner.setStroke(conn.getLine().getInnerColour());
+                    lines.getChildren().add(inner);
+                }
             } else {
-//                List<Point2D> points = conn.getSublines();
-//
-//                double prevX = 0;
-//                double prevY = 0;
-//                double point1X, point1Y, point2X, point2Y;
-//                double lineOffset1X, lineOffset1Y, lineOffset2X, lineOffset2Y;
-//
-//                point1X = conn.getFrom().getX() * scaleX;
-//                point1Y = conn.getFrom().getY() * scaleY;
-//                point2X = points.get(0).getX() * scaleX;
-//                point2Y = points.get(0).getY() * scaleY;
-//                lineOffset1X = 0;
-//                lineOffset1Y = 0;
-//                lineOffset2X = calcOffset(point2X, point1X);
-//                lineOffset2Y = calcOffset(point2Y, point1Y);
-//                prevX = point2X + lineOffset2X;
-//                prevY = point2Y + lineOffset2Y;
-//
-//                Line line = new Line(point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y);
-//                line.setStrokeWidth(5);
-//                line.setStroke(conn.getValue().getColour());
-//                lines.getChildren().add(line);
-//
-//
-//                SequentialTransition transition = new SequentialTransition();
-//                PathTransition d1 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.2);
-//                PathTransition d2 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.4);
-//                PathTransition d3 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.6);
-//                PathTransition d4 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.8);
-//
-//                transition.getChildren().addAll(d1, d2, d3, d4);
-//
-//
-//                System.out.println(points.size());
-//                for (int i = 0; i < points.size() - 1; i++) {
-//
-//                    point1X = points.get(i).getX() * scaleX;
-//                    point1Y = points.get(i).getY() * scaleY;
-//                    point2X = points.get(i + 1).getX() * scaleX;
-//                    point2Y = points.get(i + 1).getY() * scaleY;
-//                     offset for a point on its second line is itself and next
-//                     offset for a point on its first line is itself with prev point
-//                    lineOffset1X = calcOffset(point1X, prevX);
-//                    lineOffset1Y = calcOffset(point1Y, prevY);
-//                    lineOffset2X = calcOffset(point2X + lineOffset1X, point1X);
-//                    lineOffset2Y = calcOffset(point2Y + lineOffset1Y, point1Y);
-//
-//                        System.out.println("X1:" + (point1X+lineOffset1X));
-//                        System.out.println("Y1:" + (point1Y+lineOffset1Y));
-//                        System.out.println("X2:" + (prevX));
-//                        System.out.println("Y2:" + (prevY));
-//                        System.out.println("C1:" + (point1X));
-//                        System.out.println("C2:" + (point1Y));
-//                        QuadCurve c = genCurve(Color.ALICEBLUE, point1X+lineOffset1X, point1Y+lineOffset1Y,
-//                                                prevX, prevY, point1X, point1Y);
-//                        root.getChildren().add(c);
-//
-//                    prevX = point2X + lineOffset2X;
-//                    prevY = point2Y + lineOffset2Y;
-//
-//                    Line line2 = new Line(point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y);
-//                    line2.setStrokeWidth(5);
-//                    line2.setStroke(conn.getValue().getColour());
-//                    lines.getChildren().add(line2);
-//
-//                    PathTransition d5 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.2);
-//                    PathTransition d6 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.4);
-//                    PathTransition d7 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.6);
-//                    PathTransition d8 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.8);
-//
-//                    transition.getChildren().addAll(d5, d6, d7, d8);
+                List<Point2D> points = conn.getLinePoints();
 
-//                }
-//                point1X = points.get(points.size() - 1).getX() * scaleX;
-//                point1Y = points.get(points.size() - 1).getY() * scaleY;
-//                point2X = conn.getKey().getPosX() * scaleX;
-//                point2Y = conn.getKey().getPosY() * scaleY;
-//                lineOffset1X = calcOffset(point1X, prevX);
-//                lineOffset1Y = calcOffset(point1Y, prevY);
-//                lineOffset2X = 0;
-//                lineOffset2Y = 0;
-//
-//                Line line2 = new Line(point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y);
-//                line2.setStrokeWidth(5);
-//                line2.setStroke(conn.getValue().getColour());
-//                lines.getChildren().add(line2);
-//
-//                PathTransition d5 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.2);
-//                PathTransition d6 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.4);
-//                PathTransition d7 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.6);
-//                PathTransition d8 = dotTransition(dot, point1X + lineOffset1X, point1Y + lineOffset1Y, point2X + lineOffset2X, point2Y + lineOffset2Y, 0.8);
-//
-//                transition.getChildren().addAll(d5, d6, d7, d8);
-//
-//                transitions.add(transition);
+                // Given 2 points that represent a line, this returns the
+                // point shorten by a fixed amount from point b
+                BiFunction<Point2D, Point2D, Point2D> shorten = (a, b) -> {
+                    Point2D delta = b.subtract(a);
+                    double len = a.distance(b);
+                    double ratio = (len - CURVE_RADIUS) / len;
+                    return a.add(delta.multiply(ratio));
+                };
+
+                List<PathElement> pathElems = new ArrayList<>();
+
+                Point2D start = points.get(0);
+                pathElems.add(new MoveTo(start.getX() * scaleX, start.getY() * scaleY));
+
+                Point2D lastPoint = points.get(0);
+                for (int i = 1; i < points.size() - 1; i++) {
+                    Point2D m = points.get(i);
+                    Point2D b = points.get(i + 1);
+
+                    Point2D curveStart = shorten.apply(lastPoint, m);
+                    Point2D curveEnd = shorten.apply(b, m);
+
+                    pathElems.add(new LineTo(curveStart.getX() * scaleX, curveStart.getY() * scaleY));
+                    pathElems.add(new QuadCurveTo(m.getX() * scaleX, m.getY() * scaleY, curveEnd.getX() * scaleX, curveEnd.getY() * scaleY));
+                    lastPoint = curveEnd;
+                }
+
+                Point2D end = points.get(points.size() - 1);
+                pathElems.add(new LineTo(end.getX() * scaleX, end.getY() * scaleY));
+
+                Path path = new Path(pathElems);
+                path.setStrokeWidth(LINE_WIDTH * scaleX);
+                path.setStroke(conn.getLine().getColour());
+                lines.getChildren().add(path);
+
+                if (conn.getLine().getInnerColour() != null) {
+                    path = new Path(pathElems);
+                    path.setStrokeWidth(INNER_LINE_WIDTH * scaleX);
+                    path.setStroke(conn.getLine().getInnerColour());
+                    lines.getChildren().add(path);
+                }
             }
         }
 

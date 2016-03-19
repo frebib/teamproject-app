@@ -972,7 +972,12 @@
         {
           "id": "chanceryLane",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.536,
+              "ypos": 0.418
+            }
+          ]
         },
         {
           "id": "russellSquare",
@@ -2482,7 +2487,12 @@
         {
           "id": "camdenRoad",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.563,
+              "ypos": 0.173
+            }
+          ]
         },
         {
           "id": "highburyIslington",

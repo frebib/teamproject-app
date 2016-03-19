@@ -48,8 +48,25 @@ public class TubeConnection {
         return this;
     }
 
+    /**
+     * Gets the coordinates of all points within the line
+     * making up the connection between the two {@link TubeStation}s
+     * @return a {@link List} of {@link Point2D}s representing the coordinates
+     */
     public List<Point2D> getCurvePoints() {
         return curvePoints;
+    }
+
+    /**
+     * Gets the coordinates of all points of the line including the stations
+     * themselves making up the connection between the two {@link TubeStation}s
+     * @return a {@link List} of {@link Point2D}s representing the coordinates
+     */
+    public List<Point2D> getLinePoints() {
+        List<Point2D> allPoints = new ArrayList<>(curvePoints);
+        allPoints.add(0, from.getPos());
+        allPoints.add(to.getPos());
+        return allPoints;
     }
 
     public void addCurvePoints(List<Point2D> curvePoints) {

@@ -1,6 +1,5 @@
 Planets tutorial
 Tube station names
-Tube curves
 Mouse over tube stations
 Fix styles
 Hovering planets displays name/info
