@@ -8,7 +8,7 @@
   },
   "res": {
     "stationinfo": {
-      "file": "stationInformation.json",
+      "file": "station-info.json",
       "type": "JsonObject"
     },
     "skybox": {
