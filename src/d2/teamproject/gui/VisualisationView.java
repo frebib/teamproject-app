@@ -3,7 +3,6 @@ package d2.teamproject.gui;
 import d2.teamproject.PARTH;
 import d2.teamproject.module.BaseView;
 import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

@@ -1,22 +1,20 @@
 package d2.teamproject.test;
 
-import java.awt.Point;
+import d2.teamproject.algorithm.sorting.BubbleSortStream;
+import d2.teamproject.algorithm.sorting.CompareSortState;
+import d2.teamproject.algorithm.sorting.ListSortState;
+import d2.teamproject.algorithm.sorting.SortState;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import d2.teamproject.algorithm.sorting.BubbleSortStream;
-import d2.teamproject.algorithm.sorting.CompareSortState;
-import d2.teamproject.algorithm.sorting.ListSortState;
-import d2.teamproject.algorithm.sorting.QuickSortStream;
-import d2.teamproject.algorithm.sorting.SortState;
-
-public class BubbleSortTest  {
+public class BubbleSortTest {
 
     @Test
     public void BubbleSortTest() {

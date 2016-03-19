@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.BiFunction;
 
 public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
-        public static class Searcher<E> {
+    public static class Searcher<E> {
         private BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor;
         private String name;
 

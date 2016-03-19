@@ -1,7 +1,5 @@
 package d2.teamproject.algorithm;
 
-import d2.teamproject.algorithm.sorting.SortState;
-
 import java.util.List;
 
 /**
