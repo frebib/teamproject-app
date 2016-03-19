@@ -31,8 +31,11 @@ public class TubeMap extends Pane {
     private static final double ZOOMMAX = 6;
 
     private static final double CURVE_RADIUS = 0.012;
-    private static final double LINE_WIDTH = 0.005;
-    private static final double INNER_LINE_WIDTH = 0.0015;
+    private static final double LINE_WIDTH = 0.0047;
+    private static final double INNER_LINE_WIDTH = 0.0012;
+    private static final double CIRCLE_RADIUS = LINE_WIDTH * 0.9;
+    private static final double WALK_WIDTH = 0.005;
+    private static final double WALK_STROKE = 0.0018;
 
     private TubeSearchController controller;
     private Group map;
@@ -76,11 +79,16 @@ public class TubeMap extends Pane {
         });
 
         Group lines = new Group();
+        Group walks = new Group();
         Group nodes = new Group();
-        map = new Group(lines, nodes);
+        map = new Group(lines, nodes, walks);
         Set<TubeConnection> connections = controller.getLinks();
 
         for (TubeConnection conn : connections) {
+            // We'll draw the walk lines further down
+            if (conn.getLine().getId().equals("walk"))
+                continue;
+
             if (conn.getCurvePoints().isEmpty()) {
                 // Draw line
                 Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
@@ -144,6 +152,24 @@ public class TubeMap extends Pane {
             }
         }
 
+        connections.stream()
+                .filter(conn -> conn.getLine().getId().equals("walk"))
+                .forEach(conn -> {
+                    // Draw lower line
+                    Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    line.setStrokeWidth(WALK_WIDTH * scaleX);
+                    line.setStroke(conn.getLine().getColour());
+                    lines.getChildren().add(line);
+
+                    // Draw over line
+                    Line inner = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
+                            conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
+                    inner.setStrokeWidth((WALK_WIDTH - WALK_STROKE * 2) * scaleX);
+                    inner.setStroke(conn.getLine().getInnerColour());
+                    walks.getChildren().add(inner);
+                });
+
 //        Rectangle map = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
 //        map.setTranslateX(20);
 //        map.setTranslateY(30);
@@ -151,12 +177,13 @@ public class TubeMap extends Pane {
 
         // loop stations, create node graphics and add to hashmap
         circleMap = new HashMap<>();
+        TubeLine walkLine = controller.getLineMap().get("walk");
         for (TubeStation stn : controller.getStationMap().values()) {
-            Circle c = new Circle(stn.getX() * scaleX, stn.getY() * scaleY, 7);
+            Circle c = new Circle(stn.getX() * scaleX, stn.getY() * scaleY, CIRCLE_RADIUS * scaleX);
             c.setOnMouseClicked(e -> controller.onStationClick(stn));
-            c.setStrokeWidth(5);
-            c.setStroke(Color.BLACK);
-            c.setFill(Color.WHITE);
+            c.setStrokeWidth(WALK_STROKE * scaleX);
+            c.setStroke(walkLine.getColour());
+            c.setFill(walkLine.getInnerColour());
             circleMap.put(stn, c);
 
             nodes.getChildren().add(c);
