@@ -1,20 +1,20 @@
 [
   {
     "index": 0,
-    "title": "Tutorial Step Title",
-    "content": "This is an example for the tutorial text",
-    "key": "step"
+    "title": "Choose a starting station",
+    "content": "To find a route, start by clicking a station to navigate from.\nAlternatively change any of the options at the top to vary the search type.",
+    "key": "choose-start"
   },
   {
     "index": 1,
-    "title": "Step 2",
-    "content": "Tube 3",
-    "key": "steptwo"
+    "title": "Choose a destination station",
+    "content": "Now pick a station to find a path to, starting from %s then click Next to begin",
+    "key": "choose-goal"
   },
   {
     "index": 2,
-    "title": "Step 3",
-    "content": "Tube 3",
-    "key": "stepthree"
+    "title": "Now start searching",
+    "content": "A route will now be found between %s and %s. Click next to start the search algorithm or change the search type, now is your last chance!",
+    "key": "search-start"
   }
 ]

@@ -45,20 +45,12 @@ public class TubeSearchController extends JsonController {
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
         links = new HashSet<>();
-
-        selection = StationSelect.START;
-        stream = new AStarSearchStream<>(null, null);
-
-        // TODO: Implement graph search
-        view.getWindow().setOnKeyPressed(e -> {
-            if (stream.hasNext())
-                view.animateState(stream.getNext());
-        });
     }
 
     @Override
     public void onOpen() {
         view.onOpen();
+        view.updateText("choose-start");
     }
 
     @Override
@@ -69,7 +61,7 @@ public class TubeSearchController extends JsonController {
         tutorials = new LinkedHashMap<>();
         //TODO: Rename file or have multiple arrays
         Tutorial searchT = new Tutorial((JsonArray) res.get("help"));
-        tutorials.put("search", searchT);
+        tutorials.put(getClass().getName(), searchT);
 
         // Load tube map JSONs
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
@@ -167,12 +159,14 @@ public class TubeSearchController extends JsonController {
                 LOG.info("Selected start station %s", station);
                 selection = StationSelect.GOAL;
                 start = station;
+                view.updateText("choose-goal", start.getName());
                 break;
             case GOAL:
                 LOG.info("Selected goal station %s", station);
                 selection = StationSelect.NONE;
                 goal = station;
                 initSearch(searcher, start, goal);
+                view.updateText("search-start", start.getName(), goal.getName());
                 LOG.fine("Search stream initialised");
                 break;
             case INFO:
@@ -219,5 +213,8 @@ public class TubeSearchController extends JsonController {
     public void setSearcher(Searcher<TubeStation> searcher) {
         LOG.info("Searching with %s", searcher);
         this.searcher = searcher;
+        selection = StationSelect.START;
+        start = null;
+        goal = null;
     }
 }
