@@ -1,6 +1,7 @@
 package d2.teamproject.tutorial;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Parth Chandratreya
@@ -9,13 +10,13 @@ public class Instruction {
     private String key;
     private String title;
     private String desc;
-    private ArrayList<Pair<Integer, Integer>> visChanges;
+    private List<Pair<Integer, Integer>> visChanges;
 
-    public Instruction(String title, String desc, String key, ArrayList<Pair<Integer, Integer>> visChanges) {
+    public Instruction(String title, String desc, String key, Pair<Integer, Integer>... visChanges) {
         this.title = title;
         this.desc = desc;
         this.key = key;
-        this.visChanges = visChanges;
+        this.visChanges = Arrays.asList(visChanges);
     }
 
     public String getTitle() {
