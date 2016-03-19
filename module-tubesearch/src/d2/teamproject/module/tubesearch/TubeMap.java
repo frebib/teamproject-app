@@ -101,7 +101,7 @@ public class TubeMap extends Pane {
                 List<Point2D> points = conn.getLinePoints();
 
                 // Given 2 points that represent a line, this returns the
-                // point shorten by a fixed amount from point b
+                // point shortened by a fixed amount from point b
                 BiFunction<Point2D, Point2D, Point2D> shorten = (a, b) -> {
                     Point2D delta = b.subtract(a);
                     double len = a.distance(b);
