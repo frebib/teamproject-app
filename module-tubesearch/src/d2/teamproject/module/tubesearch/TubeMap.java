@@ -77,11 +77,11 @@ public class TubeMap extends Pane {
         for (TubeConnection conn : connections) {
             if (true) {
 //            if (!conn.hasSublines()) {
-                if(conn.getLine().getStroke() != null) {
+                if(conn.getLine().getInnerColour() != null) {
                     Line border = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
                             conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);
                     border.setStrokeWidth(0.007 * scaleX);
-                    border.setStroke(conn.getLine().getStroke());
+                    border.setStroke(conn.getLine().getInnerColour());
                     lines.getChildren().add(border);
                     Line line = new Line(conn.getFrom().getX() * scaleX, conn.getFrom().getY() * scaleY,
                             conn.getTo().getX() * scaleX, conn.getTo().getY() * scaleY);

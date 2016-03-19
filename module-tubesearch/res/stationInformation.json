@@ -61,20 +61,20 @@
     {
       "id": "dlr",
       "name": "Docklands Light Railway",
-      "colour": "#ffffff",
-      "stroke": "#00b3b3"
+      "inner": "#ffffff",
+      "colour": "#00b3b3"
     },
     {
       "id": "overground",
       "name": "Overground Line",
-      "colour": "#ffffff",
-      "stroke": "#ff8000"
+      "inner": "#ffffff",
+      "colour": "#ff8000"
     },
     {
       "id": "walk",
       "name": "Walk",
-      "colour": "#ffffff",
-      "stroke": "#000000"
+      "inner": "#ffffff",
+      "colour": "#000000"
     }
   ],
   "stations": [

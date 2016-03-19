@@ -11,28 +11,28 @@ import java.util.Set;
 public class TubeLine {
     private Set<TubeStation> stations;
     private String id, name;
-    private Color colour, stroke;
+    private Color colour, inner;
 
     public TubeLine(String id, String name, Color colour) {
         this(id, name, colour, null);
     }
-    public TubeLine(String id, String name, Color colour, Color stroke) {
+    public TubeLine(String id, String name, Color colour, Color inner) {
         this.id = id;
         this.name = name;
         this.colour = colour;
-        this.stroke = stroke;
+        this.inner = inner;
 
         stations = new LinkedHashSet<>();
     }
 
     public static TubeLine fromJson(JsonValue val) {
         JsonObject obj = val.asObject();
-        JsonValue stroke = obj.get("stroke");
+        JsonValue inner = obj.get("inner");
         return new TubeLine(
                 obj.get("id").asString(),
                 obj.get("name").asString(),
                 Color.web(obj.get("colour").asString()),
-                stroke != null ? Color.web(stroke.asString()) : null
+                inner != null ? Color.web(inner.asString()) : null
         );
     }
 
@@ -48,8 +48,8 @@ public class TubeLine {
         return colour;
     }
 
-    public Color getStroke() {
-        return stroke;
+    public Color getInnerColour() {
+        return inner;
     }
 
     public Set<TubeStation> getStations() {
@@ -66,6 +66,7 @@ public class TubeLine {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", colour=" + colour +
+                ", inner=" + String.valueOf(inner) +
                 '}';
     }
 
