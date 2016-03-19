@@ -502,12 +502,12 @@
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadDC",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -538,7 +538,7 @@
     },
     {
       "id": "edgwareRoadCH",
-      "name": "Edgware Road - Circle, District & Hammersmith",
+      "name": "Edgware Road - Circle & Hammersmith",
       "xpos": 0.296,
       "ypos": 0.299,
       "connected": [
@@ -571,7 +571,7 @@
     },
     {
       "id": "edgwareRoadDC",
-      "name": "Edgware Road - Circle, District & Hammersmith",
+      "name": "Edgware Road - Circle & District",
       "xpos": 0.296,
       "ypos": 0.319,
       "connected": [
@@ -794,21 +794,11 @@
       ]
     },
     {
-      "id": "gloucesterRoad",
+      "id": "gloucesterRoadDC",
       "name": "Gloucester Road",
       "xpos": 0.281,
-      "ypos": 0.594,
+      "ypos": 0.597,
       "connected": [
-        {
-          "id": "earlsCourt",
-          "lineId": "piccadilly",
-          "curves": []
-        },
-        {
-          "id": "southKensington",
-          "lineId": "piccadilly",
-          "curves": []
-        },
         {
           "id": "earlsCourt",
           "lineId": "district",
@@ -827,6 +817,34 @@
         {
           "id": "highStreetKensington",
           "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "gloucesterRoadPiccadilly",
+      "name": "Gloucester Road",
+      "xpos": 0.281,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "earlsCourt",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "southKensington",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -942,12 +960,12 @@
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadDC",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadDC",
           "lineId": "circle",
           "curves": []
         },
@@ -1764,17 +1782,17 @@
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadDC",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadDC",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "gloucesterRoad",
+          "id": "gloucesterRoadPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -2195,13 +2213,18 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "hammersmithDP",
+          "id": "hammersmithDistrict",
           "lineId": "district",
           "curves": []
         },
         {
           "id": "westKensington",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "baronsCourtPiccadilly",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -2213,13 +2236,18 @@
       "ypos": 0.582,
       "connected": [
         {
-          "id": "hammersmithDP",
+          "id": "hammersmithPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
         {
           "id": "earlsCourt",
           "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "baronsCourtDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3012,7 +3040,7 @@
     {
       "id": "finchleyRoadMetropolitan",
       "name": "Finchley Road",
-      "xpos": 0.310,
+      "xpos": 0.323,
       "ypos": 0.218,
       "connected": [
         {
@@ -3243,21 +3271,11 @@
       ]
     },
     {
-      "id": "hammersmithDP",
-      "name": "Hammersmith - District and Piccadilly",
+      "id": "hammersmithDistrict",
+      "name": "Hammersmith - District",
       "xpos": 0.17,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
-        {
-          "id": "turnhamGreen",
-          "lineId": "piccadilly",
-          "curves": []
-        },
-        {
-          "id": "baronsCourtPiccadilly",
-          "lineId": "piccadilly",
-          "curves": []
-        },
         {
           "id": "ravenscourtPark",
           "lineId": "district",
@@ -3266,6 +3284,16 @@
         {
           "id": "baronsCourtDistrict",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "hammersmithCH",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "hammersmithPiccadilly",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3284,6 +3312,44 @@
         {
           "id": "goldhawkRoad",
           "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "hammersmithDistrict",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "hammersmithPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "hammersmithPiccadilly",
+      "name": "Hammersmith - Piccadilly",
+      "xpos": 0.17,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "turnhamGreenPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "baronsCourtPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "hammersmithPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "hammersmithDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3372,7 +3438,7 @@
       "ypos": 0.462,
       "connected": [
         {
-          "id": "shepherdsBush",
+          "id": "shepherdsBushCentral",
           "lineId": "central",
           "curves": []
         },
@@ -3536,7 +3602,7 @@
           "curves": []
         },
         {
-          "id": "shepherdsBush",
+          "id": "shepherdsBushOverground",
           "lineId": "overground",
           "curves": []
         },
@@ -3700,12 +3766,12 @@
           "curves": []
         },
         {
-          "id": "whiteCity",
+          "id": "woodLane",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "whiteCity",
+          "id": "woodLane",
           "lineId": "hammersmithCity",
           "curves": []
         }
@@ -4103,7 +4169,7 @@
           "curves": []
         },
         {
-          "id": "hammersmithDP",
+          "id": "hammersmithDistrict",
           "lineId": "district",
           "curves": []
         }
@@ -4207,7 +4273,7 @@
       ]
     },
     {
-      "id": "shepherdsBush",
+      "id": "shepherdsBushCentral",
       "name": "Shepherd's Bush",
       "xpos": 0.203,
       "ypos": 0.462,
@@ -4223,6 +4289,19 @@
           "curves": []
         },
         {
+          "id": "shepherdsBushOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "shepherdsBushOverground",
+      "name": "Shepherd's Bush",
+      "xpos": 0.203,
+      "ypos": 0.478,
+      "connected": [
+        {
           "id": "willesdenJunction",
           "lineId": "overground",
           "curves": []
@@ -4230,6 +4309,11 @@
         {
           "id": "kensingtonOlympia",
           "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "shepherdsBushCentral",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4323,7 +4407,7 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "turnhamGreen",
+          "id": "turnhamGreenDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -4555,10 +4639,10 @@
       ]
     },
     {
-      "id": "turnhamGreen",
+      "id": "turnhamGreenDistrict",
       "name": "Turnham Green",
       "xpos": 0.072,
-      "ypos": 0.598,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "stamfordBrook",
@@ -4566,8 +4650,26 @@
           "curves": []
         },
         {
-          "id": "hammersmithDP",
+          "id": "turnhamGreenPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "turnhamGreenPiccadilly",
+      "name": "Turnham Green",
+      "xpos": 0.072,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "hammersmithPiccadilly",
           "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "turnhamGreenDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4875,7 +4977,7 @@
           "curves": []
         },
         {
-          "id": "shepherdsBush",
+          "id": "shepherdsBushCentral",
           "lineId": "central",
           "curves": []
         },
@@ -4921,7 +5023,7 @@
           "curves": []
         },
         {
-          "id": "shepherdsBush",
+          "id": "shepherdsBushOverground",
           "lineId": "overground",
           "curves": []
         }
