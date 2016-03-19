@@ -141,17 +141,17 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossNorthern",
           "lineId": "northern",
           "curves": []
         }
       ]
     },
     {
-      "id": "bakerStreet",
+      "id": "bakerStreetJB",
       "name": "Baker Street",
-      "xpos": 0.377,
-      "ypos": 0.301,
+      "xpos": 0.365,
+      "ypos": 0.319,
       "connected": [
         {
           "id": "stJohnsWood",
@@ -173,6 +173,19 @@
           "lineId": "bakerloo",
           "curves": []
         },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bakerStreetHCM",
+      "name": "Baker Street",
+      "xpos": 0.377,
+      "ypos": 0.301,
+      "connected": [
         {
           "id": "finchleyRoadMetropolitan",
           "lineId": "metropolitan",
@@ -202,14 +215,19 @@
           "id": "greatPortlandStreet",
           "lineId": "hammersmithCity",
           "curves": []
+        },
+        {
+          "id": "bakerStreetJB",
+          "lineId": "walk",
+          "curves": []
         }
       ]
     },
     {
-      "id": "bank",
+      "id": "bankCentralWaterloo",
       "name": "Bank",
-      "xpos": 0.609,
-      "ypos": 0.460,
+      "xpos": 0.61,
+      "ypos": 0.462,
       "connected": [
         {
           "id": "stPauls",
@@ -222,6 +240,24 @@
           "curves": []
         },
         {
+          "id": "waterlooBakerlooWC",
+          "lineId": "waterlooCity",
+          "curves": []
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bankNorthern",
+      "name": "Bank",
+      "xpos": 0.625,
+      "ypos": 0.483,
+      "connected": [
+        {
           "id": "moorgate",
           "lineId": "northern",
           "curves": []
@@ -232,13 +268,36 @@
           "curves": []
         },
         {
-          "id": "waterlooBakerlooWC",
-          "lineId": "waterlooCity",
+          "id": "bankCentralWaterloo",
+          "lineId": "walk",
           "curves": []
         },
         {
+          "id": "bankDlr",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "monument",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bankDlr",
+      "name": "Bank",
+      "xpos": 0.633,
+      "ypos": 0.471,
+      "connected": [
+        {
           "id": "shadwell",
           "lineId": "dlr",
+          "curves": []
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -354,7 +413,7 @@
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetJB",
           "lineId": "jubilee",
           "curves": []
         },
@@ -553,12 +612,12 @@
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -739,7 +798,7 @@
       "ypos": 0.275,
       "connected": [
         {
-          "id": "kingsCross",
+          "id": "kingsCrossVictoria",
           "lineId": "victoria",
           "curves": []
         },
@@ -754,7 +813,7 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossNorthern",
           "lineId": "northern",
           "curves": []
         },
@@ -792,17 +851,17 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "hammersmithCity",
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "metropolitan",
           "curves": []
         }
@@ -815,17 +874,17 @@
       "ypos": 0.334,
       "connected": [
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "hammersmithCity",
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "metropolitan",
           "curves": []
         },
@@ -927,17 +986,17 @@
       "ypos": 0.301,
       "connected": [
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "hammersmithCity",
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "metropolitan",
           "curves": []
         },
@@ -1099,10 +1158,10 @@
       ]
     },
     {
-      "id": "kingsCross",
+      "id": "kingsCrossVictoria",
       "name": "King's Cross St Pancras",
       "xpos": 0.536,
-      "ypos": 0.301,
+      "ypos": 0.269,
       "connected": [
         {
           "id": "eustonVictoria",
@@ -1115,15 +1174,23 @@
           "curves": []
         },
         {
-          "id": "russellSquare",
-          "lineId": "piccadilly",
+          "id": "kingsCrossNorthern",
+          "lineId": "walk",
           "curves": []
         },
         {
-          "id": "caledonianRoad",
-          "lineId": "piccadilly",
+          "id": "kingsCrossHCMP",
+          "lineId": "walk",
           "curves": []
-        },
+        }
+      ]
+    },
+    {
+      "id": "kingsCrossNorthern",
+      "name": "King's Cross St Pancras",
+      "xpos": 0.536,
+      "ypos": 0.287,
+      "connected": [
         {
           "id": "eustonVictoria",
           "lineId": "northern",
@@ -1135,6 +1202,34 @@
           "curves": []
         },
         {
+          "id": "kingsCrossVictoria",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "kingsCrossHCMP",
+      "name": "King's Cross St Pancras",
+      "xpos": 0.536,
+      "ypos": 0.301,
+      "connected": [
+        {
+          "id": "russellSquare",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "caledonianRoad",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
           "id": "eustonSquare",
           "lineId": "hammersmithCity",
           "curves": []
@@ -1162,6 +1257,16 @@
         {
           "id": "farringdon",
           "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossVictoria",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -1255,7 +1360,7 @@
       "ypos": 0.395,
       "connected": [
         {
-          "id": "bank",
+          "id": "bankCentralWaterloo",
           "lineId": "central",
           "curves": []
         },
@@ -1323,7 +1428,7 @@
           "curves": []
         },
         {
-          "id": "bank",
+          "id": "bankNorthern",
           "lineId": "northern",
           "curves": []
         }
@@ -1387,7 +1492,7 @@
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetJB",
           "lineId": "bakerloo",
           "curves": []
         }
@@ -1417,6 +1522,11 @@
         {
           "id": "towerHill",
           "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -1463,7 +1573,7 @@
           "curves": []
         },
         {
-          "id": "bank",
+          "id": "bankNorthern",
           "lineId": "northern",
           "curves": []
         }
@@ -1743,7 +1853,7 @@
       "ypos": 0.359,
       "connected": [
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetJB",
           "lineId": "bakerloo",
           "curves": []
         },
@@ -1766,7 +1876,7 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "piccadilly",
           "curves": []
         }
@@ -1932,7 +2042,7 @@
           "curves": []
         },
         {
-          "id": "bank",
+          "id": "bankCentralWaterloo",
           "lineId": "central",
           "curves": []
         }
@@ -2202,7 +2312,7 @@
           "curves": []
         },
         {
-          "id": "bank",
+          "id": "bankCentralWaterloo",
           "lineId": "waterlooCity",
           "curves": []
         },
@@ -2635,7 +2745,7 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossHCMP",
           "lineId": "piccadilly",
           "curves": []
         }
@@ -3184,7 +3294,7 @@
       "ypos": 0.218,
       "connected": [
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetHCM",
           "lineId": "metropolitan",
           "curves": []
         },
@@ -3283,10 +3393,28 @@
       ]
     },
     {
-      "id": "gospelOak",
+      "id": "gospelOakTop",
       "name": "Gospel Oak",
       "xpos": 0.494,
       "ypos": 0.072,
+      "connected": [
+        {
+          "id": "upperHolloway",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "gospelOakBottom",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "gospelOakBottom",
+      "name": "Gospel Oak",
+      "xpos": 0.494,
+      "ypos": 0.090,
       "connected": [
         {
           "id": "hampsteadHeath",
@@ -3299,8 +3427,8 @@
           "curves": []
         },
         {
-          "id": "upperHolloway",
-          "lineId": "overground",
+          "id": "gospelOakTop",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3514,7 +3642,7 @@
       "ypos": 0.089,
       "connected": [
         {
-          "id": "gospelOak",
+          "id": "gospelOakBottom",
           "lineId": "overground",
           "curves": []
         },
@@ -3565,7 +3693,7 @@
           "curves": []
         },
         {
-          "id": "kingsCross",
+          "id": "kingsCrossVictoria",
           "lineId": "victoria",
           "curves": []
         }
@@ -3778,7 +3906,7 @@
       "ypos": 0.107,
       "connected": [
         {
-          "id": "gospelOak",
+          "id": "gospelOakBottom",
           "lineId": "overground",
           "curves": []
         },
@@ -4406,7 +4534,7 @@
           "curves": []
         },
         {
-          "id": "bank",
+          "id": "bankDlr",
           "lineId": "dlr",
           "curves": []
         }
@@ -4534,7 +4662,7 @@
           "curves": []
         },
         {
-          "id": "bakerStreet",
+          "id": "bakerStreetJB",
           "lineId": "jubilee",
           "curves": []
         }
@@ -4821,7 +4949,7 @@
       "ypos": 0.048,
       "connected": [
         {
-          "id": "gospelOak",
+          "id": "gospelOakTop",
           "lineId": "overground",
           "curves": []
         }
