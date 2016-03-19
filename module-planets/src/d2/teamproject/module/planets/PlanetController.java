@@ -5,7 +5,6 @@ import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.sorting.BubbleSortStream;
 import d2.teamproject.algorithm.sorting.QuickSortStream;
-import d2.teamproject.algorithm.sorting.SortState;
 import d2.teamproject.algorithm.sorting.SortStream;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -45,28 +43,18 @@ public class PlanetController extends JsonController {
         view.onOpen();
     }
     public void prevState() {
-        view.setNavDisabled(true);
-        // TODO: Handle backward navigation
+        view.disableNavButtons(true);
+        view.stepBackward();
     }
     public void nextState() {
-        if (view.getAnimationState() != AnimState.NOTHING &&
-                view.getAnimationState() != AnimState.ZOOMED &&
-                view.getAnimationState() != AnimState.ZOOMING) {
+        AnimState s = view.getAnimationState();
+        if (s != AnimState.NOTHING && s != AnimState.COMPARED &&
+                s != AnimState.ZOOMED && s != AnimState.ZOOMING) {
             LOG.finer("Already animating...");
             return;
         }
-        if (!sort.hasNext()) {
-            LOG.info("All sort states exhausted");
-            // TODO: Add reset button
-        } else {
-            view.setNavDisabled(true);
-            view.updateState(sort.getNext());
-        }
-    }
-
-    @Override
-    public BaseView getView() {
-        return view;
+        view.disableNavButtons(true);
+        view.stepForward();
     }
 
     @Override
@@ -109,10 +97,6 @@ public class PlanetController extends JsonController {
         view.loadResources(res);
     }
 
-    public void handleNextState(Consumer<SortState<Planet>> fn) {
-        fn.accept(sort.getNext());
-    }
-
     public List<Planet> getPlanets() {
         return planets;
     }
@@ -124,6 +108,12 @@ public class PlanetController extends JsonController {
     public SortStream<Planet> getSorter() {
         return sort;
     }
+
+    @Override
+    public BaseView getView() {
+        return view;
+    }
+
     public void setSorter(SortStream<Planet> sort) {
         this.sort = sort;
     }

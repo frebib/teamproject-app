@@ -38,9 +38,12 @@ import static d2.teamproject.module.planets.gfx.PlanetSort.*;
  * @author Parth Chandratreya
  */
 public class PlanetView extends VisualisationView {
+    private static final double PAUSE_TIME = 200;
+
     public enum AnimState {
         NOTHING,
         COMPARING,
+        COMPARED,
         SWAPPING,
         PARTITIONING,
         ZOOMING,
@@ -164,7 +167,7 @@ public class PlanetView extends VisualisationView {
     @Override
     public void onOpen() {
         animState = NOTHING;
-        setNavDisabled(false);
+        updateNavButtons();
 
         sSystem = new SolarSystem(this, controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
         contentBox.getChildren().add(sSystem.getScene());
@@ -180,7 +183,7 @@ public class PlanetView extends VisualisationView {
         sortByCbx.setValue(sortByCbx.getItems().get(0));
     }
 
-    public void loadTutorial(String tutorialType){
+    public void loadTutorial(String tutorialType) {
         tutorial = controller.getTutorial(tutorialType);
         tutorialText = new TextFlow(); // Needs to be cleared
         // Set the font size
@@ -217,79 +220,91 @@ public class PlanetView extends VisualisationView {
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
 
-    public void setNavDisabled(boolean disabled) {
+    public void updateNavButtons() {
+        prevBtn.setDisable(!controller.getSorter().hasPrevious());
+        nextBtn.setDisable(!controller.getSorter().hasNext());
+    }
+
+    public void disableNavButtons(boolean disabled) {
         prevBtn.setDisable(disabled);
         nextBtn.setDisable(disabled);
     }
 
-    /**
-     * @param state
-     */
-    public void updateState(SortState<Planet> state) {
-        double duration = 150.0;
-        if (state == null) {
-            LOG.finer("State is null, doing nothing");
+    public void stepForward() {
+        Transition t;       // A transition variable (y) :D
+
+        /* If in a partial compare state */
+        if (animState == COMPARED) {
+            CompareSortState<Planet> state = (CompareSortState<Planet>) controller.getSorter().getCurrent();
+            if (state.isSwap()) {
+                updateText("swap");
+
+                t = sSystem.swapTransition(state);
+                t.setOnFinished(ev -> {
+                    // Request the liststate and update the SolarSystem list
+                    SortState<Planet> nState = controller.getSorter().getNext();
+                    if (!(nState instanceof ListSortState))
+                        LOG.warning("Something is probably wrong here");
+
+                    sSystem.setPlanetOrder(nState.getList());
+                });
+                doTransition(t, SWAPPING);
+            } else {
+                // Reversing the animation doesn't work
+                // properly, it's likely a bug in the JDK
+                updateText("notSwap");
+                doTransition(sSystem.compareTransition(state, true), SWAPPING);
+            }
             return;
         }
 
-        if (animState == ZOOMED || animState == ZOOMING) {
-            Transition zoom = sSystem.zoomOut();
-            EventHandler<ActionEvent> handler = zoom.getOnFinished();
-            zoom.setOnFinished(e -> {
-                updateState(state);
+        // No more states to handle
+        if (!controller.getSorter().hasNext()) {
+            LOG.info("All sort states exhausted");
+            return;
+        }
+
+        /* Handle a new state */
+        SortState<Planet> state = controller.getSorter().getNext();
+        LOG.finer("SortState=%s", state);
+
+        // This shouldn't happen, if it does then something is broken
+        if (state == null) LOG.finer("State is null, doing nothing");
+
+        /* Zoom out if already zoomed in */
+        else if (animState == ZOOMED || animState == ZOOMING) {
+            t = sSystem.zoomOut();
+            EventHandler<ActionEvent> handler = t.getOnFinished();
+            t.setOnFinished(e -> {
+                stepForward();
                 handler.handle(e);
             });
-            zoom.playFromStart();
-            return;
-        }
-        // TODO: Handle user input from buttons & tutorial mode and interject animations etc
-        // TODO: Show comparison/sorting information
-        // TODO: [Stretch] Show planet names & info on hover
+            t.playFromStart();
 
-        Transition t;
-        if (state.isComplete())
-            setTransition(sSystem.finishTransition(), PARTITIONING);
-
-        LOG.finer("SortState=%s", state.getClass().getName());
-        if (state instanceof CompareSortState) {
+        } else if (state.isComplete()) {
+            doTransition(sSystem.finishTransition(), PARTITIONING);
+        } else if (state instanceof CompareSortState) {
             updateText("compare");
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
 
-            if (tutorialMode)
-                duration = 2000;
             t = new SequentialTransition(
                     sSystem.compareTransition(csstate, false),
-                    new PauseTransition(new Duration(duration)));
-            t.setOnFinished(e -> {
-                if (csstate.isSwap()) {
-                    updateText("swap");
-
-                    current = sSystem.swapTransition(csstate);
-                    current.setOnFinished(ev -> {
-                        // Request the liststate and update the SolarSystem list
-                        controller.handleNextState(nState -> {
-                            if (!(nState instanceof ListSortState))
-                                LOG.warning("Something is probably wrong here");
-
-                            sSystem.setPlanetOrder(nState.getList());
-                        });
-                    });
-                    setTransition(current, SWAPPING);
-                } else {
-                    // Reversing the animation doesn't work
-                    // properly, it's likely a bug in the JDK
-                    updateText("notSwap");
-                    setTransition(sSystem.compareTransition(csstate, true), SWAPPING);
-                }
-            });
-            setTransition(t, COMPARING);
+                    new PauseTransition(new Duration(PAUSE_TIME))
+            );
+            t.setOnFinished(e -> animState = COMPARED);
+            doTransition(t, COMPARING);
         } else if (state instanceof PartitionSortState) {
             // TODO: Animate setting pivot planet
             t = sSystem.partitionTransition((PartitionSortState<Planet>) state);
-            setTransition(t, PARTITIONING);
+            doTransition(t, PARTITIONING);
         }
     }
-    private void setTransition(Transition t, AnimState type) {
+
+    public void stepBackward() {
+        updateNavButtons();
+    }
+
+    private void doTransition(Transition t, AnimState type) {
         if (t == null)
             return;
 
@@ -299,7 +314,7 @@ public class PlanetView extends VisualisationView {
         EventHandler<ActionEvent> onFinished = current.getOnFinished();
         current.onFinishedProperty().set(e -> {
             animState = NOTHING;
-            setNavDisabled(false);
+            updateNavButtons();
 
             if (onFinished != null)
                 onFinished.handle(e);
