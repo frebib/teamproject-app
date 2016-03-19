@@ -85,12 +85,12 @@
       "ypos": 0.442,
       "connected": [
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "metropolitan",
           "curves": []
         },
@@ -108,7 +108,7 @@
       "ypos": 0.411,
       "connected": [
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -235,7 +235,7 @@
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "central",
           "curves": []
         },
@@ -1377,10 +1377,10 @@
       ]
     },
     {
-      "id": "liverpoolStreet",
+      "id": "liverpoolStreetHCM",
       "name": "Liverpool Street",
       "xpos": 0.661,
-      "ypos": 0.395,
+      "ypos": 0.397,
       "connected": [
         {
           "id": "bankCentralWaterloo",
@@ -1423,8 +1423,26 @@
           "curves": []
         },
         {
+          "id": "liverpoolStreetOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "liverpoolStreetOverground",
+      "name": "Liverpool Street",
+      "xpos": 0.661,
+      "ypos": 0.367,
+      "connected": [
+        {
           "id": "bethnalGreenOverground",
           "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -1561,17 +1579,17 @@
       "ypos": 0.397,
       "connected": [
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "circle",
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "metropolitan",
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -2568,7 +2586,7 @@
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetOverground",
           "lineId": "overground",
           "curves": []
         }
@@ -2586,7 +2604,7 @@
           "curves": []
         },
         {
-          "id": "liverpoolStreet",
+          "id": "liverpoolStreetHCM",
           "lineId": "central",
           "curves": []
         }
@@ -2873,7 +2891,7 @@
           "curves": []
         },
         {
-          "id": "canaryWharf",
+          "id": "canaryWharfJubilee",
           "lineId": "jubilee",
           "curves": []
         },
@@ -2890,9 +2908,32 @@
       ]
     },
     {
-      "id": "canaryWharf",
+      "id": "canaryWharfDlr",
       "name": "Canary Wharf",
       "xpos": 0.862,
+      "ypos": 0.586,
+      "connected": [
+        {
+          "id": "westIndiaQuay",
+          "lineId": "dlr",
+          "curves": []
+        },
+        {
+          "id": "heronQuays",
+          "lineId": "dlr",
+          "curves": []
+        },
+        {
+          "id": "canaryWharfJubilee",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "canaryWharfJubilee",
+      "name": "Canary Wharf",
+      "xpos": 0.853,
       "ypos": 0.6,
       "connected": [
         {
@@ -2906,22 +2947,17 @@
           "curves": []
         },
         {
-          "id": "westIndiaQuay",
-          "lineId": "dlr",
-          "curves": []
-        },
-        {
-          "id": "heronQuays",
-          "lineId": "dlr",
+          "id": "canaryWharfDlr",
+          "lineId": "walk",
           "curves": []
         }
       ]
     },
     {
-      "id": "canningTown",
+      "id": "canningTownDlr",
       "name": "Canning Town",
-      "xpos": 0.936,
-      "ypos": 0.495,
+      "xpos": 0.95,
+      "ypos": 0.474,
       "connected": [
         {
           "id": "starLane",
@@ -2929,10 +2965,18 @@
           "curves": []
         },
         {
-          "id": "eastIndia",
-          "lineId": "dlr",
+          "id": "canningTownJubilee",
+          "lineId": "walk",
           "curves": []
-        },
+        }
+      ]
+    },
+    {
+      "id": "canningTownJubilee",
+      "name": "Canning Town",
+      "xpos": 0.935,
+      "ypos": 0.496,
+      "connected": [
         {
           "id": "northGreenwich",
           "lineId": "jubilee",
@@ -2941,6 +2985,16 @@
         {
           "id": "westHamJubilee",
           "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "canningTownDlr",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eastIndia",
+          "lineId": "dlr",
           "curves": []
         }
       ]
@@ -3273,7 +3327,7 @@
           "curves": []
         },
         {
-          "id": "canningTown",
+          "id": "canningTownJubilee",
           "lineId": "dlr",
           "curves": []
         }
@@ -3709,7 +3763,7 @@
           "curves": []
         },
         {
-          "id": "canaryWharf",
+          "id": "canaryWharfDlr",
           "lineId": "dlr",
           "curves": []
         }
@@ -4381,12 +4435,12 @@
       "ypos": 0.588,
       "connected": [
         {
-          "id": "canaryWharf",
+          "id": "canaryWharfJubilee",
           "lineId": "jubilee",
           "curves": []
         },
         {
-          "id": "canningTown",
+          "id": "canningTownJubilee",
           "lineId": "jubilee",
           "curves": []
         }
@@ -4847,7 +4901,7 @@
           "curves": []
         },
         {
-          "id": "canningTown",
+          "id": "canningTownDlr",
           "lineId": "dlr",
           "curves": []
         }
@@ -5234,7 +5288,7 @@
           "curves": []
         },
         {
-          "id": "canningTown",
+          "id": "canningTownJubilee",
           "lineId": "jubilee",
           "curves": []
         },
@@ -5351,7 +5405,7 @@
           "curves": []
         },
         {
-          "id": "canaryWharf",
+          "id": "canaryWharfDlr",
           "lineId": "dlr",
           "curves": []
         }
