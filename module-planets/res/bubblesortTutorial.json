@@ -46,5 +46,11 @@
     "title": "Step7 – Repeat from step 2 until only two elements in the list",
     "content": "This is the final step, and this ensures that the list is fully sorted. Once you get to this step is means that ‘Step 2’ to ‘Step 6’ has been repeated continuously until there has been only two elements in the list. Once this is done, that sub list is sorted and we push up to ‘Step 7’ having a completely sorted list.",
     "key": "explanation"
+  },
+  {
+    "index": 8,
+    "title": "Currently using Bubble Sort",
+    "content": "This is a sort that compares each pair of adjacent items and swaps them if they are in the wrong order.",
+    "key": "information"
   }
 ]

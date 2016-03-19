@@ -1,7 +1,6 @@
 package d2.teamproject.module.planets;
 
 import com.sun.javafx.collections.ImmutableObservableList;
-import com.sun.javafx.collections.ObservableListWrapper;
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.sorting.*;
 import d2.teamproject.gui.VisualisationView;
@@ -28,7 +27,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.util.Duration;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
@@ -64,7 +62,7 @@ public class PlanetView extends VisualisationView {
     private double globalAnimSpeed = 1;
 
     private HBox bottomCentre;
-    private final TextFlow tutorialText;
+    private TextFlow tutorialText;
     private final Text tutorialTitle;
     private final Text tutorialDesc;
 
@@ -75,11 +73,12 @@ public class PlanetView extends VisualisationView {
      * @param controller
      */
     public PlanetView(PlanetController controller) {
+        LOG.info("plloaded");
         this.controller = controller;
         tutorialText = new TextFlow();
         tutorialTitle = new Text();
         tutorialDesc = new Text();
-        tutorialMode = false;
+        tutorialMode = true;
 
         Insets panePad = new Insets(16, 20, 16, 20);
         topBox.setPrefHeight(PARTH.HEIGHT * 0.05 - panePad.getTop() - panePad.getBottom());
@@ -130,9 +129,8 @@ public class PlanetView extends VisualisationView {
             stream.initialise();
             controller.setSorter(stream);
 
-            tutorial = controller.getTutorial(stream.getClass().getName());
-            // TODO: Provide a more coherent tutorial structure
-            //updateText("check");
+            loadTutorial(stream.getClass().getName());
+//          TODO: Provide a more coherent tutorial structure
 
             if (controller.getPlanets() != null && sSystem != null)
                 sSystem.resetTransition(controller.getPlanets()).playFromStart();
@@ -177,24 +175,25 @@ public class PlanetView extends VisualisationView {
         // Load skybox image
         skybox = (Image) res.get("skybox");
         LOG.info("skybox loaded");
-        // Load tutorial
-//        tutorial = controller.getTutorial(tutorialType);
-        // Set spacing and alignment
-//        bottomBox.setSpacing(200.0);
-//        bottomBox.setAlignment(Pos.CENTER);
+
+        sorterCbx.setValue(sorterCbx.getItems().get(0));
+        sortByCbx.setValue(sortByCbx.getItems().get(0));
+    }
+
+    public void loadTutorial(String tutorialType){
+        tutorial = controller.getTutorial(tutorialType);
+        tutorialText = new TextFlow(); // Needs to be cleared
         // Set the font size
-//        tutorialTitle.setFont(new Font(25));
-//        tutorialDesc.setFont(new Font(15));
+        tutorialTitle.setFont(new Font(25));
+        tutorialDesc.setFont(new Font(15));
         // Set the text to initial step
-        // Set test wrapping width
-        tutorialText.setMaxWidth(500);
+        updateText("information");
+        // Set text wrapping width
+        tutorialText.setMaxWidth(600);
 
         tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
         tutorialText.setVisible(tutorialMode);
         bottomCentre.getChildren().addAll(tutorialText);
-
-        sorterCbx.setValue(sorterCbx.getItems().get(0));
-        sortByCbx.setValue(sortByCbx.getItems().get(0));
     }
 
     public BaseController getController() {
@@ -214,7 +213,6 @@ public class PlanetView extends VisualisationView {
      */
     private void updateText(String key) {
         // TODO: Fix tutorial crashing!
-        if (true) return;
         tutorialTitle.setText(tutorial.getInstruction(key).getTitle());
         tutorialDesc.setText("\n" + tutorial.getInstruction(key).getDesc());
     }
@@ -258,7 +256,7 @@ public class PlanetView extends VisualisationView {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
 
             if (tutorialMode)
-                duration = 3000;
+                duration = 2000;
             t = new SequentialTransition(
                     sSystem.compareTransition(csstate, false),
                     new PauseTransition(new Duration(duration)));
