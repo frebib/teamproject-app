@@ -55,6 +55,11 @@ public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
     }
 
     @Override
+    public SortState<E> getCurrent() {
+        return states.get(stateIndex);
+    }
+
+    @Override
     public SortState<E> getNext() {
         if (hasNext())
             return states.get(++stateIndex);
@@ -73,6 +78,10 @@ public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
         if (hasNth(n))
             return states.get(n);
         return null;
+    }
+
+    public int getStateIndex() {
+        return stateIndex;
     }
 
     @Override

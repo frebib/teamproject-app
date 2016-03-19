@@ -125,6 +125,12 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     }
 
     @Override
+    public SearchState<Node<E>> getCurrent() {
+        // TODO: Sort this crap out. It's not good
+        return getPrevious();
+    }
+
+    @Override
     public SearchState<Node<E>> getNth(int n) {
         if (n < 0 || n > allStates.size())
             return null;

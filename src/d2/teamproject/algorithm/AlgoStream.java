@@ -1,5 +1,7 @@
 package d2.teamproject.algorithm;
 
+import d2.teamproject.algorithm.sorting.SortState;
+
 import java.util.List;
 
 /**
@@ -29,6 +31,12 @@ public interface AlgoStream<T> {
      * @return the previous state or null if there is no previous state determined by {@code hasPrevious()}
      */
     T getPrevious();
+
+    /**
+     * Gets the state that was last fetched and doesn't increment the counter
+     * @return the current state
+     */
+    T getCurrent();
 
     /**
      * Optionally can be used if supported by the stream implementation
