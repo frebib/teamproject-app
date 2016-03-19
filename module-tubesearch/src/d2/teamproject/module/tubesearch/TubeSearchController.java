@@ -118,7 +118,7 @@ public class TubeSearchController extends JsonController {
                     if (!equals.isPresent())
                         links.add(connection);
                     else {
-                        LOG.info("Connection %s already exists", connection);
+//                        LOG.info("Connection %s already exists", connection);
 
                         TubeConnection otherConn = equals.get();
                         if (connection.getTo() == otherConn.getFrom() &&
