@@ -291,7 +291,7 @@
       "ypos": 0.471,
       "connected": [
         {
-          "id": "shadwell",
+          "id": "shadwellDlr",
           "lineId": "dlr",
           "curves": []
         },
@@ -405,7 +405,12 @@
         {
           "id": "marbleArch",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.348,
+              "ypos": 0.418
+            }
+          ]
         },
         {
           "id": "oxfordCircus",
@@ -535,10 +540,10 @@
       ]
     },
     {
-      "id": "earlsCourt",
+      "id": "earlsCourtDistrict",
       "name": "Earl's Court",
-      "xpos": 0.245,
-      "ypos": 0.598,
+      "xpos": 0.244,
+      "ypos": 0.597,
       "connected": [
         {
           "id": "westKensington",
@@ -546,7 +551,7 @@
           "curves": []
         },
         {
-          "id": "kensingtonOlympia",
+          "id": "kensingtonOlympiaDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -566,6 +571,19 @@
           "curves": []
         },
         {
+          "id": "earlsCourtPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "earlsCourtPiccadilly",
+      "name": "Earl's Court",
+      "xpos": 0.244,
+      "ypos": 0.582,
+      "connected": [
+        {
           "id": "gloucesterRoadPiccadilly",
           "lineId": "piccadilly",
           "curves": []
@@ -573,6 +591,11 @@
         {
           "id": "baronsCourtPiccadilly",
           "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "earlsCourtDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -912,7 +935,7 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -945,7 +968,7 @@
       "ypos": 0.582,
       "connected": [
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -1073,16 +1096,16 @@
         },
         {
           "id": "gloucesterRoadDC",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "gloucesterRoadDC",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.597
+            }
+          ]
         },
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtDistrict",
           "lineId": "district",
           "curves": []
         }
@@ -1169,7 +1192,7 @@
           "curves": []
         },
         {
-          "id": "highburyIslington",
+          "id": "highburyIslingtonVictoria",
           "lineId": "victoria",
           "curves": []
         },
@@ -2111,7 +2134,7 @@
       "ypos": 0.520,
       "connected": [
         {
-          "id": "shadwell",
+          "id": "shadwellDlr",
           "lineId": "dlr",
           "curves": []
         },
@@ -2440,7 +2463,7 @@
       "ypos": 0.102,
       "connected": [
         {
-          "id": "finsburyPark",
+          "id": "finsburyParkPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -2486,7 +2509,7 @@
           "curves": []
         },
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -2558,7 +2581,7 @@
       "ypos": 0.322,
       "connected": [
         {
-          "id": "mileEnd",
+          "id": "mileEndCentral",
           "lineId": "central",
           "curves": []
         },
@@ -2617,7 +2640,7 @@
       "ypos": 0.340,
       "connected": [
         {
-          "id": "mileEnd",
+          "id": "mileEndDH",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -2627,7 +2650,7 @@
           "curves": []
         },
         {
-          "id": "mileEnd",
+          "id": "mileEndDH",
           "lineId": "district",
           "curves": []
         },
@@ -2768,7 +2791,7 @@
           ]
         },
         {
-          "id": "highburyIslington",
+          "id": "highburyIslingtonOvergroundTop",
           "lineId": "overground",
           "curves": []
         }
@@ -2923,13 +2946,36 @@
       ]
     },
     {
-      "id": "canonbury",
+      "id": "canonburyTop",
+      "name": "Canonbury",
+      "xpos": 0.706,
+      "ypos": 0.173,
+      "connected": [
+        {
+          "id": "highburyIslingtonOvergroundTop",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "dalstonKingsland",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "canonburyBottom",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "canonburyBottom",
       "name": "Canonbury",
       "xpos": 0.706,
       "ypos": 0.189,
       "connected": [
         {
-          "id": "highburyIslington",
+          "id": "highburyIslingtonOvergroundBottom",
           "lineId": "overground",
           "curves": []
         },
@@ -2939,8 +2985,8 @@
           "curves": []
         },
         {
-          "id": "dalstonKingsland",
-          "lineId": "overground",
+          "id": "canonburyTop",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3114,7 +3160,7 @@
       "ypos": 0.215,
       "connected": [
         {
-          "id": "canonbury",
+          "id": "canonburyBottom",
           "lineId": "overground",
           "curves": []
         },
@@ -3132,7 +3178,7 @@
       "ypos": 0.173,
       "connected": [
         {
-          "id": "canonbury",
+          "id": "canonburyTop",
           "lineId": "overground",
           "curves": []
         },
@@ -3324,16 +3370,29 @@
       ]
     },
     {
-      "id": "finsburyPark",
+      "id": "finsburyParkVictoria",
       "name": "Finsbury Park",
       "xpos": 0.691,
       "ypos": 0.092,
       "connected": [
         {
-          "id": "highburyIslington",
+          "id": "highburyIslingtonVictoria",
           "lineId": "victoria",
           "curves": []
         },
+        {
+          "id": "finsburyParkPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "finsburyParkPiccadilly",
+      "name": "Finsbury Park",
+      "xpos": 0.683,
+      "ypos": 0.081,
+      "connected": [
         {
           "id": "manorHouse",
           "lineId": "piccadilly",
@@ -3342,6 +3401,11 @@
         {
           "id": "arsenal",
           "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "finsburyParkVictoria",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3555,11 +3619,6 @@
           "curves": []
         },
         {
-          "id": "hammersmithCH",
-          "lineId": "walk",
-          "curves": []
-        },
-        {
           "id": "hammersmithPiccadilly",
           "lineId": "walk",
           "curves": []
@@ -3581,16 +3640,6 @@
           "id": "goldhawkRoad",
           "lineId": "hammersmithCity",
           "curves": []
-        },
-        {
-          "id": "hammersmithDistrict",
-          "lineId": "walk",
-          "curves": []
-        },
-        {
-          "id": "hammersmithPiccadilly",
-          "lineId": "walk",
-          "curves": []
         }
       ]
     },
@@ -3608,11 +3657,6 @@
         {
           "id": "baronsCourtPiccadilly",
           "lineId": "piccadilly",
-          "curves": []
-        },
-        {
-          "id": "hammersmithPiccadilly",
-          "lineId": "walk",
           "curves": []
         },
         {
@@ -3672,13 +3716,41 @@
       ]
     },
     {
-      "id": "highburyIslington",
+      "id": "highburyIslingtonVictoria",
       "name": "Highbury & Islington",
-      "xpos": 0.663,
+      "xpos": 0.662,
+      "ypos": 0.162,
+      "connected": [
+        {
+          "id": "finsburyParkVictoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossVictoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "highburyIslingtonOvergroundTop",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "highburyIslingtonOvergroundBottom",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "highburyIslingtonOvergroundTop",
+      "name": "Highbury & Islington",
+      "xpos": 0.67,
       "ypos": 0.173,
       "connected": [
         {
-          "id": "canonbury",
+          "id": "canonburyTop",
           "lineId": "overground",
           "curves": []
         },
@@ -3688,13 +3760,36 @@
           "curves": []
         },
         {
-          "id": "finsburyPark",
-          "lineId": "victoria",
+          "id": "highburyIslingtonVictoria",
+          "lineId": "walk",
           "curves": []
         },
         {
-          "id": "kingsCrossVictoria",
-          "lineId": "victoria",
+          "id": "highburyIslingtonOvergroundBottom",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "highburyIslingtonOvergroundBottom",
+      "name": "Highbury & Islington",
+      "xpos": 0.68,
+      "ypos": 0.188,
+      "connected": [
+        {
+          "id": "canonburyBottom",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "highburyIslingtonOvergroundTop",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "highburyIslingtonVictoria",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -3859,24 +3954,47 @@
       ]
     },
     {
-      "id": "kensingtonOlympia",
+      "id": "kensingtonOlympiaDistrict",
       "name": "Kensington (Olympia)",
       "xpos": 0.235,
       "ypos": 0.529,
       "connected": [
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtDistrict",
           "lineId": "district",
           "curves": []
         },
         {
+          "id": "kensingtonOlympiaOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "kensingtonOlympiaOverground",
+      "name": "Kensington (Olympia)",
+      "xpos": 0.224,
+      "ypos": 0.529,
+      "connected": [
+        {
           "id": "shepherdsBushOverground",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.224,
+              "ypos": 0.508
+            }
+          ]
         },
         {
           "id": "westBromptonOverground",
           "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "kensingtonOlympiaDistrict",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4065,7 +4183,7 @@
       "ypos": 0.496,
       "connected": [
         {
-          "id": "shadwell",
+          "id": "shadwellDlr",
           "lineId": "dlr",
           "curves": []
         },
@@ -4119,17 +4237,40 @@
       "ypos": 0.035,
       "connected": [
         {
-          "id": "finsburyPark",
+          "id": "finsburyParkPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         }
       ]
     },
     {
-      "id": "mileEnd",
+      "id": "mileEndCentral",
       "name": "Mile End",
       "xpos": 0.831,
       "ypos": 0.325,
+      "connected": [
+        {
+          "id": "bethnalGreenCentral",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "stratford",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "mileEndDH",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "mileEndDH",
+      "name": "Mile End",
+      "xpos": 0.831,
+      "ypos": 0.340,
       "connected": [
         {
           "id": "stepneyGreen",
@@ -4147,18 +4288,8 @@
           "curves": []
         },
         {
-          "id": "bowRoad",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "bethnalGreenCentral",
-          "lineId": "central",
-          "curves": []
-        },
-        {
-          "id": "stratford",
-          "lineId": "central",
+          "id": "mileEndCentral",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4508,21 +4639,11 @@
       ]
     },
     {
-      "id": "shadwell",
+      "id": "shadwellDlr",
       "name": "Shawell",
-      "xpos": 0.757,
+      "xpos": 0.766,
       "ypos": 0.496,
       "connected": [
-        {
-          "id": "wapping",
-          "lineId": "overground",
-          "curves": []
-        },
-        {
-          "id": "whitechapel",
-          "lineId": "overground",
-          "curves": []
-        },
         {
           "id": "limehouse",
           "lineId": "dlr",
@@ -4536,6 +4657,34 @@
         {
           "id": "bankDlr",
           "lineId": "dlr",
+          "curves": []
+        },
+        {
+          "id": "shadwellOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "shadwellOverground",
+      "name": "Shawell",
+      "xpos": 0.757,
+      "ypos": 0.511,
+      "connected": [
+        {
+          "id": "wapping",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "whitechapel",
+          "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "shadwellDlr",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4575,7 +4724,7 @@
           "curves": []
         },
         {
-          "id": "kensingtonOlympia",
+          "id": "kensingtonOlympiaOverground",
           "lineId": "overground",
           "curves": []
         },
@@ -4711,12 +4860,12 @@
       "ypos": 0.347,
       "connected": [
         {
-          "id": "mileEnd",
+          "id": "mileEndDH",
           "lineId": "district",
           "curves": []
         },
         {
-          "id": "mileEnd",
+          "id": "mileEndDH",
           "lineId": "hammersmithCity",
           "curves": []
         },
@@ -4800,7 +4949,7 @@
           "curves": []
         },
         {
-          "id": "mileEnd",
+          "id": "mileEndCentral",
           "lineId": "central",
           "curves": []
         },
@@ -4980,7 +5129,7 @@
       "ypos": 0.535,
       "connected": [
         {
-          "id": "shadwell",
+          "id": "shadwellOverground",
           "lineId": "overground",
           "curves": []
         },
@@ -5021,7 +5170,7 @@
           "curves": []
         },
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -5044,7 +5193,7 @@
           "curves": []
         },
         {
-          "id": "kensingtonOlympia",
+          "id": "kensingtonOlympiaOverground",
           "lineId": "overground",
           "curves": []
         },
@@ -5151,7 +5300,7 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "earlsCourt",
+          "id": "earlsCourtDistrict",
           "lineId": "district",
           "curves": []
         },
@@ -5245,7 +5394,7 @@
           "curves": []
         },
         {
-          "id": "shadwell",
+          "id": "shadwellOverground",
           "lineId": "overground",
           "curves": []
         }
