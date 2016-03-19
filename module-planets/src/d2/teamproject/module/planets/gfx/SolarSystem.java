@@ -428,8 +428,6 @@ public class SolarSystem {
         planetRenderers = list.stream().map(rendererMap::get).collect(Collectors.toList());
     }
     public void setPlanetRotationSpeed(double speed) {
-        for (PlanetRenderer renderer : planetRenderers) {
-            renderer.setRotationSpeed(speed);
-        }
+        planetRenderers.stream().forEach(r -> r.setRotationSpeed(speed));
     }
 }
