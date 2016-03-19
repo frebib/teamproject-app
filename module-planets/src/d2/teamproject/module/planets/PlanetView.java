@@ -142,17 +142,25 @@ public class PlanetView extends VisualisationView {
         sortByCbx.valueProperty().addListener((a, b, newVal) -> onChange.accept(sorterCbx.getValue(), newVal));
         dirCbx.valueProperty().addListener((a, b, c) -> onChange.accept(sorterCbx.getValue(), sortByCbx.getValue()));
 
-        double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         prevBtn = new Button("Step\nBack");
         nextBtn = new Button("Step\nNext");
-        prevBtn.setPrefWidth(height * 2.5 / 3);
-        nextBtn.setPrefWidth(height * 2.5 / 3);
+        double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
+        double width = height * 2.5 / 3;
+        prevBtn.setPrefWidth(width);
+        nextBtn.setPrefWidth(width);
+        prevBtn.setMinWidth(width);
+        nextBtn.setMinWidth(width);
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
         prevBtn.setOnAction(e -> controller.prevState());
         nextBtn.setOnAction(e -> controller.nextState());
 
-        bottomCentre = new HBox();
+        tutorialTitle.setFont(new Font(25));
+        tutorialDesc.setFont(new Font(15));
+        tutorialText = new TextFlow(tutorialTitle, tutorialDesc);
+        tutorialText.setPadding(new Insets(0, 32, 0, 32));
+
+        bottomCentre = new HBox(tutorialText);
         HBox bottomLPad = new HBox(), bottomRPad = new HBox();
         HBox.setHgrow(bottomLPad, Priority.ALWAYS);
         HBox.setHgrow(bottomRPad, Priority.ALWAYS);
@@ -185,18 +193,6 @@ public class PlanetView extends VisualisationView {
 
     public void loadTutorial(String tutorialType) {
         tutorial = controller.getTutorial(tutorialType);
-        tutorialText = new TextFlow(); // Needs to be cleared
-        // Set the font size
-        tutorialTitle.setFont(new Font(25));
-        tutorialDesc.setFont(new Font(15));
-        // Set the text to initial step
-        updateText("information");
-        // Set text wrapping width
-        tutorialText.setMaxWidth(600);
-
-        tutorialText.getChildren().addAll(tutorialTitle, tutorialDesc);
-        tutorialText.setVisible(tutorialMode);
-        bottomCentre.getChildren().addAll(tutorialText);
     }
 
     public BaseController getController() {
