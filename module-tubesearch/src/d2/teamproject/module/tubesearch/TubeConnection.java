@@ -1,9 +1,15 @@
 package d2.teamproject.module.tubesearch;
 
+import javafx.geometry.Point2D;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class TubeConnection {
     private TubeStation from, to;
     private TubeLine line;
     private boolean bidir;
+    private List<Point2D> curvePoints;
 
     public TubeConnection(TubeStation from, TubeStation to, TubeLine line) {
         if (from.equals(to))
@@ -12,6 +18,7 @@ public class TubeConnection {
         this.to = to;
         this.line = line;
         this.bidir = false;
+        this.curvePoints = new ArrayList<>();
 
         from.addSuccessor(to);
 
@@ -41,12 +48,22 @@ public class TubeConnection {
         return this;
     }
 
+    public List<Point2D> getCurvePoints() {
+        return curvePoints;
+    }
+
+    public void addCurvePoints(List<Point2D> curvePoints) {
+        this.curvePoints.addAll(curvePoints);
+    }
+
     @Override
     public String toString() {
         return "TubeConnection{" +
                 "from=" + from +
                 ", to=" + to +
                 ", line=" + line +
+                ", bidir=" + bidir +
+                ", curvePoints=" + curvePoints +
                 '}';
     }
 

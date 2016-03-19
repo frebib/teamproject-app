@@ -9,6 +9,7 @@ import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
 import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.tutorial.Tutorial;
+import javafx.geometry.Point2D;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -109,7 +110,6 @@ public class TubeSearchController extends JsonController {
                             lineId, line
                     );
                 }
-                // TODO: Load sublines here
 
                 try {
                     TubeConnection connection = new TubeConnection(from, to, line);
@@ -122,9 +122,30 @@ public class TubeSearchController extends JsonController {
 
                         TubeConnection otherConn = equals.get();
                         if (connection.getTo() == otherConn.getFrom() &&
-                                connection.getFrom() == otherConn.getTo())
+                                connection.getFrom() == otherConn.getTo()) {
                             otherConn.setBidirectional();
+                            connection = otherConn;
+                        }
                     }
+
+                    JsonArray curvesJson = obj1.get("curves").asArray();
+                    if (curvesJson.size() > 0) {
+                        List<Point2D> curvePoints = new ArrayList<>(curvesJson.size());
+                        curvesJson.forEach(curveJson -> {
+                            JsonObject curveObj = curveJson.asObject();
+                            curvePoints.add(new Point2D(
+                                    curveObj.getDouble("xpos", 0),
+                                    curveObj.getDouble("ypos", 0)
+                            ));
+                        });
+                        // make sure the curves are in the right order
+                        // according to the stations in the TubeConnection
+                        if (to.equals(connection.getFrom()))
+                            Collections.reverse(curvePoints);
+
+                        connection.addCurvePoints(curvePoints);
+                    }
+
                 } catch (IllegalArgumentException e) {
                     LOG.warning("%s == %s", to, from);
                     LOG.exception(e);
