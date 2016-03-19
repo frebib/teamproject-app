@@ -15,15 +15,15 @@ public class TubeStation extends Node<TubeStation> {
     private String name, id;
     private Point2D pos;
 
-    public TubeStation(String name, String id, double x, double y) {
+    public TubeStation(String id, String name, double x, double y) {
         super(null);
         contents = this;
 
         if (x == 0 && y == 0)
             LOG.warning("Potentially invalid coordinates of pos={x=%d, y=%d} in TubeStation name=%s", x, y, name);
 
-        this.name = name;
         this.id = id;
+        this.name = name;
         this.pos = new Point2D(x, y);
 
         from = new ArrayList<>();
