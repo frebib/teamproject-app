@@ -3,34 +3,45 @@ package d2.teamproject.module.tubesearch;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 import d2.teamproject.algorithm.search.Node;
+import javafx.geometry.Point2D;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static d2.teamproject.PARTH.LOG;
+
 public class TubeStation extends Node<TubeStation> {
     private ArrayList<TubeConnection> from, to;
     private String name, id;
-    private double x, y;
+    private Point2D pos;
 
     public TubeStation(String name, String id, double x, double y) {
         super(null);
         contents = this;
 
+        if (x == 0 && y == 0)
+            LOG.warning("Potentially invalid coordinates of pos={x=%d, y=%d} in TubeStation name=%s", x, y, name);
+
         this.name = name;
         this.id = id;
-        this.x = x;
-        this.y = y;
+        this.pos = new Point2D(x, y);
 
         from = new ArrayList<>();
         to = new ArrayList<>();
     }
 
-    public double getX() {
-        return x;
+    public Point2D getPos() {
+        return pos;
     }
 
+    @Deprecated
+    public double getX() {
+        return pos.getX();
+    }
+
+    @Deprecated
     public double getY() {
-        return y;
+        return pos.getY();
     }
 
     public String getName() {
@@ -64,8 +75,7 @@ public class TubeStation extends Node<TubeStation> {
         return "TubeStation{" +
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
-                ", x=" + x +
-                ", y=" + y +
+                ", pos=" + pos +
                 '}';
     }
 
