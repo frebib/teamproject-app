@@ -24,6 +24,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static d2.teamproject.PARTH.LOG;
 import static d2.teamproject.module.planets.PlanetView.AnimState;
 
 /**
@@ -249,11 +250,11 @@ public class SolarSystem {
                     return i < partition.getLower() || i > partition.getUpper();
                 }).collect(Collectors.toList());
 
-        System.out.printf("Pivot:   %d\nOutside: ", partition.getPivot());
-        ListUtil.printList(unFocused.stream()
+        String unfocusNames = ListUtil.listToString(unFocused.stream()
                 .map(PlanetRenderer::getPlanet)
                 .map(Planet::getName)
                 .collect(Collectors.toList()));
+        LOG.info("Defocusing planets: %s", unfocusNames);
 
         ParallelTransition pt = new ParallelTransition();
         // Move previously unfocused elements forward
