@@ -86,6 +86,8 @@ public class TubeMap extends Pane {
         Group lines = new Group();
         Group walks = new Group();
         Group nodes = new Group();
+        lines.setMouseTransparent(true);
+        walks.setMouseTransparent(true);
         map = new Group(lines, nodes, walks);
         Set<TubeConnection> connections = controller.getLinks();
 
