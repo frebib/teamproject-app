@@ -237,7 +237,12 @@
         {
           "id": "liverpoolStreetHCM",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.62,
+              "ypos": 0.462
+            }
+          ]
         },
         {
           "id": "waterlooBakerlooWC",
@@ -1883,7 +1888,12 @@
         {
           "id": "lancasterGate",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.317,
+              "ypos": 0.463
+            }
+          ]
         }
       ]
     },
@@ -2080,7 +2090,12 @@
         {
           "id": "chanceryLane",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.567,
+              "ypos": 0.462
+            }
+          ]
         },
         {
           "id": "bankCentralWaterloo",
@@ -2606,7 +2621,12 @@
         {
           "id": "liverpoolStreetHCM",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.707,
+              "ypos": 0.322
+            }
+          ]
         }
       ]
     },
@@ -4301,7 +4321,7 @@
       "id": "mileEndCentral",
       "name": "Mile End",
       "xpos": 0.831,
-      "ypos": 0.325,
+      "ypos": 0.322,
       "connected": [
         {
           "id": "bethnalGreenCentral",
@@ -4311,7 +4331,12 @@
         {
           "id": "stratfordOvergroundCentral",
           "lineId": "central",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.847,
+              "ypos": 0.322
+            }
+          ]
         },
         {
           "id": "mileEndDH",
