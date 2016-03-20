@@ -151,7 +151,6 @@ public class TubeSearchController extends JsonController {
     }
 
     public void onStationClick(TubeStation station) {
-        // TODO: Add checks to prevent choosing the same start/goal node etc.
         switch (selection) {
             case NONE:
                 break;
@@ -162,6 +161,8 @@ public class TubeSearchController extends JsonController {
                 view.updateText("choose-goal", start.getName());
                 break;
             case GOAL:
+                if(station.equals(start))
+                    break;
                 LOG.info("Selected goal station %s", station);
                 selection = StationSelect.NONE;
                 goal = station;
