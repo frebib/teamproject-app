@@ -20,11 +20,13 @@ public class TubeConnection {
         this.bidir = false;
         this.curvePoints = new ArrayList<>();
 
-        from.addSuccessor(to);
-
         to.addFrom(this);
         from.addTo(this);
-        line.addStations(to, from);
+
+        if (!line.getId().equals("walk")) {
+            line.addStations(to, from);
+            from.addSuccessor(to);
+        }
     }
 
     public TubeStation getFrom() {
