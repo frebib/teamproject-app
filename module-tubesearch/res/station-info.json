@@ -133,7 +133,7 @@
       "id": "angel",
       "name": "Angel",
       "xpos": 0.586,
-      "ypos": 0.289,
+      "ypos": 0.287,
       "connected": [
         {
           "id": "oldStreet",
@@ -1725,7 +1725,7 @@
           "curves": [
             {
               "xpos": 0.625,
-              "ypos": 0.289
+              "ypos": 0.287
             }
           ]
         },
