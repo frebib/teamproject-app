@@ -1,0 +1,20 @@
+[
+  {
+    "index": "0",
+    "title": "Scan surrounding nodes",
+    "content": "From the starting node, we take all of the surrounding nodes. This is the first step in creating a tree from the graph. This first set of surrounding nodes is called the frontier",
+    "key": "scanSurroundingFirst"
+  },
+  {
+    "index": "1",
+    "title": "Check the first node",
+    "content": "Once we have scanned all of the nodes, we then check the first one to see if it's the final (goal) node",
+    "key": "checkSurrounding"
+  },
+  {
+    "index": "2",
+    "title": "Restart from last node",
+    "content": "From each of the frontier nodes we then scan the surround nodes. This creates another layer in this tree that we're creating",
+    "key": "iterate"
+  }
+]
