@@ -7,7 +7,7 @@
   },
   {
     "index": 1,
-    "title": "Comparing %s and %s - Don't Swap",
+    "title": "Comparing %s and %s - Don't swap",
     "content": "The compared element is smaller than the pivot, the items remain in their place",
     "key": "compare"
   },
@@ -19,14 +19,14 @@
   },
   {
     "index": 3,
-    "title": "Comparing %s and %s - Don't Swap",
+    "title": "Comparing %s and %s - Don't swap",
     "content": "The compared element is larger than the pivot, the items remain in their place",
     "key": "notSwap"
   },
   {
     "index": 4,
-    "title": "Choose the pivot",
-    "content": "First of all, we select a pivot. This is an element that we will use to make future comparisons",
+    "title": "Choosing %s as the pivot",
+    "content": "We select a pivot. This is an element that we will use to make future comparisons",
     "key": "pickPivot"
   },
   {
@@ -52,5 +52,11 @@
     "title": "Currently using Quick Sort",
     "content": "This is a sort that partitions an list into two parts (based on a pivot), then sorts the parts independently.",
     "key": "information"
+  },
+  {
+    "index": 9,
+    "title": "All the planets have been sorted using Quick Sort",
+    "content": "Hope this explanation helped!",
+    "key": "done"
   }
 ]

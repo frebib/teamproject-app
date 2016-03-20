@@ -52,5 +52,11 @@
     "title": "Currently using Bubble Sort",
     "content": "This is a sort that compares each pair of adjacent items and swaps them if they are in the wrong order.",
     "key": "information"
-  }
+  },
+  {
+  "index": 9,
+  "title": "All the planets have been sorted using Bubble Sort",
+  "content": "Hope this explanation helped!",
+  "key": "done"
+}
 ]
