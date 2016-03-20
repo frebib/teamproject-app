@@ -79,11 +79,14 @@ public class TubeMap extends Pane {
             map.setTranslateY(translateStart.getY() - (mouseDown.getY() - e.getY()) * PANSPEED);
         });
         this.setOnScroll(e -> {
-            // TODO: Always ensure model is onscreen
             zoomFactor += e.getDeltaY() * ZOOMSPEED;
             zoomFactor = Math.min(Math.max(zoomFactor, ZOOMMIN), ZOOMMAX);
+            double changeX = zoomFactor / map.getScaleX() * map.getTranslateX();
+            double changeY = zoomFactor / map.getScaleY() * map.getTranslateY();
             map.setScaleX(zoomFactor);
             map.setScaleY(zoomFactor);
+            map.setTranslateX(changeX);
+            map.setTranslateY(changeY);
         });
 
         Group lines = new Group();
