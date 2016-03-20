@@ -10,3 +10,4 @@ JavaDoc all the things
 Zoom out when transitioning
 Don't reset if the state is the same
 Planets step backwards
+Update menu banners
