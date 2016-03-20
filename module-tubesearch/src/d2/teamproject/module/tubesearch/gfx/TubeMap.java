@@ -44,6 +44,9 @@ public class TubeMap extends Pane {
     private static final double WALK_WIDTH = 0.005;
     private static final double WALK_STROKE = 0.0018;
 
+    private static final Color START_COLOUR = Color.GREEN;
+    private static final Color GOAL_COLOUR = Color.DARKGREEN;
+
     private TubeSearchController controller;
     private Group map;
 
@@ -225,6 +228,20 @@ public class TubeMap extends Pane {
         TubeStation hoverStation = (TubeStation) ((Circle) mouseEvent.getTarget()).getUserData();
 
         LOG.fine("Mouse is %s %s", mouseOver ? "over" : "out", hoverStation.getName());
+    }
+
+    public void setStartStation(TubeStation start) {
+        Circle stnCircle = circleMap.get(start);
+        FillTransition transition = new FillTransition(Duration.millis(200),
+                stnCircle, (Color) stnCircle.getFill(), START_COLOUR);
+        transition.playFromStart();
+    }
+
+    public void setGoalStation(TubeStation goal) {
+        Circle stnCircle = circleMap.get(goal);
+        FillTransition transition = new FillTransition(Duration.millis(200),
+                stnCircle, (Color) stnCircle.getFill(), GOAL_COLOUR);
+        transition.playFromStart();
     }
 
     public PathTransition dotTransition(Circle n, double x1, double y1, double x2, double y2, double time) {

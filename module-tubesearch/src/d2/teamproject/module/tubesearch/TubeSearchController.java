@@ -2,7 +2,6 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
-import d2.teamproject.algorithm.search.AStarSearchStream;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
@@ -160,6 +159,7 @@ public class TubeSearchController extends JsonController {
                 LOG.info("Selected start station %s", station);
                 selection = StationSelect.GOAL;
                 start = station;
+                view.getMap().setStartStation(start);
                 view.updateText("choose-goal", start.getName());
                 break;
             case GOAL:
@@ -169,6 +169,7 @@ public class TubeSearchController extends JsonController {
                 selection = StationSelect.NONE;
                 goal = station;
                 initSearch(searcher, start, goal);
+                view.getMap().setGoalStation(goal);
                 view.updateText("search-start", start.getName(), goal.getName());
                 LOG.fine("Search stream initialised");
                 break;

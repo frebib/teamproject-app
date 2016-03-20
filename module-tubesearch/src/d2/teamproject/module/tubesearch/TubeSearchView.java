@@ -154,6 +154,10 @@ public class TubeSearchView extends VisualisationView {
         tutorialDesc.setText("\n" + desc);
     }
 
+    public TubeMap getMap() {
+        return tubeMap;
+    }
+
     @Override
     public BaseController getController() {
         return controller;
