@@ -108,7 +108,7 @@ public class TubeSearchController extends JsonController {
                     TubeConnection connection = new TubeConnection(from, to, line);
                     Optional<TubeConnection> equals = links.stream().filter(connection::equals).findFirst();
 
-                    if (!equals.isPresent() && line != null && !line.getId().equals("walk"))
+                    if (!equals.isPresent())
                         links.add(connection);
                     else {
 //                        LOG.info("Connection %s already exists", connection);
