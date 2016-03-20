@@ -39,6 +39,8 @@ import static d2.teamproject.module.planets.gfx.PlanetSort.*;
  */
 public class PlanetView extends VisualisationView {
     private static final double PAUSE_TIME = 200;
+    private static final double ANIM_INITVAL = 1;
+    private static final double ROT_INITVAL = 20;
 
     public enum AnimState {
         NOTHING,
@@ -92,7 +94,7 @@ public class PlanetView extends VisualisationView {
         bottomBox.setPadding(panePad);
         topBox.setSpacing(16);
 
-        Slider animSlide = new Slider(0.2, 5, 1);
+        animSlide = new Slider(0.2, 5, ANIM_INITVAL);
         animSlide.valueProperty().addListener((obs, oldVal, newVal) -> {
             globalAnimSpeed = newVal.doubleValue();
             if (current != null)
@@ -101,7 +103,7 @@ public class PlanetView extends VisualisationView {
         VBox animSlidePane = new VBox(animSlide, new Label("Animation Speed"));
         animSlidePane.setAlignment(Pos.CENTER);
 
-        Slider rotSlide = new Slider(1, 100, 20);
+        rotSlide = new Slider(1, 100, ROT_INITVAL);
         rotSlide.valueProperty().addListener((obs, oldVal, newVal) -> {
             sSystem.setPlanetRotationSpeed(newVal.doubleValue() / 20);
         });
@@ -178,6 +180,12 @@ public class PlanetView extends VisualisationView {
 
         sSystem = new SolarSystem(this, controller.getPlanets(), PARTH.WIDTH, PARTH.HEIGHT * 0.75, skybox);
         contentBox.getChildren().add(sSystem.getScene());
+
+        sorterCbx.setValue(sorterCbx.getItems().get(0));
+        sortByCbx.setValue(sortByCbx.getItems().get(0));
+        dirCbx.setValue(Dir.ASCENDING);
+        animSlide.setValue(ANIM_INITVAL);
+        rotSlide.setValue(ROT_INITVAL);
     }
 
     @Override
