@@ -1064,7 +1064,12 @@
         {
           "id": "oxfordCircus",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.384,
+              "ypos": 0.465
+            }
+          ]
         },
         {
           "id": "victoria",
@@ -1194,12 +1199,22 @@
         {
           "id": "eustonVictoria",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.519,
+              "ypos": 0.268
+            }
+          ]
         },
         {
           "id": "highburyIslingtonVictoria",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.632,
+              "ypos": 0.269
+            }
+          ]
         },
         {
           "id": "kingsCrossNorthern",
@@ -1870,7 +1885,12 @@
         {
           "id": "vauxhall",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.384,
+              "ypos": 0.806
+            }
+          ]
         }
       ]
     },
@@ -3798,12 +3818,22 @@
         {
           "id": "finsburyParkVictoria",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.662,
+              "ypos": 0.132
+            }
+          ]
         },
         {
           "id": "kingsCrossVictoria",
           "lineId": "victoria",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.662,
+              "ypos": 0.226
+            }
+          ]
         },
         {
           "id": "highburyIslingtonOvergroundTop",
