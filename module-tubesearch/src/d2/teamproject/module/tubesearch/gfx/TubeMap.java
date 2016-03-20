@@ -14,6 +14,7 @@ import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.SubScene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
@@ -24,6 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
+
+import static d2.teamproject.PARTH.LOG;
 
 /**
  * @author Luke Taher
@@ -188,9 +191,12 @@ public class TubeMap extends Pane {
         for (TubeStation stn : controller.getStationMap().values()) {
             Circle c = new Circle(stn.getX() * scaleX, stn.getY() * scaleY, CIRCLE_RADIUS * scaleX);
             c.setOnMouseClicked(e -> controller.onStationClick(stn));
+            c.setOnMouseEntered(this::stationMouseOver);
+            c.setOnMouseExited(this::stationMouseOver);
             c.setStrokeWidth(WALK_STROKE * scaleX);
             c.setStroke(walkLine.getColour());
             c.setFill(walkLine.getInnerColour());
+            c.setUserData(stn);
             circleMap.put(stn, c);
 
             nodes.getChildren().add(c);
@@ -209,6 +215,13 @@ public class TubeMap extends Pane {
         camera.setRotationAxis(new Point3D(0, 1, 0));
 
         scene.setCamera(camera);
+    }
+
+    private void stationMouseOver(MouseEvent mouseEvent) {
+        boolean mouseOver = mouseEvent.getEventType() == MouseEvent.MOUSE_ENTERED;
+        TubeStation hoverStation = (TubeStation) ((Circle) mouseEvent.getTarget()).getUserData();
+
+        LOG.fine("Mouse is %s %s", mouseOver ? "over" : "out", hoverStation.getName());
     }
 
     public PathTransition dotTransition(Circle n, double x1, double y1, double x2, double y2, double time) {
