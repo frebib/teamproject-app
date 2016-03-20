@@ -3,6 +3,8 @@ package d2.teamproject.module.tubesearch;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import d2.teamproject.algorithm.search.AStarSearchStream;
+import d2.teamproject.algorithm.search.Node;
+import d2.teamproject.algorithm.search.SearchState;
 import d2.teamproject.algorithm.search.SearchStream;
 import d2.teamproject.algorithm.search.SearchStream.Searcher;
 import d2.teamproject.module.BaseView;
@@ -217,5 +219,19 @@ public class TubeSearchController extends JsonController {
         selection = StationSelect.START;
         start = null;
         goal = null;
+    }
+
+    public SearchState<Node<TubeStation>> nextState() {
+        if(stream.hasNext())
+            return stream.getNext();
+        else
+            return stream.getCurrent();
+    }
+
+    public SearchState<Node<TubeStation>> prevState() {
+        if(stream.hasPrevious())
+            return stream.getPrevious();
+        else
+            return stream.getCurrent();
     }
 }

@@ -86,8 +86,8 @@ public class TubeSearchView extends VisualisationView {
         nextBtn.setMinWidth(width);
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
-//        prevBtn.setOnAction(e -> controller.prevState());
-//        nextBtn.setOnAction(e -> controller.nextState());
+        prevBtn.setOnAction(e -> animateState(controller.prevState()));
+        nextBtn.setOnAction(e -> animateState(controller.nextState()));
 
         tutorialTitle.setFont(new Font(25));
         tutorialDesc.setFont(new Font(15));
