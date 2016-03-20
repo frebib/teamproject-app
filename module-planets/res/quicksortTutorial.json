@@ -1,25 +1,25 @@
 [
   {
     "index": 0,
-    "title": "Swap",
+    "title": "Comparing %s and %s - Swap",
     "content": "The compared element is larger than the pivot, so we swap the place of these items",
     "key": "check"
   },
   {
     "index": 1,
-    "title": "Don't Swap",
+    "title": "Comparing %s and %s - Don't Swap",
     "content": "The compared element is smaller than the pivot, the items remain in their place",
     "key": "compare"
   },
   {
     "index": 2,
-    "title": "Swap",
+    "title": "Comparing %s and %s - Swap",
     "content": "The compared element is smaller than the pivot, so we swap the place of these items",
     "key": "swap"
   },
   {
     "index": 3,
-    "title": "Don't Swap",
+    "title": "Comparing %s and %s - Don't Swap",
     "content": "The compared element is larger than the pivot, the items remain in their place",
     "key": "notSwap"
   },

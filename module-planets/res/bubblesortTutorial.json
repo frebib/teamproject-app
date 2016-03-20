@@ -7,19 +7,19 @@
   },
   {
     "index": 1,
-    "title": "Comparing the first two elements",
+    "title": "Comparing %s and %s",
     "content": "Bubble sort works by propagating up the largest element of two elements. We compare the first two elements to know which of the two follow steps to take",
     "key": "compare"
   },
   {
     "index": 2,
-    "title": "Swapping",
+    "title": "Comparing %s and %s - Swapping",
     "content": "If the first element is larger than the second, we swap the two elements. This means that the sub list of the first two elements is now ordered. (e.g. [4,3] -> [3,4])",
     "key": "swap"
   },
   {
     "index": 3,
-    "title": "Not swapping",
+    "title": "Comparing %s and %s - Not swapping",
     "content": "If the first element is smaller than the second, we are not required to swap either of the elements as the sub list of the first two elements is already ordered (e.g. [3,4] -> [3,4])",
     "key": "notSwap"
   },
