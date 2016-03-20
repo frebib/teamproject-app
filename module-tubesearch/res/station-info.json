@@ -734,7 +734,12 @@
         {
           "id": "charingCross",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.485,
+              "ypos": 0.553
+            }
+          ]
         },
         {
           "id": "waterlooBakerlooWC",
@@ -1361,7 +1366,12 @@
         {
           "id": "elephantAndCastle",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.485,
+              "ypos": 0.803
+            }
+          ]
         }
       ]
     },
@@ -1575,7 +1585,12 @@
         {
           "id": "bakerStreetJB",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.342,
+              "ypos": 0.286
+            }
+          ]
         }
       ]
     },
@@ -1740,12 +1755,22 @@
         {
           "id": "regentsPark",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.414,
+              "ypos": 0.394
+            }
+          ]
         },
         {
           "id": "piccadillyCircus",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.414,
+              "ypos": 0.450
+            }
+          ]
         },
         {
           "id": "warrenStreet",
@@ -4668,7 +4693,12 @@
         {
           "id": "kilburnPark",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.152,
+              "ypos": 0.180
+            }
+          ]
         },
         {
           "id": "kilburnHighRoad",
@@ -5311,7 +5341,12 @@
         {
           "id": "maidaVale",
           "lineId": "bakerloo",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.174,
+              "ypos": 0.286
+            }
+          ]
         },
         {
           "id": "paddingtonBakerloo",
@@ -5668,7 +5703,16 @@
         {
           "id": "shepherdsBushOverground",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.1,
+              "ypos": 0.185
+            },
+            {
+              "xpos": 0.1,
+              "ypos": 0.329
+            }
+          ]
         }
       ]
     },
