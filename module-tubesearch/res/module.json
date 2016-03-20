@@ -18,6 +18,14 @@
     "help": {
       "file": "help.json",
       "type": "JsonArray"
+    },
+    "bfsT": {
+      "file": "bfsTutorial.json",
+      "type": "JsonArray"
+    },
+    "dfsT": {
+      "file": "dfsTutorial.json",
+      "type": "JsonArray"
     }
   }
 }
