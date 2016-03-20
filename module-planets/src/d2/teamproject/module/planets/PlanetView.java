@@ -246,10 +246,9 @@ public class PlanetView extends VisualisationView {
         /* If in a partial compare state */
         if (animState == COMPARED) {
             CompareSortState<Planet> state = (CompareSortState<Planet>) controller.getSorter().getCurrent();
-            String p1 = controller.getPlanets().get((int) state.getCompares().getX()).getName();
-            String p2= controller.getPlanets().get((int) state.getCompares().getY()).getName();
+            Planet p1 = controller.getPlanets().get((int) state.getCompares().getX());
+            Planet p2 = controller.getPlanets().get((int) state.getCompares().getY());
             if (state.isSwap()) {
-                updateText("swap", 2, p1, p2);
 
                 t = sSystem.swapTransition(state);
                 t.setOnFinished(ev -> {
@@ -260,11 +259,12 @@ public class PlanetView extends VisualisationView {
 
                     sSystem.setPlanetOrder(nState.getList());
                 });
+                updateText("information");
                 doTransition(t, SWAPPING);
             } else {
                 // Reversing the animation doesn't work
                 // properly, it's likely a bug in the JDK
-                updateText("notSwap", 2, p1, p2);
+                updateText("information");
                 doTransition(sSystem.compareTransition(state, true), SWAPPING);
             }
             return;
@@ -294,22 +294,36 @@ public class PlanetView extends VisualisationView {
             t.playFromStart();
 
         } else if (state.isComplete()) {
+            updateText("done");
             doTransition(sSystem.finishTransition(), PARTITIONING);
         } else if (state instanceof CompareSortState) {
             CompareSortState<Planet> csstate = (CompareSortState<Planet>) state;
 
-            String p1 = controller.getPlanets().get((int) csstate.getCompares().getX()).getName();
-            String p2= controller.getPlanets().get((int) csstate.getCompares().getY()).getName();
-            updateText("compare", 2, p1, p2);
+            Planet p1 = controller.getPlanets().get((int) csstate.getCompares().getX());
+            Planet p2= controller.getPlanets().get((int) csstate.getCompares().getY());
 
             t = new SequentialTransition(
                     sSystem.compareTransition(csstate, false),
                     new PauseTransition(new Duration(PAUSE_TIME))
             );
             t.setOnFinished(e -> animState = COMPARED);
+
+            if(((int)csstate.getCompares().getX()) > csstate.getPivot() && !csstate.isSwap()) {
+                updateText("notSwap", 2, p1.getName(), p2.getName());
+            }
+            else if (!csstate.isSwap()) {
+                updateText("compare",2, p1.getName(), p2.getName());
+            }
+            else if(((int)csstate.getCompares().getX()) > csstate.getPivot() && csstate.isSwap()) {
+                updateText("swap", 2, p1.getName(), p2.getName());
+            }
+            else if (csstate.isSwap()) {
+                updateText("check",2, p1.getName(), p2.getName());
+            }
             doTransition(t, COMPARING);
         } else if (state instanceof PartitionSortState) {
             // TODO: Animate setting pivot planet
+            updateText("pickPivot",1, controller.getPlanets().get(((PartitionSortState) state).getPivot()).getName());
             t = sSystem.partitionTransition((PartitionSortState<Planet>) state);
             doTransition(t, PARTITIONING);
         }
