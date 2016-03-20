@@ -208,7 +208,7 @@ public class TubeMap extends Pane {
         this.getChildren().add(map);
 
         Bounds size = map.getBoundsInLocal();
-        map.setTranslateX(-(width - size.getWidth()) / 2);
+        map.setTranslateX((width - size.getWidth()) / 2);
         map.setTranslateY((height - size.getHeight()) / 2);
 
         PerspectiveCamera camera = new PerspectiveCamera();
