@@ -6,6 +6,7 @@ import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.search.*;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
+import d2.teamproject.module.tubesearch.gfx.TubeMap;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
