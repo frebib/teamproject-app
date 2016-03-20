@@ -33,7 +33,7 @@ public class BubbleSortStream<E> extends SortStream<E> {
 
     private List<E> sort(List<E> items) {
         for (int i = 0; i < items.size(); i++) {
-            for (int k = i; k < items.size() - 1; k++) {
+            for (int k = 0; k < items.size() - 1 - i; k++) {
                 boolean swap = comparator.compare(items.get(k), items.get(k+1)) > 0;
                 states.add(new CompareSortState<>(lastListState, 0, 0, list.size() - 1, k, k+1, swap));
                 if (swap) {
