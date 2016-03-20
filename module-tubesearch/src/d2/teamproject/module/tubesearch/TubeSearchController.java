@@ -63,6 +63,10 @@ public class TubeSearchController extends JsonController {
         //TODO: Rename file or have multiple arrays
         Tutorial searchT = new Tutorial((JsonArray) res.get("help"));
         tutorials.put(getClass().getName(), searchT);
+        Tutorial bfsT = new Tutorial((JsonArray) res.get("bfsT"));
+        tutorials.put(getClass().getName(), bfsT);
+        Tutorial dfsT = new Tutorial((JsonArray) res.get("dfsT"));
+        tutorials.put(getClass().getName(), dfsT);
 
         // Load tube map JSONs
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
