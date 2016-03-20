@@ -805,7 +805,12 @@
         {
           "id": "warrenStreet",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.493,
+              "ypos": 0.284
+            }
+          ]
         },
         {
           "id": "eustonOverground",
@@ -838,12 +843,22 @@
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.507,
+              "ypos": 0.218
+            }
+          ]
         },
         {
           "id": "kingsCrossNorthern",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.507,
+              "ypos": 0.287
+            }
+          ]
         },
         {
           "id": "eustonOverground",
@@ -1486,7 +1501,12 @@
         {
           "id": "borough",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.625,
+              "ypos": 0.621
+            }
+          ]
         },
         {
           "id": "bankNorthern",
@@ -2296,7 +2316,12 @@
         {
           "id": "eustonNorthern",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.475,
+              "ypos": 0.305
+            }
+          ]
         },
         {
           "id": "eustonVictoria",
@@ -3088,8 +3113,8 @@
     {
       "id": "chalkFarm",
       "name": "Chalk Farm",
-      "xpos": 0.484,
-      "ypos": 0.155,
+      "xpos": 0.483,
+      "ypos": 0.156,
       "connected": [
         {
           "id": "belsizePark",
@@ -4412,7 +4437,12 @@
         {
           "id": "camdenTown",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.493,
+              "ypos": 0.218
+            }
+          ]
         },
         {
           "id": "eustonNorthern",
@@ -5178,7 +5208,12 @@
         {
           "id": "kentishTown",
           "lineId": "northern",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.548,
+              "ypos": 0.107
+            }
+          ]
         }
       ]
     },
