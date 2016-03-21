@@ -798,7 +798,12 @@
         {
           "id": "southHampstead",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.463,
+              "ypos": 0.253
+            }
+          ]
         },
         {
           "id": "eustonNorthern",
@@ -2739,7 +2744,20 @@
         {
           "id": "liverpoolStreetOverground",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.785,
+              "ypos": 0.292
+            },
+            {
+              "xpos": 0.772,
+              "ypos": 0.308
+            },
+            {
+              "xpos": 0.701,
+              "ypos": 0.308
+            }
+          ]
         }
       ]
     },
@@ -3207,7 +3225,12 @@
         {
           "id": "dalstonJunction",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.728,
+              "ypos": 0.189
+            }
+          ]
         },
         {
           "id": "canonburyTop",
@@ -3284,7 +3307,12 @@
         {
           "id": "imperialWharf",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.298,
+              "ypos": 0.803
+            }
+          ]
         },
         {
           "id": "wandsworthRoad",
@@ -3410,7 +3438,12 @@
         {
           "id": "hackneyCentral",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.739,
+              "ypos": 0.173
+            }
+          ]
         }
       ]
     },
@@ -3423,12 +3456,22 @@
         {
           "id": "peckhamRye",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.597,
+              "ypos": 0.919
+            }
+          ]
         },
         {
           "id": "claphamHighStreet",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.434,
+              "ypos": 0.919
+            }
+          ]
         }
       ]
     },
@@ -3690,7 +3733,12 @@
         {
           "id": "upperHolloway",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.586,
+              "ypos": 0.072
+            }
+          ]
         },
         {
           "id": "gospelOakBottom",
@@ -3713,7 +3761,12 @@
         {
           "id": "kentishTownWest",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.505,
+              "ypos": 0.090
+            }
+          ]
         },
         {
           "id": "gospelOakTop",
@@ -3754,7 +3807,12 @@
         {
           "id": "dalstonKingsland",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.764,
+              "ypos": 0.209
+            }
+          ]
         },
         {
           "id": "hackneyDowns",
@@ -3772,12 +3830,22 @@
         {
           "id": "rectoryRoad",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.785,
+              "ypos": 0.170
+            }
+          ]
         },
         {
           "id": "clapton",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.785,
+              "ypos": 0.170
+            }
+          ]
         },
         {
           "id": "londonFields",
@@ -3818,7 +3886,12 @@
         {
           "id": "dalstonJunction",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.757,
+              "ypos": 0.235
+            }
+          ]
         },
         {
           "id": "hoxton",
@@ -3908,7 +3981,7 @@
       "id": "hampsteadHeath",
       "name": "Hampstead Heath",
       "xpos": 0.46,
-      "ypos": 0.089,
+      "ypos": 0.090,
       "connected": [
         {
           "id": "gospelOakBottom",
@@ -3918,7 +3991,12 @@
         {
           "id": "finchleyRoadAndFrognal",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.443,
+              "ypos": 0.090
+            }
+          ]
         }
       ]
     },
@@ -4315,7 +4393,12 @@
         {
           "id": "queensPark",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.157,
+              "ypos": 0.253
+            }
+          ]
         },
         {
           "id": "southHampstead",
@@ -4807,7 +4890,16 @@
         {
           "id": "surreyQuays",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.682,
+              "ypos": 0.797
+            },
+            {
+              "xpos": 0.705,
+              "ypos": 0.797
+            }
+          ]
         }
       ]
     },
@@ -5302,7 +5394,12 @@
         {
           "id": "newCross",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.757,
+              "ypos": 0.719
+            }
+          ]
         },
         {
           "id": "canadaWater",
@@ -5317,7 +5414,12 @@
         {
           "id": "queensRoadPeckham",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.757,
+              "ypos": 0.719
+            }
+          ]
         }
       ]
     },
@@ -5425,7 +5527,12 @@
         {
           "id": "claphamHighStreet",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.392,
+              "ypos": 0.859
+            }
+          ]
         }
       ]
     },
@@ -5502,7 +5609,12 @@
         {
           "id": "imperialWharf",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.224,
+              "ypos": 0.690
+            }
+          ]
         },
         {
           "id": "kensingtonOlympiaOverground",
@@ -5629,7 +5741,12 @@
         {
           "id": "finchleyRoadAndFrognal",
           "lineId": "overground",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.379,
+              "ypos": 0.185
+            }
+          ]
         }
       ]
     },
@@ -5835,8 +5952,12 @@
           "lineId": "overground",
           "curves": [
             {
-              "xpos": 0.1,
+              "xpos": 0.113,
               "ypos": 0.185
+            },
+            {
+              "xpos": 0.1,
+              "ypos": 0.198
             },
             {
               "xpos": 0.1,
