@@ -1,7 +1,7 @@
 {
   "metadata": {
     "aspectratio": 1.5363841,
-    "author": "This file was created by Gulraj Bariah and Asvini Patel and Otonye Bestman"
+    "author": "This file was created by Gulraj Bariah and Asvini Patel"
   },
   "lines": [
     {
@@ -3299,10 +3299,10 @@
       ]
     },
     {
-      "id": "claphamJunction",
+      "id": "claphamJunctionTop",
       "name": "Clapham Junction",
       "xpos": 0.298,
-      "ypos": 0.859,
+      "ypos": 0.842,
       "connected": [
         {
           "id": "imperialWharf",
@@ -3315,8 +3315,26 @@
           ]
         },
         {
+          "id": "claphamJunctionBottom",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "claphamJunctionBottom",
+      "name": "Clapham Junction",
+      "xpos": 0.308,
+      "ypos": 0.859,
+      "connected": [
+        {
           "id": "wandsworthRoad",
           "lineId": "overground",
+          "curves": []
+        },
+        {
+          "id": "claphamJunctionTop",
+          "lineId": "walk",
           "curves": []
         }
       ]
@@ -4168,7 +4186,7 @@
       "ypos": 0.762,
       "connected": [
         {
-          "id": "claphamJunction",
+          "id": "claphamJunctionTop",
           "lineId": "overground",
           "curves": []
         },
@@ -5520,7 +5538,7 @@
       "ypos": 0.859,
       "connected": [
         {
-          "id": "claphamJunction",
+          "id": "claphamJunctionBottom",
           "lineId": "overground",
           "curves": []
         },
