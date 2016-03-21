@@ -1107,7 +1107,7 @@
           "lineId": "piccadilly",
           "curves": [
             {
-              "xpos": 0.374,
+              "xpos": 0.375,
               "ypos": 0.490
             }
           ]
@@ -1908,7 +1908,12 @@
         {
           "id": "leicesterSquare",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.462,
+              "ypos": 0.490
+            }
+          ]
         },
         {
           "id": "oxfordCircus",
@@ -1995,12 +2000,22 @@
         {
           "id": "holborn",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.526,
+              "ypos": 0.392
+            }
+          ]
         },
         {
           "id": "kingsCrossHCMP",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.526,
+              "ypos": 0.317
+            }
+          ]
         }
       ]
     },
@@ -4404,7 +4419,12 @@
         {
           "id": "finsburyParkPiccadilly",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.692,
+              "ypos": 0.063
+            }
+          ]
         }
       ]
     },
