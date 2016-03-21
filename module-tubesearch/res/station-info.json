@@ -2798,7 +2798,12 @@
         {
           "id": "puddingMillLane",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.862,
+              "ypos": 0.340
+            }
+          ]
         },
         {
           "id": "bowRoad",
@@ -5233,7 +5238,12 @@
         {
           "id": "puddingMillLane",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.948,
+              "ypos": 0.205
+            }
+          ]
         },
         {
           "id": "westHamJubilee",
