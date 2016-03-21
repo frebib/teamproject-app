@@ -5,6 +5,10 @@ import javafx.geometry.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Luke Taher
+ */
+
 public class TubeConnection {
     private TubeStation from, to;
     private TubeLine line;

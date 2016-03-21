@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 /**
  * @author Parth Chandratreya
+ * @author Luke Taher
  */
 public class InstructionSet {
     private ArrayList<Instruction> set;

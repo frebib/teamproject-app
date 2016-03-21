@@ -3,6 +3,10 @@ package d2.teamproject.algorithm;
 import java.util.List;
 
 /**
+ * @author Luke Taher
+ */
+
+/**
  * Provides a common set of functions to generate a stream of states
  * to represent a given algorithm.
  * An algorithm can either generate states as requested or all at once when required by {@code initialise()}

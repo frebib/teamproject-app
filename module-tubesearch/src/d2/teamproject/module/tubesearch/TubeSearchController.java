@@ -19,6 +19,7 @@ import static d2.teamproject.PARTH.LOG;
 
 /**
  * @author Parth Chandratreya
+ * @author Luke Taher
  */
 public class TubeSearchController extends JsonController {
     private enum StationSelect {

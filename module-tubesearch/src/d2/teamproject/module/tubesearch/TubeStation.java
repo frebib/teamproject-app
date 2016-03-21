@@ -10,6 +10,10 @@ import java.util.List;
 
 import static d2.teamproject.PARTH.LOG;
 
+/**
+ * @author Luke Taher
+ */
+
 public class TubeStation extends Node<TubeStation> {
     private ArrayList<TubeConnection> from, to;
     private String name, id;

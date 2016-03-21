@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * @author Parth Chandratreya
+ * @author Luke Taher
  */
 public class Tutorial extends InstructionSet {
 
