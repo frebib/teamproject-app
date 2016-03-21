@@ -157,7 +157,12 @@
         {
           "id": "stJohnsWood",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.365,
+              "ypos": 0.265
+            }
+          ]
         },
         {
           "id": "bondStreet",
@@ -248,7 +253,12 @@
         {
           "id": "waterlooBakerlooWC",
           "lineId": "waterlooCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.61,
+              "ypos": 0.580
+            }
+          ]
         },
         {
           "id": "bankNorthern",
@@ -431,7 +441,12 @@
         {
           "id": "greenPark",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.365,
+              "ypos": 0.465
+            }
+          ]
         }
       ]
     },
@@ -1507,7 +1522,12 @@
         {
           "id": "southwark",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.61,
+              "ypos": 0.6
+            }
+          ]
         },
         {
           "id": "bermondsey",
@@ -2135,7 +2155,12 @@
         {
           "id": "londonBridge",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.561,
+              "ypos": 0.678
+            }
+          ]
         },
         {
           "id": "waterlooJubilee",
@@ -2400,12 +2425,22 @@
         {
           "id": "westminsterJubilee",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.465,
+              "ypos": 0.614
+            }
+          ]
         },
         {
           "id": "southwark",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.465,
+              "ypos": 0.678
+            }
+          ]
         },
         {
           "id": "waterlooNorthern",
@@ -2466,7 +2501,12 @@
         {
           "id": "bankCentralWaterloo",
           "lineId": "waterlooCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.565,
+              "ypos": 0.650
+            }
+          ]
         },
         {
           "id": "waterlooJubilee",
@@ -3060,7 +3100,12 @@
         {
           "id": "northGreenwich",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.91,
+              "ypos": 0.6
+            }
+          ]
         },
         {
           "id": "canaryWharfDlr",
@@ -3096,7 +3141,12 @@
         {
           "id": "northGreenwich",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.935,
+              "ypos": 0.565
+            }
+          ]
         },
         {
           "id": "westHamJubilee",
@@ -5441,7 +5491,12 @@
         {
           "id": "stratfordJubileeDlr",
           "lineId": "jubilee",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.935,
+              "ypos": 0.238
+            }
+          ]
         },
         {
           "id": "canningTownJubilee",
