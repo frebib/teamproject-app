@@ -1,5 +1,11 @@
 [
   {
+    "index": -1,
+    "title": "This file was created by Gulraj Bariah",
+    "content": "",
+    "key": "author"
+  },
+  {
     "index": 0,
     "title": "Scan surrounding nodes",
     "content": "From the starting node, we take all of the surrounding nodes. This is the first step in creating a tree from the graph. This first set of surrounding nodes is called the frontier",

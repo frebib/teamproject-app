@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 /**
  * @author Parth Chandratreya
+ * @author Gulraj Bariah
  * @author Luke Taher
  */
 public class InstructionSet {

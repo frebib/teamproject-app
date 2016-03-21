@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * @author Parth Chandratreya
+ * @author Gulraj Bariah
  * @author Luke Taher
  */
 public class Instruction {

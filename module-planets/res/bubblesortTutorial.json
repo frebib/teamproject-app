@@ -1,5 +1,11 @@
 [
   {
+    "index": -1,
+    "title": "This file was created by Gulraj Bariah",
+    "content": "",
+    "key": "author"
+  },
+  {
     "index": 0,
     "title": "Starting at the beginning of the list",
     "content": "Our first priority is to ensure that the largest element of the list is moved to the end. Seeing as we don’t know what the largest element is, we start at the first – just in case.",

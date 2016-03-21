@@ -1,5 +1,11 @@
 [
   {
+    "index": -1,
+    "title": "This file was created by Gulraj Bariah",
+    "content": "",
+    "key": "author"
+  },
+  {
     "index": 0,
     "title": "Comparing %s and %s - Swap",
     "content": "The compared element is larger than the pivot, so we swap the place of these items",
