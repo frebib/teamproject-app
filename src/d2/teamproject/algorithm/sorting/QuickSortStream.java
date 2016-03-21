@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * @author Otonye Bestman
  * Provides a stream of states representing each stage of sort provided by QuickSort on a given list.
  * The Stream is pre-generated and cannot be changed once initialised.
  * Note: Initialisation may take some time dependant on the parameters

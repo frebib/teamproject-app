@@ -15,7 +15,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class QuickSortTest {
-
+    /**
+     * @author Otonye Bestman
+     */
     @Test
     public void quickSortTest() {
         List<Integer> sortedList = IntStream.range(0, 20).boxed().collect(Collectors.toList());

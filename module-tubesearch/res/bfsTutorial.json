@@ -40,5 +40,11 @@
     "title": "Now start searching",
     "content": "A route will now be found between %s and %s. Click next to start the search algorithm or change the search type, now is your last chance!",
     "key": "search-start"
+  },
+  {
+    "index": 6,
+    "title": "A path as been found using Breadth First Search",
+    "content": "Hope this explanation helped!",
+    "key": "done"
   }
 ]
