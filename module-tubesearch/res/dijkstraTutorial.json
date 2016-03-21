@@ -1,0 +1,44 @@
+[
+  {
+    "index": 0,
+    "title": "Scan surrounding nodes",
+    "content": "From the starting node, we take all of the surrounding nodes. This is the first step in creating a tree from the graph. This first set of surrounding nodes is called the frontier",
+    "key": "scanSurroundingFirst"
+  },
+  {
+    "index": 1,
+    "title": "Check Surrounding nodes",
+    "content": "This step is where Dijkstra's comes into its own. In addition to checking if any of these nodes are the goal nodes we then actually apply \na cost function. We take the cost to each of these nodes and give that noode a cost. We will then refer back to this to find the least costing route.",
+    "key": "checkSurroundingFirst"
+  },
+  {
+    "index": 2,
+    "title": "Restart from bottom layer",
+    "content": "From each of the frontier nodes we then scan the surround nodes. This creates another layer in this tree that we're creating",
+    "key": "iterateScan"
+  },
+  {
+    "index": 3,
+    "title": "Check surrounding nodes and update cost",
+    "content": "Here we take the cost of the current node, and then apply it to the cost to get the surrounding nodes to check if it's smaller than it's current code.\n Doing this we then update all of the surrounding nodes cost.",
+    "key": "iterateCheck"
+  },
+  {
+    "index": 4,
+    "title": "Choose a starting station",
+    "content": "To find a route, start by clicking a station to navigate from.\nAlternatively change any of the options at the top to vary the search type.",
+    "key": "choose-start"
+  },
+  {
+    "index": 5,
+    "title": "Choose a destination station",
+    "content": "Now pick a station to find a path to, starting from %s then click Next to begin",
+    "key": "choose-goal"
+  },
+  {
+    "index": 6,
+    "title": "Now start searching",
+    "content": "A route will now be found between %s and %s. Click next to start the search algorithm or change the search type, now is your last chance!",
+    "key": "search-start"
+  }
+]
