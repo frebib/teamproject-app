@@ -1,0 +1,44 @@
+[
+  {
+    "index": 0,
+    "title": "Scan surrounding nodes",
+    "content": "From the starting node, we take all of the surrounding nodes. This is the first step in creating a tree from the graph. This first set of surrounding nodes is called the frontier",
+    "key": "scanSurroundingFirst"
+  },
+  {
+    "index": 1,
+    "title": "Check Surrounding nodes",
+    "content": "Here we are checking for the next node to jump to that will give use the best path we a good heuristic value",
+    "key": "checkSurroundingFirst"
+  },
+  {
+    "index": 2,
+    "title": "Restart from bottom layer",
+    "content": "From each of the frontier nodes we then scan the surround nodes. This creates another layer in this tree that we're creating",
+    "key": "iterateScan"
+  },
+  {
+    "index": 3,
+    "title": "Check surrounding nodes and find the one with a lower heuristic value",
+    "content": "Here we look for another node with a lower heuristic value and jump to it",
+    "key": "iterateCheck"
+  },
+  {
+    "index": 4,
+    "title": "Choose a starting station",
+    "content": "To find a route, start by clicking a station to navigate from.\nAlternatively change any of the options at the top to vary the search type.",
+    "key": "choose-start"
+  },
+  {
+    "index": 5,
+    "title": "Choose a destination station",
+    "content": "Now pick a station to find a path to, starting from %s then click Next to begin",
+    "key": "choose-goal"
+  },
+  {
+    "index": 6,
+    "title": "Now start searching",
+    "content": "A route will now be found between %s and %s. Click next to start the search algorithm or change the search type, now is your last chance!",
+    "key": "search-start"
+  }
+]
