@@ -37,6 +37,7 @@ import static d2.teamproject.module.planets.gfx.PlanetSort.*;
 
 /**
  * @author Parth Chandratreya
+ * @author Gulraj Bariah
  */
 public class PlanetView extends VisualisationView {
     private static final double PAUSE_TIME = 200;

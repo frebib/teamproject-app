@@ -26,6 +26,7 @@ import static d2.teamproject.PARTH.LOG;
 
 /**
  * @author Parth Chandratreya
+ * @author Gulraj Bariah
  */
 public class PlanetController extends JsonController {
     private final PlanetView view;
