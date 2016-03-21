@@ -1105,7 +1105,12 @@
         {
           "id": "hydeParkCorner",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.374,
+              "ypos": 0.490
+            }
+          ]
         }
       ]
     },
@@ -2092,7 +2097,12 @@
         {
           "id": "knightsbridge",
           "lineId": "piccadilly",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.312,
+              "ypos": 0.582
+            }
+          ]
         },
         {
           "id": "southKensingtonDC",

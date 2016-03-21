@@ -65,7 +65,7 @@ public class TubeSearchView extends VisualisationView {
         topBox.setSpacing(16);
 
         bottomBox.setStyle("-fx-background-color: #64BEF6");
-        bottomBox.setPrefHeight(PARTH.HEIGHT * 0.2 - panePad.getTop() - panePad.getBottom());
+        bottomBox.setPrefHeight(PARTH.HEIGHT * 0.18 - panePad.getTop() - panePad.getBottom());
         bottomBox.setPadding(panePad);
         bottomBox.setSpacing(16);
 
