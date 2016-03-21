@@ -112,7 +112,7 @@ public class TubeSearchView extends VisualisationView {
 
     @Override
     public void onOpen() {
-        tubeMap = new TubeMap(controller, mapAspectRatio, contentBox.getPrefWidth(), contentBox.getPrefHeight());
+        tubeMap = new TubeMap(controller, mapAspectRatio, contentBox.getPrefWidth(), contentBox.getPrefHeight(), skybox);
         tubeMap.initialise();
 
         tubeMap.setClip(new Rectangle(contentBox.getPrefWidth(), contentBox.getPrefHeight()));

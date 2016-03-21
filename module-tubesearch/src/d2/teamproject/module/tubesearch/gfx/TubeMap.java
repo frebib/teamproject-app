@@ -14,9 +14,11 @@ import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.SubScene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.*;
 import javafx.util.Duration;
 
@@ -47,6 +49,7 @@ public class TubeMap extends Pane {
 
     private static final Color START_COLOUR = Color.GREEN;
     private static final Color GOAL_COLOUR = Color.DARKGREEN;
+    private final Image skybox;
 
     private TubeSearchController controller;
     private Group map;
@@ -60,11 +63,12 @@ public class TubeMap extends Pane {
     private Point2D mouseDown, translateStart;
     private double zoomFactor = 1;
 
-    public TubeMap(TubeSearchController controller, double aspectRatio, double width, double height) {
+    public TubeMap(TubeSearchController controller, double aspectRatio, double width, double height, Image skybox) {
         this.controller = controller;
         this.scaleY = scaleX / aspectRatio;
         this.width = width;
         this.height = height;
+        this.skybox = skybox;
     }
 
     public void initialise() {
@@ -187,10 +191,10 @@ public class TubeMap extends Pane {
                     walks.getChildren().add(inner);
                 });
 
-//        Rectangle map = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
-//        map.setTranslateX(20);
-//        map.setTranslateY(30);
-//        map.setFill(new ImagePattern(skybox));
+        Rectangle bMap = new Rectangle(2048.0 * 0.535, 1333.0 * 0.6, Color.AQUA);
+        bMap.setTranslateX(20);
+        bMap.setTranslateY(30);
+        bMap.setFill(new ImagePattern(skybox));
 
         // loop stations, create node graphics and add to hashmap
         circleMap = new HashMap<>();
@@ -209,6 +213,7 @@ public class TubeMap extends Pane {
             nodes.getChildren().add(c);
         }
 
+//        this.getChildren().add(bMap);
         this.getChildren().add(map);
 
         Bounds size = map.getBoundsInLocal();
