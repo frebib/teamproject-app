@@ -10,6 +10,8 @@ import java.util.Map;
  * @author Parth Chandratreya
  * @author Gulraj Bariah
  * @author Luke Taher
+ *
+ * This allows us to be able to use the instruction set to display the information in the tutorial section of the application.
  */
 public class Tutorial extends InstructionSet {
 

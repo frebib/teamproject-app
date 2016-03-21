@@ -7,6 +7,8 @@ import java.util.List;
  * @author Parth Chandratreya
  * @author Gulraj Bariah
  * @author Luke Taher
+ *
+ * These are the get methods that allow us to get the information from the array of instructions that we have.
  */
 public class Instruction {
     private String key;

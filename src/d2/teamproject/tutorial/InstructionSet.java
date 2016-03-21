@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * @author Gulraj Bariah
  * @author Luke Taher
  *
- * These are the get methods produced to allow us to use the instruction set we have created. This insruction set is directly used for the
- * tutorial aspect of our application.
+ * These are the get methods produced to allow us to get the the elements in the instruction set. It also allows us to check which element
+ * in the set we are on.
  */
 public class InstructionSet {
     private ArrayList<Instruction> set;
