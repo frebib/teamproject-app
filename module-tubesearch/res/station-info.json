@@ -4902,12 +4902,26 @@
         {
           "id": "towerGateway",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.722,
+              "ypos": 0.496
+            }
+          ]
         },
         {
           "id": "bankDlr",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.722,
+              "ypos": 0.496
+            },
+            {
+              "xpos": 0.7,
+              "ypos": 0.471
+            }
+          ]
         },
         {
           "id": "shadwellOverground",
@@ -5204,7 +5218,12 @@
         {
           "id": "stratfordInternational",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.95,
+              "ypos": 0.191
+            }
+          ]
         },
         {
           "id": "stratfordHighStreet",
@@ -5255,7 +5274,12 @@
         {
           "id": "stratfordJubileeDlr",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.921,
+              "ypos": 0.155
+            }
+          ]
         }
       ]
     },
@@ -5608,7 +5632,12 @@
         {
           "id": "westferry",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.862,
+              "ypos": 0.519
+            }
+          ]
         },
         {
           "id": "poplar",
@@ -5687,7 +5716,12 @@
         {
           "id": "westIndiaQuay",
           "lineId": "dlr",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.846,
+              "ypos": 0.496
+            }
+          ]
         }
       ]
     },
