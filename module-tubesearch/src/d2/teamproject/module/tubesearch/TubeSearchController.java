@@ -68,6 +68,10 @@ public class TubeSearchController extends JsonController {
         tutorials.put(getClass().getName(), bfsT);
         Tutorial dfsT = new Tutorial((JsonArray) res.get("dfsT"));
         tutorials.put(getClass().getName(), dfsT);
+        Tutorial aStarT = new Tutorial((JsonArray) res.get("aStarT"));
+        tutorials.put(getClass().getName(), aStarT);
+        Tutorial dijkstraT = new Tutorial((JsonArray) res.get("dijkstraT"));
+        tutorials.put(getClass().getName(), dijkstraT);
 
         // Load tube map JSONs
         JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");

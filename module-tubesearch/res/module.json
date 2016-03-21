@@ -26,6 +26,14 @@
     "dfsT": {
       "file": "dfsTutorial.json",
       "type": "JsonArray"
+    },
+    "aStarT": {
+      "file": "AstarTutorial.json",
+      "type": "JsonArray"
+    },
+    "dijkstraT": {
+      "file": "dijkstraTutorial.json",
+      "type": "JsonArray"
     }
   }
 }
