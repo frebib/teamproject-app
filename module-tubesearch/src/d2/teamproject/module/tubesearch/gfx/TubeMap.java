@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
+import java.util.function.DoubleBinaryOperator;
 
 import static d2.teamproject.PARTH.LOG;
 
@@ -95,6 +96,7 @@ public class TubeMap extends Pane {
         this.setOnScroll(e -> {
             zoomFactor += e.getDeltaY() * ZOOMSPEED;
             zoomFactor = Math.min(Math.max(zoomFactor, ZOOMMIN), ZOOMMAX);
+            LOG.info(Double.toString(zoomFactor));
             double changeX = zoomFactor / map.getScaleX() * map.getTranslateX();
             double changeY = zoomFactor / map.getScaleY() * map.getTranslateY();
             map.setScaleX(zoomFactor);
@@ -299,6 +301,15 @@ public class TubeMap extends Pane {
             sqt.getChildren().add(pt);
         }
         return sqt;
+    }
+
+    public void zoomLevel(double factor){
+        double changeX = factor / map.getScaleX() * map.getTranslateX();
+        double changeY = factor / map.getScaleY() * map.getTranslateY();
+        map.setScaleX(factor);
+        map.setScaleY(factor);
+        map.setTranslateX(changeX);
+        map.setTranslateY(changeY);
     }
 
     public void update(TubeSearchController controller)
