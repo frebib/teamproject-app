@@ -2,6 +2,7 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonObject;
 import com.sun.javafx.collections.ImmutableObservableList;
+import com.sun.javafx.scene.control.skin.TableColumnHeader;
 import d2.teamproject.PARTH;
 import d2.teamproject.algorithm.search.*;
 import d2.teamproject.algorithm.search.Node;
@@ -27,7 +28,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static d2.teamproject.PARTH.LOG;
 
@@ -173,29 +176,58 @@ public class TubeSearchView extends VisualisationView {
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-//        StackPane keyPane = new StackPane();
-//
-//        Text bakerloo = new Text("Bakerloo");
-//        bakerloo.setFont(new Font(20));
-//        Rectangle bak = new Rectangle(60,20);
-//        bak.setStyle("-fx-background-color: red");
-//
-//        Text central = new Text("Central");
-//        central.setFont(new Font(20));
-//        Text circle = new Text ("Circle");
-//        central.setFont(new Font(20));
-//
-//        VBox names = new VBox();
-//        names.getChildren().addAll(bakerloo,central,circle);
-//
-//        VBox colors = new VBox();
-//        colors.getChildren().addAll(bak);
-//
-//        keyPane.getChildren().addAll(colors,names);
+        StackPane keyPane = new StackPane();
+
+        ArrayList <String> lineNames = new ArrayList<>();
+        ArrayList <Color> lineColors = new ArrayList<>();
+        ArrayList<Text> lineTitles = new ArrayList<>();
+
+        lineNames.add("Bakerloo");
+        lineColors.add(Color.BROWN);
+        lineNames.add("Central");
+        lineColors.add(Color.RED);
+        lineNames.add("Circle");
+        lineColors.add(Color.YELLOW);
+        lineNames.add("District");
+        lineColors.add(Color.GREEN);
+        lineNames.add("Hammersmith & City");
+        lineColors.add(Color.PINK);
+        lineNames.add("Jubilee");
+        lineColors.add(Color.GREY);
+        lineNames.add("Northern");
+        lineColors.add(Color.BLACK);
+        lineNames.add("Overground");
+        lineColors.add(Color.ORANGE);
+        lineNames.add("Piccadilly");
+        lineColors.add(Color.BLUE);
+        lineNames.add("Waterloo & City");
+        lineColors.add(Color.CORAL);
+
+        VBox names = new VBox();
+        names.setSpacing(2);
+        names.setAlignment(Pos.CENTER);
+
+        VBox colors = new VBox();
+        colors.setSpacing(2);
+
+        lineTitles.addAll(lineNames.stream().map(Text::new).collect(Collectors.toList()));
+
+        for (Text t:lineTitles) {
+            t.setFont(new Font(25));
+            t.setFill(Color.WHITE);
+            t.setStyle("-fx-stroke: black;-fx-stroke-width: 0.5;");
+            names.getChildren().add(t);
+        }
+
+        for (Color c:lineColors) {
+            colors.getChildren().add(new Rectangle(280,30,c));
+        }
+
+        keyPane.getChildren().addAll(colors,names);
 
         topBox.getChildren().addAll(spacer, playBtn,begBtn, medBtn, hardBtn, searcherCbx);
         bottomBox.getChildren().addAll(prevBtn, bottomLPad, bottomCentre, bottomRPad, nextBtn);
-        sideBox.getChildren().addAll(keyImage);
+        sideBox.getChildren().addAll(keyPane);
 
         contentBox.setPrefWidth(PARTH.WIDTH);
         contentBox.setPrefHeight(PARTH.HEIGHT - topBox.getPrefHeight() - bottomBox.getPrefHeight());
