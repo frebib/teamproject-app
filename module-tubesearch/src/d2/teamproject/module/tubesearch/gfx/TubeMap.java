@@ -62,6 +62,11 @@ public class TubeMap extends Pane {
     private boolean isDrag;
     private Point2D mouseDown, translateStart;
     private double zoomFactor = 1;
+    private SubScene scene;
+
+    private Group lines;
+    private Group walks;
+    private Group nodes;
 
     public TubeMap(TubeSearchController controller, double aspectRatio, double width, double height, Image skybox) {
         this.controller = controller;
@@ -69,10 +74,11 @@ public class TubeMap extends Pane {
         this.width = width;
         this.height = height;
         this.skybox = skybox;
+        scene = new SubScene(this, width, height);
     }
 
     public void initialise() {
-        SubScene scene = new SubScene(this, width, height);
+
         scene.setFill(Color.WHITE);
 
         this.setOnMousePressed(e -> {
@@ -97,9 +103,9 @@ public class TubeMap extends Pane {
             map.setTranslateY(changeY);
         });
 
-        Group lines = new Group();
-        Group walks = new Group();
-        Group nodes = new Group();
+        lines = new Group();
+        walks = new Group();
+        nodes = new Group();
         lines.setMouseTransparent(true);
         walks.setMouseTransparent(true);
         map = new Group(lines, nodes, walks);
@@ -172,7 +178,6 @@ public class TubeMap extends Pane {
                 }
             }
         }
-
         connections.stream()
                 .filter(conn -> conn.getLine().getId().equals("walk"))
                 .forEach(conn -> {
@@ -295,5 +300,23 @@ public class TubeMap extends Pane {
             sqt.getChildren().add(pt);
         }
         return sqt;
+    }
+
+    public void update(TubeSearchController controller)
+    {
+        this.controller = controller;
+        if (this.getChildren().size() > 0)
+            this.getChildren().remove(0, this.getChildren().size()-1);
+        if (map.getChildren().size() > 0)
+            map.getChildren().remove(0, map.getChildren().size()-1);
+        if (lines.getChildren().size() > 0)
+            lines.getChildren().remove(0, lines.getChildren().size()-1);
+        if (walks.getChildren().size() > 0)
+            walks.getChildren().remove(0, walks.getChildren().size()-1);
+        if (walks.getChildren().size() > 0)
+            walks.getChildren().remove(0, walks.getChildren().size()-1);
+
+        circleMap.clear();
+        initialise();
     }
 }

@@ -7,6 +7,7 @@ import d2.teamproject.algorithm.search.*;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
+import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.module.tubesearch.gfx.TubeMap;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.animation.ParallelTransition;
@@ -122,9 +123,21 @@ public class TubeSearchView extends VisualisationView {
         playBtn.setOnAction(e -> {
             LOG.info("Play");
         });
-        begBtn.setOnAction(e-> LOG.info("Beg"));
-        medBtn.setOnAction(e -> LOG.info("Med"));
-        hardBtn.setOnAction(e -> LOG.info("Hard"));
+        begBtn.setOnAction(e-> {
+            controller.setMode(2);
+            controller.reload();
+            tubeMap.update(controller);
+        });
+        medBtn.setOnAction(e-> {
+            controller.setMode(1);
+            controller.reload();
+            tubeMap.update(controller);
+        });
+        hardBtn.setOnAction(e-> {
+            controller.setMode(0);
+            controller.reload();
+            tubeMap.update(controller);
+        });
 
         tutorialTitle.setFont(new Font(25));
         tutorialDesc.setFont(new Font(15));

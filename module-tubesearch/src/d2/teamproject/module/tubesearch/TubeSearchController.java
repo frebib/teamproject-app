@@ -41,8 +41,13 @@ public class TubeSearchController extends JsonController {
     private StationSelect selection;
     private Searcher<TubeStation> searcher;
     private TubeStation start, goal;
+    private int mode;
+    private JsonObject info;
+    private JsonObject infomed;
+    private JsonObject infobgn;
 
     public TubeSearchController() {
+        mode = 0;
         view = new TubeSearchView(this);
         stationMap = new LinkedHashMap<>();
         lineMap = new LinkedHashMap<>();
@@ -58,7 +63,6 @@ public class TubeSearchController extends JsonController {
     @Override
     public void loadResources(Map<String, Object> res) throws ModuleLoader.LoadException {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
-
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
         //TODO: Rename file or have multiple arrays
@@ -73,14 +77,41 @@ public class TubeSearchController extends JsonController {
         Tutorial dijkstraT = new Tutorial((JsonArray) res.get("dijkstraT"));
         tutorials.put(getClass().getName(), dijkstraT);
 
+        infomed = (JsonObject) res.get("stationinfobgn");
+        infobgn = (JsonObject) res.get("stationinfomed");
+        info = (JsonObject) res.get("stationinfo");
+
+        view.loadResources(res);
+
+        reload();
+    }
+
+    public void reload(){
         // Load tube map JSONs
-        JsonObject tubemapinfo = (JsonObject) res.get("stationinfo");
+        JsonObject tubemapinfo;
+        switch(mode)
+        {
+            case 1:
+                tubemapinfo = infobgn;
+                break;
+            case 2:
+                tubemapinfo = infomed;
+                break;
+            default:
+                tubemapinfo = info;
+                break;
+        }
         JsonArray stationinfo = tubemapinfo.get("stations").asArray();
         JsonArray lineinfo = tubemapinfo.get("lines").asArray();
+
+        lineMap.clear();
+        stationMap.clear();
+        links.clear();
 
         // Create all lines
         lineinfo.forEach(l -> lineMap.put(l.asObject().get("id").asString(), TubeLine.fromJson(l)));
         // Create all station objects
+
         stationinfo.forEach(s -> {
             JsonObject obj = s.asObject();
             String id = obj.get("id").asString();
@@ -155,7 +186,7 @@ public class TubeSearchController extends JsonController {
             });
         });
 
-        view.loadResources(res);
+
         if (errors[0] > 0)
             LOG.warning("There were %d errors loading in the tube map", errors[0]);
     }
@@ -243,5 +274,9 @@ public class TubeSearchController extends JsonController {
             return stream.getPrevious();
         else
             return stream.getCurrent();
+    }
+
+    public void setMode(int mode){
+        this.mode = mode;
     }
 }

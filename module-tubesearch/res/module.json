@@ -36,12 +36,12 @@
       "type": "JsonArray"
     },
     "stationinfobgn": {
-      "file": "bgn-station-info.json",
-      "type": "JsonArry"
+      "file": "bgns-station-info.json",
+      "type": "JsonObject"
     },
     "stationinfomed": {
       "file": "med-station-info.json",
-      "type": "JsonArry"
+      "type": "JsonObject"
     },
     "key": {
       "file": "key.jpg",
