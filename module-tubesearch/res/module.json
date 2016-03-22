@@ -34,6 +34,14 @@
     "dijkstraT": {
       "file": "dijkstraTutorial.json",
       "type": "JsonArray"
+    },
+    "stationinfobgn": {
+      "file": "bgn-station-info.json",
+      "type": "JsonArry"
+    },
+    "stationinfomed": {
+      "file": "med-station-info.json",
+      "type": "JsonArry"
     }
   }
 }
