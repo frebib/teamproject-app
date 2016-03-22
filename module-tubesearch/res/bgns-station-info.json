@@ -86,23 +86,8 @@
       "ypos": 0.418,
       "connected": [
         {
-          "id": "marbleArch",
-          "lineId": "central",
-          "curves": [
-            {
-              "xpos": 0.348,
-              "ypos": 0.418
-            }
-          ]
-        },
-        {
           "id": "oxfordCircus",
           "lineId": "central",
-          "curves": []
-        },
-        {
-          "id": "bakerStreetJB",
-          "lineId": "jubilee",
           "curves": []
         },
         {
@@ -129,17 +114,7 @@
           "curves": []
         },
         {
-          "id": "embankmentNorthern",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
           "id": "piccadillyCircus",
-          "lineId": "bakerloo",
-          "curves": []
-        },
-        {
-          "id": "embankmentDCB",
           "lineId": "bakerloo",
           "curves": []
         }
@@ -175,11 +150,6 @@
           "curves": []
         },
         {
-          "id": "westminsterJubilee",
-          "lineId": "jubilee",
-          "curves": []
-        },
-        {
           "id": "oxfordCircus",
           "lineId": "victoria",
           "curves": [
@@ -188,11 +158,6 @@
               "ypos": 0.465
             }
           ]
-        },
-        {
-          "id": "victoria",
-          "lineId": "victoria",
-          "curves": []
         },
         {
           "id": "piccadillyCircus",
@@ -223,21 +188,6 @@
           "curves": []
         },
         {
-          "id": "chanceryLane",
-          "lineId": "central",
-          "curves": [
-            {
-              "xpos": 0.536,
-              "ypos": 0.418
-            }
-          ]
-        },
-        {
-          "id": "russellSquare",
-          "lineId": "piccadilly",
-          "curves": []
-        },
-        {
           "id": "coventGarden",
           "lineId": "piccadilly",
           "curves": []
@@ -250,11 +200,6 @@
       "xpos": 0.365,
       "ypos": 0.501,
       "connected": [
-        {
-          "id": "knightsbridge",
-          "lineId": "piccadilly",
-          "curves": []
-        },
         {
           "id": "greenPark",
           "lineId": "piccadilly",
@@ -307,16 +252,6 @@
           "curves": []
         },
         {
-          "id": "regentsPark",
-          "lineId": "bakerloo",
-          "curves": [
-            {
-              "xpos": 0.414,
-              "ypos": 0.394
-            }
-          ]
-        },
-        {
           "id": "piccadillyCircus",
           "lineId": "bakerloo",
           "curves": [
@@ -325,11 +260,6 @@
               "ypos": 0.450
             }
           ]
-        },
-        {
-          "id": "warrenStreet",
-          "lineId": "victoria",
-          "curves": []
         },
         {
           "id": "greenPark",
@@ -385,11 +315,6 @@
         {
           "id": "holborn",
           "lineId": "central",
-          "curves": []
-        },
-        {
-          "id": "goodgeStreet",
-          "lineId": "northern",
           "curves": []
         },
         {
