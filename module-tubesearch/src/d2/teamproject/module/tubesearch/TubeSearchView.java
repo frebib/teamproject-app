@@ -35,7 +35,7 @@ public class TubeSearchView extends VisualisationView {
     private final TubeSearchController controller;
     private TubeMap tubeMap;
 
-    private Button prevBtn, nextBtn;
+    private Button prevBtn, nextBtn, playBtn, begBtn, medBtn, hardBtn;
     private ComboBox<SearchStream.Searcher<TubeStation>> searcherCbx;
 
     private HBox bottomCentre;
@@ -79,16 +79,40 @@ public class TubeSearchView extends VisualisationView {
 
         prevBtn = new Button("Step\nBack");
         nextBtn = new Button("Step\nNext");
+        playBtn = new Button("▶");
+        begBtn = new Button("Beginner");
+        medBtn = new Button("Medium");
+        hardBtn = new Button("Hard");
         double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         double width = height * 2.5 / 3;
         prevBtn.setPrefWidth(width);
         nextBtn.setPrefWidth(width);
+        playBtn.setPrefWidth(width);
+        begBtn.setPrefWidth(width*2);
+        medBtn.setPrefWidth(width*2);
+
         prevBtn.setMinWidth(width);
         nextBtn.setMinWidth(width);
+        playBtn.setMinWidth(width);
+        begBtn.setMinWidth(width*2);
+        medBtn.setMinWidth(width*2);
+        hardBtn.setMinWidth(width);
+
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
+        playBtn.setPrefHeight(height);
+        begBtn.setPrefHeight(height);
+        medBtn.setPrefHeight(height);
+        hardBtn.setPrefHeight(height);
+
         prevBtn.setOnAction(e -> animateState(controller.prevState()));
         nextBtn.setOnAction(e -> animateState(controller.nextState()));
+        playBtn.setOnAction(e -> {
+            LOG.info("Play");
+        });
+        begBtn.setOnAction(e-> LOG.info("Beg"));
+        medBtn.setOnAction(e -> LOG.info("Med"));
+        hardBtn.setOnAction(e -> LOG.info("Hard"));
 
         tutorialTitle.setFont(new Font(25));
         tutorialDesc.setFont(new Font(15));
@@ -103,7 +127,7 @@ public class TubeSearchView extends VisualisationView {
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        topBox.getChildren().addAll(spacer, searcherCbx);
+        topBox.getChildren().addAll(spacer, playBtn,begBtn, medBtn, hardBtn, searcherCbx);
         bottomBox.getChildren().addAll(prevBtn, bottomLPad, bottomCentre, bottomRPad, nextBtn);
 
         contentBox.setPrefWidth(PARTH.WIDTH);
