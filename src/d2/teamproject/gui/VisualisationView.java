@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 public abstract class VisualisationView implements BaseView {
     private final Scene scene;
@@ -16,6 +17,7 @@ public abstract class VisualisationView implements BaseView {
     protected final HBox topBox, bottomBox;
     protected final StackPane contentBox, backPane;
     protected final Button backButton;
+    protected final VBox sideBox;
 
     public VisualisationView() {
         backPane = new StackPane();
@@ -33,9 +35,12 @@ public abstract class VisualisationView implements BaseView {
         });
         topBox = new HBox(backButton);
 
+        sideBox = new VBox();
+
         frontPane.setTop(topBox);
         frontPane.setCenter(contentBox);
         frontPane.setBottom(bottomBox);
+        frontPane.setLeft(sideBox);
 
         scene = new Scene(new StackPane(backPane, frontPane), PARTH.WIDTH, PARTH.HEIGHT);
     }
