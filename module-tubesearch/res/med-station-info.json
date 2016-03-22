@@ -114,17 +114,7 @@
           "curves": []
         },
         {
-          "id": "whitechapel",
-          "lineId": "hammersmithCity",
-          "curves": []
-        },
-        {
           "id": "towerHill",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "whitechapel",
           "lineId": "district",
           "curves": []
         }
@@ -155,16 +145,6 @@
       "ypos": 0.319,
       "connected": [
         {
-          "id": "stJohnsWood",
-          "lineId": "jubilee",
-          "curves": [
-            {
-              "xpos": 0.365,
-              "ypos": 0.265
-            }
-          ]
-        },
-        {
           "id": "bondStreet",
           "lineId": "jubilee",
           "curves": []
@@ -192,11 +172,6 @@
       "xpos": 0.377,
       "ypos": 0.301,
       "connected": [
-        {
-          "id": "finchleyRoadMetropolitan",
-          "lineId": "metropolitan",
-          "curves": []
-        },
         {
           "id": "greatPortlandStreet",
           "lineId": "metropolitan",
@@ -306,11 +281,6 @@
       "xpos": 0.633,
       "ypos": 0.471,
       "connected": [
-        {
-          "id": "shadwellDlr",
-          "lineId": "dlr",
-          "curves": []
-        },
         {
           "id": "bankNorthern",
           "lineId": "walk",
@@ -567,31 +537,6 @@
       "ypos": 0.597,
       "connected": [
         {
-          "id": "westKensington",
-          "lineId": "district",
-          "curves": []
-        },
-        {
-          "id": "kensingtonOlympiaDistrict",
-          "lineId": "district",
-          "curves": [
-            {
-              "xpos": 0.235,
-              "ypos": 0.591
-            }
-          ]
-        },
-        {
-          "id": "westBromptonDistrict",
-          "lineId": "district",
-          "curves": [
-            {
-              "xpos": 0.235,
-              "ypos": 0.609
-            }
-          ]
-        },
-        {
           "id": "highStreetKensington",
           "lineId": "district",
           "curves": [
@@ -621,11 +566,6 @@
       "connected": [
         {
           "id": "gloucesterRoadPiccadilly",
-          "lineId": "piccadilly",
-          "curves": []
-        },
-        {
-          "id": "baronsCourtPiccadilly",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -722,11 +662,6 @@
           "curves": []
         },
         {
-          "id": "kennington",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
           "id": "borough",
           "lineId": "northern",
           "curves": []
@@ -820,16 +755,6 @@
       "ypos": 0.275,
       "connected": [
         {
-          "id": "southHampstead",
-          "lineId": "overground",
-          "curves": [
-            {
-              "xpos": 0.463,
-              "ypos": 0.253
-            }
-          ]
-        },
-        {
           "id": "eustonNorthern",
           "lineId": "walk",
           "curves": []
@@ -847,11 +772,6 @@
       "xpos": 0.493,
       "ypos": 0.275,
       "connected": [
-        {
-          "id": "morningtonCrescent",
-          "lineId": "northern",
-          "curves": []
-        },
         {
           "id": "warrenStreet",
           "lineId": "northern",
@@ -889,16 +809,6 @@
           "id": "warrenStreet",
           "lineId": "victoria",
           "curves": []
-        },
-        {
-          "id": "camdenTown",
-          "lineId": "northern",
-          "curves": [
-            {
-              "xpos": 0.507,
-              "ypos": 0.218
-            }
-          ]
         },
         {
           "id": "kingsCrossNorthern",
@@ -1240,24 +1150,6 @@
       ]
     },
     {
-      "id": "hoxton",
-      "name": "Hoxton",
-      "xpos": 0.757,
-      "ypos": 0.289,
-      "connected": [
-        {
-          "id": "haggerston",
-          "lineId": "overground",
-          "curves": []
-        },
-        {
-          "id": "shoreditchHighStreet",
-          "lineId": "overground",
-          "curves": []
-        }
-      ]
-    },
-    {
       "id": "hydeParkCorner",
       "name": "Hyde Park Corner",
       "xpos": 0.365,
@@ -1288,16 +1180,6 @@
             {
               "xpos": 0.519,
               "ypos": 0.268
-            }
-          ]
-        },
-        {
-          "id": "highburyIslingtonVictoria",
-          "lineId": "victoria",
-          "curves": [
-            {
-              "xpos": 0.632,
-              "ypos": 0.269
             }
           ]
         },
@@ -1349,11 +1231,6 @@
       "connected": [
         {
           "id": "russellSquare",
-          "lineId": "piccadilly",
-          "curves": []
-        },
-        {
-          "id": "caledonianRoad",
           "lineId": "piccadilly",
           "curves": []
         },
@@ -1498,11 +1375,6 @@
           "curves": []
         },
         {
-          "id": "bethnalGreenCentral",
-          "lineId": "central",
-          "curves": []
-        },
-        {
           "id": "moorgate",
           "lineId": "circle",
           "curves": []
@@ -1546,11 +1418,6 @@
       "ypos": 0.367,
       "connected": [
         {
-          "id": "bethnalGreenOverground",
-          "lineId": "overground",
-          "curves": []
-        },
-        {
           "id": "liverpoolStreetHCM",
           "lineId": "walk",
           "curves": []
@@ -1572,11 +1439,6 @@
               "ypos": 0.6
             }
           ]
-        },
-        {
-          "id": "bermondsey",
-          "lineId": "jubilee",
-          "curves": []
         },
         {
           "id": "borough",
@@ -1775,11 +1637,6 @@
           "id": "queensway",
           "lineId": "central",
           "curves": []
-        },
-        {
-          "id": "hollandPark",
-          "lineId": "central",
-          "curves": []
         }
       ]
     },
@@ -1861,11 +1718,6 @@
       "ypos": 0.286,
       "connected": [
         {
-          "id": "warwickAvenue",
-          "lineId": "bakerloo",
-          "curves": []
-        },
-        {
           "id": "edgwareRoadBakerloo",
           "lineId": "bakerloo",
           "curves": []
@@ -1889,22 +1741,12 @@
       "ypos": 0.299,
       "connected": [
         {
-          "id": "royalOak",
-          "lineId": "hammersmithCity",
-          "curves": []
-        },
-        {
           "id": "edgwareRoadCH",
           "lineId": "hammersmithCity",
           "curves": []
         },
         {
           "id": "edgwareRoadCH",
-          "lineId": "circle",
-          "curves": []
-        },
-        {
-          "id": "royalOak",
           "lineId": "circle",
           "curves": []
         },
@@ -2085,24 +1927,6 @@
               "ypos": 0.317
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "shoreditchHighStreet",
-      "name": "Shoreditch High Street",
-      "xpos": 0.757,
-      "ypos": 0.346,
-      "connected": [
-        {
-          "id": "hoxton",
-          "lineId": "overground",
-          "curves": []
-        },
-        {
-          "id": "whitechapel",
-          "lineId": "overground",
-          "curves": []
         }
       ]
     },
@@ -2359,11 +2183,6 @@
       "ypos": 0.520,
       "connected": [
         {
-          "id": "shadwellDlr",
-          "lineId": "dlr",
-          "curves": []
-        },
-        {
           "id": "towerHill",
           "lineId": "walk",
           "curves": []
@@ -2411,11 +2230,6 @@
       "connected": [
         {
           "id": "pimlico",
-          "lineId": "victoria",
-          "curves": []
-        },
-        {
-          "id": "stockwell",
           "lineId": "victoria",
           "curves": []
         }
@@ -2547,11 +2361,6 @@
       "connected": [
         {
           "id": "embankmentNorthern",
-          "lineId": "northern",
-          "curves": []
-        },
-        {
-          "id": "kennington",
           "lineId": "northern",
           "curves": []
         },
