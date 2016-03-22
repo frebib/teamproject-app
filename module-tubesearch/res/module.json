@@ -42,10 +42,6 @@
     "stationinfomed": {
       "file": "med-station-info.json",
       "type": "JsonObject"
-    },
-    "key": {
-      "file": "key.jpg",
-      "type": "Image"
     }
   }
 }

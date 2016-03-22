@@ -253,8 +253,6 @@ public class TubeSearchView extends VisualisationView {
         skybox = (Image) res.get("skybox");
         LOG.info("skybox loaded");
         // Load key image
-        key = (Image) res.get("key");
-        keyImage.setFill(new ImagePattern(key));
         LOG.info("key loaded");
 
         JsonObject metadata = ((JsonObject) res.get("stationinfo")).get("metadata").asObject();
