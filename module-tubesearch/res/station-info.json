@@ -574,17 +574,32 @@
         {
           "id": "kensingtonOlympiaDistrict",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.235,
+              "ypos": 0.591
+            }
+          ]
         },
         {
           "id": "westBromptonDistrict",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.235,
+              "ypos": 0.609
+            }
+          ]
         },
         {
           "id": "highStreetKensington",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.591
+            }
+          ]
         },
         {
           "id": "gloucesterRoadDC",
@@ -770,7 +785,16 @@
         {
           "id": "temple",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.475,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.528,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "westminsterDC",
@@ -993,12 +1017,26 @@
         {
           "id": "southKensingtonDC",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.280,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.304,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "highStreetKensington",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.282,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "gloucesterRoadPiccadilly",
@@ -1156,8 +1194,9 @@
           "curves": [
             {
               "xpos": 0.255,
-              "ypos": 0.597
+              "ypos": 0.590
             }
+
           ]
         },
         {
@@ -1885,12 +1924,17 @@
       "id": "paddingtonDC",
       "name": "Paddington",
       "xpos": 0.259,
-      "ypos": 0.319,
+      "ypos": 0.320,
       "connected": [
         {
           "id": "edgwareRoadDC",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.319
+            }
+          ]
         },
         {
           "id": "bayswater",
@@ -2081,7 +2125,16 @@
         {
           "id": "victoria",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.338,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.388,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "victoria",
@@ -2099,7 +2152,16 @@
         {
           "id": "sloaneSquare",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.296,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.351,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "sloaneSquare",
@@ -2193,7 +2255,16 @@
         {
           "id": "westminsterDC",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.400,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.450,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "westminsterDC",
@@ -2374,7 +2445,16 @@
         {
           "id": "stJamesPark",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.376,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.415,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "sloaneSquare",
@@ -2544,7 +2624,16 @@
         {
           "id": "embankmentDCB",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.445,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.485,
+              "ypos": 0.589
+            }
+          ]
         },
         {
           "id": "embankmentDCB",
