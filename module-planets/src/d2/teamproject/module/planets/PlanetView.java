@@ -56,7 +56,7 @@ public class PlanetView extends VisualisationView {
 
     private final PlanetController controller;
 
-    private Button prevBtn, nextBtn;
+    private Button prevBtn, nextBtn, playBtn;
     private ComboBox<PlanetSort> sortByCbx;
     private ComboBox<SortStream.Sorter<Planet>> sorterCbx;
     private ComboBox<PlanetSort.Dir> dirCbx;
@@ -148,16 +148,24 @@ public class PlanetView extends VisualisationView {
 
         prevBtn = new Button("Step\nBack");
         nextBtn = new Button("Step\nNext");
+        playBtn = new Button("▶");
         double height = bottomBox.getPrefHeight() - panePad.getTop() - panePad.getBottom();
         double width = height * 2.5 / 3;
         prevBtn.setPrefWidth(width);
         nextBtn.setPrefWidth(width);
+        playBtn.setPrefWidth(width);
+
         prevBtn.setMinWidth(width);
         nextBtn.setMinWidth(width);
+        playBtn.setMinWidth(width);
+
         prevBtn.setPrefHeight(height);
         nextBtn.setPrefHeight(height);
+        playBtn.setPrefHeight(height/2);
+
         prevBtn.setOnAction(e -> controller.prevState());
         nextBtn.setOnAction(e -> controller.nextState());
+        playBtn.setOnAction(e -> LOG.info("Play"));
 
         tutorialTitle.setFont(new Font(25));
         tutorialDesc.setFont(new Font(15));
@@ -172,7 +180,7 @@ public class PlanetView extends VisualisationView {
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        topBox.getChildren().addAll(spacer, animSlidePane, rotSlidePane, sortByCbx, dirCbx, sorterCbx, ascDesToggle);
+        topBox.getChildren().addAll(spacer,playBtn, animSlidePane, rotSlidePane, sortByCbx, dirCbx, sorterCbx, ascDesToggle);
         bottomBox.getChildren().addAll(prevBtn, bottomLPad, bottomCentre, bottomRPad, nextBtn);
     }
 
