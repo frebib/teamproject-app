@@ -8,6 +8,7 @@ import d2.teamproject.module.BaseController;
 import d2.teamproject.module.planets.gfx.PlanetSort;
 import d2.teamproject.module.planets.gfx.SolarSystem;
 import d2.teamproject.tutorial.Tutorial;
+import javafx.animation.ParallelTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Transition;
@@ -136,6 +137,8 @@ public class PlanetView extends VisualisationView {
             stream.initialise();
             controller.setSorter(stream);
 
+            playBtn.setDisable(false);
+            updateNavButtons();
             loadTutorial(stream.getClass().getName());
 
             if (controller.getPlanets() != null && sSystem != null)
@@ -164,7 +167,16 @@ public class PlanetView extends VisualisationView {
 
         prevBtn.setOnAction(e -> controller.prevState());
         nextBtn.setOnAction(e -> controller.nextState());
-        playBtn.setOnAction(e -> LOG.info("Play"));
+        playBtn.setOnAction(e -> {
+            if(controller.getSorter().hasNext()) {
+                playBtn.setDisable(true);
+                PauseTransition pauseTransition = new PauseTransition();
+                pauseTransition.setDuration(Duration.seconds(globalAnimSpeed));
+                pauseTransition.setOnFinished(j -> playBtn.fireEvent(new ActionEvent(playBtn, null)));
+                stepForward();
+                pauseTransition.play();
+            }
+        });
 
         tutorialTitle.setFont(new Font(25));
         tutorialDesc.setFont(new Font(15));
