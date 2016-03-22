@@ -12,6 +12,8 @@ import d2.teamproject.module.tubesearch.gfx.TubeMap;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.*;
@@ -122,6 +124,23 @@ public class TubeSearchView extends VisualisationView {
         nextBtn.setOnAction(e -> animateState(controller.nextState()));
         playBtn.setOnAction(e -> {
             LOG.info("Play");
+            playBtn.setDisable(true);
+            SearchState<Node<TubeStation>> state = controller.nextState();
+            if (state.isComplete())
+                tubeMap.animateFinalPath(state.getPath()).play();
+            else {
+                Transition frontierTrans = tubeMap.animateFrontier(state.getFrontier());
+                Transition visitedTrans = tubeMap.animateVisited(state.getVisited());
+                ParallelTransition searchTransition = new ParallelTransition();
+                searchTransition.getChildren().addAll(frontierTrans, visitedTrans);
+                EventHandler<ActionEvent> handler = searchTransition.getOnFinished();
+                searchTransition.setOnFinished(ev -> {
+                    if (handler != null)
+                        handler.handle(ev);
+                    playBtn.fireEvent(new ActionEvent(playBtn, null));
+                });
+                searchTransition.play();
+            }
         });
         begBtn.setOnAction(e-> {
             controller.setMode(2);

@@ -271,7 +271,6 @@ public class TubeMap extends Pane {
         for (Node<TubeStation> s : fStations) {
             Circle c = circleMap.get(s.getContents());
             FillTransition ft = new FillTransition(Duration.millis(400), c, Color.BLACK, Color.YELLOWGREEN);
-            ft.setCycleCount(3);
             StrokeTransition st = new StrokeTransition(Duration.millis(400), c, (Color) c.getStroke(), Color.SLATEBLUE);
             pt.getChildren().addAll(ft, st);
         }
