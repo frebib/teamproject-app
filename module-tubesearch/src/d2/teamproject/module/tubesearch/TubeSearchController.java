@@ -63,8 +63,6 @@ public class TubeSearchController extends JsonController {
         res.forEach((k, v) -> LOG.fine(" > Loaded resource \"%s\" = %s", k, v.toString()));
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
-        //TODO: Rename file or have multiple arrays
-//        tutorials.put(getClass().getName(), new Tutorial((JsonArray) res.get("help")));
         tutorials.put(BreadthFirstSearchStream.class.getName(), new Tutorial((JsonArray) res.get("bfsT")));
         tutorials.put(DepthFirstSearchStream.class.getName(), new Tutorial((JsonArray) res.get("dfsT")));
         tutorials.put(AStarSearchStream.class.getName(), new Tutorial((JsonArray) res.get("aStarT")));
