@@ -9,15 +9,21 @@ import java.util.function.BiFunction;
 public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
     public static class Searcher<E> {
         private BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor;
+        private Class clazz;
         private String name;
 
-        public Searcher(BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor, String name) {
+        public Searcher(BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor, Class clazz, String name) {
             this.constructor = constructor;
+            this.clazz = clazz;
             this.name = name;
         }
 
         public SearchStream<E> get(Node<E> start, Node<E> goal) {
             return constructor.apply(start, goal);
+        }
+
+        public Class getClazz() {
+            return clazz;
         }
 
         @Override

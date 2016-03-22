@@ -2,9 +2,7 @@ package d2.teamproject.module.tubesearch;
 
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
-import d2.teamproject.algorithm.search.Node;
-import d2.teamproject.algorithm.search.SearchState;
-import d2.teamproject.algorithm.search.SearchStream;
+import d2.teamproject.algorithm.search.*;
 import d2.teamproject.algorithm.search.SearchStream.Searcher;
 import d2.teamproject.module.BaseView;
 import d2.teamproject.module.JsonController;
@@ -66,16 +64,11 @@ public class TubeSearchController extends JsonController {
         // Load Tutorial JSONs
         tutorials = new LinkedHashMap<>();
         //TODO: Rename file or have multiple arrays
-        Tutorial searchT = new Tutorial((JsonArray) res.get("help"));
-        tutorials.put(getClass().getName(), searchT);
-        Tutorial bfsT = new Tutorial((JsonArray) res.get("bfsT"));
-        tutorials.put(getClass().getName(), bfsT);
-        Tutorial dfsT = new Tutorial((JsonArray) res.get("dfsT"));
-        tutorials.put(getClass().getName(), dfsT);
-        Tutorial aStarT = new Tutorial((JsonArray) res.get("aStarT"));
-        tutorials.put(getClass().getName(), aStarT);
-        Tutorial dijkstraT = new Tutorial((JsonArray) res.get("dijkstraT"));
-        tutorials.put(getClass().getName(), dijkstraT);
+//        tutorials.put(getClass().getName(), new Tutorial((JsonArray) res.get("help")));
+        tutorials.put(BreadthFirstSearchStream.class.getName(), new Tutorial((JsonArray) res.get("bfsT")));
+        tutorials.put(DepthFirstSearchStream.class.getName(), new Tutorial((JsonArray) res.get("dfsT")));
+        tutorials.put(AStarSearchStream.class.getName(), new Tutorial((JsonArray) res.get("aStarT")));
+        tutorials.put(DijkstraSearchStream.class.getName(), new Tutorial((JsonArray) res.get("dijkstraT")));
 
         infomed = (JsonObject) res.get("stationinfobgn");
         infobgn = (JsonObject) res.get("stationinfomed");
@@ -260,6 +253,8 @@ public class TubeSearchController extends JsonController {
         selection = StationSelect.START;
         start = null;
         goal = null;
+        view.loadTutorial(searcher.getClazz().getName());
+        view.updateText("choose-start");
     }
 
     public SearchState<Node<TubeStation>> nextState() {

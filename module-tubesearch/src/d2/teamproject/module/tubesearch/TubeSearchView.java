@@ -83,10 +83,10 @@ public class TubeSearchView extends VisualisationView {
         sideBox.setAlignment(Pos.CENTER);
 
         searcherCbx = new ComboBox<>(new ImmutableObservableList<>(
-                new SearchStream.Searcher<>(AStarSearchStream::new, "A-Star Search"),
-                new SearchStream.Searcher<>(DijkstraSearchStream::new, "Dijkstra's Algorithm"),
-                new SearchStream.Searcher<>(BreadthFirstSearchStream::new, "Breadth-First Search"),
-                new SearchStream.Searcher<>(DepthFirstSearchStream::new, "Depth-First Search")
+                new SearchStream.Searcher<>(AStarSearchStream::new, AStarSearchStream.class, "A-Star Search"),
+                new SearchStream.Searcher<>(DijkstraSearchStream::new, DijkstraSearchStream.class, "Dijkstra's Algorithm"),
+                new SearchStream.Searcher<>(BreadthFirstSearchStream::new, BreadthFirstSearchStream.class, "Breadth-First Search"),
+                new SearchStream.Searcher<>(DepthFirstSearchStream::new, DepthFirstSearchStream.class, "Depth-First Search")
         ));
         searcherCbx.valueProperty().addListener((a, b, newVal) -> controller.setSearcher(newVal));
 
@@ -189,6 +189,8 @@ public class TubeSearchView extends VisualisationView {
         contentBox.getChildren().add(tubeMap);
 
         searcherCbx.setValue(searcherCbx.getItems().get(0));
+        loadTutorial(searcherCbx.getValue().getClazz().getName());
+        controller.setSearcher(searcherCbx.getValue());
     }
 
     @Override
@@ -200,8 +202,6 @@ public class TubeSearchView extends VisualisationView {
         key = (Image) res.get("key");
         keyImage.setFill(new ImagePattern(key));
         LOG.info("key loaded");
-        // Load tutorial
-        loadTutorial(TubeSearchController.class.getName());
 
         JsonObject metadata = ((JsonObject) res.get("stationinfo")).get("metadata").asObject();
         mapAspectRatio = metadata.getDouble("aspectratio", 0);
