@@ -137,7 +137,6 @@ public class PlanetView extends VisualisationView {
             controller.setSorter(stream);
 
             loadTutorial(stream.getClass().getName());
-//          TODO: Provide a more coherent tutorial structure
 
             if (controller.getPlanets() != null && sSystem != null)
                 sSystem.resetTransition(controller.getPlanets()).playFromStart();
