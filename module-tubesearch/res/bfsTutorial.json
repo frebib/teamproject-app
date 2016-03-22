@@ -25,7 +25,7 @@
   },
   {
     "index": 3,
-    "title": "Choose a starting station",
+    "title": "Choose a starting station  to start searching with Breath First Search",
     "content": "To find a route, start by clicking a station to navigate from.\nAlternatively change any of the options at the top to vary the search type.",
     "key": "choose-start"
   },
