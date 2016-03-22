@@ -7,7 +7,6 @@ import d2.teamproject.algorithm.search.*;
 import d2.teamproject.algorithm.search.Node;
 import d2.teamproject.gui.VisualisationView;
 import d2.teamproject.module.BaseController;
-import d2.teamproject.module.ModuleLoader;
 import d2.teamproject.module.tubesearch.gfx.TubeMap;
 import d2.teamproject.tutorial.Tutorial;
 import javafx.animation.ParallelTransition;
@@ -123,7 +122,6 @@ public class TubeSearchView extends VisualisationView {
         prevBtn.setOnAction(e -> animateState(controller.prevState()));
         nextBtn.setOnAction(e -> animateState(controller.nextState()));
         playBtn.setOnAction(e -> {
-            LOG.info("Play");
             playBtn.setDisable(true);
             SearchState<Node<TubeStation>> state = controller.nextState();
             if (state.isComplete())
@@ -146,16 +144,20 @@ public class TubeSearchView extends VisualisationView {
             controller.setMode(2);
             controller.reload();
             tubeMap.update(controller);
+            tubeMap.zoomLevel(3.2);
         });
         medBtn.setOnAction(e-> {
             controller.setMode(1);
             controller.reload();
             tubeMap.update(controller);
+            tubeMap.zoomLevel(0.79);
         });
         hardBtn.setOnAction(e-> {
             controller.setMode(0);
             controller.reload();
             tubeMap.update(controller);
+            tubeMap.zoomLevel(0.5);
+
         });
 
         tutorialTitle.setFont(new Font(25));
@@ -203,6 +205,7 @@ public class TubeSearchView extends VisualisationView {
     public void onOpen() {
         tubeMap = new TubeMap(controller, mapAspectRatio, contentBox.getPrefWidth(), contentBox.getPrefHeight(), skybox);
         tubeMap.initialise();
+        tubeMap.zoomLevel(0.5);
 
         tubeMap.setClip(new Rectangle(contentBox.getPrefWidth(), contentBox.getPrefHeight()));
         contentBox.getChildren().add(tubeMap);
