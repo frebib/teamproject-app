@@ -3150,7 +3150,16 @@
         {
           "id": "mileEndDH",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.882,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.825,
+              "ypos": 0.334
+            }
+          ]
         },
         {
           "id": "bromleyByBow",
@@ -3209,7 +3218,16 @@
         {
           "id": "bowRoad",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.923,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.870,
+              "ypos": 0.334
+            }
+          ]
         },
         {
           "id": "westHamDH",
@@ -4937,7 +4955,20 @@
         {
           "id": "stepneyGreen",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.837,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.79,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.774,
+              "ypos": 0.350
+            }
+          ]
         },
         {
           "id": "stepneyGreen",
@@ -6014,7 +6045,16 @@
         {
           "id": "bromleyByBow",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.947,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.911,
+              "ypos": 0.334
+            }
+          ]
         },
         {
           "id": "westHamDlr",
