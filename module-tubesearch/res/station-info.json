@@ -88,7 +88,12 @@
         {
           "id": "liverpoolStreetHCM",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.707,
+              "ypos": 0.397
+            }
+          ]
         },
         {
           "id": "liverpoolStreetHCM",
@@ -370,7 +375,12 @@
         {
           "id": "paddingtonDC",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.320
+            }
+          ]
         },
         {
           "id": "nottingHillGate",
@@ -398,7 +408,16 @@
         {
           "id": "mansionHouse",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.555,
+              "ypos": 0.567
+            },
+            {
+              "xpos": 0.579,
+              "ypos": 0.533
+            }
+            ]
         },
         {
           "id": "temple",
@@ -487,12 +506,30 @@
         {
           "id": "monument",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.592,
+              "ypos": 0.510
+            },
+            {
+              "xpos": 0.61,
+              "ypos": 0.495
+            },
+            {
+              "xpos": 0.635,
+              "ypos": 0.492
+            }
+          ]
         },
         {
           "id": "monument",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.61,
+              "ypos": 0.501
+            }
+          ]
         }
       ]
     },
@@ -1186,14 +1223,27 @@
         {
           "id": "nottingHillGate",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.26,
+              "ypos": 0.522
+            },
+            {
+              "xpos": 0.26,
+              "ypos": 0.456
+            }
+          ]
         },
         {
           "id": "gloucesterRoadDC",
           "lineId": "circle",
           "curves": [
             {
-              "xpos": 0.255,
+              "xpos": 0.26,
+              "ypos": 0.510
+            },
+            {
+              "xpos": 0.259,
               "ypos": 0.590
             }
 
@@ -1380,7 +1430,12 @@
         {
           "id": "farringdon",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.55,
+              "ypos": 0.301
+            }
+          ]
         },
         {
           "id": "farringdon",
@@ -1614,7 +1669,16 @@
         {
           "id": "cannonStreet",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.573,
+              "ypos": 0.537
+            },
+            {
+              "xpos": 0.597,
+              "ypos": 0.510
+            }
+          ]
         },
         {
           "id": "cannonStreet",
@@ -1683,7 +1747,16 @@
         {
           "id": "towerHill",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.627,
+              "ypos": 0.494
+            },
+            {
+              "xpos": 0.701,
+              "ypos": 0.493
+            }
+          ]
         },
         {
           "id": "towerHill",
@@ -1721,7 +1794,12 @@
         {
           "id": "barbican",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.613,
+              "ypos": 0.397
+            }
+          ]
         },
         {
           "id": "barbican",
@@ -1754,7 +1832,16 @@
         {
           "id": "bayswater",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.26,
+              "ypos": 0.456
+            },
+            {
+              "xpos": 0.26,
+              "ypos": 0.456
+            }
+          ]
         },
         {
           "id": "bayswater",
@@ -1906,7 +1993,12 @@
         {
           "id": "royalOak",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.213,
+              "ypos": 0.299
+            }
+          ]
         },
         {
           "id": "paddingtonBakerloo",
@@ -1930,10 +2022,6 @@
           "id": "edgwareRoadDC",
           "lineId": "district",
           "curves": [
-            {
-              "xpos": 0.255,
-              "ypos": 0.319
-            }
           ]
         },
         {
@@ -2315,12 +2403,30 @@
         {
           "id": "blackfriars",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.520,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.544,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.561,
+              "ypos": 0.558
+            }
+          ]
         },
         {
           "id": "blackfriars",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.544,
+              "ypos": 0.597
+            }
+          ]
         }
       ]
     },
@@ -2384,7 +2490,16 @@
         {
           "id": "aldgate",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.701,
+              "ypos": 0.493
+            },
+            {
+              "xpos": 0.707,
+              "ypos": 0.493
+            }
+          ]
         },
         {
           "id": "monument",
@@ -2394,7 +2509,16 @@
         {
           "id": "aldgateEast",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.710,
+              "ypos": 0.499
+            },
+            {
+              "xpos": 0.711,
+              "ypos": 0.460
+            }
+          ]
         },
         {
           "id": "towerGateway",
@@ -4528,7 +4652,12 @@
         {
           "id": "westbournePark",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.17,
+              "ypos": 0.365
+            }
+          ]
         },
         {
           "id": "latimerRoad",
