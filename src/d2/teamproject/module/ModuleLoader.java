@@ -119,7 +119,7 @@ public class ModuleLoader {
                 LOG.exception(e);
             }
 
-            Image banner = new Image(loader.getResourceAsStream(info.get("banner").asString()));
+            Image banner = new Image(loader.getResourceAsStream("res/" + info.get("banner").asString()));
             module.init(info, banner);
 
             infoStream.close();
@@ -141,7 +141,7 @@ public class ModuleLoader {
                 JsonObject resObj = res.getValue().asObject();
                 String fname = resObj.get("file").asString();
 
-                InputStream is = loader.getResourceAsStream(fname);
+                InputStream is = loader.getResourceAsStream("res/" + fname);
                 Object obj = loadResourceFromStream(is, resObj.get("type").asString());
                 resources.put(rName, obj);
             } catch (Exception e) { // Catch then continue loading resources

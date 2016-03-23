@@ -86,7 +86,10 @@
         </javac>
         <zip destfile="${out.mod.dir}/${mod.name}.vism">
             <zipfileset dir="${mod.cls.dir}"/>
-            <zipfileset dir="module-${mod.name}/res"/>
+            <zipfileset dir="module-${mod.name}/res" prefix="res">
+                <exclude name="**/module.json"/>
+            </zipfileset>
+            <zipfileset file="module-${mod.name}/res/module.json"/>
         </zip>
     </target>
 
