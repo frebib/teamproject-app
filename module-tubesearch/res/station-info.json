@@ -370,7 +370,12 @@
         {
           "id": "paddingtonDC",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.26,
+              "ypos": 0.392
+            }
+          ]
         },
         {
           "id": "paddingtonDC",
@@ -1835,11 +1840,11 @@
           "curves": [
             {
               "xpos": 0.26,
-              "ypos": 0.456
+              "ypos": 0.468
             },
             {
               "xpos": 0.26,
-              "ypos": 0.456
+              "ypos": 0.380
             }
           ]
         },
@@ -2032,7 +2037,16 @@
         {
           "id": "edgwareRoadDC",
           "lineId": "circle",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.254,
+              "ypos": 0.327
+            },
+            {
+              "xpos": 0.301,
+              "ypos": 0.326
+            }
+            ]
         },
         {
           "id": "bayswater",
