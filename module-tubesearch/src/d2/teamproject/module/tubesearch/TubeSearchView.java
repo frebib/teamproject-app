@@ -20,6 +20,7 @@ import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -178,56 +179,56 @@ public class TubeSearchView extends VisualisationView {
 
         StackPane keyPane = new StackPane();
 
-        ArrayList <String> lineNames = new ArrayList<>();
-        ArrayList <Color> lineColors = new ArrayList<>();
-        ArrayList<Text> lineTitles = new ArrayList<>();
-
-        lineNames.add("Bakerloo");
-        lineColors.add(Color.BROWN);
-        lineNames.add("Central");
-        lineColors.add(Color.RED);
-        lineNames.add("Circle");
-        lineColors.add(Color.YELLOW);
-        lineNames.add("District");
-        lineColors.add(Color.GREEN);
-        lineNames.add("Hammersmith & City");
-        lineColors.add(Color.PINK);
-        lineNames.add("Jubilee");
-        lineColors.add(Color.GREY);
-        lineNames.add("Northern");
-        lineColors.add(Color.BLACK);
-        lineNames.add("Overground");
-        lineColors.add(Color.ORANGE);
-        lineNames.add("Piccadilly");
-        lineColors.add(Color.BLUE);
-        lineNames.add("Waterloo & City");
-        lineColors.add(Color.CORAL);
-
-        VBox names = new VBox();
-        names.setSpacing(2);
-        names.setAlignment(Pos.CENTER);
-
-        VBox colors = new VBox();
-        colors.setSpacing(2);
-
-        lineTitles.addAll(lineNames.stream().map(Text::new).collect(Collectors.toList()));
-
-        for (Text t:lineTitles) {
-            t.setFont(new Font(25));
-            t.setFill(Color.WHITE);
-            t.setStyle("-fx-stroke: black;-fx-stroke-width: 0.5;");
-            names.getChildren().add(t);
-        }
-
-        for (Color c:lineColors) {
-            colors.getChildren().add(new Rectangle(280,30,c));
-        }
-
-        keyPane.getChildren().addAll(colors,names);
+//        ArrayList <String> lineNames = new ArrayList<>();
+//        ArrayList <Color> lineColors = new ArrayList<>();
+//        ArrayList<Text> lineTitles = new ArrayList<>();
+//
+//        lineNames.add("Bakerloo");
+//        lineColors.add(Color.BROWN);
+//        lineNames.add("Central");
+//        lineColors.add(Color.RED);
+//        lineNames.add("Circle");
+//        lineColors.add(Color.YELLOW);
+//        lineNames.add("District");
+//        lineColors.add(Color.GREEN);
+//        lineNames.add("Hammersmith & City");
+//        lineColors.add(Color.PINK);
+//        lineNames.add("Jubilee");
+//        lineColors.add(Color.GREY);
+//        lineNames.add("Northern");
+//        lineColors.add(Color.BLACK);
+//        lineNames.add("Overground");
+//        lineColors.add(Color.ORANGE);
+//        lineNames.add("Piccadilly");
+//        lineColors.add(Color.BLUE);
+//        lineNames.add("Waterloo & City");
+//        lineColors.add(Color.CORAL);
+//
+//        VBox names = new VBox();
+//        names.setSpacing(2);
+//        names.setAlignment(Pos.CENTER);
+//
+//        VBox colors = new VBox();
+//        colors.setSpacing(2);
+//
+//        lineTitles.addAll(lineNames.stream().map(Text::new).collect(Collectors.toList()));
+//
+//        for (Text t:lineTitles) {
+//            t.setFont(new Font(25));
+//            t.setFill(Color.WHITE);
+//            t.setStyle("-fx-stroke: black;-fx-stroke-width: 0.5;");
+//            names.getChildren().add(t);
+//        }
+//
+//        for (Color c:lineColors) {
+//            colors.getChildren().add(new Rectangle(280,30,c));
+//        }
+//
+//        keyPane.getChildren().addAll(colors,names);
 
         topBox.getChildren().addAll(spacer, playBtn,begBtn, medBtn, hardBtn, searcherCbx);
         bottomBox.getChildren().addAll(prevBtn, bottomLPad, bottomCentre, bottomRPad, nextBtn);
-        sideBox.getChildren().addAll(keyPane);
+        sideBox.getChildren().addAll(keyImage);
 
         contentBox.setPrefWidth(PARTH.WIDTH);
         contentBox.setPrefHeight(PARTH.HEIGHT - topBox.getPrefHeight() - bottomBox.getPrefHeight());
@@ -253,6 +254,8 @@ public class TubeSearchView extends VisualisationView {
         skybox = (Image) res.get("skybox");
         LOG.info("skybox loaded");
         // Load key image
+        key = (Image )res.get("key");
+        keyImage.setFill(new ImagePattern(key));
         LOG.info("key loaded");
 
         JsonObject metadata = ((JsonObject) res.get("stationinfo")).get("metadata").asObject();

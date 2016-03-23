@@ -15,6 +15,10 @@
       "file": "skybox.png",
       "type": "Image"
     },
+    "key": {
+      "file": "key.jpg",
+      "type": "Image"
+    },
     "help": {
       "file": "help.json",
       "type": "JsonArray"
