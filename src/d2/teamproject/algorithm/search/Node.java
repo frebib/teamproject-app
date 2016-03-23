@@ -6,6 +6,8 @@ import java.util.List;
 /**
  * Represents a Node that carries a contents and it's successors
  * @param <E> Payload of the {@link Node}
+ *
+ * @author Joseph Groocock
  */
 public class Node<E> {
     private final List<Node<E>> successors;
@@ -54,6 +56,7 @@ public class Node<E> {
     /**
      * Compares the contents to Element {@code c}
      * @param c Element to compare to {@link Node} contents
+     *
      * @return true if the contents are .equal()
      */
     public boolean contentsEquals(Node<E> c) {

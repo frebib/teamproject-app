@@ -5,6 +5,8 @@ import java.util.List;
 /**
  * Represents the state of a list sort and a bounded region within the list
  * @param <E> Type of data stored in the list
+ *
+ * @author Joseph Groocock
  */
 public class PartitionSortState<E> implements SortState<E> {
     private int pivot, lower, upper;

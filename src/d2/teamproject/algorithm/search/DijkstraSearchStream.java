@@ -4,6 +4,11 @@ import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 
 import java.util.function.BiFunction;
 
+/**
+ * @param <E>
+ *
+ * @author Joseph Groocock
+ */
 public class DijkstraSearchStream<E> extends SearchStream<E> {
     public DijkstraSearchStream(Node<E> start, Node<E> goal) {
         super(null, start, goal);
@@ -14,6 +19,7 @@ public class DijkstraSearchStream<E> extends SearchStream<E> {
     /**
      * Does nothing. Dijkstras search uses no heuristic function
      * @param heuristicFn pointless parameter
+     *
      * @return the {@code DijkstraSearchStream} instance
      */
     @Override

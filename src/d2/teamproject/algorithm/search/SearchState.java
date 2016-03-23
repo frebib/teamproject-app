@@ -10,6 +10,8 @@ import java.util.Set;
  * A state to represent the state of search from {@link SearchStream}
  * at any given point in time. Provides a look into all data that represents the state
  * @param <E> Element that nodes in search represent
+ *
+ * @author Joseph Groocock
  */
 public class SearchState<E> {
     private boolean isComplete = false;

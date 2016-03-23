@@ -5,6 +5,9 @@ import javafx.scene.image.Image;
 
 import java.util.Map;
 
+/**
+ * @author Joseph Groocock
+ */
 public abstract class JsonController implements BaseController {
     private String name, description;
     private Image banner;

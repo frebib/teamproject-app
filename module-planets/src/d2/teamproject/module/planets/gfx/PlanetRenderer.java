@@ -13,6 +13,9 @@ import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
+/**
+ * @author Joseph Groocock
+ */
 public class PlanetRenderer {
     private final Planet planet;
     private final Group model;

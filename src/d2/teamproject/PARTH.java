@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.util.logging.Level;
 
+/**
+ * @author Joseph Groocock
+ */
 public class PARTH extends Application {
     public static final double WIDTH = 1280;
     public static final double HEIGHT = 720;

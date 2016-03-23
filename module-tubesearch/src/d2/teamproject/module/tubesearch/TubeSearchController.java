@@ -16,8 +16,9 @@ import java.util.function.BiFunction;
 import static d2.teamproject.PARTH.LOG;
 
 /**
- * @author Parth Chandratreya
+ * @author Joseph Groocock
  * @author Luke Taher
+ * @author Parth Chandratreya
  */
 public class TubeSearchController extends JsonController {
     private enum StationSelect {

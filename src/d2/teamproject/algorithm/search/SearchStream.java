@@ -6,6 +6,11 @@ import d2.teamproject.algorithm.search.datastructures.SearchCollection;
 import java.util.*;
 import java.util.function.BiFunction;
 
+/**
+ * @param <E>
+ *
+ * @author Joseph Groocock
+ */
 public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
     public static class Searcher<E> {
         private BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor;
@@ -87,6 +92,7 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
     /**
      * Sets the cost function for the search, changing the behaviour of the search algorithm
      * @param costFn
+     *
      * @return the SearchStream object
      */
     public SearchStream<E> setCostFn(BiFunction<E, E, Double> costFn) {

@@ -11,6 +11,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author Parth Chandratreya
+ * @author Joseph Groocock
+ */
 public abstract class VisualisationView implements BaseView {
     private final Scene scene;
     protected final BorderPane frontPane;

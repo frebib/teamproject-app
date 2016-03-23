@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @author Joseph Groocock
  * @author Luke Taher
  */
-
 public class TubeConnection {
     private TubeStation from, to;
     private TubeLine line;

@@ -2,6 +2,9 @@ package d2.teamproject.module;
 
 import javafx.scene.image.Image;
 
+/**
+ * @author Joseph Groocock
+ */
 public interface BaseController {
     String getName();
 

@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * @author Otonye Bestman
  * @author Luke Taher
- * @class BubbleSortStream
  */
 public class BubbleSortStream<E> extends SortStream<E> {
     private ListSortState<E> lastListState;

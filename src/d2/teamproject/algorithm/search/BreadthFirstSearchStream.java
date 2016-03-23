@@ -4,6 +4,11 @@ import d2.teamproject.algorithm.search.datastructures.SearchQueue;
 
 import java.util.function.BiFunction;
 
+/**
+ * @param <E> @inheritDoc
+ *
+ * @author Joseph Groocock
+ */
 public class BreadthFirstSearchStream<E> extends SearchStream<E> {
     public BreadthFirstSearchStream(Node<E> start, Node<E> goal) {
         super(new SearchQueue<>(), start, goal);

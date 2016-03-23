@@ -28,6 +28,7 @@ import static d2.teamproject.PARTH.LOG;
 import static d2.teamproject.module.planets.PlanetView.AnimState;
 
 /**
+ * @author Joseph Groocock
  * @author Parth Chandratreya
  */
 public class SolarSystem {

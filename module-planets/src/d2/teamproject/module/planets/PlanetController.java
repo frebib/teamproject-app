@@ -26,7 +26,6 @@ import static d2.teamproject.PARTH.LOG;
 
 /**
  * @author Parth Chandratreya
- * @author Gulraj Bariah
  */
 public class PlanetController extends JsonController {
     private final PlanetView view;
@@ -43,6 +42,7 @@ public class PlanetController extends JsonController {
     public void onOpen() {
         view.onOpen();
     }
+
     public void prevState() {
         view.disableNavButtons(true);
         view.stepBackward();

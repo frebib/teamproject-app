@@ -22,6 +22,10 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
+/**
+ * @author Parth Chandratreya
+ * @author Joseph Groocock
+ */
 public class MainMenuView {
     private final Stage stage;
     private Scene menu;

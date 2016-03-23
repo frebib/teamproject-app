@@ -1,5 +1,8 @@
 package d2.teamproject.module;
 
+/**
+ * @author Joseph Groocock
+ */
 @FunctionalInterface
 public interface ModuleLoadState {
     /**

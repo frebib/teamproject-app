@@ -5,6 +5,9 @@ import d2.teamproject.module.planets.Planet;
 import java.util.Comparator;
 import java.util.function.Function;
 
+/**
+ * @author Joseph Groocock
+ */
 public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
     public enum Dir {
         ASCENDING(1),

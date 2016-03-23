@@ -33,8 +33,8 @@ import static d2.teamproject.PARTH.LOG;
 
 /**
  * @author Luke Taher
+ * @author Joseph Groocock
  */
-
 public class TubeMap extends Pane {
     private static final double PANSPEED = 0.6;
     private static final double ZOOMSPEED = 0.0025;

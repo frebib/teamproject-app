@@ -15,6 +15,9 @@ import java.util.zip.ZipInputStream;
 
 import static d2.teamproject.PARTH.LOG;
 
+/**
+ * @author Joseph Groocock
+ */
 public class ModuleLoader {
     private static final String MODULE_PATH = "res/module/";
     private static ModuleLoader instance = new ModuleLoader();

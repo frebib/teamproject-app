@@ -9,9 +9,9 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
+ * @author Joseph Groocock
  * @author Luke Taher
  */
-
 public class TubeLine {
     private Set<TubeStation> stations;
     private String id, name;

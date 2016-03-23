@@ -7,6 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @author Joseph Groocock
+ */
 public class Planet {
     private String name;
     private float mass, diameter, distToSun, time, tilt;

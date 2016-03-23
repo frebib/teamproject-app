@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 import static d2.teamproject.PARTH.LOG;
 
 /**
- * @author Parth Chandratreya
+ * @author Joseph Groocock
  * @author Luke Taher
  */
 public class TubeSearchView extends VisualisationView {

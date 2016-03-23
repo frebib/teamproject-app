@@ -4,6 +4,9 @@ import javafx.scene.Scene;
 
 import java.util.Map;
 
+/**
+ * @author Joseph Groocock
+ */
 public interface BaseView {
     BaseController getController();
 

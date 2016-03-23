@@ -9,6 +9,8 @@ import java.util.function.BiFunction;
 
 /**
  * @param <E> Type of data stored in the list
+ *
+ * @author Joseph Groocock
  */
 public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
     public static class Sorter<E> {

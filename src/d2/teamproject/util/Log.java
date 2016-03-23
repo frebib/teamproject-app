@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.*;
 
+/**
+ * @author Joseph Groocock
+ */
 public class Log implements Thread.UncaughtExceptionHandler {
     private static Level EXCEPTION_LEVEL = Level.SEVERE;
 

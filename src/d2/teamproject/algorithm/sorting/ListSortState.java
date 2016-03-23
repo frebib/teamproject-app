@@ -7,6 +7,8 @@ import java.util.List;
  * Represents the state of a list during a list sort
  * and whether the sort is completed
  * @param <E> Type of data stored in the list
+ *
+ * @author Joseph Groocock
  */
 public class ListSortState<E> implements SortState<E> {
     private List<E> list;

@@ -3,10 +3,11 @@ package d2.teamproject.algorithm.sorting;
 import java.awt.*;
 
 /**
- * @author Otonye Bestman
  * Represents the state of a list sort at the time of comparison
  * If the values are swapped then list representation is from before the swap
  * @param <E> Type of data stored in the list
+ *
+ * @author Joseph Groocock
  */
 public class CompareSortState<E> extends PartitionSortState<E> {
     private int compareA, compareB;

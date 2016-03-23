@@ -4,6 +4,11 @@ import d2.teamproject.algorithm.search.datastructures.SearchStack;
 
 import java.util.function.BiFunction;
 
+/**
+ * @param <E>
+ *
+ * @author Joseph Groocock
+ */
 public class DepthFirstSearchStream<E> extends SearchStream<E> {
     public DepthFirstSearchStream(Node<E> start, Node<E> goal) {
         super(new SearchStack<>(), start, goal);
@@ -13,6 +18,7 @@ public class DepthFirstSearchStream<E> extends SearchStream<E> {
     /**
      * Does nothing. Depth-First search uses no heuristic function
      * @param heuristicFn pointless parameter
+     *
      * @return the {@code DepthFirstSearchStream} instance
      */
     @Override

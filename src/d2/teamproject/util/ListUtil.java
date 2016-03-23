@@ -3,6 +3,9 @@ package d2.teamproject.util;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author Joseph Groocock
+ */
 public class ListUtil {
     public static <T> String listToString(List<T> list) {
         return '[' + list.stream().map(T::toString).collect(Collectors.joining(", ")) + ']';
