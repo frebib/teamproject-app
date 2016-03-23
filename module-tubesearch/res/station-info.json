@@ -98,7 +98,20 @@
         {
           "id": "liverpoolStreetHCM",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.703,
+              "ypos": 0.448
+            },
+            {
+              "xpos": 0.703,
+              "ypos": 0.403
+            },
+            {
+              "xpos": 0.655,
+              "ypos": 0.403
+            }
+          ]
         },
         {
           "id": "towerHill",
@@ -332,7 +345,16 @@
         {
           "id": "farringdon",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.593,
+              "ypos": 0.373
+            },
+            {
+              "xpos": 0.566,
+              "ypos": 0.335
+            }
+          ]
         },
         {
           "id": "moorgate",
@@ -983,7 +1005,16 @@
         {
           "id": "greatPortlandStreet",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.513,
+              "ypos": 0.307
+            },
+            {
+              "xpos": 0.414,
+              "ypos": 0.307
+            }
+          ]
         },
         {
           "id": "kingsCrossHCMP",
@@ -1021,7 +1052,20 @@
         {
           "id": "kingsCrossHCMP",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.572,
+              "ypos": 0.343
+            },
+            {
+              "xpos": 0.55,
+              "ypos": 0.307
+            },
+            {
+              "xpos": 0.528,
+              "ypos": 0.307
+            }
+          ]
         },
         {
           "id": "barbican",
@@ -1147,7 +1191,16 @@
         {
           "id": "bakerStreetHCM",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.426,
+              "ypos": 0.307
+            },
+            {
+              "xpos": 0.376,
+              "ypos": 0.307
+            }
+          ]
         },
         {
           "id": "eustonSquare",
@@ -1425,7 +1478,16 @@
         {
           "id": "eustonSquare",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.542,
+              "ypos": 0.307
+            },
+            {
+              "xpos": 0.5,
+              "ypos": 0.307
+            }
+          ]
         },
         {
           "id": "farringdon",
@@ -1585,7 +1647,16 @@
         {
           "id": "moorgate",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.667,
+              "ypos": 0.403
+            },
+            {
+              "xpos": 0.619,
+              "ypos": 0.403
+            }
+          ]
         },
         {
           "id": "aldgate",
@@ -1814,7 +1885,20 @@
         {
           "id": "barbican",
           "lineId": "metropolitan",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.631,
+              "ypos": 0.403
+            },
+            {
+              "xpos": 0.613,
+              "ypos": 0.403
+            },
+            {
+              "xpos": 0.586,
+              "ypos": 0.363
+            }
+          ]
         },
         {
           "id": "oldStreet",
