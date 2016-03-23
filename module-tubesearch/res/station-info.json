@@ -4858,7 +4858,12 @@
         {
           "id": "stepneyGreen",
           "lineId": "district",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.79,
+              "ypos": 0.340
+            }
+          ]
         },
         {
           "id": "bowRoad",
@@ -5915,7 +5920,7 @@
       "id": "westHamDH",
       "name": "West Ham",
       "xpos": 0.943,
-      "ypos": 0.338,
+      "ypos": 0.340,
       "connected": [
         {
           "id": "bromleyByBow",
