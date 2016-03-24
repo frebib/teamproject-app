@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * Represents a Planet and associated stats used for sorting
  * @author Joseph Groocock
  */
 public class Planet {
@@ -26,18 +27,30 @@ public class Planet {
         textures = new LinkedHashMap<>();
     }
 
+    /**
+     * @return planet name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return planet mass
+     */
     public float getMass() {
         return mass;
     }
 
+    /**
+     * @return planet diameter
+     */
     public float getDiameter() {
         return diameter;
     }
 
+    /**
+     * @return distance to sun from planet
+     */
     public float getDistToSun() {
         return distToSun;
     }
@@ -73,6 +86,9 @@ public class Planet {
         );
     }
 
+    /**
+     * @return collection of textures used by the planet
+     */
     public Map<String, Image> getTextures() {
         return textures;
     }

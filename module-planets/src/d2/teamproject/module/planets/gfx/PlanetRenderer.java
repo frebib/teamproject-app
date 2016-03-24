@@ -14,6 +14,7 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 /**
+ * Renders a {@link Planet} object
  * @author Joseph Groocock
  */
 public class PlanetRenderer {
@@ -63,32 +64,61 @@ public class PlanetRenderer {
         model.setRotate(planet.getTilt());
     }
 
+    /**
+     * Binds a handler to the onClick event of the planet model
+     * @param handler handler to receive the event
+     * @return this {@link PlanetRenderer} instance
+     */
     public PlanetRenderer onClick(EventHandler<MouseEvent> handler) {
         model.addEventHandler(MouseEvent.MOUSE_CLICKED, handler);
         return this;
     }
 
+    /**
+     * Binds a handler to the onMouseIn event of the planet model
+     * @param handler handler to receive the event
+     * @return this {@link PlanetRenderer} instance
+     */
     public PlanetRenderer onMouseIn(EventHandler<MouseEvent> handler) {
         model.addEventHandler(MouseEvent.MOUSE_ENTERED, handler);
         return this;
     }
 
+    /**
+     * Binds a handler to the onMouseOut event of the planet model
+     * @param handler handler to receive the event
+     * @return this {@link PlanetRenderer} instance
+     */
     public PlanetRenderer onMouseOut(EventHandler<MouseEvent> handler) {
         model.addEventHandler(MouseEvent.MOUSE_EXITED, handler);
         return this;
     }
 
+    /**
+     * @return the radius of the planet model
+     */
     public double getRadius() {
         return radius;
     }
 
+    /**
+     * @return the planet model
+     */
     public Node getModel() {
         return model;
     }
 
+    /**
+     * @return the planet that the renderer is drawing
+     */
     public Planet getPlanet() {
         return planet;
     }
+
+    /**
+     * Sets the rotation speed of the planet model
+     * @param speed rotation speed to set planet model to
+     */
     public void setRotationSpeed(double speed) {
         axisRotation.setRate(speed);
     }

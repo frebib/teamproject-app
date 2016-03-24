@@ -6,9 +6,15 @@ import java.util.Comparator;
 import java.util.function.Function;
 
 /**
+ * Provides comparators based on {@link Planet} heuristic values
  * @author Joseph Groocock
  */
 public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
+
+    /**
+     * Denotes a sort direction
+     * Either Ascending or Descending
+     */
     public enum Dir {
         ASCENDING(1),
         DESCENDING(-1);
@@ -48,21 +54,46 @@ public class PlanetSort<T extends Comparable<T>> implements Comparator<Planet> {
     public int compare(Planet p1, Planet p2) {
         return fn.apply(p1).compareTo(fn.apply(p2)) * dir.polarity;
     }
+
+    /**
+     * @return gets the direction of the sorter (Ascending or Descending)
+     */
     public String getDirection() {
         return dir.toString();
     }
+
+    /**
+     * @param dir direction to set
+     *
+     * @return a new {@link PlanetSort} with the same values or the same {@link PlanetSort}
+     */
     public PlanetSort<T> setDirection(Dir dir) {
         return (dir == this.dir) ? this : new PlanetSort<>(this.fn, this.description, dir);
     }
+
+    /**
+     * Sets the {@link PlanetSort} to Ascending
+     * @return a {@link PlanetSort} instance that sorts Ascending
+     */
     public PlanetSort<T> setAscending() {
         return new PlanetSort<>(this.fn, this.description, Dir.ASCENDING);
     }
+
+    /**
+     * Sets the {@link PlanetSort} to Descending
+     * @return a {@link PlanetSort} instance that sorts Descending
+     */
     public PlanetSort<T> setDescending() {
         return new PlanetSort<>(this.fn, this.description, Dir.DESCENDING);
     }
+
+    /**
+     * @return description of sorter
+     */
     public String getDescription() {
         return description;
     }
+
     @Override
     public String toString() {
         return description;
