@@ -5,7 +5,8 @@ import d2.teamproject.algorithm.search.datastructures.SearchStack;
 import java.util.function.BiFunction;
 
 /**
- * @param <E>
+ * Implements a {@link SearchStream} using Depth-First search
+ * @param <E> @inheritDoc
  *
  * @author Joseph Groocock
  */

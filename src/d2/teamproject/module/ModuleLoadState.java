@@ -1,6 +1,7 @@
 package d2.teamproject.module;
 
 /**
+ * Provides a callback for progress when loading modules
  * @author Joseph Groocock
  */
 @FunctionalInterface

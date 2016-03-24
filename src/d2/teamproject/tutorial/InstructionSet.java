@@ -7,12 +7,12 @@ import com.eclipsesource.json.JsonValue;
 import java.util.ArrayList;
 
 /**
+ * These are the get methods produced to allow us to get the the elements in the instruction set. It also allows us to check which element
+ * in the set we are on.
+ *
  * @author Parth Chandratreya
  * @author Gulraj Bariah
  * @author Luke Taher
- *
- * These are the get methods produced to allow us to get the the elements in the instruction set. It also allows us to check which element
- * in the set we are on.
  */
 public class InstructionSet {
     private ArrayList<Instruction> set;

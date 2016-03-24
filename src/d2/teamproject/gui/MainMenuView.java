@@ -23,6 +23,8 @@ import javafx.stage.Stage;
 import java.util.List;
 
 /**
+ * Shows a list of loaded modules by their banner image,
+ * title and description in a vertical list view
  * @author Parth Chandratreya
  * @author Joseph Groocock
  */
@@ -44,11 +46,15 @@ public class MainMenuView {
         menuPane.getChildren().add(menuVbox);
     }
 
+    /**
+     * @return gets the container scene displaying the menu
+     */
     public Scene getScene() {
         return menu;
     }
 
     /**
+     * Creates a button to load a module, with some nice effects
      * @param banner This is the location of the image used for the button
      * @param text   This is the text that will appear on hovering over the image
      * @return a fully set-up StackPane for use in the vertical box
@@ -91,6 +97,9 @@ public class MainMenuView {
         return sp;
     }
 
+    /**
+     * Sets the menu visible on the stage
+     */
     public void setVisible() {
         stage.setScene(menu);
     }

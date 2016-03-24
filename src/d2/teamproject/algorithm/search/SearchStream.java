@@ -7,11 +7,18 @@ import java.util.*;
 import java.util.function.BiFunction;
 
 /**
- * @param <E>
- *
+ * Provides a generic graph traversal algorithm,
+ * sans frontier set and cost & heuristic functions
+ * @param <E> type of node element
  * @author Joseph Groocock
  */
 public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>> {
+
+    /**
+     * Used to instantiate a given {@link SearchStream}
+     * via a standard reflection-free method call
+     * @param <E> type of node element
+     */
     public static class Searcher<E> {
         private BiFunction<Node<E>, Node<E>, SearchStream<E>> constructor;
         private Class clazz;
@@ -23,10 +30,19 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
             this.name = name;
         }
 
+        /**
+         * Instantiates the {@link SearchStream} with given nodes
+         * @param start node to start searching from
+         * @param goal node to find a path to
+         * @return a new {@link SearchStream} instance
+         */
         public SearchStream<E> get(Node<E> start, Node<E> goal) {
             return constructor.apply(start, goal);
         }
 
+        /**
+         * @return get the class of represented constructor
+         */
         public Class getClazz() {
             return clazz;
         }
@@ -60,10 +76,16 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
         this.allStates = new ArrayList<>();
     }
 
+    /**
+     * @return gets the start node
+     */
     public Node<E> getStart() {
         return start;
     }
 
+    /**
+     * @return gets the goal node
+     */
     public Node<E> getGoal() {
         return goal;
     }
@@ -173,14 +195,26 @@ public abstract class SearchStream<E> implements AlgoStream<SearchState<Node<E>>
         return allStates;
     }
 
+    /**
+     * @param node node to get cost value for
+     * @return gets the cost value for given node
+     */
     public double getCost(Node<E> node) {
         return (costMap.containsKey(node)) ? costMap.get(node) : 0;
     }
 
+    /**
+     * @param node node to get heuristic value for
+     * @return gets the heuristic value for given node
+     */
     public double getHeuristic(Node<E> node) {
         return (heuristicMap.containsKey(node)) ? heuristicMap.get(node) : 0;
     }
 
+    /**
+     * @param node node to get cost + heuristic value for
+     * @return gets the cost + heuristic value for given node
+     */
     public double getF(Node<E> node) {
         return getCost(node) + getHeuristic(node);
     }

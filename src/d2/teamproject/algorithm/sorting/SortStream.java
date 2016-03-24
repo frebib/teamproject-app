@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 /**
+ * Provides a base stream implementation to manage state I/O
  * @param <E> Type of data stored in the list
- *
  * @author Joseph Groocock
  */
 public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
@@ -82,6 +82,9 @@ public abstract class SortStream<E> implements AlgoStream<SortState<E>> {
         return null;
     }
 
+    /**
+     * @return gets the index of the currently active state
+     */
     public int getStateIndex() {
         return stateIndex;
     }

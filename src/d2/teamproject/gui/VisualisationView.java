@@ -12,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 /**
+ * A recommended GUI framework for use with external modules
  * @author Parth Chandratreya
  * @author Joseph Groocock
  */

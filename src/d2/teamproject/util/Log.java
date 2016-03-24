@@ -10,6 +10,11 @@ import java.util.Date;
 import java.util.logging.*;
 
 /**
+ * Provides an accessible frontend to the {@link Logger}
+ * Included are convenience methods that format objects into log entries
+ * Also handles {@link Thread} {@link Exception}s through a {@link java.lang.Thread.UncaughtExceptionHandler}
+ * Should be used as a singleton class
+ *
  * @author Joseph Groocock
  */
 public class Log implements Thread.UncaughtExceptionHandler {
@@ -27,6 +32,12 @@ public class Log implements Thread.UncaughtExceptionHandler {
                 "-'yyyy-MM-dd hh-mm-ss'.log'").format(new Date()));
     }
 
+    /**
+     * Specifies the file path to save the logs into
+     * Will overwrite existing file in the location if it exists
+     * @param path directory and file name to save log to
+     * @return this {@link Log} instance
+     */
     public Log setLogOutput(String path) {
         try {
             // Create the log directory if it doesn't exist
@@ -54,11 +65,20 @@ public class Log implements Thread.UncaughtExceptionHandler {
         return this;
     }
 
+    /**
+     * Logs program exit then terminates the running application
+     * @param exitcode code to exit with. Non-zero values indicate a non-clean exit
+     * @param exit closes the application if flag is set
+     */
     public void exit(int exitcode, boolean exit) {
         format(Level.INFO, "%s exiting with %d", name, exitcode);
         close();
         if (exit) System.exit(exitcode);
     }
+
+    /**
+     * Closes the logger instance
+     */
     public void close() {
         if (fh != null)
             fh.close();
@@ -91,6 +111,10 @@ public class Log implements Thread.UncaughtExceptionHandler {
     public void info(String msg, Object... args)   { format(Level.INFO, msg, args); }
     public void warning(String msg, Object... args){ format(Level.WARNING, msg, args); }
     public void severe(String msg, Object... args) { format(Level.SEVERE, msg, args); }
+    /**
+     * Logs a {@link Throwable} error with a stacktrace
+     * @param t
+     */
     public void exception(Throwable t) {
         StringWriter sw = new StringWriter();
         t.printStackTrace(new PrintWriter(sw));

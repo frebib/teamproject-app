@@ -17,6 +17,8 @@ import java.util.zip.ZipInputStream;
 import static d2.teamproject.PARTH.LOG;
 
 /**
+ * Loads .vism modules from file into {@link JsonController} instances
+ *
  * @author Joseph Groocock
  */
 public class ModuleLoader {
@@ -174,10 +176,17 @@ public class ModuleLoader {
         }
     }
 
+    /**
+     * @return gets the list of all currently loaded modules
+     */
     public List<BaseController> getLoadedModules() {
         return modules;
     }
 
+    /**
+     * Handles the callback event after all available modules have been loaded
+     * @param callback handler to receive the callback event
+     */
     public synchronized void onLoaded(Consumer<List<BaseController>> callback) {
         try {
             while (!isLoaded)
@@ -189,6 +198,9 @@ public class ModuleLoader {
         callback.accept(modules);
     }
 
+    /**
+     * Represents an {@link Exception} while loading a module
+     */
     public static class LoadException extends Exception {
         public LoadException(Throwable cause) {
             super(cause);

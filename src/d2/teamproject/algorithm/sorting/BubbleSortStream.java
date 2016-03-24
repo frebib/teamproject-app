@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Uses BubbleSort to generate a stream of {@link SortState}s
  * @author Otonye Bestman
  * @author Luke Taher
  */

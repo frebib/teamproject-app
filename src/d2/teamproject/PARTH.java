@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.util.logging.Level;
 
 /**
+ * PARTH is the main entrypoint of the application
+ * It loads all the modules via the {@link ModuleLoader}
+ * then initialises the {@link MainMenuView}
  * @author Joseph Groocock
  */
 public class PARTH extends Application {

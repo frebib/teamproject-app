@@ -1,6 +1,7 @@
 package d2.teamproject.tutorial;
 
 /**
+ * Represents a pair of objects, like a tuple
  * @author Luke Taher
  */
 public class Pair<K, V> {

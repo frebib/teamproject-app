@@ -7,11 +7,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * This allows us to be able to use the instruction set to display the information in the tutorial section of the application.
+ *
  * @author Parth Chandratreya
  * @author Gulraj Bariah
  * @author Luke Taher
- *
- * This allows us to be able to use the instruction set to display the information in the tutorial section of the application.
  */
 public class Tutorial extends InstructionSet {
 
@@ -27,10 +27,7 @@ public class Tutorial extends InstructionSet {
         initialise();
     }
 
-    /**
-     *
-     */
-    public void initialise() {
+    private void initialise() {
         while (hasNext()) {
             Instruction instruction = getNext();
             tutorialMap.put(instruction.getKey(), instruction);

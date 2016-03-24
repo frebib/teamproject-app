@@ -5,7 +5,8 @@ import d2.teamproject.algorithm.search.datastructures.SearchPriorityQueue;
 import java.util.function.BiFunction;
 
 /**
- * @param <E>
+ * Implements a {@link SearchStream} using Dijkstra's Algorithm
+ * @param <E> @inheritDoc
  *
  * @author Joseph Groocock
  */

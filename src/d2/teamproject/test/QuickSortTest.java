@@ -14,9 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * @author Joseph Groocock
+ */
 public class QuickSortTest {
     /**
-     * @author Otonye Bestman
+     * Ensures resulting list is sorted
      */
     @Test
     public void quickSortTest() {
@@ -24,10 +27,8 @@ public class QuickSortTest {
         List<Integer> shuffledList = new ArrayList<>(sortedList);
         Collections.shuffle(shuffledList);
 
-//        System.out.printf("Before: [%s]\n", listToString(shuffledList));
         QuickSortStream<Integer> sorter = new QuickSortStream<>(shuffledList, Integer::compare);
         sorter.initialise();
-//        System.out.printf("After:  [%s]\n", listToString(shuffledList));
         Assert.assertTrue(listEqual(sortedList, sorter.getSortedList()));
     }
 
@@ -54,6 +55,9 @@ public class QuickSortTest {
         Assert.assertTrue(noSameCompare);
     }
 
+    /**
+     * Ensures lists are what they claim to be between every state
+     */
     @Test
     public void listStateCorrectness() {
         List<Integer> shuffled = IntStream.range(0, 20).boxed().collect(Collectors.toList());

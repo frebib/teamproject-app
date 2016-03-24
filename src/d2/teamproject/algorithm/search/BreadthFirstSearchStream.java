@@ -5,6 +5,7 @@ import d2.teamproject.algorithm.search.datastructures.SearchQueue;
 import java.util.function.BiFunction;
 
 /**
+ * Implements a {@link SearchStream} using Breadth-First search
  * @param <E> @inheritDoc
  *
  * @author Joseph Groocock
