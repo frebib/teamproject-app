@@ -1,0 +1,328 @@
+{
+  "metadata": {
+    "aspectratio": 1.5363841,
+    "author": "This file was created by Gulraj Bariah and Asvini Patel"
+  },
+  "lines": [
+    {
+      "id": "bakerloo",
+      "name": "Bakerloo Line",
+      "colour": "#b35900"
+    },
+    {
+      "id": "central",
+      "name": "Central Line",
+      "colour": "#ff0000"
+    },
+    {
+      "id": "circle",
+      "name": "Circle Line",
+      "colour": "#ffd633"
+    },
+    {
+      "id": "district",
+      "name": "District Line",
+      "colour": "#29a329"
+    },
+    {
+      "id": "hammersmithCity",
+      "name": "Hammersmith & City Line",
+      "colour": "#ff99cc"
+    },
+    {
+      "id": "jubilee",
+      "name": "Jubilee Line",
+      "colour": "#a6a6a6"
+    },
+    {
+      "id": "metropolitan",
+      "name": "Metropolitan Line",
+      "colour": "#b82e8a"
+    },
+    {
+      "id": "northern",
+      "name": "Northern Line",
+      "colour": "#000000"
+    },
+    {
+      "id": "piccadilly",
+      "name": "Piccadilly",
+      "colour": "#002699"
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria Line",
+      "colour": "#33adff"
+    },
+    {
+      "id": "waterlooCity",
+      "name": "Waterloo & City Line",
+      "colour": "#00e6b8"
+    },
+    {
+      "id": "dlr",
+      "name": "Docklands Light Railway",
+      "inner": "#ffffff",
+      "colour": "#00b3b3"
+    },
+    {
+      "id": "overground",
+      "name": "Overground Line",
+      "inner": "#ffffff",
+      "colour": "#ff8000"
+    },
+    {
+      "id": "walk",
+      "name": "Walk",
+      "inner": "#ffffff",
+      "colour": "#000000"
+    }
+  ],
+  "stations": [
+    {
+      "id": "bondStreet",
+      "name": "Bond Street",
+      "xpos": 0.365,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "oxfordCircus",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "greenPark",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.365,
+              "ypos": 0.465
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charingCross",
+      "name": "Charing Cross",
+      "xpos": 0.475,
+      "ypos": 0.538,
+      "connected": [
+        {
+          "id": "leicesterSquare",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "coventGarden",
+      "name": "Covent Garden",
+      "xpos": 0.492,
+      "ypos": 0.450,
+      "connected": [
+        {
+          "id": "leicesterSquare",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "holborn",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "greenPark",
+      "name": "Green Park",
+      "xpos": 0.384,
+      "ypos": 0.490,
+      "connected": [
+        {
+          "id": "bondStreet",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "victoria",
+          "curves": [
+            {
+              "xpos": 0.384,
+              "ypos": 0.465
+            }
+          ]
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "hydeParkCorner",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.375,
+              "ypos": 0.490
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "holborn",
+      "name": "Holborn",
+      "xpos": 0.511,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "hydeParkCorner",
+      "name": "Hyde Park Corner",
+      "xpos": 0.365,
+      "ypos": 0.501,
+      "connected": [
+        {
+          "id": "greenPark",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "leicesterSquare",
+      "name": "Leicester Square",
+      "xpos": 0.475,
+      "ypos": 0.474,
+      "connected": [
+        {
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "charingCross",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "oxfordCircus",
+      "name": "Oxford Circus",
+      "xpos": 0.414,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "bondStreet",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.414,
+              "ypos": 0.450
+            }
+          ]
+        },
+        {
+          "id": "greenPark",
+          "lineId": "victoria",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "piccadillyCircus",
+      "name": "Piccadilly Circus",
+      "xpos": 0.444,
+      "ypos": 0.490,
+      "connected": [
+        {
+          "id": "greenPark",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.462,
+              "ypos": 0.490
+            }
+          ]
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "charingCross",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "tottenhamCourtRoad",
+      "name": "Tottenham Court Road",
+      "xpos": 0.475,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "oxfordCircus",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "holborn",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    }
+  ]
+}

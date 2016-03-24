@@ -1,0 +1,44 @@
+[
+  {
+    "index": -1,
+    "title": "This file was created by Gulraj Bariah",
+    "content": "",
+    "key": "author"
+  },
+  {
+    "index": 0,
+    "title": "Scan surrounding nodes",
+    "content": "From the starting node, we take all of the surrounding nodes. This is the first step in creating a tree from the graph. This first set of surrounding nodes is called the frontier",
+    "key": "scanSurroundingFirst"
+  },
+  {
+    "index": 1,
+    "title": "Check the first node",
+    "content": "Once we have scanned all of the nodes, we then check the first one to see if it's the final (goal) node",
+    "key": "checkSurrounding"
+  },
+  {
+    "index": 2,
+    "title": "Restart from last node",
+    "content": "From each of the frontier nodes we then scan the surround nodes. This creates another layer in this tree that we're creating",
+    "key": "iterate"
+  },
+  {
+    "index": 3,
+    "title": "Choose a starting station to start searching with Depth First Search",
+    "content": "To find a route, start by clicking a station to navigate from.\nAlternatively change any of the options at the top to vary the search type.",
+    "key": "choose-start"
+  },
+  {
+    "index": 4,
+    "title": "Choose a destination station",
+    "content": "Now pick a station to find a path to, starting from %s then click Next to begin",
+    "key": "choose-goal"
+  },
+  {
+    "index": 5,
+    "title": "Now start searching",
+    "content": "A route will now be found between %s and %s. Click next to start the search algorithm or change the search type, now is your last chance!",
+    "key": "search-start"
+  }
+]

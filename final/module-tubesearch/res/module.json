@@ -1,0 +1,51 @@
+{
+  "name": "London Underground",
+  "desc": "Search with the Tube",
+  "banner": "tube-new.png",
+  "load": {
+    "package": "d2.teamproject.module.tubesearch",
+    "main": "TubeSearchController"
+  },
+  "res": {
+    "stationinfo": {
+      "file": "station-info.json",
+      "type": "JsonObject"
+    },
+    "skybox": {
+      "file": "skybox.png",
+      "type": "Image"
+    },
+    "key": {
+      "file": "key.jpg",
+      "type": "Image"
+    },
+    "help": {
+      "file": "help.json",
+      "type": "JsonArray"
+    },
+    "bfsT": {
+      "file": "bfsTutorial.json",
+      "type": "JsonArray"
+    },
+    "dfsT": {
+      "file": "dfsTutorial.json",
+      "type": "JsonArray"
+    },
+    "aStarT": {
+      "file": "AstarTutorial.json",
+      "type": "JsonArray"
+    },
+    "dijkstraT": {
+      "file": "dijkstraTutorial.json",
+      "type": "JsonArray"
+    },
+    "stationinfobgn": {
+      "file": "bgns-station-info.json",
+      "type": "JsonObject"
+    },
+    "stationinfomed": {
+      "file": "med-station-info.json",
+      "type": "JsonObject"
+    }
+  }
+}

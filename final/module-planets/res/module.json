@@ -1,0 +1,31 @@
+{
+  "name": "Planets",
+  "desc": "Sort with planets",
+  "banner": "planets-new.png",
+  "load": {
+    "package": "d2.teamproject.module.planets",
+    "main": "PlanetController"
+  },
+  "res": {
+    "planetinfo": {
+      "file": "planet-info.json",
+      "type": "JsonObject"
+    },
+    "planettexture": {
+      "file": "planet-textures-hd.zip",
+      "type": "Zip"
+    },
+    "skybox": {
+      "file": "skybox.jpg",
+      "type": "Image"
+    },
+    "bubblesortT": {
+      "file": "bubblesortTutorial.json",
+      "type": "JsonArray"
+    },
+    "quicksortT": {
+      "file": "quicksortTutorial.json",
+      "type": "JsonArray"
+    }
+  }
+}

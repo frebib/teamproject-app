@@ -1,0 +1,111 @@
+<project basedir=".">
+
+    <property name="mainclass" value="d2.teamproject.PARTH"/>
+
+    <property name="src.dir" value="src"/>
+    <property name="res.dir" value="res"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="log.dir" value="log"/>
+    <property name="dist.dir" value="dist"/>
+
+    <property name="out.dir" value="out"/>
+    <property name="out.cls.dir" value="${out.dir}/production"/>
+    <property name="out.lib.dir" value="${out.dir}/lib"/>
+    <property name="out.mod.dir" value="${res.dir}/module"/>
+    <property name="out.deps.jar" value="${out.lib.dir}/alldeps.jar"/>
+
+    <!-- local libraries -->
+    <path id="lib-jars">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean-out">
+        <delete dir="${out.dir}"/>
+    </target>
+
+    <target name="clean-log">
+        <delete dir="${log.dir}"/>
+    </target>
+
+    <target name="clean-dist">
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean-all" depends="clean-out,clean-log,clean-dist"/>
+
+    <target name="compile">
+        <mkdir dir="${out.cls.dir}"/>
+        <javac destdir="${out.cls.dir}"
+               classpath="${lib.dir}"
+               source="1.8"
+               target="1.8">
+            <src path="${src.dir}"/>
+            <classpath refid="lib-jars"/>
+        </javac>
+        <copy todir="${out.cls.dir}">
+            <fileset dir="${res.dir}" excludes="module/**"/>
+        </copy>
+    </target>
+
+    <target name="copy-deps">
+        <mkdir dir="${out.lib.dir}"/>
+        <jar jarfile="${out.deps.jar}">
+            <zipgroupfileset dir="${lib.dir}">
+                <include name="**/*.jar"/>
+            </zipgroupfileset>
+        </jar>
+
+    </target>
+
+    <target name="mod-planets">
+        <antcall target="mod-build">
+            <param name="mod.name" value="planets"/>
+        </antcall>
+    </target>
+
+    <target name="mod-tubesearch">
+        <antcall target="mod-build">
+            <param name="mod.name" value="tubesearch"/>
+        </antcall>
+    </target>
+
+    <target name="mod-build" depends="compile">
+        <local name="mod.out.dir"/>
+        <local name="mod.cls.dir"/>
+        <property name="mod.out.dir" value="${out.dir}/mod-${mod.name}"/>
+        <property name="mod.cls.dir" value="${mod.out.dir}/${out.dir}"/>
+        <mkdir dir="${mod.out.dir}"/>
+        <mkdir dir="${mod.cls.dir}"/>
+
+        <javac destdir="${mod.cls.dir}" source="1.8" target="1.8" debug="on">
+            <src path="module-${mod.name}/src"/>
+            <classpath path="${out.cls.dir}"/>
+            <classpath refid="lib-jars"/>
+        </javac>
+        <zip destfile="${out.mod.dir}/${mod.name}.vism">
+            <zipfileset dir="${mod.cls.dir}"/>
+            <zipfileset dir="module-${mod.name}/res" prefix="res">
+                <exclude name="**/module.json"/>
+            </zipfileset>
+            <zipfileset file="module-${mod.name}/res/module.json"/>
+        </zip>
+    </target>
+
+    <target name="build-modules" depends="compile,mod-tubesearch,mod-planets"/>
+
+    <target name="build-all" depends="clean-all,compile,build-modules"/>
+
+    <!-- Build a "fat jar" with all dependencies inside :D -->
+    <target name="build-jar" depends="clean-all,build-all,copy-deps">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.dir}/PARTH.jar" basedir="${out.cls.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${mainclass}"/>
+            </manifest>
+            <zipfileset src="${out.deps.jar}" excludes="META-INF/*.SF"/>
+            <fileset dir="." includes="${res.dir}/**" />
+        </jar>
+    </target>
+</project>

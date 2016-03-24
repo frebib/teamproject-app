@@ -1,0 +1,105 @@
+package d2.teamproject.test;
+
+import d2.teamproject.algorithm.sorting.BubbleSortStream;
+import d2.teamproject.algorithm.sorting.CompareSortState;
+import d2.teamproject.algorithm.sorting.ListSortState;
+import d2.teamproject.algorithm.sorting.SortState;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * @author Joseph Groocock
+ * @author Otonye Bestman
+ */
+public class BubbleSortTest {
+
+    /**
+     * Ensures resulting list is sorted
+     */
+    @Test
+    public void BubbleSortTest() {
+        List<Integer> sortedList = IntStream.range(0, 20).boxed().collect(Collectors.toList());
+        List<Integer> shuffledList = new ArrayList<>(sortedList);
+        Collections.shuffle(shuffledList);
+
+        BubbleSortStream<Integer> sorter = new BubbleSortStream<>(shuffledList, Integer::compare);
+        sorter.initialise();
+        Assert.assertTrue(listEqual(sortedList, sorter.getSortedList()));
+    }
+
+    /**
+     * Ensures no comparisons are made on the same element
+     */
+    @Test
+    public void sameComparisonTest() {
+        List<Integer> shuffled = IntStream.range(0, 20).boxed().collect(Collectors.toList());
+        Collections.shuffle(shuffled);
+
+        BubbleSortStream<Integer> sorter = new BubbleSortStream<>(shuffled, Integer::compare);
+        sorter.initialise();
+
+        boolean noSameCompare = true;
+        SortState<Integer> state;
+        while ((state = sorter.getNext()) != null) {
+            if (state instanceof CompareSortState) {
+                Point compares = ((CompareSortState) state).getCompares();
+                noSameCompare &= compares.getX() != compares.getY();
+            }
+        }
+
+        Assert.assertTrue(noSameCompare);
+    }
+
+    /**
+     * Ensures lists are what they claim to be between every state
+     */
+    @Test
+    public void listStateCorrectness() {
+        List<Integer> shuffled = IntStream.range(0, 20).boxed().collect(Collectors.toList());
+        Collections.shuffle(shuffled);
+
+        BubbleSortStream<Integer> sorter = new BubbleSortStream<>(shuffled, Integer::compare);
+        sorter.initialise();
+
+        while (sorter.hasNext()) {
+            SortState<Integer> state = sorter.getNext();
+            if (state instanceof CompareSortState) {
+                CompareSortState<Integer> csstate = (CompareSortState<Integer>) state;
+                if (!csstate.isSwap()) continue;
+
+                SortState<Integer> newState = sorter.getNext();
+                Assert.assertTrue(newState instanceof ListSortState);
+
+                List<Integer> newList = newState.getList();
+                List<Integer> oldList = state.getList();
+
+                // Swap elements in old list- they should then be equal
+                Point p = csstate.getCompares();
+                int temp = oldList.get(p.x);
+                oldList.set(p.x, oldList.get(p.y));
+                oldList.set(p.y, temp);
+
+//                System.out.println("Old: " + listToString(oldList));
+//                System.out.println("New: " + listToString(newList));
+
+                Assert.assertTrue(listEqual(oldList, newList));
+            }
+        }
+    }
+
+    private <E extends Comparable<E>> boolean listEqual(List<E> a, List<E> b) {
+        if (a.size() != b.size())
+            return false;
+        for (int i = 0; i < a.size(); i++)
+            if (!a.get(i).equals(b.get(i)))
+                return false;
+        return true;
+    }
+}

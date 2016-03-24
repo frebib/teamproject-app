@@ -1,0 +1,2483 @@
+{
+  "metadata": {
+    "aspectratio": 1.5363841,
+    "author": "This file was created by Gulraj Bariah and Asvini Patel"
+  },
+  "lines": [
+    {
+      "id": "bakerloo",
+      "name": "Bakerloo Line",
+      "colour": "#b35900"
+    },
+    {
+      "id": "central",
+      "name": "Central Line",
+      "colour": "#ff0000"
+    },
+    {
+      "id": "circle",
+      "name": "Circle Line",
+      "colour": "#ffd633"
+    },
+    {
+      "id": "district",
+      "name": "District Line",
+      "colour": "#29a329"
+    },
+    {
+      "id": "hammersmithCity",
+      "name": "Hammersmith & City Line",
+      "colour": "#ff99cc"
+    },
+    {
+      "id": "jubilee",
+      "name": "Jubilee Line",
+      "colour": "#a6a6a6"
+    },
+    {
+      "id": "metropolitan",
+      "name": "Metropolitan Line",
+      "colour": "#b82e8a"
+    },
+    {
+      "id": "northern",
+      "name": "Northern Line",
+      "colour": "#000000"
+    },
+    {
+      "id": "piccadilly",
+      "name": "Piccadilly",
+      "colour": "#002699"
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria Line",
+      "colour": "#33adff"
+    },
+    {
+      "id": "waterlooCity",
+      "name": "Waterloo & City Line",
+      "colour": "#00e6b8"
+    },
+    {
+      "id": "dlr",
+      "name": "Docklands Light Railway",
+      "inner": "#ffffff",
+      "colour": "#00b3b3"
+    },
+    {
+      "id": "overground",
+      "name": "Overground Line",
+      "inner": "#ffffff",
+      "colour": "#ff8000"
+    },
+    {
+      "id": "walk",
+      "name": "Walk",
+      "inner": "#ffffff",
+      "colour": "#000000"
+    }
+  ],
+  "stations": [
+    {
+      "id": "aldgate",
+      "name": "Aldgate",
+      "xpos": 0.707,
+      "ypos": 0.442,
+      "connected": [
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "towerHill",
+          "lineId": "circle",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "aldgateEast",
+      "name": "Aldgate East",
+      "xpos": 0.739,
+      "ypos": 0.411,
+      "connected": [
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "towerHill",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "angel",
+      "name": "Angel",
+      "xpos": 0.586,
+      "ypos": 0.287,
+      "connected": [
+        {
+          "id": "oldStreet",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossNorthern",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bakerStreetJB",
+      "name": "Baker Street",
+      "xpos": 0.365,
+      "ypos": 0.319,
+      "connected": [
+        {
+          "id": "bondStreet",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "marylebone",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "regentsPark",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bakerStreetHCM",
+      "name": "Baker Street",
+      "xpos": 0.377,
+      "ypos": 0.301,
+      "connected": [
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetJB",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bankCentralWaterloo",
+      "name": "Bank",
+      "xpos": 0.61,
+      "ypos": 0.462,
+      "connected": [
+        {
+          "id": "stPauls",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "central",
+          "curves": [
+            {
+              "xpos": 0.62,
+              "ypos": 0.462
+            }
+          ]
+        },
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "waterlooCity",
+          "curves": [
+            {
+              "xpos": 0.61,
+              "ypos": 0.580
+            }
+          ]
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bankNorthern",
+      "name": "Bank",
+      "xpos": 0.625,
+      "ypos": 0.483,
+      "connected": [
+        {
+          "id": "moorgate",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "londonBridge",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "bankCentralWaterloo",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "bankDlr",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "monument",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bankDlr",
+      "name": "Bank",
+      "xpos": 0.633,
+      "ypos": 0.471,
+      "connected": [
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "barbican",
+      "name": "Barbican",
+      "xpos": 0.593,
+      "ypos": 0.365,
+      "connected": [
+        {
+          "id": "farringdon",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "farringdon",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "farringdon",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "hammersmithCity",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bayswater",
+      "name": "Bayswater",
+      "xpos": 0.255,
+      "ypos": 0.386,
+      "connected": [
+        {
+          "id": "paddingtonDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "blackfriars",
+      "name": "Blackfriars",
+      "xpos": 0.563,
+      "ypos": 0.567,
+      "connected": [
+        {
+          "id": "temple",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "temple",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "bondStreet",
+      "name": "Bond Street",
+      "xpos": 0.365,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "marbleArch",
+          "lineId": "central",
+          "curves": [
+            {
+              "xpos": 0.348,
+              "ypos": 0.418
+            }
+          ]
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetJB",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "greenPark",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.365,
+              "ypos": 0.465
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "borough",
+      "name": "Borough",
+      "xpos": 0.566,
+      "ypos": 0.710,
+      "connected": [
+        {
+          "id": "londonBridge",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "elephantAndCastle",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "cannonStreet",
+      "name": "Cannon Street",
+      "xpos": 0.594,
+      "ypos": 0.520,
+      "connected": [
+        {
+          "id": "mansionHouse",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "mansionHouse",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "monument",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "monument",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "chanceryLane",
+      "name": "Chancery Lane",
+      "xpos": 0.552,
+      "ypos": 0.435,
+      "connected": [
+        {
+          "id": "holborn",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "stPauls",
+          "lineId": "central",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "charingCross",
+      "name": "Charing Cross",
+      "xpos": 0.475,
+      "ypos": 0.538,
+      "connected": [
+        {
+          "id": "leicesterSquare",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "embankmentNorthern",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "coventGarden",
+      "name": "Covent Garden",
+      "xpos": 0.492,
+      "ypos": 0.450,
+      "connected": [
+        {
+          "id": "leicesterSquare",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "holborn",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "earlsCourtDistrict",
+      "name": "Earl's Court",
+      "xpos": 0.244,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "highStreetKensington",
+          "lineId": "district",
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.591
+            }
+          ]
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "earlsCourtPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "earlsCourtPiccadilly",
+      "name": "Earl's Court",
+      "xpos": 0.244,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "gloucesterRoadPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "earlsCourtDistrict",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "edgwareRoadBakerloo",
+      "name": "Edgware Road - Bakerloo",
+      "xpos": 0.274,
+      "ypos": 0.286,
+      "connected": [
+        {
+          "id": "paddingtonBakerloo",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "marylebone",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "edgwareRoadCH",
+      "name": "Edgware Road - Circle & Hammersmith",
+      "xpos": 0.296,
+      "ypos": 0.299,
+      "connected": [
+        {
+          "id": "paddingtonHC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonHC",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "edgwareRoadDC",
+      "name": "Edgware Road - Circle & District",
+      "xpos": 0.296,
+      "ypos": 0.319,
+      "connected": [
+        {
+          "id": "paddingtonDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "elephantAndCastle",
+      "name": "Elephant & Castle",
+      "xpos": 0.493,
+      "ypos": 0.818,
+      "connected": [
+        {
+          "id": "lambethNorth",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "borough",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "embankmentNorthern",
+      "name": "Embankment",
+      "xpos": 0.475,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "charingCross",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "waterlooNorthern",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "embankmentDCB",
+      "name": "Embankment",
+      "xpos": 0.485,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "charingCross",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.485,
+              "ypos": 0.553
+            }
+          ]
+        },
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "temple",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.475,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.528,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "temple",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "embankmentNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonOverground",
+      "name": "Euston",
+      "xpos": 0.479,
+      "ypos": 0.275,
+      "connected": [
+        {
+          "id": "eustonNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eustonVictoria",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonNorthern",
+      "name": "Euston",
+      "xpos": 0.493,
+      "ypos": 0.275,
+      "connected": [
+        {
+          "id": "warrenStreet",
+          "lineId": "northern",
+          "curves": [
+            {
+              "xpos": 0.493,
+              "ypos": 0.284
+            }
+          ]
+        },
+        {
+          "id": "eustonOverground",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eustonVictoria",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonVictoria",
+      "name": "Euston",
+      "xpos": 0.507,
+      "ypos": 0.275,
+      "connected": [
+        {
+          "id": "kingsCrossVictoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossNorthern",
+          "lineId": "northern",
+          "curves": [
+            {
+              "xpos": 0.507,
+              "ypos": 0.287
+            }
+          ]
+        },
+        {
+          "id": "eustonOverground",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "eustonNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "eustonSquare",
+      "name": "Euston Square",
+      "xpos": 0.507,
+      "ypos": 0.301,
+      "connected": [
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "greatPortlandStreet",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "metropolitan",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "farringdon",
+      "name": "Farringdon",
+      "xpos": 0.573,
+      "ypos": 0.334,
+      "connected": [
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "metropolitan",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "gloucesterRoadDC",
+      "name": "Gloucester Road",
+      "xpos": 0.281,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "earlsCourtDistrict",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonDC",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.280,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.304,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.282,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "gloucesterRoadPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "gloucesterRoadPiccadilly",
+      "name": "Gloucester Road",
+      "xpos": 0.281,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "earlsCourtPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "goodgeStreet",
+      "name": "Goodge Street",
+      "xpos": 0.475,
+      "ypos": 0.386,
+      "connected": [
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "greatPortlandStreet",
+      "name": "Great Portland Street",
+      "xpos": 0.42,
+      "ypos": 0.301,
+      "connected": [
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetHCM",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "metropolitan",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "greenPark",
+      "name": "Green Park",
+      "xpos": 0.384,
+      "ypos": 0.490,
+      "connected": [
+        {
+          "id": "bondStreet",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "westminsterJubilee",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "victoria",
+          "curves": [
+            {
+              "xpos": 0.384,
+              "ypos": 0.465
+            }
+          ]
+        },
+        {
+          "id": "victoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "hydeParkCorner",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.375,
+              "ypos": 0.490
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "highStreetKensington",
+      "name": "High Street Kensington",
+      "xpos": 0.255,
+      "ypos": 0.516,
+      "connected": [
+        {
+          "id": "nottingHillGate",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "nottingHillGate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.590
+            }
+
+          ]
+        },
+        {
+          "id": "earlsCourtDistrict",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "holborn",
+      "name": "Holborn",
+      "xpos": 0.511,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "chanceryLane",
+          "lineId": "central",
+          "curves": [
+            {
+              "xpos": 0.536,
+              "ypos": 0.418
+            }
+          ]
+        },
+        {
+          "id": "russellSquare",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "hydeParkCorner",
+      "name": "Hyde Park Corner",
+      "xpos": 0.365,
+      "ypos": 0.501,
+      "connected": [
+        {
+          "id": "knightsbridge",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "greenPark",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "kingsCrossVictoria",
+      "name": "King's Cross St Pancras",
+      "xpos": 0.536,
+      "ypos": 0.269,
+      "connected": [
+        {
+          "id": "eustonVictoria",
+          "lineId": "victoria",
+          "curves": [
+            {
+              "xpos": 0.519,
+              "ypos": 0.268
+            }
+          ]
+        },
+        {
+          "id": "kingsCrossNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "kingsCrossNorthern",
+      "name": "King's Cross St Pancras",
+      "xpos": 0.536,
+      "ypos": 0.287,
+      "connected": [
+        {
+          "id": "eustonVictoria",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "angel",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossVictoria",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "kingsCrossHCMP",
+      "name": "King's Cross St Pancras",
+      "xpos": 0.536,
+      "ypos": 0.301,
+      "connected": [
+        {
+          "id": "russellSquare",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "eustonSquare",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "farringdon",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "farringdon",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "farringdon",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "kingsCrossVictoria",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "knightsbridge",
+      "name": "Knightsbridge",
+      "xpos": 0.335,
+      "ypos": 0.547,
+      "connected": [
+        {
+          "id": "southKensingtonPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "hydeParkCorner",
+          "lineId": "piccadilly",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "lambethNorth",
+      "name": "Lambeth North",
+      "xpos": 0.485,
+      "ypos": 0.729,
+      "connected": [
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "elephantAndCastle",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.485,
+              "ypos": 0.803
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lancasterGate",
+      "name": "Lancaster Gate",
+      "xpos": 0.325,
+      "ypos": 0.454,
+      "connected": [
+        {
+          "id": "queensway",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "marbleArch",
+          "lineId": "central",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "leicesterSquare",
+      "name": "Leicester Square",
+      "xpos": 0.475,
+      "ypos": 0.474,
+      "connected": [
+        {
+          "id": "piccadillyCircus",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "coventGarden",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "charingCross",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "liverpoolStreetHCM",
+      "name": "Liverpool Street",
+      "xpos": 0.661,
+      "ypos": 0.397,
+      "connected": [
+        {
+          "id": "bankCentralWaterloo",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "aldgate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "aldgateEast",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "moorgate",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "aldgate",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetOverground",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "liverpoolStreetOverground",
+      "name": "Liverpool Street",
+      "xpos": 0.661,
+      "ypos": 0.367,
+      "connected": [
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "londonBridge",
+      "name": "London Bridge",
+      "xpos": 0.625,
+      "ypos": 0.6,
+      "connected": [
+        {
+          "id": "southwark",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.61,
+              "ypos": 0.6
+            }
+          ]
+        },
+        {
+          "id": "borough",
+          "lineId": "northern",
+          "curves": [
+            {
+              "xpos": 0.625,
+              "ypos": 0.621
+            }
+          ]
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "mansionHouse",
+      "name": "Mansion House",
+      "xpos": 0.578,
+      "ypos": 0.543,
+      "connected": [
+        {
+          "id": "blackfriars",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "marbleArch",
+      "name": "Marble Arch",
+      "xpos": 0.338,
+      "ypos": 0.433,
+      "connected": [
+        {
+          "id": "lancasterGate",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "bondStreet",
+          "lineId": "central",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "marylebone",
+      "name": "Marylebone",
+      "xpos": 0.321,
+      "ypos": 0.286,
+      "connected": [
+        {
+          "id": "edgwareRoadBakerloo",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "bakerStreetJB",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.342,
+              "ypos": 0.286
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monument",
+      "name": "Monument",
+      "xpos": 0.636,
+      "ypos": 0.501,
+      "connected": [
+        {
+          "id": "cannonStreet",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "cannonStreet",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "towerHill",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "towerHill",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "moorgate",
+      "name": "Moorgate",
+      "xpos": 0.625,
+      "ypos": 0.397,
+      "connected": [
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "liverpoolStreetHCM",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "barbican",
+          "lineId": "metropolitan",
+          "curves": []
+        },
+        {
+          "id": "oldStreet",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "bankNorthern",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "nottingHillGate",
+      "name": "Notting Hill Gate",
+      "xpos": 0.255,
+      "ypos": 0.462,
+      "connected": [
+        {
+          "id": "bayswater",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "bayswater",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "highStreetKensington",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "queensway",
+          "lineId": "central",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "oldStreet",
+      "name": "Old Street",
+      "xpos": 0.625,
+      "ypos": 0.314,
+      "connected": [
+        {
+          "id": "angel",
+          "lineId": "northern",
+          "curves": [
+            {
+              "xpos": 0.625,
+              "ypos": 0.287
+            }
+          ]
+        },
+        {
+          "id": "moorgate",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "oxfordCircus",
+      "name": "Oxford Circus",
+      "xpos": 0.414,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "bondStreet",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "tottenhamCourtRoad",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "regentsPark",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.414,
+              "ypos": 0.394
+            }
+          ]
+        },
+        {
+          "id": "piccadillyCircus",
+          "lineId": "bakerloo",
+          "curves": [
+            {
+              "xpos": 0.414,
+              "ypos": 0.450
+            }
+          ]
+        },
+        {
+          "id": "warrenStreet",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "greenPark",
+          "lineId": "victoria",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "paddingtonBakerloo",
+      "name": "Paddington",
+      "xpos": 0.237,
+      "ypos": 0.286,
+      "connected": [
+        {
+          "id": "edgwareRoadBakerloo",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "paddingtonHC",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "paddingtonHC",
+      "name": "Paddington",
+      "xpos": 0.246,
+      "ypos": 0.299,
+      "connected": [
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "hammersmithCity",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadCH",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonBakerloo",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "paddingtonDC",
+      "name": "Paddington",
+      "xpos": 0.259,
+      "ypos": 0.320,
+      "connected": [
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "district",
+          "curves": [
+            {
+              "xpos": 0.255,
+              "ypos": 0.319
+            }
+          ]
+        },
+        {
+          "id": "bayswater",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "edgwareRoadDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "bayswater",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "paddingtonBakerloo",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "paddingtonHC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "piccadillyCircus",
+      "name": "Piccadilly Circus",
+      "xpos": 0.444,
+      "ypos": 0.490,
+      "connected": [
+        {
+          "id": "greenPark",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.462,
+              "ypos": 0.490
+            }
+          ]
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "charingCross",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "pimlico",
+      "name": "Pimlico",
+      "xpos": 0.384,
+      "ypos": 0.717,
+      "connected": [
+        {
+          "id": "victoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "vauxhall",
+          "lineId": "victoria",
+          "curves": [
+            {
+              "xpos": 0.384,
+              "ypos": 0.806
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queensway",
+      "name": "Queensway",
+      "xpos": 0.295,
+      "ypos": 0.463,
+      "connected": [
+        {
+          "id": "nottingHillGate",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "lancasterGate",
+          "lineId": "central",
+          "curves": [
+            {
+              "xpos": 0.317,
+              "ypos": 0.463
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regentsPark",
+      "name": "Regent's Park",
+      "xpos": 0.394,
+      "ypos": 0.359,
+      "connected": [
+        {
+          "id": "bakerStreetJB",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "bakerloo",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "russellSquare",
+      "name": "Russell Square",
+      "xpos": 0.526,
+      "ypos": 0.361,
+      "connected": [
+        {
+          "id": "holborn",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.526,
+              "ypos": 0.392
+            }
+          ]
+        },
+        {
+          "id": "kingsCrossHCMP",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.526,
+              "ypos": 0.317
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sloaneSquare",
+      "name": "Sloane Square",
+      "xpos": 0.344,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "southKensingtonDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "victoria",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.338,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.388,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "victoria",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "southKensingtonDC",
+      "name": "South Kensington",
+      "xpos": 0.303,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "sloaneSquare",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.296,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.351,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "gloucesterRoadDC",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "southKensingtonPiccadilly",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "southKensingtonPiccadilly",
+      "name": "South Kensington",
+      "xpos": 0.303,
+      "ypos": 0.582,
+      "connected": [
+        {
+          "id": "gloucesterRoadPiccadilly",
+          "lineId": "piccadilly",
+          "curves": []
+        },
+        {
+          "id": "knightsbridge",
+          "lineId": "piccadilly",
+          "curves": [
+            {
+              "xpos": 0.312,
+              "ypos": 0.582
+            }
+          ]
+        },
+        {
+          "id": "southKensingtonDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "southwark",
+      "name": "Southwark",
+      "xpos": 0.518,
+      "ypos": 0.678,
+      "connected": [
+        {
+          "id": "londonBridge",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.561,
+              "ypos": 0.678
+            }
+          ]
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "jubilee",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "stJamesPark",
+      "name": "St James's Park",
+      "xpos": 0.406,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "victoria",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "victoria",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.400,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.450,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "stPauls",
+      "name": "St Paul's",
+      "xpos": 0.583,
+      "ypos": 0.462,
+      "connected": [
+        {
+          "id": "chanceryLane",
+          "lineId": "central",
+          "curves": [
+            {
+              "xpos": 0.567,
+              "ypos": 0.462
+            }
+          ]
+        },
+        {
+          "id": "bankCentralWaterloo",
+          "lineId": "central",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "temple",
+      "name": "Temple",
+      "xpos": 0.528,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "embankmentDCB",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "blackfriars",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "tottenhamCourtRoad",
+      "name": "Tottenham Court Road",
+      "xpos": 0.475,
+      "ypos": 0.418,
+      "connected": [
+        {
+          "id": "oxfordCircus",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "holborn",
+          "lineId": "central",
+          "curves": []
+        },
+        {
+          "id": "goodgeStreet",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "leicesterSquare",
+          "lineId": "northern",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "towerGateway",
+      "name": "Tower Gateway",
+      "xpos": 0.707,
+      "ypos": 0.520,
+      "connected": [
+        {
+          "id": "towerHill",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "towerHill",
+      "name": "Tower Hill",
+      "xpos": 0.693,
+      "ypos": 0.499,
+      "connected": [
+        {
+          "id": "monument",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "aldgate",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "monument",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "aldgateEast",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "towerGateway",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "vauxhall",
+      "name": "Vauxhall",
+      "xpos": 0.392,
+      "ypos": 0.820,
+      "connected": [
+        {
+          "id": "pimlico",
+          "lineId": "victoria",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria",
+      "xpos": 0.384,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "pimlico",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "greenPark",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.376,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.415,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "sloaneSquare",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "district",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "warrenStreet",
+      "name": "Warren Street",
+      "xpos": 0.475,
+      "ypos": 0.326,
+      "connected": [
+        {
+          "id": "eustonNorthern",
+          "lineId": "northern",
+          "curves": [
+            {
+              "xpos": 0.475,
+              "ypos": 0.305
+            }
+          ]
+        },
+        {
+          "id": "eustonVictoria",
+          "lineId": "victoria",
+          "curves": []
+        },
+        {
+          "id": "goodgeStreet",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "oxfordCircus",
+          "lineId": "victoria",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "waterlooJubilee",
+      "name": "Waterloo",
+      "xpos": 0.465,
+      "ypos": 0.650,
+      "connected": [
+        {
+          "id": "westminsterJubilee",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.465,
+              "ypos": 0.614
+            }
+          ]
+        },
+        {
+          "id": "southwark",
+          "lineId": "jubilee",
+          "curves": [
+            {
+              "xpos": 0.465,
+              "ypos": 0.678
+            }
+          ]
+        },
+        {
+          "id": "waterlooNorthern",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "waterlooNorthern",
+      "name": "Waterloo",
+      "xpos": 0.475,
+      "ypos": 0.650,
+      "connected": [
+        {
+          "id": "embankmentNorthern",
+          "lineId": "northern",
+          "curves": []
+        },
+        {
+          "id": "waterlooBakerlooWC",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "waterlooBakerlooWC",
+      "name": "Waterloo",
+      "xpos": 0.485,
+      "ypos": 0.650,
+      "connected": [
+        {
+          "id": "embankmentDCB",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "lambethNorth",
+          "lineId": "bakerloo",
+          "curves": []
+        },
+        {
+          "id": "bankCentralWaterloo",
+          "lineId": "waterlooCity",
+          "curves": [
+            {
+              "xpos": 0.565,
+              "ypos": 0.650
+            }
+          ]
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "walk",
+          "curves": []
+        },
+        {
+          "id": "waterlooNorthern",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "westminsterDC",
+      "name": "Westminster",
+      "xpos": 0.444,
+      "ypos": 0.597,
+      "connected": [
+        {
+          "id": "stJamesPark",
+          "lineId": "circle",
+          "curves": []
+        },
+        {
+          "id": "stJamesPark",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "circle",
+          "curves": [
+            {
+              "xpos": 0.445,
+              "ypos": 0.589
+            },
+            {
+              "xpos": 0.485,
+              "ypos": 0.589
+            }
+          ]
+        },
+        {
+          "id": "embankmentDCB",
+          "lineId": "district",
+          "curves": []
+        },
+        {
+          "id": "westminsterJubilee",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    },
+    {
+      "id": "westminsterJubilee",
+      "name": "Westminster",
+      "xpos": 0.444,
+      "ypos": 0.580,
+      "connected": [
+        {
+          "id": "greenPark",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "waterlooJubilee",
+          "lineId": "jubilee",
+          "curves": []
+        },
+        {
+          "id": "westminsterDC",
+          "lineId": "walk",
+          "curves": []
+        }
+      ]
+    }
+  ]
+}

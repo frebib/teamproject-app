@@ -1,0 +1,68 @@
+[
+  {
+    "index": -1,
+    "title": "This file was created by Gulraj Bariah",
+    "content": "",
+    "key": "author"
+  },
+  {
+    "index": 0,
+    "title": "Comparing %s and %s - Swap",
+    "content": "The compared element is larger than the pivot, so we swap the place of these items",
+    "key": "check"
+  },
+  {
+    "index": 1,
+    "title": "Comparing %s and %s - Don't swap",
+    "content": "The compared element is smaller than the pivot, the items remain in their place",
+    "key": "compare"
+  },
+  {
+    "index": 2,
+    "title": "Comparing %s and %s - Swap",
+    "content": "The compared element is smaller than the pivot, so we swap the place of these items",
+    "key": "swap"
+  },
+  {
+    "index": 3,
+    "title": "Comparing %s and %s - Don't swap",
+    "content": "The compared element is larger than the pivot, the items remain in their place",
+    "key": "notSwap"
+  },
+  {
+    "index": 4,
+    "title": "Choosing %s as the pivot",
+    "content": "We select a pivot. This is an element that we will use to make future comparisons",
+    "key": "pickPivot"
+  },
+  {
+    "index": 5,
+    "title": "Compare against first element",
+    "content": "Now that we have the comparison item, we then compare this item to see if the first element is larger or smaller than the item",
+    "key": "compareFirst"
+  },
+  {
+    "index": 6,
+    "title": "Compare larger elements",
+    "content": "We then compare the pivot with the right most, non-checked element to see if it's bigger or not. We recursively do this until all elements are checked",
+    "key": "compareRightMost"
+  },
+  {
+    "index": 7,
+    "title": "First run done",
+    "content": "We've now made effectively three 'sub' lists. All the elements left of the pivot (the smaller elements), the pivot (a single element that is actually in the correct place in the list) and all the elements right of thhe pivot (the larger items). We then start again with step 1 with the smaller list",
+    "key": "explainList"
+  },
+  {
+    "index": 8,
+    "title": "Currently using Quick Sort",
+    "content": "This is a sort that partitions an list into two parts (based on a pivot), then sorts the parts independently.",
+    "key": "information"
+  },
+  {
+    "index": 9,
+    "title": "All the planets have been sorted using Quick Sort",
+    "content": "Hope this explanation helped!",
+    "key": "done"
+  }
+]
