@@ -129,7 +129,24 @@
         {
           "id": "liverpoolStreetHCM",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.735,
+              "ypos": 0.406
+            },
+            {
+              "xpos": 0.725,
+              "ypos": 0.423
+            },
+            {
+              "xpos": 0.704,
+              "ypos": 0.390
+            },
+            {
+              "xpos": 0.655,
+              "ypos": 0.390
+            }
+          ]
         },
         {
           "id": "whitechapel",
@@ -233,7 +250,16 @@
         {
           "id": "edgwareRoadCH",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.383,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.290,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "greatPortlandStreet",
@@ -374,7 +400,16 @@
         {
           "id": "farringdon",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.6,
+              "ypos": 0.365
+            },
+            {
+              "xpos": 0.575,
+              "ypos": 0.328
+            }
+          ]
         },
         {
           "id": "moorgate",
@@ -704,7 +739,7 @@
       "id": "edgwareRoadBakerloo",
       "name": "Edgware Road - Bakerloo",
       "xpos": 0.274,
-      "ypos": 0.286,
+      "ypos": 0.278,
       "connected": [
         {
           "id": "paddingtonBakerloo",
@@ -732,7 +767,16 @@
         {
           "id": "paddingtonHC",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.302,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.240,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "bakerStreetHCM",
@@ -1000,7 +1044,16 @@
         {
           "id": "greatPortlandStreet",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.513,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.414,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "greatPortlandStreet",
@@ -1047,7 +1100,20 @@
         {
           "id": "kingsCrossHCMP",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.580,
+              "ypos": 0.334
+            },
+            {
+              "xpos": 0.55,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.528,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "kingsCrossHCMP",
@@ -1181,7 +1247,16 @@
         {
           "id": "bakerStreetHCM",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.426,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.376,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "bakerStreetHCM",
@@ -1468,7 +1543,16 @@
         {
           "id": "eustonSquare",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.542,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.5,
+              "ypos": 0.294
+            }
+          ]
         },
         {
           "id": "eustonSquare",
@@ -1637,7 +1721,16 @@
         {
           "id": "moorgate",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.667,
+              "ypos": 0.390
+            },
+            {
+              "xpos": 0.619,
+              "ypos": 0.390
+            }
+          ]
         },
         {
           "id": "aldgateEast",
@@ -1785,7 +1878,7 @@
       "id": "marylebone",
       "name": "Marylebone",
       "xpos": 0.321,
-      "ypos": 0.286,
+      "ypos": 0.278,
       "connected": [
         {
           "id": "edgwareRoadBakerloo",
@@ -1798,7 +1891,7 @@
           "curves": [
             {
               "xpos": 0.342,
-              "ypos": 0.286
+              "ypos": 0.278
             }
           ]
         }
@@ -1880,7 +1973,20 @@
         {
           "id": "barbican",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.631,
+              "ypos": 0.390
+            },
+            {
+              "xpos": 0.613,
+              "ypos": 0.390
+            },
+            {
+              "xpos": 0.6,
+              "ypos": 0.363
+            }
+          ]
         },
         {
           "id": "barbican",
@@ -2034,7 +2140,7 @@
       "id": "paddingtonBakerloo",
       "name": "Paddington",
       "xpos": 0.237,
-      "ypos": 0.286,
+      "ypos": 0.278,
       "connected": [
         {
           "id": "warwickAvenue",
@@ -4886,7 +4992,7 @@
       "id": "maidaVale",
       "name": "Maida Vale",
       "xpos": 0.165,
-      "ypos": 0.278,
+      "ypos": 0.276,
       "connected": [
         {
           "id": "kilburnPark",
@@ -5608,7 +5714,16 @@
         {
           "id": "whitechapel",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.779,
+              "ypos": 0.342
+            },
+            {
+              "xpos": 0.750,
+              "ypos": 0.385
+            }
+          ]
         }
       ]
     },
@@ -5928,7 +6043,7 @@
       "id": "warwickAvenue",
       "name": "Warwick Avenue",
       "xpos": 0.183,
-      "ypos": 0.286,
+      "ypos": 0.278,
       "connected": [
         {
           "id": "maidaVale",
@@ -5936,7 +6051,7 @@
           "curves": [
             {
               "xpos": 0.174,
-              "ypos": 0.286
+              "ypos": 0.278
             }
           ]
         },
@@ -6245,7 +6360,16 @@
         {
           "id": "aldgateEast",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.753,
+              "ypos": 0.380
+            },
+            {
+              "xpos": 0.732,
+              "ypos": 0.411
+            }
+          ]
         },
         {
           "id": "stepneyGreen",
