@@ -2173,7 +2173,20 @@
         {
           "id": "royalOak",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.252,
+              "ypos": 0.294
+            },
+            {
+              "xpos": 0.213,
+              "ypos": 0.293
+            },
+            {
+              "xpos": 0.181,
+              "ypos": 0.335
+            }
+          ]
         },
         {
           "id": "edgwareRoadCH",
@@ -4163,7 +4176,16 @@
         {
           "id": "hammersmithCH",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.166,
+              "ypos": 0.538
+            },
+            {
+              "xpos": 0.166,
+              "ypos": 0.571
+            }
+          ]
         },
         {
           "id": "shepherdsBushMarket",
@@ -4884,7 +4906,16 @@
         {
           "id": "latimerRoad",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.166,
+              "ypos": 0.380
+            },
+            {
+              "xpos": 0.166,
+              "ypos": 0.420
+            }
+          ]
         },
         {
           "id": "latimerRoad",
@@ -4935,7 +4966,16 @@
         {
           "id": "woodLane",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.166,
+              "ypos": 0.408
+            },
+            {
+              "xpos": 0.166,
+              "ypos": 0.487
+            }
+          ]
         }
       ]
     },
@@ -5447,7 +5487,16 @@
         {
           "id": "westbournePark",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.187,
+              "ypos": 0.325
+            },
+            {
+              "xpos": 0.170,
+              "ypos": 0.357
+            }
+          ]
         },
         {
           "id": "paddingtonHC",
@@ -5596,7 +5645,16 @@
         {
           "id": "goldhawkRoad",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.166,
+              "ypos": 0.511
+            },
+            {
+              "xpos": 0.166,
+              "ypos": 0.550
+            }
+          ]
         }
       ]
     },
@@ -6314,7 +6372,20 @@
         {
           "id": "ladbrokeGrove",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.174,
+              "ypos": 0.346
+            },
+            {
+              "xpos": 0.167,
+              "ypos": 0.365
+            },
+            {
+              "xpos": 0.165,
+              "ypos": 0.390
+            }
+          ]
         }
       ]
     },
@@ -6484,7 +6555,16 @@
         {
           "id": "shepherdsBushMarket",
           "lineId": "hammersmithCity",
-          "curves": []
+          "curves": [
+            {
+              "xpos": 0.166,
+              "ypos": 0.475
+            },
+            {
+              "xpos": 0.166,
+              "ypos": 0.523
+            }
+          ]
         },
         {
           "id": "latimerRoad",
