@@ -1,16 +1,17 @@
 # PARTH - by Team D2
 PARTH is an algorithm visualisation tool built for the [Computer Science](http://cs.bham.ac.uk) Team Project module at [University of Birmingham](http://www.bham.ac.uk)
 
+## Aims
+* The program should have been modular, accepting any compatible visualisations in the `.vism` format.
+* The program was to be written in Java *This was a strict constraint*
+* Tasks were to be distributed amongst team members to even the load
+
 ## Dependencies
 This program requires the following to run:
 * Java 8
 * JavaFX (OpenJFX or Oracle JRE)
 * Write permissions in the directory it's executed in
-
-## Aims
-* The program should have been modular, accepting any compatible visualisations in the `.vism` format.
-* The program was to be written in Java *This was a strict constraint*
-* Tasks were to be distributed amongst team members to even the load
+* Ant (for building)
 
 ## Usage
 1. Clone the repository into a local directory
