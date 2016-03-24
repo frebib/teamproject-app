@@ -86,13 +86,7 @@ public class MainMenuView {
         });
         sp.setOnMousePressed(e -> {
             controller.onOpen();
-            Scene scene = controller.getView().getScene();
-            // Use default stylesheets if none are specified
-            if (controller instanceof JsonController && !((JsonController) controller).hasStyles()) {
-                scene.getStylesheets().clear();
-//                scene.getStylesheets().addAll(PARTH.getInstance().getStyles());
-            }
-            stage.setScene(scene);
+            stage.setScene(controller.getView().getScene());
         });
         return sp;
     }

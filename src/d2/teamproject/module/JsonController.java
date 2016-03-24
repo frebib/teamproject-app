@@ -31,13 +31,4 @@ public abstract class JsonController implements BaseController {
     public Image getBanner() {
         return banner;
     }
-
-    // TODO: Add custom CSS loading
-    public boolean hasStyles() {
-        return false;
-    }
-
-    String getStyles() {
-        return "";
-    }
 }
