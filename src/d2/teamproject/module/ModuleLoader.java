@@ -9,6 +9,7 @@ import org.xeustechnologies.jcl.JarClassLoader;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.zip.ZipInputStream;
@@ -177,7 +178,7 @@ public class ModuleLoader {
         return modules;
     }
 
-    public synchronized void onLoaded(ModulesLoaded callback) {
+    public synchronized void onLoaded(Consumer<List<BaseController>> callback) {
         try {
             while (!isLoaded)
                 this.wait();
@@ -185,7 +186,7 @@ public class ModuleLoader {
             LOG.exception(e);
             return;
         }
-        callback.onLoaded(modules);
+        callback.accept(modules);
     }
 
     public static class LoadException extends Exception {
